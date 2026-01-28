@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+@MainActor
+class AppViewModel: ObservableObject{
+    
+    @Published var appFlow: AppFlow = .splash
+    
+}

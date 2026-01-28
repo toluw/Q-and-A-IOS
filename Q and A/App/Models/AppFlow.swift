@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum AppFlow{
+    case splash
+    case intro
+    case main
+}

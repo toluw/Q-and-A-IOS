@@ -11,6 +11,9 @@
 		F5941CDC2F22124300611063 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CDB2F22124300611063 /* ContentView.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
+		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
+		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
+		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		F5941CDB2F22124300611063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5941CE02F22124500611063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5181B7B2F27811F006EE609 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F5BD4A142F2A50F40020A8A4 /* Models */,
+				F5BD4A132F2A50360020A8A4 /* ViewModels */,
+				F5BD4A122F2A50360020A8A4 /* Views */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		F5941CCD2F22124300611063 = {
 			isa = PBXGroup;
 			children = (
@@ -51,7 +67,7 @@
 		F5941CD82F22124300611063 /* Q and A */ = {
 			isa = PBXGroup;
 			children = (
-				F5941CD92F22124300611063 /* Q_and_AApp.swift */,
+				F5181B7B2F27811F006EE609 /* App */,
 				F5941CDB2F22124300611063 /* ContentView.swift */,
 				F5941CDD2F22124500611063 /* Assets.xcassets */,
 				F5941CDF2F22124500611063 /* Preview Content */,
@@ -65,6 +81,31 @@
 				F5941CE02F22124500611063 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5BD4A122F2A50360020A8A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5941CD92F22124300611063 /* Q_and_AApp.swift */,
+				F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F5BD4A132F2A50360020A8A4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F5BD4A142F2A50F40020A8A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5941CDC2F22124300611063 /* ContentView.swift in Sources */,
+				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
+				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
+				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
