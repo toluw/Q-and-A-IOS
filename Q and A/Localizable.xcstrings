@@ -1,7 +1,83 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-
+    "intro1_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q and A app is  platform for distributing and sourcing educational resources. The resources are in text, audio and video formats"
+          }
+        }
+      }
+    },
+    "intro1_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Access Study Materials"
+          }
+        }
+      }
+    },
+    "intro2_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Study your favourite materials offline "
+          }
+        }
+      }
+    },
+    "intro2_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offline Access"
+          }
+        }
+      }
+    },
+    "intro3_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Earn extra income by distributing paid content"
+          }
+        }
+      }
+    },
+    "intro3_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distribute and Earn"
+          }
+        }
+      }
+    },
+    "welcome_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Q & A app"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }

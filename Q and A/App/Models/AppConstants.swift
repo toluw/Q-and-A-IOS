@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct AppConstants {
+
+    struct UserDefaultsKeys {
+        static let hasLaunchedBefore = "hasLaunchedBefore"
+    }
+
+}

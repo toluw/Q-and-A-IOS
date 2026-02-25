@@ -14,10 +14,20 @@ struct AppNavigator: View {
     @EnvironmentObject var appViewModel: AppViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        switch appViewModel.appFlow {
+        case .splash:
+            SplashView()
+        case .intro:
+            IntroStackView()
+        case.main:
+            MainStackView()
+        }
+        
     }
 }
 
 #Preview {
     AppNavigator()
+        .environmentObject(AppViewModel())
 }

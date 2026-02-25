@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct UserSettings {
+
+    static var hasLaunchedBefore: Bool {
+        get { UserDefaults.standard.bool(forKey: AppConstants.UserDefaultsKeys.hasLaunchedBefore) }
+        set { UserDefaults.standard.set(newValue, forKey: AppConstants.UserDefaultsKeys.hasLaunchedBefore) }
+    }
+
+   }

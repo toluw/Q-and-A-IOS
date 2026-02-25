@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct SplashView: View {
+    
+    @EnvironmentObject var appViewModel: AppViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        SplashScreen()
+            .onAppear{
+              delayAndNavigate()
+            }
     }
+    
+    private func delayAndNavigate(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+            appViewModel.appFlow = UserSettings.hasLaunchedBefore ? .main : .intro
+        }
+    }
+   
 }
 
 #Preview {
+    
+    
     SplashView()
+        .environmentObject(AppViewModel())
+        
 }

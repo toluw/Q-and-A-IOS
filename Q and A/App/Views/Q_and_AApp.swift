@@ -12,6 +12,9 @@ struct Q_and_AApp: App {
     
     @StateObject private var appViewModel = AppViewModel()
     
+    
+  
+    
     var body: some Scene {
         WindowGroup {
             AppNavigator()
