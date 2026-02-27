@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct IntroStackView: View {
+    
+    @EnvironmentObject var appVM: AppViewModel
+    @StateObject  var viewModel = IntroViewModel()
+    
     var body: some View {
         Text("Intro")
     }
