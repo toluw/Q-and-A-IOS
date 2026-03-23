@@ -12,6 +12,12 @@ struct IntroStackView: View {
     @EnvironmentObject var appVM: AppViewModel
     @StateObject  var viewModel = IntroViewModel()
     
+    init(){
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(named: "Dot")
+        
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor(named: "Grey")
+    }
+    
     var body: some View {
         
         
