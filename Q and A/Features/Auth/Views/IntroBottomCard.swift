@@ -35,12 +35,16 @@ struct IntroBottomCard: View {
                       IntroNavigationButtons(viewModel: viewModel)
                   }
                   .padding()
-                  .frame(height: geo.size.height * 0.45)
-                  .frame(maxWidth: .infinity)
+                
+                  .frame(maxWidth: .infinity, maxHeight: .infinity)
                   .background(
-                      RoundedRectangle(cornerRadius: 40)
-                          .fill(Color.black)
-                          .ignoresSafeArea(edges: .bottom)
+                      Color.black
+                    )
+                  .clipShape(
+                      .rect(
+                          topLeadingRadius: 70,
+                          topTrailingRadius: 70
+                      )
                   )
         }
             

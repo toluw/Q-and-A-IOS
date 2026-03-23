@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "intro1_description" : {
+    "intro1_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -23,7 +23,7 @@
         }
       }
     },
-    "intro2_description" : {
+    "intro2_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -45,7 +45,7 @@
         }
       }
     },
-    "intro3_description" : {
+    "intro3_subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -66,6 +66,12 @@
           }
         }
       }
+    },
+    "Main Stack" : {
+
+    },
+    "Skip" : {
+
     },
     "welcome_message" : {
       "extractionState" : "manual",

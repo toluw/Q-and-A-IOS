@@ -16,19 +16,19 @@ final class IntroViewModel: ObservableObject{
     
     let pages: [IntroPage] = [
             IntroPage(
-                imageName: "intro1",
+                imageName: "intro_1",
                 title: "intro1_title",
-                subtitle: "intro1_description."
+                subtitle: "intro1_subtitle"
             ),
             IntroPage(
-                imageName: "intro2",
+                imageName: "intro_2",
                 title: "intro2_title",
-                subtitle: "intro2_description."
+                subtitle: "intro2_subtitle"
             ),
             IntroPage(
-                imageName: "intro3",
+                imageName: "intro_3",
                 title: "intro3_title",
-                subtitle: "intro3_description"
+                subtitle: "intro3_subtitle"
             )
         ]
     
