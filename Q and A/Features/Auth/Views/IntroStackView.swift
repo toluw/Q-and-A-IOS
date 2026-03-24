@@ -11,6 +11,7 @@ struct IntroStackView: View {
     
     @EnvironmentObject var appVM: AppViewModel
     @StateObject  var viewModel = IntroViewModel()
+    @EnvironmentObject var onboardingViewModel: OnboardingViewModel
     
     init(){
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(named: "Dot")
@@ -50,7 +51,9 @@ struct IntroStackView: View {
                     .indexViewStyle(.page(backgroundDisplayMode: .always))
                     .frame(height: geo.size.height * 0.53)
                     
-                    IntroBottomCard(viewModel: viewModel)
+                    IntroBottomCard(viewModel: viewModel,completeIntro:{
+                        completeIntro()
+                    } )
                         .frame(height: geo.size.height * 0.47)
                 }
             }
@@ -59,6 +62,12 @@ struct IntroStackView: View {
         
          
        }
+    
+    private func completeIntro(){
+        
+        onboardingViewModel.onboardingFlow = .role_selection
+        
+    }
 }
 
 #Preview {

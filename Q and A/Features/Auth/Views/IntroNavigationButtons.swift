@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroNavigationButtons: View {
     
     @ObservedObject var viewModel: IntroViewModel
+    let completeIntro: () -> Void
     
     var body: some View {
         HStack {
@@ -48,13 +49,11 @@ struct IntroNavigationButtons: View {
     }
     
     
-    func completeIntro(){
-        
-    }
+    
     
     
 }
 
 #Preview {
-    IntroNavigationButtons(viewModel: IntroViewModel())
+    IntroNavigationButtons(viewModel: IntroViewModel(), completeIntro: {})
 }

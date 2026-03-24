@@ -10,6 +10,7 @@ import SwiftUI
 struct IntroBottomCard: View {
     
     @ObservedObject var viewModel: IntroViewModel
+    let completeIntro: () -> Void
     
     var body: some View {
         
@@ -32,7 +33,7 @@ struct IntroBottomCard: View {
                       
                       Spacer()
                       
-                      IntroNavigationButtons(viewModel: viewModel)
+                      IntroNavigationButtons(viewModel: viewModel, completeIntro: completeIntro)
                   }
                   .padding()
                 
@@ -54,5 +55,5 @@ struct IntroBottomCard: View {
 }
 
 #Preview {
-    IntroBottomCard(viewModel: IntroViewModel())
+    IntroBottomCard(viewModel: IntroViewModel(), completeIntro: {})
 }

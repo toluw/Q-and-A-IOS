@@ -19,7 +19,7 @@ struct AppNavigator: View {
         case .splash:
             SplashView()
         case .intro:
-            IntroStackView()
+            OnboardingNavigatorView()
         case.main:
             MainStackView()
         }

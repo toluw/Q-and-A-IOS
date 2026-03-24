@@ -28,6 +28,11 @@
 		F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */; };
 		F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E912F71889A000861B6 /* RoleToggleView.swift */; };
 		F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E932F728472000861B6 /* FeatureItemView.swift */; };
+		F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E952F728E92000861B6 /* RoleSelectionScreen.swift */; };
+		F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E982F728FCC000861B6 /* PrimaryButton.swift */; };
+		F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */; };
+		F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E9C2F72A1FE000861B6 /* OnboardingFlow.swift */; };
+		F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EA02F72A491000861B6 /* OnboardingNavigatorView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -66,6 +71,11 @@
 		F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewModel.swift; sourceTree = "<group>"; };
 		F5C12E912F71889A000861B6 /* RoleToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleToggleView.swift; sourceTree = "<group>"; };
 		F5C12E932F728472000861B6 /* FeatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItemView.swift; sourceTree = "<group>"; };
+		F5C12E952F728E92000861B6 /* RoleSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionScreen.swift; sourceTree = "<group>"; };
+		F5C12E982F728FCC000861B6 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		F5C12E9C2F72A1FE000861B6 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		F5C12EA02F72A491000861B6 /* OnboardingNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigatorView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -111,6 +121,8 @@
 				F526A7FF2F70374600BF414A /* IntroStackView.swift */,
 				F5C12E912F71889A000861B6 /* RoleToggleView.swift */,
 				F5C12E932F728472000861B6 /* FeatureItemView.swift */,
+				F5C12E952F728E92000861B6 /* RoleSelectionScreen.swift */,
+				F5C12EA02F72A491000861B6 /* OnboardingNavigatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 		F5BD4A202F2A9CF70020A8A4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F5C12E972F728F98000861B6 /* Views */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -236,6 +249,7 @@
 			children = (
 				F55912A52F4F235900BCB041 /* IntroViewModel.swift */,
 				F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */,
+				F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -244,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F5E7057B2F4DEA55001016B6 /* IntroPage.swift */,
+				F5C12E9C2F72A1FE000861B6 /* OnboardingFlow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +283,14 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F5C12E972F728F98000861B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5C12E982F728FCC000861B6 /* PrimaryButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F5F7A7602F3882380097558D /* Resources */ = {
@@ -381,9 +404,11 @@
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
+				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
+				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
@@ -393,8 +418,11 @@
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
+				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
+				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
+				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */,
 			);
