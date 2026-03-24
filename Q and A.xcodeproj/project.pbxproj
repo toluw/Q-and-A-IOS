@@ -26,6 +26,8 @@
 		F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8B2F717165000861B6 /* RoleFeature.swift */; };
 		F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8D2F7171A0000861B6 /* UserRole.swift */; };
 		F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */; };
+		F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E912F71889A000861B6 /* RoleToggleView.swift */; };
+		F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E932F728472000861B6 /* FeatureItemView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -62,6 +64,8 @@
 		F5C12E8B2F717165000861B6 /* RoleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleFeature.swift; sourceTree = "<group>"; };
 		F5C12E8D2F7171A0000861B6 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
 		F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewModel.swift; sourceTree = "<group>"; };
+		F5C12E912F71889A000861B6 /* RoleToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleToggleView.swift; sourceTree = "<group>"; };
+		F5C12E932F728472000861B6 /* FeatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureItemView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				F526A7FD2F70374600BF414A /* IntroBottomCard.swift */,
 				F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */,
 				F526A7FF2F70374600BF414A /* IntroStackView.swift */,
+				F5C12E912F71889A000861B6 /* RoleToggleView.swift */,
+				F5C12E932F728472000861B6 /* FeatureItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
+				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
@@ -384,6 +391,7 @@
 				F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */,
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,
+				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
