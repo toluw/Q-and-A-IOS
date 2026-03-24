@@ -18,7 +18,10 @@ struct IntroNavigationButtons: View {
             // Back
             if viewModel.currentIndex > 0 {
                 Button {
-                    viewModel.previous()
+                    withAnimation(){
+                        viewModel.previous()
+                    }
+                    
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.white)
@@ -36,7 +39,10 @@ struct IntroNavigationButtons: View {
                 if viewModel.isLastPage {
                     completeIntro()
                 } else {
-                    viewModel.next()
+                    withAnimation(){
+                        viewModel.next()
+                    }
+                    
                 }
             } label: {
                 Image(systemName: "chevron.right")
