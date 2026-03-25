@@ -29,12 +29,12 @@ struct CustomBottomNav: View {
                        
                        Spacer()
                        
-            tabItem(icon: "ic_book", title: "Book", tab: .book).padding([.trailing],10)
+            tabItem(icon: "ic_book", title: "Book", tab: .book)
                        
                         // space for FAB
             Spacer()
                        
-            tabItem(icon: "ic_video", title: "Video", tab:.video).padding([.leading],10)
+            tabItem(icon: "ic_video", title: "Video", tab:.video)
                        
                        Spacer()
                        
