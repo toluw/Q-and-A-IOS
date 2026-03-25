@@ -26,14 +26,18 @@ struct CustomBottomNav: View {
                 tabItem(icon: "ic_cbt", title: "CBT", tab: .cbt)
                            
                 Spacer()
+                Spacer()
                            
                 tabItem(icon: "ic_book", title: "Book", tab: .book)
                            
                             // space for FAB
                 Spacer()
+                Spacer()
+                Spacer()
                            
                 tabItem(icon: "ic_video", title: "Video", tab:.video)
                            
+                Spacer()
                 Spacer()
                            
                 tabItem(icon: "ic_library", title: "Library", tab: .library)
@@ -45,7 +49,7 @@ struct CustomBottomNav: View {
                          Button {
                              onFabClick()
                          } label: {
-                             Image(systemName: "ic_community")
+                             Image("ic_community")
                                  .foregroundColor(.white)
                                  .frame(width: 60, height: 60)
                                  .background(Color("FabColour"))
@@ -67,7 +71,8 @@ struct CustomBottomNav: View {
                selectedTab = tab
            } label: {
                VStack(spacing: 4) {
-                   Image(systemName: icon)
+                   Image(icon)
+                       .renderingMode(.template)
                    Text(title)
                        .font(AppFont.medium(12))
                }

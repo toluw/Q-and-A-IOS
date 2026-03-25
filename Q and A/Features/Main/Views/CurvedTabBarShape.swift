@@ -16,7 +16,7 @@ struct CurvedTabBarShape: Shape{
                let width = rect.width
                let height = rect.height
                
-               let notchWidth: CGFloat = 100
+               let notchWidth: CGFloat = 84
                let notchDepth: CGFloat = 40
                
                let center = width / 2

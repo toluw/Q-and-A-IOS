@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainStackView: View {
     var body: some View {
-        Text("Main Stack")
+      //  Text("Main Stack")
+        MainScreen()
     }
 }
 
