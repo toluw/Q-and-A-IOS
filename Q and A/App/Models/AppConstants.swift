@@ -11,6 +11,11 @@ struct AppConstants {
 
     struct UserDefaultsKeys {
         static let hasLaunchedBefore = "hasLaunchedBefore"
+        static let isLoggedIn = "isLoggedIn"
+        static let profileImage = "profileImage"
+        static let name = "name"
+        static let email = "email"
+        static let phoneNumber = "phoneNumber"
     }
 
 }

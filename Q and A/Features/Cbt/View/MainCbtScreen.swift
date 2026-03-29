@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct MainCbtScreen: View {
+    
+    let onShowNavDrawer: () -> Void
+    
     var body: some View {
-        Text("Main CBT")
+        ScrollView{
+            VStack(){
+                
+                Text("Main CBT").onTapGesture {
+                  onShowNavDrawer()
+                }
+               
+            }
+        }
+        
     }
 }
 
 #Preview {
-    MainCbtScreen()
+    MainCbtScreen(onShowNavDrawer: {})
 }

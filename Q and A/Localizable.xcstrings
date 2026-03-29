@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Hello, World!" : {
+
+    },
     "I want to:" : {
 
     },
@@ -80,6 +83,9 @@
 
     },
     "Main Video" : {
+
+    },
+    "Nav Drawer" : {
 
     },
     "Skip" : {

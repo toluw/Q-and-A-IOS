@@ -72,7 +72,11 @@ struct MainScreen: View {
        private var contentView: some View {
            switch selectedTab {
            case .cbt:
-               MainCbtScreen()
+               MainCbtScreen(){
+                   openDrawer()
+               }
+                   
+               
            case .book:
                MainBookScreen()
            case .video:
