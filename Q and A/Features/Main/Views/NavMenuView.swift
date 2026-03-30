@@ -240,7 +240,7 @@ struct NavMenuView: View {
                 
                 Spacer()
                 
-                Image("select").padding(.trailing, 13)
+                Image("select").padding(.trailing, 16)
                 
                
             }

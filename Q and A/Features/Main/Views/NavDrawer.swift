@@ -47,7 +47,7 @@ struct NavDrawer: View {
                             }) {
                             Text("Sign In")
                                 .foregroundColor(Color("SecColor"))
-                                .font(AppFont.regular(14))
+                                .font(AppFont.medium(16))
                                 .padding(.trailing, 24)
                                 .padding(.top, 32)
                                 }
