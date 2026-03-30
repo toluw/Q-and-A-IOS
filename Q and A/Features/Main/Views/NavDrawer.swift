@@ -112,20 +112,7 @@ struct NavDrawer: View {
     
     }
     
-    private func drawerItem(title: String, imageResource: String, colour: Color) -> some View {
-          HStack {
-              Circle()
-                  .fill(colour.opacity(0.2))
-                  .frame(width: 40, height: 40)
-              
-              Text(title)
-              
-              Spacer()
-              
-              Image(imageResource)
-                  .foregroundColor(colour)
-          }
-      }
+   
 }
 
 #Preview {

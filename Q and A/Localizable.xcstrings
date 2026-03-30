@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Edit Profile" : {
+
+    },
     "Hello, World!" : {
 
     },
@@ -85,7 +88,7 @@
     "Main Video" : {
 
     },
-    "Nav Drawer" : {
+    "Sign In" : {
 
     },
     "Skip" : {
