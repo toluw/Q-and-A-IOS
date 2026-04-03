@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavDrawer: View {
     
-    var onClose: () -> Void
+    let onMenuSelected: (NavMenu) -> Void
     
     let isLoggedIn = UserSettings.isLoggedIn
     
@@ -29,7 +29,7 @@ struct NavDrawer: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                              editProfile()
+                                onMenuSelected(.editProfile)
                             }) {
                             Text("Edit Profile")
                                 .foregroundColor(Color("SecColor"))
@@ -43,7 +43,7 @@ struct NavDrawer: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                              signIn()
+                                onMenuSelected(.signIn)
                             }) {
                             Text("Sign In")
                                 .foregroundColor(Color("SecColor"))
@@ -57,7 +57,7 @@ struct NavDrawer: View {
                     
                     ZStack(alignment: .top){
                         
-                        NavMenuView()
+                        NavMenuView(onMenuSelected: onMenuSelected)
                             .padding(.top, 75)
                         
                         ZStack(alignment: .bottomTrailing){
@@ -104,17 +104,11 @@ struct NavDrawer: View {
         
     }
     
-    private func editProfile(){
-        
-    }
-    
-    private func signIn(){
-    
-    }
+   
     
    
 }
 
 #Preview {
-    NavDrawer(){}
+    NavDrawer(onMenuSelected: {_ in })
 }

@@ -35,10 +35,7 @@ struct MainScreen: View {
            
             // Drawer
             HStack {
-                NavDrawer {
-                    closeDrawer()
-                    
-                }
+                NavDrawer(onMenuSelected: handleMenuSelection)
                 .frame(width: 300)
                 .offset(x: isDrawerOpen ? 0 : -320)
                             
@@ -93,6 +90,47 @@ struct MainScreen: View {
         
     private func closeDrawer() {
             isDrawerOpen = false
+    }
+    
+    private func handleMenuSelection(navMenu: NavMenu){
+        
+        closeDrawer()
+        
+        switch (navMenu){
+            
+        case .community:
+            <#code#>
+        case .aiAssistance:
+            <#code#>
+        case .fanQuiz:
+            <#code#>
+        case .myLibrary:
+            <#code#>
+        case .myCbt:
+            <#code#>
+        case .myPortal:
+            <#code#>
+        case .shareApp:
+            <#code#>
+        case .myCart:
+            <#code#>
+        case .signOut:
+            <#code#>
+        case .signIn:
+            <#code#>
+        case .reportCopyright:
+            <#code#>
+        case .contactUs:
+            <#code#>
+        case .faq:
+            <#code#>
+        case .termsAndConditions:
+            <#code#>
+        case .about:
+            <#code#>
+        case .editProfile:
+            <#code#>
+        }
     }
     
 }

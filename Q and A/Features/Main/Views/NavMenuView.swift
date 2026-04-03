@@ -13,6 +13,7 @@ struct NavMenuView: View {
     let name = UserSettings.name ?? ""
     let email = UserSettings.email ?? ""
     let isLoggedIn = UserSettings.isLoggedIn
+    let onMenuSelected: (NavMenu) -> Void
     
    
     
@@ -38,14 +39,14 @@ struct NavMenuView: View {
                        imageResource:"ic_community",
                        colour: Color("NavDeepBlue")
             ){
-                
+                onMenuSelected(.community)
             }
             
             drawerItem(title: "AI Assistant",
                        imageResource:"nav_ai",
                        colour: Color("NavBlue")
             ){
-                
+                onMenuSelected(.aiAssistance)
             }
             
             
@@ -53,7 +54,7 @@ struct NavMenuView: View {
                        imageResource:"nav_quiz",
                        colour: Color("NavGold")
             ){
-                
+                onMenuSelected(.fanQuiz)
             }
             
             if(isLoggedIn){
@@ -62,7 +63,7 @@ struct NavMenuView: View {
                            imageResource:"nav_library",
                            colour: Color("SecColor")
                 ){
-                    
+                    onMenuSelected(.myLibrary)
                 }
                
                 
@@ -70,7 +71,7 @@ struct NavMenuView: View {
                            imageResource:"ic_cbt",
                            colour: Color("NavBlack")
                 ){
-                    
+                    onMenuSelected(.myCbt)
                 }
                 
                 
@@ -78,7 +79,7 @@ struct NavMenuView: View {
                            imageResource:"nav_portal",
                            colour: Color("NavBlue")
                 ){
-                    
+                    onMenuSelected(.myPortal)
                 }
                 
                 }
@@ -105,7 +106,7 @@ struct NavMenuView: View {
                        imageResource:"nav_share",
                        colour: Color("NavBlue")
                 ){
-                
+                    onMenuSelected(.shareApp)
                 }
             
             
@@ -115,7 +116,7 @@ struct NavMenuView: View {
                        imageResource:"nav_cart",
                        colour: Color("SecColor")
                 ){
-                
+                    onMenuSelected(.myCart)
                 }
                 
                 
@@ -123,7 +124,7 @@ struct NavMenuView: View {
                        imageResource:"nav_signout",
                        colour: Color("NavRed")
                 ){
-                
+                    onMenuSelected(.signOut)
                 }
                 
                 
@@ -135,7 +136,7 @@ struct NavMenuView: View {
                        imageResource:"nav_sign_in",
                        colour: Color("NavBlack")
                 ){
-                
+                    onMenuSelected(.signIn)
                 }
                 
             }
@@ -145,7 +146,7 @@ struct NavMenuView: View {
                    imageResource:"nav_copyright",
                    colour: Color("NavBlue")
             ){
-            
+                onMenuSelected(.reportCopyright)
             }
             
             
@@ -153,7 +154,7 @@ struct NavMenuView: View {
                    imageResource:"nav_contact_us",
                    colour: Color("NavDeepBlue")
             ){
-            
+                onMenuSelected(.contactUs)
             }
             
             
@@ -161,7 +162,7 @@ struct NavMenuView: View {
                    imageResource:"nav_faq",
                    colour: Color("NavGold")
             ){
-            
+                onMenuSelected(.faq)
             }
             
             
@@ -169,14 +170,14 @@ struct NavMenuView: View {
                    imageResource:"nav_terms",
                    colour: Color("SecColor")
             ){
-            
+                onMenuSelected(.termsAndConditions)
             }
             
             drawerItem(title: "About",
                    imageResource:"nav_about",
                    colour: Color("NavBlack")
             ){
-            
+                onMenuSelected(.about)
             }
             
             
@@ -259,5 +260,5 @@ struct NavMenuView: View {
 
 
 #Preview {
-    NavMenuView()
+    NavMenuView(onMenuSelected: {_ in })
 }
