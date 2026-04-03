@@ -47,6 +47,8 @@
 		F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */; };
 		F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
+		F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */; };
+		F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -104,6 +106,8 @@
 		F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBarShape.swift; sourceTree = "<group>"; };
 		F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomNav.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		F5BD4A202F2A9CF70020A8A4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F5E144E12F7FB3AF00C10F3A /* Utility */,
 				F5C12E972F728F98000861B6 /* Views */,
 			);
 			path = Core;
@@ -463,6 +468,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F5E144E12F7FB3AF00C10F3A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */,
+				F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		F5F7A7602F3882380097558D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +590,7 @@
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
+				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
@@ -604,6 +619,7 @@
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
+				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
