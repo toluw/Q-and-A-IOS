@@ -59,6 +59,7 @@
 		F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144FA2F7FEEA100C10F3A /* ApiClient.swift */; };
 		F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144FC2F7FEF6A00C10F3A /* AppError.swift */; };
 		F5E144FF2F7FF0BF00C10F3A /* ApiErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144FE2F7FF0BF00C10F3A /* ApiErrorHandler.swift */; };
+		F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E145002F7FF63A00C10F3A /* AuthService.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -126,6 +127,7 @@
 		F5E144FA2F7FEEA100C10F3A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		F5E144FC2F7FEF6A00C10F3A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F5E144FE2F7FF0BF00C10F3A /* ApiErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorHandler.swift; sourceTree = "<group>"; };
+		F5E145002F7FF63A00C10F3A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -183,11 +185,13 @@
 		F526A8052F7037D400BF414A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F5C12E9C2F72A1FE000861B6 /* OnboardingFlow.swift */,
 				F526A8042F7037D400BF414A /* IntroPage.swift */,
 				F5C12E8B2F717165000861B6 /* RoleFeature.swift */,
 				F5C12E8D2F7171A0000861B6 /* UserRole.swift */,
 				F5E144EF2F7FC4F200C10F3A /* LoginRequest.swift */,
 				F5E144F12F7FC5E800C10F3A /* File.swift */,
+				F5E7057B2F4DEA55001016B6 /* IntroPage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,10 +290,9 @@
 		F5BD4A212F2B66F70020A8A4 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				F5E144F32F7FC65B00C10F3A /* Utility */,
+				F5E144F32F7FC65B00C10F3A /* Network */,
 				F526A8052F7037D400BF414A /* Models */,
 				F526A8002F70374600BF414A /* Views */,
-				F5BD4A252F2B67EB0020A8A4 /* Models */,
 				F5BD4A242F2B67EB0020A8A4 /* ViewModels */,
 			);
 			path = Auth;
@@ -313,15 +316,6 @@
 				F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		F5BD4A252F2B67EB0020A8A4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F5E7057B2F4DEA55001016B6 /* IntroPage.swift */,
-				F5C12E9C2F72A1FE000861B6 /* OnboardingFlow.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		F5BD4A262F2B68050020A8A4 /* Models */ = {
@@ -505,12 +499,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		F5E144F32F7FC65B00C10F3A /* Utility */ = {
+		F5E144F32F7FC65B00C10F3A /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				F5E144F42F7FC67C00C10F3A /* AuthApi.swift */,
+				F5E145002F7FF63A00C10F3A /* AuthService.swift */,
 			);
-			path = Utility;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F5F7A7602F3882380097558D /* Resources */ = {
@@ -670,6 +665,7 @@
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
+				F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */,
 				F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */,
 				F5E144F02F7FC4F200C10F3A /* LoginRequest.swift in Sources */,
 			);
