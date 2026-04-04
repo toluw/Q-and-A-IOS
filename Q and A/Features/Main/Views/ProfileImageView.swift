@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ProfileImageView: View {
     
-    var profileImageURLString: String = UserSettings.profileImage ?? ""
+    @ObservedObject var mainScreenViewModel: MainScreenViewModel
+    
     
     var body: some View {
         
-        if let url = URL(string: profileImageURLString), !profileImageURLString.isEmpty {
+        if let url = URL(string: mainScreenViewModel.userProfileState.profileImage), !mainScreenViewModel.userProfileState.profileImage.isEmpty {
                         AsyncImage(url: url) { phase in
                             switch phase {
                             case .empty:
@@ -58,5 +59,5 @@ struct ProfileImageView: View {
 }
 
 #Preview {
-    ProfileImageView()
+    ProfileImageView(mainScreenViewModel: MainScreenViewModel())
 }

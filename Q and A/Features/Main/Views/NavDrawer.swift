@@ -11,7 +11,8 @@ struct NavDrawer: View {
     
     let onMenuSelected: (NavMenu) -> Void
     
-    let isLoggedIn = UserSettings.isLoggedIn
+    
+    @ObservedObject var mainScreenViewModel: MainScreenViewModel
     
     var body: some View {
         
@@ -25,7 +26,7 @@ struct NavDrawer: View {
                 
                     // Top "Edit Profile" Button
                     
-                    if(isLoggedIn){
+                    if(mainScreenViewModel.userProfileState.isLoggedIn){
                         HStack {
                             Spacer()
                             Button(action: {
@@ -57,15 +58,15 @@ struct NavDrawer: View {
                     
                     ZStack(alignment: .top){
                         
-                        NavMenuView(onMenuSelected: onMenuSelected)
+                        NavMenuView(onMenuSelected: onMenuSelected, mainScreenViewModel: mainScreenViewModel)
                             .padding(.top, 75)
                         
                         ZStack(alignment: .bottomTrailing){
                             //Dynamic Image Loading
-                            ProfileImageView()
+                            ProfileImageView(mainScreenViewModel: mainScreenViewModel)
                             
                             // Orange Edit Badge
-                            if(isLoggedIn){
+                            if(mainScreenViewModel.userProfileState.isLoggedIn){
                                 Circle()
                                     .fill(Color.orange)
                                     .frame(width: 26, height: 26)
@@ -81,7 +82,7 @@ struct NavDrawer: View {
                             
                         }.padding(.top, 35)
                             .onTapGesture {
-                               editProfile()
+                                onMenuSelected(.editProfile)
                             }
                         
                         
@@ -110,5 +111,5 @@ struct NavDrawer: View {
 }
 
 #Preview {
-    NavDrawer(onMenuSelected: {_ in })
+    NavDrawer(onMenuSelected: {_ in }, mainScreenViewModel: MainScreenViewModel())
 }

@@ -13,6 +13,10 @@ struct MainScreen: View {
     @State private var selectedTab: MainTab = .cbt
     @State private var isDrawerOpen = false
     
+    @StateObject private var viewModel = MainScreenViewModel()
+    @ObservedObject var navVm: MainNavViewModel
+    
+    
     var body: some View {
         ZStack {
                    
@@ -35,14 +39,19 @@ struct MainScreen: View {
            
             // Drawer
             HStack {
-                NavDrawer(onMenuSelected: handleMenuSelection)
+                NavDrawer(onMenuSelected: handleMenuSelection, mainScreenViewModel: viewModel)
                 .frame(width: 300)
                 .offset(x: isDrawerOpen ? 0 : -320)
                             
                 Spacer()
                 }
             
-        }.animation(.easeInOut(duration: 0.3), value: isDrawerOpen)
+        }
+        .onAppear{
+            viewModel.reInitUserProfile()
+        }
+        .animation(.easeInOut(duration: 0.3), value: isDrawerOpen)
+         .environmentObject(viewModel)
     }
     
     @ViewBuilder
@@ -98,43 +107,108 @@ struct MainScreen: View {
         
         switch (navMenu){
             
-        case .community:
-            <#code#>
-        case .aiAssistance:
-            <#code#>
-        case .fanQuiz:
-            <#code#>
-        case .myLibrary:
-            <#code#>
-        case .myCbt:
-            <#code#>
-        case .myPortal:
-            <#code#>
-        case .shareApp:
-            <#code#>
-        case .myCart:
-            <#code#>
-        case .signOut:
-            <#code#>
-        case .signIn:
-            <#code#>
-        case .reportCopyright:
-            <#code#>
-        case .contactUs:
-            <#code#>
-        case .faq:
-            <#code#>
+        case .community: moveToCommunity()
+            
+        case .aiAssistance: moveToAiAssistance()
+        
+        case .fanQuiz: moveToFanQuiz()
+        
+        case .myLibrary: moveToLibrary()
+            
+        case .myCbt: moveToMyCbt()
+            
+        case .myPortal: moveToPortal()
+            
+        case .shareApp: shareApp()
+            
+        case .myCart: moveToMyCart()
+            
+        case .signOut: signOut()
+            
+        case .signIn: signIn()
+            
+        case .reportCopyright: reportCopyright()
+            
+        case .contactUs: contactUs()
+            
+        case .faq: moveToFaq()
+            
         case .termsAndConditions:
-            <#code#>
-        case .about:
-            <#code#>
-        case .editProfile:
-            <#code#>
+            
+        case .about: about()
+            
+        case .editProfile: moveToEditProfile()
+            
         }
+    }
+    
+    
+    private func moveToEditProfile(){
+        
+    }
+    
+    private func about(){
+        
+    }
+    
+    private func termsAndConditions(){
+        
+    }
+    
+    private func moveToFaq(){
+        
+    }
+   
+    private func contactUs(){
+        
+    }
+    
+    private func reportCopyright(){
+        
+    }
+    
+    private func signIn(){
+        
+    }
+    
+    private func signOut(){
+        
+    }
+    
+    private func moveToMyCart(){
+        
+    }
+    
+    private func shareApp(){
+        
+    }
+    
+    private func moveToPortal(){
+        
+    }
+    
+    private func moveToMyCbt(){
+        
+    }
+    
+    private func moveToLibrary(){
+        
+    }
+    
+    private func moveToFanQuiz(){
+        
+    }
+    
+    private func moveToAiAssistance(){
+        
+    }
+    
+    private func moveToCommunity(){
+        
     }
     
 }
 
 #Preview {
-    MainScreen()
+    MainScreen(navVm: MainNavViewModel())
 }

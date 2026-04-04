@@ -14,6 +14,8 @@
 		F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550212E2F80E73B0057C2F0 /* LoginState.swift */; };
 		F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021302F80E7F70057C2F0 /* LoginViewModel.swift */; };
 		F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021322F80EA0D0057C2F0 /* StringExtensions.swift */; };
+		F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021342F812ACB0057C2F0 /* UserProfile.swift */; };
+		F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */; };
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -87,6 +89,8 @@
 		F550212E2F80E73B0057C2F0 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		F55021302F80E7F70057C2F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F55021322F80EA0D0057C2F0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		F55021342F812ACB0057C2F0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				F5C12EBC2F73CF77000861B6 /* MainTab.swift */,
 				F56A463B2F75739900B3D2FC /* MainRoute.swift */,
 				F5E145022F80599E00C10F3A /* NavMenu.swift */,
+				F55021342F812ACB0057C2F0 /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */,
+				F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
+				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
 				F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */,
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
 				F5E144F22F7FC5E800C10F3A /* File.swift in Sources */,
@@ -673,6 +680,7 @@
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
+				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,

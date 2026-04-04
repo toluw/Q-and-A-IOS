@@ -26,7 +26,7 @@ final class AuthService: AuthServiceProtocol{
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"
             }
-        );        <#code#>
+        );        
     }
     
     

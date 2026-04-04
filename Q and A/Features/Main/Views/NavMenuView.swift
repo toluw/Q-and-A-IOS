@@ -10,25 +10,24 @@ import SwiftUI
 struct NavMenuView: View {
     
     
-    let name = UserSettings.name ?? ""
-    let email = UserSettings.email ?? ""
-    let isLoggedIn = UserSettings.isLoggedIn
+   
     let onMenuSelected: (NavMenu) -> Void
+    @ObservedObject var mainScreenViewModel: MainScreenViewModel
     
    
     
     var body: some View {
         VStack(){
            
-          Text(isLoggedIn ? name : "Not Logged in")
+            Text(mainScreenViewModel.userProfileState.isLoggedIn ? mainScreenViewModel.userProfileState.name : "Not Logged in")
           .font(AppFont.semi_bold(18))
           .foregroundColor(Color.black)
           .padding(.top, 54)
-          .padding(.bottom, isLoggedIn ? 0 : 17)
+          .padding(.bottom, mainScreenViewModel.userProfileState.isLoggedIn ? 0 : 17)
           
             
-        if(isLoggedIn){
-          Text(email)
+        if(mainScreenViewModel.userProfileState.isLoggedIn){
+            Text(mainScreenViewModel.userProfileState.email)
             .font(AppFont.regular(14))
             .foregroundColor(Color.black)
             .padding(.top, 4)
@@ -57,7 +56,7 @@ struct NavMenuView: View {
                 onMenuSelected(.fanQuiz)
             }
             
-            if(isLoggedIn){
+            if(mainScreenViewModel.userProfileState.isLoggedIn){
                 
                 drawerItem(title: "My Library",
                            imageResource:"nav_library",
@@ -110,7 +109,7 @@ struct NavMenuView: View {
                 }
             
             
-            if(isLoggedIn){
+            if(mainScreenViewModel.userProfileState.isLoggedIn){
                
                 drawerItem(title: "My Cart",
                        imageResource:"nav_cart",
@@ -131,7 +130,7 @@ struct NavMenuView: View {
             }
             
             
-            if(!isLoggedIn){
+            if(!mainScreenViewModel.userProfileState.isLoggedIn){
                 drawerItem(title: "Sign In/Sign Up",
                        imageResource:"nav_sign_in",
                        colour: Color("NavBlack")
@@ -260,5 +259,5 @@ struct NavMenuView: View {
 
 
 #Preview {
-    NavMenuView(onMenuSelected: {_ in })
+    NavMenuView(onMenuSelected: {_ in }, mainScreenViewModel: MainScreenViewModel())
 }
