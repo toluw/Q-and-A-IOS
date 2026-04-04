@@ -11,6 +11,9 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550212E2F80E73B0057C2F0 /* LoginState.swift */; };
+		F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021302F80E7F70057C2F0 /* LoginViewModel.swift */; };
+		F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021322F80EA0D0057C2F0 /* StringExtensions.swift */; };
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -81,6 +84,9 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F550212E2F80E73B0057C2F0 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		F55021302F80E7F70057C2F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F55021322F80EA0D0057C2F0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				F5E144EF2F7FC4F200C10F3A /* LoginRequest.swift */,
 				F5E144F12F7FC5E800C10F3A /* File.swift */,
 				F5E7057B2F4DEA55001016B6 /* IntroPage.swift */,
+				F550212E2F80E73B0057C2F0 /* LoginState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 				F55912A52F4F235900BCB041 /* IntroViewModel.swift */,
 				F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */,
 				F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */,
+				F55021302F80E7F70057C2F0 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 		F5E144E12F7FB3AF00C10F3A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F55021322F80EA0D0057C2F0 /* StringExtensions.swift */,
 				F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */,
 				F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */,
 				F5E144E82F7FB70900C10F3A /* Constants.swift */,
@@ -628,9 +637,11 @@
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
+				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
+				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
@@ -666,6 +677,7 @@
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
+				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,

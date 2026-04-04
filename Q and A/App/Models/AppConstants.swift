@@ -16,6 +16,7 @@ struct AppConstants {
         static let name = "name"
         static let email = "email"
         static let phoneNumber = "phoneNumber"
+        static let token = "token"
     }
     
 

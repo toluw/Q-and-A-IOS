@@ -38,5 +38,10 @@ struct UserSettings {
         get { UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.phoneNumber) }
         set { UserDefaults.standard.set(newValue, forKey: AppConstants.UserDefaultsKeys.phoneNumber) }
     }
+    
+    static var token: String?{
+        get { UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.token) }
+        set { UserDefaults.standard.set(newValue, forKey: AppConstants.UserDefaultsKeys.token) }
+    }
 
    }
