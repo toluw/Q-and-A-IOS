@@ -20,17 +20,17 @@ class LoginViewModel: ObservableObject{
     
     func validate() -> Bool {
            if state.email.isEmpty {
-               state.errorMessage = "Please enter your email"
+               state.errorMessage = ToastData(message: "Please enter your email", type: .error)
                return false
            }
            
            if !state.email.isValidEmail(){
-               state.errorMessage = "The email you entered is not valid"
+               state.errorMessage =  ToastData(message: "The email you entered is not valid", type: .error)
                return false
            }
            
            if state.password.isEmpty {
-               state.errorMessage = "Please enter your password"
+               state.errorMessage = ToastData(message: "Please enter your password", type: .error)
                return false
            }
            
@@ -60,7 +60,7 @@ class LoginViewModel: ObservableObject{
                    
                    guard let data = response.data else {
                        state.isLoading = false
-                       state.errorMessage = "Something went wrong"
+                       state.errorMessage = ToastData(message: "Something went wrong", type: .error)
                        return
                        }
                    
@@ -77,7 +77,7 @@ class LoginViewModel: ObservableObject{
                    
                } catch {
                    state.isLoading = false
-                   state.errorMessage = error.localizedDescription
+                   state.errorMessage =  ToastData(message: error.localizedDescription, type: .error)
                }
            }
        }

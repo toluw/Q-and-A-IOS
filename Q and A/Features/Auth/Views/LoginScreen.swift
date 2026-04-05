@@ -16,6 +16,8 @@ struct LoginScreen: View {
     
     let onForgotpassword: () -> Void
     
+    let onLoginSuccess: (UserProfile) -> Void
+    
     
     var body: some View {
         
@@ -100,7 +102,23 @@ struct LoginScreen: View {
                 .padding(.top, 24)
             }
             
+            if viewModel.state.isLoading {
+                   Color.black.opacity(0.4)
+                       .ignoresSafeArea()
+                   
+                   ProgressView("Logging in...")
+                       .padding()
+                       .background(Color.white)
+                       .cornerRadius(10)
+               }
+            
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+         .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+                if(newValue && viewModel.state.userProfile != nil ){
+                    onLoginSuccess(viewModel.state.userProfile!)
+                }
+            }
+         .toastBanner(toast: $viewModel.state.errorMessage)
         
     }
     
@@ -114,6 +132,7 @@ struct LoginScreen: View {
 #Preview {
     LoginScreen(
       onDismiss: {},
-      onForgotpassword: {}
+      onForgotpassword: {},
+      onLoginSuccess: {_ in }
     )
 }

@@ -12,7 +12,7 @@ struct LoginState {
     var password: String = ""
     
     var isLoading: Bool = false
-    var errorMessage: String? = nil
+    var errorMessage: ToastData? = nil
     var isSuccess: Bool = false
     var isPhoneConfirmationScreen: Bool = false
     var userProfile : UserProfile? = nil

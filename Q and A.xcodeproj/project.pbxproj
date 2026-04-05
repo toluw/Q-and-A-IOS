@@ -17,6 +17,10 @@
 		F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021342F812ACB0057C2F0 /* UserProfile.swift */; };
 		F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */; };
 		F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */; };
+		F55021422F82AE450057C2F0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021412F82AE450057C2F0 /* Toast.swift */; };
+		F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021432F82AFE70057C2F0 /* ToastBannerView.swift */; };
+		F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */; };
+		F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021472F82FC8F0057C2F0 /* ViewExtension.swift */; };
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -93,6 +97,10 @@
 		F55021342F812ACB0057C2F0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCommunityScreen.swift; sourceTree = "<group>"; };
+		F55021412F82AE450057C2F0 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		F55021432F82AFE70057C2F0 /* ToastBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBannerView.swift; sourceTree = "<group>"; };
+		F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBannerModifier.swift; sourceTree = "<group>"; };
+		F55021472F82FC8F0057C2F0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -243,6 +251,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F550213E2F82AE000057C2F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F55021412F82AE450057C2F0 /* Toast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F5941CCD2F22124300611063 = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +345,7 @@
 		F5BD4A202F2A9CF70020A8A4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F550213E2F82AE000057C2F0 /* Models */,
 				F5E144E12F7FB3AF00C10F3A /* Utility */,
 				F5C12E972F728F98000861B6 /* Views */,
 			);
@@ -405,6 +422,8 @@
 			isa = PBXGroup;
 			children = (
 				F5C12E982F728FCC000861B6 /* PrimaryButton.swift */,
+				F55021432F82AFE70057C2F0 /* ToastBannerView.swift */,
+				F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -548,6 +567,7 @@
 				F5E144FA2F7FEEA100C10F3A /* ApiClient.swift */,
 				F5E144FC2F7FEF6A00C10F3A /* AppError.swift */,
 				F5E144FE2F7FF0BF00C10F3A /* ApiErrorHandler.swift */,
+				F55021472F82FC8F0057C2F0 /* ViewExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -694,6 +714,7 @@
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
+				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
 				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
@@ -704,6 +725,7 @@
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
+				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F5E144FF2F7FF0BF00C10F3A /* ApiErrorHandler.swift in Sources */,
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
@@ -720,9 +742,11 @@
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
+				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
+				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
 				F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */,
 				F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */,
