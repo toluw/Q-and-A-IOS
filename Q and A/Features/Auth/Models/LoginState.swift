@@ -15,4 +15,5 @@ struct LoginState {
     var errorMessage: String? = nil
     var isSuccess: Bool = false
     var isPhoneConfirmationScreen: Bool = false
+    var userProfile : UserProfile? = nil
 }

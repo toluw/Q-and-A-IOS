@@ -133,7 +133,7 @@ struct MainScreen: View {
             
         case .faq: moveToFaq()
             
-        case .termsAndConditions:
+        case .termsAndConditions: termsAndConditions()
             
         case .about: about()
             
@@ -206,6 +206,8 @@ struct MainScreen: View {
     private func moveToCommunity(){
         
     }
+    
+    
     
 }
 

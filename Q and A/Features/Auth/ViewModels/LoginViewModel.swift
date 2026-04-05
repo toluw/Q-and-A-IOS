@@ -72,6 +72,7 @@ class LoginViewModel: ObservableObject{
                    state.isLoading = false
                    state.isSuccess = true
                    
+                   
                    print("Welcome \(response.data?.firstname ?? "")")
                    
                } catch {
@@ -89,6 +90,8 @@ class LoginViewModel: ObservableObject{
         UserSettings.phoneNumber = userData.phone
         UserSettings.profileImage = userData.image
         UserSettings.isLoggedIn = true
+        
+        state.userProfile = UserProfile()
         
         
     }

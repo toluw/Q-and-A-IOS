@@ -19,6 +19,7 @@ struct Q_and_AApp: App {
         WindowGroup {
             AppNavigator()
                 .environmentObject(appViewModel)
+                .preferredColorScheme(.light)
         }
     }
 }

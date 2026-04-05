@@ -16,7 +16,7 @@ struct MainStackView: View {
         //  Text("Main Stack")
         NavigationStack(path: $navVM.path) {
                    
-            MainScreen()
+            MainScreen(navVm: navVM)
                 .navigationDestination(for: MainRoute.self) { route in
                     destinationView(for: route)
              }
@@ -29,8 +29,8 @@ struct MainStackView: View {
     private func destinationView(for route: MainRoute) -> some View{
         switch route{
         
-        case .loginScreen :
-            LoginScreen()
+        case .mainCommunityScreen : MainCommunityScreen()
+            
             
         }
     }
