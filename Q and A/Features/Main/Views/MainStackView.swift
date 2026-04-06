@@ -32,6 +32,8 @@ struct MainStackView: View {
         case .mainCommunityScreen : MainCommunityScreen()
             
             
+        case .forgotPasswordScreen: ForgotPasswordScreen()
+        
         }
     }
     

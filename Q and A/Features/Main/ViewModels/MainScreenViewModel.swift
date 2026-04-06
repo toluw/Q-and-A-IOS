@@ -11,6 +11,8 @@ import Foundation
 class MainScreenViewModel: ObservableObject{
    
     @Published var userProfileState: UserProfile = UserProfile()
+    @Published var showLogin: Bool = false
+    @Published var loginSuccessMessage: ToastData? = nil
     
     
     func reInitUserProfile(){

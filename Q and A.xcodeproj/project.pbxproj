@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */; };
 		F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FD2F70374600BF414A /* IntroBottomCard.swift */; };
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		F526A7FD2F70374600BF414A /* IntroBottomCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroBottomCard.swift; sourceTree = "<group>"; };
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				F5C12E952F728E92000861B6 /* RoleSelectionScreen.swift */,
 				F5C12EA02F72A491000861B6 /* OnboardingNavigatorView.swift */,
 				F56A463F2F757F9800B3D2FC /* LoginScreen.swift */,
+				F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
+				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,

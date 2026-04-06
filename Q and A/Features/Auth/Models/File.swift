@@ -8,8 +8,8 @@
 import Foundation
 
 struct LoginResponse: Decodable {
-    let status: Bool?
-    let message: String?
+    let status: Bool
+    let message: String
     let data: UserData?
     
     struct UserData: Decodable {

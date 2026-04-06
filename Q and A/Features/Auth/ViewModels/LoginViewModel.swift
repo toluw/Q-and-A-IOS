@@ -58,6 +58,13 @@ class LoginViewModel: ObservableObject{
                       loginRequest: loginRequest
                    )
                    
+                  
+                   if(!response.status){
+                       state.isLoading = false
+                       state.errorMessage = ToastData(message: response.message, type: .error)
+                       return
+                   }
+                   
                    guard let data = response.data else {
                        state.isLoading = false
                        state.errorMessage = ToastData(message: "Something went wrong", type: .error)

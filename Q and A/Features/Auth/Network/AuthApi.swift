@@ -23,7 +23,7 @@ extension AuthAPI: TargetType{
     var path: String {
         switch self {
         case .login:
-            return "v2/login2.php"
+            return "v2/login3.php"
             
         }
     }
@@ -43,7 +43,7 @@ extension AuthAPI: TargetType{
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        return ["Content-Type": "application/json", "Key": apiKey]
     }
     
   

@@ -47,6 +47,21 @@ struct MainScreen: View {
                 }
             
         }
+        .sheet(isPresented: $viewModel.showLogin){
+            LoginScreen(
+                onDismiss: {
+                    viewModel.showLogin = false
+                }, onForgotpassword: {
+                    navVm.navigate(route: .forgotPasswordScreen)
+                }, onLoginSuccess: {userProfile in
+                    viewModel.showLogin = false
+                    viewModel.userProfileState = userProfile
+                    viewModel.loginSuccessMessage = ToastData(message: "Thanks \(userProfile.name)! You are now logged in", type: .success)
+                }
+                
+            )
+        }
+        .toastBanner(toast: $viewModel.loginSuccessMessage)
         .onAppear{
             viewModel.reInitUserProfile()
         }
@@ -168,7 +183,7 @@ struct MainScreen: View {
     }
     
     private func signIn(){
-        
+        viewModel.showLogin = true
     }
     
     private func signOut(){

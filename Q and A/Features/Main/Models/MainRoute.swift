@@ -10,5 +10,7 @@ import Foundation
 enum MainRoute: Hashable{
     
     case mainCommunityScreen
+    case forgotPasswordScreen
+    
     
 }
