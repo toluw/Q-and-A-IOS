@@ -33,6 +33,10 @@
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
 		F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59482C62F2CD7FF0030C541 /* SplashScreen.swift */; };
+		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
+		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
+		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
+		F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93392F85509A0003CAA5 /* ForgotPasswordRequest.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -64,7 +68,7 @@
 		F5E144EC2F7FB9F200C10F3A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F5E144EB2F7FB9F200C10F3A /* CombineMoya */; };
 		F5E144EE2F7FB9F200C10F3A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F5E144ED2F7FB9F200C10F3A /* Moya */; };
 		F5E144F02F7FC4F200C10F3A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144EF2F7FC4F200C10F3A /* LoginRequest.swift */; };
-		F5E144F22F7FC5E800C10F3A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144F12F7FC5E800C10F3A /* File.swift */; };
+		F5E144F22F7FC5E800C10F3A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144F12F7FC5E800C10F3A /* LoginResponse.swift */; };
 		F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144F42F7FC67C00C10F3A /* AuthApi.swift */; };
 		F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144F82F7FEE2A00C10F3A /* JsonExtractor.swift */; };
 		F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144FA2F7FEEA100C10F3A /* ApiClient.swift */; };
@@ -115,6 +119,10 @@
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5941CE02F22124500611063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F59482C62F2CD7FF0030C541 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
+		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
+		F5AE93392F85509A0003CAA5 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -144,7 +152,7 @@
 		F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		F5E144E82F7FB70900C10F3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F5E144EF2F7FC4F200C10F3A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		F5E144F12F7FC5E800C10F3A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		F5E144F12F7FC5E800C10F3A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		F5E144F42F7FC67C00C10F3A /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
 		F5E144F82F7FEE2A00C10F3A /* JsonExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExtractor.swift; sourceTree = "<group>"; };
 		F5E144FA2F7FEEA100C10F3A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -215,9 +223,12 @@
 				F5C12E8B2F717165000861B6 /* RoleFeature.swift */,
 				F5C12E8D2F7171A0000861B6 /* UserRole.swift */,
 				F5E144EF2F7FC4F200C10F3A /* LoginRequest.swift */,
-				F5E144F12F7FC5E800C10F3A /* File.swift */,
+				F5E144F12F7FC5E800C10F3A /* LoginResponse.swift */,
 				F5E7057B2F4DEA55001016B6 /* IntroPage.swift */,
 				F550212E2F80E73B0057C2F0 /* LoginState.swift */,
+				F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */,
+				F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */,
+				F5AE93392F85509A0003CAA5 /* ForgotPasswordRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 				F5C12E8F2F71856D000861B6 /* RoleSelectionViewModel.swift */,
 				F5C12E9A2F72A18E000861B6 /* OnboardingViewModel.swift */,
 				F55021302F80E7F70057C2F0 /* LoginViewModel.swift */,
+				F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -701,6 +713,7 @@
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
+				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
@@ -723,11 +736,13 @@
 				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
 				F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */,
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
-				F5E144F22F7FC5E800C10F3A /* File.swift in Sources */,
+				F5E144F22F7FC5E800C10F3A /* LoginResponse.swift in Sources */,
+				F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */,
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
+				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
 				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F5E144FF2F7FF0BF00C10F3A /* ApiErrorHandler.swift in Sources */,
@@ -747,6 +762,7 @@
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
+				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,

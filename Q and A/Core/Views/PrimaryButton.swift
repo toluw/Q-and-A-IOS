@@ -18,7 +18,8 @@ struct PrimaryButton: View {
             Button(action: action) {
                 Text(buttonText)
                     .frame(maxWidth: .infinity)
-                    .padding()
+                    .padding(.top, 10)
+                    .padding(.bottom, 10)
                     .background(Color.black)
                     .font(AppFont.medium(16))
                     .foregroundColor(.white)

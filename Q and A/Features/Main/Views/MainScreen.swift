@@ -52,6 +52,7 @@ struct MainScreen: View {
                 onDismiss: {
                     viewModel.showLogin = false
                 }, onForgotpassword: {
+                    viewModel.showLogin = false
                     navVm.navigate(route: .forgotPasswordScreen)
                 }, onLoginSuccess: {userProfile in
                     viewModel.showLogin = false

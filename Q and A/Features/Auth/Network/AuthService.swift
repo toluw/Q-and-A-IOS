@@ -11,10 +11,12 @@ import Foundation
 protocol AuthServiceProtocol {
     
     func login(loginRequest: LoginRequest) async throws -> LoginResponse
+    func forgotPassword(forgotPasswordRequest: ForgotPasswordRequest) async throws -> GeneralResponse
 }
 
 
 final class AuthService: AuthServiceProtocol{
+    
     
     private let apiClient = APIClient<AuthAPI>()
     
@@ -27,6 +29,16 @@ final class AuthService: AuthServiceProtocol{
                 data.jsonString(forKey: "message") ?? "An error occured"
             }
         );        
+    }
+    
+    func forgotPassword(forgotPasswordRequest: ForgotPasswordRequest) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .forgotPassword(payload: forgotPasswordRequest),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
     }
     
     
