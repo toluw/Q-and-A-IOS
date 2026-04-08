@@ -57,7 +57,18 @@ struct MainScreen: View {
                 }, onLoginSuccess: {userProfile in
                     viewModel.showLogin = false
                     viewModel.userProfileState = userProfile
-                    viewModel.loginSuccessMessage = ToastData(message: "Thanks \(userProfile.name)! You are now logged in", type: .success)
+                 //   viewModel.loginSuccessMessage = ToastData(message: "Thanks
+                    // \(userProfile.name)! You are now logged in", type: .success)
+                    BottomSheetManager.shared.show(
+                        BottomSheetData(
+                            type: .success,
+                            message: "Thanks \(userProfile.name)! You are now logged in",
+                            actionTitle: "Continue",
+                            action: {
+                               
+                            }
+                        )
+                    )
                 }
                 
             )

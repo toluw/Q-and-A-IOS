@@ -11,6 +11,7 @@ struct ForgotPasswordScreen: View {
     
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: ForgotPasswordViewModel = .init()
+    @ObservedObject var navVm: MainNavViewModel
     
     var body: some View {
         VStack(alignment: .leading){
@@ -59,9 +60,15 @@ struct ForgotPasswordScreen: View {
         .frame(maxWidth: .infinity)
         .padding(.leading, 16)
          .padding(.trailing, 16)
+         .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+             if(newValue){
+                 navVm.navigate(route: .confirmOtpScreen(otp: viewModel.state.code))
+             }
+             
+         }
     }
 }
 
 #Preview {
-    ForgotPasswordScreen()
+    ForgotPasswordScreen(navVm: MainNavViewModel())
 }

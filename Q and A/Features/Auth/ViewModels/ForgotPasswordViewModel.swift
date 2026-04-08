@@ -11,7 +11,7 @@ import Foundation
 @MainActor
 class ForgotPasswordViewModel: ObservableObject {
     
-    @Published var state = LoginState()
+    @Published var state = ForgotPasswordState()
     
     private let service: AuthServiceProtocol
       
@@ -37,7 +37,34 @@ class ForgotPasswordViewModel: ObservableObject {
     
     func forgotPassword(){
         
+        guard validate() else { return }
+        
+        state.isLoading = true
+        
+        Task{
+            do {
+                
+                state.code = String(Int.random(in: 100000...999999))
+                
+                let forgotPasswordRequest = ForgotPasswordRequest(email: state.email, code: state.code)
+                
+                let response = try await service.forgotPassword(forgotPasswordRequest: forgotPasswordRequest)
+                
+                state.isLoading = false
+                state.isSuccess = true
+                
+                
+            } catch {
+                state.isLoading = false
+                
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: forgotPassword)
+            }
+        }
+        
     }
+    
+    
+   
     
     
     

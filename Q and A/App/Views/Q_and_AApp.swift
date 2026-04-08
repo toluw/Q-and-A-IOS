@@ -13,13 +13,12 @@ struct Q_and_AApp: App {
     @StateObject private var appViewModel = AppViewModel()
     
     
-  
-    
-    var body: some Scene {
+     var body: some Scene {
         WindowGroup {
             AppNavigator()
                 .environmentObject(appViewModel)
                 .preferredColorScheme(.light)
+                .globalBottomSheet()
         }
     }
 }

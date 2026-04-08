@@ -13,4 +13,8 @@ extension View {
     func toastBanner(toast: Binding<ToastData?>) -> some View {
         self.modifier(ToastBannerModifier(toast: toast))
     }
+    
+    func globalBottomSheet() -> some View {
+            self.modifier(GlobalBottomSheetModifier())
+    }
 }

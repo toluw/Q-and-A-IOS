@@ -37,6 +37,12 @@
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
 		F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93392F85509A0003CAA5 /* ForgotPasswordRequest.swift */; };
+		F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE933B2F8638BE0003CAA5 /* BottomSheetData.swift */; };
+		F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE933D2F8639540003CAA5 /* BottomSheetManager.swift */; };
+		F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE933F2F863A100003CAA5 /* GlobalBottomSheetModifier.swift */; };
+		F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93412F863AB10003CAA5 /* GlobalBottomSheetView.swift */; };
+		F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93432F86451F0003CAA5 /* AppUtils.swift */; };
+		F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93452F866BDB0003CAA5 /* ConfirmOtpScreen.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -123,6 +129,12 @@
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
 		F5AE93392F85509A0003CAA5 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		F5AE933B2F8638BE0003CAA5 /* BottomSheetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetData.swift; sourceTree = "<group>"; };
+		F5AE933D2F8639540003CAA5 /* BottomSheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetManager.swift; sourceTree = "<group>"; };
+		F5AE933F2F863A100003CAA5 /* GlobalBottomSheetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalBottomSheetModifier.swift; sourceTree = "<group>"; };
+		F5AE93412F863AB10003CAA5 /* GlobalBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalBottomSheetView.swift; sourceTree = "<group>"; };
+		F5AE93432F86451F0003CAA5 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
+		F5AE93452F866BDB0003CAA5 /* ConfirmOtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOtpScreen.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -211,6 +223,7 @@
 				F5C12EA02F72A491000861B6 /* OnboardingNavigatorView.swift */,
 				F56A463F2F757F9800B3D2FC /* LoginScreen.swift */,
 				F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */,
+				F5AE93452F866BDB0003CAA5 /* ConfirmOtpScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				F55021412F82AE450057C2F0 /* Toast.swift */,
+				F5AE933B2F8638BE0003CAA5 /* BottomSheetData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,6 +453,8 @@
 				F5C12E982F728FCC000861B6 /* PrimaryButton.swift */,
 				F55021432F82AFE70057C2F0 /* ToastBannerView.swift */,
 				F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */,
+				F5AE933F2F863A100003CAA5 /* GlobalBottomSheetModifier.swift */,
+				F5AE93412F863AB10003CAA5 /* GlobalBottomSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -583,6 +599,8 @@
 				F5E144FC2F7FEF6A00C10F3A /* AppError.swift */,
 				F5E144FE2F7FF0BF00C10F3A /* ApiErrorHandler.swift */,
 				F55021472F82FC8F0057C2F0 /* ViewExtension.swift */,
+				F5AE933D2F8639540003CAA5 /* BottomSheetManager.swift */,
+				F5AE93432F86451F0003CAA5 /* AppUtils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -711,6 +729,8 @@
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
+				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
+				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
@@ -725,11 +745,13 @@
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
+				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
+				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
@@ -749,6 +771,7 @@
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
+				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
@@ -757,6 +780,7 @@
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
+				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,

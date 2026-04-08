@@ -32,8 +32,10 @@ struct MainStackView: View {
         case .mainCommunityScreen : MainCommunityScreen()
             
             
-        case .forgotPasswordScreen: ForgotPasswordScreen()
+        case .forgotPasswordScreen: ForgotPasswordScreen(navVm: navVM)
         
+        case .confirmOtpScreen(otp: let otp): ConfirmOtpScreen(otp: otp)
+           
         }
     }
     

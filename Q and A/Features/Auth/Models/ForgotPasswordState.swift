@@ -13,5 +13,7 @@ struct ForgotPasswordState{
     var email: String = ""
     var isLoading: Bool = false
     var errorMessage: ToastData? = nil
+    var isSuccess: Bool = false
+    var code: String = ""
     
 }
