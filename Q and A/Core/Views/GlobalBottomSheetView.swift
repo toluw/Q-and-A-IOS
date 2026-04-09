@@ -29,16 +29,20 @@ struct GlobalBottomSheetView: View {
                     .padding(.horizontal)
                 
                 if let title = data.actionTitle {
-                    Button(title) {
+                    Button(action: {
                         dismiss()
                         data.action()
+                    }) {
+                      Text(title)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(buttonColor)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                            .padding(.horizontal)
+                        
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(buttonColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-                    .padding(.horizontal)
+                    
                 }
                 
                 Button("Close") {

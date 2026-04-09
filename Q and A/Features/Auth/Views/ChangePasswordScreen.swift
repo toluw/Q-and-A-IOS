@@ -60,7 +60,7 @@ struct ChangePasswordScreen: View {
                             if isPasswordVisible {
                                 TextField("Confirm Password", text: $viewModel.state.confirmPassword)
                                  } else {
-                                        SecureField("Confirm Password", text: $viewModel.state.password)
+                                        SecureField("Confirm Password", text: $viewModel.state.confirmPassword)
                                        }
                                    }
                                    .textFieldStyle(.roundedBorder)
@@ -82,12 +82,14 @@ struct ChangePasswordScreen: View {
                 }.frame(maxWidth: .infinity)
                 
                 
+                
                 Spacer()
                 Spacer()
                 Spacer()
                 
                 
-            }
+            }.padding(.leading, 16)
+            .padding(.trailing, 16)
             
             
             
@@ -96,15 +98,13 @@ struct ChangePasswordScreen: View {
                    Color.black.opacity(0.4)
                        .ignoresSafeArea()
                    
-                   ProgressView("Logging in...")
+                   ProgressView()
                        .padding()
                        .background(Color.white)
                        .cornerRadius(10)
                }
             
         }.frame(maxWidth: .infinity)
-            .padding(.leading, 16)
-             .padding(.trailing, 16)
              .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
                  if(newValue){
                      showSuccessMessage(message: "Password changed successfully, login to proceed", actionTitle: "Login", action: {

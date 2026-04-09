@@ -50,6 +50,12 @@ class ForgotPasswordViewModel: ObservableObject {
                 
                 let response = try await service.forgotPassword(forgotPasswordRequest: forgotPasswordRequest)
                 
+                if(!response.status){
+                    state.isLoading = false
+                    showErrorMessage(message: response.message, actionTitle: "Retry", action: forgotPassword)
+                    return
+                }
+                
                 state.isLoading = false
                 state.isSuccess = true
                 

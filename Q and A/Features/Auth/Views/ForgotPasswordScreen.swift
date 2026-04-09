@@ -54,22 +54,21 @@ struct ForgotPasswordScreen: View {
                 
              
                 
-            }
+            }.padding(.leading, 16)
+             .padding(.trailing, 16)
             
             
             if viewModel.state.isLoading {
                    Color.black.opacity(0.4)
                        .ignoresSafeArea()
                    
-                   ProgressView("Logging in...")
+                   ProgressView()
                        .padding()
                        .background(Color.white)
                        .cornerRadius(10)
                }
             
         }.frame(maxWidth: .infinity)
-            .padding(.leading, 16)
-             .padding(.trailing, 16)
              .toastBanner(toast: $viewModel.state.errorMessage)
              .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
                  if(newValue){
