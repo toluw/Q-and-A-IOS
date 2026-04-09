@@ -15,14 +15,16 @@ struct GlobalBottomSheetModifier: ViewModifier {
            ZStack {
                content
                
-               if let sheet = manager.sheet {
-                   
+               if(manager.sheet != nil){
                    // 🔥 Dim background
                    Color.black.opacity(0.3)
                        .ignoresSafeArea()
-                       .onTapGesture {
-                           manager.dismiss()
-                       }
+                       
+               }
+               
+               if let sheet = manager.sheet {
+                   
+                 
                    
                    VStack {
                        Spacer()

@@ -23,4 +23,14 @@ class MainNavViewModel: ObservableObject {
     func popToRoot() {
         path.removeAll()
     }
+    
+    func pop(n: Int){
+        
+        guard n > 0, path.count > n - 1 else {
+               return
+           }
+           
+       path.removeLast(n)
+        
+    }
 }

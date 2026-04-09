@@ -11,6 +11,7 @@ enum MainRoute: Hashable{
     
     case mainCommunityScreen
     case forgotPasswordScreen
-    case confirmOtpScreen(otp: String)
+    case confirmOtpScreen(otp: String, email: String)
+    case changePassword(email: String)
     
 }

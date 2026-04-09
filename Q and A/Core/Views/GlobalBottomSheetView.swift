@@ -47,7 +47,7 @@ struct GlobalBottomSheetView: View {
                 .foregroundColor(.secondary)
                 .padding(.bottom, 10)
             }
-            .background(.ultraThinMaterial)
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding()
             .shadow(radius: 10)

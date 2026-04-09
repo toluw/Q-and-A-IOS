@@ -9,63 +9,77 @@ import SwiftUI
 
 struct ForgotPasswordScreen: View {
     
-    @Environment(\.dismiss) var dismiss
+
     @StateObject var viewModel: ForgotPasswordViewModel = .init()
     @ObservedObject var navVm: MainNavViewModel
     
     var body: some View {
-        VStack(alignment: .leading){
-            Button{
-               dismiss()
-            }label:{
-               Image("back")
-            }.frame(maxWidth: .infinity, alignment: .leading)
+        
+        ZStack(){
             
-            
-            Image("qanda")
-                .frame(maxWidth: .infinity, alignment: .center)
-            
-            
-            
-            
-            Spacer()
-            
-            VStack(alignment: .center){
+            VStack(alignment: .leading){
                 
-              Text("Forgot your password?")
-                    .font(AppFont.semi_bold(16))
-                    .foregroundColor(Color.black)
+                Image("qanda")
+                    .frame(maxWidth: .infinity, alignment: .center)
                 
-              Text("Enter the email address associated with your account")
-                    .padding(.top, 14)
-                    .font(AppFont.regular(14))
                 
-                TextField("Email", text: $viewModel.state.email)
-                    .textFieldStyle(.roundedBorder)
-                    .keyboardType(.emailAddress)
-                    .padding(.top, 14)
+                Spacer()
+                Spacer()
                 
-                PrimaryButton(buttonText: "Retrieve Password", action: {
+                VStack(alignment: .center){
                     
-                }).padding(.top, 30)
+                  Text("Forgot your password?")
+                        .font(AppFont.semi_bold(16))
+                        .foregroundColor(Color.black)
+                    
+                  Text("Enter the email address associated with your account")
+                        .padding(.top, 14)
+                        .font(AppFont.regular(14))
+                    
+                    TextField("Email", text: $viewModel.state.email)
+                        .textFieldStyle(.roundedBorder)
+                        .keyboardType(.emailAddress)
+                        .padding(.top, 14)
+                    
+                    PrimaryButton(buttonText: "Retrieve Password", action: {
+                        viewModel.forgotPassword()
+                    }).padding(.top, 30)
+                    
+                }.frame(maxWidth: .infinity)
                 
-            }.frame(maxWidth: .infinity)
-            
-            Spacer()
-            
-            
-         
-            
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.leading, 16)
-         .padding(.trailing, 16)
-         .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
-             if(newValue){
-                 navVm.navigate(route: .confirmOtpScreen(otp: viewModel.state.code))
-             }
+                Spacer()
+                Spacer()
+                Spacer()
+                
+                
              
-         }
+                
+            }
+            
+            
+            if viewModel.state.isLoading {
+                   Color.black.opacity(0.4)
+                       .ignoresSafeArea()
+                   
+                   ProgressView("Logging in...")
+                       .padding()
+                       .background(Color.white)
+                       .cornerRadius(10)
+               }
+            
+        }.frame(maxWidth: .infinity)
+            .padding(.leading, 16)
+             .padding(.trailing, 16)
+             .toastBanner(toast: $viewModel.state.errorMessage)
+             .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+                 if(newValue){
+                     navVm.navigate(route: .confirmOtpScreen(otp: viewModel.state.code, email: viewModel.state.email))
+                 }
+                 
+             }
+        
+      
+        
     }
 }
 

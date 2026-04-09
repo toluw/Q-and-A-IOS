@@ -11,18 +11,14 @@ import SwiftUI
 struct ConfirmOtpScreen: View {
     
     let otp: String
+    let email: String
     @State var enteredCode = ""
-    @Environment(\.dismiss) var dismiss
     @State var wrongCodeMessage: ToastData? = nil
+    @ObservedObject var navVm: MainNavViewModel
     
     var body: some View {
         
         VStack(alignment: .leading){
-            Button{
-                dismiss()
-            }label:{
-                Image("back")
-            }.frame(maxWidth: .infinity, alignment: .leading)
             
             
             Image("qanda")
@@ -30,7 +26,7 @@ struct ConfirmOtpScreen: View {
             
             
             
-            
+            Spacer()
             Spacer()
             
             VStack(alignment: .center){
@@ -60,6 +56,8 @@ struct ConfirmOtpScreen: View {
             }.frame(maxWidth: .infinity)
             
             Spacer()
+            Spacer()
+            Spacer()
             
             
             
@@ -82,12 +80,12 @@ struct ConfirmOtpScreen: View {
             return
         }
         
-        
+        navVm.navigate(route: .changePassword(email: email))
         
         
     }
 }
 
 #Preview {
-    ConfirmOtpScreen(otp: "849300")
+    ConfirmOtpScreen(otp: "849300", email: "", navVm: MainNavViewModel())
 }

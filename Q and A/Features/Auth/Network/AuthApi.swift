@@ -12,6 +12,7 @@ import Moya
 enum AuthAPI {
     case login(payload: LoginRequest)
     case forgotPassword(payload: ForgotPasswordRequest)
+    case changePassword(payload: ChangePasswordRequest)
 }
 
 
@@ -26,8 +27,10 @@ extension AuthAPI: TargetType{
         case .login:
             return "v2/login3.php"
             
-        case .forgotPassword(payload: let payload):
+        case .forgotPassword:
             return "v2/forgot_password.php"
+        case .changePassword:
+            return "v2/change_password.php"
         }
     }
     
@@ -35,7 +38,9 @@ extension AuthAPI: TargetType{
         switch self {
         case .login:
             .post
-        case .forgotPassword(payload: let payload):
+        case .forgotPassword:
+            .post
+        case .changePassword:
             .post
         }
     }
@@ -45,6 +50,8 @@ extension AuthAPI: TargetType{
            case .login(let payload):
             return .requestJSONEncodable(payload)
         case .forgotPassword(payload: let payload):
+            return .requestJSONEncodable(payload)
+        case .changePassword(payload: let payload):
             return .requestJSONEncodable(payload)
         }
     }
