@@ -73,6 +73,7 @@ struct ForgotPasswordScreen: View {
              .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
                  if(newValue){
                      navVm.navigate(route: .confirmOtpScreen(otp: viewModel.state.code, email: viewModel.state.email))
+                     viewModel.state.isSuccess = false
                  }
                  
              }
