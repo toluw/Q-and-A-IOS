@@ -8,12 +8,13 @@
 import Foundation
 
 
-func showErrorMessage(message: String, actionTitle: String, action: @escaping () -> Void){
+func showErrorMessage(message: String, actionTitle: String, showCancel: Bool = true, action: @escaping () -> Void){
     BottomSheetManager.shared.show(
         BottomSheetData(
             type: .error,
             message: message,
             actionTitle: actionTitle,
+            showCancel: showCancel,
             action: action
             
         )
@@ -21,12 +22,27 @@ func showErrorMessage(message: String, actionTitle: String, action: @escaping ()
 }
 
 
-func showSuccessMessage(message: String, actionTitle: String, action: @escaping () -> Void){
+func showSuccessMessage(message: String, actionTitle: String, showCancel: Bool = true, action: @escaping () -> Void){
     BottomSheetManager.shared.show(
         BottomSheetData(
             type: .success,
             message: message,
             actionTitle: actionTitle,
+            showCancel: showCancel,
+            action: action
+            
+        )
+    )
+}
+
+
+func showNoticeMessage(message: String, actionTitle: String, showCancel: Bool = true, action: @escaping () -> Void){
+    BottomSheetManager.shared.show(
+        BottomSheetData(
+            type: .notice,
+            message: message,
+            actionTitle: actionTitle,
+            showCancel: showCancel,
             action: action
             
         )

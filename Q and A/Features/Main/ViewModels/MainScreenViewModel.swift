@@ -12,7 +12,7 @@ class MainScreenViewModel: ObservableObject{
    
     @Published var userProfileState: UserProfile = UserProfile()
     @Published var showLogin: Bool = false
-    @Published var loginSuccessMessage: ToastData? = nil
+    @Published var logoutMessage: ToastData? = nil
     
     
     func reInitUserProfile(){

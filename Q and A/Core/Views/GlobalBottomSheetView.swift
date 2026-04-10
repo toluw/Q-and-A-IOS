@@ -45,11 +45,20 @@ struct GlobalBottomSheetView: View {
                     
                 }
                 
-                Button("Close") {
-                    dismiss()
+                if(data.showCancel){
+                    Button(action: {
+                        dismiss()
+                    }){
+                        Text("Close")
+                            .foregroundColor(.secondary)
+                            .padding(.bottom, 10)
+                    }
+                    
+                    
+                }else{
+                    Spacer().frame(height: 10)
                 }
-                .foregroundColor(.secondary)
-                .padding(.bottom, 10)
+                
             }
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -61,6 +70,8 @@ struct GlobalBottomSheetView: View {
             switch data.type {
             case .error: return "xmark.circle.fill"
             case .success: return "checkmark.circle.fill"
+            case .notice: return "exclamationmark.circle.fill"
+                
             }
         }
         
@@ -68,6 +79,7 @@ struct GlobalBottomSheetView: View {
             switch data.type {
             case .error: return .red
             case .success: return .green
+            case .notice: return .orange
             }
         }
         
@@ -75,12 +87,14 @@ struct GlobalBottomSheetView: View {
             switch data.type {
             case .error: return .red
             case .success: return .green
+            case .notice: return .orange
+                
             }
         }
 }
 
 #Preview {
-    let bottomSheetData = BottomSheetData(type: .error, message: "An error occured", actionTitle: "Continue", action: {
+    let bottomSheetData = BottomSheetData(type: .error, message: "An error occured", actionTitle: "Continue", showCancel: true, action: {
         
     }
         
