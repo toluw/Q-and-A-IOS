@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct ErrorView: View {
+    
+    let message: String
+    let onRetry: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 16){
+            Image(systemName: "xmark.circle.fill")
+                .font(.system(size: 40))
+                .foregroundColor(.red)
+            
+            Text(message)
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
+            
+            Button(action: {
+                onRetry()
+            }) {
+              Text("Retry")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+                
+            }
+            
+            
+            
+            
+        }
     }
 }
 
 #Preview {
-    ErrorView()
+    ErrorView(message: "An error occured.", onRetry: {})
 }

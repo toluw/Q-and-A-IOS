@@ -85,6 +85,9 @@
 		F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144FC2F7FEF6A00C10F3A /* AppError.swift */; };
 		F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E145002F7FF63A00C10F3A /* AuthService.swift */; };
 		F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E145022F80599E00C10F3A /* NavMenu.swift */; };
+		F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8902F8D2DA7001F734D /* BaseCat.swift */; };
+		F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8922F8D3B82001F734D /* ErrorView.swift */; };
+		F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -184,6 +187,9 @@
 		F5E144FC2F7FEF6A00C10F3A /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		F5E145002F7FF63A00C10F3A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F5E145022F80599E00C10F3A /* NavMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenu.swift; sourceTree = "<group>"; };
+		F5E1D8902F8D2DA7001F734D /* BaseCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCat.swift; sourceTree = "<group>"; };
+		F5E1D8922F8D3B82001F734D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtItemView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -477,6 +483,7 @@
 				F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */,
 				F5AE933F2F863A100003CAA5 /* GlobalBottomSheetModifier.swift */,
 				F5AE93412F863AB10003CAA5 /* GlobalBottomSheetView.swift */,
+				F5E1D8922F8D3B82001F734D /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -571,6 +578,7 @@
 			children = (
 				F5FEC40E2F892D30004C8D53 /* ParentCategoriesResponse.swift */,
 				F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */,
+				F5E1D8902F8D2DA7001F734D /* BaseCat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				F5C12EB62F72C5AE000861B6 /* MainCbtScreen.swift */,
+				F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -825,6 +834,8 @@
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
+				F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */,
+				F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
@@ -834,6 +845,7 @@
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
+				F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */,
 				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
 				F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */,

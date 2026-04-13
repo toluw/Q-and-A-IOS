@@ -10,7 +10,7 @@ import Foundation
 struct MainCbtState{
     
     var isLoading: Bool = false
-    var items: [DataModel] = []
+    var items: [BaseCat] = []
     var errorMessage: String? = nil
     
     

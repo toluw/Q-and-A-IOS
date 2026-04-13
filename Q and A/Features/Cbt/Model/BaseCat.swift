@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+struct BaseCat: Identifiable{
+    let id: String = UUID().uuidString
+    let data: DataModel
+    let image: String
+    let background: String
+    
+}

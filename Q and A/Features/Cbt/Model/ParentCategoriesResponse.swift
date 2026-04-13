@@ -11,7 +11,7 @@ import Foundation
 struct ParentCategoriesResponse: Codable{
     
     let status: Bool
-    let message: Bool
+    let message: String
     let data: [DataModel]
 }
 
@@ -82,7 +82,7 @@ struct CatData: Codable {
         case mockDescription = "mock_description"
         case startDate = "start_date"
         case endTime = "end_time"
-        case startTime = "star_time"
+        case startTime = "start_time"
         case mockParent = "mock_parent"
         case prizeMoney = "prize_money"
         case sponsor
@@ -138,4 +138,4 @@ struct Sponsor: Codable {
         case sponsorImage = "sponsor_image"
     }
 }
-,
+

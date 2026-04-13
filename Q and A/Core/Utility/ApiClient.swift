@@ -18,7 +18,7 @@ class APIClient<T: TargetType> {
     
     private let provider: MoyaProvider<T>
     
-    init(provider: MoyaProvider<T> = MoyaProvider<T>(plugins: [NetworkLoggerPlugin()])) {
+    init(provider: MoyaProvider<T> = MoyaProvider<T>(plugins: [NetworkLoggerPlugin(configuration: .init(logOptions: .verbose))])) {
         self.provider = provider
     }
     
