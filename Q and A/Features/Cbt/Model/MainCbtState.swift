@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct MainCbtState{
+    
+    var isLoading: Bool = false
+    var items: [DataModel] = []
+    var errorMessage: String? = nil
+    
+    
+}

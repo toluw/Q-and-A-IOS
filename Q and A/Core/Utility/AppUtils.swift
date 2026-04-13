@@ -48,3 +48,11 @@ func showNoticeMessage(message: String, actionTitle: String, showCancel: Bool = 
         )
     )
 }
+
+extension Dictionary where Value == Any {
+    mutating func addOptional(key: Key, value: Any?) {
+        if let value = value {
+            self[key] = value
+        }
+    }
+}
