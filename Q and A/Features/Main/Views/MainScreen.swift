@@ -99,7 +99,7 @@ struct MainScreen: View {
        private var contentView: some View {
            switch selectedTab {
            case .cbt:
-               MainCbtScreen(){
+               MainCbtScreen(navVm: navVm){
                    openDrawer()
                }
                    

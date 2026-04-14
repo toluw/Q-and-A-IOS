@@ -37,6 +37,14 @@ struct MainStackView: View {
         case .confirmOtpScreen(otp: let otp, email: let email): ConfirmOtpScreen(otp: otp,email:email, navVm: navVM)
            
         case .changePassword(email: let email): ChangePasswordScreen(email: email, navVm: navVM)
+        case .parentCatScreen:
+             ParentCatScreen()
+        case .examSubCatScreen:
+             ExamSubCatScreen()
+        case .examCatScreen:
+             ExamCatScreen()
+        case .mockDescriptionScreen:
+             MockDescriptionScreen()
         }
     }
     

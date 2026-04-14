@@ -9,8 +9,11 @@ import SwiftUI
 
 struct MainCbtScreen: View {
     
+    @ObservedObject var navVm: MainNavViewModel
     let onShowNavDrawer: () -> Void
     @StateObject var viewModel: MainCbtViewModel = .init()
+    @StateObject var cbtViewModel: CbtViewModel = .init()
+    
     
     let columns = [
             GridItem(.flexible(), spacing: 20),
@@ -76,7 +79,7 @@ struct MainCbtScreen: View {
                                 LazyVGrid(columns: columns, spacing: 20){
                                     ForEach(viewModel.state.items){item in
                                         MainCbtItemView(item: item){
-                                            
+                                            handleItemClick(item: item.data)
                                         }
                                     }
                                 }.padding(.leading, 16)
@@ -104,8 +107,40 @@ struct MainCbtScreen: View {
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         
     }
+    
+    private func handleItemClick(item: DataModel){
+        if(!item.isCat){
+            
+        }else{
+            if(item.catData?.isMock == true){
+                cbtViewModel.parentCategoriesData = item
+                cbtViewModel.mockCatData = item
+                moveToMockExam()
+            }
+            else if (item.catData?.subcat.isEmpty ?? true){
+                cbtViewModel.parentCategoriesData = item
+                moveToCatPage()
+            }else{
+                cbtViewModel.parentCategoriesData = item
+                moveToSubCatPage()
+            }
+        }
+        
+    }
+    
+    private func moveToSubCatPage(){
+        navVm.navigate(route: .examSubCatScreen)
+    }
+    
+    private func moveToMockExam(){
+        navVm.navigate(route: .mockDescriptionScreen)
+    }
+    
+    private func moveToCatPage(){
+        navVm.navigate(route: .examCatScreen)
+    }
 }
 
 #Preview {
-    MainCbtScreen(onShowNavDrawer: {})
+    MainCbtScreen(navVm: MainNavViewModel(), onShowNavDrawer: {})
 }
