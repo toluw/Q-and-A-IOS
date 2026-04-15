@@ -17,95 +17,113 @@ struct MainCbtScreen: View {
     
     
     let columns = [
-            GridItem(.flexible(), spacing: 20),
-            GridItem(.flexible(), spacing: 20)
+            GridItem(.flexible(), spacing: 21),
+            GridItem(.flexible(), spacing: 21)
         ]
     
     var body: some View {
         
-        VStack{
+        ZStack{
             
-            HStack(){
+            VStack{
                 
-                Button(){
-                    onShowNavDrawer()
-                }label: {
-                    Image("hamburger")
-                }
-                
-                TextField("Search CBT..", text: .constant(""))
-                    .padding(.leading,16)
-                    .padding(.trailing,16)
-                    .textFieldStyle(.roundedBorder)
+                HStack(){
                     
-                
-                Button(){
-                    
-                }label: {
-                    Image("info")
-                }
-                
-                Button(){
-                    
-                    
-                }label: {
-                    Image("cart")
-                }.padding(.leading, 8)
-                
-            }.frame(maxWidth: .infinity)
-             .padding(.leading, 16)
-             .padding(.trailing, 16)
-            
-            
-            ZStack(){
-                
-                if(viewModel.state.isLoading){
-                   
-                    ProgressView()
-                    
-                }else{
-                    if(viewModel.state.errorMessage != nil){
-                        
-                        ErrorView(message: viewModel.state.errorMessage!){
-                            viewModel.loadData()
-                        }
-                       
-                    }else{
-                       
-                        VStack{
-                            
-                            Spacer().frame(height: 35)
-                            
-                            
-                                LazyVGrid(columns: columns, spacing: 20){
-                                    ForEach(viewModel.state.items){item in
-                                        MainCbtItemView(item: item){
-                                            handleItemClick(item: item.data)
-                                        }
-                                    }
-                                }.padding(.leading, 16)
-                                 .padding(.trailing, 16)
-                                
-                            
-                            
-                            Spacer()
-                            
-                            
-                        }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                        
-                        
-                        
+                    Button(){
+                        onShowNavDrawer()
+                    }label: {
+                        Image("hamburger")
                     }
-                }
+                    
+                    TextField("Search CBT..", text: .constant(""))
+                        .padding(.leading,16)
+                        .padding(.trailing,16)
+                        .textFieldStyle(.roundedBorder)
+                        
+                    
+                    Button(){
+                        
+                    }label: {
+                        Image("info")
+                    }
+                    
+                    Button(){
+                        
+                        
+                    }label: {
+                        Image("cart")
+                    }.padding(.leading, 8)
+                    
+                }.frame(maxWidth: .infinity)
+                 .padding(.leading, 21)
+                 .padding(.trailing, 21)
+                
+                
+                ZStack(){
+                    
+                    if(viewModel.state.isLoading){
+                       
+                        ProgressView()
+                        
+                    }else{
+                        if(viewModel.state.errorMessage != nil){
+                            
+                            ErrorView(message: viewModel.state.errorMessage!){
+                                viewModel.loadData()
+                            }
+                           
+                        }else{
+                           
+                            VStack{
+                                
+                                Spacer().frame(height: 40)
+                                
+                                
+                                    LazyVGrid(columns: columns, spacing: 20){
+                                        ForEach(viewModel.state.items){item in
+                                            MainCbtItemView(item: item){
+                                                handleItemClick(item: item.data)
+                                            }
+                                        }
+                                    }.padding(.leading, 16)
+                                     .padding(.trailing, 16)
+                                    
+                                
+                                
+                                Spacer()
+                                
+                                
+                            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                            
+                            
+                            
+                        }
+                    }
+                    
+                 
+                    
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                
+                
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .onAppear{
-                    viewModel.loadData()
-                }
+            
+            if viewModel.state.showBlockedLoader {
+                   Color.black.opacity(0.4)
+                       .ignoresSafeArea()
+                   
+                   ProgressView()
+                       .padding()
+                       .background(Color.white)
+                       .cornerRadius(10)
+               }
             
             
-            
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }.onAppear{
+            viewModel.loadData()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
          .sheet(isPresented: $viewModel.showLogin){
                 LoginScreen(
                     onDismiss: {
@@ -124,12 +142,29 @@ struct MainCbtScreen: View {
                     
                 )
             }
+         .sheet(isPresented: $viewModel.state.showCatBottomSheet){
+             
+             if(viewModel.state.parentCatData != nil){
+                 CbtCategoryBottomSheetView(items: viewModel.state.parentCatData!){data in
+                     viewModel.state.showCatBottomSheet = false
+                     handleCatSelection(item: data)
+                 }
+                 .presentationDetents([.fraction(0.8)])
+                     
+                 
+             }
+             
+         }
+        
+        
+       
         
     }
     
-    private func handleItemClick(item: DataModel){
+    private func handleCatSelection(item: DataModel){
         if(!item.isCat){
-            
+            cbtViewModel.parentCategoriesData = item
+            moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock)
         }else{
             if(item.catData?.isMock == true){
                 cbtViewModel.parentCategoriesData = item
@@ -145,6 +180,31 @@ struct MainCbtScreen: View {
             }
         }
         
+    }
+    
+    private func handleItemClick(item: DataModel){
+        if(!item.isCat){
+            print("nav_result", "item not cat")
+            viewModel.getParentCatData(level: item.level, cbcId: item.cbcId, isMock: item.isMock)
+        }else{
+            if(item.catData?.isMock == true){
+                cbtViewModel.parentCategoriesData = item
+                cbtViewModel.mockCatData = item
+                moveToMockExam()
+            }
+            else if (item.catData?.subcat.isEmpty ?? true){
+                cbtViewModel.parentCategoriesData = item
+                moveToCatPage()
+            }else{
+                cbtViewModel.parentCategoriesData = item
+                moveToSubCatPage()
+            }
+        }
+        
+    }
+    
+    private func moveToParentCatPage(title: String, cbcId: String, level: String, isMock: String){
+        navVm.navigate(route: .parentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock))
     }
     
     private func moveToSubCatPage(){

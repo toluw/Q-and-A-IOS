@@ -89,6 +89,7 @@ class MainCbtViewModel: ObservableObject{
                 let response = try await service.getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock)
                 state.showBlockedLoader = false
                 state.parentCatData = response.data
+                state.showCatBottomSheet = true
                 
                 
             } catch {

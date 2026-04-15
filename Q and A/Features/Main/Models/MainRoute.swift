@@ -13,7 +13,7 @@ enum MainRoute: Hashable{
     case forgotPasswordScreen
     case confirmOtpScreen(otp: String, email: String)
     case changePassword(email: String)
-    case parentCatScreen
+    case parentCatScreen(title: String, cbcId: String, level: String, isMock: String)
     case examSubCatScreen
     case examCatScreen
     case mockDescriptionScreen

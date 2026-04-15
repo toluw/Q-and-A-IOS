@@ -14,26 +14,32 @@ struct ItemView: View {
     let onItemClicked: () -> Void
     
     var body: some View {
-        VStack{
+        
+        Button(action: onItemClicked){
+            
+            VStack{
+               
+               
+                HStack{
+                    
+                    Text(item).font(AppFont.medium(18)).padding(.leading, 20)
+                    
+                    Spacer()
+                    
+                    Image("selector").padding(.trailing, 20)
+                    
+                }.padding(.top,28)
+                
+                Rectangle().fill(Color("Grey")).frame(height: 1).padding(.top, 14)
+                
+                
+            }.frame(maxWidth: .infinity) // 👈 expand width
+             .contentShape(Rectangle())
+            
+        }.buttonStyle(.plain)
+        
+     
            
-            Spacer().frame(height: 30)
-            
-            HStack{
-                
-                Text(item).font(AppFont.medium(18)).padding(.leading, 20)
-                
-                Spacer()
-                
-                Image("selector").padding(.trailing, 20)
-                
-            }
-            
-            Divider().padding(.top, 14).foregroundColor(Color("Grey"))
-            
-            
-        }.frame(width: .infinity).onTapGesture {
-            onItemClicked()
-        }
     }
 }
 

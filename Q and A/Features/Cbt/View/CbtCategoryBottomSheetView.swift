@@ -13,31 +13,37 @@ struct CbtCategoryBottomSheetView: View {
     let onItemClicked: (DataModel) -> Void
     
     var body: some View {
-        ScrollView{
-            
-            
-                
-                LazyVStack(){
-                
-                    Text("Select Category").font(AppFont.regular(16)).padding(.top, 30)
-                 
-                 ForEach(items){item in
-                     ItemView(item: item.item, onItemClicked: {
-                         onItemClicked(item)
-                     })
-                 }.padding(.top, 20)
-                        .padding(.bottom, 30)
-                    
-                }
-                
-           
-               
-            
-            
-            
-        }.frame(maxWidth: .infinity)
         
-    }
+        
+        VStack{
+            ScrollView(){
+                
+                
+                    
+                LazyVStack(spacing: 0){
+                    
+                    Text("Select Category").font(AppFont.regular(16)).padding(.top, 30)
+                     
+                     ForEach(items){item in
+                         ItemView(item: item.item, onItemClicked: {
+                             onItemClicked(item)
+                         })
+                     }.padding(.top, 20)
+                        
+                        
+                    }
+                    
+               
+                }.fixedSize(horizontal: false, vertical: true)
+            
+            
+        }
+        
+        Spacer()
+            
+        }
+        
+      
     
     
     

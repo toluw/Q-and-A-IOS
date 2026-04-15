@@ -14,6 +14,7 @@ struct MainCbtState{
     var errorMessage: String? = nil
     var showBlockedLoader: Bool = false
     var parentCatData: [DataModel]? = nil
+    var showCatBottomSheet: Bool = false
     
     
 }

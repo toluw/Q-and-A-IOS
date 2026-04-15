@@ -17,7 +17,7 @@ struct ParentCategoriesResponse: Codable{
 
 
 struct DataModel: Codable, Identifiable {
-    let id: String = UUID().uuidString
+    
     let cbcId: String
     let isCat: Bool
     let item: String
@@ -26,6 +26,7 @@ struct DataModel: Codable, Identifiable {
     let level: String
     var catData: CatData?
     let createdAt: String
+    var id: String {cbcId}
     
     enum CodingKeys: String, CodingKey{
         case cbcId = "cbc_id"
