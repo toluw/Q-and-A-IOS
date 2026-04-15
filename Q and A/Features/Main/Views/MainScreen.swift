@@ -99,8 +99,8 @@ struct MainScreen: View {
        private var contentView: some View {
            switch selectedTab {
            case .cbt:
-               MainCbtScreen(navVm: navVm){
-                   openDrawer()
+               MainCbtScreen(navVm: navVm, onShowNavDrawer: openDrawer){data in
+                   viewModel.userProfileState = data
                }
                    
                

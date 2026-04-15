@@ -12,6 +12,8 @@ class MainCbtViewModel: ObservableObject{
     
     @Published var state = MainCbtState()
     
+    @Published var showLogin: Bool = false
+    
     private let storageKey = "home_data"
     
     private let bgList = ["col0","col1","col2"]
@@ -74,6 +76,29 @@ class MainCbtViewModel: ObservableObject{
         }
         
         return result
+    }
+    
+    
+    func getParentCatData(level: String?, cbcId: String?, isMock: String, isActive: String = "1"){
+        
+        state.showBlockedLoader = true
+        
+        Task{
+            do{
+              
+                let response = try await service.getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock)
+                state.showBlockedLoader = false
+                state.parentCatData = response.data
+                
+                
+            } catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.getParentCatData(level: level, cbcId: cbcId, isMock: isMock, isActive: isActive)
+                })
+            }
+        }
+        
     }
     
     private func fetchFromApi(isCacheAvailable: Bool){

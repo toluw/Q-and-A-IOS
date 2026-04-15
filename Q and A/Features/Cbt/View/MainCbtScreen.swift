@@ -11,6 +11,7 @@ struct MainCbtScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     let onShowNavDrawer: () -> Void
+    let onLoginSucces: (UserProfile) -> Void
     @StateObject var viewModel: MainCbtViewModel = .init()
     @StateObject var cbtViewModel: CbtViewModel = .init()
     
@@ -27,7 +28,7 @@ struct MainCbtScreen: View {
             HStack(){
                 
                 Button(){
-                    
+                    onShowNavDrawer()
                 }label: {
                     Image("hamburger")
                 }
@@ -105,6 +106,24 @@ struct MainCbtScreen: View {
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+         .sheet(isPresented: $viewModel.showLogin){
+                LoginScreen(
+                    onDismiss: {
+                        viewModel.showLogin = false
+                    }, onForgotpassword: {
+                        viewModel.showLogin = false
+                        navVm.navigate(route: .forgotPasswordScreen)
+                    }, onLoginSuccess: {userProfile in
+                        viewModel.showLogin = false
+                        onLoginSucces(userProfile)
+                        showSuccessMessage(message: "Thanks \(userProfile.name)! You are now logged in", actionTitle: "Continue", showCancel: false){
+                            
+                        }
+                       
+                    }
+                    
+                )
+            }
         
     }
     
@@ -133,7 +152,14 @@ struct MainCbtScreen: View {
     }
     
     private func moveToMockExam(){
-        navVm.navigate(route: .mockDescriptionScreen)
+        if(UserSettings.isLoggedIn){
+            navVm.navigate(route: .mockDescriptionScreen)
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
+        
     }
     
     private func moveToCatPage(){
@@ -142,5 +168,7 @@ struct MainCbtScreen: View {
 }
 
 #Preview {
-    MainCbtScreen(navVm: MainNavViewModel(), onShowNavDrawer: {})
+    MainCbtScreen(navVm: MainNavViewModel(), onShowNavDrawer: {}, onLoginSucces: {data in
+        
+    })
 }

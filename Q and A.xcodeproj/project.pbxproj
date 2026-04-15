@@ -41,6 +41,8 @@
 		F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C6E2F8E595F00B1B22F /* ExamCatScreen.swift */; };
 		F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */; };
 		F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */; };
+		F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */; };
+		F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C762F8FBA6F00B1B22F /* ItemView.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -150,6 +152,8 @@
 		F5A13C6E2F8E595F00B1B22F /* ExamCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCatScreen.swift; sourceTree = "<group>"; };
 		F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDescriptionScreen.swift; sourceTree = "<group>"; };
 		F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtViewModel.swift; sourceTree = "<group>"; };
+		F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCategoryBottomSheetView.swift; sourceTree = "<group>"; };
+		F5A13C762F8FBA6F00B1B22F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 				F5AE933F2F863A100003CAA5 /* GlobalBottomSheetModifier.swift */,
 				F5AE93412F863AB10003CAA5 /* GlobalBottomSheetView.swift */,
 				F5E1D8922F8D3B82001F734D /* ErrorView.swift */,
+				F5A13C762F8FBA6F00B1B22F /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 				F5A13C6C2F8E58C900B1B22F /* ExamSubCatScreen.swift */,
 				F5A13C6E2F8E595F00B1B22F /* ExamCatScreen.swift */,
 				F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */,
+				F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -813,6 +819,7 @@
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
+				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
@@ -852,6 +859,7 @@
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
+				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */,
