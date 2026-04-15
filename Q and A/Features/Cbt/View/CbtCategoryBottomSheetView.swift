@@ -8,14 +8,61 @@
 import SwiftUI
 
 struct CbtCategoryBottomSheetView: View {
+    
+    let items: [DataModel]
+    let onItemClicked: (DataModel) -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            
+            
+                
+                LazyVStack(){
+                
+                    Text("Select Category").font(AppFont.regular(16)).padding(.top, 30)
+                 
+                 ForEach(items){item in
+                     ItemView(item: item.item, onItemClicked: {
+                         onItemClicked(item)
+                     })
+                 }.padding(.top, 20)
+                        .padding(.bottom, 30)
+                    
+                }
+                
+           
+               
+            
+            
+            
+        }.frame(maxWidth: .infinity)
+        
     }
     
     
     
 }
 
+
 #Preview {
-    CbtCategoryBottomSheetView()
+    let dataModel = DataModel(
+        cbcId: "",
+        isCat: true,
+        item: "Lobby",
+        isActive: true,
+        isMock: "2",
+        level: "1",
+        catData: nil,
+        createdAt: ""
+    )
+    
+    let items = [dataModel, dataModel, dataModel]
+    
+    CbtCategoryBottomSheetView(items: items, onItemClicked: { data in })
+    
+    
 }
+
+
+
+

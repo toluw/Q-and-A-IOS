@@ -16,7 +16,8 @@ struct ParentCategoriesResponse: Codable{
 }
 
 
-struct DataModel: Codable {
+struct DataModel: Codable, Identifiable {
+    let id: String = UUID().uuidString
     let cbcId: String
     let isCat: Bool
     let item: String
