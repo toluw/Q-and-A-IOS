@@ -10,10 +10,11 @@ import SwiftUI
 struct MainCbtScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
+    @ObservedObject var cbtViewModel: CbtViewModel
     let onShowNavDrawer: () -> Void
     let onLoginSucces: (UserProfile) -> Void
     @StateObject var viewModel: MainCbtViewModel = .init()
-    @StateObject var cbtViewModel: CbtViewModel = .init()
+    
     
     
     let columns = [
@@ -149,7 +150,7 @@ struct MainCbtScreen: View {
                      viewModel.state.showCatBottomSheet = false
                      handleCatSelection(item: data)
                  }
-                 .presentationDetents([.fraction(0.8)])
+                 .presentationDetents([.fraction(0.7), .large])
                      
                  
              }
@@ -228,7 +229,7 @@ struct MainCbtScreen: View {
 }
 
 #Preview {
-    MainCbtScreen(navVm: MainNavViewModel(), onShowNavDrawer: {}, onLoginSucces: {data in
+    MainCbtScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), onShowNavDrawer: {}, onLoginSucces: {data in
         
     })
 }

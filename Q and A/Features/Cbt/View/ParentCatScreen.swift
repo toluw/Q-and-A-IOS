@@ -13,14 +13,157 @@ struct ParentCatScreen: View {
     let cbcId: String
     let level: String
     let isMock: String
+    
+    
+    @ObservedObject var navVm: MainNavViewModel
+    @ObservedObject var cbtViewModel: CbtViewModel
+    @StateObject var viewModel: ParentCatViewModel = .init()
 
         
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack{
+            
+            HStack{
+               
+                Spacer()
+                
+                Text(title).font(AppFont.regular(18))
+                
+                Spacer()
+                
+                Button(){
+                    
+                    
+                }label: {
+                    Image("cart")
+                }.padding(.leading, 8)
+                
+            }.frame(maxWidth: .infinity)
+                .padding(.leading, 16)
+                .padding(.trailing, 16)
+            
+            TextField("Search..", text: .constant(""))
+                .padding(.leading,16)
+                .padding(.trailing,16)
+                .padding(.top, 12)
+                .textFieldStyle(.roundedBorder)
+            
+            
+            ZStack{
+                
+                if(viewModel.state.isLoading){
+                    
+                    ProgressView()
+                    
+                }else{
+                    
+                    if(viewModel.state.errorMessage != nil){
+                        ErrorView(message: viewModel.state.errorMessage!){
+                            viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
+                        }
+                    }else if(viewModel.state.parentCatData.isEmpty){
+                        
+                        EmptyStateView(title: viewModel.state.emptyStateText)
+                            .padding(.leading, 16)
+                            .padding(.trailing,16)
+                        
+                    }else{
+                        LazyVStack(spacing: 22){
+                            ForEach(viewModel.state.parentCatData){ data in
+                                CatItemView(title: data.item, onItemClicked: {
+                                    handleItemClick(item: data)
+                                })
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        .padding(.leading, 16)
+                            .padding(.trailing, 16)
+                            .padding(.top, 30)
+                    }
+                    
+                }
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("list_bg"))
+            .onAppear{
+                viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
+            }
+            .sheet(isPresented: $viewModel.showLogin){
+                   LoginScreen(
+                       onDismiss: {
+                           viewModel.showLogin = false
+                       }, onForgotpassword: {
+                           viewModel.showLogin = false
+                           navVm.navigate(route: .forgotPasswordScreen)
+                       }, onLoginSuccess: {userProfile in
+                           viewModel.showLogin = false
+                           showSuccessMessage(message: "Thanks \(userProfile.name)! You are now logged in", actionTitle: "Continue", showCancel: false){
+                               
+                           }
+                          
+                       }
+                       
+                   )
+               }
+        
+    }
+    
+    
+    private func handleItemClick(item: DataModel){
+        if(!item.isCat){
+            cbtViewModel.parentCategoriesData = item
+            moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock)
+        }else{
+            if(item.catData?.isMock == true){
+                cbtViewModel.parentCategoriesData = item
+                cbtViewModel.mockCatData = item
+                moveToMockExam()
+            }
+            else if (item.catData?.subcat.isEmpty ?? true){
+                cbtViewModel.parentCategoriesData = item
+                moveToCatPage()
+            }else{
+                cbtViewModel.parentCategoriesData = item
+                moveToSubCatPage()
+            }
+        }
+    }
+    
+    
+    private func moveToParentCatPage(title: String, cbcId: String, level: String, isMock: String){
+        navVm.navigate(route: .parentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock))
+    }
+    
+    private func moveToSubCatPage(){
+        navVm.navigate(route: .examSubCatScreen)
+    }
+    
+    private func moveToMockExam(){
+        if(UserSettings.isLoggedIn){
+            navVm.navigate(route: .mockDescriptionScreen)
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
+        
+    }
+    
+    private func moveToCatPage(){
+        navVm.navigate(route: .examCatScreen)
     }
 }
 
 #Preview {
-    ParentCatScreen(title: "Education", cbcId: "1", level: "2", isMock: "1")
+    
+    
+   
+    
+    ParentCatScreen(title: "Education", cbcId: "1", level: "2", isMock: "1", navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+
 }

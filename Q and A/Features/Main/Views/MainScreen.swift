@@ -15,6 +15,7 @@ struct MainScreen: View {
     
     @StateObject private var viewModel = MainScreenViewModel()
     @ObservedObject var navVm: MainNavViewModel
+    @ObservedObject var cbtViewModel: CbtViewModel
     
     
     var body: some View {
@@ -99,7 +100,7 @@ struct MainScreen: View {
        private var contentView: some View {
            switch selectedTab {
            case .cbt:
-               MainCbtScreen(navVm: navVm, onShowNavDrawer: openDrawer){data in
+               MainCbtScreen(navVm: navVm, cbtViewModel: cbtViewModel,onShowNavDrawer: openDrawer){data in
                    viewModel.userProfileState = data
                }
                    
@@ -245,5 +246,5 @@ struct MainScreen: View {
 }
 
 #Preview {
-    MainScreen(navVm: MainNavViewModel())
+    MainScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
 }

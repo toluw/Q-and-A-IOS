@@ -10,18 +10,20 @@ import SwiftUI
 struct MainStackView: View {
     
     @StateObject private var navVM = MainNavViewModel()
+    @StateObject private var cbtViewModel = CbtViewModel()
     
     
     var body: some View {
         //  Text("Main Stack")
         NavigationStack(path: $navVM.path) {
                    
-            MainScreen(navVm: navVM)
+            MainScreen(navVm: navVM, cbtViewModel: cbtViewModel)
                 .navigationDestination(for: MainRoute.self) { route in
                     destinationView(for: route)
              }
         }
         .environmentObject(navVM)
+        .environmentObject(cbtViewModel)
     }
     
     
@@ -38,7 +40,7 @@ struct MainStackView: View {
            
         case .changePassword(email: let email): ChangePasswordScreen(email: email, navVm: navVM)
         case .parentCatScreen(title: let title, cbcId: let cbcId, level: let level, isMock: let isMock):
-            ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock)
+            ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, navVm: navVM, cbtViewModel: cbtViewModel)
         case .examSubCatScreen:
              ExamSubCatScreen()
         case .examCatScreen:
