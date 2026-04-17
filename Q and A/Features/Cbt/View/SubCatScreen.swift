@@ -1,17 +1,16 @@
 //
-//  ExamSubCatScreen.swift
+//  SubCatScreen.swift
 //  Q and A
 //
-//  Created by GIGL-PC on 14/04/2026.
+//  Created by GIGL-PC on 17/04/2026.
 //
 
 import SwiftUI
 
-struct ExamSubCatScreen: View {
+struct SubCatScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
-    
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
@@ -19,5 +18,5 @@ struct ExamSubCatScreen: View {
 }
 
 #Preview {
-    ExamSubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    SubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
 }

@@ -42,9 +42,9 @@ struct MainStackView: View {
         case .parentCatScreen(title: let title, cbcId: let cbcId, level: let level, isMock: let isMock):
             ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, navVm: navVM, cbtViewModel: cbtViewModel)
         case .examSubCatScreen:
-             ExamSubCatScreen()
+             ExamSubCatScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .examCatScreen:
-             ExamCatScreen()
+             ExamCatScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .mockDescriptionScreen:
              MockDescriptionScreen()
         }

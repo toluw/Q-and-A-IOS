@@ -15,6 +15,9 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
+		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
+		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
 		F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550212E2F80E73B0057C2F0 /* LoginState.swift */; };
 		F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021302F80E7F70057C2F0 /* LoginViewModel.swift */; };
 		F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021322F80EA0D0057C2F0 /* StringExtensions.swift */; };
@@ -129,6 +132,9 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
+		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
+		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
 		F550212E2F80E73B0057C2F0 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		F55021302F80E7F70057C2F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F55021322F80EA0D0057C2F0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -619,6 +625,9 @@
 				F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */,
 				F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */,
 				F59D32872F90E3030045C4AA /* CatItemView.swift */,
+				F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */,
+				F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */,
+				F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -831,6 +840,7 @@
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
+				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
@@ -863,10 +873,12 @@
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
+				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
+				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
