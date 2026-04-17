@@ -44,7 +44,7 @@ struct ParentCatScreen: View {
                 .padding(.leading, 16)
                 .padding(.trailing, 16)
             
-            TextField("Search..", text: .constant(""))
+            TextField("Search..", text: $viewModel.state.searchTxt)
                 .padding(.leading,16)
                 .padding(.trailing,16)
                 .padding(.top, 12)
@@ -93,6 +93,25 @@ struct ParentCatScreen: View {
             .onAppear{
                 viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
             }
+            .onChange(of: viewModel.state.searchTxt){oldValue, newValue in
+                if(newValue == ""){
+                    viewModel.state.parentCatData = viewModel.state.defaultData
+                }else{
+                    
+                    let searchData = viewModel.state.defaultData.filter {
+                        $0.item.lowercased().contains(newValue.lowercased())
+                    }
+                    
+                    viewModel.state.parentCatData = searchData
+                    
+                    if(searchData.isEmpty){
+                        viewModel.state.emptyStateText = "No search result for \(newValue)"
+                    }
+                    
+                    
+                    
+                }
+            }
             .sheet(isPresented: $viewModel.showLogin){
                    LoginScreen(
                        onDismiss: {
@@ -115,6 +134,7 @@ struct ParentCatScreen: View {
     
     
     private func handleItemClick(item: DataModel){
+        viewModel.state.searchTxt = ""
         if(!item.isCat){
             cbtViewModel.parentCategoriesData = item
             moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock)

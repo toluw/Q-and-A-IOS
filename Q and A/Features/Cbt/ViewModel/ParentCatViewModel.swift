@@ -39,6 +39,7 @@ class ParentCatViewModel: ObservableObject {
                 let response = try await service.getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock)
                 state.isLoading = false
                 state.parentCatData = response.data
+                state.defaultData = response.data
                 hasLoadData = true
                 
                 } catch {
