@@ -48,11 +48,8 @@ struct MainCbtScreen: View {
                         Image("info")
                     }
                     
-                    Button(){
+                    CartView(){
                         
-                        
-                    }label: {
-                        Image("cart")
                     }.padding(.leading, 8)
                     
                 }.frame(maxWidth: .infinity)

@@ -25,7 +25,7 @@ struct ParentCatScreen: View {
         
         VStack{
             
-            HStack{
+        /*  HStack{
                
                 Spacer()
                 
@@ -33,16 +33,14 @@ struct ParentCatScreen: View {
                 
                 Spacer()
                 
-                Button(){
+                CartView(){
                     
-                    
-                }label: {
-                    Image("cart")
                 }.padding(.leading, 8)
+          
                 
             }.frame(maxWidth: .infinity)
                 .padding(.leading, 16)
-                .padding(.trailing, 16)
+                .padding(.trailing, 16)  */
             
             TextField("Search..", text: $viewModel.state.searchTxt)
                 .padding(.leading,16)
@@ -88,7 +86,22 @@ struct ParentCatScreen: View {
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .toolbar {
+            
+            // Title
+            ToolbarItem(placement: .principal) {
+                Text(title).font(AppFont.regular(18))
+            }
+            
+            // Trailing Icon
+            ToolbarItem(placement: .navigationBarTrailing) {
+                CartView(){
+                    
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("list_bg"))
             .onAppear{
                 viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)

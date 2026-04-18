@@ -29,6 +29,7 @@
 		F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */; };
 		F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021472F82FC8F0057C2F0 /* ViewExtension.swift */; };
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
+		F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BBDC92F9386700059A0DB /* CartView.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
 		F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463F2F757F9800B3D2FC /* LoginScreen.swift */; };
@@ -146,6 +147,7 @@
 		F55021452F82B07E0057C2F0 /* ToastBannerModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBannerModifier.swift; sourceTree = "<group>"; };
 		F55021472F82FC8F0057C2F0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		F55BBDC92F9386700059A0DB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
 		F56A463F2F757F9800B3D2FC /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				F5E1D8922F8D3B82001F734D /* ErrorView.swift */,
 				F5A13C762F8FBA6F00B1B22F /* ItemView.swift */,
 				F59D328F2F90FAAD0045C4AA /* EmptyStateView.swift */,
+				F55BBDC92F9386700059A0DB /* CartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
+				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,

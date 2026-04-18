@@ -14,7 +14,43 @@ struct ExamSubCatScreen: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+           
+            ZStack{
+                if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true  && cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
+                    
+                    TabSubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                }else{
+                    if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true){
+                        SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                    }else if(cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
+                        TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                    }
+                }
+            }
+            
+            Spacer()
+        
+            
+            
+            
+        }
+        .toolbar {
+            
+            // Title
+            ToolbarItem(placement: .principal) {
+                Text(cbtViewModel.parentCategoriesData?.item ?? "Subjects").font(AppFont.regular(18))
+            }
+            
+            // Trailing Icon
+            ToolbarItem(placement: .navigationBarTrailing) {
+                CartView(){
+                    
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 
