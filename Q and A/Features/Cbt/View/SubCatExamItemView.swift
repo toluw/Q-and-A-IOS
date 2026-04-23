@@ -9,8 +9,17 @@ import SwiftUI
 
 struct SubCatExamItemView: View {
     
-    
     @Binding var subCatExam: SubCatExams
+    let catData: CatData
+    @State var imageUrl: String?
+    
+    init(subCatExam: SubCatExams, catData: CatData) {
+        self.subCatExam = subCatExam
+        self.catData = catData
+        self.imageUrl = catData.image
+    }
+    
+   
     
     var body: some View {
         
@@ -18,11 +27,37 @@ struct SubCatExamItemView: View {
             
             HStack{
                 
+                LoadImageView(url: $imageUrl, width: 56 , height: 56)
+                    .padding(.trailing, 10)
+                
+                Spacer()
+                
+                Text(subCatExam.data.item)
+                    .font(AppFont.semi_bold(18))
+                
+                Spacer()
                 
                 
-            }
+                ZStack{
+                    if(subCatExam.isChecked){
+                        Image("check")
+                    }else{
+                        Image("uncheck")
+                    }
+                }.padding(.leading, 10)
+                
+                
+                
+               
+                
+            }.padding(.top,15)
+                .padding(.leading, 15)
+                .padding(.trailing, 15)
+            
             
         }.frame(maxWidth: .infinity)
+            .background(Color.white)
+            .cornerRadius(20)
         
     }
 }
@@ -38,6 +73,7 @@ struct SubCatExamItemView: View {
 struct SubCatExamItemViewPreveiwWrapper: View {
     
     @State private var subCatExam: SubCatExams
+    let catData: CatData
     
     
     init(){
@@ -56,12 +92,18 @@ struct SubCatExamItemViewPreveiwWrapper: View {
         )
         
         _subCatExam = State(initialValue: SubCatExams(data: subCategoryData))
+    
         
-    }
+        catData = CatData(cbtId: "", subcat: [], isActive: true, createdAt: "", maxExams: 3, examType: "Year", subcatType: "Subject", image: "", maxAttempt: 1, disablePractice: true, disableReview: true, hasObjective: true, hasTheory: false, isMock: true, minimumPurchase: 500, mockDescription: "", startDate: nil, endTime: "", startTime: "", mockParent: nil, prizeMoney: 500, sponsor: Sponsor(id: "", name: "Emmanuel", website: "",  facebook: nil, instagram: nil, twitter: nil, tiktok: nil, linkedin : nil, createdAt : "", sponsorImage :nil))
+                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                            }
     
     
     var body: some View {
-        SubCatExamItemView(subCatExam: $subCatExam)
+        
+        
+        
+        SubCatExamItemView()
     }
     
 }
