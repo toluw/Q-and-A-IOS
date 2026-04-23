@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct SubCatState{
+    
+    var isLoading: Bool = false
+    var initItems: [SubCatExams] = []
+    var errorMessage: String? = nil
+    var items: [SubCatExams] = []
+    var examSelectList: [SubCatExamSelect] = []
+    
+}

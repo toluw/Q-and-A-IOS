@@ -14,6 +14,7 @@ import Moya
 enum CbtAPI {
     
     case getParentCategories(level: String? = nil, cbcId: String? = nil, isActive: String = "1", isMock: String)
+    case getSubCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
     
 }
 
@@ -28,6 +29,8 @@ extension CbtAPI: TargetType{
             
         case .getParentCategories:
             return "v2/get_parent_category2.php"
+        case .getSubCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+            return "v2/get_subcat_exams.php"
         }
     }
     
@@ -37,6 +40,8 @@ extension CbtAPI: TargetType{
         case .getParentCategories:
                 .get
             
+        case .getSubCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+                .get
         }
     }
     
@@ -61,6 +66,21 @@ extension CbtAPI: TargetType{
             }
             
            
+        case .getSubCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+            
+            do {
+                var params: [String: Any] = [:]
+                params.addOptional(key: "cbt_id", value: cbtId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "is_active", value: isActive)
+               
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
+            
         }
     }
     

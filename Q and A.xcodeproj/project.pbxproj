@@ -11,6 +11,11 @@
 		F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */; };
 		F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */; };
 		F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */; };
+		F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58C42F98ED5200CE9931 /* SubCatExams.swift */; };
+		F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58C62F98EF0A00CE9931 /* SubCatState.swift */; };
+		F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */; };
+		F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */; };
+		F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */; };
 		F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FD2F70374600BF414A /* IntroBottomCard.swift */; };
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
@@ -84,6 +89,9 @@
 		F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EB82F72C5C7000861B6 /* MainVideoScreen.swift */; };
 		F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EBA2F72C625000861B6 /* MainBookScreen.swift */; };
 		F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EBC2F73CF77000861B6 /* MainTab.swift */; };
+		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
+		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
+		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
 		F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */; };
 		F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
@@ -129,6 +137,11 @@
 		F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
 		F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		F515E7012F8380F30069DA7B /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
+		F51C58C42F98ED5200CE9931 /* SubCatExams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExams.swift; sourceTree = "<group>"; };
+		F51C58C62F98EF0A00CE9931 /* SubCatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatState.swift; sourceTree = "<group>"; };
+		F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamSelect.swift; sourceTree = "<group>"; };
+		F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamItemView.swift; sourceTree = "<group>"; };
+		F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageView.swift; sourceTree = "<group>"; };
 		F526A7FD2F70374600BF414A /* IntroBottomCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroBottomCard.swift; sourceTree = "<group>"; };
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
@@ -203,6 +216,9 @@
 		F5C12EB82F72C5C7000861B6 /* MainVideoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoScreen.swift; sourceTree = "<group>"; };
 		F5C12EBA2F72C625000861B6 /* MainBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBookScreen.swift; sourceTree = "<group>"; };
 		F5C12EBC2F73CF77000861B6 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
+		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
 		F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBarShape.swift; sourceTree = "<group>"; };
 		F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomNav.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -517,6 +533,7 @@
 				F5A13C762F8FBA6F00B1B22F /* ItemView.swift */,
 				F59D328F2F90FAAD0045C4AA /* EmptyStateView.swift */,
 				F55BBDC92F9386700059A0DB /* CartView.swift */,
+				F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -613,6 +630,11 @@
 				F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */,
 				F5E1D8902F8D2DA7001F734D /* BaseCat.swift */,
 				F59D328B2F90EBD20045C4AA /* ParentCatState.swift */,
+				F5CA68FC2F93B209005010AE /* Exam.swift */,
+				F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */,
+				F51C58C42F98ED5200CE9931 /* SubCatExams.swift */,
+				F51C58C62F98EF0A00CE9931 /* SubCatState.swift */,
+				F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -631,6 +653,7 @@
 				F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */,
 				F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */,
 				F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */,
+				F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,6 +664,7 @@
 				F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */,
 				F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */,
 				F59D32892F90EB330045C4AA /* ParentCatViewModel.swift */,
+				F5CA69002F93B689005010AE /* SubCatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -831,6 +855,7 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
+				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
@@ -839,9 +864,11 @@
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
+				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
 				F59D32902F90FAAD0045C4AA /* EmptyStateView.swift in Sources */,
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
+				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
@@ -849,6 +876,7 @@
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
+				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
@@ -858,9 +886,11 @@
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
 				F59D328C2F90EBD20045C4AA /* ParentCatState.swift in Sources */,
+				F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
 				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
 				F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */,
+				F5CA68FD2F93B209005010AE /* Exam.swift in Sources */,
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
 				F5E144F22F7FC5E800C10F3A /* LoginResponse.swift in Sources */,
 				F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */,
@@ -884,7 +914,9 @@
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
+				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
+				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,

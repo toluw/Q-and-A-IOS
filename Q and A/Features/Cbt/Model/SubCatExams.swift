@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+struct SubCatExams{
+    let data: SubCategoryData
+    var isChecked: Bool = false
+    var yearText: String = ""
+    var questionText: String = ""
+    var numViews: String = ""
+    var isShuffle: Bool = false
+    var defaultQuestions: Int = 1
+    var howQuestionLayout: Bool = false
+    var showShuffle: Bool = false
+    
+}

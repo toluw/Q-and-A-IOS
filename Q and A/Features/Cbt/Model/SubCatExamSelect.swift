@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct SubCatExamSelect{
+    let cbtId: String
+    let item: String
+    let subcatId: String
+    let exam: Exam
+    let numQuestions: Int
+    let shouldShuffle: Bool
+    let disableReview: Bool
+}
