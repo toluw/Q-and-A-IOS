@@ -20,6 +20,7 @@ struct DropDownInput: View {
             HStack {
                 Text(text.isEmpty ?  hint : text)
                     .foregroundColor(text.isEmpty ? .gray : .primary)
+                    .font(AppFont.regular(16))
                 
                 Spacer()
                 

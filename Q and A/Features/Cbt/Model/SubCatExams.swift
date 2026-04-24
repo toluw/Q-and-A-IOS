@@ -15,7 +15,7 @@ struct SubCatExams{
     var numViews: String = ""
     var isShuffle: Bool = false
     var defaultQuestions: Int = 1
-    var howQuestionLayout: Bool = false
+    var showQuestionLayout: Bool = false
     var showShuffle: Bool = false
     
 }

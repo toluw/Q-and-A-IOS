@@ -42,6 +42,7 @@
 		F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A46432F79610600B3D2FC /* ProfileImageView.swift */; };
 		F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A46452F797AE600B3D2FC /* NavMenuView.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
+		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
@@ -169,6 +170,7 @@
 		F56A46432F79610600B3D2FC /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		F56A46452F797AE600B3D2FC /* NavMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuView.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
+		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				F55BBDC92F9386700059A0DB /* CartView.swift */,
 				F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */,
 				F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */,
+				F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
+				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,

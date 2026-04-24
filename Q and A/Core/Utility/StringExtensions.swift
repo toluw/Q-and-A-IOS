@@ -16,4 +16,14 @@ extension String{
                 "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
             ).evaluate(with: self)
         }
+    
+    func capitalizeWords() -> String {
+            return self
+                .lowercased()
+                .split(separator: " ")
+                .map { word in
+                    word.prefix(1).uppercased() + word.dropFirst()
+                }
+                .joined(separator: " ")
+        }
 }
