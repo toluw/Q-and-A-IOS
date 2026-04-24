@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadImageView: View {
     
-    @Binding var url: String?
+    let url: String?
     let width: CGFloat
     let height: CGFloat
     let shape = Rectangle()
@@ -81,7 +81,7 @@ struct LoadingImagePreviewWrapper: View{
    
     var body: some View {
         
-     LoadImageView(url: $url, width: 80, height: 80)
+     LoadImageView(url: url, width: 80, height: 80)
         
     }
     

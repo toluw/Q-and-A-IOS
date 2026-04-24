@@ -11,53 +11,61 @@ struct SubCatExamItemView: View {
     
     @Binding var subCatExam: SubCatExams
     let catData: CatData
-    @State var imageUrl: String?
     
-    init(subCatExam: SubCatExams, catData: CatData) {
-        self.subCatExam = subCatExam
-        self.catData = catData
-        self.imageUrl = catData.image
-    }
+    
+    
     
    
     
     var body: some View {
         
-        VStack{
+        
+        Button(action: {
             
-            HStack{
+        }){
+            VStack{
                 
-                LoadImageView(url: $imageUrl, width: 56 , height: 56)
-                    .padding(.trailing, 10)
+                HStack{
+                    
+                    LoadImageView(url: catData.image, width: 56 , height: 56)
+                        .padding(.trailing, 10)
+                    
+                    Spacer()
+                    
+                    Text(subCatExam.data.item)
+                        .font(AppFont.semi_bold(18))
+                    
+                    Spacer()
+                    
+                    
+                    ZStack{
+                        if(subCatExam.isChecked){
+                            Image("check")
+                        }else{
+                            Image("uncheck")
+                        }
+                    }.padding(.leading, 10)
+                    
+                    
+                    
+                   
+                    
+                }.padding(.top,15)
+                    .padding(.leading, 15)
+                    .padding(.trailing, 15)
                 
-                Spacer()
-                
-                Text(subCatExam.data.item)
-                    .font(AppFont.semi_bold(18))
-                
-                Spacer()
-                
-                
-                ZStack{
-                    if(subCatExam.isChecked){
-                        Image("check")
-                    }else{
-                        Image("uncheck")
-                    }
-                }.padding(.leading, 10)
                 
                 
                 
-               
-                
-            }.padding(.top,15)
-                .padding(.leading, 15)
-                .padding(.trailing, 15)
+            }.frame(maxWidth: .infinity)
+                .background(Color.white)
+                .cornerRadius(20)
+                .contentShape(Rectangle())
             
-            
-        }.frame(maxWidth: .infinity)
-            .background(Color.white)
-            .cornerRadius(20)
+        }.buttonStyle(.plain)
+         
+        
+       
         
     }
 }
@@ -82,7 +90,7 @@ struct SubCatExamItemViewPreveiwWrapper: View {
         
         var examList: [Exam] { [ex, ex, ex, ex] }
         
-        var subCategoryData = SubCategoryData(
+        let subCategoryData = SubCategoryData(
             cbtId: "",
             item: "Bag",
             createdAt: "",
@@ -91,7 +99,7 @@ struct SubCatExamItemViewPreveiwWrapper: View {
             exams: examList
         )
         
-        _subCatExam = State(initialValue: SubCatExams(data: subCategoryData))
+        subCatExam = SubCatExams(data: subCategoryData)
     
         
         catData = CatData(cbtId: "", subcat: [], isActive: true, createdAt: "", maxExams: 3, examType: "Year", subcatType: "Subject", image: "", maxAttempt: 1, disablePractice: true, disableReview: true, hasObjective: true, hasTheory: false, isMock: true, minimumPurchase: 500, mockDescription: "", startDate: nil, endTime: "", startTime: "", mockParent: nil, prizeMoney: 500, sponsor: Sponsor(id: "", name: "Emmanuel", website: "",  facebook: nil, instagram: nil, twitter: nil, tiktok: nil, linkedin : nil, createdAt : "", sponsorImage :nil))
@@ -103,7 +111,7 @@ struct SubCatExamItemViewPreveiwWrapper: View {
         
         
         
-        SubCatExamItemView()
+        SubCatExamItemView(subCatExam: $subCatExam, catData: catData)
     }
     
 }
