@@ -23,7 +23,7 @@ struct SubCatExamsResponse: Codable {
 
 }
 
-struct SubCategoryData: Codable {
+struct SubCategoryData: Codable, Equatable {
     
     let cbtId: String
     let item: String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SubCatExams{
+struct SubCatExams: Equatable{
     let data: SubCategoryData
     var isChecked: Bool = false
     var yearText: String = ""

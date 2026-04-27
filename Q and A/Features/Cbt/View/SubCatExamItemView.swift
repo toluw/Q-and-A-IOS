@@ -11,6 +11,8 @@ struct SubCatExamItemView: View {
     
     @Binding var subCatExam: SubCatExams
     let catData: CatData
+    @ObservedObject var viewModel: SubCatViewModel
+    let position: Int
     
     
     
@@ -21,7 +23,7 @@ struct SubCatExamItemView: View {
         
         
         Button(action: {
-            
+            setCheck()
         }){
             VStack{
                 
@@ -68,10 +70,93 @@ struct SubCatExamItemView: View {
                 .contentShape(Rectangle())
             
         }.buttonStyle(.plain)
+            .onChange(of: subCatExam.isShuffle){oldValue, newValue in
+                
+                let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
+                
+                if let pos = initPos {
+                    viewModel.state.initItems[pos].isShuffle = !viewModel.state.initItems[pos].isShuffle
+                    
+                }
+                
+                viewModel.updateExamSelect(subCatId: subCatExam.data.subcatId, shouldShuffle: subCatExam.isShuffle)
+                
+                
+                
+            }
          
         
        
         
+    }
+    
+    private func setCheck(){
+        if(subCatExam.isChecked){
+            subCatExam.isChecked = false
+            subCatExam.showQuestionLayout = false
+            let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
+            if let pos = initPos {
+                viewModel.state.initItems[pos].isChecked = false
+            }
+            deselectExam()
+            
+        }else{
+           
+            if(viewModel.state.examSelectList.count >= catData.maxExams){
+                viewModel.state.maxExamSelectedMessage = catData.maxExams > 1 ? "You cannot attempt more than \(catData.maxExams) exams at a time" : "You cannot attempt more than \(catData.maxExams) exam at a time"
+            }else{
+                subCatExam.isChecked = true
+                subCatExam.showShuffle = false
+                let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
+                if let pos = initPos{
+                    viewModel.state.initItems[pos].isChecked = true
+                }
+                
+                
+            }
+            
+        }
+    }
+    
+    private func deselectExam(){
+        
+        let subCatId = subCatExam.data.subcatId
+        
+        viewModel.state.examSelectList = viewModel.state.examSelectList.filter { $0.subcatId != subCatId }
+        
+        subCatExam.yearText = ""
+        subCatExam.questionText = ""
+        subCatExam.numViews = ""
+        subCatExam.isChecked = false
+        subCatExam.isShuffle = false
+        
+        let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
+        
+        if let pos = initPos{
+            
+            viewModel.state.initItems[pos].yearText = ""
+            viewModel.state.initItems[pos].questionText = ""
+            viewModel.state.initItems[pos].numViews = ""
+            viewModel.state.initItems[pos].isChecked = false
+            viewModel.state.initItems[pos].isShuffle = false
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    private func selectYear(){
+        viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item)
+        viewModel.state.showExamSelectSheet = true
+    }
+    
+    private func selectQuestion(){
+        viewModel.state.selectQuestion = SelectQuestion(position: position, numQuestion: subCatExam.defaultQuestions)
     }
     
     
@@ -86,7 +171,11 @@ struct SubCatExamItemView: View {
                     Text(catData.examType.capitalizeWords())
                         .font(AppFont.medium(16))
                     
-                    DropDownInput(text: $subCatExam.yearText, hint: "Select \(catData.examType.capitalizeWords())", onItemClicked: {}).padding(.top, 2)
+                    DropDownInput(text: $subCatExam.yearText, hint: "Select \(catData.examType.capitalizeWords())", onItemClicked: {
+                        
+                        
+                        
+                    }).padding(.top, 2)
                     
                 }
                 
@@ -96,7 +185,9 @@ struct SubCatExamItemView: View {
                         Text("No of Question")
                             .font(AppFont.medium(16))
                         
-                        DropDownInput(text: $subCatExam.questionText, hint: "Select", onItemClicked: {}).padding(.top, 2)
+                        DropDownInput(text: $subCatExam.questionText, hint: "Select", onItemClicked: {
+                            selectQuestion()
+                        }).padding(.top, 2)
                     }.padding(.leading,10)
                     
                 }
@@ -123,7 +214,10 @@ struct SubCatExamItemView: View {
                         
                         Spacer()
                         
-                        CheckBox(isChecked: $subCatExam.isShuffle, title: "Shuffle Questions")
+                        if(subCatExam.showShuffle){
+                            CheckBox(isChecked: $subCatExam.isShuffle, title: "Shuffle Questions")
+                        }
+                        
                                 
                     }
                     
@@ -179,7 +273,7 @@ struct SubCatExamItemViewPreveiwWrapper: View {
         
         
         
-        SubCatExamItemView(subCatExam: $subCatExam, catData: catData)
+        SubCatExamItemView(subCatExam: $subCatExam, catData: catData, viewModel: SubCatViewModel(), position: 0)
     }
     
 }

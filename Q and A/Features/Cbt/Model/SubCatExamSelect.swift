@@ -8,11 +8,11 @@
 import Foundation
 
 struct SubCatExamSelect{
-    let cbtId: String
-    let item: String
-    let subcatId: String
-    let exam: Exam
-    let numQuestions: Int
-    let shouldShuffle: Bool
-    let disableReview: Bool
+    var cbtId: String
+    var item: String
+    var subcatId: String
+    var exam: Exam
+    var numQuestions: Int
+    var shouldShuffle: Bool
+    var disableReview: Bool
 }

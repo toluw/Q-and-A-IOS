@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exam: Codable {
+struct Exam: Codable, Equatable {
     
     let cbtId: String
     let subcatId: String

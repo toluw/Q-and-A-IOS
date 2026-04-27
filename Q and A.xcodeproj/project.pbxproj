@@ -47,6 +47,8 @@
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
 		F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59482C62F2CD7FF0030C541 /* SplashScreen.swift */; };
+		F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69D2F9F8E60006FAC46 /* SelectExam.swift */; };
+		F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */; };
 		F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D32872F90E3030045C4AA /* CatItemView.swift */; };
 		F59D328A2F90EB330045C4AA /* ParentCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D32892F90EB330045C4AA /* ParentCatViewModel.swift */; };
 		F59D328C2F90EBD20045C4AA /* ParentCatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D328B2F90EBD20045C4AA /* ParentCatState.swift */; };
@@ -176,6 +178,8 @@
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5941CE02F22124500611063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F59482C62F2CD7FF0030C541 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		F596A69D2F9F8E60006FAC46 /* SelectExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExam.swift; sourceTree = "<group>"; };
+		F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestion.swift; sourceTree = "<group>"; };
 		F59D32872F90E3030045C4AA /* CatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatItemView.swift; sourceTree = "<group>"; };
 		F59D32892F90EB330045C4AA /* ParentCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCatViewModel.swift; sourceTree = "<group>"; };
 		F59D328B2F90EBD20045C4AA /* ParentCatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCatState.swift; sourceTree = "<group>"; };
@@ -641,6 +645,8 @@
 				F51C58C42F98ED5200CE9931 /* SubCatExams.swift */,
 				F51C58C62F98EF0A00CE9931 /* SubCatState.swift */,
 				F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */,
+				F596A69D2F9F8E60006FAC46 /* SelectExam.swift */,
+				F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
+				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
@@ -913,6 +920,7 @@
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
+				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,

@@ -14,5 +14,10 @@ struct SubCatState{
     var errorMessage: String? = nil
     var items: [SubCatExams] = []
     var examSelectList: [SubCatExamSelect] = []
+    var maxExamSelectedMessage: String = ""
+    var selectExam: SelectExam? = nil
+    var showExamSelectSheet: Bool = false
+    var selectQuestion: SelectQuestion? = nil
+    var showQuestionSelectSheet: Bool = false
     
 }
