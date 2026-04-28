@@ -11,13 +11,18 @@ import Foundation
 class SubCatViewModel: ObservableObject {
     
     
-    var state: SubCatState = SubCatState()
+    @Published var state: SubCatState = SubCatState()
     
     private let service: CbtServiceProtocol
       
       init(service: CbtServiceProtocol = CbtService()) {
           self.service = service
       }
+    
+    
+    func reInitExamSelection(){
+        state.examSelectList = []
+    }
     
     
     func getSubCatExams(cbtId: String, buyerEmail: String?){

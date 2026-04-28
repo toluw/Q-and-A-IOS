@@ -29,7 +29,7 @@ struct TabSubCatScreen: View {
             }
             .frame(height: 50)
             .background(Color.gray.opacity(0.2))
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
             .padding(.leading, 16)
             .padding(.trailing, 16)
             .padding(.top, 20)

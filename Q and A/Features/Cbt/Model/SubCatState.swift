@@ -19,5 +19,7 @@ struct SubCatState{
     var showExamSelectSheet: Bool = false
     var selectQuestion: SelectQuestion? = nil
     var showQuestionSelectSheet: Bool = false
+    var searchText: String = ""
+    var emptyStateText: String = "Oops! There is no content yet. Please check back later"
     
 }
