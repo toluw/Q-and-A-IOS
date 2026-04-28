@@ -98,6 +98,8 @@
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
 		F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */; };
 		F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */; };
+		F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476562FA106C600713F18 /* ExamSelectView.swift */; };
+		F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
 		F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */; };
 		F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */; };
@@ -229,6 +231,8 @@
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
 		F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBarShape.swift; sourceTree = "<group>"; };
 		F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomNav.swift; sourceTree = "<group>"; };
+		F5D476562FA106C600713F18 /* ExamSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectView.swift; sourceTree = "<group>"; };
+		F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
@@ -666,6 +670,8 @@
 				F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */,
 				F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */,
 				F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */,
+				F5D476562FA106C600713F18 /* ExamSelectView.swift */,
+				F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
+				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
@@ -929,6 +936,7 @@
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
+				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,

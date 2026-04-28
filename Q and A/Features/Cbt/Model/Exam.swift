@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Exam: Codable, Equatable {
+struct Exam: Codable, Equatable, Identifiable {
     
     let cbtId: String
     let subcatId: String
@@ -27,6 +27,7 @@ struct Exam: Codable, Equatable {
     let isMaxAttempt: Bool
     let startTime: String
     let isCompulsory: String
+    var id: String {examId}
     
     enum CodingKeys: String, CodingKey {
         case cbtId = "cbt_id"
