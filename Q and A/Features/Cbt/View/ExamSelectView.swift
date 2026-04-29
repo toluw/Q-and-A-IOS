@@ -26,7 +26,7 @@ struct ExamSelectView: View {
                     
                     Spacer()
                     
-                    if(exam.isProvisioned){
+                    if(!exam.isProvisioned){
                         HStack{
                             
                             Text(exam.price, format: .currency(code: "NGN"))

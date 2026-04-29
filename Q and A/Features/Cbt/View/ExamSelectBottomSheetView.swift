@@ -15,6 +15,7 @@ struct ExamSelectBottomSheetView: View {
     @State var initExams: [Exam] = []
     @State var exams: [Exam] = []
     @State var searchText: String = ""
+    let onExamSelected: (ExamWithTitle) -> Void
     
     
     var body: some View {
@@ -46,7 +47,11 @@ struct ExamSelectBottomSheetView: View {
                         LazyVStack{
                             
                             ForEach(exams){ data in
-                                ExamSelectView(exam: data, onClick: {})
+                                ExamSelectView(exam: data, onClick: {
+                                    
+                                    onExamSelected(ExamWithTitle(exam: data, title: selectExam.title))
+                                    
+                                })
                             }
                             
                         }
@@ -74,5 +79,7 @@ struct ExamSelectBottomSheetView: View {
     
     let selectExam = SelectExam(exams: exams, position: 2, title: "English")
     
-    ExamSelectBottomSheetView(selectExam: selectExam)
+    ExamSelectBottomSheetView(selectExam: selectExam, onExamSelected: {exam in
+        
+    })
 }

@@ -16,6 +16,7 @@ struct DropDownInput: View {
     
     var body: some View {
         Button {
+            onItemClicked()
         } label: {
             HStack {
                 Text(text.isEmpty ?  hint : text)

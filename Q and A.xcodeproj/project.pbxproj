@@ -93,6 +93,7 @@
 		F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EB82F72C5C7000861B6 /* MainVideoScreen.swift */; };
 		F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EBA2F72C625000861B6 /* MainBookScreen.swift */; };
 		F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12EBC2F73CF77000861B6 /* MainTab.swift */; };
+		F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C74D722FA23BB70027131A /* DateUtils.swift */; };
 		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
 		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
@@ -136,6 +137,7 @@
 		F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC4132F8CFD8E004C8D53 /* CbtService.swift */; };
 		F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */; };
 		F5FEC41C2F8D012F004C8D53 /* MainCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */; };
+		F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -226,6 +228,7 @@
 		F5C12EB82F72C5C7000861B6 /* MainVideoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVideoScreen.swift; sourceTree = "<group>"; };
 		F5C12EBA2F72C625000861B6 /* MainBookScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBookScreen.swift; sourceTree = "<group>"; };
 		F5C12EBC2F73CF77000861B6 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		F5C74D722FA23BB70027131A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
@@ -268,6 +271,7 @@
 		F5FEC4132F8CFD8E004C8D53 /* CbtService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtService.swift; sourceTree = "<group>"; };
 		F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtState.swift; sourceTree = "<group>"; };
 		F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtViewModel.swift; sourceTree = "<group>"; };
+		F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamWithTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -651,6 +655,7 @@
 				F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */,
 				F596A69D2F9F8E60006FAC46 /* SelectExam.swift */,
 				F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */,
+				F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -723,6 +728,7 @@
 				F5AE933D2F8639540003CAA5 /* BottomSheetManager.swift */,
 				F5AE93432F86451F0003CAA5 /* AppUtils.swift */,
 				F5FEC40C2F892B4D004C8D53 /* LocalStore.swift */,
+				F5C74D722FA23BB70027131A /* DateUtils.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -854,6 +860,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */,
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
@@ -878,6 +885,7 @@
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
+				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,

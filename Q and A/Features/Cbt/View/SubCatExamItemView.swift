@@ -151,12 +151,16 @@ struct SubCatExamItemView: View {
     
     
     private func selectYear(){
+        print("selector","select year")
         viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item)
-        viewModel.state.showExamSelectSheet = true
+        viewModel.showExamSelectSheet = true
     }
     
     private func selectQuestion(){
+        print("selector","select question")
         viewModel.state.selectQuestion = SelectQuestion(position: position, numQuestion: subCatExam.defaultQuestions)
+        
+        viewModel.showQuestionSelectSheet = true
     }
     
     
@@ -173,7 +177,7 @@ struct SubCatExamItemView: View {
                     
                     DropDownInput(text: $subCatExam.yearText, hint: "Select \(catData.examType.capitalizeWords())", onItemClicked: {
                         
-                        
+                        selectYear()
                         
                     }).padding(.top, 2)
                     

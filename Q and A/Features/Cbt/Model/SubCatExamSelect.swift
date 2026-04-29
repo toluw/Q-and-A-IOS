@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SubCatExamSelect{
+struct SubCatExamSelect: Equatable{
     var cbtId: String
     var item: String
     var subcatId: String
