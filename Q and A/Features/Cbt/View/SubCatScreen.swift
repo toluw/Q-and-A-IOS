@@ -31,12 +31,6 @@ struct SubCatScreen: View {
                            }
                     }
                     
-                }else if(viewModel.state.items.isEmpty){
-                    
-                    EmptyStateView(title: viewModel.state.emptyStateText)
-                        .padding(.leading, 16)
-                        .padding(.trailing,16)
-                    
                 }else{
                     
                     ScrollView{
@@ -62,26 +56,36 @@ struct SubCatScreen: View {
                             
                          
                             
+                            if(viewModel.state.items.isEmpty){
+                                
+                                EmptyStateView(title: viewModel.state.emptyStateText)
+                                    .padding(.leading, 16)
+                                    .padding(.trailing,16)
+                                    .padding(.top, 35)
+                                
+                            }else{
+                                ForEach(viewModel.state.items.indices, id: \.self) { index in
+                                       
+                                       if let catData = cbtViewModel.parentCategoriesData?.catData {
+                                           SubCatExamItemView(
+                                               subCatExam: $viewModel.state.items[index],
+                                               catData: catData,
+                                               viewModel: viewModel,
+                                               position: index
+                                           )
+                                       }
+                            } .padding(.leading, 16)
+                                    .padding(.trailing, 16)
+                                    .padding(.top, 30)
+                                
+                                Spacer()
+                                        .frame(height: 170)
                             
-                            ForEach(viewModel.state.items.indices, id: \.self) { index in
-                                   
-                                   if let catData = cbtViewModel.parentCategoriesData?.catData {
-                                       SubCatExamItemView(
-                                           subCatExam: $viewModel.state.items[index],
-                                           catData: catData,
-                                           viewModel: viewModel,
-                                           position: index
-                                       )
-                                   }
+                            
                                
                         }
             
-                        .padding(.leading, 16)
-                            .padding(.trailing, 16)
-                            .padding(.top, 30)
-                        
-                        Spacer()
-                                .frame(height: 170)
+                       
                             
                             
                             
@@ -104,6 +108,27 @@ struct SubCatScreen: View {
                     }
                     
                 }
+        
+          .onChange(of: viewModel.state.searchText){oldValue, newValue in
+              if(newValue == ""){
+                  viewModel.state.items = viewModel.state.initItems
+              }else{
+                  
+                  let searchData = viewModel.state.initItems.filter {
+                      $0.data.item.lowercased().contains(newValue.lowercased())
+                  }
+                  
+                  viewModel.state.items = searchData
+                  
+                  if(searchData.isEmpty){
+                      viewModel.state.emptyStateText = "No search result for \(newValue)"
+                  }
+                  
+                  
+                  
+              }
+          }
+        
           .sheet(isPresented: $viewModel.showExamSelectSheet){
               
              if(viewModel.state.selectExam != nil){
