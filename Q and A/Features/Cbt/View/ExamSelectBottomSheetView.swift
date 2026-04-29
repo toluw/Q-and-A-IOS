@@ -15,18 +15,14 @@ struct ExamSelectBottomSheetView: View {
     @State var initExams: [Exam] = []
     @State var exams: [Exam] = []
     @State var searchText: String = ""
+    @State var noContentText: String = "No content yet, please check back letter"
     let onExamSelected: (ExamWithTitle) -> Void
     
     
     var body: some View {
         ZStack{
             
-            if(exams.isEmpty){
-                
-                EmptyStateView(title: "No content yet, please check back letter")
-                
-            }else{
-                
+           
                 VStack(){
                     
                     Text(selectExam.title)
@@ -46,13 +42,20 @@ struct ExamSelectBottomSheetView: View {
                         
                         LazyVStack{
                             
-                            ForEach(exams){ data in
-                                ExamSelectView(exam: data, onClick: {
-                                    
-                                    onExamSelected(ExamWithTitle(exam: data, title: selectExam.title))
-                                    
-                                })
+                            if(exams.isEmpty){
+                                EmptyStateView(title: noContentText)
+                                    .padding(.top, 35)
+                            }else{
+                                ForEach(exams){ data in
+                                    ExamSelectView(exam: data, onClick: {
+                                        
+                                        onExamSelected(ExamWithTitle(exam: data, title: selectExam.title))
+                                        
+                                    })
+                                }
                             }
+                            
+                           
                             
                         }
                         
@@ -60,7 +63,7 @@ struct ExamSelectBottomSheetView: View {
                     
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-            }
+            
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -68,6 +71,31 @@ struct ExamSelectBottomSheetView: View {
                 initExams = selectExam.exams
                 exams = selectExam.exams
             }
+            .onChange(of: searchText, {oldValue, newValue in
+               handleSearch(newValue: newValue)
+            })
+            
+    }
+    
+    
+    private func handleSearch(newValue: String){
+        if(newValue == ""){
+            exams = initExams
+        }else{
+            
+            let searchData = initExams.filter {
+                $0.title.lowercased().contains(newValue.lowercased())
+            }
+            
+            exams = searchData
+            
+            if(searchData.isEmpty){
+                noContentText = "No search result for \(newValue)"
+            }
+            
+            
+            
+        }
     }
 }
 
