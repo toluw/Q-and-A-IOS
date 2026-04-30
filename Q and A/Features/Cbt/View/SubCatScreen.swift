@@ -129,6 +129,23 @@ struct SubCatScreen: View {
               }
           }
         
+          .sheet(isPresented: $viewModel.showQuestionSelectSheet){
+              
+              if(viewModel.state.selectQuestion != nil){
+                  
+                  QuestionBottomSheetView(selectQuestion: viewModel.state.selectQuestion!, onClick: {
+                      question in
+                      
+                      viewModel.showQuestionSelectSheet = false
+                      
+                      handleQuestionSelection(numQuestion: question)
+                      
+                      
+                  })
+              }
+              
+          }
+        
           .sheet(isPresented: $viewModel.showExamSelectSheet){
               
              if(viewModel.state.selectExam != nil){
@@ -163,8 +180,8 @@ struct SubCatScreen: View {
           }
         
         
-        
-        
+      
+   
         
     
     private func practice(){
@@ -227,12 +244,33 @@ struct SubCatScreen: View {
         
     }
     
+    private func handleQuestionSelection(numQuestion: Int){
+        
+        if let position = viewModel.state.selectQuestion?.position{
+            
+            
+            viewModel.state.items[position].questionText = String(numQuestion)
+            
+            let initPos = viewModel.getInitPosition(subCatExams: viewModel.state.items[position])
+            
+            if let pos = initPos {
+                viewModel.state.initItems[pos].questionText = String(numQuestion)
+            }
+            
+            viewModel.updateExamSelect(subCatId: viewModel.state.items[position].data.subcatId, numQuestion: numQuestion)
+        }
+        
+        
+        
+    }
+        
+    
     
     private func handleExamSelection(examWithTitle: ExamWithTitle){
         
         if(examWithTitle.exam.startTime != ""){
             if(isTimeInTheFuture(examWithTitle.exam.startTime)){
-               let examName = cbtViewModel.parentCategoriesData?.catData?.examType  ?? "test"
+             //  let examName = cbtViewModel.parentCategoriesData?.catData?.examType  ?? "test"
                 
                 let message = "This exam starts at \(examWithTitle.exam.startTime). Champ! You don't want to miss it. Set a Reminder"
                 
