@@ -72,6 +72,9 @@
 		F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93432F86451F0003CAA5 /* AppUtils.swift */; };
 		F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93452F866BDB0003CAA5 /* ConfirmOtpScreen.swift */; };
 		F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93472F86A50B0003CAA5 /* ChangePasswordRequest.swift */; };
+		F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */; };
+		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
+		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -208,6 +211,9 @@
 		F5AE93432F86451F0003CAA5 /* AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtils.swift; sourceTree = "<group>"; };
 		F5AE93452F866BDB0003CAA5 /* ConfirmOtpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOtpScreen.swift; sourceTree = "<group>"; };
 		F5AE93472F86A50B0003CAA5 /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
+		F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCbtModeView.swift; sourceTree = "<group>"; };
+		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
+		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -554,6 +560,7 @@
 				F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */,
 				F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */,
 				F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */,
+				F5B5A03E2FA6179900B11187 /* DisabledButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -658,6 +665,7 @@
 				F596A69D2F9F8E60006FAC46 /* SelectExam.swift */,
 				F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */,
 				F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */,
+				F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,6 +688,7 @@
 				F5D476562FA106C600713F18 /* ExamSelectView.swift */,
 				F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */,
 				F5152C0D2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift */,
+				F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -934,6 +943,7 @@
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
 				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
+				F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */,
 				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
@@ -944,6 +954,7 @@
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
+				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
@@ -960,6 +971,7 @@
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
+				F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */,
 				F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */,
