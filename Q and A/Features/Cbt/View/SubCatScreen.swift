@@ -99,6 +99,15 @@ struct SubCatScreen: View {
                 
             }
             
+            if(!viewModel.state.examSelectList.isEmpty){
+                
+                continueCard()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .padding(.bottom, 18)
+                    .padding(.horizontal, 12)
+                
+            }
+            
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
           .onAppear{
                     viewModel.reInitExamSelection()
@@ -182,6 +191,43 @@ struct SubCatScreen: View {
         
       
    
+    @ViewBuilder
+    private func continueCard() -> some View{
+        
+        
+    
+        VStack{
+            
+            Text("(\(viewModel.state.examSelectList.count))  \(cbtViewModel.parentCategoriesData?.catData?.subcatType.capitalizeWords() ?? "") selected")
+                .foregroundColor(Color.white)
+                .font(AppFont.medium(16))
+                .padding(.top, 23)
+            
+            Button(action: {}){
+                ZStack{
+                    
+                    Text("Continue \(viewModel.state.examSelectList.count)")
+                        .foregroundColor(Color.white)
+                        .font(AppFont.medium(16))
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        .padding(.leading, 34)
+                        .padding(.trailing, 34)
+                        .contentShape(Rectangle())
+                        
+                    
+                }.background(Color("continue_btn_color"))
+                    .cornerRadius(4)
+            }.buttonStyle(.plain)
+                .padding(.bottom, 23)
+                .padding(.top, 21)
+            
+            
+        }.frame(maxWidth: .infinity)
+            .background(Color("bg_continue"))
+            .cornerRadius(20)
+    
+    }
         
     
     private func practice(){
