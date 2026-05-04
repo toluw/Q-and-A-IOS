@@ -19,5 +19,8 @@ struct SubCatState{
     var selectQuestion: SelectQuestion? = nil
     var searchText: String = ""
     var emptyStateText: String = "Oops! There is no content yet. Please check back later"
+    var showBlockedLoader: Bool = false
+    var multipleExamData: [MultipleExamsResponse.MultipleExamData] = []
+    
     
 }

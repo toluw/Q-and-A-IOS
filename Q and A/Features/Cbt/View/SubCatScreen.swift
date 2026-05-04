@@ -108,6 +108,16 @@ struct SubCatScreen: View {
                 
             }
             
+            if viewModel.state.showBlockedLoader {
+                   Color.black.opacity(0.4)
+                       .ignoresSafeArea()
+                   
+                   ProgressView()
+                       .padding()
+                       .background(Color.white)
+                       .cornerRadius(10)
+               }
+            
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
           .onAppear{
                     viewModel.reInitExamSelection()
@@ -136,6 +146,24 @@ struct SubCatScreen: View {
                   
                   
               }
+          }
+        
+          .sheet(isPresented: $viewModel.showExamModeSheet){
+              
+              SelectCbtModeView(){cbtMode in
+                 
+                  viewModel.showExamModeSheet = false
+                  setExamList()
+                  
+                  if(cbtMode == .practice){
+                     practice()
+                  }else if(cbtMode == .exam){
+                     examMode()
+                  }
+                  
+                  
+              }.presentationDetents([.medium])
+              
           }
         
           .sheet(isPresented: $viewModel.showQuestionSelectSheet){
@@ -175,9 +203,22 @@ struct SubCatScreen: View {
               }
              
           }
+          .onChange(of: viewModel.state.multipleExamData){oldValue, newValue in
+            
+              if(!viewModel.state.multipleExamData.isEmpty){
+                  
+                  cbtViewModel.initMultipleExams(multipleExamQuestions: viewModel.state.multipleExamData, examSelectList: cbtViewModel.examSelectList)
+                  
+                  cbtViewModel.initIndexList()
+                  
+                  navVm.navigate(route: .examPracticeScreen)
+              }
+          }
           .onChange(of: viewModel.state.examSelectList){oldValue, newValue in
               
               if(!viewModel.state.examSelectList.isEmpty && cbtViewModel.parentCategoriesData?.catData?.disablePractice == true){
+                  
+                  setExamList()
                   
                   practice()
                   
@@ -188,6 +229,15 @@ struct SubCatScreen: View {
          
           }
         
+    
+    
+    private func setExamList(){
+        
+        cbtViewModel.examSelectList = viewModel.getExamSelectList(category: cbtViewModel.parentCategoriesData?.item ?? "",image: cbtViewModel.parentCategoriesData?.catData?.image)
+        
+        cbtViewModel.examIndex = 0
+        
+    }
         
       
    
@@ -203,7 +253,11 @@ struct SubCatScreen: View {
                 .font(AppFont.medium(16))
                 .padding(.top, 23)
             
-            Button(action: {}){
+            Button(action: {
+                
+                viewModel.showExamModeSheet = true
+                
+            }){
                 ZStack{
                     
                     Text("Continue \(viewModel.state.examSelectList.count)")
@@ -232,6 +286,16 @@ struct SubCatScreen: View {
     
     private func practice(){
         
+        let multipleExamBody = cbtViewModel.getMultipleExamBody(examSelectList: cbtViewModel.examSelectList, buyerEmail: UserSettings.email ?? "")
+        
+        viewModel.getMultipleExam(multipleExamBody: multipleExamBody)
+        
+    }
+    
+    private func examMode(){
+        cbtViewModel.examResultDataList = []
+        cbtViewModel.examIndex = 0
+        navVm.navigate(route: .examDescriptionScreen)
     }
     
     

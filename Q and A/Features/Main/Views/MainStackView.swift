@@ -47,6 +47,12 @@ struct MainStackView: View {
              ExamCatScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .mockDescriptionScreen:
              MockDescriptionScreen()
+        case .examDescriptionScreen:
+             ExamDescriptionScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+        case .cbtPaymentScreen:
+            CbtPaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+        case .examPracticeScreen:
+            ExamPracticeScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         }
     }
     

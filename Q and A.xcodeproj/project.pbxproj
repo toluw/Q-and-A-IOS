@@ -17,6 +17,10 @@
 		F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */; };
 		F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */; };
 		F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */; };
+		F51E11E32FA8EAAE00934BF7 /* ExamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E22FA8EAAE00934BF7 /* ExamData.swift */; };
+		F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E42FA8EB8600934BF7 /* MultipleExamsResponse.swift */; };
+		F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */; };
+		F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */; };
 		F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FD2F70374600BF414A /* IntroBottomCard.swift */; };
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
@@ -48,6 +52,12 @@
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
 		F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59482C62F2CD7FF0030C541 /* SplashScreen.swift */; };
+		F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596458A2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift */; };
+		F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596458C2FA7BDD00052C9A4 /* ExamPracticeScreen.swift */; };
+		F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */; };
+		F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59645902FA7C0590052C9A4 /* ExamResult.swift */; };
+		F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59645922FA7C0BD0052C9A4 /* LiveExam.swift */; };
+		F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59645942FA7C10C0052C9A4 /* ExamResultData.swift */; };
 		F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69D2F9F8E60006FAC46 /* SelectExam.swift */; };
 		F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */; };
 		F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59D32872F90E3030045C4AA /* CatItemView.swift */; };
@@ -75,6 +85,7 @@
 		F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */; };
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
+		F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A0402FA620FD00B11187 /* ExamSelect.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -155,6 +166,10 @@
 		F51C58C82F98F0E900CE9931 /* SubCatExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamSelect.swift; sourceTree = "<group>"; };
 		F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamItemView.swift; sourceTree = "<group>"; };
 		F51C58CC2F9A00E500CE9931 /* LoadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageView.swift; sourceTree = "<group>"; };
+		F51E11E22FA8EAAE00934BF7 /* ExamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamData.swift; sourceTree = "<group>"; };
+		F51E11E42FA8EB8600934BF7 /* MultipleExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExamsResponse.swift; sourceTree = "<group>"; };
+		F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExamsBody.swift; sourceTree = "<group>"; };
+		F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExam.swift; sourceTree = "<group>"; };
 		F526A7FD2F70374600BF414A /* IntroBottomCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroBottomCard.swift; sourceTree = "<group>"; };
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
@@ -187,6 +202,12 @@
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5941CE02F22124500611063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F59482C62F2CD7FF0030C541 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		F596458A2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionScreen.swift; sourceTree = "<group>"; };
+		F596458C2FA7BDD00052C9A4 /* ExamPracticeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPracticeScreen.swift; sourceTree = "<group>"; };
+		F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPaymentScreen.swift; sourceTree = "<group>"; };
+		F59645902FA7C0590052C9A4 /* ExamResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResult.swift; sourceTree = "<group>"; };
+		F59645922FA7C0BD0052C9A4 /* LiveExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExam.swift; sourceTree = "<group>"; };
+		F59645942FA7C10C0052C9A4 /* ExamResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultData.swift; sourceTree = "<group>"; };
 		F596A69D2F9F8E60006FAC46 /* SelectExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExam.swift; sourceTree = "<group>"; };
 		F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestion.swift; sourceTree = "<group>"; };
 		F59D32872F90E3030045C4AA /* CatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatItemView.swift; sourceTree = "<group>"; };
@@ -214,6 +235,7 @@
 		F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCbtModeView.swift; sourceTree = "<group>"; };
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
+		F5B5A0402FA620FD00B11187 /* ExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelect.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -666,6 +688,14 @@
 				F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */,
 				F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */,
 				F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */,
+				F5B5A0402FA620FD00B11187 /* ExamSelect.swift */,
+				F59645902FA7C0590052C9A4 /* ExamResult.swift */,
+				F59645922FA7C0BD0052C9A4 /* LiveExam.swift */,
+				F59645942FA7C10C0052C9A4 /* ExamResultData.swift */,
+				F51E11E22FA8EAAE00934BF7 /* ExamData.swift */,
+				F51E11E42FA8EB8600934BF7 /* MultipleExamsResponse.swift */,
+				F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */,
+				F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -689,6 +719,9 @@
 				F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */,
 				F5152C0D2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift */,
 				F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */,
+				F596458A2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift */,
+				F596458C2FA7BDD00052C9A4 /* ExamPracticeScreen.swift */,
+				F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -900,11 +933,13 @@
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
+				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
+				F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
 				F59D32902F90FAAD0045C4AA /* EmptyStateView.swift in Sources */,
@@ -923,6 +958,7 @@
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
+				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
@@ -939,6 +975,7 @@
 				F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */,
 				F500CBB32F87C3F200111B77 /* ChangePasswordScreen.swift in Sources */,
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,
+				F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
@@ -951,12 +988,15 @@
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
+				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
 				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
+				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
+				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
@@ -964,17 +1004,21 @@
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
+				F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
+				F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
+				F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
 				F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */,
 				F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */,
+				F51E11E32FA8EAAE00934BF7 /* ExamData.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,

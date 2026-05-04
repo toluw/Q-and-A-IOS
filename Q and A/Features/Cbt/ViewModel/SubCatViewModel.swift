@@ -14,6 +14,7 @@ class SubCatViewModel: ObservableObject {
     @Published var state: SubCatState = SubCatState()
     @Published var showExamSelectSheet: Bool = false
     @Published var showQuestionSelectSheet: Bool = false
+    @Published var showExamModeSheet: Bool = false
     
     private let service: CbtServiceProtocol
       
@@ -25,6 +26,52 @@ class SubCatViewModel: ObservableObject {
     func reInitExamSelection(){
         state.examSelectList = []
     }
+    
+    func getExamSelectList(category: String, image: String?) -> [ExamSelect] {
+      return  state.examSelectList.map {
+            ExamSelect(
+                item: "\($0.item) - \($0.exam.title)",
+                exam: $0.exam,
+                numQuestions: $0.numQuestions,
+                shouldShuffle: $0.shouldShuffle,
+                category: category,
+                image: image,
+                disableReview: $0.disableReview
+            )
+        }
+        
+        
+    }
+    
+    
+    
+    func getMultipleExam(multipleExamBody: MultipleExamsBody){
+        
+       
+        
+        state.showBlockedLoader = true
+        
+        Task{
+            do{
+              
+                let response = try await service.getMultipleExams(multipleExamBody: multipleExamBody)
+                state.showBlockedLoader = false
+                state.multipleExamData = response.data
+                
+                
+                
+            } catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.getMultipleExam(multipleExamBody: multipleExamBody)
+                })
+            }
+        }
+        
+    }
+    
+    
+   
     
     
     func getSubCatExams(cbtId: String, buyerEmail: String?){

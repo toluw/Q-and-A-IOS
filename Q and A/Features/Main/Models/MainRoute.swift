@@ -17,5 +17,8 @@ enum MainRoute: Hashable{
     case examSubCatScreen
     case examCatScreen
     case mockDescriptionScreen
+    case examDescriptionScreen
+    case cbtPaymentScreen
+    case examPracticeScreen
     
 }

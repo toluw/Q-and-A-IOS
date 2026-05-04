@@ -115,6 +115,7 @@ struct SelectCbtModeView: View {
             
             
         }.frame(maxWidth: .infinity)
+            .background(Color.white)
             .onAppear{
                 selectedMode = nil
             }

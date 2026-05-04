@@ -11,12 +11,14 @@ protocol CbtServiceProtocol {
     
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse
     func getSubCatExams(cbtId: String, buyerEmail: String?) async throws -> SubCatExamsResponse
+    func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse
     
     
 }
 
 
 final class CbtService: CbtServiceProtocol{
+    
     
    
     
@@ -42,6 +44,11 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse {
+        <#code#>
+    }
+    
     
     
 }

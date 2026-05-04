@@ -1,0 +1,22 @@
+//
+//  ExamPracticeScreen.swift
+//  Q and A
+//
+//  Created by GIGL-PC on 03/05/2026.
+//
+
+import SwiftUI
+
+struct ExamPracticeScreen: View {
+    
+    @ObservedObject var navVm: MainNavViewModel
+    @ObservedObject var cbtViewModel: CbtViewModel
+    
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+#Preview {
+    ExamPracticeScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+}
