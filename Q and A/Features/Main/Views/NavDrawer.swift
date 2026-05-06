@@ -86,7 +86,7 @@ struct NavDrawer: View {
                             }
                         
                         
-                    }.frame(width: .infinity)
+                    }.frame(maxWidth: .infinity)
                     
                    
                    

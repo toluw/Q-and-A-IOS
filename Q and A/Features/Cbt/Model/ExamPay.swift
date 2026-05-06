@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ExamPay{
+struct ExamPay: Equatable, Identifiable{
+    var id: UUID = UUID()
     var exam: Exam
     var isSelected: Bool = false
 }

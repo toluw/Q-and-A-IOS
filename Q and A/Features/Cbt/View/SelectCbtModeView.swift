@@ -25,7 +25,7 @@ struct SelectCbtModeView: View {
                 .padding(.top, 30)
                 .padding(.bottom, 20)
             
-            Divider()
+            Rectangle().fill(Color("Grey")).frame(height: 1)
             
             Button(action: {
                 selectedMode = .practice
@@ -61,7 +61,7 @@ struct SelectCbtModeView: View {
                 
             }.buttonStyle(.plain)
             
-            Divider()
+            Rectangle().fill(Color("Grey")).frame(height: 1)
             
             Button(action: {
                 selectedMode = .exam
