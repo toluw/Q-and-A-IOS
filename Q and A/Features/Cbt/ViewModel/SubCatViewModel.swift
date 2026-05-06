@@ -15,6 +15,7 @@ class SubCatViewModel: ObservableObject {
     @Published var showExamSelectSheet: Bool = false
     @Published var showQuestionSelectSheet: Bool = false
     @Published var showExamModeSheet: Bool = false
+    @Published var showLogin: Bool = false
     
     private let service: CbtServiceProtocol
       

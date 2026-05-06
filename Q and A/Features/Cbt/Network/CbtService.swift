@@ -46,7 +46,13 @@ final class CbtService: CbtServiceProtocol{
     }
     
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse {
-        <#code#>
+        return try await apiClient.request(
+            .getMultipleExams(multipleExamBody: multipleExamBody),
+            responseType: MultipleExamsResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
     }
     
     
