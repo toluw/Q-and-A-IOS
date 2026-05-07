@@ -148,6 +148,26 @@ struct SubCatScreen: View {
               }
           }
         
+          .sheet(isPresented: $viewModel.state.showPaymentSheet){
+              if(viewModel.state.selectExam != nil && viewModel.state.examWithTitle != nil){
+                  
+                  ExamPayBottomSheetView(
+                    examWithTitle: viewModel.state.examWithTitle!,
+                    premiumExams: viewModel.state.selectExam!.exams.filter { !$0.isProvisioned },
+                    onClose: {
+                      viewModel.state.showPaymentSheet = false
+                  }, onPaymentClicked: {items in
+                      viewModel.state.showPaymentSheet = false
+                      cbtViewModel.selectedExamPay = items
+                      navVm.navigate(route: .cbtPaymentScreen)
+                  }, onAddToCart: {items in
+                      
+                  }).presentationDetents([.large])
+                  
+              }
+              
+          }
+        
           .sheet(isPresented: $viewModel.showExamModeSheet){
               
               SelectCbtModeView(){cbtMode in
@@ -178,10 +198,28 @@ struct SubCatScreen: View {
                       handleQuestionSelection(numQuestion: question)
                       
                       
-                  })
+                  }).presentationDetents([.medium,  .large])
               }
               
           }
+        
+          .sheet(isPresented: $viewModel.showLogin){
+                 LoginScreen(
+                     onDismiss: {
+                         viewModel.showLogin = false
+                     }, onForgotpassword: {
+                         viewModel.showLogin = false
+                         navVm.navigate(route: .forgotPasswordScreen)
+                     }, onLoginSuccess: {userProfile in
+                         viewModel.showLogin = false
+                         showSuccessMessage(message: "Thanks \(userProfile.name)! You are now logged in", actionTitle: "Continue", showCancel: false){
+                             
+                         }
+                        
+                     }
+                     
+                 )
+             }
         
           .sheet(isPresented: $viewModel.showExamSelectSheet){
               
@@ -193,8 +231,7 @@ struct SubCatScreen: View {
                       if(examWithTitle.exam.isProvisioned){
                           handleExamSelection(examWithTitle: examWithTitle)
                       }else{
-                         
-                          
+                         handlePaymentIntent(examWithTitle: examWithTitle)
                       }
                       
                       
@@ -372,6 +409,18 @@ struct SubCatScreen: View {
         
         
         
+    }
+    
+    
+    private func handlePaymentIntent(examWithTitle: ExamWithTitle){
+        if(UserSettings.isLoggedIn){
+            viewModel.state.examWithTitle = examWithTitle
+            viewModel.state.showPaymentSheet = true
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
     }
         
     

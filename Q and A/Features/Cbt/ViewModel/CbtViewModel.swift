@@ -19,6 +19,7 @@ class CbtViewModel: ObservableObject{
     var examResultDataList: [ExamResultData] = []
     var multipleExams: [MultipleExam] = []
     var indexList: [Int] = []
+    var selectedExamPay: [ExamPay] = []
     
     
     

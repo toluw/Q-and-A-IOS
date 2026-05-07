@@ -13,7 +13,7 @@ struct ExamPayView: View {
     
     var body: some View {
         Button(action: {
-            
+            examPay.isSelected = !examPay.isSelected
         }){
            
             ZStack{
@@ -83,7 +83,7 @@ struct ExamPayPreviewWrapper: View {
         
         exam = Exam(cbtId: "1", subcatId: "2", numQuestions: 4, price: 300, title: "Geography", instruction: "Do your best", description: "Welcome abroad", duration: 5, isActive: true, createdAt: "", sellerEmail: "", hasSample: true, examId: "2", isProvisioned: true, numViews: 3, isMaxAttempt: false, startTime: "", isCompulsory: "1")
         
-        self.examPay = ExamPay(exam: exam, isSelected: true)
+        self.examPay = ExamPay(exam: exam, isSelected: false)
     }
     
     var body: some View {

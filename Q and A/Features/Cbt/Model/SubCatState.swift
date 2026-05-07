@@ -21,6 +21,8 @@ struct SubCatState{
     var emptyStateText: String = "Oops! There is no content yet. Please check back later"
     var showBlockedLoader: Bool = false
     var multipleExamData: [MultipleExamsResponse.MultipleExamData] = []
+    var showPaymentSheet: Bool = false
+    var examWithTitle: ExamWithTitle? = nil
     
     
 }

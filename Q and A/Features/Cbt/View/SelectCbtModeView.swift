@@ -97,7 +97,7 @@ struct SelectCbtModeView: View {
                 
             }.buttonStyle(.plain)
             
-            Divider()
+            Rectangle().fill(Color("Grey")).frame(height: 1)
             
             ZStack{
                 if(selectedMode == nil){

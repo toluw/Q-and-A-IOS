@@ -35,6 +35,7 @@ struct ExamPayBottomSheetView: View {
             }){
                Image("app_close")
                     .padding(.leading, 20)
+                    .padding(.top, 30)
             }
             
             HStack{
@@ -50,7 +51,7 @@ struct ExamPayBottomSheetView: View {
             
             
             Button(action: {
-                
+              isSelectAll = !isSelectAll
             }){
               
                 HStack{
@@ -145,6 +146,15 @@ struct ExamPayBottomSheetView: View {
         }.onChange(of: examPaymentList){previous, current in
             totalPrice = getTotalPrice()
         }
+        .onChange(of: isSelectAll){previous, current in
+            
+            if(current){
+                selectAllExams()
+            }else{
+                setExamPayList(exam: examWithTitle.exam, premiumExams: premiumExams)
+            }
+            
+        }
     }
     
     
@@ -166,6 +176,18 @@ struct ExamPayBottomSheetView: View {
         
     }
     
+    func selectAllExams() {
+        
+            let newList = examPaymentList.map {
+                var item = $0
+                item.isSelected = true
+                return item
+            }
+
+            examPaymentList = newList
+        
+    }
+    
    private func getSelectedExamPay() -> [ExamPay] {
         
         return examPaymentList.filter { $0.isSelected }
@@ -182,7 +204,7 @@ struct ExamPayBottomSheetView: View {
             }
         }
         
-        examPaymentList.sort { !$0.isSelected && $1.isSelected }
+        examPaymentList.sort { $0.isSelected && !$1.isSelected }
     }
 }
 
