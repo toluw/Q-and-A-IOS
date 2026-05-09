@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Q_and_AApp: App {
@@ -19,6 +20,6 @@ struct Q_and_AApp: App {
                 .environmentObject(appViewModel)
                 .preferredColorScheme(.light)
                 .globalBottomSheet()
-        }
+        }.modelContainer(for: ExamCart.self)
     }
 }

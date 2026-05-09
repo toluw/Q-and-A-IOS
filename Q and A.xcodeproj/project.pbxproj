@@ -75,6 +75,9 @@
 		F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */; };
 		F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */; };
 		F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C762F8FBA6F00B1B22F /* ItemView.swift */; };
+		F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */; };
+		F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */; };
+		F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -230,6 +233,9 @@
 		F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtViewModel.swift; sourceTree = "<group>"; };
 		F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCategoryBottomSheetView.swift; sourceTree = "<group>"; };
 		F5A13C762F8FBA6F00B1B22F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCart.swift; sourceTree = "<group>"; };
+		F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCartRepository.swift; sourceTree = "<group>"; };
+		F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartScreen.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -455,6 +461,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F5A32EC02FAF4C17001023A4 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		F5BD4A122F2A50360020A8A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +636,7 @@
 		F5C12EA42F72C3EE000861B6 /* Cbt */ = {
 			isa = PBXGroup;
 			children = (
+				F5A32EC02FAF4C17001023A4 /* db */,
 				F5FEC4102F8CEAAA004C8D53 /* Network */,
 				F5C12EAE2F72C4C7000861B6 /* ViewModel */,
 				F5C12EAD2F72C4C0000861B6 /* View */,
@@ -709,6 +724,7 @@
 				F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */,
 				F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */,
 				F5BFC2B42FAA401B008A038E /* ExamPay.swift */,
+				F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -737,6 +753,7 @@
 				F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */,
 				F56CD1D72FAB618A0042902F /* ExamPayBottomSheetView.swift */,
 				F56CD1D92FAB664A0042902F /* ExamPayView.swift */,
+				F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -924,6 +941,7 @@
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
+				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
@@ -1022,6 +1040,7 @@
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
+				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
 				F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */,
@@ -1031,6 +1050,7 @@
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
+				F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,

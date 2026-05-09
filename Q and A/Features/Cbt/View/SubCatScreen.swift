@@ -160,8 +160,9 @@ struct SubCatScreen: View {
                       viewModel.state.showPaymentSheet = false
                       cbtViewModel.selectedExamPay = items
                       navVm.navigate(route: .cbtPaymentScreen)
-                  }, onAddToCart: {items in
-                      
+                  }, onAddToCart: {
+                      viewModel.state.showPaymentSheet = false
+                      navVm.navigate(route: .cbtCartScreen)
                   }).presentationDetents([.large])
                   
               }

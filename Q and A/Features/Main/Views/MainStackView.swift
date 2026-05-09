@@ -53,6 +53,8 @@ struct MainStackView: View {
             CbtPaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .examPracticeScreen:
             ExamPracticeScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+        case .cbtCartScreen:
+            CbtCartScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         }
     }
     

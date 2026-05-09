@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ExamPayBottomSheetView: View {
     
@@ -15,14 +16,20 @@ struct ExamPayBottomSheetView: View {
     @State var examPaymentList: [ExamPay] = []
     @State var totalPrice: Int = 0
     @State var isSelectAll: Bool = false
+    @State var errorMessage: ToastData? = nil
     
     let onClose: () -> Void
     
     let onPaymentClicked: ([ExamPay]) -> Void
     
     
-    let onAddToCart: ([ExamPay]) -> Void
+    let onAddToCart: () -> Void
     
+    @Environment(\.modelContext) private var context
+
+    private var repository: ExamCartRepository {
+        ExamCartRepository(context: context)
+        }
     
     
     
@@ -121,7 +128,7 @@ struct ExamPayBottomSheetView: View {
                 ZStack{
                     if(totalPrice > 0){
                         SecondaryButton(buttonText: "Add to Cart", action: {
-                           onAddToCart(getSelectedExamPay())
+                            processCart(examPayList: getSelectedExamPay())
                         })
                     }else{
                        
@@ -146,6 +153,7 @@ struct ExamPayBottomSheetView: View {
         }.onChange(of: examPaymentList){previous, current in
             totalPrice = getTotalPrice()
         }
+        .toastBanner(toast: $errorMessage)
         .onChange(of: isSelectAll){previous, current in
             
             if(current){
@@ -155,6 +163,82 @@ struct ExamPayBottomSheetView: View {
             }
             
         }
+    }
+    
+    
+    private func processCart(examPayList: [ExamPay]){
+        
+        print(examPayList)
+        
+        let it = try? repository.getExams()
+        
+       
+        
+        if(it == nil || it?.isEmpty == true){
+            addToCart(examPayList: examPayList)
+            return
+        }
+        
+        print(it!)
+        
+        if(isExamNotInCart(exams: it!, examPaymentList: examPayList)){
+            addToCart(examPayList: examPayList)
+        }
+        
+        
+    }
+    
+    func isExamNotInCart(
+        exams: [ExamCart],
+        examPaymentList: [ExamPay]
+    ) -> Bool {
+
+        let examIds = exams.map { $0.examId }
+
+        for examPay in examPaymentList {
+
+            if examIds.contains(examPay.exam.examId) {
+
+                showExamInCartDialog(exam: examPay.exam)
+
+                return false
+            }
+        }
+
+        return true
+    }
+    
+    private func showExamInCartDialog(exam: Exam){
+        
+        errorMessage = ToastData(message: "You have already added \(exam.title) to your cart", type: .error)
+        
+        
+    }
+    
+    private func addToCart(examPayList: [ExamPay]){
+        let cartItems = addTitleToCartContent(examPayList: examPayList, title: examWithTitle.title)
+        
+        try? repository.insertExams(cartItems)
+        
+        onAddToCart()
+        
+        
+    }
+    
+    private func addTitleToCartContent(examPayList: [ExamPay], title: String) -> [ExamCart]{
+        
+        var cartList: [ExamCart] = []
+        
+        for examPay in examPayList{
+            
+            let examCart = ExamCart(cbtId: examPay.exam.cbtId, subcatId: examPay.exam.subcatId, numQuestions: examPay.exam.numQuestions, price: examPay.exam.price, title: "\(title) - \(examPay.exam.title)", instruction: examPay.exam.instruction, examDescription: examPay.exam.description, duration: examPay.exam.duration, isActive: examPay.exam.isActive, createdAt: examPay.exam.createdAt, sellerEmail: examPay.exam.sellerEmail, hasSample: examPay.exam.hasSample, examId: examPay.exam.examId, isProvisioned: examPay.exam.isProvisioned, numViews: examPay.exam.numViews, isMaxAttempt: examPay.exam.isMaxAttempt, startTime: examPay.exam.startTime, isCompulsory: examPay.exam.isCompulsory)
+            
+            cartList.append(examCart)
+        }
+        
+        return cartList
+        
+        
     }
     
     
@@ -212,5 +296,5 @@ struct ExamPayBottomSheetView: View {
     
     let exam = Exam(cbtId: "1", subcatId: "2", numQuestions: 4, price: 300, title: "Geography", instruction: "Do your best", description: "Welcome abroad", duration: 5, isActive: true, createdAt: "", sellerEmail: "", hasSample: true, examId: "2", isProvisioned: true, numViews: 3, isMaxAttempt: false, startTime: "", isCompulsory: "1")
     
-    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), premiumExams: [exam, exam], onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: {examPay in })
+    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), premiumExams: [exam, exam], onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: { })
 }

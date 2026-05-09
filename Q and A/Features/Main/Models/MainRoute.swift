@@ -20,5 +20,6 @@ enum MainRoute: Hashable{
     case examDescriptionScreen
     case cbtPaymentScreen
     case examPracticeScreen
+    case cbtCartScreen
     
 }
