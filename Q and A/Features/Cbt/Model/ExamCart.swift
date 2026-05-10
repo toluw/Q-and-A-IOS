@@ -75,4 +75,8 @@ final class ExamCart{
             self.isCompulsory = isCompulsory
         }
     
+    func toExam() -> Exam {
+        Exam(cbtId: cbtId, subcatId: subcatId, numQuestions: numQuestions, price: price, title: title, instruction: instruction, description: examDescription, duration: duration, isActive: isActive, createdAt: createdAt, sellerEmail: sellerEmail, hasSample: hasSample, examId: examId, isProvisioned: isProvisioned, numViews: numViews, isMaxAttempt: isMaxAttempt, startTime: startTime, isCompulsory: isCompulsory)
+    }
+    
 }

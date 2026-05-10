@@ -78,6 +78,11 @@
 		F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */; };
 		F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */; };
 		F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */; };
+		F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC52FB0C2D5001023A4 /* CartItemView.swift */; };
+		F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */; };
+		F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */; };
+		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
+		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -236,6 +241,10 @@
 		F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCart.swift; sourceTree = "<group>"; };
 		F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCartRepository.swift; sourceTree = "<group>"; };
 		F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartScreen.swift; sourceTree = "<group>"; };
+		F5A32EC52FB0C2D5001023A4 /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
+		F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartState.swift; sourceTree = "<group>"; };
+		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
+		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -325,6 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */,
 				F5E144EE2F7FB9F200C10F3A /* Moya in Frameworks */,
 				F5E144EC2F7FB9F200C10F3A /* CombineMoya in Frameworks */,
 			);
@@ -609,6 +619,8 @@
 				F5B5A03E2FA6179900B11187 /* DisabledButton.swift */,
 				F56CD1DB2FAB92EE0042902F /* SecondaryButton.swift */,
 				F56CD1DD2FAB94930042902F /* PaymentButton.swift */,
+				F5A32EC52FB0C2D5001023A4 /* CartItemView.swift */,
+				F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -725,6 +737,7 @@
 				F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */,
 				F5BFC2B42FAA401B008A038E /* ExamPay.swift */,
 				F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */,
+				F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -765,6 +778,7 @@
 				F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */,
 				F59D32892F90EB330045C4AA /* ParentCatViewModel.swift */,
 				F5CA69002F93B689005010AE /* SubCatViewModel.swift */,
+				F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -899,6 +913,7 @@
 			mainGroup = F5941CCD2F22124300611063;
 			packageReferences = (
 				F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */,
+				F5A32ECB2FB0D2B3001023A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = F5941CD72F22124300611063 /* Products */;
 			projectDirPath = "";
@@ -969,6 +984,7 @@
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
+				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
@@ -990,6 +1006,7 @@
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
+				F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
@@ -997,6 +1014,7 @@
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
+				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
@@ -1015,6 +1033,7 @@
 				F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
+				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
 				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
 				F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */,
@@ -1285,6 +1304,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F5A32ECB2FB0D2B3001023A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.4;
+			};
+		};
 		F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1296,6 +1323,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5A32ECB2FB0D2B3001023A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		F5E144EB2F7FB9F200C10F3A /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */;
