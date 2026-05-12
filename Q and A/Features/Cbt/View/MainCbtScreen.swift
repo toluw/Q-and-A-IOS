@@ -49,7 +49,7 @@ struct MainCbtScreen: View {
                     }
                     
                     CartView(){
-                        
+                        navVm.navigate(route: .cbtCartScreen)
                     }.padding(.leading, 8)
                     
                 }.frame(maxWidth: .infinity)

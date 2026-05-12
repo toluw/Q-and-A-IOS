@@ -58,7 +58,7 @@ struct CbtCartScreen: View {
                                              price: viewModel.state.cartItems[index].price,
                                              onDelete: {
                                      
-                                    viewModel.deleteCartItem(position: index)
+                                    handleDelete(index: index)
                                     
                                 })
                             }
@@ -84,12 +84,14 @@ struct CbtCartScreen: View {
                             
                         }.padding(.horizontal, 16)
                             .padding(.top, 12)
-                        
+                            .padding(.bottom, 24)
+                            
                         
                         
                     PrimaryButton(buttonText: "Check Out", action: {
-                        
-                    })
+                        cbtViewModel.selectedExamPay = viewModel.getExamPay()
+                        navVm.navigateAndPop(route: .cbtPaymentScreen, pop: 1)
+                        })
                             .padding(.horizontal, 16)
                             .padding(.bottom, 12)
                         
@@ -120,6 +122,15 @@ struct CbtCartScreen: View {
                 }
                 
             }
+            .toolbar {
+                
+                // Title
+                ToolbarItem(placement: .principal) {
+                    Text("My Cart").font(AppFont.regular(18))
+                }
+                
+               
+            }
             .onChange(of: viewModel.state.cartItems){previous, current in
                 
                 viewModel.setTotalPrice()
@@ -129,6 +140,14 @@ struct CbtCartScreen: View {
         
         
        
+    }
+    
+    
+    private func handleDelete(index: Int){
+        showNoticeMessage(message: "Are you sure you want to delete this item from your cart?", actionTitle: "Delete", showCancel: true, action: {
+            try? repository.deleteExam(examId: viewModel.state.cartItems[index].examId)
+            viewModel.deleteCartItem(position: index)
+        })
     }
 }
 

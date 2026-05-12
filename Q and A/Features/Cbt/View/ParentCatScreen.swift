@@ -97,7 +97,7 @@ struct ParentCatScreen: View {
             // Trailing Icon
             ToolbarItem(placement: .navigationBarTrailing) {
                 CartView(){
-                    
+                    navVm.navigate(route: .cbtCartScreen)
                 }
             }
         }

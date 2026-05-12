@@ -18,7 +18,7 @@ struct CartItemView: View {
            
             HStack{
                 
-                VStack{
+                VStack(alignment: .leading){
                     
                     Text(title).font(AppFont.regular(16))
                     

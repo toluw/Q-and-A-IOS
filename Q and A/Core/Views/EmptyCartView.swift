@@ -19,20 +19,19 @@ struct EmptyCartView: View {
             Text("Oops! Look like you have no item in your cart yet")
                 .font(AppFont.regular(14))
                 .padding(.horizontal, 16)
-                .padding(.top, 32)
+                
             
             
             
-            AnimatedImage(name: "empty_cart")
+            AnimatedImage(name: "empty_cart.gif")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 90, height: 90)
-                        .padding(.vertical, 40)
+                        .frame(width: 200, height: 200)
+                        .padding(.vertical, 30)
             
             
             PrimaryButton(buttonText: "Continue Shopping", action: onContinueShopping)
-                .padding(.top, 40)
-                .padding(.horizontal, 16)
+            .padding(.horizontal, 16)
             
             
             

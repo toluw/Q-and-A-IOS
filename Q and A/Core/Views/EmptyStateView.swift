@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct EmptyStateView: View {
     
@@ -14,7 +15,11 @@ struct EmptyStateView: View {
     var body: some View {
         VStack{
             
-            Image("empty_state")
+            AnimatedImage(name: "empty_bx.gif")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                    
             
             Text(title)
                 .font(AppFont.regular(14))
