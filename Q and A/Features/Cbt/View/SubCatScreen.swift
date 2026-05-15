@@ -11,6 +11,7 @@ struct SubCatScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     @StateObject var viewModel: SubCatViewModel = .init()
     
     var body: some View {
@@ -159,6 +160,7 @@ struct SubCatScreen: View {
                   }, onPaymentClicked: {items in
                       viewModel.state.showPaymentSheet = false
                       cbtViewModel.selectedExamPay = items
+                      paymentViewModel.paymentState = .initialize
                       navVm.navigate(route: .cbtPaymentScreen)
                   }, onAddToCart: {
                       viewModel.state.showPaymentSheet = false
@@ -461,5 +463,5 @@ struct SubCatScreen: View {
 }
 
 #Preview {
-    SubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    SubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }

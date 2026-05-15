@@ -11,12 +11,41 @@ struct CbtPaymentScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
+    @StateObject var viewModel: CbtPaymentViewModel = .init()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            
+            if(viewModel.state.isLoading){
+                
+                ProgressView()
+                
+            }
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                
+                handlePaymentState()
+                
+            }
+    }
+    
+    
+    private func handlePaymentState(){
+        
+        switch paymentViewModel.paymentState {
+        case .initialize:
+            <#code#>
+        case .success(let reference):
+            <#code#>
+        case .cancel:
+            <#code#>
+        }
+        
     }
 }
 
 #Preview {
-    CbtPaymentScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    CbtPaymentScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }

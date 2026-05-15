@@ -11,6 +11,7 @@ struct CbtCartScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     @StateObject var viewModel: CbtCartViewModel = .init()
     
     @Environment(\.modelContext) private var context
@@ -90,6 +91,7 @@ struct CbtCartScreen: View {
                         
                     PrimaryButton(buttonText: "Check Out", action: {
                         cbtViewModel.selectedExamPay = viewModel.getExamPay()
+                        paymentViewModel.paymentState = .initialize
                         navVm.navigateAndPop(route: .cbtPaymentScreen, pop: 1)
                         })
                             .padding(.horizontal, 16)
@@ -152,5 +154,5 @@ struct CbtCartScreen: View {
 }
 
 #Preview {
-    CbtCartScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    CbtCartScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }

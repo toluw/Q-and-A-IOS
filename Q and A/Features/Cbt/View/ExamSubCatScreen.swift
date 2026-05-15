@@ -11,6 +11,7 @@ struct ExamSubCatScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     
     
     var body: some View {
@@ -23,7 +24,7 @@ struct ExamSubCatScreen: View {
                     TabSubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
                 }else{
                     if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true){
-                        SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                        SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                     }else if(cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
                         TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
                     }
@@ -58,5 +59,5 @@ struct ExamSubCatScreen: View {
 }
 
 #Preview {
-    ExamSubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    ExamSubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }

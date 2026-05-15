@@ -11,6 +11,7 @@ struct MainStackView: View {
     
     @StateObject private var navVM = MainNavViewModel()
     @StateObject private var cbtViewModel = CbtViewModel()
+    @StateObject private var paymentViewModel = PaymentViewModel()
     
     
     var body: some View {
@@ -42,7 +43,7 @@ struct MainStackView: View {
         case .parentCatScreen(title: let title, cbcId: let cbcId, level: let level, isMock: let isMock):
             ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, navVm: navVM, cbtViewModel: cbtViewModel)
         case .examSubCatScreen:
-             ExamSubCatScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+             ExamSubCatScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         case .examCatScreen:
              ExamCatScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .mockDescriptionScreen:
@@ -50,11 +51,11 @@ struct MainStackView: View {
         case .examDescriptionScreen:
              ExamDescriptionScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .cbtPaymentScreen:
-            CbtPaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+            CbtPaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         case .examPracticeScreen:
             ExamPracticeScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         case .cbtCartScreen:
-            CbtCartScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+            CbtCartScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         }
     }
     
