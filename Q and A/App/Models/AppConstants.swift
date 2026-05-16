@@ -17,6 +17,7 @@ struct AppConstants {
         static let email = "email"
         static let phoneNumber = "phoneNumber"
         static let token = "token"
+        static let paystackApiKey = "paystackApiKey"
     }
     
 

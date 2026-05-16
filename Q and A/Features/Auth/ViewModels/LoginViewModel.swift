@@ -97,6 +97,7 @@ class LoginViewModel: ObservableObject{
         UserSettings.phoneNumber = userData.phone
         UserSettings.profileImage = userData.image
         UserSettings.isLoggedIn = true
+        UserSettings.paystackApiKey = userData.paystack_api_key
         
         state.userProfile = UserProfile()
         

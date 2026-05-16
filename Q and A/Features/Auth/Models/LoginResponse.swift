@@ -19,6 +19,7 @@ struct LoginResponse: Decodable {
         let phone: String?
         let library: [Library]?
         let image: String?
+        let paystack_api_key: String
     }
     
     struct Library: Decodable {

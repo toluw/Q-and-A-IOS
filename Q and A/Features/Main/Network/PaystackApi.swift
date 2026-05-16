@@ -58,7 +58,7 @@ extension PaystackApi: TargetType{
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json", "Authorization": "Bearer \(paystackSecret)"]
+        return ["Content-Type": "application/json", "Authorization": "Bearer \(UserSettings.paystackApiKey!)"]
     }
     
     

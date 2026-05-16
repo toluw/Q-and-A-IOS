@@ -43,5 +43,10 @@ struct UserSettings {
         get { UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.token) }
         set { UserDefaults.standard.set(newValue, forKey: AppConstants.UserDefaultsKeys.token) }
     }
+    
+    static var paystackApiKey: String?{
+        get { UserDefaults.standard.string(forKey: AppConstants.UserDefaultsKeys.paystackApiKey) }
+        set { UserDefaults.standard.set(newValue, forKey: AppConstants.UserDefaultsKeys.paystackApiKey) }
+    }
 
    }
