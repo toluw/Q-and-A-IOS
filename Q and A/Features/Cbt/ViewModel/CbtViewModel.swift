@@ -27,6 +27,40 @@ class CbtViewModel: ObservableObject{
         indexList = Array(repeating: 0, count: multipleExams.count)
     }
     
+    
+    func getExamPayTotalPrice() -> Int{
+        var totalPrice = 0
+        
+        for examPay in selectedExamPay{
+            
+            totalPrice += examPay.exam.price
+            
+        }
+        
+        return totalPrice
+        
+    }
+    
+    
+    func getPaystackMetadData() -> PaystackMetaData{
+        
+        var paymentDataList: [PaymentData] = []
+        
+        for examPay in selectedExamPay{
+            
+            let paymentData = PaymentData(title: examPay.exam.title, paymentType: "cbt", category: "exam_id: \(examPay.exam.examId)")
+            
+            paymentDataList.append(paymentData)
+            
+        }
+        
+        
+        return PaystackMetaData(custiomFields: paymentDataList)
+        
+        
+    }
+    
+    
     func getMultipleExamBody(
         examSelectList: [ExamSelect],
         buyerEmail: String

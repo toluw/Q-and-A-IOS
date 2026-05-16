@@ -6,3 +6,36 @@
 //
 
 import Foundation
+
+
+protocol PaystackServiceProtocol {
+    
+
+        func initiateTransaction(paystackData: PaystackData) async throws -> InititateTransactionResponse
+    
+    
+}
+
+
+class PaystackService: PaystackServiceProtocol{
+    
+    private let apiClient = APIClient<PaystackApi>()
+    
+    func initiateTransaction(paystackData: PaystackData) async throws -> InititateTransactionResponse {
+        
+        return try await apiClient.request(
+            .initiateTransaction(paystackData: paystackData),
+            responseType: InititateTransactionResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+        
+    }
+    
+    
+   
+    
+    
+}

@@ -9,7 +9,7 @@ import Foundation
 
 
 
-struct InititateTransactionResponse{
+struct InititateTransactionResponse: Codable{
    
     let data: InitiateTransactionData
     
@@ -20,7 +20,7 @@ struct InititateTransactionResponse{
 
 
 
-struct InitiateTransactionData: Codable{
+struct InitiateTransactionData: Codable, Equatable{
     let authorization_url: String
     let access_code: String
     let reference: String

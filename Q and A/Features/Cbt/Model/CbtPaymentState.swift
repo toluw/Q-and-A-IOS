@@ -11,6 +11,10 @@ struct CbtPaymentState{
     
     var isLoading: Bool = false
     
+    var initTransactionErrorMessage: String?
+    
+    var initTransactionData: InitiateTransactionData? = nil
+    
 }
 
 

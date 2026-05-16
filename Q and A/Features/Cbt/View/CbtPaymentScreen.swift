@@ -21,6 +21,17 @@ struct CbtPaymentScreen: View {
                 
                 ProgressView()
                 
+            }else{
+                
+                if(viewModel.state.initTransactionErrorMessage != nil){
+                    
+                    ErrorView(message: viewModel.state.initTransactionErrorMessage!, onRetry: {
+                        
+                        viewModel.initTransaction()
+                        
+                    })
+                    
+                }
             }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -29,6 +40,16 @@ struct CbtPaymentScreen: View {
                 handlePaymentState()
                 
             }
+            .onChange(of: viewModel.state.initTransactionData){previous, current in
+                
+                if(viewModel.state.initTransactionData != nil){
+                    
+                    navVm.navigate(route: .paystackPaymentScreen(authorizationUrl: viewModel.state.initTransactionData!.authorization_url, accessCode: viewModel.state.initTransactionData!.access_code, reference: viewModel.state.initTransactionData!.reference))
+                    
+                }
+                
+            }
+            .navigationBarBackButtonHidden(true)
     }
     
     
@@ -36,12 +57,26 @@ struct CbtPaymentScreen: View {
         
         switch paymentViewModel.paymentState {
         case .initialize:
-            <#code#>
+            initPayment()
         case .success(let reference):
             <#code#>
         case .cancel:
-            <#code#>
+            navVm.pop()
         }
+        
+    }
+    
+    private func initPayment(){
+       
+        let price = cbtViewModel.getExamPayTotalPrice()
+        
+        let amount = price * 100
+        
+        let paystackMetaData = cbtViewModel.getPaystackMetadData()
+        
+        let paystackData = PaystackData(amount: String(amount), email: UserSettings.email ?? "", metadata: paystackMetaData)
+        
+        viewModel.initTransaction()
         
     }
 }
