@@ -15,6 +15,7 @@ class CbtPaymentViewModel: ObservableObject{
     @Published var state: CbtPaymentState = CbtPaymentState()
     
     var paystackData: PaystackData? = nil
+    var postTransactionBody: PostTransactionBody? = nil
     
     private let cbtService: CbtServiceProtocol
     private let paystackService: PaystackServiceProtocol
@@ -50,6 +51,34 @@ class CbtPaymentViewModel: ObservableObject{
             }
             
         }
+        
+    }
+    
+    
+    func postTranSaction(){
+        
+        if let transactionBody = postTransactionBody{
+            
+            state.isLoading = true
+            state.postTransactionErrorMessage = nil
+            
+            
+            Task{
+                do{
+                    
+                    let response = try await cbtService.postTransaction(postTransactionBody: transactionBody)
+                    state.isLoading = false
+                    state.postTransactionSuccess = true
+                
+                    } catch {
+                    
+                    state.isLoading = false
+                    state.postTransactionErrorMessage = error.localizedDescription
+                }
+            }
+        }
+        
+     
         
     }
     

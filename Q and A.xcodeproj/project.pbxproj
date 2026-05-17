@@ -87,6 +87,7 @@
 		F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */; };
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
+		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -262,6 +263,7 @@
 		F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartState.swift; sourceTree = "<group>"; };
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
+		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 				F5E054662FB7C5C50012A9CC /* PaystackMetaData.swift */,
 				F5E054682FB7C6B30012A9CC /* PaystackData.swift */,
 				F5E0546A2FB7C7F50012A9CC /* InititateTransactionResponse.swift */,
+				F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1018,6 +1021,7 @@
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
+				F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */,
 				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,

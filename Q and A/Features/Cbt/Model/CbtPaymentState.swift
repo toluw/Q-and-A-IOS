@@ -15,6 +15,10 @@ struct CbtPaymentState{
     
     var initTransactionData: InitiateTransactionData? = nil
     
+    var postTransactionErrorMessage: String? = nil
+    
+    var postTransactionSuccess: Bool = false
+    
 }
 
 

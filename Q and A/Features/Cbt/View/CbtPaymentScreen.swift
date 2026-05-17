@@ -14,6 +14,13 @@ struct CbtPaymentScreen: View {
     @ObservedObject var paymentViewModel: PaymentViewModel
     @StateObject var viewModel: CbtPaymentViewModel = .init()
     
+    @Environment(\.modelContext) private var context
+
+    private var repository: ExamCartRepository {
+        ExamCartRepository(context: context)
+        }
+    
+    
     var body: some View {
         ZStack{
             
@@ -32,6 +39,14 @@ struct CbtPaymentScreen: View {
                     })
                     
                 }
+                
+                if(viewModel.state.postTransactionErrorMessage != nil){
+                    ErrorView(message: viewModel.state.postTransactionErrorMessage!, onRetry: {
+                        
+                        viewModel.postTranSaction()
+                        
+                    })
+                }
             }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -49,6 +64,19 @@ struct CbtPaymentScreen: View {
                 }
                 
             }
+            .onChange(of: viewModel.state.postTransactionSuccess){previous, current in
+                
+                showSuccessMessage(message: "Your payment was successful, your CBT content is now unlocked", actionTitle: "Continue", showCancel: false, action: {
+                    
+                   try? repository.deleteExams()
+                    
+                    navVm.pop()
+                    
+                    
+                    
+                })
+                
+            }
             .navigationBarBackButtonHidden(true)
     }
     
@@ -59,11 +87,20 @@ struct CbtPaymentScreen: View {
         case .initialize:
             initPayment()
         case .success(let reference):
-            <#code#>
+            handlePaymentSuccess(reference: reference)
         case .cancel:
             navVm.pop()
         }
         
+    }
+    
+    private func handlePaymentSuccess(reference: String){
+        if let buyerEmail = UserSettings.email {
+            
+            viewModel.postTransactionBody = cbtViewModel.getTransactionBody(buyerEmail: buyerEmail, reference: reference)
+            viewModel.postTranSaction()
+            
+        }
     }
     
     private func initPayment(){

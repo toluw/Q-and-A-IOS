@@ -12,16 +12,17 @@ protocol CbtServiceProtocol {
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse
     func getSubCatExams(cbtId: String, buyerEmail: String?) async throws -> SubCatExamsResponse
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse
+    func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse
+    
     
     
 }
 
 
 final class CbtService: CbtServiceProtocol{
-    
-    
    
     
+   
     
     private let apiClient = APIClient<CbtAPI>()
     
@@ -54,6 +55,20 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    
+    func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .postTransaction(postTransactionBody: postTransactionBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+    }
+    
+    
     
     
     

@@ -61,6 +61,18 @@ class CbtViewModel: ObservableObject{
     }
     
     
+    func getTransactionBody(buyerEmail: String, reference: String) -> PostTransactionBody{
+        
+        let transactions: [Transaction] = selectedExamPay.map{
+            
+            Transaction(exam_id: $0.exam.examId, seller_email: $0.exam.sellerEmail, price: $0.exam.price)
+            
+        }
+        
+        return PostTransactionBody(buyer_email: buyerEmail, reference: reference, exams: transactions)
+    }
+    
+    
     func getMultipleExamBody(
         examSelectList: [ExamSelect],
         buyerEmail: String
