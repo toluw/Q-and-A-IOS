@@ -13,6 +13,6 @@ struct PaystackData: Codable{
     let email: String
     let metadata: PaystackMetaData
     var reference: String? = nil
-    var callback_url: String = paystack_callback
+    var callback_url: String = PaystackConstants.callbackURL
     
 }

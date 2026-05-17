@@ -88,6 +88,9 @@
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
 		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
+		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
+		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
+		F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -264,6 +267,9 @@
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
+		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
+		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
+		F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackWebView.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -606,6 +612,7 @@
 				F5E145022F80599E00C10F3A /* NavMenu.swift */,
 				F55021342F812ACB0057C2F0 /* UserProfile.swift */,
 				F59A8F9B2FB61E6300823C77 /* PaymentState.swift */,
+				F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -631,6 +638,8 @@
 				F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */,
 				F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */,
 				F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */,
+				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
+				F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1017,6 +1026,7 @@
 				F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */,
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
 				F5FEC41C2F8D012F004C8D53 /* MainCbtViewModel.swift in Sources */,
+				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
@@ -1032,6 +1042,7 @@
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
+				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
@@ -1076,6 +1087,7 @@
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
+				F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
