@@ -13,11 +13,15 @@ protocol PaystackServiceProtocol {
 
         func initiateTransaction(paystackData: PaystackData) async throws -> InititateTransactionResponse
     
+    func verifyPayment(reference: String) async throws -> PaystackVerifyResponse
+    
     
 }
 
 
 class PaystackService: PaystackServiceProtocol{
+    
+    
     
     private let apiClient = APIClient<PaystackApi>()
     
@@ -32,6 +36,17 @@ class PaystackService: PaystackServiceProtocol{
             
         );
         
+    }
+    
+    func verifyPayment(reference: String) async throws -> PaystackVerifyResponse {
+        return try await apiClient.request(
+            .verifyPayment(reference: reference),
+            responseType: PaystackVerifyResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
     }
     
     

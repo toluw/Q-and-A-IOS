@@ -15,6 +15,7 @@ enum PaystackApi {
     
    
     case initiateTransaction(paystackData: PaystackData)
+    case verifyPayment(reference: String)
     
 }
 
@@ -31,6 +32,9 @@ extension PaystackApi: TargetType{
             
         case .initiateTransaction:
             "transaction/initialize"
+        
+        case .verifyPayment(reference: let reference):
+            "transaction/verify/\(reference)"
         }
     }
     
@@ -40,6 +44,8 @@ extension PaystackApi: TargetType{
         case .initiateTransaction:
                 .post
             
+        case .verifyPayment(reference: let reference):
+                .get
         }
     }
     
@@ -51,6 +57,8 @@ extension PaystackApi: TargetType{
             return .requestJSONEncodable(paystackData)
             
             
+        case .verifyPayment(reference: let reference):
+            return .requestPlain
         }
         
         

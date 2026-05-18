@@ -91,6 +91,7 @@
 		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
 		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
 		F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */; };
+		F5AAC9E62FBB474B003977CA /* PaystackVerifyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E52FBB474B003977CA /* PaystackVerifyResponse.swift */; };
 		F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */; };
 		F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */; };
 		F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */; };
@@ -270,6 +271,7 @@
 		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
 		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
 		F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackWebView.swift; sourceTree = "<group>"; };
+		F5AAC9E52FBB474B003977CA /* PaystackVerifyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackVerifyResponse.swift; sourceTree = "<group>"; };
 		F5AE93332F854AFD0003CAA5 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		F5AE93352F854C280003CAA5 /* ForgotPasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordState.swift; sourceTree = "<group>"; };
 		F5AE93372F854F8E0003CAA5 /* GeneralResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralResponse.swift; sourceTree = "<group>"; };
@@ -787,6 +789,7 @@
 				F5E054682FB7C6B30012A9CC /* PaystackData.swift */,
 				F5E0546A2FB7C7F50012A9CC /* InititateTransactionResponse.swift */,
 				F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */,
+				F5AAC9E52FBB474B003977CA /* PaystackVerifyResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
 				F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */,
+				F5AAC9E62FBB474B003977CA /* PaystackVerifyResponse.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
 				F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */,
 				F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */,
