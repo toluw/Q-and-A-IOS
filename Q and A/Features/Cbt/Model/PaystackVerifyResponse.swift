@@ -19,7 +19,7 @@ struct PaystackVerifyResponse: Codable{
 
 struct VerifyData: Codable{
     let status: String
-    let gateway_response: String
+    let gateway_response: String?
     let currency: String
     let amount: Int
     

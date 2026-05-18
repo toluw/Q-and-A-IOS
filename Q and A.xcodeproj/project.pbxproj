@@ -622,6 +622,7 @@
 		F5BD4A272F2B68050020A8A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */,
 				F5BD4A2B2F2B68C70020A8A4 /* MainStackView.swift */,
 				F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */,
 				F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */,
@@ -641,7 +642,6 @@
 				F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */,
 				F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */,
 				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
-				F5AAC9E32FBA6FB2003977CA /* PaystackWebView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

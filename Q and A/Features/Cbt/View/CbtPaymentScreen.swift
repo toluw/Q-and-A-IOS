@@ -113,6 +113,8 @@ struct CbtPaymentScreen: View {
         
         let paystackData = PaystackData(amount: String(amount), email: UserSettings.email ?? "", metadata: paystackMetaData)
         
+        viewModel.paystackData = paystackData
+        
         viewModel.initTransaction()
         
     }

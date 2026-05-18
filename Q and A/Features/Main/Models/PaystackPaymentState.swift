@@ -12,5 +12,6 @@ struct PaystackPaymentState{
     var showWebView: Bool = true
     var showLoader: Bool = false
     var errorMessage: String? = nil
+    var successPaymentReference: String? = nil
     
 }

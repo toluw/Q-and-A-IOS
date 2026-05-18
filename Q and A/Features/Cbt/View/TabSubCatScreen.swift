@@ -18,6 +18,7 @@ struct TabSubCatScreen: View {
     @Namespace private var animation
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     
     var body: some View {
         VStack {
@@ -37,7 +38,7 @@ struct TabSubCatScreen: View {
             // Content
             ZStack {
                 if selectedTab == .objective {
-                    SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                    SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                         .transition(.move(edge: .leading).combined(with: .opacity))
                 } else {
                     TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
@@ -75,5 +76,5 @@ struct TabSubCatScreen: View {
 }
 
 #Preview {
-    TabSubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    TabSubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }
