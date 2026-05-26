@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct CatExamsResponse: Codable{
+    let data: [Exam]
+}

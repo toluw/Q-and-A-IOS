@@ -11,6 +11,7 @@ struct TheorySubCatScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @ObservedObject var paymentViewModel: PaymentViewModel
     
     var body: some View {
         Text("Theory SubCat")
@@ -18,5 +19,5 @@ struct TheorySubCatScreen: View {
 }
 
 #Preview {
-    TheorySubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    TheorySubCatScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel(), paymentViewModel: PaymentViewModel())
 }

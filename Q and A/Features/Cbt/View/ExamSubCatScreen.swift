@@ -26,7 +26,7 @@ struct ExamSubCatScreen: View {
                     if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true){
                         SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                     }else if(cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
-                        TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                        TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                     }
                 }
             }

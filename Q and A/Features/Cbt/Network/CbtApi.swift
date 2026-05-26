@@ -15,6 +15,7 @@ enum CbtAPI {
     
     case getParentCategories(level: String? = nil, cbcId: String? = nil, isActive: String = "1", isMock: String)
     case getSubCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
+    case getCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
     case getMultipleExams(multipleExamBody: MultipleExamsBody)
     case postTransaction(postTransactionBody: PostTransactionBody)
     
@@ -37,6 +38,8 @@ extension CbtAPI: TargetType{
             return "v2/get_multiple_exam_questions.php"
         case .postTransaction:
            return "v2/post_transaction.php"
+        case .getCatExams:
+            return "v2/get_cat_exams.php"
         }
     }
     
@@ -48,10 +51,14 @@ extension CbtAPI: TargetType{
             
         case .getSubCatExams:
                 .get
+            
+            
         case .getMultipleExams:
                 .post
         case .postTransaction:
                 .post
+        case .getCatExams:
+                .get
         }
     }
     
@@ -91,13 +98,28 @@ extension CbtAPI: TargetType{
                 
             }
             
+            
+            
         case .getMultipleExams(multipleExamBody: let multipleExamBody):
             return .requestJSONEncodable(multipleExamBody)
         
         case .postTransaction(postTransactionBody: let postTransactionBody):
             return .requestJSONEncodable(postTransactionBody)
+       
+        case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+            do {
+                var params: [String: Any] = [:]
+                params.addOptional(key: "cbt_id", value: cbtId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "is_active", value: isActive)
+               
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
         }
-    }
     
     var headers: [String : String]? {
         return ["Content-Type": "application/json", "Key": apiKey]

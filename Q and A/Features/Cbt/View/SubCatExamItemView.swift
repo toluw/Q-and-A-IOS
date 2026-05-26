@@ -107,10 +107,15 @@ struct SubCatExamItemView: View {
             }else{
                 subCatExam.isChecked = true
                 subCatExam.showShuffle = false
+                
                 let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
+                
                 if let pos = initPos{
                     viewModel.state.initItems[pos].isChecked = true
                 }
+                
+            
+                
                 
                 
             }

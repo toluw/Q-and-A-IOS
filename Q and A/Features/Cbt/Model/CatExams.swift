@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct CatExams: Equatable {
+    let exam: Exam
+    var isChecked: Bool = false
+    var questionText: String = ""
+    var numViews: String = ""
+    var isShuffle: Bool = false
+    var defaultQuestions: Int = 1
+}

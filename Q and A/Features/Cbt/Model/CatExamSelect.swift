@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct CatExamSelect: Equatable{
+    
+    var exam: Exam
+    var numQuestions: Int
+    var shouldShuffle: Bool
+    
+}

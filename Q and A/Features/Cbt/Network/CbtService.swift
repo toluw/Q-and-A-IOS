@@ -13,6 +13,7 @@ protocol CbtServiceProtocol {
     func getSubCatExams(cbtId: String, buyerEmail: String?) async throws -> SubCatExamsResponse
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse
     func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse
+    func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse
     
     
     
@@ -20,6 +21,7 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
    
     
    
@@ -45,6 +47,17 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse {
+        return try await apiClient.request(
+            .getCatExams(cbtId: cbtId, buyerEmail: buyerEmail),
+            responseType: CatExamsResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse {
         return try await apiClient.request(
