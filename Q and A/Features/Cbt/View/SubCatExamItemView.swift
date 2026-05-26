@@ -40,6 +40,8 @@ struct SubCatExamItemView: View {
                     Spacer()
                     
                     
+                    
+        
                     ZStack{
                         if(subCatExam.isChecked){
                             Image("check")

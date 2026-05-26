@@ -38,13 +38,32 @@ struct CatExamItemView: View {
                     Spacer()
                     
                     
-                    ZStack{
-                        if(catExam.isChecked){
-                            Image("check")
-                        }else{
-                            Image("uncheck")
+                    if(catExam.exam.isProvisioned){
+                        ZStack{
+                            if(catExam.isChecked){
+                                Image("check")
+                            }else{
+                                Image("uncheck")
+                            }
+                        }.padding(.leading, 10)
+                    }else{
+                       
+                        HStack{
+                            
+                            Text(catExam.exam.price, format: .currency(code: "NGN"))
+                                .font(AppFont.medium(18))
+                                .foregroundColor(Color("PayColor"))
+                                .padding(.trailing, 10)
+                            
+                            
+                            Image("padlock")
+                              
+                            
                         }
-                    }.padding(.leading, 10)
+                        
+                    }
+                    
+                    
                     
                     
                     
@@ -87,7 +106,7 @@ struct CatExamItemView: View {
     
     
     private func setCheck(){
-        if(catExam.exam.isProvisioned){
+        if(!catExam.exam.isProvisioned){
             
             let examList: [Exam] = viewModel.state.items.map{item in
                 item.exam

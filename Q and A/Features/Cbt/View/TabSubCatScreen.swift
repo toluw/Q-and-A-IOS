@@ -41,7 +41,7 @@ struct TabSubCatScreen: View {
                     SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                         .transition(.move(edge: .leading).combined(with: .opacity))
                 } else {
-                    TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel)
+                    TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                         .transition(.move(edge: .trailing).combined(with: .opacity))
                 }
             }

@@ -14,6 +14,7 @@ class CatViewModel: ObservableObject{
     @Published var showQuestionSelectSheet: Bool = false
     @Published var showExamModeSheet: Bool = false
     @Published var showLogin: Bool = false
+    var premExam: PremExam? = nil
     
     private let service: CbtServiceProtocol
       
@@ -26,6 +27,23 @@ class CatViewModel: ObservableObject{
     
     func reInitExamSelection(){
         state.examSelectList = []
+    }
+    
+    
+    func getExamSelectList(category: String, image: String?, disableReview: Bool) -> [ExamSelect] {
+      return  state.examSelectList.map {
+            ExamSelect(
+                item: "\($0.exam.title)",
+                exam: $0.exam,
+                numQuestions: $0.numQuestions,
+                shouldShuffle: $0.shouldShuffle,
+                category: category,
+                image: image,
+                disableReview: disableReview
+            )
+        }
+        
+        
     }
     
    
