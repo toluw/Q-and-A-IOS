@@ -268,7 +268,7 @@ struct CatExamItemView: View {
     
     private func selectQuestion(){
         print("selector","select question")
-        viewModel.state.selectQuestion = SelectQuestion(position: position, numQuestion: subCatExam.defaultQuestions)
+        viewModel.state.selectQuestion = SelectQuestion(position: position, numQuestion: catExam.defaultQuestions)
         
         viewModel.showQuestionSelectSheet = true
     }
@@ -314,7 +314,7 @@ struct CatExamItemViewPreveiwWrapper: View {
         
         
         
-        CatExamItemView(catExam: $catExam, catData: catData, viewModel: CatViewModel(), position: 0)
+        CatExamItemView(catExam: $catExam, catData: catData, viewModel: CatViewModel(), position: 0, onRequestPayment: {data in}, onPractice:  {})
     }
     
 }
