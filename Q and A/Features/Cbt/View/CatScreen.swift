@@ -73,6 +73,7 @@ struct CatScreen: View {
                                                handlePaymentRequest(premExam: premExam)
                                                
                                            }, onPractice: {
+                                               setExamList()
                                                practice()
                                            })
                                            
@@ -105,7 +106,7 @@ struct CatScreen: View {
             }
             
             
-            if(!viewModel.state.examSelectList.isEmpty){
+            if(!viewModel.state.examSelectList.isEmpty && cbtViewModel.parentCategoriesData?.catData?.disablePractice == false){
                 
                 continueCard()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -269,7 +270,7 @@ struct CatScreen: View {
         
         VStack{
             
-            Text("(\(viewModel.state.examSelectList.count))  \(cbtViewModel.parentCategoriesData?.catData?.subcatType.capitalizeWords() ?? "") selected")
+            Text("(\(viewModel.state.examSelectList.count))  \(cbtViewModel.parentCategoriesData?.catData?.examType.capitalizeWords() ?? "") selected")
                 .foregroundColor(Color.white)
                 .font(AppFont.medium(16))
                 .padding(.top, 23)
