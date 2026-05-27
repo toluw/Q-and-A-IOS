@@ -35,6 +35,7 @@
 		F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */; };
 		F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DE2FC5C1860016CD4F /* PremExam.swift */; };
 		F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */; };
+		F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D62FC75465008FF056 /* ExamDescriptionView.swift */; };
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
@@ -225,6 +226,7 @@
 		F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatExamItemView.swift; sourceTree = "<group>"; };
 		F53268DE2FC5C1860016CD4F /* PremExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremExam.swift; sourceTree = "<group>"; };
 		F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionViewModel.swift; sourceTree = "<group>"; };
+		F54578D62FC75465008FF056 /* ExamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionView.swift; sourceTree = "<group>"; };
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				F53268CA2FC460D70016CD4F /* CatScreen.swift */,
 				F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */,
 				F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */,
+				F54578D62FC75465008FF056 /* ExamDescriptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1058,6 +1061,7 @@
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */,
 				F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */,
+				F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */,
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
 				F5FEC41C2F8D012F004C8D53 /* MainCbtViewModel.swift in Sources */,
 				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
