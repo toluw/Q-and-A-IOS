@@ -16,26 +16,21 @@ struct ExamDescriptionScreen: View {
     var body: some View {
         
         let selectedExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+        
+        
           
-        ExamDescriptionView(selectedExam: selectedExam, selectedColor: viewModel.selectedColor, onStartExam: {
+        ExamDescriptionView(selectedExam: selectedExam, selectedColor: $viewModel.selectedColor, onStartExam: {
             
+        }, onBackClicked: {
+            if(cbtViewModel.examIndex == 0){
+                navVm.pop()
+            }
         })
                 .onAppear {
                     viewModel.pickColor()
                 }
                 .navigationBarBackButtonHidden(true)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            if(cbtViewModel.examIndex == 0){
-                                navVm.pop()
-                            }
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
+                
             
         
         

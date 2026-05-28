@@ -36,6 +36,9 @@
 		F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DE2FC5C1860016CD4F /* PremExam.swift */; };
 		F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */; };
 		F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D62FC75465008FF056 /* ExamDescriptionView.swift */; };
+		F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */; };
+		F54578DB2FC84F32008FF056 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578DA2FC84F32008FF056 /* IntExtensions.swift */; };
+		F54578DD2FC86B09008FF056 /* LoadCircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */; };
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
@@ -227,6 +230,9 @@
 		F53268DE2FC5C1860016CD4F /* PremExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremExam.swift; sourceTree = "<group>"; };
 		F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionViewModel.swift; sourceTree = "<group>"; };
 		F54578D62FC75465008FF056 /* ExamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionView.swift; sourceTree = "<group>"; };
+		F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtDescriptionView.swift; sourceTree = "<group>"; };
+		F54578DA2FC84F32008FF056 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCircularImageView.swift; sourceTree = "<group>"; };
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
@@ -688,6 +694,7 @@
 				F56CD1DD2FAB94930042902F /* PaymentButton.swift */,
 				F5A32EC52FB0C2D5001023A4 /* CartItemView.swift */,
 				F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */,
+				F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -850,6 +857,7 @@
 				F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */,
 				F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */,
 				F54578D62FC75465008FF056 /* ExamDescriptionView.swift */,
+				F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -915,6 +923,7 @@
 				F5AE93432F86451F0003CAA5 /* AppUtils.swift */,
 				F5FEC40C2F892B4D004C8D53 /* LocalStore.swift */,
 				F5C74D722FA23BB70027131A /* DateUtils.swift */,
+				F54578DA2FC84F32008FF056 /* IntExtensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1060,6 +1069,7 @@
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */,
+				F54578DD2FC86B09008FF056 /* LoadCircularImageView.swift in Sources */,
 				F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */,
 				F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */,
 				F5C12EB32F72C525000861B6 /* MainLibraryScreen.swift in Sources */,
@@ -1211,8 +1221,10 @@
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */,
+				F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */,
 				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
+				F54578DB2FC84F32008FF056 /* IntExtensions.swift in Sources */,
 				F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */,
 				F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */,
 				F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */,

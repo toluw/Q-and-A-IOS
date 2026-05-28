@@ -16,4 +16,17 @@ struct ExamSelect{
     var image: String?
     var disableReview: Bool
     var endTime: String = ""
+    
+    func getExamTime() -> Int {
+           
+           let totalTime = exam.duration
+           let totalQuestions = exam.numQuestions
+           let selectedQuestions = numQuestions
+           
+           let ratio = Double(selectedQuestions) / Double(totalQuestions)
+           
+           let result = ratio * Double(totalTime)
+           
+           return Int(result.rounded())
+       }
 }
