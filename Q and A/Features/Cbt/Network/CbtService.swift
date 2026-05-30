@@ -14,6 +14,7 @@ protocol CbtServiceProtocol {
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse
     func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse
     func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse
+    func getExamQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse
     
     
     
@@ -22,10 +23,8 @@ protocol CbtServiceProtocol {
 
 final class CbtService: CbtServiceProtocol{
    
-   
     
    
-    
     private let apiClient = APIClient<CbtAPI>()
     
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse {
@@ -52,6 +51,16 @@ final class CbtService: CbtServiceProtocol{
         return try await apiClient.request(
             .getCatExams(cbtId: cbtId, buyerEmail: buyerEmail),
             responseType: CatExamsResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
+    func getExamQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse {
+        return try await apiClient.request(
+            .getExamQuestions(examId: examId, buyerEmail: buyerEmail),
+            responseType: ExamQuestionsResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"
             }

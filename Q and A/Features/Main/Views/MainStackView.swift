@@ -58,6 +58,10 @@ struct MainStackView: View {
             CbtCartScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         case .paystackPaymentScreen(authorizationUrl: let authorizationUrl, accessCode: let accessCode, reference: let reference):
             PaystackPaymentScreen(authorizationUrl: authorizationUrl, reference: reference, paymentViewModel: paymentViewModel, navVm: navVM)
+        case .examLoaderScreen:
+            ExamLoaderScreen(navVm: navVM)
+        case .examSceen:
+            ExamScreen(navVm: navVM, cbtViewModel: cbtViewModel)
         }
     }
     

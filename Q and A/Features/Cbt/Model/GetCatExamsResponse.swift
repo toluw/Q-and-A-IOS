@@ -9,4 +9,6 @@ import Foundation
 
 struct CatExamsResponse: Codable{
     let data: [Exam]
+    let status: Bool
+    let message: String
 }

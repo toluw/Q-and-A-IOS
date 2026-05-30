@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LiveExam: Codable, Equatable {
+struct LiveExam: Codable, Equatable, Identifiable {
     let question: String
     let passage: String
     let a: String
@@ -27,9 +27,13 @@ struct LiveExam: Codable, Equatable {
     let dImage: String?
     let eImage: String?
     let explanationImage: String?
-    var solution: [String]
+    var solution: [String] = []
     let passageVideo: String?
     let passageBook: String?
+    
+    var id: String {
+           questionId
+    }
 
     enum CodingKeys: String, CodingKey {
         case question

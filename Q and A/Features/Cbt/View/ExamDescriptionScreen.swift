@@ -18,24 +18,60 @@ struct ExamDescriptionScreen: View {
         let selectedExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
         
         
-          
-        ExamDescriptionView(selectedExam: selectedExam, selectedColor: $viewModel.selectedColor, onStartExam: {
+        ZStack{
             
-        }, onBackClicked: {
-            if(cbtViewModel.examIndex == 0){
-                navVm.pop()
-            }
-        })
-                .onAppear {
-                    viewModel.pickColor()
-                }
-                .navigationBarBackButtonHidden(true)
+            ExamDescriptionView(selectedExam: selectedExam, selectedColor: $viewModel.selectedColor, onStartExam: {
                 
+                viewModel.getExamQuestions(examId: selectedExam.exam.examId, buyerEmail: UserSettings.email ?? "")
+                
+            }, onBackClicked: {
+                if(cbtViewModel.examIndex == 0){
+                    navVm.pop()
+                }
+            })
+                
+            if(viewModel.state.showLoader){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+            }
             
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+         .onAppear {
+                    viewModel.pickColor()
+            }
+         .navigationBarBackButtonHidden(true)
+         .onChange(of: viewModel.state.data){ previous, current in
+             
+             if let data = viewModel.state.data{
+                 
+                 initExam(selectedExam: selectedExam, data: data)
+                 
+                 navVm.navigateAndPop(route: .examLoaderScreen, pop: 1)
+                 
+             }
+             
+         }
+          
+         
+    }
+    
+    private func initExam(selectedExam: ExamSelect, data: [ExamQuestion]){
+        cbtViewModel.initLiveExam(examQuestions: data, examSelect: selectedExam)
+        
+        if(cbtViewModel.examIndex == 0){
+            cbtViewModel.examDuration = cbtViewModel.getTotalExamTime()
+        }
+        
+        cbtViewModel.questionIndex = 0
+        
+        cbtViewModel.updateLiveExam(liveExamUpdateMode: .normal)
         
         
-        
-      
         
     }
 }

@@ -39,6 +39,11 @@
 		F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */; };
 		F54578DB2FC84F32008FF056 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578DA2FC84F32008FF056 /* IntExtensions.swift */; };
 		F54578DD2FC86B09008FF056 /* LoadCircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */; };
+		F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578DE2FC9892D008FF056 /* ExamQuestionsResponse.swift */; };
+		F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E02FC99315008FF056 /* ExamDescriptionState.swift */; };
+		F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E22FC9C06B008FF056 /* LiveExamUpdateMode.swift */; };
+		F54578E52FCABDAA008FF056 /* ExamLoaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */; };
+		F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E62FCABF48008FF056 /* ExamScreen.swift */; };
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
@@ -233,6 +238,11 @@
 		F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtDescriptionView.swift; sourceTree = "<group>"; };
 		F54578DA2FC84F32008FF056 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCircularImageView.swift; sourceTree = "<group>"; };
+		F54578DE2FC9892D008FF056 /* ExamQuestionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamQuestionsResponse.swift; sourceTree = "<group>"; };
+		F54578E02FC99315008FF056 /* ExamDescriptionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionState.swift; sourceTree = "<group>"; };
+		F54578E22FC9C06B008FF056 /* LiveExamUpdateMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExamUpdateMode.swift; sourceTree = "<group>"; };
+		F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamLoaderScreen.swift; sourceTree = "<group>"; };
+		F54578E62FCABF48008FF056 /* ExamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamScreen.swift; sourceTree = "<group>"; };
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
@@ -824,6 +834,9 @@
 				F53268D82FC468000016CD4F /* CatState.swift */,
 				F53268DA2FC468A50016CD4F /* CatExamSelect.swift */,
 				F53268DE2FC5C1860016CD4F /* PremExam.swift */,
+				F54578DE2FC9892D008FF056 /* ExamQuestionsResponse.swift */,
+				F54578E02FC99315008FF056 /* ExamDescriptionState.swift */,
+				F54578E22FC9C06B008FF056 /* LiveExamUpdateMode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -858,6 +871,8 @@
 				F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */,
 				F54578D62FC75465008FF056 /* ExamDescriptionView.swift */,
 				F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */,
+				F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */,
+				F54578E62FCABF48008FF056 /* ExamScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1091,6 +1106,7 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
+				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
@@ -1111,6 +1127,7 @@
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
 				F59D32902F90FAAD0045C4AA /* EmptyStateView.swift in Sources */,
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
+				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
@@ -1126,6 +1143,7 @@
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
+				F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */,
 				F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
@@ -1189,6 +1207,7 @@
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
 				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
+				F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
 				F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */,
 				F5AAC9E62FBB474B003977CA /* PaystackVerifyResponse.swift in Sources */,
@@ -1199,6 +1218,7 @@
 				F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
+				F54578E52FCABDAA008FF056 /* ExamLoaderScreen.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */,

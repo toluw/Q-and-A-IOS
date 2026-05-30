@@ -21,6 +21,8 @@ enum MainRoute: Hashable{
     case cbtPaymentScreen
     case examPracticeScreen
     case cbtCartScreen
+    case examLoaderScreen
     case paystackPaymentScreen(authorizationUrl: String, accessCode: String, reference: String)
+    case examSceen
     
 }

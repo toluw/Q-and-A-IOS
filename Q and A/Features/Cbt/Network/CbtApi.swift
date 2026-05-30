@@ -15,6 +15,7 @@ enum CbtAPI {
     
     case getParentCategories(level: String? = nil, cbcId: String? = nil, isActive: String = "1", isMock: String)
     case getSubCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
+    case getExamQuestions(examId: String, buyerEmail: String)
     case getCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
     case getMultipleExams(multipleExamBody: MultipleExamsBody)
     case postTransaction(postTransactionBody: PostTransactionBody)
@@ -42,6 +43,8 @@ extension CbtAPI: TargetType{
             return "v2/post_transaction.php"
         case .getCatExams:
             return "v2/get_cat_exams.php"
+        case .getExamQuestions(examId: let examId, buyerEmail: let buyerEmail):
+            return "v2/get_exam_questions.php"
         }
     }
     
@@ -60,6 +63,8 @@ extension CbtAPI: TargetType{
         case .postTransaction:
                 .post
         case .getCatExams:
+                .get
+        case .getExamQuestions:
                 .get
         }
     }
@@ -121,6 +126,22 @@ extension CbtAPI: TargetType{
                 )
                 
             }
+            
+        case .getExamQuestions(examId: let examId, buyerEmail: let buyerEmail):
+            do {
+                var params: [String: Any] = [:]
+                params.addOptional(key: "exam_id", value: examId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
+            
+            
         }
         
        

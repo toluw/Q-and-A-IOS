@@ -12,6 +12,8 @@ import Foundation
 struct InititateTransactionResponse: Codable{
    
     let data: InitiateTransactionData
+    let status: Bool
+    let message: String
     
 }
 

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 @MainActor
@@ -20,11 +21,101 @@ class CbtViewModel: ObservableObject{
     var multipleExams: [MultipleExam] = []
     var indexList: [Int] = []
     var selectedExamPay: [ExamPay] = []
+    var liveExamList: [LiveExam] = []
+    @Published var questionIndex: Int = 0
+    @Published var examDuration: Int = 0
+    @Published var liveExam: LiveExam? = nil
+    @Published var transition: AnyTransition = .identity
     
     
     
     func initIndexList() {
         indexList = Array(repeating: 0, count: multipleExams.count)
+    }
+    
+    
+    func getTotalExamTime() -> Int {
+        var totalTime: Int = 0
+        
+        examSelectList.forEach {
+            totalTime += $0.getExamTime() * 60 * 1000
+        }
+        
+        return totalTime
+    }
+    
+    func updateLiveExam(liveExamUpdateMode: LiveExamUpdateMode) {
+        
+        let liveExamUpdate = liveExamList[questionIndex]
+        
+        switch liveExamUpdateMode {
+            
+        case .next:
+            transition = .asymmetric(
+                insertion: .move(edge: .trailing),
+                removal: .move(edge: .leading)
+            )
+            
+            withAnimation(.easeInOut) {
+                liveExam = liveExamUpdate
+            }
+            
+        case .previous:
+            transition = .asymmetric(
+                insertion: .move(edge: .leading),
+                removal: .move(edge: .trailing)
+            )
+            
+            withAnimation(.easeInOut) {
+                liveExam = liveExamUpdate
+            }
+            
+        case .normal:
+            transition = .identity
+            
+            liveExam = liveExamUpdate
+        }
+    }
+    
+    
+    func initLiveExam(examQuestions: [ExamQuestion], examSelect: ExamSelect) {
+        
+        let list: [ExamQuestion]
+        
+        if examSelect.shouldShuffle {
+            list = examQuestions.shuffled()
+        } else {
+            list = examQuestions
+        }
+        
+        let examList = Array(list.prefix(examSelect.numQuestions))
+        
+        liveExamList = examList.map {
+            LiveExam(
+                question: $0.question,
+                passage: $0.passage,
+                a: $0.a,
+                b: $0.b,
+                c: $0.c,
+                d: $0.d,
+                e: $0.e,
+                numberOfAnswer: $0.numberOfAnswer,
+                answer: $0.answer,
+                explanation: $0.explanation,
+                questionId: $0.questionId,
+                questionImage: $0.questionImage,
+                passageImage: $0.passageImage,
+                aImage: $0.aImage,
+                bImage: $0.bImage,
+                cImage: $0.cImage,
+                dImage: $0.dImage,
+                eImage: $0.eImage,
+                explanationImage: $0.explanationImage,
+                solution: [],
+                passageVideo: $0.passageVideo,
+                passageBook: $0.passageBook
+            )
+        }
     }
     
     
