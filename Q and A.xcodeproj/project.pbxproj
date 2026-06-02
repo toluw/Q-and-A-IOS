@@ -51,6 +51,9 @@
 		F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F02FCEC0C0008FF056 /* ShimmerView.swift */; };
 		F54578F32FCEC152008FF056 /* FullWidthImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F22FCEC152008FF056 /* FullWidthImageView.swift */; };
 		F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */; };
+		F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F62FCEE826008FF056 /* MultiSelectedAnswerView.swift */; };
+		F54578F92FCEEB40008FF056 /* MultiDeselectedAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F82FCEEB40008FF056 /* MultiDeselectedAnswerView.swift */; };
+		F54578FB2FCEECA3008FF056 /* MultiAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578FA2FCEECA3008FF056 /* MultiAnswerView.swift */; };
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
@@ -257,6 +260,9 @@
 		F54578F02FCEC0C0008FF056 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		F54578F22FCEC152008FF056 /* FullWidthImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthImageView.swift; sourceTree = "<group>"; };
 		F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeselectedAnswerView.swift; sourceTree = "<group>"; };
+		F54578F62FCEE826008FF056 /* MultiSelectedAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectedAnswerView.swift; sourceTree = "<group>"; };
+		F54578F82FCEEB40008FF056 /* MultiDeselectedAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDeselectedAnswerView.swift; sourceTree = "<group>"; };
+		F54578FA2FCEECA3008FF056 /* MultiAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiAnswerView.swift; sourceTree = "<group>"; };
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
@@ -894,6 +900,9 @@
 				F54578EC2FCDE179008FF056 /* AnswerView.swift */,
 				F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */,
 				F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */,
+				F54578F62FCEE826008FF056 /* MultiSelectedAnswerView.swift */,
+				F54578F82FCEEB40008FF056 /* MultiDeselectedAnswerView.swift */,
+				F54578FA2FCEECA3008FF056 /* MultiAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1099,6 +1108,7 @@
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
+				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
@@ -1191,6 +1201,7 @@
 				F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
 				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
+				F54578FB2FCEECA3008FF056 /* MultiAnswerView.swift in Sources */,
 				F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */,
 				F5CA68FD2F93B209005010AE /* Exam.swift in Sources */,
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
@@ -1268,6 +1279,7 @@
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
+				F54578F92FCEEB40008FF056 /* MultiDeselectedAnswerView.swift in Sources */,
 				F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */,
 				F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */,
 				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,

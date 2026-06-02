@@ -10,7 +10,6 @@ import SwiftUI
 struct AnswerView: View {
     
     @Binding var liveExam: LiveExam
-    let char: String
     let onAnswerSelected: (String) -> Void
     
     var body: some View {
@@ -67,7 +66,7 @@ struct AnswerPreviewWrapper: View{
     }
    
     var body: some View {
-        AnswerView(liveExam: $liveExam, char: "c", onAnswerSelected: {_ in })
+        AnswerView(liveExam: $liveExam, onAnswerSelected: {_ in })
     }
     
 }
