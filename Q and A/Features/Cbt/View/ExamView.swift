@@ -13,7 +13,12 @@ struct ExamView: View {
     @Binding var questionIndex: Int
     @Binding var liveExam: LiveExam
     @Binding var examState: ExamState
-    
+    let next: () -> Void
+    let previous: () -> Void
+    let submit: () -> Void
+    let gotTo: () -> Void
+    let close: () -> Void
+ 
     var body: some View {
         VStack{
             
@@ -21,6 +26,7 @@ struct ExamView: View {
               
                 Button {
                     
+                close()
                    
                 } label: {
                     
@@ -48,7 +54,7 @@ struct ExamView: View {
                 
                Spacer()
                 
-                PrimaryButton(buttonText: "Submit", action: {})
+                PrimaryButton(buttonText: "Submit", action: submit)
                     .frame(width: 100)
                 
             }.frame(maxWidth: .infinity)
@@ -62,6 +68,10 @@ struct ExamView: View {
             }
             
             Spacer()
+            
+            ExamNavView(questionCount: questionCount, questionIndex: $questionIndex, liveExam: $liveExam, isExam: true, next: next, previous: previous, goTo: gotTo, submit: submit)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
             
             
             
@@ -87,6 +97,6 @@ struct ExamViewPreviewWrapper: View{
     }
     
     var body: some View {
-        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState)
+        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {})
     }
 }

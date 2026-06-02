@@ -83,6 +83,9 @@ struct ExamNavView: View {
                         }.contentShape(Rectangle())
                         
                     }.buttonStyle(.plain)
+                }else if(isExam){
+                    PrimaryButton(buttonText: "Submit", action: {})
+                        .frame(width: 100)
                 }
            
             
