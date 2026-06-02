@@ -44,6 +44,13 @@
 		F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E22FC9C06B008FF056 /* LiveExamUpdateMode.swift */; };
 		F54578E52FCABDAA008FF056 /* ExamLoaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */; };
 		F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E62FCABF48008FF056 /* ExamScreen.swift */; };
+		F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578E82FCD8E75008FF056 /* PassageView.swift */; };
+		F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578EA2FCD9327008FF056 /* FullPassageView.swift */; };
+		F54578ED2FCDE179008FF056 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578EC2FCDE179008FF056 /* AnswerView.swift */; };
+		F54578EF2FCDF188008FF056 /* SelectedAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */; };
+		F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F02FCEC0C0008FF056 /* ShimmerView.swift */; };
+		F54578F32FCEC152008FF056 /* FullWidthImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F22FCEC152008FF056 /* FullWidthImageView.swift */; };
+		F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */; };
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
@@ -243,6 +250,13 @@
 		F54578E22FC9C06B008FF056 /* LiveExamUpdateMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExamUpdateMode.swift; sourceTree = "<group>"; };
 		F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamLoaderScreen.swift; sourceTree = "<group>"; };
 		F54578E62FCABF48008FF056 /* ExamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamScreen.swift; sourceTree = "<group>"; };
+		F54578E82FCD8E75008FF056 /* PassageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageView.swift; sourceTree = "<group>"; };
+		F54578EA2FCD9327008FF056 /* FullPassageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPassageView.swift; sourceTree = "<group>"; };
+		F54578EC2FCDE179008FF056 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAnswerView.swift; sourceTree = "<group>"; };
+		F54578F02FCEC0C0008FF056 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		F54578F22FCEC152008FF056 /* FullWidthImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidthImageView.swift; sourceTree = "<group>"; };
+		F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeselectedAnswerView.swift; sourceTree = "<group>"; };
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
@@ -705,6 +719,8 @@
 				F5A32EC52FB0C2D5001023A4 /* CartItemView.swift */,
 				F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */,
 				F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */,
+				F54578F02FCEC0C0008FF056 /* ShimmerView.swift */,
+				F54578F22FCEC152008FF056 /* FullWidthImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -873,6 +889,11 @@
 				F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */,
 				F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */,
 				F54578E62FCABF48008FF056 /* ExamScreen.swift */,
+				F54578E82FCD8E75008FF056 /* PassageView.swift */,
+				F54578EA2FCD9327008FF056 /* FullPassageView.swift */,
+				F54578EC2FCDE179008FF056 /* AnswerView.swift */,
+				F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */,
+				F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1119,6 +1140,7 @@
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
+				F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
@@ -1130,8 +1152,10 @@
 				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
+				F54578ED2FCDE179008FF056 /* AnswerView.swift in Sources */,
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
+				F54578EF2FCDF188008FF056 /* SelectedAnswerView.swift in Sources */,
 				F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */,
 				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
 				F53268D92FC468000016CD4F /* CatState.swift in Sources */,
@@ -1139,6 +1163,7 @@
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
+				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
@@ -1148,6 +1173,7 @@
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */,
+				F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */,
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
@@ -1176,6 +1202,7 @@
 				F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
+				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
 				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
@@ -1224,6 +1251,7 @@
 				F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */,
+				F54578F32FCEC152008FF056 /* FullWidthImageView.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,
 				F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */,
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
