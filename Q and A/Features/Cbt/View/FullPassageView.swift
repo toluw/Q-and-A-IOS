@@ -13,7 +13,7 @@ struct FullPassageView: View {
     
     var body: some View {
         if(!passage.isEmpty){
-            styledPassage(passage)
+            styledPassage(passage).padding(.bottom, 16)
         }
     }
     

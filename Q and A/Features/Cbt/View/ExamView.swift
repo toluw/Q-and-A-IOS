@@ -18,6 +18,10 @@ struct ExamView: View {
     let submit: () -> Void
     let gotTo: () -> Void
     let close: () -> Void
+    let readMorePassage: () -> Void
+    let onMultiSelect: (String) -> Void
+    let onMultiDeselect: (String) -> Void
+    let onAnswerSelected: (String) -> Void
  
     var body: some View {
         VStack{
@@ -48,6 +52,7 @@ struct ExamView: View {
             }.frame(maxWidth: .infinity)
                 .padding(.leading, 16)
                 .padding(.trailing, 16)
+                .padding(.top, 16)
             
             
             HStack{
@@ -64,6 +69,50 @@ struct ExamView: View {
             
             
             ScrollView{
+                
+                
+                VStack(alignment: .leading){
+                    
+                    Spacer().frame(height: 16)
+                    
+                    if(examState.showFullPassage){
+                        FullPassageView(passage: liveExam.passage)
+                            
+                    }else{
+                        PassageView(passage: liveExam.passage, passageImage: liveExam.passageImage, passageVideo: liveExam.passageVideo, passageBook: liveExam.passageBook, onReadMore: readMorePassage)
+                            
+                   }
+                    
+                    
+                    if(!liveExam.question.isEmpty  && liveExam.question != "-"){
+                        Text(liveExam.question)
+                            .font(AppFont.regular(16))
+                    }
+                    
+                    if(liveExam.questionImage != nil){
+                        FullWidthImageView(url: liveExam.questionImage, placeholderHeight: 72)
+                            .padding(.top, 5)
+                    }
+                    
+                    if(liveExam.numberOfAnswer > 1){
+                        Text("Select all possible answer")
+                            .font(AppFont.regular(16))
+                            .italic()
+                    }
+                    
+                    if(liveExam.numberOfAnswer > 1){
+                        MultiAnswerView(liveExam: $liveExam, onMultiSelect: onMultiSelect, onMultiDeselect: onMultiDeselect).padding(.top, 16)
+                    }else{
+                       AnswerView(liveExam: $liveExam, onAnswerSelected: onAnswerSelected)
+                            .padding(.top, 16)
+                    }
+                    
+                    
+                    
+                }.frame(maxWidth: .infinity)
+                    .padding(.horizontal, 16)
+               
+               
                 
             }
             
@@ -97,6 +146,6 @@ struct ExamViewPreviewWrapper: View{
     }
     
     var body: some View {
-        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {})
+        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {}, readMorePassage: {}, onMultiSelect: {_ in }, onMultiDeselect: {_ in }, onAnswerSelected: {_ in })
     }
 }

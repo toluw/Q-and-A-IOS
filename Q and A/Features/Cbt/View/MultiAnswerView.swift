@@ -10,7 +10,6 @@ import SwiftUI
 struct MultiAnswerView: View {
     
     @Binding var liveExam: LiveExam
-    let char: String
     let onMultiSelect: (String) -> Void
     let onMultiDeselect: (String) -> Void
     
@@ -80,7 +79,7 @@ struct MultiAnswerPreviewWrapper: View{
     }
    
     var body: some View {
-        MultiAnswerView(liveExam: $liveExam, char: "c", onMultiSelect: {data in }, onMultiDeselect: {data in})
+        MultiAnswerView(liveExam: $liveExam, onMultiSelect: {data in }, onMultiDeselect: {data in})
     }
     
 }

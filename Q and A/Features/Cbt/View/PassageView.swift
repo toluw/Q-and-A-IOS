@@ -43,6 +43,7 @@ struct PassageView: View {
 
             if !passage.isEmpty {
                 buildAttributedText()
+                    .padding(.bottom, 16)
             }
         }
 
