@@ -22,17 +22,28 @@ struct ExamScreen: View {
                 ExamView(questionCount: cbtViewModel.liveExamList.count, questionIndex: $cbtViewModel.questionIndex, liveExam: liveExamBinding,examState: $viewModel.state,
                     next: {
                     
-                    cbtViewModel.nextQuestion()
-                    viewModel.reInitState()
+                    if(authorizeUser()){
+                        cbtViewModel.nextQuestion()
+                        viewModel.reInitState()
+                    }
+                   
                     
                     }, previous: {
                         
-                        cbtViewModel.previousQuestion()
-                        viewModel.reInitState()
+                        if(authorizeUser()){
+                            cbtViewModel.previousQuestion()
+                            viewModel.reInitState()
+                        }
+                        
+                       
                         
                     }, submit: {
                         
                     }, gotTo: {
+                        
+                        if(authorizeUser()){
+                            
+                        }
                         
                     }, close: {
                         
@@ -61,9 +72,38 @@ struct ExamScreen: View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarBackButtonHidden(true)
-            
+            .sheet(isPresented: $viewModel.state.showLogin){
+                   LoginScreen(
+                       onDismiss: {
+                           viewModel.state.showLogin = false
+                       }, onForgotpassword: {
+                           viewModel.state.showLogin = false
+                           navVm.navigate(route: .forgotPasswordScreen)
+                       }, onLoginSuccess: {userProfile in
+                           viewModel.state.showLogin = false
+                           showSuccessMessage(message: "Thanks \(userProfile.name)! You are now logged in", actionTitle: "Continue", showCancel: false){
+                               navVm.pop()
+                           }
+                          
+                       }
+                       
+                   )
+               }
     }
+    
+    
+    private func authorizeUser() -> Bool{
+        if(cbtViewModel.questionIndex >= 2 && !UserSettings.isLoggedIn){
+            viewModel.state.showLogin = true
+            return false
+        }
+        
+        return true
+    }
+    
 }
+
+
 
 #Preview {
     ExamScreen(navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())

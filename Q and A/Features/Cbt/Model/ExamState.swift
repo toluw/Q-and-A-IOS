@@ -10,5 +10,6 @@ import Foundation
 struct ExamState{
     
     var showFullPassage: Bool = false
+    var showLogin: Bool = false
     
 }
