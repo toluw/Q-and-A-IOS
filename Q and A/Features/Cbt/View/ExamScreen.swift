@@ -12,9 +12,56 @@ struct ExamScreen: View {
     
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
+    @StateObject var viewModel: ExamViewModel = .init()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            
+            if let liveExamBinding = $cbtViewModel.liveExam.unwrap() {
+                
+                ExamView(questionCount: cbtViewModel.liveExamList.count, questionIndex: $cbtViewModel.questionIndex, liveExam: liveExamBinding,examState: $viewModel.state,
+                    next: {
+                    
+                    cbtViewModel.nextQuestion()
+                    viewModel.reInitState()
+                    
+                    }, previous: {
+                        
+                        cbtViewModel.previousQuestion()
+                        viewModel.reInitState()
+                        
+                    }, submit: {
+                        
+                    }, gotTo: {
+                        
+                    }, close: {
+                        
+                    }, readMorePassage: {
+                        
+                    }, onMultiSelect: {ans in
+                        
+                        cbtViewModel.multiSelect(ans: ans)
+                        
+                    }, onMultiDeselect: {ans in
+                        
+                        cbtViewModel.multiDeselect(ans: ans)
+                        
+                    }, onAnswerSelected: {ans in
+                        cbtViewModel.answerQuestion(ans: ans)
+                    })
+                .id(liveExamBinding.id)
+                    .transition(cbtViewModel.transition)
+                
+            }
+           
+           
+            
+            
+           
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .navigationBarBackButtonHidden(true)
+            
     }
 }
 

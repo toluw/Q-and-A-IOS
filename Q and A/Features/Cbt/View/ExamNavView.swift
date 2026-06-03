@@ -22,6 +22,9 @@ struct ExamNavView: View {
     
     
     var body: some View {
+        
+       
+        
         HStack{
             if(questionIndex > 0){
                 
@@ -39,6 +42,8 @@ struct ExamNavView: View {
                     
                 }.buttonStyle(.plain)
                 
+            }else{
+                Spacer().frame(width: 60)
             }
             
             Spacer()

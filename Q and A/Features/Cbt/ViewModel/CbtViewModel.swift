@@ -34,6 +34,8 @@ class CbtViewModel: ObservableObject{
     }
     
     
+    
+    
     func getTotalExamTime() -> Int {
         var totalTime: Int = 0
         
@@ -42,6 +44,35 @@ class CbtViewModel: ObservableObject{
         }
         
         return totalTime
+    }
+    
+    func nextQuestion(){
+        questionIndex += 1
+        updateLiveExam(liveExamUpdateMode: .next)
+    }
+    
+    func answerQuestion(ans: String){
+        liveExamList[questionIndex].solution = [ans]
+        updateLiveExam(liveExamUpdateMode: .normal)
+    }
+    
+    func multiSelect(ans: String){
+        liveExamList[questionIndex].solution.append(ans)
+        updateLiveExam(liveExamUpdateMode: .normal)
+    }
+    
+    func multiDeselect(ans: String){
+        if let index =  liveExamList[questionIndex].solution.firstIndex(of: ans) {
+            liveExamList[questionIndex].solution.remove(at: index)
+        }
+        
+        updateLiveExam(liveExamUpdateMode: .normal)
+
+    }
+    
+    func previousQuestion(){
+        questionIndex -= 1
+        updateLiveExam(liveExamUpdateMode: .previous)
     }
     
     func updateLiveExam(liveExamUpdateMode: LiveExamUpdateMode) {

@@ -16,46 +16,27 @@ struct MultiAnswerView: View {
     var body: some View {
         VStack{
             
-            if(liveExam.solution.contains("a")){
-                MultiSelectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage, onMultiDeselect: onMultiDeselect)
-            }else{
+           
+            MultiDeselectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage, onMultiSelected: onMultiSelect
+                                          , liveExam: $liveExam, onMultiDeselected: onMultiDeselect)
                 
-                MultiDeselectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage, onMultiSelected: onMultiSelect)
+            
+                MultiDeselectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage, onMultiSelected: onMultiSelect, liveExam: $liveExam, onMultiDeselected: onMultiDeselect)
                 
-            }
+            
+                MultiDeselectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage, onMultiSelected: onMultiSelect
+                                          , liveExam: $liveExam, onMultiDeselected: onMultiDeselect)
+                
             
             
-            if(liveExam.solution.contains("b")){
-                MultiSelectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage, onMultiDeselect: onMultiDeselect)
-            }else{
+        
+                MultiDeselectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage, onMultiSelected: onMultiSelect, liveExam: $liveExam, onMultiDeselected: onMultiDeselect)
                 
-                MultiDeselectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage, onMultiSelected: onMultiSelect)
-                
-            }
             
-            if(liveExam.solution.contains("c")){
-                MultiSelectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage, onMultiDeselect: onMultiDeselect)
-            }else{
-                
-                MultiDeselectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage, onMultiSelected: onMultiSelect)
-                
-            }
             
-            if(liveExam.solution.contains("d")){
-                MultiSelectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage, onMultiDeselect: onMultiDeselect)
-            }else{
+               MultiDeselectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage, onMultiSelected: onMultiSelect, liveExam: $liveExam, onMultiDeselected: onMultiDeselect)
                 
-                MultiDeselectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage, onMultiSelected: onMultiSelect)
-                
-            }
             
-            if(liveExam.solution.contains("e")){
-                MultiSelectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage, onMultiDeselect: onMultiDeselect)
-            }else{
-                
-                MultiDeselectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage, onMultiSelected: onMultiSelect)
-                
-            }
             
            
            

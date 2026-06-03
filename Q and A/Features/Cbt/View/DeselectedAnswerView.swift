@@ -15,6 +15,7 @@ struct DeselectedAnswerView: View {
     let image: String?
     let shape = RoundedRectangle(cornerRadius: 5)
     let onAnswerSelected: (String) -> Void
+    @Binding var liveExam: LiveExam
 
     
     var body: some View {
@@ -22,7 +23,10 @@ struct DeselectedAnswerView: View {
         if(!content.isEmpty || image != nil){
             
             Button(action: {
-                onAnswerSelected(ans)
+                if(!liveExam.solution.contains(ans)){
+                    onAnswerSelected(ans)
+                }
+                
             } ){
                 HStack(alignment: .top){
                     
@@ -36,7 +40,7 @@ struct DeselectedAnswerView: View {
                         
                         if(!content.isEmpty){
                             Text(content)
-                                .font(AppFont.regular(14))
+                                .font(liveExam.solution.contains(ans) ? AppFont.semi_bold(14) : AppFont.regular(14))
                                 .padding(.bottom, 4)
                             
                         }
@@ -55,7 +59,7 @@ struct DeselectedAnswerView: View {
                 }.frame(maxWidth: .infinity)
                     .clipShape(shape)
                     .overlay(
-                        shape.stroke(Color("Grey"), lineWidth: 1)
+                        shape.stroke(Color(liveExam.solution.contains(ans) ? "ans" : "Grey"), lineWidth: 1)
                     )
                     .contentShape(Rectangle())
                     .padding(.bottom, 18)
@@ -70,6 +74,9 @@ struct DeselectedAnswerView: View {
     
 }
 
-#Preview {
-    DeselectedAnswerView(ans: "a", content: "Wheh there are several images" , image: nil, onAnswerSelected: {_ in })
-}
+/*
+ 
+ #Preview {
+ DeselectedAnswerView(ans: "a", content: "Wheh there are several images" , image: nil, onAnswerSelected: {_ in })
+ }
+ */

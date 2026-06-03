@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 func showErrorMessage(message: String, actionTitle: String, showCancel: Bool = true, action: @escaping () -> Void){
@@ -54,5 +55,17 @@ extension Dictionary where Value == Any {
         if let value = value {
             self[key] = value
         }
+    }
+}
+
+
+extension Binding {
+    func unwrap<Wrapped>() -> Binding<Wrapped>? where Value == Wrapped? {
+        guard wrappedValue != nil else { return nil }
+
+        return Binding<Wrapped>(
+            get: { wrappedValue! },
+            set: { wrappedValue = $0 }
+        )
     }
 }

@@ -15,35 +15,24 @@ struct AnswerView: View {
     var body: some View {
         VStack{
             
-            if(liveExam.solution.contains("a")){
-                SelectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage)
-            }else{
-                DeselectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage, onAnswerSelected: onAnswerSelected)
-            }
             
-            if(liveExam.solution.contains("b")){
-                SelectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage)
-            }else{
-                DeselectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage, onAnswerSelected: onAnswerSelected)
-            }
+            DeselectedAnswerView(ans: "a", content: liveExam.a, image: liveExam.aImage, onAnswerSelected: onAnswerSelected, liveExam: $liveExam)
             
-            if(liveExam.solution.contains("c")){
-                SelectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage)
-            }else{
-                DeselectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage, onAnswerSelected: onAnswerSelected)
-            }
             
-            if(liveExam.solution.contains("d")){
-                SelectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage)
-            }else{
-                DeselectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage, onAnswerSelected: onAnswerSelected)
-            }
+                DeselectedAnswerView(ans: "b", content: liveExam.b, image: liveExam.bImage, onAnswerSelected: onAnswerSelected, liveExam: $liveExam)
             
-            if(liveExam.solution.contains("e")){
-                SelectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage)
-            }else{
-                DeselectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage, onAnswerSelected: onAnswerSelected)
-            }
+            
+            
+                DeselectedAnswerView(ans: "c", content: liveExam.c, image: liveExam.cImage, onAnswerSelected: onAnswerSelected, liveExam: $liveExam)
+            
+            
+           
+                DeselectedAnswerView(ans: "d", content: liveExam.d, image: liveExam.dImage, onAnswerSelected: onAnswerSelected, liveExam: $liveExam)
+            
+            
+           
+                DeselectedAnswerView(ans: "e", content: liveExam.e, image: liveExam.eImage, onAnswerSelected: onAnswerSelected, liveExam: $liveExam)
+            
         }.frame(maxWidth: .infinity)
     }
 }

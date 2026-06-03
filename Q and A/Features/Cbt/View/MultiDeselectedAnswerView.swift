@@ -14,16 +14,25 @@ struct MultiDeselectedAnswerView: View {
     let image: String?
     let shape = RoundedRectangle(cornerRadius: 5)
     let onMultiSelected: (String) -> Void
+    @Binding var liveExam: LiveExam
+    let onMultiDeselected: (String) -> Void
     
     var body: some View {
         if(!content.isEmpty || image != nil){
             
             Button(action: {
-                onMultiSelected(ans)
+                if(liveExam.solution.contains(ans)){
+                    onMultiDeselected(ans)
+                }else{
+                    onMultiSelected(ans)
+                }
+                
             } ){
                 HStack(alignment: .top){
                     
-                    Image("ans_uncheck")
+                    
+                    
+                    Image(liveExam.solution.contains(ans) ? "ans_check" : "ans_uncheck")
                     .padding(.leading, 10)
                     .padding(.top, 18)
                     .padding(.bottom, 18)
@@ -32,7 +41,7 @@ struct MultiDeselectedAnswerView: View {
                         
                         if(!content.isEmpty){
                             Text(content)
-                                .font(AppFont.regular(14))
+                                .font(liveExam.solution.contains(ans) ? AppFont.semi_bold(14) : AppFont.regular(14))
                                 .padding(.bottom, 4)
                             
                         }
@@ -52,7 +61,7 @@ struct MultiDeselectedAnswerView: View {
                 }.frame(maxWidth: .infinity)
                     .clipShape(shape)
                     .overlay(
-                        shape.stroke(Color("Grey"), lineWidth: 1)
+                        shape.stroke(Color(liveExam.solution.contains(ans) ? "ans" : "Grey"), lineWidth: 1)
                     )
                     .contentShape(Rectangle())
                     .padding(.bottom, 18)
@@ -64,6 +73,10 @@ struct MultiDeselectedAnswerView: View {
     }
 }
 
-#Preview {
-    MultiDeselectedAnswerView(ans: "a", content: "Welcome to Irabor", image: nil, onMultiSelected: { it in})
-}
+/*
+ 
+ #Preview {
+ MultiDeselectedAnswerView(ans: "a", content: "Welcome to Irabor", image: nil, onMultiSelected: { it in})
+ }
+ 
+ */

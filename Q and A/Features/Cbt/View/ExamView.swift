@@ -95,9 +95,9 @@ struct ExamView: View {
                     }
                     
                     if(liveExam.numberOfAnswer > 1){
-                        Text("Select all possible answer")
-                            .font(AppFont.regular(16))
-                            .italic()
+                        Text("Select all possible answers")
+                        .italic()
+                        .foregroundColor(Color("GreyText"))
                     }
                     
                     if(liveExam.numberOfAnswer > 1){

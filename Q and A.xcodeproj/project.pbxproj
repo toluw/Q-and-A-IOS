@@ -146,6 +146,7 @@
 		F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A2B2F2B68C70020A8A4 /* MainStackView.swift */; };
 		F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A2D2F2B6D350020A8A4 /* AppConstants.swift */; };
 		F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A2F2F2B6E5D0020A8A4 /* UserSettings.swift */; };
+		F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF8FF02FD01D9C00C55E68 /* ExamViewModel.swift */; };
 		F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BFC2B42FAA401B008A038E /* ExamPay.swift */; };
 		F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8B2F717165000861B6 /* RoleFeature.swift */; };
 		F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C12E8D2F7171A0000861B6 /* UserRole.swift */; };
@@ -358,6 +359,7 @@
 		F5BD4A2B2F2B68C70020A8A4 /* MainStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackView.swift; sourceTree = "<group>"; };
 		F5BD4A2D2F2B6D350020A8A4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F5BD4A2F2F2B6E5D0020A8A4 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		F5BF8FF02FD01D9C00C55E68 /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		F5BFC2B42FAA401B008A038E /* ExamPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPay.swift; sourceTree = "<group>"; };
 		F5C12E8B2F717165000861B6 /* RoleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleFeature.swift; sourceTree = "<group>"; };
 		F5C12E8D2F7171A0000861B6 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				F59A8F9F2FB6243100823C77 /* CbtPaymentViewModel.swift */,
 				F53268D02FC464940016CD4F /* CatViewModel.swift */,
 				F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */,
+				F5BF8FF02FD01D9C00C55E68 /* ExamViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1117,6 +1120,7 @@
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
+				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
