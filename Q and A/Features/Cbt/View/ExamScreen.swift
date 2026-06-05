@@ -42,7 +42,7 @@ struct ExamScreen: View {
                     }, gotTo: {
                         
                         if(authorizeUser()){
-                            
+                            viewModel.state.showGoToBottomSheet = true
                         }
                         
                     }, close: {
@@ -89,6 +89,18 @@ struct ExamScreen: View {
                        
                    )
                }
+            .sheet(isPresented: $viewModel.state.showGoToBottomSheet){
+                GoToQuestionBottomSheetView(fullQuestionList: cbtViewModel.liveExamList.goToQuestionList(), onQuestionSelected: {data in
+                    
+                    cbtViewModel.goToQuestion(index: data.questionIndex)
+                    
+                    viewModel.reInitState()
+                    
+                    viewModel.state.showGoToBottomSheet = false
+                    
+                })
+            }
+        
     }
     
     

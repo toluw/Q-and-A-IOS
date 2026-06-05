@@ -62,3 +62,21 @@ struct LiveExam: Codable, Equatable, Identifiable {
     
     static let preview = LiveExam(question: "What is a Syrogyra?", passage: "Insruction: Answer all questions by giving the most accurate answers. Do not include your name. Be fast and accurate. Ensure you spend quality time practicing. You will not be allowed to retake the exam. Use HB pencil only. Bring your A game. Dont be distracted. Put in your best work.", a: "Idolatary", b: "Fun Fare", c: "Genital Enlargement", d: "Succide", e: "Perimeter Fencing", numberOfAnswer: 2, answer: "a", explanation: "There are two types of Kidney. Take your time to study them in details", questionId: "Youtube is your best friend. Subscribe to youtube today. Chhers", questionImage: nil, passageImage: nil, aImage: nil, bImage: nil, cImage: nil, dImage: nil, eImage: nil, explanationImage: nil, solution: ["c"], passageVideo: nil, passageBook: nil)
 }
+
+
+extension [LiveExam]{
+    
+    func goToQuestionList() -> [GoToQuestion]{
+        
+        var goToQuestionList : [GoToQuestion] = []
+        
+        for index in self.indices {
+            let goToQuestion = GoToQuestion(questionIndex: index,hasAttempted: !self[index].solution.isEmpty)
+            goToQuestionList.append(goToQuestion)
+        }
+        
+        return goToQuestionList
+        
+    }
+    
+}

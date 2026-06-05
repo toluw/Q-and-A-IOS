@@ -51,6 +51,11 @@ class CbtViewModel: ObservableObject{
         updateLiveExam(liveExamUpdateMode: .next)
     }
     
+    func goToQuestion(index: Int){
+        questionIndex = index
+        updateLiveExam(liveExamUpdateMode: .next)
+    }
+    
     func answerQuestion(ans: String){
         liveExamList[questionIndex].solution = [ans]
         updateLiveExam(liveExamUpdateMode: .normal)
