@@ -29,8 +29,7 @@ struct GoToQuestionBottomSheetView: View {
                 .padding(.top, 36)
             
             
-           
-                
+            ScrollView{
                 LazyVGrid(columns: columns, spacing: 20){
                     
                     if(!viewModel.state.questions.isEmpty){
@@ -71,6 +70,12 @@ struct GoToQuestionBottomSheetView: View {
                     
                 }.padding(.horizontal, 16)
             }
+                
+                
+            }
+           
+              Spacer()
+                
             
             if(viewModel.state.selectedQuestion != nil){
                 PrimaryButton(buttonText: "Go To", action: {
@@ -78,13 +83,13 @@ struct GoToQuestionBottomSheetView: View {
                 }).frame(maxWidth: .infinity)
                     .padding(.horizontal, 60)
                     .padding(.top, 30)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
             }else{
                DisabledButton(buttonText: "Go To")
                     .frame(maxWidth: .infinity)
                         .padding(.horizontal, 60)
                         .padding(.top, 30)
-                        .padding(.bottom, 16)
+                        .padding(.bottom, 24)
             }
             
         }.frame(maxWidth: .infinity)

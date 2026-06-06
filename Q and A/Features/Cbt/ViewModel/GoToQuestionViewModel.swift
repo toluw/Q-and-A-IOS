@@ -26,8 +26,8 @@ class GoToQuestionViewModel: ObservableObject{
     
     
     func initQuestions(fullQuestions: [GoToQuestion]){
-        state.questions = Array(fullQuestions.prefix(13))
-        state.showSeeAllButton = fullQuestions.count > 13
+        state.questions = Array(fullQuestions.prefix(25))
+        state.showSeeAllButton = fullQuestions.count > 25
     }
     
     func seeAll(fullQuestions: [GoToQuestion]) {
