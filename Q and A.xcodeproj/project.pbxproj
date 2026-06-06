@@ -84,6 +84,7 @@
 		F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DD2FAB94930042902F /* PaymentButton.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
+		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
 		F5941CE12F22124500611063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CE02F22124500611063 /* Preview Assets.xcassets */; };
@@ -302,6 +303,7 @@
 		F56CD1DD2FAB94930042902F /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
 		F5941CDD2F22124500611063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -880,6 +882,7 @@
 				F54578FE2FCEF400008FF056 /* ExamState.swift */,
 				F5BF8FF22FD16EDA00C55E68 /* GoToQuestion.swift */,
 				F5C61BA72FD2EF160090310A /* GoToQuestionState.swift */,
+				F593E8C72FD42AD900095719 /* TimerResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1246,6 +1249,7 @@
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,
 				F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
+				F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,

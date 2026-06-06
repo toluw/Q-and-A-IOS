@@ -64,7 +64,7 @@ struct ExamDescriptionScreen: View {
         cbtViewModel.initLiveExam(examQuestions: data, examSelect: selectedExam)
         
         if(cbtViewModel.examIndex == 0){
-            cbtViewModel.examDuration = cbtViewModel.getTotalExamTime()
+            cbtViewModel.examDuration = TimeInterval(cbtViewModel.getTotalExamTime())
         }
         
         cbtViewModel.questionIndex = 0

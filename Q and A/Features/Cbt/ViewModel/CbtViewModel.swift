@@ -23,10 +23,91 @@ class CbtViewModel: ObservableObject{
     var selectedExamPay: [ExamPay] = []
     var liveExamList: [LiveExam] = []
     @Published var questionIndex: Int = 0
-    @Published var examDuration: Int = 0
     @Published var liveExam: LiveExam? = nil
     @Published var transition: AnyTransition = .identity
+   
+    var examDuration: TimeInterval = 0
+    var remainingTime: TimeInterval = 0
+    var endTime: Date? = nil
     
+    @Published var timerState: TimerResult = .tick
+    
+    private var timer: Timer?
+    
+    
+    
+    
+    
+    func startExam() {
+        guard endTime == nil else {
+            
+            timerState = .tick
+            return
+            
+        }
+          endTime = Date().addingTimeInterval(examDuration)
+          startTimer()
+      }
+    
+    
+    
+    private func startTimer() {
+        guard let end = endTime else { return }
+        let remaining = end.timeIntervalSinceNow
+        initTimer(remaining: remaining)
+        
+    }
+    
+    
+    
+    
+    func initTimer(remaining: TimeInterval) {
+           timer?.invalidate()
+           
+           guard remaining > 0 else {
+               timerState = .ended
+               return
+           }
+           
+           timerState = .tick
+           
+           timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+               Task { @MainActor [weak self] in
+                   self?.onTimerTick()
+               }
+           }
+       }
+    
+    
+    private func onTimerTick() {
+           guard let end = endTime else { return }
+           let remaining = end.timeIntervalSinceNow
+           
+           if remaining <= 0 {
+               timerState = .ended
+               timer?.invalidate()
+           } else {
+               timerState = .tick
+           }
+    }
+    
+    
+    deinit {
+          timer?.invalidate()
+      }
+    
+    func finishExam(hasNext: Bool = false) {
+          timer?.invalidate()
+          timer = nil
+          
+          if hasNext {
+              examDuration = remainingTime
+          } else {
+              examDuration = 0
+          }
+          remainingTime = 0
+          endTime = nil
+      }
     
     
     func initIndexList() {
@@ -40,7 +121,7 @@ class CbtViewModel: ObservableObject{
         var totalTime: Int = 0
         
         examSelectList.forEach {
-            totalTime += $0.getExamTime() * 60 * 1000
+            totalTime += $0.getExamTime() * 60
         }
         
         return totalTime

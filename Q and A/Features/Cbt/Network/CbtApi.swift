@@ -43,7 +43,7 @@ extension CbtAPI: TargetType{
             return "v2/post_transaction.php"
         case .getCatExams:
             return "v2/get_cat_exams.php"
-        case .getExamQuestions(examId: let examId, buyerEmail: let buyerEmail):
+        case .getExamQuestions:
             return "v2/get_exam_questions.php"
         }
     }

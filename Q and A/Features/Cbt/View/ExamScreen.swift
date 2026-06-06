@@ -13,6 +13,7 @@ struct ExamScreen: View {
     @ObservedObject var navVm: MainNavViewModel
     @ObservedObject var cbtViewModel: CbtViewModel
     @StateObject var viewModel: ExamViewModel = .init()
+    @State private var timeDisplayText: String = "--:--"
     
     var body: some View {
         ZStack{
@@ -59,7 +60,7 @@ struct ExamScreen: View {
                         
                     }, onAnswerSelected: {ans in
                         cbtViewModel.answerQuestion(ans: ans)
-                    })
+                    }, timeDisplayText: $timeDisplayText)
                 .id(liveExamBinding.id)
                     .transition(cbtViewModel.transition)
                 
@@ -99,7 +100,52 @@ struct ExamScreen: View {
                     viewModel.state.showGoToBottomSheet = false
                     
                 })
+            }.onAppear{
+                cbtViewModel.startExam()
+            } .onReceive(cbtViewModel.$timerState) { state in
+                switch state {
+                case .tick:
+                    tickTimer()
+                case .ended:
+                    if cbtViewModel.endTime != nil {
+                        timeOut()
+                    }
+                }
             }
+        
+    }
+    
+    
+    private func timeOut() {
+        timeDisplayText = "--:--"
+        if(UserSettings.isLoggedIn){
+            showSuccessMessage(message: "You have run out of time, your exam has been automatically submitted.", actionTitle: "View Result", showCancel: false, action: {
+                submit(isTimeOut: true)
+            })
+        }else{
+            showSuccessMessage(message: "You have run out of time. Kindly Login to Proceed", actionTitle: "Login", action: {
+                
+                viewModel.state.showLogin = true
+            })
+        }
+        
+    }
+    
+    
+    private func submit(isTimeOut: Bool = false){
+        
+    }
+    
+    private func tickTimer(){
+        guard let end = cbtViewModel.endTime else { return }
+               let remaining = end.timeIntervalSinceNow
+               
+               if remaining <= 0 {
+                   timeOut()
+               } else {
+                   cbtViewModel.remainingTime = remaining
+                   timeDisplayText = remaining.toTimeFormat()
+               }
         
     }
     

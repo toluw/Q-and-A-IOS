@@ -22,6 +22,7 @@ struct ExamView: View {
     let onMultiSelect: (String) -> Void
     let onMultiDeselect: (String) -> Void
     let onAnswerSelected: (String) -> Void
+    @Binding var timeDisplayText: String
  
     var body: some View {
         VStack{
@@ -47,6 +48,17 @@ struct ExamView: View {
                 
                 
                 Spacer()
+                
+                VStack{
+                    
+                    Text("TIME LEFT")
+                        .font(AppFont.regular(12))
+                        .foregroundColor(Color("DescColor"))
+                    
+                    Text(timeDisplayText)
+                        .font(AppFont.semi_bold(16))
+                        .padding(.top, 2)
+                }
                 
                 
             }.frame(maxWidth: .infinity)
@@ -130,22 +142,24 @@ struct ExamView: View {
 
 #Preview {
     
-    ExamViewPreviewWrapper(questionIndex: 1, liveExam: .preview, examState: ExamState(showFullPassage: false))
+    ExamViewPreviewWrapper(questionIndex: 1, liveExam: .preview, examState: ExamState(showFullPassage: false), timeDisplayText: "20:30")
 }
 
 struct ExamViewPreviewWrapper: View{
     @State var questionIndex: Int
     @State var liveExam: LiveExam
     @State var examState: ExamState
+    @State var timeDisplayText: String
     
     
-    init(questionIndex: Int, liveExam: LiveExam, examState: ExamState) {
+    init(questionIndex: Int, liveExam: LiveExam, examState: ExamState, timeDisplayText: String) {
         self.questionIndex = questionIndex
         self.liveExam = liveExam
         self.examState = examState
+        self.timeDisplayText = timeDisplayText
     }
     
     var body: some View {
-        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {}, readMorePassage: {}, onMultiSelect: {_ in }, onMultiDeselect: {_ in }, onAnswerSelected: {_ in })
+        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {}, readMorePassage: {}, onMultiSelect: {_ in }, onMultiDeselect: {_ in }, onAnswerSelected: {_ in }, timeDisplayText: $timeDisplayText)
     }
 }
