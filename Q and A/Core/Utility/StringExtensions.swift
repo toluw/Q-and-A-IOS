@@ -42,6 +42,12 @@ extension String{
          return regex.firstMatch(in: self, options: [], range: range) != nil
      }
     
+    
+    func convertCommaDelimitedStringToList() -> [String] {
+          self.split(separator: ",")
+              .map { $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
+      }
+    
    
 }
 

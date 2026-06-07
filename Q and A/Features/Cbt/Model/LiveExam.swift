@@ -79,4 +79,30 @@ extension [LiveExam]{
         
     }
     
+    func getExamScore() -> Double{
+        
+        guard !self.isEmpty else {
+               return 0
+           }
+           
+           var point = 0
+           
+           for liveExam in self {
+               
+               let answer = liveExam.answer.convertCommaDelimitedStringToList()
+               let solution = liveExam.solution
+               
+               if liveExam.numberOfAnswer > 1 &&
+                   liveExam.numberOfAnswer != solution.count {
+                   continue
+               }
+               
+               if answer.sorted() == solution.sorted() {
+                   point += 1
+               }
+           }
+           
+           return (Double(point) / Double(self.count)) * 100
+    }
+    
 }

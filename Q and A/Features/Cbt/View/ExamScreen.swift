@@ -134,6 +134,60 @@ struct ExamScreen: View {
     
     private func submit(isTimeOut: Bool = false){
         
+        let score = cbtViewModel.liveExamList.getExamScore()
+        
+        let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+        
+        let timeDurationSecs = cbtViewModel.examDuration - cbtViewModel.remainingTime
+        
+        let endTime = if(cbtViewModel.parentCategoriesData?.catData?.isMock == true){
+            cbtViewModel.parentCategoriesData?.catData?.endTime ?? ""
+        }else{
+            selectExam.endTime
+        }
+        
+        let examResult = ExamResult(item: selectExam.item, examId: selectExam.exam.examId, numQuestions: cbtViewModel.liveExamList.count, shouldShuffle:  selectExam.shouldShuffle, category: selectExam.category, examTime: selectExam.disableReview ? selectExam.exam.duration :  selectExam.getExamTime(), score: score, createAt: getCurrentTime(), disableReview: selectExam.disableReview, timeDuration: Int(timeDurationSecs.rounded()), endTime: endTime)
+        
+        let examResultData = ExamResultData(examResult: examResult, liveExamList: cbtViewModel.liveExamList)
+        
+        if(selectExam.disableReview){
+            cbtViewModel.examResultDataList = [examResultData]
+        }else{
+            cbtViewModel.examResultDataList.append(examResultData)
+        }
+        
+        uploadResult(examResultData: examResultData)
+        
+        if(cbtViewModel.examIndex < (cbtViewModel.examSelectList.count - 1)){
+            if(isTimeOut){
+                moveToResult()
+            }else{
+                moveToNextExam()
+            }
+
+        }else{
+            
+            moveToResult()
+            
+        }
+        
+        
+        
+    }
+    
+    
+    private func uploadResult(examResultData: ExamResultData){
+        
+    }
+    
+    private func moveToResult(){
+        
+    }
+    
+    private func moveToNextExam(){
+        cbtViewModel.examIndex += 1
+        cbtViewModel.finishExam(hasNext: true)
+        navVm.navigateAndPop(route: .examDescriptionScreen, pop: 1)
     }
     
     private func tickTimer(){
