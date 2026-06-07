@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct ExamResultData{
+struct ExamResultData: Equatable, Hashable{
     var examResult: ExamResult
     var liveExamList: [LiveExam]
+    
+    static let preview = ExamResultData(examResult: .preview, liveExamList: [LiveExam.preview, LiveExam.preview])
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LiveExam: Codable, Equatable, Identifiable {
+struct LiveExam: Codable, Equatable, Identifiable, Hashable {
     let question: String
     let passage: String
     let a: String

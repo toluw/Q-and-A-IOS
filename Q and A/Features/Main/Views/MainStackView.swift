@@ -62,6 +62,14 @@ struct MainStackView: View {
             ExamLoaderScreen(navVm: navVM)
         case .examSceen:
             ExamScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+        case .resultScreen(examResultData: let examResultData):
+            ResultScreen(navVm: navVM, cbtViewModel: cbtViewModel, examResultData: examResultData)
+        case .fanQuizResultScreen(examId: let examId, examResultData: let examResultData):
+            FanQuizResultScreen(navVm: navVM, cbtViewModel: cbtViewModel, examId: examId, examResultData: examResultData)
+        case .multipleResultScreen:
+            MultipleResultScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+        case .mockExamResultScreen(mockId: let mockId, mockExamResult: let mockExamResult):
+            MockExamResultScreen(navVm: navVM, cbtViewModel: cbtViewModel, mockId: mockId, mockExamResult: mockExamResult)
         }
     }
     

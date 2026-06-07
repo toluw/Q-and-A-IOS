@@ -190,7 +190,43 @@ struct ExamScreen: View {
     }
     
     private func moveToResult(){
-        
+        if(cbtViewModel.parentCategoriesData?.catData?.isMock == true){
+           
+            if let cbtId = cbtViewModel.parentCategoriesData?.catData?.cbtId{
+                
+                let examResultList = cbtViewModel.examResultDataList.map{it in
+                    it.examResult
+                }
+                
+                let mockExamResult = MockExamResult(examResultList: examResultList, title: cbtViewModel.parentCategoriesData?.item ?? "")
+                
+                cbtViewModel.finishExam()
+                
+                navVm.navigateAndPop(route: .mockExamResultScreen(mockId: cbtId, mockExamResult: mockExamResult), pop: 1)
+                
+            }
+            
+        }else{
+           
+            if(cbtViewModel.examResultDataList.count > 1){
+                
+                cbtViewModel.finishExam()
+                navVm.navigateAndPop(route: .multipleResultScreen, pop: 1)
+                
+            }else{
+              
+                let data = cbtViewModel.examResultDataList[0]
+                if(data.examResult.disableReview){
+                    cbtViewModel.finishExam()
+                    navVm.navigateAndPop(route: .fanQuizResultScreen(examId: nil, examResultData: data), pop: 1)
+                }else{
+                    cbtViewModel.finishExam()
+                    navVm.navigateAndPop(route: .resultScreen(examResultData: data), pop: 1)
+                }
+                
+            }
+            
+        }
     }
     
     private func moveToNextExam(){

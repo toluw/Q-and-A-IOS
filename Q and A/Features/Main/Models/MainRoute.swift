@@ -24,5 +24,9 @@ enum MainRoute: Hashable{
     case examLoaderScreen
     case paystackPaymentScreen(authorizationUrl: String, accessCode: String, reference: String)
     case examSceen
+    case resultScreen(examResultData: ExamResultData)
+    case fanQuizResultScreen(examId: String?, examResultData: ExamResultData?)
+    case multipleResultScreen
+    case mockExamResultScreen(mockId: String, mockExamResult: MockExamResult?)
     
 }
