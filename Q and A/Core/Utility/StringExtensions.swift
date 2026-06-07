@@ -51,6 +51,11 @@ extension String{
    
 }
 
+extension Array where Element == String {
+    func toCommaDelimitedString() -> String {
+        return self.joined(separator: ", ")
+    }
+}
 
 
 func convertGoogleDriveLinkToDirect(_ link: String?) -> String? {

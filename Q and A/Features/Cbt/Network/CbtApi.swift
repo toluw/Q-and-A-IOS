@@ -19,6 +19,7 @@ enum CbtAPI {
     case getCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
     case getMultipleExams(multipleExamBody: MultipleExamsBody)
     case postTransaction(postTransactionBody: PostTransactionBody)
+    case postResult(examResultBody: ExamResultBody)
     
 }
 
@@ -45,6 +46,8 @@ extension CbtAPI: TargetType{
             return "v2/get_cat_exams.php"
         case .getExamQuestions:
             return "v2/get_exam_questions.php"
+        case .postResult:
+            return "v2/post_result4.php"
         }
     }
     
@@ -66,6 +69,8 @@ extension CbtAPI: TargetType{
                 .get
         case .getExamQuestions:
                 .get
+        case .postResult:
+                .post
         }
     }
     
@@ -113,6 +118,9 @@ extension CbtAPI: TargetType{
         case .postTransaction(postTransactionBody: let postTransactionBody):
             return .requestJSONEncodable(postTransactionBody)
             
+        case .postResult(examResultBody: let ExamResultBody):
+            return .requestJSONEncodable(ExamResultBody)
+            
         case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
             do {
                 var params: [String: Any] = [:]
@@ -142,6 +150,7 @@ extension CbtAPI: TargetType{
             }
             
             
+        
         }
         
        

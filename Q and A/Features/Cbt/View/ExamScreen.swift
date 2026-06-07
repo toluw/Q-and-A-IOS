@@ -178,6 +178,15 @@ struct ExamScreen: View {
     
     private func uploadResult(examResultData: ExamResultData){
         
+        let examResult: [ExamResultBodyData] = examResultData.liveExamList.map{it in
+            ExamResultBodyData(question: it.question, numberOfAnswer: it.numberOfAnswer, answer: it.answer, passage: it.passage, a: it.a, b: it.b, c: it.c, d: it.d, e: it.e, explanation: it.explanation, questionId: Int(it.questionId) ?? 0, questionImage: it.questionImage, passageImage: it.passageImage, aImage: it.aImage, bImage: it.bImage, cImage: it.cImage, dImage: it.dImage, eImage: it.eImage, explanationImage: it.explanationImage, solution: it.solution.isEmpty ? "" : it.solution.toCommaDelimitedString(), passageVideo: it.passageVideo, passageBook: it.passageBook)
+        }
+        
+        let buyerEmail = UserSettings.email
+        
+        let examResultBody = ExamResultBody(item: examResultData.examResult.item, numQuestions: examResultData.examResult.numQuestions, examId: Int(examResultData.examResult.examId) ?? 0, shouldShuffle: examResultData.examResult.shouldShuffle, category: examResultData.examResult.category, image: examResultData.examResult.image, examTime: examResultData.examResult.examTime, score: examResultData.examResult.score, buyerEmail: buyerEmail ?? "", isCompleted: true, resultData: examResult, disableReview: examResultData.examResult.disableReview, timeDuration: examResultData.examResult.timeDuration, endTime: examResultData.examResult.endTime, cbtId: cbtViewModel.parentCategoriesData?.catData?.cbtId ?? "0")
+        
+        cbtViewModel.postResult(examResultBody: examResultBody)
     }
     
     private func moveToResult(){

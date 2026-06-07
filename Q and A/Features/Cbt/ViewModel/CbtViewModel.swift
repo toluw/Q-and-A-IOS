@@ -35,6 +35,13 @@ class CbtViewModel: ObservableObject{
     private var timer: Timer?
     
     
+    private let cbtService: CbtServiceProtocol
+   
+      
+      init(cbtService: CbtServiceProtocol = CbtService()) {
+          self.cbtService = cbtService
+          
+      }
     
     
     
@@ -77,6 +84,26 @@ class CbtViewModel: ObservableObject{
                }
            }
        }
+    
+    func postResult(examResultBody: ExamResultBody){
+        
+        Task{
+            do{
+              
+                let response = try await cbtService.postResult(examResultBody: examResultBody)
+                
+                
+                
+                
+            } catch {
+                
+                showErrorMessage(message: "Could not save your result - \(error.localizedDescription)", actionTitle: "Retry", showCancel: true, action: {
+                    self.postResult(examResultBody: examResultBody)
+                })
+            }
+        }
+        
+    }
     
     
     private func onTimerTick() {
