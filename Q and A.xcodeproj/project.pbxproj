@@ -142,6 +142,8 @@
 		F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101002FD5D9C500B924EF /* MultipleResultScreen.swift */; };
 		F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101022FD5DA5600B924EF /* FanQuizResultScreen.swift */; };
 		F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101042FD5DB3500B924EF /* ResultScreen.swift */; };
+		F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */; };
+		F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */; };
 		F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */; };
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
@@ -367,6 +369,8 @@
 		F5B101002FD5D9C500B924EF /* MultipleResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleResultScreen.swift; sourceTree = "<group>"; };
 		F5B101022FD5DA5600B924EF /* FanQuizResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanQuizResultScreen.swift; sourceTree = "<group>"; };
 		F5B101042FD5DB3500B924EF /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
+		F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTestDialog.swift; sourceTree = "<group>"; };
+		F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfinishedResultBody.swift; sourceTree = "<group>"; };
 		F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCbtModeView.swift; sourceTree = "<group>"; };
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
@@ -897,6 +901,7 @@
 				F593E8C72FD42AD900095719 /* TimerResult.swift */,
 				F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */,
 				F5B100FC2FD5D32F00B924EF /* MockExamResult.swift */,
+				F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -949,6 +954,7 @@
 				F5B101002FD5D9C500B924EF /* MultipleResultScreen.swift */,
 				F5B101022FD5DA5600B924EF /* FanQuizResultScreen.swift */,
 				F5B101042FD5DB3500B924EF /* ResultScreen.swift */,
+				F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1206,6 +1212,7 @@
 				F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
+				F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */,
 				F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
@@ -1256,6 +1263,7 @@
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
+				F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */,
 				F59D328C2F90EBD20045C4AA /* ParentCatState.swift in Sources */,
 				F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,

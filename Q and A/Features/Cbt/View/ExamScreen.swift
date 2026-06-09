@@ -40,6 +40,10 @@ struct ExamScreen: View {
                         
                     }, submit: {
                         
+                        if(authorizeUser()){
+                            viewModel.state.showSubmitDialog = true
+                        }
+                        
                     }, gotTo: {
                         
                         if(authorizeUser()){
@@ -47,7 +51,9 @@ struct ExamScreen: View {
                         }
                         
                     }, close: {
-                        
+                        showNoticeMessage(message: "Are you sure you want to leave this assessment?", actionTitle: "Exit", showCancel: true, action: {
+                            exit()
+                        })
                     }, readMorePassage: {
                         
                     }, onMultiSelect: {ans in
@@ -67,11 +73,30 @@ struct ExamScreen: View {
             }
            
            
-            
+            if(viewModel.state.showSubmitDialog){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        viewModel.state.showSubmitDialog = false
+                    }
+
+                SubmitTestDialog(
+                    onReview: {
+                        viewModel.state.showSubmitDialog = false
+                        
+                    },
+                    onSubmit: {
+                        viewModel.state.showSubmitDialog = false
+                        submit()
+                    }
+                )
+                .transition(.scale)
+            }
             
            
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .animation(.easeInOut, value: viewModel.state.showSubmitDialog)
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: $viewModel.state.showLogin){
                    LoginScreen(
@@ -115,6 +140,8 @@ struct ExamScreen: View {
         
     }
     
+   
+    
     
     private func timeOut() {
         timeDisplayText = "--:--"
@@ -131,10 +158,44 @@ struct ExamScreen: View {
         
     }
     
+    private func exit(){
+       
+        let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+        
+        let timeDurationSecs = cbtViewModel.examDuration - cbtViewModel.remainingTime
+        
+        let examResult = ExamResult(item: selectExam.item, examId: selectExam.exam.examId, numQuestions: cbtViewModel.liveExamList.count, shouldShuffle:  selectExam.shouldShuffle, category: selectExam.category, examTime: selectExam.disableReview ? selectExam.exam.duration :  selectExam.getExamTime(), score: 0.0, createAt: getCurrentTime(), disableReview: selectExam.disableReview, timeDuration: Int(timeDurationSecs.rounded()), endTime: selectExam.endTime)
+        
+        let buyerEmail = UserSettings.email
+        
+        let unfinishedResultBody = UnfinishedResultBody(
+                  item: examResult.item,
+                  numQuestions: examResult.numQuestions,
+                  examId: Int(examResult.examId) ?? 0,
+                  shouldShuffle: examResult.shouldShuffle,
+                  category: examResult.category,
+                  image: examResult.image,
+                  examTime: examResult.examTime,
+                  score: examResult.score,
+                  buyerEmail: buyerEmail ?? "",
+                  isCompleted: false,
+                  disableReview: examResult.disableReview,
+                  timeDuration: Int(timeDurationSecs.rounded()),
+                  endTime: examResult.endTime
+              )
+        
+        cbtViewModel.postUnfisnishedResult(unfinishedResultBody: unfinishedResultBody)
+        
+        navVm.pop()
+        
+    }
+    
     
     private func submit(isTimeOut: Bool = false){
         
         let score = cbtViewModel.liveExamList.getExamScore()
+        
+        print("app_score:\(score)")
         
         let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
         

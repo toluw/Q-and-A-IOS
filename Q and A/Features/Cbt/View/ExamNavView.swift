@@ -89,7 +89,7 @@ struct ExamNavView: View {
                         
                     }.buttonStyle(.plain)
                 }else if(isExam){
-                    PrimaryButton(buttonText: "Submit", action: {})
+                    PrimaryButton(buttonText: "Submit", action: submit)
                         .frame(width: 100)
                 }
            

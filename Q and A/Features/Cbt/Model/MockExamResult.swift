@@ -11,5 +11,5 @@ struct MockExamResult: Codable, Equatable, Hashable{
     let examResultList: [ExamResult]
     let title: String
     
-    static let preview = MockExamResult(examResultList: [ExamResult.preview, ExamResult.preview, ExamResult.preview], title: <#T##String#>)
+    static let preview = MockExamResult(examResultList: [ExamResult.preview, ExamResult.preview, ExamResult.preview], title: "Book")
 }

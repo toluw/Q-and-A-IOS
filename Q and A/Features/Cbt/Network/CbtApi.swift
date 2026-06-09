@@ -20,6 +20,7 @@ enum CbtAPI {
     case getMultipleExams(multipleExamBody: MultipleExamsBody)
     case postTransaction(postTransactionBody: PostTransactionBody)
     case postResult(examResultBody: ExamResultBody)
+    case postUnFinishedResult(unFinishedResultBody: UnfinishedResultBody)
     
 }
 
@@ -48,6 +49,8 @@ extension CbtAPI: TargetType{
             return "v2/get_exam_questions.php"
         case .postResult:
             return "v2/post_result4.php"
+        case .postUnFinishedResult:
+            return "v2/post_unfinished_result3.php"
         }
     }
     
@@ -70,6 +73,8 @@ extension CbtAPI: TargetType{
         case .getExamQuestions:
                 .get
         case .postResult:
+                .post
+        case .postUnFinishedResult:
                 .post
         }
     }
@@ -118,8 +123,11 @@ extension CbtAPI: TargetType{
         case .postTransaction(postTransactionBody: let postTransactionBody):
             return .requestJSONEncodable(postTransactionBody)
             
-        case .postResult(examResultBody: let ExamResultBody):
-            return .requestJSONEncodable(ExamResultBody)
+        case .postResult(examResultBody: let examResultBody):
+            return .requestJSONEncodable(examResultBody)
+            
+        case .postUnFinishedResult(unFinishedResultBody: let unFinishedResultBody):
+            return .requestJSONEncodable(unFinishedResultBody)
             
         case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
             do {
@@ -150,6 +158,7 @@ extension CbtAPI: TargetType{
             }
             
             
+        
         
         }
         

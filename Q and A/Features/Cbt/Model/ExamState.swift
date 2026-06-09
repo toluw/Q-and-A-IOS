@@ -12,5 +12,6 @@ struct ExamState{
     var showFullPassage: Bool = false
     var showLogin: Bool = false
     var showGoToBottomSheet: Bool = false
+    var showSubmitDialog: Bool = false
     
 }

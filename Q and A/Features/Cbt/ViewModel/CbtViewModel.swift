@@ -90,7 +90,7 @@ class CbtViewModel: ObservableObject{
         Task{
             do{
               
-                let response = try await cbtService.postResult(examResultBody: examResultBody)
+                _ = try await cbtService.postResult(examResultBody: examResultBody)
                 
                 
                 
@@ -103,6 +103,24 @@ class CbtViewModel: ObservableObject{
             }
         }
         
+    }
+    
+    func postUnfisnishedResult(unfinishedResultBody: UnfinishedResultBody){
+        Task{
+            do{
+              
+                _ = try await cbtService.postUnfinishedResult(unfinishedResultBody: unfinishedResultBody)
+                
+                
+                
+                
+            } catch {
+                
+                showErrorMessage(message: "Could not save exam data - \(error.localizedDescription)", actionTitle: "Retry", showCancel: true, action: {
+                    self.postUnfisnishedResult(unfinishedResultBody: unfinishedResultBody)
+                })
+            }
+        }
     }
     
     
