@@ -13,5 +13,6 @@ struct ExamState{
     var showLogin: Bool = false
     var showGoToBottomSheet: Bool = false
     var showSubmitDialog: Bool = false
+    var showCalculator: Bool = false
     
 }

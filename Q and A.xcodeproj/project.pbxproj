@@ -212,6 +212,7 @@
 		F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8922F8D3B82001F734D /* ErrorView.swift */; };
 		F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
+		F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29F842FDB0559003A876B /* CalculatorView.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
 		F5F7A76A2F3883260097558D /* gilroy_600.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7652F3883260097558D /* gilroy_600.ttf */; };
@@ -437,6 +438,7 @@
 		F5E1D8922F8D3B82001F734D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtItemView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5F29F842FDB0559003A876B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
 		F5F7A7652F3883260097558D /* gilroy_600.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_600.ttf; sourceTree = "<group>"; };
@@ -763,6 +765,7 @@
 				F54578DC2FC86B09008FF056 /* LoadCircularImageView.swift */,
 				F54578F02FCEC0C0008FF056 /* ShimmerView.swift */,
 				F54578F22FCEC152008FF056 /* FullWidthImageView.swift */,
+				F5F29F842FDB0559003A876B /* CalculatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
+				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,

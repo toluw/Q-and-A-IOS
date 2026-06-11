@@ -51,7 +51,7 @@ struct ExamScreen: View {
                         }
                         
                     }, close: {
-                        showNoticeMessage(message: "Are you sure you want to leave this assessment?", actionTitle: "Exit", showCancel: true, action: {
+                        showErrorMessage(message: "Are you sure you want to leave this assessment?", actionTitle: "Exit", showCancel: true, action: {
                             exit()
                         })
                     }, readMorePassage: {
@@ -66,7 +66,10 @@ struct ExamScreen: View {
                         
                     }, onAnswerSelected: {ans in
                         cbtViewModel.answerQuestion(ans: ans)
-                    }, timeDisplayText: $timeDisplayText)
+                    }, timeDisplayText: $timeDisplayText,
+                       onCalculatorClicked: {
+                    viewModel.state.showCalculator = true
+                    })
                 .id(liveExamBinding.id)
                     .transition(cbtViewModel.transition)
                 
@@ -115,6 +118,11 @@ struct ExamScreen: View {
                        
                    )
                }
+            .sheet(isPresented: $viewModel.state.showCalculator){
+                CalculatorView(onDismiss: {
+                    viewModel.state.showCalculator = false
+                })
+            }
             .sheet(isPresented: $viewModel.state.showGoToBottomSheet){
                 GoToQuestionBottomSheetView(fullQuestionList: cbtViewModel.liveExamList.goToQuestionList(), onQuestionSelected: {data in
                     

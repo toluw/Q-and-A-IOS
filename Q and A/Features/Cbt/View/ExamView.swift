@@ -23,6 +23,7 @@ struct ExamView: View {
     let onMultiDeselect: (String) -> Void
     let onAnswerSelected: (String) -> Void
     @Binding var timeDisplayText: String
+    let onCalculatorClicked: () -> Void
  
     var body: some View {
         VStack{
@@ -68,6 +69,10 @@ struct ExamView: View {
             
             
             HStack{
+                
+                Button(action: onCalculatorClicked){
+                   Image("calculate")
+                }
                 
                Spacer()
                 
@@ -160,6 +165,6 @@ struct ExamViewPreviewWrapper: View{
     }
     
     var body: some View {
-        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {}, readMorePassage: {}, onMultiSelect: {_ in }, onMultiDeselect: {_ in }, onAnswerSelected: {_ in }, timeDisplayText: $timeDisplayText)
+        ExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, submit: {}, gotTo: {}, close: {}, readMorePassage: {}, onMultiSelect: {_ in }, onMultiDeselect: {_ in }, onAnswerSelected: {_ in }, timeDisplayText: $timeDisplayText, onCalculatorClicked: {})
     }
 }
