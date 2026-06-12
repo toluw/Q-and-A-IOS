@@ -20,7 +20,24 @@ struct PassageScreen: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack(alignment: .leading){
+                
+                if(!passage.isEmpty){
+                    Text(passage)
+                        .font(AppFont.regular(14))
+                        .padding(.bottom, 4)
+                }
+                
+                if(passageImage?.isEmpty == false){
+                    FullWidthImageView(url: passageImage, placeholderHeight: 60)
+                }
+                
+            }.padding(.horizontal, 16)
+                .padding(.top, 20)
+                .padding(.bottom, 16)
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
