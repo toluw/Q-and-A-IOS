@@ -13,10 +13,10 @@ import Moya
 
 enum CbtAPI {
     
-    case getParentCategories(level: String? = nil, cbcId: String? = nil, isActive: String = "1", isMock: String)
-    case getSubCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
-    case getExamQuestions(examId: String, buyerEmail: String)
-    case getCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1")
+    case getParentCategories(level: String? = nil, cbcId: String? = nil, isActive: String = "1", isMock: String, deviceId: String, buyerEmail: String)
+    case getSubCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1", deviceId: String)
+    case getCbtQuestions(examId: String, buyerEmail: String, isAndroid: String = "0", deviceId: String = DeviceManager.shared.getDeviceId())
+    case getCatExams(cbtId: String, buyerEmail: String?, isActive: String = "1", deviceId: String)
     case getMultipleExams(multipleExamBody: MultipleExamsBody)
     case postTransaction(postTransactionBody: PostTransactionBody)
     case postResult(examResultBody: ExamResultBody)
@@ -36,17 +36,17 @@ extension CbtAPI: TargetType{
         switch self {
             
         case .getParentCategories:
-            return "v2/get_parent_category2.php"
+            return "v2/get_parent_category3.php"
         case .getSubCatExams:
-            return "v2/get_subcat_exams.php"
+            return "v2/get_subcat_exams2.php"
         case .getMultipleExams:
-            return "v2/get_multiple_exam_questions.php"
+            return "v2/get_multiple_exam_questions2.php"
         case .postTransaction:
             return "v2/post_transaction.php"
         case .getCatExams:
-            return "v2/get_cat_exams.php"
-        case .getExamQuestions:
-            return "v2/get_exam_questions.php"
+            return "v2/get_cat_exams2.php"
+        case .getCbtQuestions:
+            return "v2/get_cbt_questions.php"
         case .postResult:
             return "v2/post_result4.php"
         case .postUnFinishedResult:
@@ -70,7 +70,7 @@ extension CbtAPI: TargetType{
                 .post
         case .getCatExams:
                 .get
-        case .getExamQuestions:
+        case .getCbtQuestions:
                 .get
         case .postResult:
                 .post
@@ -82,7 +82,7 @@ extension CbtAPI: TargetType{
     var task: Moya.Task {
         switch self{
             
-        case .getParentCategories(level: let level, cbcId: let cbcId, isActive: let isActive, isMock: let isMock):
+        case .getParentCategories(level: let level, cbcId: let cbcId, isActive: let isActive, isMock: let isMock, deviceId: let deviceId, buyerEmail: let buyerEmail):
             
             do {
                 
@@ -91,6 +91,8 @@ extension CbtAPI: TargetType{
                 params.addOptional(key: "cbc_id", value: cbcId)
                 params.addOptional(key: "is_active", value: isActive)
                 params.addOptional(key: "is_mock", value: isMock)
+                params.addOptional(key: "device_id", value: deviceId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
                 
                 return .requestParameters(
                     parameters: params,
@@ -100,13 +102,14 @@ extension CbtAPI: TargetType{
             }
             
             
-        case .getSubCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+        case .getSubCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive, deviceId: let deviceId):
             
             do {
                 var params: [String: Any] = [:]
                 params.addOptional(key: "cbt_id", value: cbtId)
                 params.addOptional(key: "buyer_email", value: buyerEmail)
                 params.addOptional(key: "is_active", value: isActive)
+                params.addOptional(key: "device_id", value: deviceId)
                 
                 return .requestParameters(
                     parameters: params,
@@ -129,12 +132,13 @@ extension CbtAPI: TargetType{
         case .postUnFinishedResult(unFinishedResultBody: let unFinishedResultBody):
             return .requestJSONEncodable(unFinishedResultBody)
             
-        case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive):
+        case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive, deviceId: let deviceId):
             do {
                 var params: [String: Any] = [:]
                 params.addOptional(key: "cbt_id", value: cbtId)
                 params.addOptional(key: "buyer_email", value: buyerEmail)
                 params.addOptional(key: "is_active", value: isActive)
+                params.addOptional(key: "device_id", value: deviceId)
                 
                 return .requestParameters(
                     parameters: params,
@@ -143,11 +147,13 @@ extension CbtAPI: TargetType{
                 
             }
             
-        case .getExamQuestions(examId: let examId, buyerEmail: let buyerEmail):
+        case .getCbtQuestions(examId: let examId, buyerEmail: let buyerEmail, isAndroid: let isAndroid, deviceId: let deviceId):
             do {
                 var params: [String: Any] = [:]
                 params.addOptional(key: "exam_id", value: examId)
                 params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "is_android", value: isAndroid)
+                params.addOptional(key: "device_id", value: deviceId)
                 
                 
                 return .requestParameters(

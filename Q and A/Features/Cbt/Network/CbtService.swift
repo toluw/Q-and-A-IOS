@@ -14,7 +14,7 @@ protocol CbtServiceProtocol {
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse
     func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse
     func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse
-    func getExamQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse
+    func getCbtQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse
     func postResult(examResultBody: ExamResultBody) async throws -> GeneralResponse
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse
     
@@ -32,7 +32,7 @@ final class CbtService: CbtServiceProtocol{
     
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse {
         return try await apiClient.request(
-            .getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock),
+            .getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock, deviceId: DeviceManager.shared.getDeviceId(), buyerEmail: UserSettings.email ?? ""),
             responseType: ParentCategoriesResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"
@@ -42,7 +42,7 @@ final class CbtService: CbtServiceProtocol{
     
     func getSubCatExams(cbtId: String, buyerEmail: String?) async throws -> SubCatExamsResponse {
         return try await apiClient.request(
-            .getSubCatExams(cbtId: cbtId, buyerEmail: buyerEmail),
+            .getSubCatExams(cbtId: cbtId, buyerEmail: buyerEmail, deviceId: DeviceManager.shared.getDeviceId(),),
             responseType: SubCatExamsResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"
@@ -52,7 +52,7 @@ final class CbtService: CbtServiceProtocol{
     
     func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse {
         return try await apiClient.request(
-            .getCatExams(cbtId: cbtId, buyerEmail: buyerEmail),
+            .getCatExams(cbtId: cbtId, buyerEmail: buyerEmail, deviceId: DeviceManager.shared.getDeviceId(),),
             responseType: CatExamsResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"
@@ -60,9 +60,9 @@ final class CbtService: CbtServiceProtocol{
         );
     }
     
-    func getExamQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse {
+    func getCbtQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse {
         return try await apiClient.request(
-            .getExamQuestions(examId: examId, buyerEmail: buyerEmail),
+            .getCbtQuestions(examId: examId, buyerEmail: buyerEmail),
             responseType: ExamQuestionsResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"

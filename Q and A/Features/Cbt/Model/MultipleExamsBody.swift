@@ -10,6 +10,8 @@ import Foundation
 struct MultipleExamsBody: Codable {
     let buyerEmail: String
     let exams: [ExamBody]
+    let deviceId: String = DeviceManager.shared.getDeviceId()
+    let isAndroid: String = "0"
 
     struct ExamBody: Codable {
         let examId: String
@@ -24,5 +26,7 @@ struct MultipleExamsBody: Codable {
     enum CodingKeys: String, CodingKey {
         case buyerEmail = "buyer_email"
         case exams
+        case deviceId = "device_id"
+        case isAndroid = "is_android"
     }
 }

@@ -44,7 +44,7 @@ class ExamDescriptionViewModel: ObservableObject{
         Task{
             do{
               
-                let response = try await service.getExamQuestions(examId: examId, buyerEmail: buyerEmail)
+                let response = try await service.getCbtQuestions(examId: examId, buyerEmail: buyerEmail)
                 state.showLoader = false
                 state.data = response.data
                 
