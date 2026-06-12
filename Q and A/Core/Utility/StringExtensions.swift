@@ -48,6 +48,32 @@ extension String{
               .map { $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
       }
     
+    func extractGoogleDriveFileId() -> String? {
+           
+           let patterns = [
+               #"drive\.google\.com/file/d/([a-zA-Z0-9_-]{10,})"#,
+               #"drive\.google\.com/.*[?&]id=([a-zA-Z0-9_-]{10,})"#,
+               #"drive\.google\.com/open\?id=([a-zA-Z0-9_-]{10,})"#,
+               #"drive\.google\.com/uc\?export=download&id=([a-zA-Z0-9_-]{10,})"#
+           ]
+           
+           for pattern in patterns {
+               do {
+                   let regex = try NSRegularExpression(pattern: pattern)
+                   let range = NSRange(startIndex..<endIndex, in: self)
+                   
+                   if let match = regex.firstMatch(in: self, range: range),
+                      let fileIdRange = Range(match.range(at: 1), in: self) {
+                       return String(self[fileIdRange])
+                   }
+               } catch {
+                   print("Invalid regex: \(error)")
+               }
+           }
+           
+           return nil
+       }
+    
    
 }
 

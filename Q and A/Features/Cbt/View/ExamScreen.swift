@@ -55,7 +55,7 @@ struct ExamScreen: View {
                             exit()
                         })
                     }, readMorePassage: {
-                        
+                        readMorePassage()
                     }, onMultiSelect: {ans in
                         
                         cbtViewModel.multiSelect(ans: ans)
@@ -145,6 +145,62 @@ struct ExamScreen: View {
                     }
                 }
             }
+        
+    }
+    
+    
+    private func viewPassage(
+          passage: String,
+          passageImage: String?,
+          passageBook: String?,
+          passageVideo: String?,
+          pdfFile: String
+    ){
+        navVm.navigate(route: .passageScreen(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile))
+    }
+    
+    
+    private func viewPdf(pdfFile: String, directDownloadLink: String){
+        
+    }
+    
+    
+    
+    private func readMorePassage(){
+        let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+        
+          let passage = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passage
+               let passageImage = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passageImage
+               let passageVideo = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passageVideo
+               let passageBook = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passageBook
+               let pdfFile = "\(passageBook?.extractGoogleDriveFileId() ?? "").pdf"
+               let directDownloadLink = convertGoogleDriveLinkToDirect(passageBook)
+        
+        if(passageImage?.isEmpty ?? true && passage.count <= PASSAGE_NUM
+                  && passageVideo?.isValidYouTubeUrl() != true && directDownloadLink == nil
+                  ){
+                  return
+              }
+
+        if(directDownloadLink != nil && passageVideo?.isValidYouTubeUrl() != true){
+            viewPdf(pdfFile: pdfFile, directDownloadLink: directDownloadLink!)
+        }
+        else if(directDownloadLink != nil && passageVideo?.isValidYouTubeUrl() == true){
+           viewPassage(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile)
+        }
+        else if(passageImage?.isEmpty == false){
+            viewPassage(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile)
+        }
+        else if (passage.count > FULL_PASSAGE_NUM){
+            viewPassage(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile)
+        }else{
+            
+            viewModel.state.showFullPassage = true
+            
+        }
+        
+        
+        
         
     }
     

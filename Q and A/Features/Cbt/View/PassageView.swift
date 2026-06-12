@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PassageView: View {
-    private let PASSAGE_NUM = 98
+    
 
         let passage: String
         let passageImage: String?

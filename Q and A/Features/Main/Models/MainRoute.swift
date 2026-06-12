@@ -28,5 +28,6 @@ enum MainRoute: Hashable{
     case fanQuizResultScreen(examId: String?, examResultData: ExamResultData?)
     case multipleResultScreen
     case mockExamResultScreen(mockId: String, mockExamResult: MockExamResult?)
+    case passageScreen(passage: String, passageImage: String?, passageBook: String?, passageVideo: String?, pdfFile: String)
     
 }

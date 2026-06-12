@@ -13,6 +13,9 @@ let apiKey = "jkhjhg8887ncchfdfgs4356nvmvkvmvgh098hvgh"
 
 let paystackUrl = "https://api.paystack.co/"
 
+let PASSAGE_NUM = 98
+let FULL_PASSAGE_NUM = 500
+
 enum PaystackConstants {
     static let callbackURL = "https://www.knowbaseconsult.com/about-knowbase"
     static let threeDSURL   = "https://standard.paystack.co/close"
