@@ -93,7 +93,7 @@ class LoginViewModel: ObservableObject{
     func loginUser(userData: LoginResponse.UserData){
         
         UserSettings.name  = "\(userData.firstname) \(userData.lastname)"
-        UserSettings.email = userData.email
+        UserSettings.email = userData.email.lowercased()
         UserSettings.phoneNumber = userData.phone
         UserSettings.profileImage = userData.image
         UserSettings.isLoggedIn = true

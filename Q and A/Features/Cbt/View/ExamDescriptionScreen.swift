@@ -22,7 +22,7 @@ struct ExamDescriptionScreen: View {
             
             ExamDescriptionView(selectedExam: selectedExam, selectedColor: $viewModel.selectedColor, onStartExam: {
                 
-                viewModel.getExamQuestions(examId: selectedExam.exam.examId, buyerEmail: UserSettings.email ?? "")
+                viewModel.getCbtQuestions(examId: selectedExam.exam.examId, buyerEmail: UserSettings.email ?? "")
                 
             }, onBackClicked: {
                 if(cbtViewModel.examIndex == 0){

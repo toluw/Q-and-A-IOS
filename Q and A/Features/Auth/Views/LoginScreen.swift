@@ -48,6 +48,7 @@ struct LoginScreen: View {
                     TextField("Email", text: $viewModel.state.email)
                         .textFieldStyle(.roundedBorder)
                         .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
                         .padding(.top, 30)
                     
                     

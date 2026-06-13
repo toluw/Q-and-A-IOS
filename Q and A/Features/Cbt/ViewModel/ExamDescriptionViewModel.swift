@@ -35,7 +35,7 @@ class ExamDescriptionViewModel: ObservableObject{
     }
     
     
-    func getExamQuestions(examId: String, buyerEmail: String){
+    func getCbtQuestions(examId: String, buyerEmail: String){
         
        
         
@@ -53,7 +53,7 @@ class ExamDescriptionViewModel: ObservableObject{
             } catch {
                 state.showLoader = false
                 showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
-                    self.getExamQuestions(examId: examId, buyerEmail: buyerEmail)
+                    self.getCbtQuestions(examId: examId, buyerEmail: buyerEmail)
                 })
             }
         }

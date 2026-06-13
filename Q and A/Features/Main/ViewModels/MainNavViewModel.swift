@@ -17,25 +17,16 @@ class MainNavViewModel: ObservableObject {
     }
     
     func navigateAndPop(route: MainRoute, pop: Int){
-        path.append(route)
-        
-        if(pop == 0){
-            return
-        }
-        
-        for i in 1...pop {
-            
-            let index = path.count - 1 - i
-            
-            if(index < 0){
-                return
-            }
-            
-            if(path.indices.contains(index)){
-                path.remove(at: index)
-            }
-            
-        }
+           var newPath = path
+
+           if pop > 0 {
+               let countToRemove = min(pop, newPath.count)
+               newPath.removeLast(countToRemove)
+           }
+
+           newPath.append(route)
+
+           path = newPath
     }
     
     func pop() {
