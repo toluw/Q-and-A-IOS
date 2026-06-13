@@ -82,7 +82,7 @@ struct ExamLoaderScreen: View {
                 timer.invalidate()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    navVm.navigateAndPop(route: .examSceen, pop: 1)
+                    navVm.replaceTop(route: .examSceen)
                 }
             }
         }

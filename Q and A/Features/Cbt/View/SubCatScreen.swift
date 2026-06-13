@@ -121,15 +121,22 @@ struct SubCatScreen: View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
           .onAppear{
-                    viewModel.reInitExamSelection()
-                    
-                 if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                     viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                    }
-                    
-                }
-        
-          .onChange(of: viewModel.state.searchText){oldValue, newValue in
+              
+              if(navVm.activeRoute != .examSubCatScreen){return}
+                
+                  viewModel.reInitExamSelection()
+                  
+               if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
+                   viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                  }
+                  
+              
+                  
+                  
+              }
+              
+                   
+        .onChange(of: viewModel.state.searchText){oldValue, newValue in
               if(newValue == ""){
                   viewModel.state.items = viewModel.state.initItems
               }else{

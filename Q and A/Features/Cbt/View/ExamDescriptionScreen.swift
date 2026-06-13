@@ -51,7 +51,7 @@ struct ExamDescriptionScreen: View {
                  
                  initExam(selectedExam: selectedExam, data: data)
                  
-                 navVm.navigateAndPop(route: .examLoaderScreen, pop: 1)
+                 navVm.replaceTop(route: .examLoaderScreen)
                  
              }
              

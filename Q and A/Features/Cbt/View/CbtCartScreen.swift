@@ -92,7 +92,7 @@ struct CbtCartScreen: View {
                     PrimaryButton(buttonText: "Check Out", action: {
                         cbtViewModel.selectedExamPay = viewModel.getExamPay()
                         paymentViewModel.paymentState = .initialize
-                        navVm.navigateAndPop(route: .cbtPaymentScreen, pop: 1)
+                        navVm.replaceTop(route: .cbtPaymentScreen)
                         })
                             .padding(.horizontal, 16)
                             .padding(.bottom, 12)

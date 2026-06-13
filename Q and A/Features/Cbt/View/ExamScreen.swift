@@ -327,7 +327,7 @@ struct ExamScreen: View {
                 
                 cbtViewModel.finishExam()
                 
-                navVm.navigateAndPop(route: .mockExamResultScreen(mockId: cbtId, mockExamResult: mockExamResult), pop: 1)
+                navVm.replaceTop(route: .mockExamResultScreen(mockId: cbtId, mockExamResult: mockExamResult))
                 
             }
             
@@ -336,17 +336,17 @@ struct ExamScreen: View {
             if(cbtViewModel.examResultDataList.count > 1){
                 
                 cbtViewModel.finishExam()
-                navVm.navigateAndPop(route: .multipleResultScreen, pop: 1)
+                navVm.replaceTop(route: .multipleResultScreen)
                 
             }else{
               
                 let data = cbtViewModel.examResultDataList[0]
                 if(data.examResult.disableReview){
                     cbtViewModel.finishExam()
-                    navVm.navigateAndPop(route: .fanQuizResultScreen(examId: nil, examResultData: data), pop: 1)
+                    navVm.replaceTop(route: .fanQuizResultScreen(examId: nil, examResultData: data))
                 }else{
                     cbtViewModel.finishExam()
-                    navVm.navigateAndPop(route: .resultScreen(examResultData: data), pop: 1)
+                    navVm.replaceTop(route: .resultScreen(examResultData: data))
                 }
                 
             }
@@ -357,7 +357,7 @@ struct ExamScreen: View {
     private func moveToNextExam(){
         cbtViewModel.examIndex += 1
         cbtViewModel.finishExam(hasNext: true)
-        navVm.navigateAndPop(route: .examDescriptionScreen, pop: 1)
+        navVm.replaceTop(route: .examDescriptionScreen)
     }
     
     private func tickTimer(){

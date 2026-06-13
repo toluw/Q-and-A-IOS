@@ -12,29 +12,34 @@ class MainNavViewModel: ObservableObject {
     
     @Published var path: [MainRoute] = []
     
+    @Published private(set) var activeRoute: MainRoute?
+    
     func navigate(route: MainRoute) {
       path.append(route)
+        updateActiveRoute()
     }
     
-    func navigateAndPop(route: MainRoute, pop: Int){
-           var newPath = path
+   
+    
+    func replaceTop(route: MainRoute) {
+        guard !path.isEmpty else {
+            path.append(route)
+            updateActiveRoute()
+            return
+        }
 
-           if pop > 0 {
-               let countToRemove = min(pop, newPath.count)
-               newPath.removeLast(countToRemove)
-           }
-
-           newPath.append(route)
-
-           path = newPath
+        path[path.count - 1] = route
+        updateActiveRoute()
     }
     
     func pop() {
         _ = path.popLast()
+        updateActiveRoute()
     }
     
     func popToRoot() {
         path.removeAll()
+        updateActiveRoute()
     }
     
     func pop(n: Int){
@@ -44,6 +49,11 @@ class MainNavViewModel: ObservableObject {
            }
            
        path.removeLast(n)
+        updateActiveRoute()
         
     }
+    
+    private func updateActiveRoute() {
+          activeRoute = path.last
+      }
 }
