@@ -25,6 +25,9 @@ struct MainStackView: View {
         }
         .environmentObject(navVM)
         .environmentObject(cbtViewModel)
+        .onChange(of: navVM.path) { _, newPath in
+            navVM.updateActiveRoute()
+        }
     }
     
     

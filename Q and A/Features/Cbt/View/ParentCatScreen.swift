@@ -59,7 +59,10 @@ struct ParentCatScreen: View {
                     
                     if(viewModel.state.errorMessage != nil){
                         ErrorView(message: viewModel.state.errorMessage!){
-                            viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
+                            Task{
+                               await viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
+                            }
+                            
                         }
                     }else if(viewModel.state.parentCatData.isEmpty){
                         
@@ -103,8 +106,13 @@ struct ParentCatScreen: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("list_bg"))
-            .onAppear{
-                viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
+            .task {
+                
+                guard case .parentCatScreen = navVm.activeRoute else {
+                    return
+                }
+                
+                await viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
             }
             .onChange(of: viewModel.state.searchTxt){oldValue, newValue in
                 if(newValue == ""){

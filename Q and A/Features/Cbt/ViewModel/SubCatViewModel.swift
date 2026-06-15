@@ -75,14 +75,14 @@ class SubCatViewModel: ObservableObject {
    
     
     
-    func getSubCatExams(cbtId: String, buyerEmail: String?){
+    func getSubCatExams(cbtId: String, buyerEmail: String?) async{
         
             
         
         state.isLoading = true
         state.errorMessage = nil
         
-        Task{
+        
             do{
               
                 let response = try await service.getSubCatExams(cbtId: cbtId, buyerEmail: buyerEmail)
@@ -107,7 +107,7 @@ class SubCatViewModel: ObservableObject {
                 state.isLoading = false
                 state.errorMessage = error.localizedDescription
             }
-        }
+        
         
     }
     

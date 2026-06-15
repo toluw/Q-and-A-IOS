@@ -116,14 +116,14 @@ class CatViewModel: ObservableObject{
     }
     
     
-    func getSubCatExams(cbtId: String, buyerEmail: String?){
+    func getSubCatExams(cbtId: String, buyerEmail: String?) async{
         
             
         
         state.isLoading = true
         state.errorMessage = nil
         
-        Task{
+        
             do{
               
                 let response = try await service.getCatExams(cbtId: cbtId, buyerEmail: buyerEmail)
@@ -149,7 +149,7 @@ class CatViewModel: ObservableObject{
             }
         }
         
-    }
+    
     
     
     

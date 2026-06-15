@@ -28,7 +28,10 @@ struct SubCatScreen: View {
                     
                     ErrorView(message: viewModel.state.errorMessage!){
                         if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                            viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                            Task{
+                              await  viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                            }
+                            
                            }
                     }
                     
@@ -120,20 +123,54 @@ struct SubCatScreen: View {
                }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-          .onAppear{
+       .onChange(of: navVm.activeRoute){_, route in
+           
+           //Reload data when resume back from stack
+           
+           
               
-              if(navVm.activeRoute != .examSubCatScreen){return}
+                if (route != .examSubCatScreen)
+                {
+                    return
+                    
+                }
+           
+         
+                viewModel.reInitExamSelection()
                 
-                  viewModel.reInitExamSelection()
-                  
-               if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                   viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                  }
-                  
-              
-                  
-                  
-              }
+                if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
+                    Task{
+                       await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                    }
+                 
+                }
+                
+            
+            }
+       
+        
+        .task {
+            
+            //Load data when screen is first created
+            
+          
+            
+            if(navVm.activeRoute != .examSubCatScreen){
+                return
+            }
+            
+           
+            viewModel.reInitExamSelection()
+            
+            if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
+                
+                   await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                
+             
+            }
+            
+        }
+          
               
                    
         .onChange(of: viewModel.state.searchText){oldValue, newValue in
@@ -257,6 +294,8 @@ struct SubCatScreen: View {
                   cbtViewModel.initMultipleExams(multipleExamQuestions: viewModel.state.multipleExamData, examSelectList: cbtViewModel.examSelectList)
                   
                   cbtViewModel.initIndexList()
+                  
+                  viewModel.state.multipleExamData = []
                   
                   navVm.navigate(route: .examPracticeScreen)
               }

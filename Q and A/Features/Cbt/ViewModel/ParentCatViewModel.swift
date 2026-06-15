@@ -25,7 +25,7 @@ class ParentCatViewModel: ObservableObject {
       }
     
     
-    func getParentCatData(level: String?, cbcId: String?, isMock: String, isActive: String = "1"){
+    func getParentCatData(level: String?, cbcId: String?, isMock: String, isActive: String = "1") async{
         
         if(!hasLoadData){
             state.isLoading = true
@@ -33,7 +33,7 @@ class ParentCatViewModel: ObservableObject {
     
         state.errorMessage = nil
         
-        Task{
+        
             do{
               
                 let response = try await service.getParentCategories(level: level, cbcId: cbcId, isActive: isActive, isMock: isMock)
@@ -47,7 +47,7 @@ class ParentCatViewModel: ObservableObject {
                 state.isLoading = false
                 state.errorMessage = error.localizedDescription
             }
-        }
+        
         
     }
     
