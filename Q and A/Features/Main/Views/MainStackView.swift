@@ -75,6 +75,8 @@ struct MainStackView: View {
             MockExamResultScreen(navVm: navVM, cbtViewModel: cbtViewModel, mockId: mockId, mockExamResult: mockExamResult)
         case .passageScreen(passage: let passage, passageImage: let passageImage, passageBook: let passageBook, passageVideo: let passageVideo, pdfFile: let pdfFile):
             PassageScreen(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile, navVm: navVM)
+        case .reviewExamScreen(examId: let examId):
+            ReviewExamScreen(navVm: navVM, cbtViewModel: cbtViewModel, examId: examId)
         }
     }
     

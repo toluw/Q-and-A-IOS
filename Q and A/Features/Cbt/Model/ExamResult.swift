@@ -27,4 +27,8 @@ struct ExamResult: Codable, Equatable, Hashable {
         let correctAns = score * Double(numQuestions) / 100.0
         return Int(correctAns)
     }
+    
+    func getReportTxt(user: String) -> String{
+        return "This report certifies that \(user) has taken the \(category) \(item) Assessment on Q and A app and scored \(String(score).formatScore())%"
+    }
 }

@@ -25,6 +25,10 @@ class CbtViewModel: ObservableObject{
     @Published var questionIndex: Int = 0
     @Published var liveExam: LiveExam? = nil
     @Published var transition: AnyTransition = .identity
+    
+    var reviewExamList: [LiveExam] = []
+    @Published var reviewIndex: Int = 0
+    @Published var reviewExam: LiveExam? = nil
    
     var examDuration: TimeInterval = 0
     var remainingTime: TimeInterval = 0
@@ -204,6 +208,43 @@ class CbtViewModel: ObservableObject{
     func previousQuestion(){
         questionIndex -= 1
         updateLiveExam(liveExamUpdateMode: .previous)
+    }
+    
+    func updateReviewExam(liveExamUpdateMode: LiveExamUpdateMode){
+        
+        let reviewExamUpdate = reviewExamList[reviewIndex]
+        
+        switch liveExamUpdateMode {
+        
+        case .previous:
+            transition = .asymmetric(
+                insertion: .move(edge: .leading),
+                removal: .move(edge: .trailing)
+            )
+            
+            withAnimation(.easeInOut) {
+                reviewExam = reviewExamUpdate
+            }
+            
+        case .next:
+            
+            transition = .asymmetric(
+                insertion: .move(edge: .trailing),
+                removal: .move(edge: .leading)
+            )
+            
+            withAnimation(.easeInOut) {
+                reviewExam = reviewExamUpdate
+            }
+            
+        case .normal:
+            transition = .identity
+            
+            reviewExam = reviewExamUpdate
+            
+            
+        }
+        
     }
     
     func updateLiveExam(liveExamUpdateMode: LiveExamUpdateMode) {

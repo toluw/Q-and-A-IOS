@@ -23,3 +23,24 @@ extension Int {
         }
     }
 }
+
+func convertSecondsToFormattedTime(seconds: Int) -> String {
+    let hours = seconds / 3600
+    let minutes = (seconds % 3600) / 60
+    let remainingSeconds = seconds % 60
+
+    var result = ""
+
+    if hours > 0 {
+        result += "\(hours)hr "
+    }
+
+    // Include minutes if there are hours, even if minutes is 0
+    if minutes > 0 || hours > 0 {
+        result += "\(minutes)m "
+    }
+
+    result += "\(remainingSeconds)s"
+
+    return result.trimmingCharacters(in: .whitespaces)
+}

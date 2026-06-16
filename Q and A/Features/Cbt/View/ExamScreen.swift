@@ -271,7 +271,8 @@ struct ExamScreen: View {
             selectExam.endTime
         }
         
-        let examResult = ExamResult(item: selectExam.item, examId: selectExam.exam.examId, numQuestions: cbtViewModel.liveExamList.count, shouldShuffle:  selectExam.shouldShuffle, category: selectExam.category, examTime: selectExam.disableReview ? selectExam.exam.duration :  selectExam.getExamTime(), score: score, createAt: getCurrentTime(), disableReview: selectExam.disableReview, timeDuration: Int(timeDurationSecs.rounded()), endTime: endTime)
+        let examResult = ExamResult(item: selectExam.item, examId: selectExam.exam.examId, numQuestions: cbtViewModel.liveExamList.count, shouldShuffle:  selectExam.shouldShuffle, category: selectExam.category,
+                                    image: selectExam.image,examTime: selectExam.disableReview ? selectExam.exam.duration :  selectExam.getExamTime(), score: score, createAt: getCurrentTime(), disableReview: selectExam.disableReview, timeDuration: Int(timeDurationSecs.rounded()), endTime: endTime)
         
         let examResultData = ExamResultData(examResult: examResult, liveExamList: cbtViewModel.liveExamList)
         

@@ -74,6 +74,25 @@ extension String{
            return nil
        }
     
+    func formatScore() -> String {
+           // If the string doesn't contain a ".", treat it as an integer and return as-is
+           guard contains(".") else { return self }
+           
+           guard let value = Double(self) else {
+               return self // fallback: return original if it's not a valid number
+           }
+           
+           let formatted = String(format: "%.2f", value)
+           
+           if formatted.hasSuffix(".00") {
+               return String(formatted.dropLast(3))
+           } else if formatted.hasSuffix("0") {
+               return String(formatted.dropLast())
+           } else {
+               return formatted
+           }
+       }
+    
    
 }
 
