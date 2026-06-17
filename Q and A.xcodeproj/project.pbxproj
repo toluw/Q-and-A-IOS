@@ -26,6 +26,9 @@
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
 		F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */; };
+		F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88C2FE28BD9007C3494 /* TabItem.swift */; };
+		F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88E2FE29753007C3494 /* CustomTabBar.swift */; };
+		F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E8902FE2AD82007C3494 /* MultipleResultView.swift */; };
 		F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268CA2FC460D70016CD4F /* CatScreen.swift */; };
 		F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */; };
 		F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268D02FC464940016CD4F /* CatViewModel.swift */; };
@@ -256,6 +259,9 @@
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExamScreen.swift; sourceTree = "<group>"; };
+		F529E88C2FE28BD9007C3494 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		F529E88E2FE29753007C3494 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		F529E8902FE2AD82007C3494 /* MultipleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleResultView.swift; sourceTree = "<group>"; };
 		F53268CA2FC460D70016CD4F /* CatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScreen.swift; sourceTree = "<group>"; };
 		F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryCatScreen.swift; sourceTree = "<group>"; };
 		F53268D02FC464940016CD4F /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
@@ -770,6 +776,9 @@
 				F54578F02FCEC0C0008FF056 /* ShimmerView.swift */,
 				F54578F22FCEC152008FF056 /* FullWidthImageView.swift */,
 				F5F29F842FDB0559003A876B /* CalculatorView.swift */,
+				F529E88C2FE28BD9007C3494 /* TabItem.swift */,
+				F529E88E2FE29753007C3494 /* CustomTabBar.swift */,
+				F529E8902FE2AD82007C3494 /* MultipleResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1204,10 +1213,12 @@
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
 				F5152C0E2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift in Sources */,
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
+				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
+				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
@@ -1269,6 +1280,7 @@
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
+				F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */,
 				F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,

@@ -14,7 +14,9 @@ struct MultipleResultScreen: View {
     @ObservedObject var cbtViewModel: CbtViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if(!cbtViewModel.examResultDataList.isEmpty){
+            MultipleResultView(results: cbtViewModel.examResultDataList, navVm: navVm, cbtViewModel: cbtViewModel)
+        }
     }
 }
 
