@@ -217,6 +217,10 @@
 		F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8922F8D3B82001F734D /* ErrorView.swift */; };
 		F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
+		F5EB75512FE42D1A002D38AE /* ReviewExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */; };
+		F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */; };
+		F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */; };
+		F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */; };
 		F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29F842FDB0559003A876B /* CalculatorView.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -448,6 +452,10 @@
 		F5E1D8922F8D3B82001F734D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtItemView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExamView.swift; sourceTree = "<group>"; };
+		F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
+		F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
+		F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAnswerView.swift; sourceTree = "<group>"; };
 		F5F29F842FDB0559003A876B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -973,6 +981,10 @@
 				F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */,
 				F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */,
 				F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */,
+				F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */,
+				F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */,
+				F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */,
+				F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1307,6 +1319,7 @@
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
 				F5C61BA62FD2EEC40090310A /* GoToQuestionViewModel.swift in Sources */,
+				F5EB75512FE42D1A002D38AE /* ReviewExamView.swift in Sources */,
 				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
 				F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */,
 				F5B03F572FDC37FD001F85B7 /* PassageScreen.swift in Sources */,
@@ -1329,6 +1342,7 @@
 				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
+				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
@@ -1337,6 +1351,7 @@
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
+				F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */,
 				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */,
@@ -1346,6 +1361,7 @@
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
 				F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */,
 				F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */,
+				F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */,
 				F5B100F92FD5BAA600B924EF /* ExamResultBody.swift in Sources */,
 				F5E054652FB7C5940012A9CC /* PaymentData.swift in Sources */,
 				F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */,

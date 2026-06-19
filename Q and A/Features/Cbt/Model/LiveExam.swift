@@ -61,6 +61,120 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
     }
     
     static let preview = LiveExam(question: "What is a Syrogyra?", passage: "Insruction: Answer all questions by giving the most accurate answers. Do not include your name. Be fast and accurate. Ensure you spend quality time practicing. You will not be allowed to retake the exam. Use HB pencil only. Bring your A game. Dont be distracted. Put in your best work.", a: "Idolatary", b: "Fun Fare", c: "Genital Enlargement", d: "Succide", e: "Perimeter Fencing", numberOfAnswer: 2, answer: "a", explanation: "There are two types of Kidney. Take your time to study them in details", questionId: "Youtube is your best friend. Subscribe to youtube today. Chhers", questionImage: nil, passageImage: nil, aImage: nil, bImage: nil, cImage: nil, dImage: nil, eImage: nil, explanationImage: nil, solution: ["c"], passageVideo: nil, passageBook: nil)
+    
+    func getAnswer() -> String{
+        
+        if(answer.isEmpty){
+            return ""
+        }
+        
+        switch answer.convertCommaDelimitedStringToList()[0].lowercased() {
+            
+        case "a":
+            return a
+
+        case "b":
+            return b
+
+        case "c":
+            return c
+
+        case "d":
+            return d
+
+        case "e":
+            return e
+
+        default:
+            return ""
+        }
+    }
+    
+    func getAnswerImage() -> String?{
+        
+        if(answer.isEmpty){
+            return nil
+        }
+        
+        switch answer.convertCommaDelimitedStringToList()[0].lowercased() {
+            
+        case "a":
+            return aImage
+
+        case "b":
+            return bImage
+
+        case "c":
+            return cImage
+
+        case "d":
+            return dImage
+
+        case "e":
+            return eImage
+
+        default:
+            return nil
+        }
+        
+    }
+    
+    func getSolution() -> String{
+        
+        if(solution.isEmpty){
+            return ""
+        }
+        
+        switch solution[0].lowercased() {
+        case "a":
+            return a
+
+        case "b":
+            return b
+
+        case "c":
+            return c
+
+        case "d":
+            return d
+
+        case "e":
+            return e
+
+        default:
+            return ""
+        
+        }
+        
+    }
+    
+    func getSolutionImage() -> String? {
+        if(solution.isEmpty){
+            return nil
+        }
+        
+        switch solution[0].lowercased() {
+        case "a":
+            return aImage
+
+        case "b":
+            return bImage
+
+        case "c":
+            return cImage
+
+        case "d":
+            return dImage
+
+        case "e":
+            return eImage
+
+        default:
+            return nil
+        
+        }
+        
+    }
 }
 
 
@@ -104,5 +218,7 @@ extension [LiveExam]{
            
            return (Double(point) / Double(self.count)) * 100
     }
+    
+    
     
 }
