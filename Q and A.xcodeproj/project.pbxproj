@@ -153,6 +153,11 @@
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
 		F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A0402FA620FD00B11187 /* ExamSelect.swift */; };
+		F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */; };
+		F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */; };
+		F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */; };
+		F5BB950C2FE933F0004EDA26 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */; };
+		F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -390,6 +395,11 @@
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
 		F5B5A0402FA620FD00B11187 /* ExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelect.swift; sourceTree = "<group>"; };
+		F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatus.swift; sourceTree = "<group>"; };
+		F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatusView.swift; sourceTree = "<group>"; };
+		F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleAnswerView.swift; sourceTree = "<group>"; };
+		F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
+		F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryOrangeButton.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -787,6 +797,8 @@
 				F529E88C2FE28BD9007C3494 /* TabItem.swift */,
 				F529E88E2FE29753007C3494 /* CustomTabBar.swift */,
 				F529E8902FE2AD82007C3494 /* MultipleResultView.swift */,
+				F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */,
+				F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -926,6 +938,7 @@
 				F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */,
 				F5B100FC2FD5D32F00B924EF /* MockExamResult.swift */,
 				F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */,
+				F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -985,6 +998,8 @@
 				F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */,
 				F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */,
 				F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */,
+				F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */,
+				F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1216,6 +1231,7 @@
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
 				F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */,
+				F5BB950C2FE933F0004EDA26 /* OrangeButton.swift in Sources */,
 				F53268D72FC467910016CD4F /* CatExams.swift in Sources */,
 				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
@@ -1258,6 +1274,7 @@
 				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
+				F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */,
 				F54578ED2FCDE179008FF056 /* AnswerView.swift in Sources */,
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
@@ -1289,6 +1306,7 @@
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
+				F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
@@ -1324,6 +1342,7 @@
 				F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */,
 				F5B03F572FDC37FD001F85B7 /* PassageScreen.swift in Sources */,
 				F53268DB2FC468A50016CD4F /* CatExamSelect.swift in Sources */,
+				F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */,
 				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
@@ -1336,6 +1355,7 @@
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
+				F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */,
 				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,

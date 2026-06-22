@@ -60,7 +60,7 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
         case passageBook = "passage_book"
     }
     
-    static let preview = LiveExam(question: "What is a Syrogyra?", passage: "Insruction: Answer all questions by giving the most accurate answers. Do not include your name. Be fast and accurate. Ensure you spend quality time practicing. You will not be allowed to retake the exam. Use HB pencil only. Bring your A game. Dont be distracted. Put in your best work.", a: "Idolatary", b: "Fun Fare", c: "Genital Enlargement", d: "Succide", e: "Perimeter Fencing", numberOfAnswer: 2, answer: "a", explanation: "There are two types of Kidney. Take your time to study them in details", questionId: "Youtube is your best friend. Subscribe to youtube today. Chhers", questionImage: nil, passageImage: nil, aImage: nil, bImage: nil, cImage: nil, dImage: nil, eImage: nil, explanationImage: nil, solution: ["c"], passageVideo: nil, passageBook: nil)
+    static let preview = LiveExam(question: "What is a Syrogyra?", passage: "Insruction: Answer all questions by giving the most accurate answers. Do not include your name. Be fast and accurate. Ensure you spend quality time practicing. You will not be allowed to retake the exam. Use HB pencil only. Bring your A game. Dont be distracted. Put in your best work.", a: "Idolatary", b: "Fun Fare", c: "Genital Enlargement", d: "Succide", e: "Perimeter Fencing", numberOfAnswer: 2, answer: "c,b", explanation: "There are two types of Kidney. Take your time to study them in details", questionId: "Youtube is your best friend. Subscribe to youtube today. Chhers", questionImage: nil, passageImage: nil, aImage: nil, bImage: nil, cImage: nil, dImage: nil, eImage: nil, explanationImage: nil, solution: ["a","b","c"], passageVideo: nil, passageBook: nil)
     
     func getAnswer() -> String{
         
@@ -87,6 +87,94 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
 
         default:
             return ""
+        }
+    }
+    
+    func getOption(ans: String)-> String{
+        
+        switch ans {
+        case "a":
+            return a
+
+        case "b":
+            return b
+
+        case "c":
+            return c
+
+        case "d":
+            return d
+
+        case "e":
+            return e
+
+        default:
+            return ""
+        }
+        
+        
+    }
+    
+    func getOptionImage(ans: String) -> String?{
+        switch ans {
+        case "a":
+            return aImage
+
+        case "b":
+            return bImage
+
+        case "c":
+            return cImage
+
+        case "d":
+            return dImage
+
+        case "e":
+            return eImage
+
+        default:
+            return nil
+        }
+        
+        
+    }
+    
+    func getWrongAnswerStatus() -> [AnswerStatus] {
+        
+        let answerList = answer.convertCommaDelimitedStringToList()
+        
+        var data: [AnswerStatus] = []
+        
+        for sol in solution {
+            if !answerList.contains(sol) {
+                data.append(AnswerStatus(answer: sol, content: getOption(ans: sol), image: getOptionImage(ans: sol), isCorrect: false))
+            }
+        }
+        
+        for ans in answerList {
+            data.append(AnswerStatus(answer: ans, content: getOption(ans: ans), image: getOptionImage(ans: ans), isCorrect: true))
+        }
+        
+        return data
+    }
+    
+    func getCorrectAnswerStatus() -> [AnswerStatus]{
+        
+        var data: [AnswerStatus] = []
+        
+        for sol in solution{
+            data.append(AnswerStatus(answer: sol, content: getOption(ans: sol), image: getOptionImage(ans: sol), isCorrect: true))
+        }
+        
+        return data
+        
+    }
+    
+    func getAnswerStatus() -> [AnswerStatus]{
+        if (answer.lowercased() == solution.toCommaDelimitedString().lowercased()){
+            return getCorrectAnswerStatus()
+        }else{
+            return getWrongAnswerStatus()
         }
     }
     

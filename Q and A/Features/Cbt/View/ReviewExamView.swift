@@ -18,6 +18,8 @@ struct ReviewExamView: View {
     let gotTo: () -> Void
     let close: () -> Void
     let readMorePassage: () -> Void
+    let onAskAi: () -> Void
+    let onJoinDiscussion: () -> Void
     
     
     
@@ -81,6 +83,64 @@ struct ReviewExamView: View {
                             .padding(.top, 5)
                     }
                     
+                    if(liveExam.numberOfAnswer > 1){
+                        ReviewMultipleAnswerView(liveExam: liveExam)
+                            .padding(.top,16)
+                    }else{
+                        ReviewAnswerView(liveExam: liveExam).padding(.top,16)
+                    }
+                    
+                    
+                    
+                    if(!liveExam.explanation.isEmpty || !(liveExam.explanationImage?.isEmpty ?? true)){
+                        
+                        Text("Explanation")
+                            .font(AppFont.semi_bold(16))
+                          .padding(.top,18)
+                        
+                    }
+                   
+                    
+                    
+                    if(!liveExam.explanation.isEmpty){
+                        Text(liveExam.explanation).font(AppFont.regular(16)).padding(.top,1)
+                    }
+                    
+                    if(!(liveExam.explanationImage?.isEmpty ?? true)){
+                        FullWidthImageView(url: liveExam.explanationImage, placeholderHeight: 60)
+                    }
+                    
+                    
+                    
+                    HStack{
+                        
+                        Spacer()
+                        
+                        VStack{
+                           
+                            if(liveExam.questionImage?.isEmpty ?? true && liveExam.passageImage?.isEmpty ?? true && liveExam.aImage?.isEmpty ?? true && liveExam.bImage?.isEmpty ?? true && liveExam.cImage?.isEmpty ?? true &&
+                               liveExam.dImage?.isEmpty ?? true &&
+                               liveExam.eImage?.isEmpty ?? true){
+                                
+                                
+                                OrangeButton(buttonText: "Ask AI", action: onAskAi).padding(.bottom, 10)
+                                
+                                SecondaryOrangeButton(buttonText: "Join Discussion", action: onJoinDiscussion)
+                                
+                            }
+                            
+                        }.frame(width: 180)
+                        
+                        Spacer()
+                        
+                        
+                        
+                    }.padding(.top, 30)
+                    
+                    
+                    
+                   
+                    
                     
                     
                     
@@ -124,6 +184,6 @@ struct ReviewExamPreviewWrapper: View{
         
         
         
-        ReviewExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, gotTo: {}, close: {}, readMorePassage: {})
+        ReviewExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, gotTo: {}, close: {}, readMorePassage: {}, onAskAi: {}, onJoinDiscussion: {})
     }
 }

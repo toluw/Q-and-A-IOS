@@ -17,13 +17,13 @@ struct ReviewAnswerView: View {
            
             if(!liveExam.solution.isEmpty && liveExam.solution[0].lowercased() != liveExam.answer.convertCommaDelimitedStringToList()[0].lowercased()){
                 
-                WrongAnswerView(ans: liveExam.answer.convertCommaDelimitedStringToList()[0].uppercased(), content: liveExam.getAnswer(), image: liveExam.getAnswerImage())
+                WrongAnswerView(ans: liveExam.solution[0].uppercased(), content: liveExam.getSolution(), image: liveExam.getSolutionImage())
                     .padding(.bottom, 18)
                     
                 
             }
             
-            CorrectAnswerView(ans: liveExam.solution[0].uppercased(), content: liveExam.getSolution(), image: liveExam.getAnswerImage())
+            CorrectAnswerView(ans: liveExam.answer.convertCommaDelimitedStringToList()[0].uppercased(), content: liveExam.getAnswer(), image: liveExam.getAnswerImage())
             
             
             if(liveExam.answer.isEmpty || liveExam.solution[0].lowercased() != liveExam.answer.convertCommaDelimitedStringToList()[0].lowercased()){
@@ -31,7 +31,7 @@ struct ReviewAnswerView: View {
                 
                 HStack{
                   
-                    Text("The correct answer is option \(liveExam.solution[0].uppercased())")
+                    Text("The correct answer is option \(liveExam.answer.convertCommaDelimitedStringToList()[0].uppercased())")
                         .foregroundColor(Color("correct_green"))
                         .font(AppFont.medium(18))
                         .padding(.top, 18)
