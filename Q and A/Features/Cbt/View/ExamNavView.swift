@@ -91,6 +91,8 @@ struct ExamNavView: View {
                 }else if(isExam){
                     PrimaryButton(buttonText: "Submit", action: submit)
                         .frame(width: 100)
+                }else{
+                    Spacer().frame(width: 60)
                 }
            
             

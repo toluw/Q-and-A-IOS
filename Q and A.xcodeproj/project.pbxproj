@@ -158,6 +158,7 @@
 		F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */; };
 		F5BB950C2FE933F0004EDA26 /* OrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */; };
 		F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */; };
+		F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB950F2FE954E3004EDA26 /* ReviewViewModel.swift */; };
 		F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */; };
 		F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */; };
 		F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */; };
@@ -222,6 +223,11 @@
 		F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8922F8D3B82001F734D /* ErrorView.swift */; };
 		F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */; };
 		F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E7057B2F4DEA55001016B6 /* IntroPage.swift */; };
+		F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9B3BB2FE98B0700B98FCB /* GoToReview.swift */; };
+		F5E9B3BE2FE98BC800B98FCB /* GoToReviewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */; };
+		F5E9B3C02FEAC52100B98FCB /* GoToReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */; };
+		F5E9B3C22FEAC5AF00B98FCB /* GoToReviewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9B3C12FEAC5AF00B98FCB /* GoToReviewState.swift */; };
+		F5E9B3C42FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */; };
 		F5EB75512FE42D1A002D38AE /* ReviewExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */; };
 		F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */; };
 		F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */; };
@@ -400,6 +406,7 @@
 		F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleAnswerView.swift; sourceTree = "<group>"; };
 		F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeButton.swift; sourceTree = "<group>"; };
 		F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryOrangeButton.swift; sourceTree = "<group>"; };
+		F5BB950F2FE954E3004EDA26 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A152F2A51B80020A8A4 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		F5BD4A172F2A55370020A8A4 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
@@ -462,6 +469,11 @@
 		F5E1D8922F8D3B82001F734D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtItemView.swift; sourceTree = "<group>"; };
 		F5E7057B2F4DEA55001016B6 /* IntroPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5E9B3BB2FE98B0700B98FCB /* GoToReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToReview.swift; sourceTree = "<group>"; };
+		F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToReviewItemView.swift; sourceTree = "<group>"; };
+		F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToReviewViewModel.swift; sourceTree = "<group>"; };
+		F5E9B3C12FEAC5AF00B98FCB /* GoToReviewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToReviewState.swift; sourceTree = "<group>"; };
+		F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToReviewBottomSheetView.swift; sourceTree = "<group>"; };
 		F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExamView.swift; sourceTree = "<group>"; };
 		F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
@@ -939,6 +951,8 @@
 				F5B100FC2FD5D32F00B924EF /* MockExamResult.swift */,
 				F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */,
 				F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */,
+				F5E9B3BB2FE98B0700B98FCB /* GoToReview.swift */,
+				F5E9B3C12FEAC5AF00B98FCB /* GoToReviewState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1000,6 +1014,8 @@
 				F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */,
 				F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */,
 				F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */,
+				F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */,
+				F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1017,6 +1033,8 @@
 				F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */,
 				F5BF8FF02FD01D9C00C55E68 /* ExamViewModel.swift */,
 				F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */,
+				F5BB950F2FE954E3004EDA26 /* ReviewViewModel.swift */,
+				F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1210,6 +1228,8 @@
 				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
+				F5E9B3C22FEAC5AF00B98FCB /* GoToReviewState.swift in Sources */,
+				F5E9B3BE2FE98BC800B98FCB /* GoToReviewItemView.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
@@ -1236,6 +1256,7 @@
 				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
+				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
 				F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
@@ -1289,6 +1310,7 @@
 				F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
+				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
@@ -1391,6 +1413,7 @@
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */,
+				F5E9B3C42FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift in Sources */,
 				F54578FF2FCEF400008FF056 /* ExamState.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */,
@@ -1400,6 +1423,7 @@
 				F5BD4A1C2F2A98BD0020A8A4 /* SplashView.swift in Sources */,
 				F5E1D8932F8D3B82001F734D /* ErrorView.swift in Sources */,
 				F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */,
+				F5E9B3C02FEAC52100B98FCB /* GoToReviewViewModel.swift in Sources */,
 				F51E11E32FA8EAAE00934BF7 /* ExamData.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,

@@ -236,6 +236,19 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
         
     }
     
+    func isExamCorrect() -> Bool {
+
+           if solution.isEmpty {
+               return false
+           }
+
+           if solution.sorted() != answer.convertCommaDelimitedStringToList().sorted() {
+               return false
+           }
+
+           return true
+    }
+    
     func getSolutionImage() -> String? {
         if(solution.isEmpty){
             return nil
@@ -278,6 +291,21 @@ extension [LiveExam]{
         }
         
         return goToQuestionList
+        
+    }
+    
+    func goToReviewList() -> [GoToReview]{
+        
+        var goToReviewList: [GoToReview] = []
+        
+        for index in self.indices{
+            let goToReview = GoToReview(questionIndex: index, isCorrect: self[index].isExamCorrect())
+            
+            goToReviewList.append(goToReview)
+        }
+        
+        return goToReviewList
+        
         
     }
     

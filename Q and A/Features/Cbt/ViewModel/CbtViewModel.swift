@@ -181,9 +181,19 @@ class CbtViewModel: ObservableObject{
         updateLiveExam(liveExamUpdateMode: .next)
     }
     
+    func nextReview(){
+        reviewIndex += 1
+        updateReviewExam(liveExamUpdateMode: .next)
+    }
+    
     func goToQuestion(index: Int){
         questionIndex = index
         updateLiveExam(liveExamUpdateMode: .next)
+    }
+    
+    func goToReview(index: Int){
+        reviewIndex = index
+        updateReviewExam(liveExamUpdateMode: .next)
     }
     
     func answerQuestion(ans: String){
@@ -208,6 +218,11 @@ class CbtViewModel: ObservableObject{
     func previousQuestion(){
         questionIndex -= 1
         updateLiveExam(liveExamUpdateMode: .previous)
+    }
+    
+    func previousReview(){
+        reviewIndex -= 1
+        updateReviewExam(liveExamUpdateMode: .previous)
     }
     
     func updateReviewExam(liveExamUpdateMode: LiveExamUpdateMode){
