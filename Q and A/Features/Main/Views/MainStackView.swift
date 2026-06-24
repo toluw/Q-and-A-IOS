@@ -77,6 +77,8 @@ struct MainStackView: View {
             PassageScreen(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile, navVm: navVM)
         case .reviewExamScreen(examId: let examId):
             ReviewExamScreen(navVm: navVM, cbtViewModel: cbtViewModel, examId: examId)
+        case .aiCbtScreen(content: let content):
+            AiCbtScreen(content: content)
         }
     }
     

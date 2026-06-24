@@ -124,6 +124,13 @@
 		F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */; };
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
+		F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */; };
+		F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */; };
+		F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */; };
+		F5A812352FEC04F200EB0496 /* SwiftMath in Frameworks */ = {isa = PBXBuildFile; productRef = F5A812342FEC04F200EB0496 /* SwiftMath */; };
+		F5A812372FEC055400EB0496 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812362FEC055400EB0496 /* MathView.swift */; };
+		F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812382FEC058F00EB0496 /* ContentSegment.swift */; };
+		F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */; };
 		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
 		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
 		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
@@ -372,6 +379,12 @@
 		F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartState.swift; sourceTree = "<group>"; };
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
+		F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiCbtScreen.swift; sourceTree = "<group>"; };
+		F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtBody.swift; sourceTree = "<group>"; };
+		F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtResponse.swift; sourceTree = "<group>"; };
+		F5A812362FEC055400EB0496 /* MathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
+		F5A812382FEC058F00EB0496 /* ContentSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSegment.swift; sourceTree = "<group>"; };
+		F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiFormattedView.swift; sourceTree = "<group>"; };
 		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
 		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
 		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
@@ -506,6 +519,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A812352FEC04F200EB0496 /* SwiftMath in Frameworks */,
 				F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */,
 				F5E144EE2F7FB9F200C10F3A /* Moya in Frameworks */,
 				F5E144EC2F7FB9F200C10F3A /* CombineMoya in Frameworks */,
@@ -600,6 +614,7 @@
 			children = (
 				F55021412F82AE450057C2F0 /* Toast.swift */,
 				F5AE933B2F8638BE0003CAA5 /* BottomSheetData.swift */,
+				F5A812382FEC058F00EB0496 /* ContentSegment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -811,6 +826,8 @@
 				F529E8902FE2AD82007C3494 /* MultipleResultView.swift */,
 				F5BB950B2FE933F0004EDA26 /* OrangeButton.swift */,
 				F5BB950D2FE93481004EDA26 /* SecondaryOrangeButton.swift */,
+				F5A812362FEC055400EB0496 /* MathView.swift */,
+				F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -953,6 +970,8 @@
 				F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */,
 				F5E9B3BB2FE98B0700B98FCB /* GoToReview.swift */,
 				F5E9B3C12FEAC5AF00B98FCB /* GoToReviewState.swift */,
+				F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */,
+				F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1016,6 +1035,7 @@
 				F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */,
 				F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */,
 				F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */,
+				F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1180,6 +1200,7 @@
 			packageReferences = (
 				F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */,
 				F5A32ECB2FB0D2B3001023A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				F5A812332FEC04F200EB0496 /* XCRemoteSwiftPackageReference "SwiftMath" */,
 			);
 			productRefGroup = F5941CD72F22124300611063 /* Products */;
 			projectDirPath = "";
@@ -1257,6 +1278,7 @@
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
+				F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
 				F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
@@ -1299,6 +1321,7 @@
 				F54578ED2FCDE179008FF056 /* AnswerView.swift in Sources */,
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
+				F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */,
 				F54578EF2FCDF188008FF056 /* SelectedAnswerView.swift in Sources */,
 				F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */,
 				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
@@ -1307,12 +1330,14 @@
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
+				F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */,
 				F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */,
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
+				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */,
@@ -1370,6 +1395,7 @@
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
+				F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */,
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
@@ -1382,6 +1408,7 @@
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
+				F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */,
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
@@ -1664,6 +1691,14 @@
 				minimumVersion = 3.1.4;
 			};
 		};
+		F5A812332FEC04F200EB0496 /* XCRemoteSwiftPackageReference "SwiftMath" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mgriebling/SwiftMath";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.3;
+			};
+		};
 		F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -1679,6 +1714,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F5A32ECB2FB0D2B3001023A4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		F5A812342FEC04F200EB0496 /* SwiftMath */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5A812332FEC04F200EB0496 /* XCRemoteSwiftPackageReference "SwiftMath" */;
+			productName = SwiftMath;
 		};
 		F5E144EB2F7FB9F200C10F3A /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

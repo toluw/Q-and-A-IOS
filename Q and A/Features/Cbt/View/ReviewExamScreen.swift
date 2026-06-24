@@ -35,11 +35,21 @@ struct ReviewExamScreen: View {
                 }, readMorePassage: {
                     readMorePassage()
                 }, onAskAi: {
-                    
+                    askAi()
                 }, onJoinDiscussion: {
                     
                 }).id(liveExamBinding.id)
                     .transition(cbtViewModel.transition)
+            }
+            
+            if(viewModel.state.showLoader){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
             }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -52,9 +62,26 @@ struct ReviewExamScreen: View {
                     viewModel.reInitState()
                     
                     viewModel.state.showGoToBottomSheet = false
-                    
+                      
                 })
             }
+            .onChange(of: viewModel.aiContent) { _,  content in
+            
+                if(!content.isEmpty){
+                    viewModel.aiContent = ""
+                    navVm.navigate(route: .aiCbtScreen(content: content))
+                }
+               
+                
+            }
+    }
+    
+    private func askAi(){
+        
+        let liveExam = cbtViewModel.reviewExamList[cbtViewModel.reviewIndex]
+        let askAiCbtBody = AskAiCbtBody(exam_id: examId, question_id: liveExam.questionId)
+        viewModel.askAiCbt(askAiCbtBody: askAiCbtBody)
+        
     }
     
     private func readMorePassage(){
@@ -85,7 +112,7 @@ struct ReviewExamScreen: View {
         else if (passage.count > FULL_PASSAGE_NUM){
             viewPassage(passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, pdfFile: pdfFile)
         }else{
-            
+            print("show=>show_full_message")
             viewModel.state.showFullPassage = true
             
         }

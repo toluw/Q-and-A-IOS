@@ -17,6 +17,67 @@ extension String{
             ).evaluate(with: self)
         }
     
+    func parseGeminiContent() -> [ContentSegment] {
+
+            let pattern = #"\$\$(.*?)\$\$|\$(.*?)\$"#
+
+            guard let regex = try? NSRegularExpression(
+                pattern: pattern,
+                options: [.dotMatchesLineSeparators]
+            ) else {
+                return [.text(self)]
+            }
+
+            var segments: [ContentSegment] = []
+            var lastLocation = startIndex
+
+            let matches = regex.matches(
+                in: self,
+                range: NSRange(startIndex..., in: self)
+            )
+
+            for match in matches {
+
+                guard let fullRange = Range(match.range, in: self) else {
+                    continue
+                }
+
+                if lastLocation < fullRange.lowerBound {
+                    let text = String(self[lastLocation..<fullRange.lowerBound])
+
+                    if !text.isEmpty {
+                        segments.append(.text(text))
+                    }
+                }
+
+                if let blockRange = Range(match.range(at: 1), in: self),
+                   !blockRange.isEmpty {
+
+                    segments.append(
+                        .math(String(self[blockRange]))
+                    )
+                }
+                else if let inlineRange = Range(match.range(at: 2), in: self),
+                        !inlineRange.isEmpty {
+
+                    segments.append(
+                        .math(String(self[inlineRange]))
+                    )
+                }
+
+                lastLocation = fullRange.upperBound
+            }
+
+            if lastLocation < endIndex {
+
+                segments.append(
+                    .text(String(self[lastLocation...]))
+                )
+            }
+
+            return segments
+        }
+    
     func capitalizeWords() -> String {
             return self
                 .lowercased()
@@ -74,6 +135,170 @@ extension String{
            return nil
        }
     
+    func toBoldAttributedString() -> AttributedString {
+
+            var result = AttributedString()
+
+            let lines = self.components(separatedBy: .newlines)
+
+            for line in lines {
+
+                // Handle headings
+                if line.hasPrefix("#### ") ||
+                    line.hasPrefix("### ") ||
+                    line.hasPrefix("## ") {
+
+                    let title = line
+                        .replacingOccurrences(of: "#### ", with: "")
+                        .replacingOccurrences(of: "### ", with: "")
+                        .replacingOccurrences(of: "## ", with: "")
+
+                    var heading = AttributedString(title)
+                    heading.font = .body.bold()
+
+                    result.append(heading)
+                    result.append(AttributedString("\n\n"))
+                    continue
+                }
+
+                // Handle **bold**
+                let pattern = #"\*\*(.*?)\*\*"#
+
+                guard let regex = try? NSRegularExpression(
+                    pattern: pattern
+                ) else {
+
+                    result.append(AttributedString(line))
+                    result.append(AttributedString("\n"))
+                    continue
+                }
+
+                var currentIndex = line.startIndex
+
+                let matches = regex.matches(
+                    in: line,
+                    range: NSRange(line.startIndex..., in: line)
+                )
+
+                for match in matches {
+
+                    guard
+                        let fullRange = Range(match.range, in: line),
+                        let boldRange = Range(match.range(at: 1), in: line)
+                    else {
+                        continue
+                    }
+
+                    // Normal text
+                    let normalText = String(
+                        line[currentIndex..<fullRange.lowerBound]
+                    )
+
+                    result.append(
+                        AttributedString(normalText)
+                    )
+
+                    // Bold text
+                    var boldText = AttributedString(
+                        String(line[boldRange])
+                    )
+
+                    boldText.font = .body.bold()
+
+                    result.append(boldText)
+
+                    currentIndex = fullRange.upperBound
+                }
+
+                // Remaining text
+                result.append(
+                    AttributedString(
+                        String(line[currentIndex...])
+                    )
+                )
+
+                result.append(
+                    AttributedString("\n")
+                )
+            }
+
+            return result
+        }
+    
+    
+  /*  func toBoldAttributedString() -> AttributedString {
+        var result = AttributedString()
+
+        let titleRegex = try? NSRegularExpression(
+            pattern: "^##\\s*(.*?)\\n",
+            options: []
+        )
+
+        var currentIndex = startIndex
+
+        // Handle title: ## Title
+        if let match = titleRegex?.firstMatch(
+            in: self,
+            range: NSRange(startIndex..., in: self)
+        ),
+           let titleRange = Range(match.range(at: 1), in: self),
+           let fullRange = Range(match.range, in: self) {
+
+            var titleAttr = AttributedString(String(self[titleRange]))
+            titleAttr.font = .body.bold()
+
+            result.append(titleAttr)
+            result.append(AttributedString("\n\n"))
+
+            currentIndex = fullRange.upperBound
+        }
+
+        let contentText = String(self[currentIndex...])
+
+        let boldRegex = try? NSRegularExpression(
+            pattern: "\\*\\*(.*?)\\*\\*",
+            options: []
+        )
+
+        var lastIndex = contentText.startIndex
+
+        let matches = boldRegex?.matches(
+            in: contentText,
+            range: NSRange(contentText.startIndex..., in: contentText)
+        ) ?? []
+
+        for match in matches {
+            guard
+                let fullRange = Range(match.range, in: contentText),
+                let boldRange = Range(match.range(at: 1), in: contentText)
+            else { continue }
+
+            // Append normal text
+            result.append(
+                AttributedString(
+                    String(contentText[lastIndex..<fullRange.lowerBound])
+                )
+            )
+
+            // Append bold text
+            var boldAttr = AttributedString(String(contentText[boldRange]))
+            boldAttr.font = .body.bold()
+            result.append(boldAttr)
+
+            lastIndex = fullRange.upperBound
+        }
+
+        // Append remaining text
+        result.append(
+            AttributedString(
+                String(contentText[lastIndex...])
+            )
+        )
+
+        return result
+    }
+    
+   */
     func formatScore() -> String {
            // If the string doesn't contain a ".", treat it as an integer and return as-is
            guard contains(".") else { return self }

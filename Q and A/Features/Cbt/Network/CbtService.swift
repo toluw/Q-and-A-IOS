@@ -17,6 +17,7 @@ protocol CbtServiceProtocol {
     func getCbtQuestions(examId: String, buyerEmail: String) async throws -> ExamQuestionsResponse
     func postResult(examResultBody: ExamResultBody) async throws -> GeneralResponse
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse
+    func askAiCbt(askAiCbtBody: AskAiCbtBody) async throws -> AskAiCbtResponse
     
     
     
@@ -24,6 +25,8 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
+    
  
    
     
@@ -90,6 +93,12 @@ final class CbtService: CbtServiceProtocol{
             }
             
         );
+    }
+    
+    func askAiCbt(askAiCbtBody: AskAiCbtBody) async throws -> AskAiCbtResponse {
+        return try await apiClient.request(.askAiCbt(askAiCbtBody: askAiCbtBody), responseType: AskAiCbtResponse.self, errorParser: {data in
+            data.jsonString(forKey: "message") ?? "An error occured"
+        })
     }
     
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse {

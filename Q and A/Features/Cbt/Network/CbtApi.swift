@@ -21,6 +21,7 @@ enum CbtAPI {
     case postTransaction(postTransactionBody: PostTransactionBody)
     case postResult(examResultBody: ExamResultBody)
     case postUnFinishedResult(unFinishedResultBody: UnfinishedResultBody)
+    case askAiCbt(askAiCbtBody: AskAiCbtBody)
     
 }
 
@@ -51,7 +52,10 @@ extension CbtAPI: TargetType{
             return "v2/post_result4.php"
         case .postUnFinishedResult:
             return "v2/post_unfinished_result3.php"
+        case .askAiCbt:
+           return "v2/ask_ai_cbt.php"
         }
+    
     }
     
     var method: Moya.Method {
@@ -75,6 +79,8 @@ extension CbtAPI: TargetType{
         case .postResult:
                 .post
         case .postUnFinishedResult:
+                .post
+        case .askAiCbt:
                 .post
         }
     }
@@ -132,6 +138,9 @@ extension CbtAPI: TargetType{
         case .postUnFinishedResult(unFinishedResultBody: let unFinishedResultBody):
             return .requestJSONEncodable(unFinishedResultBody)
             
+        case .askAiCbt(askAiCbtBody: let askAiCbtBody):
+            return .requestJSONEncodable(askAiCbtBody)
+            
         case .getCatExams(cbtId: let cbtId, buyerEmail: let buyerEmail, isActive: let isActive, deviceId: let deviceId):
             do {
                 var params: [String: Any] = [:]
@@ -166,6 +175,7 @@ extension CbtAPI: TargetType{
             
         
         
+       
         }
         
        

@@ -30,5 +30,6 @@ enum MainRoute: Hashable{
     case mockExamResultScreen(mockId: String, mockExamResult: MockExamResult?)
     case passageScreen(passage: String, passageImage: String?, passageBook: String?, passageVideo: String?, pdfFile: String)
     case reviewExamScreen(examId: String)
+    case aiCbtScreen(content: String)
     
 }
