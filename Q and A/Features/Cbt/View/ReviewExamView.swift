@@ -125,9 +125,10 @@ struct ReviewExamView: View {
                                 
                                 OrangeButton(buttonText: "Ask AI", action: onAskAi).padding(.bottom, 10)
                                 
-                                SecondaryOrangeButton(buttonText: "Join Discussion", action: onJoinDiscussion)
                                 
                             }
+                            
+                            SecondaryOrangeButton(buttonText: "Join Discussion", action: onJoinDiscussion)
                             
                         }.frame(width: 180)
                         

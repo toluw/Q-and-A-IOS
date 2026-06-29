@@ -131,6 +131,9 @@
 		F5A812372FEC055400EB0496 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812362FEC055400EB0496 /* MathView.swift */; };
 		F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812382FEC058F00EB0496 /* ContentSegment.swift */; };
 		F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */; };
+		F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A883A22FEFAA4F008C85EC /* PracticeView.swift */; };
+		F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */; };
+		F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */; };
 		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
 		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
 		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
@@ -385,6 +388,9 @@
 		F5A812362FEC055400EB0496 /* MathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		F5A812382FEC058F00EB0496 /* ContentSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSegment.swift; sourceTree = "<group>"; };
 		F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiFormattedView.swift; sourceTree = "<group>"; };
+		F5A883A22FEFAA4F008C85EC /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatWorkView.swift; sourceTree = "<group>"; };
+		F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorrectOptionView.swift; sourceTree = "<group>"; };
 		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
 		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
 		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
@@ -1036,6 +1042,9 @@
 				F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */,
 				F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */,
 				F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */,
+				F5A883A22FEFAA4F008C85EC /* PracticeView.swift */,
+				F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */,
+				F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1284,6 +1293,7 @@
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
 				F5152C0E2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift in Sources */,
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
+				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
 				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
@@ -1349,6 +1359,7 @@
 				F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */,
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
+				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
@@ -1400,6 +1411,7 @@
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
+				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
