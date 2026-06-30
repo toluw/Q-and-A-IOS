@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+enum ExplanationStatus {
+    
+    case viewSolution
+    case showCorrectAnswer
+    case showWrongAnswer
+   
+    
+    
+}

@@ -21,88 +21,135 @@ struct PracticeView: View {
     let onMultiDeselect: (String) -> Void
     let onAnswerSelected: (String) -> Void
     let onCalculatorClicked: () -> Void
+    let onMoveToExplanation: (Bool) -> Void
  
     
     
     var body: some View {
-        VStack{
-            
-            HStack{
+        ScrollViewReader{proxy in
+            VStack{
                 
-                Spacer()
-                
-                Text("Question \(questionIndex + 1) of \(questionCount)")
-                    .foregroundColor(Color("DescColor"))
-                    .font(AppFont.medium(16))
-                
-                
-                Spacer()
-                
-                
-                Button(action: onCalculatorClicked){
-                   Image("calculate")
-                }
-                
-            }.frame(maxWidth: .infinity)
-                .padding(.leading, 16)
-                .padding(.trailing, 16)
-                .padding(.top, 10)
-            
-            ScrollView{
-                
-                VStack(alignment: .leading){
+                HStack{
                     
-                    Spacer().frame(height: 16)
+                    Spacer()
                     
-                    if(examState.showFullPassage){
-                        FullPassageView(passage: liveExam.passage)
-                            
-                    }else{
-                        PassageView(passage: liveExam.passage, passageImage: liveExam.passageImage, passageVideo: liveExam.passageVideo, passageBook: liveExam.passageBook, onReadMore: readMorePassage)
-                            
-                   }
+                    Text("Question \(questionIndex + 1) of \(questionCount)")
+                        .foregroundColor(Color("DescColor"))
+                        .font(AppFont.medium(16))
                     
                     
-                    if(!liveExam.question.isEmpty  && liveExam.question != "-"){
-                        Text(liveExam.question)
-                            .font(AppFont.regular(16))
+                    Spacer()
+                    
+                    
+                    Button(action: onCalculatorClicked){
+                       Image("calculate")
                     }
-                    
-                    if(liveExam.questionImage != nil){
-                        FullWidthImageView(url: liveExam.questionImage, placeholderHeight: 72)
-                            .padding(.top, 5)
-                    }
-                    
-                    if(liveExam.numberOfAnswer > 1){
-                        Text("Select all possible answers")
-                        .italic()
-                        .foregroundColor(Color("GreyText"))
-                    }
-                    
-                    if(liveExam.numberOfAnswer > 1){
-                        MultiAnswerView(liveExam: $liveExam, onMultiSelect: onMultiSelect, onMultiDeselect: onMultiDeselect).padding(.top, 16)
-                    }else{
-                       AnswerView(liveExam: $liveExam, onAnswerSelected: onAnswerSelected)
-                            .padding(.top, 16)
-                    }
-                    
-                    
-                    
-                    
                     
                 }.frame(maxWidth: .infinity)
-                .padding(.horizontal, 16)
+                    .padding(.leading, 16)
+                    .padding(.trailing, 16)
+                    .padding(.top, 10)
+                
+             
+                    ScrollView{
+                        
+                        VStack(alignment: .leading){
+                            
+                            Spacer().frame(height: 16)
+                            
+                            if(examState.showFullPassage){
+                                FullPassageView(passage: liveExam.passage)
+                                    
+                            }else{
+                                PassageView(passage: liveExam.passage, passageImage: liveExam.passageImage, passageVideo: liveExam.passageVideo, passageBook: liveExam.passageBook, onReadMore: readMorePassage)
+                                    
+                           }
+                            
+                            
+                            if(!liveExam.question.isEmpty  && liveExam.question != "-"){
+                                Text(liveExam.question)
+                                    .font(AppFont.regular(16))
+                            }
+                            
+                            if(liveExam.questionImage != nil){
+                                FullWidthImageView(url: liveExam.questionImage, placeholderHeight: 72)
+                                    .padding(.top, 5)
+                            }
+                            
+                            if(liveExam.numberOfAnswer > 1){
+                                Text("Select all possible answers")
+                                .italic()
+                                .foregroundColor(Color("GreyText"))
+                            }
+                            
+                            if(liveExam.numberOfAnswer > 1){
+                                MultiAnswerView(liveExam: $liveExam, onMultiSelect: {data in
+                                    if(liveExam.solution.count < liveExam.answer.convertCommaDelimitedStringToList().count){
+                                        
+                                        if(liveExam.solution.count == liveExam.answer.convertCommaDelimitedStringToList().count){
+                                            
+                                            scrollToBottom(proxy: proxy)
+                                        }
+                                        
+                                        
+                                        onMultiSelect(data)
+                                        
+                                    }
+                                    
+                                } , onMultiDeselect: {data in
+                                    if(liveExam.solution.count < liveExam.answer.convertCommaDelimitedStringToList().count){
+                                        
+                                        onMultiDeselect(data)
+                                        
+                                    }
+                                    
+                                    
+                                }).padding(.top, 16)
+                            }else{
+                                AnswerView(liveExam: $liveExam, onAnswerSelected: {data in
+                                    scrollToBottom(proxy: proxy)
+                                    onAnswerSelected(data)
+                                })
+                                    .padding(.top, 16)
+                            }
+                            
+                            
+                            ExplanationStatusView(liveExam: liveExam, onClick: onMoveToExplanation)
+                                .padding(.bottom, 24)
+                            
+                            
+                            Color.clear
+                                .frame(height: 1)
+                                .id("bottom")
+                            
+                            
+                            
+                        }.frame(maxWidth: .infinity)
+                        .padding(.horizontal, 16)
+                        
+                    }
+                
+                
+                
+                
+                Spacer()
+                
+                ExamNavView(questionCount: questionCount, questionIndex: $questionIndex, liveExam: $liveExam, isExam: false, next: next, previous: previous, goTo: gotTo, submit: {})
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
                 
             }
             
-            Spacer()
-            
-            ExamNavView(questionCount: questionCount, questionIndex: $questionIndex, liveExam: $liveExam, isExam: false, next: next, previous: previous, goTo: gotTo, submit: {})
-                .padding(.horizontal, 16)
-                .padding(.bottom, 10)
-            
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+}
+
+
+func scrollToBottom(proxy: ScrollViewProxy){
+    DispatchQueue.main.async {
+              proxy.scrollTo("bottom", anchor: .bottom)
+          }
 }
 
 #Preview {
@@ -128,7 +175,7 @@ struct PracticeViewPreviewWrapper: View{
     
     var body: some View {
         
-        PracticeView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, gotTo: {}, readMorePassage: {}, onMultiSelect: {_ in}, onMultiDeselect: {_ in}, onAnswerSelected: {_ in}, onCalculatorClicked: {})
+        PracticeView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, gotTo: {}, readMorePassage: {}, onMultiSelect: {_ in}, onMultiDeselect: {_ in}, onAnswerSelected: {_ in}, onCalculatorClicked: {}, onMoveToExplanation: {_ in})
         
        
     }

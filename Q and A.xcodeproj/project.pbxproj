@@ -134,6 +134,9 @@
 		F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A883A22FEFAA4F008C85EC /* PracticeView.swift */; };
 		F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */; };
 		F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */; };
+		F5A8CDB42FF3C2D000D3084C /* ViewSolutionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */; };
+		F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */; };
+		F5A8CDB82FF3EF3000D3084C /* ExplanationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */; };
 		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
 		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
 		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
@@ -391,6 +394,9 @@
 		F5A883A22FEFAA4F008C85EC /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
 		F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatWorkView.swift; sourceTree = "<group>"; };
 		F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorrectOptionView.swift; sourceTree = "<group>"; };
+		F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSolutionButton.swift; sourceTree = "<group>"; };
+		F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationStatus.swift; sourceTree = "<group>"; };
+		F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationStatusView.swift; sourceTree = "<group>"; };
 		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
 		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
 		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
@@ -978,6 +984,7 @@
 				F5E9B3C12FEAC5AF00B98FCB /* GoToReviewState.swift */,
 				F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */,
 				F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */,
+				F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1045,6 +1052,8 @@
 				F5A883A22FEFAA4F008C85EC /* PracticeView.swift */,
 				F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */,
 				F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */,
+				F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */,
+				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1339,6 +1348,7 @@
 				F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */,
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
+				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */,
 				F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */,
@@ -1370,6 +1380,7 @@
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
 				F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */,
 				F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */,
+				F5A8CDB82FF3EF3000D3084C /* ExplanationStatusView.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
@@ -1424,6 +1435,7 @@
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
+				F5A8CDB42FF3C2D000D3084C /* ViewSolutionButton.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,

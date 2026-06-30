@@ -90,6 +90,34 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
         }
     }
     
+    func getExplanationStatus() -> ExplanationStatus {
+        
+        if(solution.isEmpty){
+            return .viewSolution
+        }
+        
+        if(numberOfAnswer > 1){
+            
+            if(solution.count < answer.convertCommaDelimitedStringToList().count){
+                return .viewSolution
+            }
+            
+            if(answer.convertCommaDelimitedStringToList().sorted() == solution.sorted()){
+                return .showCorrectAnswer
+            }else{
+                return .showWrongAnswer
+            }
+            
+        }else{
+            if(solution[0].lowercased() == answer.convertCommaDelimitedStringToList()[0].lowercased()){
+                return .showCorrectAnswer
+            }else{
+                return .showWrongAnswer
+            }
+        }
+        
+    }
+    
     func getOption(ans: String)-> String{
         
         switch ans {
@@ -280,6 +308,8 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
 
 
 extension [LiveExam]{
+    
+  
     
     func goToQuestionList() -> [GoToQuestion]{
         
