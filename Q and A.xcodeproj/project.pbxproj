@@ -137,6 +137,8 @@
 		F5A8CDB42FF3C2D000D3084C /* ViewSolutionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */; };
 		F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */; };
 		F5A8CDB82FF3EF3000D3084C /* ExplanationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */; };
+		F5A8CDBA2FF409F200D3084C /* PracticeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */; };
+		F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */; };
 		F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */; };
 		F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */; };
 		F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */; };
@@ -397,6 +399,8 @@
 		F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSolutionButton.swift; sourceTree = "<group>"; };
 		F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationStatus.swift; sourceTree = "<group>"; };
 		F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationStatusView.swift; sourceTree = "<group>"; };
+		F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeScreen.swift; sourceTree = "<group>"; };
+		F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeScreenViewModel.swift; sourceTree = "<group>"; };
 		F5AAC9DB2FB9F7AA003977CA /* PostTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTransactionBody.swift; sourceTree = "<group>"; };
 		F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentState.swift; sourceTree = "<group>"; };
 		F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentViewModel.swift; sourceTree = "<group>"; };
@@ -1054,6 +1058,7 @@
 				F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */,
 				F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */,
 				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
+				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1073,6 +1078,7 @@
 				F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */,
 				F5BB950F2FE954E3004EDA26 /* ReviewViewModel.swift */,
 				F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */,
+				F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1308,6 +1314,7 @@
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
+				F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */,
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
@@ -1381,6 +1388,7 @@
 				F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */,
 				F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */,
 				F5A8CDB82FF3EF3000D3084C /* ExplanationStatusView.swift in Sources */,
+				F5A8CDBA2FF409F200D3084C /* PracticeScreen.swift in Sources */,
 				F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */,
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
