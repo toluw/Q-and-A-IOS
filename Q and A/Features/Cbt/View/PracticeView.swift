@@ -86,13 +86,15 @@ struct PracticeView: View {
                                 MultiAnswerView(liveExam: $liveExam, onMultiSelect: {data in
                                     if(liveExam.solution.count < liveExam.answer.convertCommaDelimitedStringToList().count){
                                         
+                                        onMultiSelect(data)
+                                        
                                         if(liveExam.solution.count == liveExam.answer.convertCommaDelimitedStringToList().count){
                                             
                                             scrollToBottom(proxy: proxy)
                                         }
                                         
                                         
-                                        onMultiSelect(data)
+                                       
                                         
                                     }
                                     
