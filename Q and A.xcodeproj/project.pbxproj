@@ -26,6 +26,8 @@
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
 		F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */; };
+		F5288E772FF56B390071E448 /* AnswerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E762FF56B390071E448 /* AnswerData.swift */; };
+		F5288E792FF56D110071E448 /* SolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E782FF56D110071E448 /* SolutionView.swift */; };
 		F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */; };
 		F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88C2FE28BD9007C3494 /* TabItem.swift */; };
 		F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88E2FE29753007C3494 /* CustomTabBar.swift */; };
@@ -290,6 +292,8 @@
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
 		F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPracticeView.swift; sourceTree = "<group>"; };
+		F5288E762FF56B390071E448 /* AnswerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerData.swift; sourceTree = "<group>"; };
+		F5288E782FF56D110071E448 /* SolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionView.swift; sourceTree = "<group>"; };
 		F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExamScreen.swift; sourceTree = "<group>"; };
 		F529E88C2FE28BD9007C3494 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		F529E88E2FE29753007C3494 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -991,6 +995,7 @@
 				F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */,
 				F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */,
 				F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */,
+				F5288E762FF56B390071E448 /* AnswerData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1062,6 +1067,7 @@
 				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
 				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
 				F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */,
+				F5288E782FF56D110071E448 /* SolutionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1304,6 +1310,7 @@
 				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
+				F5288E772FF56B390071E448 /* AnswerData.swift in Sources */,
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
 				F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
@@ -1500,6 +1507,7 @@
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F54578F92FCEEB40008FF056 /* MultiDeselectedAnswerView.swift in Sources */,
 				F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */,
+				F5288E792FF56D110071E448 /* SolutionView.swift in Sources */,
 				F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */,
 				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,

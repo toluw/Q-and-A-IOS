@@ -90,6 +90,65 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
         }
     }
     
+    func getAnswerData() -> [AnswerData] {
+         let dataList = answer.convertCommaDelimitedStringToList()
+         var result: [AnswerData] = []
+
+         for ans in dataList {
+             switch ans.lowercased() {
+             case "a":
+                 result.append(
+                     AnswerData(
+                        answerChar: ans.uppercased(),
+                        answerText: a,
+                         image: aImage
+                     )
+                 )
+
+             case "b":
+                 result.append(
+                     AnswerData(
+                        answerChar: ans.uppercased(),
+                        answerText: b,
+                         image: bImage
+                     )
+                 )
+
+             case "c":
+                 result.append(
+                     AnswerData(
+                        answerChar: ans.uppercased(),
+                        answerText: c,
+                         image: cImage
+                     )
+                 )
+
+             case "d":
+                 result.append(
+                     AnswerData(
+                        answerChar: ans.uppercased(),
+                        answerText: d,
+                         image: dImage
+                     )
+                 )
+
+             case "e":
+                 result.append(
+                     AnswerData(
+                        answerChar: ans.uppercased(),
+                        answerText: e,
+                         image: eImage
+                     )
+                 )
+
+             default:
+                 break
+             }
+         }
+
+         return result
+     }
+    
     func getExplanationStatus() -> ExplanationStatus {
         
         if(solution.isEmpty){
@@ -117,6 +176,8 @@ struct LiveExam: Codable, Equatable, Identifiable, Hashable {
         }
         
     }
+    
+
     
     func getOption(ans: String)-> String{
         
