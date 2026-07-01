@@ -14,52 +14,16 @@ struct ExamPracticeScreen: View {
     @State private var selectedIndex: Int = 0
     
     var body: some View {
-        VStack{
+        ZStack{
             
-            
-            HStack{
-              
-                Button {
-                    
-                    showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
-                        navVm.pop()
-                    })
-                   
-                } label: {
-                    
-                    Image(systemName: "xmark")
-                        
-                }.buttonStyle(.plain)
+            ExamPracticeView(navVm: navVm, items: cbtViewModel.multipleExams, onClose: {
                 
-                
-                Spacer()
-               
-                
-                }.frame(maxWidth: .infinity)
-                .padding(.leading, 16)
-                .padding(.trailing, 16)
-                .padding(.top, 16)
+                showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
+                    navVm.pop()
+                })
+            })
             
-            if(cbtViewModel.multipleExams.count > 1){
-                
-                CustomTabBar(
-                    tabs: cbtViewModel.multipleExams.map { $0.item },
-                    selectedIndex: $selectedIndex
-                ).padding(.top, 17)
-                
-            }
-            
-            if(!cbtViewModel.multipleExams.isEmpty){
-                PracticeScreen(multipleExam: cbtViewModel.multipleExams[selectedIndex], navVm: navVm)
-            }
-            
-            Spacer()
-            
-            
-            
-            
-            
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

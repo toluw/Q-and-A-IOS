@@ -25,6 +25,7 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */; };
 		F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */; };
 		F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88C2FE28BD9007C3494 /* TabItem.swift */; };
 		F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88E2FE29753007C3494 /* CustomTabBar.swift */; };
@@ -288,6 +289,7 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPracticeView.swift; sourceTree = "<group>"; };
 		F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExamScreen.swift; sourceTree = "<group>"; };
 		F529E88C2FE28BD9007C3494 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		F529E88E2FE29753007C3494 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -1059,6 +1061,7 @@
 				F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */,
 				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
 				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
+				F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1369,6 +1372,7 @@
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */,
 				F5B100FD2FD5D32F00B924EF /* MockExamResult.swift in Sources */,
+				F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */,
 				F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
