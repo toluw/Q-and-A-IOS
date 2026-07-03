@@ -21,7 +21,7 @@ struct ExamPracticeScreen: View {
                 showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
                     navVm.pop()
                 })
-            })
+            }, cbtViewModel: cbtViewModel)
             
         }.navigationBarBackButtonHidden(true)
     }

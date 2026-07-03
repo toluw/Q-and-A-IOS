@@ -31,5 +31,6 @@ enum MainRoute: Hashable{
     case passageScreen(passage: String, passageImage: String?, passageBook: String?, passageVideo: String?, pdfFile: String)
     case reviewExamScreen(examId: String)
     case aiCbtScreen(content: String)
+    case reviewExplanationScreen(liveExam: LiveExam, isViewSolution: Bool, examId: String)
     
 }

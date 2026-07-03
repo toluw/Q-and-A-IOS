@@ -79,6 +79,8 @@ struct MainStackView: View {
             ReviewExamScreen(navVm: navVM, cbtViewModel: cbtViewModel, examId: examId)
         case .aiCbtScreen(content: let content):
             AiCbtScreen(content: content)
+        case .reviewExplanationScreen(liveExam: let liveExam, isViewSolution: let isViewSolution, examId: let examId):
+            ReviewExplanationScreen(liveExam: liveExam, isViewSolution: isViewSolution, examId: examId, navVm: navVM)
         }
     }
     

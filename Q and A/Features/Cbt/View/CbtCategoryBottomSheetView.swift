@@ -34,7 +34,7 @@ struct CbtCategoryBottomSheetView: View {
                     }
                     
                
-                }.fixedSize(horizontal: false, vertical: true)
+                }
             
              
             Spacer()

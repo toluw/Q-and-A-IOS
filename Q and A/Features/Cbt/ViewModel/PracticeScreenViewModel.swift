@@ -27,7 +27,10 @@ class PracticeScreenViewModel: ObservableObject{
     
     
     func initLiveExam(liveExams: [LiveExam]){
-        liveExamList = liveExams
+        if(liveExamList.isEmpty){
+            liveExamList = liveExams
+        }
+        
     }
     
     func nextQuestion(){

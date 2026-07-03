@@ -71,11 +71,13 @@ struct ParentCatScreen: View {
                             .padding(.trailing,16)
                         
                     }else{
-                        LazyVStack(spacing: 22){
-                            ForEach(viewModel.state.parentCatData){ data in
-                                CatItemView(title: data.item, onItemClicked: {
-                                    handleItemClick(item: data)
-                                })
+                        ScrollView{
+                            LazyVStack(spacing: 22){
+                                ForEach(viewModel.state.parentCatData){ data in
+                                    CatItemView(title: data.item, onItemClicked: {
+                                        handleItemClick(item: data)
+                                    })
+                                }
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

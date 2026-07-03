@@ -21,7 +21,7 @@ struct PracticeView: View {
     let onMultiDeselect: (String) -> Void
     let onAnswerSelected: (String) -> Void
     let onCalculatorClicked: () -> Void
-    let onMoveToExplanation: (Bool) -> Void
+    let onMoveToExplanation: (ReviewExplanationData) -> Void
  
     
     
@@ -116,7 +116,9 @@ struct PracticeView: View {
                             }
                             
                             
-                            ExplanationStatusView(liveExam: liveExam, onClick: onMoveToExplanation)
+                            ExplanationStatusView(liveExam: liveExam, onClick: {rev in
+                                onMoveToExplanation(ReviewExplanationData(liveExam: liveExam, isViewSolution: rev))
+                            } )
                                 .padding(.bottom, 24)
                             
                             

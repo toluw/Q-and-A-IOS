@@ -13,6 +13,7 @@ struct PracticeScreen: View {
     
     @StateObject var viewModel: PracticeScreenViewModel = .init()
     @ObservedObject var navVm: MainNavViewModel
+    @ObservedObject var cbtViewModel: CbtViewModel
     
     var body: some View {
         ZStack{
@@ -45,8 +46,8 @@ struct PracticeScreen: View {
                     viewModel.answerQuestion(ans: ans)
                 }, onCalculatorClicked: {
                     viewModel.state.showCalculator = true
-                }, onMoveToExplanation: { isViewSolution in
-                    
+                }, onMoveToExplanation: { data in
+                    navVm.navigate(route: .reviewExplanationScreen(liveExam: data.liveExam, isViewSolution: data.isViewSolution, examId: multipleExam.examId))
                 }) .id(liveExamBinding.id)
                  .transition(viewModel.transition)
 
@@ -164,5 +165,5 @@ struct PracticeScreen: View {
         LiveExam.preview, LiveExam.preview, LiveExam.preview
     ])
     
-    PracticeScreen(multipleExam: multipleExam, navVm: MainNavViewModel())
+    PracticeScreen(multipleExam: multipleExam, navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
 }

@@ -14,6 +14,7 @@ struct ExamPracticeView: View {
     @State private var selectedIndex: Int = 0
     let items: [MultipleExam]
     let onClose: () -> Void
+    @ObservedObject var cbtViewModel: CbtViewModel
     
     
     
@@ -52,7 +53,7 @@ struct ExamPracticeView: View {
             }
             
             if(!items.isEmpty){
-                PracticeScreen(multipleExam: items[selectedIndex], navVm: navVm)
+                PracticeScreen(multipleExam: items[selectedIndex], navVm: navVm, cbtViewModel: cbtViewModel)
                     .padding(.top,10)
                     .id(items[selectedIndex].examId) 
             }
@@ -72,5 +73,5 @@ struct ExamPracticeView: View {
     let items = [MultipleExam(examId: "1", item: "Maths", liveExamList: [LiveExam.preview, LiveExam.preview]),
                  MultipleExam(examId: "2", item: "English", liveExamList: [LiveExam.preview, LiveExam.preview])]
     
-    ExamPracticeView(navVm: MainNavViewModel(), items: items, onClose: {})
+    ExamPracticeView(navVm: MainNavViewModel(), items: items, onClose: {}, cbtViewModel: CbtViewModel())
 }
