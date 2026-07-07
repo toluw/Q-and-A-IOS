@@ -81,6 +81,8 @@ struct MainStackView: View {
             AiCbtScreen(content: content)
         case .reviewExplanationScreen(liveExam: let liveExam, isViewSolution: let isViewSolution, examId: let examId):
             ReviewExplanationScreen(liveExam: liveExam, isViewSolution: isViewSolution, examId: examId, navVm: navVM)
+        case .youtubePlayerScreen(videoURLString: let videoURLString):
+            YoutubePlayerScreen(videoURLString: videoURLString)
         }
     }
     

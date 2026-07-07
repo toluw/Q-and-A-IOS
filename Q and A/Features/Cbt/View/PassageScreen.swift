@@ -33,6 +33,24 @@ struct PassageScreen: View {
                     FullWidthImageView(url: passageImage, placeholderHeight: 60)
                 }
                 
+                if(passageVideo?.isValidYouTubeUrl() == true){
+                    
+                    VideoRow(title: "Video Overview", action: {
+                        navVm.navigate(route: .youtubePlayerScreen(videoURLString: passageVideo!))
+                    }).padding(.top, 14)
+                    
+                }
+                
+                if(passageBook != nil && convertGoogleDriveLinkToDirect(passageBook) != nil){
+                    
+                    StudyMaterialRow(action: {
+                        
+                        
+                        
+                    }).padding(.top, 40)
+                    
+                }
+                
             }.padding(.horizontal, 16)
                 .padding(.top, 20)
                 .padding(.bottom, 16)

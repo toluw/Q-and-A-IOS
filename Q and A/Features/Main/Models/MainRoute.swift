@@ -32,5 +32,6 @@ enum MainRoute: Hashable{
     case reviewExamScreen(examId: String)
     case aiCbtScreen(content: String)
     case reviewExplanationScreen(liveExam: LiveExam, isViewSolution: Bool, examId: String)
+    case youtubePlayerScreen(videoURLString: String)
     
 }
