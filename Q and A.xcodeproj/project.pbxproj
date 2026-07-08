@@ -136,6 +136,7 @@
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
+		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
 		F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */; };
 		F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */; };
 		F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */; };
@@ -410,6 +411,7 @@
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
+		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
 		F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiCbtScreen.swift; sourceTree = "<group>"; };
 		F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtBody.swift; sourceTree = "<group>"; };
 		F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtResponse.swift; sourceTree = "<group>"; };
@@ -1165,6 +1167,7 @@
 				F54578DA2FC84F32008FF056 /* IntExtensions.swift */,
 				F5568EE42FFD32BC00C72A55 /* Color.swift */,
 				F5568EEA2FFD374F00C72A55 /* RowButtonStyle.swift */,
+				F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1316,6 +1319,7 @@
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
+				F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */,
 				F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */,
 				F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */,
 				F54578DD2FC86B09008FF056 /* LoadCircularImageView.swift in Sources */,

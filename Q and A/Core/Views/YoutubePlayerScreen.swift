@@ -14,6 +14,8 @@ struct YoutubePlayerScreen: View {
     
     @StateObject private var player: YouTubePlayer
     
+    private let clipboardGuard = ClipboardGuard()
+    
     
     init(videoURLString: String) {
         self.videoURLString = videoURLString
@@ -23,7 +25,7 @@ struct YoutubePlayerScreen: View {
         let parameters = YouTubePlayer.Parameters(
             autoPlay: true,
             showControls: true,
-            showFullscreenButton: true
+            showFullscreenButton: false
         )
  
         _player = StateObject(
@@ -37,7 +39,10 @@ struct YoutubePlayerScreen: View {
    
    
     var body: some View {
-        ZStack{
+        VStack{
+            
+            Spacer()
+            Spacer()
             
             YouTubePlayerView(player) { state in
                 switch state {
@@ -64,12 +69,22 @@ struct YoutubePlayerScreen: View {
                     }
                         .aspectRatio(16 / 9, contentMode: .fit)
             
+            Spacer()
+            Spacer()
+            Spacer()
+            
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-             .task {
+         .task {
                        
                         try? await player.play()
-                    }
+         }
+         .onAppear {
+             clipboardGuard.start()
+         }
+         .onDisappear {
+             clipboardGuard.stop()
+         }
             
     }
 }
