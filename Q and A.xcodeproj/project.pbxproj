@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
+		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
+		F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */; };
 		F500CBB32F87C3F200111B77 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */; };
 		F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */; };
 		F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */; };
@@ -141,7 +144,6 @@
 		F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */; };
 		F5A716BD2FFE93F30046D33E /* PDFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BC2FFE93F30046D33E /* PDFRepository.swift */; };
 		F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */; };
-		F5A716C22FFE947C0046D33E /* PdfReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */; };
 		F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C32FFE94A60046D33E /* PDFKitView.swift */; };
 		F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */; };
 		F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */; };
@@ -291,6 +293,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
+		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
+		F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
 		F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
 		F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -424,7 +429,6 @@
 		F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDownloader.swift; sourceTree = "<group>"; };
 		F5A716BC2FFE93F30046D33E /* PDFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRepository.swift; sourceTree = "<group>"; };
 		F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfLoaderViewModel.swift; sourceTree = "<group>"; };
-		F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReaderViewModel.swift; sourceTree = "<group>"; };
 		F5A716C32FFE94A60046D33E /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReaderScreen.swift; sourceTree = "<group>"; };
 		F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfLoaderScreen.swift; sourceTree = "<group>"; };
@@ -673,6 +677,7 @@
 				F55021412F82AE450057C2F0 /* Toast.swift */,
 				F5AE933B2F8638BE0003CAA5 /* BottomSheetData.swift */,
 				F5A812382FEC058F00EB0496 /* ContentSegment.swift */,
+				F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -730,7 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */,
-				F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */,
+				F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -900,6 +905,7 @@
 				F5A716C32FFE94A60046D33E /* PDFKitView.swift */,
 				F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */,
 				F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */,
+				F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1368,6 +1374,7 @@
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
+				F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */,
 				F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */,
 				F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */,
 				F5BB950C2FE933F0004EDA26 /* OrangeButton.swift in Sources */,
@@ -1394,6 +1401,8 @@
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
+				F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */,
+				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
@@ -1534,7 +1543,6 @@
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
-				F5A716C22FFE947C0046D33E /* PdfReaderViewModel.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,

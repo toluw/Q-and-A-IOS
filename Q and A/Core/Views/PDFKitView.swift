@@ -12,21 +12,11 @@ import SwiftUI
 
 struct PDFKitView: UIViewRepresentable {
 
-    let fileURL: URL
+    @ObservedObject var viewModel: PDFViewModel
 
     func makeUIView(context: Context) -> PDFView {
 
-        let view = PDFView()
-
-        view.autoScales = true
-
-        view.displayMode = .singlePageContinuous
-
-        view.displayDirection = .vertical
-
-        view.document = PDFDocument(url: fileURL)
-
-        return view
+        viewModel.pdfView
 
     }
 
