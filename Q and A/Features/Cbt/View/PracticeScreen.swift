@@ -154,7 +154,9 @@ struct PracticeScreen: View {
     
     
     private func viewPdf(pdfFile: String, directDownloadLink: String){
-        
+        if let remoteLink = URL(string: directDownloadLink){
+            openPDF(remoteURL: remoteLink, navVM: navVm)
+        }
     }
     
 }

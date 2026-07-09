@@ -45,7 +45,9 @@ struct PassageScreen: View {
                     
                     StudyMaterialRow(action: {
                         
-                        
+                        if let remoteLink = URL(string: convertGoogleDriveLinkToDirect(passageBook)!){
+                            openPDF(remoteURL: remoteLink, navVM: navVm)
+                        }
                         
                     }).padding(.top, 40)
                     

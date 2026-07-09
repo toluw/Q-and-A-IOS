@@ -83,6 +83,10 @@ struct MainStackView: View {
             ReviewExplanationScreen(liveExam: liveExam, isViewSolution: isViewSolution, examId: examId, navVm: navVM)
         case .youtubePlayerScreen(videoURLString: let videoURLString):
             YoutubePlayerScreen(videoURLString: videoURLString)
+        case .pdfReaderScreen(fileUrl: let fileUrl):
+            PdfReaderScreen(fileUrl: fileUrl)
+        case .pdfLoaderScreen(remoteURL: let remoteURL):
+            PdfLoaderScreen(remoteURL: remoteURL, navVm: navVM)
         }
     }
     

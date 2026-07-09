@@ -137,6 +137,14 @@
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
+		F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */; };
+		F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */; };
+		F5A716BD2FFE93F30046D33E /* PDFRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BC2FFE93F30046D33E /* PDFRepository.swift */; };
+		F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */; };
+		F5A716C22FFE947C0046D33E /* PdfReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */; };
+		F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C32FFE94A60046D33E /* PDFKitView.swift */; };
+		F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */; };
+		F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */; };
 		F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */; };
 		F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */; };
 		F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */; };
@@ -412,6 +420,14 @@
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
+		F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCacheManager.swift; sourceTree = "<group>"; };
+		F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDownloader.swift; sourceTree = "<group>"; };
+		F5A716BC2FFE93F30046D33E /* PDFRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRepository.swift; sourceTree = "<group>"; };
+		F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfLoaderViewModel.swift; sourceTree = "<group>"; };
+		F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReaderViewModel.swift; sourceTree = "<group>"; };
+		F5A716C32FFE94A60046D33E /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
+		F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReaderScreen.swift; sourceTree = "<group>"; };
+		F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfLoaderScreen.swift; sourceTree = "<group>"; };
 		F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiCbtScreen.swift; sourceTree = "<group>"; };
 		F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtBody.swift; sourceTree = "<group>"; };
 		F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtResponse.swift; sourceTree = "<group>"; };
@@ -710,6 +726,15 @@
 			path = db;
 			sourceTree = "<group>";
 		};
+		F5A716BE2FFE94210046D33E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F5A716BF2FFE94540046D33E /* PdfLoaderViewModel.swift */,
+				F5A716C12FFE947C0046D33E /* PdfReaderViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F5BD4A122F2A50360020A8A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,6 +782,7 @@
 		F5BD4A202F2A9CF70020A8A4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F5A716BE2FFE94210046D33E /* ViewModels */,
 				F550213E2F82AE000057C2F0 /* Models */,
 				F5E144E12F7FB3AF00C10F3A /* Utility */,
 				F5C12E972F728F98000861B6 /* Views */,
@@ -871,6 +897,9 @@
 				F5A812362FEC055400EB0496 /* MathView.swift */,
 				F5A8123A2FEC062800EB0496 /* GeminiFormattedView.swift */,
 				F5568EEF2FFD472F00C72A55 /* YoutubePlayerScreen.swift */,
+				F5A716C32FFE94A60046D33E /* PDFKitView.swift */,
+				F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */,
+				F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1168,6 +1197,9 @@
 				F5568EE42FFD32BC00C72A55 /* Color.swift */,
 				F5568EEA2FFD374F00C72A55 /* RowButtonStyle.swift */,
 				F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */,
+				F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */,
+				F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */,
+				F5A716BC2FFE93F30046D33E /* PDFRepository.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1317,6 +1349,7 @@
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
+				F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */,
@@ -1343,6 +1376,7 @@
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5288E772FF56B390071E448 /* AnswerData.swift in Sources */,
+				F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */,
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
 				F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
@@ -1374,9 +1408,11 @@
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
 				F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */,
 				F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */,
+				F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
+				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
 				F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
@@ -1398,6 +1434,7 @@
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
+				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */,
 				F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */,
@@ -1438,6 +1475,7 @@
 				F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */,
 				F59D328C2F90EBD20045C4AA /* ParentCatState.swift in Sources */,
 				F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */,
+				F5A716BD2FFE93F30046D33E /* PDFRepository.swift in Sources */,
 				F5BD4A182F2A55370020A8A4 /* AppViewModel.swift in Sources */,
 				F55021372F812BCF0057C2F0 /* MainScreenViewModel.swift in Sources */,
 				F54578FB2FCEECA3008FF056 /* MultiAnswerView.swift in Sources */,
@@ -1496,6 +1534,7 @@
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
+				F5A716C22FFE947C0046D33E /* PdfReaderViewModel.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
@@ -1515,6 +1554,7 @@
 				F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */,
 				F5568EE52FFD32BC00C72A55 /* Color.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
+				F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */,
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F54578E52FCABDAA008FF056 /* ExamLoaderScreen.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,

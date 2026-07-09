@@ -69,3 +69,25 @@ extension Binding {
         )
     }
 }
+
+
+@MainActor func openPDF(
+    remoteURL: URL,
+    navVM: MainNavViewModel
+) {
+
+    if let cached =
+        PDFRepository().cachedFile(for: remoteURL) {
+        
+        navVM.navigate(route: .pdfReaderScreen(fileUrl: cached))
+
+        
+    } else {
+        
+        navVM.navigate(route: .pdfLoaderScreen(remoteURL: remoteURL))
+
+        
+
+    }
+
+}

@@ -161,13 +161,15 @@ struct ExamScreen: View {
     
     
     private func viewPdf(pdfFile: String, directDownloadLink: String){
-        
+        if let remoteLink = URL(string: directDownloadLink){
+            openPDF(remoteURL: remoteLink, navVM: navVm)
+        }
     }
     
     
     
     private func readMorePassage(){
-        let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+       
         
           let passage = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passage
                let passageImage = cbtViewModel.liveExamList[cbtViewModel.questionIndex].passageImage
