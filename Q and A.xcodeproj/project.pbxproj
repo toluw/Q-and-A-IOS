@@ -10,6 +10,7 @@
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
 		F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */; };
+		F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018432FFFEF1A00E98437 /* GoToPageView.swift */; };
 		F500CBB32F87C3F200111B77 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */; };
 		F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */; };
 		F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */; };
@@ -296,6 +297,7 @@
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
 		F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
+		F50018432FFFEF1A00E98437 /* GoToPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToPageView.swift; sourceTree = "<group>"; };
 		F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
 		F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -906,6 +908,7 @@
 				F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */,
 				F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */,
 				F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */,
+				F50018432FFFEF1A00E98437 /* GoToPageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1444,6 +1447,7 @@
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
+				F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
 				F5A8123B2FEC062800EB0496 /* GeminiFormattedView.swift in Sources */,
 				F5B101032FD5DA5600B924EF /* FanQuizResultScreen.swift in Sources */,
