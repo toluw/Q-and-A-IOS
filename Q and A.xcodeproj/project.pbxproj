@@ -11,6 +11,9 @@
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
 		F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */; };
 		F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018432FFFEF1A00E98437 /* GoToPageView.swift */; };
+		F50018463001119200E98437 /* StudyNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018453001119100E98437 /* StudyNoteScreen.swift */; };
+		F50018483001474F00E98437 /* InstructionCallout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018473001474F00E98437 /* InstructionCallout.swift */; };
+		F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500184930014C3100E98437 /* StudyNoteButton.swift */; };
 		F500CBB32F87C3F200111B77 /* ChangePasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */; };
 		F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */; };
 		F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */; };
@@ -298,6 +301,9 @@
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
 		F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
 		F50018432FFFEF1A00E98437 /* GoToPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToPageView.swift; sourceTree = "<group>"; };
+		F50018453001119100E98437 /* StudyNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyNoteScreen.swift; sourceTree = "<group>"; };
+		F50018473001474F00E98437 /* InstructionCallout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionCallout.swift; sourceTree = "<group>"; };
+		F500184930014C3100E98437 /* StudyNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyNoteButton.swift; sourceTree = "<group>"; };
 		F500CBB22F87C3F200111B77 /* ChangePasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordScreen.swift; sourceTree = "<group>"; };
 		F500CBB42F87CA3900111B77 /* ChangePasswordState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordState.swift; sourceTree = "<group>"; };
 		F500CBB62F87CB0300111B77 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -909,6 +915,8 @@
 				F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */,
 				F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */,
 				F50018432FFFEF1A00E98437 /* GoToPageView.swift */,
+				F50018473001474F00E98437 /* InstructionCallout.swift */,
+				F500184930014C3100E98437 /* StudyNoteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1132,6 +1140,7 @@
 				F50565A02FF6D6D000A89ACB /* ReviewExplanationScreen.swift */,
 				F5568EE62FFD339E00C72A55 /* VideoRow.swift */,
 				F5568EE82FFD36F200C72A55 /* StudyMaterialRow.swift */,
+				F50018453001119100E98437 /* StudyNoteScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1444,6 +1453,7 @@
 				F53268D92FC468000016CD4F /* CatState.swift in Sources */,
 				F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */,
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
+				F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
@@ -1526,6 +1536,7 @@
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
+				F50018483001474F00E98437 /* InstructionCallout.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
@@ -1595,6 +1606,7 @@
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
+				F50018463001119200E98437 /* StudyNoteScreen.swift in Sources */,
 				F54578F92FCEEB40008FF056 /* MultiDeselectedAnswerView.swift in Sources */,
 				F5E1D8952F8D4202001F734D /* MainCbtItemView.swift in Sources */,
 				F5288E792FF56D110071E448 /* SolutionView.swift in Sources */,
