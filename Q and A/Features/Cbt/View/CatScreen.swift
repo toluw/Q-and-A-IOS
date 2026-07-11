@@ -260,13 +260,9 @@ struct CatScreen: View {
               
                 if(!viewModel.state.multipleExamData.isEmpty){
                     
-                    cbtViewModel.initMultipleExams(multipleExamQuestions: viewModel.state.multipleExamData, examSelectList: cbtViewModel.examSelectList)
+                    moveToPractice()
                     
-                    cbtViewModel.initIndexList()
-                    
-                    viewModel.state.multipleExamData = []
-                    
-                    navVm.navigate(route: .examPracticeScreen)
+                   
                 }
             }
           
@@ -275,6 +271,39 @@ struct CatScreen: View {
         
             
           
+    }
+    
+    
+    private func moveToPractice(){
+        
+        cbtViewModel.initMultipleExams(multipleExamQuestions: viewModel.state.multipleExamData, examSelectList: cbtViewModel.examSelectList)
+        
+        cbtViewModel.initIndexList()
+        
+        
+        
+        let liveExam = viewModel.state.multipleExamData[0].examData[0]
+        
+        if(cbtViewModel.parentCategoriesData?.catData?.disablePractice == true && (!(liveExam.passageBook?.isEmpty ?? true) || !(liveExam.passageVideo?.isEmpty ?? true))){
+           
+            let passage = liveExam.passage
+            let passageImage = liveExam.passageImage
+            let passageVideo = liveExam.passageVideo
+            let passageBook = liveExam.passageBook
+            
+            navVm.navigate(route: .studyNoteScreen(title: viewModel.state.multipleExamData[0].item, passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo))
+            
+            viewModel.state.multipleExamData = []
+            
+            
+            
+        }else{
+            navVm.navigate(route: .examPracticeScreen)
+            viewModel.state.multipleExamData = []
+        }
+        
+        
+        
     }
     
     

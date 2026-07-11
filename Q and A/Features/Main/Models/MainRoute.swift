@@ -35,4 +35,5 @@ enum MainRoute: Hashable{
     case youtubePlayerScreen(videoURLString: String)
     case pdfReaderScreen(fileUrl: URL)
     case pdfLoaderScreen(remoteURL: URL)
+    case studyNoteScreen(title: String, passage: String, passageImage: String?, passageBook: String?, passageVideo: String?)
 }

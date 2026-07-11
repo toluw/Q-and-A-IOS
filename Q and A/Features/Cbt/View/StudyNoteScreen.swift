@@ -93,7 +93,9 @@ struct StudyNoteScreen: View {
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(LessonColor.surfaceWhite)
                 .cornerRadius(20)
-                .padding(14)
+                .padding(.bottom,14)
+                .padding(.top,5)
+                .padding(.horizontal,14)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(LessonColor.itemBg)
@@ -113,7 +115,7 @@ struct StudyNoteScreen: View {
     
     
     private func continueToQuestions(){
-        navVm.navigate(route: .examPracticeScreen)
+        navVm.replaceTop(route: .examPracticeScreen)
     }
 }
 

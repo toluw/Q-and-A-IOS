@@ -87,6 +87,8 @@ struct MainStackView: View {
             PdfReaderScreen(fileUrl: fileUrl)
         case .pdfLoaderScreen(remoteURL: let remoteURL):
             PdfLoaderScreen(remoteURL: remoteURL, navVm: navVM)
+        case .studyNoteScreen(title: let title, passage: let passage, passageImage: let passageImage, passageBook: let passageBook, passageVideo: let passageVideo):
+            StudyNoteScreen(title: title, passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, navVm: navVM)
         }
     }
     
