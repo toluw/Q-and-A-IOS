@@ -51,3 +51,14 @@ enum LessonColor {
     static let buttonBg = Color(hex: "#185FA5")
     static let buttonText = Color(hex: "#FFFFFF")
 }
+
+
+let avarterColors = ["#3026A9", "#145A32", "#4A235A", "#1B4F72", "#935116", "#34495E", "#515A5A", "#212F3C", "#78281F", "#D4AC0D"]
+
+func getAvarterColor(name: String) -> Color{
+    
+    let hash: Int = abs(name.hashValue)
+    let position = hash % avarterColors.count
+    
+   return Color(hex: avarterColors[position])
+}

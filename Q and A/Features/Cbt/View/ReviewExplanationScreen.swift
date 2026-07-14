@@ -67,7 +67,10 @@ struct ReviewExplanationScreen: View {
                         
                     }
                     
-                    SecondaryOrangeButton(buttonText: "Join Discussion", action: joinDiscussion)
+                    if(UserSettings.isLoggedIn){
+                        SecondaryOrangeButton(buttonText: "Join Discussion", action: joinDiscussion)
+                    }
+                    
                     
                 }.frame(width: 180)
                 

@@ -191,10 +191,15 @@
 		F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101042FD5DB3500B924EF /* ResultScreen.swift */; };
 		F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */; };
 		F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */; };
+		F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */; };
+		F5B1B3FA300638EA00D7BB57 /* AvartarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */; };
+		F5B1B3FC300656CB00D7BB57 /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */; };
 		F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */; };
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
 		F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A0402FA620FD00B11187 /* ExamSelect.swift */; };
+		F5BAF9C330051B62005785BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C230051B62005785BF /* User.swift */; };
+		F5BAF9C530051BCB005785BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C430051BCB005785BF /* Post.swift */; };
 		F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */; };
 		F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */; };
 		F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */; };
@@ -479,10 +484,16 @@
 		F5B101042FD5DB3500B924EF /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
 		F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTestDialog.swift; sourceTree = "<group>"; };
 		F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfinishedResultBody.swift; sourceTree = "<group>"; };
+		F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostView.swift; sourceTree = "<group>"; };
+		F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvartarView.swift; sourceTree = "<group>"; };
+		F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
 		F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCbtModeView.swift; sourceTree = "<group>"; };
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
 		F5B5A0402FA620FD00B11187 /* ExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelect.swift; sourceTree = "<group>"; };
+		F5BAF9C13004E5F0005785BF /* Q and A.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Q and A.entitlements"; sourceTree = "<group>"; };
+		F5BAF9C230051B62005785BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F5BAF9C430051BCB005785BF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatus.swift; sourceTree = "<group>"; };
 		F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStatusView.swift; sourceTree = "<group>"; };
 		F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewMultipleAnswerView.swift; sourceTree = "<group>"; };
@@ -668,6 +679,8 @@
 			isa = PBXGroup;
 			children = (
 				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
+				F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */,
+				F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +722,7 @@
 		F5941CD82F22124300611063 /* Q and A */ = {
 			isa = PBXGroup;
 			children = (
+				F5BAF9C13004E5F0005785BF /* Q and A.entitlements */,
 				F5F7A7762F3887A60097558D /* Q-and-A-Info.plist */,
 				F5F7A7602F3882380097558D /* Resources */,
 				F5BD4A202F2A9CF70020A8A4 /* Core */,
@@ -917,6 +931,7 @@
 				F50018432FFFEF1A00E98437 /* GoToPageView.swift */,
 				F50018473001474F00E98437 /* InstructionCallout.swift */,
 				F500184930014C3100E98437 /* StudyNoteButton.swift */,
+				F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1064,6 +1079,8 @@
 				F5A8CDB52FF3E08100D3084C /* ExplanationStatus.swift */,
 				F5288E762FF56B390071E448 /* AnswerData.swift */,
 				F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */,
+				F5BAF9C230051B62005785BF /* User.swift */,
+				F5BAF9C430051BCB005785BF /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1391,8 +1408,10 @@
 				F5AAC9DC2FB9F7AA003977CA /* PostTransactionBody.swift in Sources */,
 				F5BB950C2FE933F0004EDA26 /* OrangeButton.swift in Sources */,
 				F53268D72FC467910016CD4F /* CatExams.swift in Sources */,
+				F5B1B3FA300638EA00D7BB57 /* AvartarView.swift in Sources */,
 				F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */,
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
+				F5B1B3FC300656CB00D7BB57 /* ExpandableText.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5288E772FF56B390071E448 /* AnswerData.swift in Sources */,
 				F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */,
@@ -1405,6 +1424,7 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
 				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
+				F5BAF9C530051BCB005785BF /* Post.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
@@ -1466,6 +1486,7 @@
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
+				F5BAF9C330051B62005785BF /* User.swift in Sources */,
 				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
@@ -1600,6 +1621,7 @@
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
+				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
 				F59D328A2F90EB330045C4AA /* ParentCatViewModel.swift in Sources */,
 				F50565A12FF6D6D000A89ACB /* ReviewExplanationScreen.swift in Sources */,
@@ -1751,9 +1773,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
+				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Q-and-A-Info.plist";
@@ -1781,9 +1805,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
+				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Q-and-A-Info.plist";
