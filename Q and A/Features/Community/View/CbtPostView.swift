@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CbtPostView: View {
     
-    let post: Post
+    @Binding var post: Post
     
     let onClick: () -> Void
     
@@ -96,7 +96,12 @@ struct CbtPostView: View {
                         
                         
                         Button(action: {
-                            
+                            if(post.hasLiked){
+                                post.numViews -= 1
+                            }else{
+                                post.numViews += 1
+                            }
+                            post.hasLiked = !post.hasLiked
                             onLikeClicked()
                         }){
                             HStack{
@@ -146,5 +151,18 @@ struct CbtPostView: View {
 }
 
 #Preview {
-    CbtPostView(post: Post.preview, onClick: {}, onOptionClicked: {}, onCommentClicked: {}, onLikeClicked: {})
+    CbtPostPreviewWrapper(post: Post.preview)
+}
+
+struct CbtPostPreviewWrapper: View{
+    
+    @State var post: Post
+    
+    init(post: Post) {
+        self.post = post
+    }
+    
+    var body: some View{
+        CbtPostView(post: $post, onClick: {}, onOptionClicked: {}, onCommentClicked: {}, onLikeClicked: {})
+    }
 }

@@ -20,7 +20,7 @@ struct Post: Codable {
     let isEdited: Bool
     let numComment: Int
     var numLikes: Int
-    let numViews: Int
+    var numViews: Int
     let questionId: String?
     let reason: String
     let status: String

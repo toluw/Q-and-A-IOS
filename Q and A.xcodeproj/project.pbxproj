@@ -76,6 +76,7 @@
 		F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */; };
 		F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */; };
 		F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */; };
+		F549C60D3007CA8300DE4EF0 /* DiscussionSolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F549C60C3007CA8300DE4EF0 /* DiscussionSolutionView.swift */; };
 		F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550212E2F80E73B0057C2F0 /* LoginState.swift */; };
 		F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021302F80E7F70057C2F0 /* LoginViewModel.swift */; };
 		F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55021322F80EA0D0057C2F0 /* StringExtensions.swift */; };
@@ -371,6 +372,7 @@
 		F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheorySubCatScreen.swift; sourceTree = "<group>"; };
 		F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSubCatScreen.swift; sourceTree = "<group>"; };
+		F549C60C3007CA8300DE4EF0 /* DiscussionSolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionSolutionView.swift; sourceTree = "<group>"; };
 		F550212E2F80E73B0057C2F0 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		F55021302F80E7F70057C2F0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F55021322F80EA0D0057C2F0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
 				F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */,
 				F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */,
+				F549C60C3007CA8300DE4EF0 /* DiscussionSolutionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1401,6 +1404,7 @@
 				F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */,
 				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
+				F549C60D3007CA8300DE4EF0 /* DiscussionSolutionView.swift in Sources */,
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
 				F5AE93402F863A100003CAA5 /* GlobalBottomSheetModifier.swift in Sources */,
 				F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */,
