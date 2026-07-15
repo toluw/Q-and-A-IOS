@@ -32,7 +32,7 @@ struct Post: Codable {
     let link: String
     
     static let preview = Post(
-        content: "There was a girl named Joke. She is five years old. Sha has five sisters and a friend and very brittle", title: "The Girl Named Joke", createdAt: "2023-07-15 13:02:32", email: "oketoluwase@gmail.com", examId: "3", hasLiked: true, id: "35", image: nil, isActive: true, isEdited: false, numComment: 8, numLikes: 2, numViews: 9, questionId: "30", reason: "", status: "", user: User(created: "2023-07-15 13:02:32", deviceId: "", email: "oketoluwase@gmail.com", id: "3", name: "James Justin", phone: "08055578829", token: "", image: ""), parent: nil, parentId: nil, categoryId: nil, expiry: nil, link: ""
+        content: "There was a girl named Joke. She is five years old. Sha has five sisters and a friend and very brittle", title: "The Girl Named Joke", createdAt: "2023-07-15 13:02:32", email: "oketoluwase@gmail.com", examId: "3", hasLiked: true, id: "35", image: nil, isActive: true, isEdited: true, numComment: 8, numLikes: 2, numViews: 9, questionId: "30", reason: "", status: "", user: User(created: "2023-07-15 13:02:32", deviceId: "", email: "oketoluwase@gmail.com", id: "3", name: "James Justin", phone: "08055578829", token: "", image: ""), parent: nil, parentId: nil, categoryId: nil, expiry: nil, link: ""
     )
 
     enum CodingKeys: String, CodingKey {
