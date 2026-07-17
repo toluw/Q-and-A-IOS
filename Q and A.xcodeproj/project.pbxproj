@@ -242,6 +242,14 @@
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
 		F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */; };
 		F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */; };
+		F5D0BEF73008D3630036E377 /* SocialPostInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */; };
+		F5D0BEF93008E5490036E377 /* EmptyDiscussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BEF83008E5490036E377 /* EmptyDiscussionView.swift */; };
+		F5D0BEFE300A18E00036E377 /* CommunityApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BEFD300A18E00036E377 /* CommunityApi.swift */; };
+		F5D0BF00300A1F350036E377 /* CommunityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BEFF300A1F350036E377 /* CommunityService.swift */; };
+		F5D0BF02300A23930036E377 /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF01300A23930036E377 /* PostResponse.swift */; };
+		F5D0BF04300A27A40036E377 /* PostState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF03300A27A40036E377 /* PostState.swift */; };
+		F5D0BF06300A28C70036E377 /* CbtPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF05300A28C70036E377 /* CbtPostViewModel.swift */; };
+		F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */; };
 		F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476562FA106C600713F18 /* ExamSelectView.swift */; };
 		F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
@@ -537,6 +545,14 @@
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
 		F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBarShape.swift; sourceTree = "<group>"; };
 		F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomNav.swift; sourceTree = "<group>"; };
+		F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPostInputView.swift; sourceTree = "<group>"; };
+		F5D0BEF83008E5490036E377 /* EmptyDiscussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDiscussionView.swift; sourceTree = "<group>"; };
+		F5D0BEFD300A18E00036E377 /* CommunityApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityApi.swift; sourceTree = "<group>"; };
+		F5D0BEFF300A1F350036E377 /* CommunityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityService.swift; sourceTree = "<group>"; };
+		F5D0BF01300A23930036E377 /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		F5D0BF03300A27A40036E377 /* PostState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostState.swift; sourceTree = "<group>"; };
+		F5D0BF05300A28C70036E377 /* CbtPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostViewModel.swift; sourceTree = "<group>"; };
+		F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostScreen.swift; sourceTree = "<group>"; };
 		F5D476562FA106C600713F18 /* ExamSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectView.swift; sourceTree = "<group>"; };
 		F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectBottomSheetView.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -663,6 +679,7 @@
 		F55021382F8291190057C2F0 /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0BEFC300A18C70036E377 /* Network */,
 				F550213B2F82917C0057C2F0 /* ViewModel */,
 				F550213A2F8291740057C2F0 /* View */,
 				F55021392F82916B0057C2F0 /* Model */,
@@ -673,6 +690,8 @@
 		F55021392F82916B0057C2F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0BF01300A23930036E377 /* PostResponse.swift */,
+				F5D0BF03300A27A40036E377 /* PostState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -680,10 +699,8 @@
 		F550213A2F8291740057C2F0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
-				F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */,
-				F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */,
-				F549C60C3007CA8300DE4EF0 /* DiscussionSolutionView.swift */,
+				F5D0BEF33008D14D0036E377 /* Screen */,
+				F5D0BEF23008D0250036E377 /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -691,6 +708,7 @@
 		F550213B2F82917C0057C2F0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0BF05300A28C70036E377 /* CbtPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1091,76 +1109,8 @@
 		F5C12EAD2F72C4C0000861B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F5C12EB62F72C5AE000861B6 /* MainCbtScreen.swift */,
-				F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */,
-				F5A13C6A2F8E587600B1B22F /* ParentCatScreen.swift */,
-				F5A13C6C2F8E58C900B1B22F /* ExamSubCatScreen.swift */,
-				F5A13C6E2F8E595F00B1B22F /* ExamCatScreen.swift */,
-				F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */,
-				F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */,
-				F59D32872F90E3030045C4AA /* CatItemView.swift */,
-				F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */,
-				F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */,
-				F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */,
-				F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */,
-				F5D476562FA106C600713F18 /* ExamSelectView.swift */,
-				F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */,
-				F5152C0D2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift */,
-				F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */,
-				F596458A2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift */,
-				F596458C2FA7BDD00052C9A4 /* ExamPracticeScreen.swift */,
-				F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */,
-				F56CD1D72FAB618A0042902F /* ExamPayBottomSheetView.swift */,
-				F56CD1D92FAB664A0042902F /* ExamPayView.swift */,
-				F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */,
-				F53268CA2FC460D70016CD4F /* CatScreen.swift */,
-				F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */,
-				F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */,
-				F54578D62FC75465008FF056 /* ExamDescriptionView.swift */,
-				F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */,
-				F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */,
-				F54578E62FCABF48008FF056 /* ExamScreen.swift */,
-				F54578E82FCD8E75008FF056 /* PassageView.swift */,
-				F54578EA2FCD9327008FF056 /* FullPassageView.swift */,
-				F54578EC2FCDE179008FF056 /* AnswerView.swift */,
-				F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */,
-				F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */,
-				F54578F62FCEE826008FF056 /* MultiSelectedAnswerView.swift */,
-				F54578F82FCEEB40008FF056 /* MultiDeselectedAnswerView.swift */,
-				F54578FA2FCEECA3008FF056 /* MultiAnswerView.swift */,
-				F54578FC2FCEF367008FF056 /* ExamView.swift */,
-				F54579002FCF14D1008FF056 /* ExamNavView.swift */,
-				F5BF8FF62FD16F8900C55E68 /* GoToQuestionItemView.swift */,
-				F5C61BA32FD2EDE60090310A /* GoToQuestionBottomSheetView.swift */,
-				F5B100FE2FD5D39000B924EF /* MockExamResultScreen.swift */,
-				F5B101002FD5D9C500B924EF /* MultipleResultScreen.swift */,
-				F5B101022FD5DA5600B924EF /* FanQuizResultScreen.swift */,
-				F5B101042FD5DB3500B924EF /* ResultScreen.swift */,
-				F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */,
-				F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */,
-				F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */,
-				F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */,
-				F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */,
-				F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */,
-				F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */,
-				F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */,
-				F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */,
-				F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */,
-				F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */,
-				F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */,
-				F5A883A22FEFAA4F008C85EC /* PracticeView.swift */,
-				F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */,
-				F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */,
-				F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */,
-				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
-				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
-				F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */,
-				F5288E782FF56D110071E448 /* SolutionView.swift */,
-				F505659E2FF6871B00A89ACB /* ReviewExplanationView.swift */,
-				F50565A02FF6D6D000A89ACB /* ReviewExplanationScreen.swift */,
-				F5568EE62FFD339E00C72A55 /* VideoRow.swift */,
-				F5568EE82FFD36F200C72A55 /* StudyMaterialRow.swift */,
-				F50018453001119100E98437 /* StudyNoteScreen.swift */,
+				F5D0BEF53008D2950036E377 /* Screen */,
+				F5D0BEF43008D1780036E377 /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1205,6 +1155,120 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F5D0BEF23008D0250036E377 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F549C60C3007CA8300DE4EF0 /* DiscussionSolutionView.swift */,
+				F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */,
+				F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */,
+				F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */,
+				F5D0BEF83008E5490036E377 /* EmptyDiscussionView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F5D0BEF33008D14D0036E377 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
+				F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		F5D0BEF43008D1780036E377 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */,
+				F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */,
+				F59D32872F90E3030045C4AA /* CatItemView.swift */,
+				F51C58CA2F98FB3E00CE9931 /* SubCatExamItemView.swift */,
+				F5D476562FA106C600713F18 /* ExamSelectView.swift */,
+				F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */,
+				F5152C0D2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift */,
+				F5B5A03A2FA60CCC00B11187 /* SelectCbtModeView.swift */,
+				F56CD1D72FAB618A0042902F /* ExamPayBottomSheetView.swift */,
+				F56CD1D92FAB664A0042902F /* ExamPayView.swift */,
+				F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */,
+				F54578D62FC75465008FF056 /* ExamDescriptionView.swift */,
+				F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */,
+				F54578E82FCD8E75008FF056 /* PassageView.swift */,
+				F54578EA2FCD9327008FF056 /* FullPassageView.swift */,
+				F54578EC2FCDE179008FF056 /* AnswerView.swift */,
+				F54578EE2FCDF188008FF056 /* SelectedAnswerView.swift */,
+				F54578F42FCEC309008FF056 /* DeselectedAnswerView.swift */,
+				F54578F62FCEE826008FF056 /* MultiSelectedAnswerView.swift */,
+				F54578F82FCEEB40008FF056 /* MultiDeselectedAnswerView.swift */,
+				F54578FA2FCEECA3008FF056 /* MultiAnswerView.swift */,
+				F54579002FCF14D1008FF056 /* ExamNavView.swift */,
+				F54578FC2FCEF367008FF056 /* ExamView.swift */,
+				F5BF8FF62FD16F8900C55E68 /* GoToQuestionItemView.swift */,
+				F5C61BA32FD2EDE60090310A /* GoToQuestionBottomSheetView.swift */,
+				F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */,
+				F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */,
+				F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */,
+				F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */,
+				F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */,
+				F5BB95072FE6DA34004EDA26 /* AnswerStatusView.swift */,
+				F5BB95092FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift */,
+				F5E9B3BD2FE98BC800B98FCB /* GoToReviewItemView.swift */,
+				F5E9B3C32FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift */,
+				F5A883A22FEFAA4F008C85EC /* PracticeView.swift */,
+				F5A8CDAF2FF2BDA100D3084C /* GreatWorkView.swift */,
+				F5A8CDB12FF2C63C00D3084C /* IncorrectOptionView.swift */,
+				F5A8CDB32FF3C2D000D3084C /* ViewSolutionButton.swift */,
+				F5A8CDB72FF3EF3000D3084C /* ExplanationStatusView.swift */,
+				F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */,
+				F5288E782FF56D110071E448 /* SolutionView.swift */,
+				F505659E2FF6871B00A89ACB /* ReviewExplanationView.swift */,
+				F5568EE62FFD339E00C72A55 /* VideoRow.swift */,
+				F5568EE82FFD36F200C72A55 /* StudyMaterialRow.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F5D0BEF53008D2950036E377 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F54762BF2F92E79700BB1366 /* TabSubCatScreen.swift */,
+				F596458A2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift */,
+				F596458C2FA7BDD00052C9A4 /* ExamPracticeScreen.swift */,
+				F596458E2FA7BDF00052C9A4 /* CbtPaymentScreen.swift */,
+				F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */,
+				F53268CA2FC460D70016CD4F /* CatScreen.swift */,
+				F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */,
+				F54578E42FCABDAA008FF056 /* ExamLoaderScreen.swift */,
+				F54578E62FCABF48008FF056 /* ExamScreen.swift */,
+				F5B100FE2FD5D39000B924EF /* MockExamResultScreen.swift */,
+				F5B101002FD5D9C500B924EF /* MultipleResultScreen.swift */,
+				F5C12EB62F72C5AE000861B6 /* MainCbtScreen.swift */,
+				F5A13C6A2F8E587600B1B22F /* ParentCatScreen.swift */,
+				F5A13C6C2F8E58C900B1B22F /* ExamSubCatScreen.swift */,
+				F5A13C6E2F8E595F00B1B22F /* ExamCatScreen.swift */,
+				F5A13C702F8E5A8500B1B22F /* MockDescriptionScreen.swift */,
+				F54762BB2F92E69D00BB1366 /* SubCatScreen.swift */,
+				F54762BD2F92E6CA00BB1366 /* TheorySubCatScreen.swift */,
+				F5B101022FD5DA5600B924EF /* FanQuizResultScreen.swift */,
+				F5B101042FD5DB3500B924EF /* ResultScreen.swift */,
+				F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */,
+				F529E88A2FE19150007C3494 /* ReviewExamScreen.swift */,
+				F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */,
+				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
+				F50565A02FF6D6D000A89ACB /* ReviewExplanationScreen.swift */,
+				F50018453001119100E98437 /* StudyNoteScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		F5D0BEFC300A18C70036E377 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0BEFD300A18E00036E377 /* CommunityApi.swift */,
+				F5D0BEFF300A1F350036E377 /* CommunityService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F5E0546C2FB7C9600012A9CC /* Network */ = {
@@ -1378,6 +1442,7 @@
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */,
+				F5D0BEF73008D3630036E377 /* SocialPostInputView.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
 				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
@@ -1417,6 +1482,7 @@
 				F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */,
 				F5B1B3FC300656CB00D7BB57 /* ExpandableText.swift in Sources */,
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
+				F5D0BF06300A28C70036E377 /* CbtPostViewModel.swift in Sources */,
 				F5288E772FF56B390071E448 /* AnswerData.swift in Sources */,
 				F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */,
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
@@ -1424,6 +1490,7 @@
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
 				F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
+				F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */,
 				F5152C0E2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift in Sources */,
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
@@ -1449,6 +1516,7 @@
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */,
+				F5D0BEFE300A18E00036E377 /* CommunityApi.swift in Sources */,
 				F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */,
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
 				F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */,
@@ -1480,6 +1548,7 @@
 				F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
+				F5D0BF02300A23930036E377 /* PostResponse.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
 				F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
@@ -1493,12 +1562,14 @@
 				F5BAF9C330051B62005785BF /* User.swift in Sources */,
 				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
+				F5D0BF04300A27A40036E377 /* PostState.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */,
 				F5B100FD2FD5D32F00B924EF /* MockExamResult.swift in Sources */,
 				F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */,
 				F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
+				F5D0BF00300A1F350036E377 /* CommunityService.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */,
 				F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */,
@@ -1577,6 +1648,7 @@
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
 				F5A8CDB42FF3C2D000D3084C /* ViewSolutionButton.swift in Sources */,
+				F5D0BEF93008E5490036E377 /* EmptyDiscussionView.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */,

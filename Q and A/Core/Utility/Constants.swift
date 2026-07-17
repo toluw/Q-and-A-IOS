@@ -16,6 +16,7 @@ let paystackUrl = "https://api.paystack.co/"
 let PASSAGE_NUM = 98
 let FULL_PASSAGE_NUM = 500
 let POST_NUM = 250
+let PAGE_SIZE = 10
 
 enum PaystackConstants {
     static let callbackURL = "https://www.knowbaseconsult.com/about-knowbase"

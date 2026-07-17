@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post: Codable {
+struct Post: Codable, Identifiable {
     let content: String
     let title: String
     let createdAt: String
