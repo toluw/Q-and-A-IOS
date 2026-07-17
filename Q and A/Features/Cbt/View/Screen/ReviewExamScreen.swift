@@ -37,7 +37,7 @@ struct ReviewExamScreen: View {
                 }, onAskAi: {
                     askAi()
                 }, onJoinDiscussion: {
-                    
+                    navVm.navigate(route: .cbtPostScreen(examId: examId, liveExam: cbtViewModel.reviewExamList[cbtViewModel.reviewIndex]))
                 }).id(liveExamBinding.id)
                     .transition(cbtViewModel.transition)
             }

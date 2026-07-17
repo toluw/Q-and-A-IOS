@@ -39,6 +39,7 @@ struct CbtPostScreen: View {
             }
             .frame(maxWidth: .infinity)
             .background(Color("post_bg"))
+            .padding(.top, 2)
         
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .refreshable {

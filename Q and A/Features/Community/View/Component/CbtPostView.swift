@@ -39,12 +39,12 @@ struct CbtPostView: View {
                     Circle()
                         .frame(width: 3, height: 3)
                         .foregroundColor(Color("GreyText"))
-                        .padding(.leading, 8)
+                        .padding(.leading, 6)
                     
                     Text(getTimeDifference(pastTime: post.createdAt))
                         .foregroundColor(Color("faint"))
                         .font(AppFont.regular(15))
-                        .padding(.leading, 8)
+                        .padding(.leading, 6)
                     
                     
                     Spacer()
@@ -64,8 +64,7 @@ struct CbtPostView: View {
                     
                     
                 }.frame(maxWidth: .infinity)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 17)
+                  .padding(.top, 17)
                 
                 
                 VStack(alignment: .leading){
@@ -97,9 +96,9 @@ struct CbtPostView: View {
                         
                         Button(action: {
                             if(post.hasLiked){
-                                post.numViews -= 1
+                                post.numLikes -= 1
                             }else{
-                                post.numViews += 1
+                                post.numLikes += 1
                             }
                             post.hasLiked = !post.hasLiked
                             onLikeClicked()
@@ -129,7 +128,7 @@ struct CbtPostView: View {
                     }.padding(.top, 12)
                         
                     
-                }.padding(.leading, 66)
+                }.padding(.leading, 50)
                  .padding(.trailing, 16)
                 
                

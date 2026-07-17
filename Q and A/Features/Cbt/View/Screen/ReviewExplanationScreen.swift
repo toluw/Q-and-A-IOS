@@ -113,7 +113,7 @@ struct ReviewExplanationScreen: View {
     
     
     private func joinDiscussion(){
-        
+        navVm.navigate(route: .cbtPostScreen(examId: examId, liveExam: liveExam))
     }
 }
 

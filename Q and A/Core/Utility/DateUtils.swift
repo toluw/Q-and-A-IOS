@@ -86,14 +86,14 @@ func convertSecondsToDays(seconds: Int) -> Int {
 }
 
 func getPatternFromDate(
-    _ date: String,
+    date: String,
     outputPattern: String = "MMM dd, yyyy",
     inputPattern: String = "yyyy-MM-dd HH:mm:ss"
 ) -> String {
 
     let inputFormatter = DateFormatter()
     inputFormatter.dateFormat = inputPattern
-    inputFormatter.locale = Locale.current
+    inputFormatter.locale = Locale(identifier: "en_US_POSIX")
 
     guard let parsedDate = inputFormatter.date(from: date) else {
         return ""
@@ -129,13 +129,13 @@ func getTimeDifference(
             return "\(convertSecondsToDays(seconds: timeDiffSec))d"
         case ..<31_104_000:
             return getPatternFromDate(
-                pastTime,
+                date: pastTime,
                 outputPattern: "dd MMM",
                 inputPattern: inputPattern
             )
         default:
             return getPatternFromDate(
-                pastTime,
+                date: pastTime,
                 outputPattern: "dd MMM yyyy",
                 inputPattern: inputPattern
             )

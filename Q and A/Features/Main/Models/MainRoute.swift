@@ -36,4 +36,5 @@ enum MainRoute: Hashable{
     case pdfReaderScreen(fileUrl: URL)
     case pdfLoaderScreen(remoteURL: URL)
     case studyNoteScreen(title: String, passage: String, passageImage: String?, passageBook: String?, passageVideo: String?)
+    case cbtPostScreen(examId: String, liveExam: LiveExam?)
 }

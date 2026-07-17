@@ -89,6 +89,8 @@ struct MainStackView: View {
             PdfLoaderScreen(remoteURL: remoteURL, navVm: navVM)
         case .studyNoteScreen(title: let title, passage: let passage, passageImage: let passageImage, passageBook: let passageBook, passageVideo: let passageVideo):
             StudyNoteScreen(title: title, passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, navVm: navVM)
+        case .cbtPostScreen(examId: let examId, liveExam: let liveExam):
+            CbtPostScreen(navVm: navVM, examId: examId, liveExam: liveExam)
         }
     }
     
