@@ -9,6 +9,10 @@ import Foundation
 
 struct PostState{
     
+    var showOptionSheet = false
+    
+    var showBlockedLoader = false
+    
     var items: [Post] = []
 
     var currentPage: Int = 0

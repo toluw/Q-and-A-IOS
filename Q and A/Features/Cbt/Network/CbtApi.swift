@@ -22,6 +22,7 @@ enum CbtAPI {
     case postResult(examResultBody: ExamResultBody)
     case postUnFinishedResult(unFinishedResultBody: UnfinishedResultBody)
     case askAiCbt(askAiCbtBody: AskAiCbtBody)
+    case getNumPost(examId: String, questionId: String)
     
 }
 
@@ -54,6 +55,8 @@ extension CbtAPI: TargetType{
             return "v2/post_unfinished_result3.php"
         case .askAiCbt:
            return "v2/ask_ai_cbt.php"
+        case .getNumPost:
+           return "v2/get_num_post.php"
         }
     
     }
@@ -82,6 +85,8 @@ extension CbtAPI: TargetType{
                 .post
         case .askAiCbt:
                 .post
+        case .getNumPost:
+                .get
         }
     }
     
@@ -176,6 +181,20 @@ extension CbtAPI: TargetType{
         
         
        
+        case .getNumPost(examId: let examId, questionId: let questionId):
+            do {
+                var params: [String: Any] = [:]
+                params.addOptional(key: "exam_id", value: examId)
+                params.addOptional(key: "question_id", value: questionId)
+                
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
         }
         
        

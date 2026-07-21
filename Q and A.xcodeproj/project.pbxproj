@@ -107,6 +107,11 @@
 		F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DD2FAB94930042902F /* PaymentButton.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
+		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
+		F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */; };
+		F5899FE0300F6BF3005FF391 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FDF300F6BF3005FF391 /* PostBody.swift */; };
+		F5899FE4300F82F7005FF391 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */; };
+		F5899FE6300FA229005FF391 /* DeletePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE5300FA229005FF391 /* DeletePostBody.swift */; };
 		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
@@ -410,6 +415,11 @@
 		F56CD1DD2FAB94930042902F /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
+		F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPostResponse.swift; sourceTree = "<group>"; };
+		F5899FDF300F6BF3005FF391 /* PostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
+		F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
+		F5899FE5300FA229005FF391 /* DeletePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostBody.swift; sourceTree = "<group>"; };
 		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
@@ -692,6 +702,7 @@
 			children = (
 				F5D0BF01300A23930036E377 /* PostResponse.swift */,
 				F5D0BF03300A27A40036E377 /* PostState.swift */,
+				F5899FE5300FA229005FF391 /* DeletePostBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -953,6 +964,7 @@
 				F50018473001474F00E98437 /* InstructionCallout.swift */,
 				F500184930014C3100E98437 /* StudyNoteButton.swift */,
 				F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */,
+				F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1102,6 +1114,8 @@
 				F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */,
 				F5BAF9C230051B62005785BF /* User.swift */,
 				F5BAF9C430051BCB005785BF /* Post.swift */,
+				F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */,
+				F5899FDF300F6BF3005FF391 /* PostBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1165,6 +1179,7 @@
 				F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */,
 				F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */,
 				F5D0BEF83008E5490036E377 /* EmptyDiscussionView.swift */,
+				F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1491,6 +1506,7 @@
 				F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
 				F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */,
+				F5899FE0300F6BF3005FF391 /* PostBody.swift in Sources */,
 				F5152C0E2FA3C4E50056F9C3 /* QuestionBottomSheetView.swift in Sources */,
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
@@ -1504,6 +1520,7 @@
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
+				F5899FE4300F82F7005FF391 /* OptionBottomSheet.swift in Sources */,
 				F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */,
 				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
@@ -1580,6 +1597,7 @@
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
+				F5899FE6300FA229005FF391 /* DeletePostBody.swift in Sources */,
 				F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
@@ -1666,6 +1684,7 @@
 				F596458D2FA7BDD00052C9A4 /* ExamPracticeScreen.swift in Sources */,
 				F5AAC9E62FBB474B003977CA /* PaystackVerifyResponse.swift in Sources */,
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
+				F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */,
 				F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */,
 				F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */,
 				F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */,
@@ -1693,6 +1712,7 @@
 				F5E9B3C02FEAC52100B98FCB /* GoToReviewViewModel.swift in Sources */,
 				F51E11E32FA8EAAE00934BF7 /* ExamData.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
+				F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,

@@ -13,6 +13,12 @@ enum CommunityApi{
     
     case getPost(examId: String, questionId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
     
+    case likePost(postBody: PostBody)
+    
+    case deletePost(deletePostBody: DeletePostBody)
+    
+    
+    
 }
 
 
@@ -26,6 +32,11 @@ extension CommunityApi: TargetType{
             
         case .getPost:
             return "v2/get_post.php"
+        
+        case .likePost:
+            return "v2/like_post.php"
+        case .deletePost:
+            return "v2/delete_cbt_post.php"
         }
     }
     
@@ -34,6 +45,10 @@ extension CommunityApi: TargetType{
             
         case .getPost:
             .get
+        case .likePost:
+            .post
+        case .deletePost:
+            .post
         }
     }
     
@@ -59,6 +74,10 @@ extension CommunityApi: TargetType{
                 
             }
             
+        case .likePost(postBody: let postBody):
+            return .requestJSONEncodable(postBody)
+        case .deletePost(deletePostBody: let deletePostBody):
+            return .requestJSONEncodable(deletePostBody)
         }
     }
     

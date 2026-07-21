@@ -14,11 +14,59 @@ class CbtPostViewModel: ObservableObject{
     
     @Published var state = PostState()
     
+    
+    
+    var post: Post? = nil
+    
     private let service: CommunityServiceProtocol
+    
+    
       
       init(service: CommunityServiceProtocol = CommunityService()) {
           self.service = service
       }
+    
+    
+    
+    
+    
+        func likePost(postBody: PostBody){
+        
+            Task{
+                do{
+                    let response =   try await service.likePost(postBody: postBody)
+                } catch {
+                    
+                }
+        }
+    }
+    
+    
+    
+    
+    
+    func deletePost(deletePostBody: DeletePostBody, examId: String, questionId: String, buyerEmail: String){
+        
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+                let response = try await service.deletePost(deletePostBody: deletePostBody)
+                state.showBlockedLoader = false
+                await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+                
+            } catch{
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.deletePost(deletePostBody: deletePostBody, examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+                })
+                
+            }
+            
+        }
+        
+    }
     
     
     /// Call once, e.g. from `.task` on first appearance.

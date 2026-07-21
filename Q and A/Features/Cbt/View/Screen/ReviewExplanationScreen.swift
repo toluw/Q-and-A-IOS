@@ -81,6 +81,9 @@ struct ReviewExplanationScreen: View {
             }.padding(.bottom, 35)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear{
+                viewModel.getNumPost(examId: examId, questionId: liveExam.questionId)
+            }
         .onChange(of: viewModel.aiContent) { _,  content in
             
                 if(!content.isEmpty){
@@ -96,6 +99,13 @@ struct ReviewExplanationScreen: View {
                 ToolbarItem(placement: .principal) {
                     Text("Explanation").font(AppFont.regular(18))
                 }
+            
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                DiscussionNoticeView(onNoticeClicked: {
+                    joinDiscussion()
+                }, numNotice: viewModel.numNotice)
+            }
                 
                 
             }

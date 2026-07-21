@@ -16,7 +16,9 @@ struct CbtPostScreen: View {
     
     
     var body: some View {
-        VStack{
+        ZStack{
+            
+            
             VStack{
                 ScrollView {
                     LazyVStack(spacing: 15) {
@@ -40,6 +42,46 @@ struct CbtPostScreen: View {
             .frame(maxWidth: .infinity)
             .background(Color("post_bg"))
             .padding(.top, 2)
+            
+            if(viewModel.state.showBlockedLoader){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+            }
+            
+            
+            if(viewModel.state.showOptionSheet){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        viewModel.state.showOptionSheet = false
+                    }
+                
+                VStack{
+                    
+                   Spacer()
+                    
+                    OptionBottomSheet(items: [EDIT,DELETE], onItemClicked: {option in
+                        viewModel.state.showOptionSheet = false
+                        if(option == EDIT){
+                            
+                        }else if(option == DELETE){
+                            
+                            deletePost()
+                        }
+                        
+                        
+                    })
+                    .transition(.scale)
+                    
+                }
+
+                
+            }
         
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .refreshable {
@@ -57,6 +99,21 @@ struct CbtPostScreen: View {
                 
                 
             }
+            /*
+            .sheet(isPresented: $viewModel.state.showOptionSheet){
+                OptionBottomSheet(items: [EDIT,DELETE], onItemClicked: {option in
+                    viewModel.state.showOptionSheet = false
+                    if(option == EDIT){
+                        
+                    }else if(option == DELETE){
+                        
+                        deletePost()
+                    }
+                    
+                    
+                }).presentationDetents([.medium])
+            }
+             */
     }
     
     @ViewBuilder
@@ -92,10 +149,21 @@ struct CbtPostScreen: View {
     
     @ViewBuilder
     private var postItems: some View {
-        ForEach(viewModel.state.items.indices, id: \.self) { index in
-            CbtPostView(post: $viewModel.state.items[index], onClick: {}, onOptionClicked: {}, onCommentClicked: {}, onLikeClicked: {})
+        ForEach($viewModel.state.items) { $post in
+            CbtPostView(post: $post, onClick: {}, onOptionClicked: {
+                viewModel.post = post
+                viewModel.state.showOptionSheet = true
+            }, onCommentClicked: {
+                
+            }, onLikeClicked: {
+                
+                let postBody = PostBody(post_id: post.id, email: UserSettings.email ?? "")
+                
+                viewModel.likePost(postBody: postBody)
+                
+            })
                 .task {
-                    await viewModel.loadMoreIfNeeded(examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "", currentItem: viewModel.state.items[index])
+                    await viewModel.loadMoreIfNeeded(examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "", currentItem: post)
                 }
         }
 
@@ -134,6 +202,19 @@ struct CbtPostScreen: View {
             .padding()
             .frame(maxWidth: .infinity)
         }
+    }
+    
+    private func deletePost(){
+        showErrorMessage(message: "Are you sure you want to delete this post" , actionTitle: "Delete", showCancel: true, action: {
+            
+            if let post = viewModel.post{
+                
+                let deletePostBody = DeletePostBody(post_id: post.id)
+                viewModel.deletePost(deletePostBody: deletePostBody, examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "")
+                
+            }
+            
+        })
     }
 }
 

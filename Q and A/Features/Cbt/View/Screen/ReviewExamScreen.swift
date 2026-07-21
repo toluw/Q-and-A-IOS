@@ -18,7 +18,7 @@ struct ReviewExamScreen: View {
         ZStack{
             
             if let liveExamBinding = $cbtViewModel.reviewExam.unwrap(){
-                ReviewExamView(questionCount: cbtViewModel.reviewExamList.count, questionIndex: $cbtViewModel.reviewIndex, liveExam: liveExamBinding, examState: $viewModel.state,
+                ReviewExamView(questionCount: cbtViewModel.reviewExamList.count, questionIndex: $cbtViewModel.reviewIndex, liveExam: liveExamBinding, examState: $viewModel.state, numNotice: viewModel.numNotice,
                  next: {
                     cbtViewModel.nextReview()
                     viewModel.reInitState()
@@ -37,8 +37,8 @@ struct ReviewExamScreen: View {
                 }, onAskAi: {
                     askAi()
                 }, onJoinDiscussion: {
-                    navVm.navigate(route: .cbtPostScreen(examId: examId, liveExam: cbtViewModel.reviewExamList[cbtViewModel.reviewIndex]))
-                }).id(liveExamBinding.id)
+                    joinDiscussion()
+                }, onNoticeClicked: joinDiscussion).id(liveExamBinding.id)
                     .transition(cbtViewModel.transition)
             }
             
@@ -54,6 +54,9 @@ struct ReviewExamScreen: View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarBackButtonHidden(true)
+            .onAppear{
+                getNumPost()
+            }
             .sheet(isPresented: $viewModel.state.showGoToBottomSheet){
                 GoToReviewBottomSheetView(fullQuestionList: cbtViewModel.reviewExamList.goToReviewList(), onQuestionSelected: {data in
                     
@@ -74,6 +77,14 @@ struct ReviewExamScreen: View {
                
                 
             }
+            .onChange(of: cbtViewModel.reviewExam){_, _ in
+                getNumPost()
+            }
+            
+    }
+    
+    private func joinDiscussion(){
+        navVm.navigate(route: .cbtPostScreen(examId: examId, liveExam: cbtViewModel.reviewExamList[cbtViewModel.reviewIndex]))
     }
     
     private func askAi(){
@@ -82,6 +93,11 @@ struct ReviewExamScreen: View {
         let askAiCbtBody = AskAiCbtBody(exam_id: examId, question_id: liveExam.questionId)
         viewModel.askAiCbt(askAiCbtBody: askAiCbtBody)
         
+    }
+    
+    private func getNumPost(){
+        let liveExam = cbtViewModel.reviewExamList[cbtViewModel.reviewIndex]
+        viewModel.getNumPost(examId: examId, questionId: liveExam.questionId)
     }
     
     private func readMorePassage(){

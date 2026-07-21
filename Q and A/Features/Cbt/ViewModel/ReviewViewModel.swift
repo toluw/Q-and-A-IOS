@@ -13,6 +13,7 @@ class ReviewViewModel: ObservableObject{
     
     @Published var state: ExamState = ExamState()
     @Published var aiContent: String = ""
+    @Published var numNotice: Int = 0
     
     private let service: CbtServiceProtocol
       
@@ -25,6 +26,20 @@ class ReviewViewModel: ObservableObject{
     func reInitState(){
         
         state = ExamState()
+    }
+    
+    
+    func getNumPost(examId: String, questionId: String){
+        Task{
+            do{
+              
+                let response = try await service.getNumPost(examId: examId, questionId: questionId)
+                numNotice = response.data.num_post
+                
+            }catch{
+                
+            }
+        }
     }
     
     

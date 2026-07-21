@@ -26,7 +26,7 @@ struct ReviewAnswerView: View {
             CorrectAnswerView(ans: liveExam.answer.convertCommaDelimitedStringToList()[0].uppercased(), content: liveExam.getAnswer(), image: liveExam.getAnswerImage())
             
             
-            if(liveExam.answer.isEmpty || liveExam.solution[0].lowercased() != liveExam.answer.convertCommaDelimitedStringToList()[0].lowercased()){
+            if(liveExam.solution.isEmpty || liveExam.solution[0].lowercased() != liveExam.answer.convertCommaDelimitedStringToList()[0].lowercased()){
                 
                 
                 HStack{

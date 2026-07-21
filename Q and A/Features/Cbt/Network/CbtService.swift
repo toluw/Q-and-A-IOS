@@ -18,6 +18,7 @@ protocol CbtServiceProtocol {
     func postResult(examResultBody: ExamResultBody) async throws -> GeneralResponse
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse
     func askAiCbt(askAiCbtBody: AskAiCbtBody) async throws -> AskAiCbtResponse
+    func getNumPost(examId: String, questionId: String) async throws -> NumPostResponse
     
     
     
@@ -25,12 +26,8 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
-   
     
- 
-   
-    
-   
+
     private let apiClient = APIClient<CbtAPI>()
     
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse {
@@ -43,6 +40,8 @@ final class CbtService: CbtServiceProtocol{
         );
     }
     
+   
+    
     func getSubCatExams(cbtId: String, buyerEmail: String?) async throws -> SubCatExamsResponse {
         return try await apiClient.request(
             .getSubCatExams(cbtId: cbtId, buyerEmail: buyerEmail, deviceId: DeviceManager.shared.getDeviceId(),),
@@ -52,6 +51,17 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    func getNumPost(examId: String, questionId: String) async throws -> NumPostResponse {
+        return try await apiClient.request(
+            .getNumPost(examId: examId, questionId: questionId),
+            responseType: NumPostResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse {
         return try await apiClient.request(

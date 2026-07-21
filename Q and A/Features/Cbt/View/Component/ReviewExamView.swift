@@ -13,6 +13,7 @@ struct ReviewExamView: View {
     @Binding var questionIndex: Int
     @Binding var liveExam: LiveExam
     @Binding var examState: ExamState
+    let numNotice: Int
     let next: () -> Void
     let previous: () -> Void
     let gotTo: () -> Void
@@ -20,6 +21,7 @@ struct ReviewExamView: View {
     let readMorePassage: () -> Void
     let onAskAi: () -> Void
     let onJoinDiscussion: () -> Void
+    let onNoticeClicked: () -> Void
     
     
     
@@ -49,6 +51,9 @@ struct ReviewExamView: View {
                 
                 
                 Spacer()
+                
+                
+                DiscussionNoticeView(onNoticeClicked: onNoticeClicked, numNotice: numNotice)
                 
                
                 
@@ -188,6 +193,6 @@ struct ReviewExamPreviewWrapper: View{
         
         
         
-        ReviewExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, next: {}, previous: {}, gotTo: {}, close: {}, readMorePassage: {}, onAskAi: {}, onJoinDiscussion: {})
+        ReviewExamView(questionCount: 10, questionIndex: $questionIndex, liveExam: $liveExam, examState: $examState, numNotice: 2, next: {}, previous: {}, gotTo: {}, close: {}, readMorePassage: {}, onAskAi: {}, onJoinDiscussion: {}, onNoticeClicked: {})
     }
 }
