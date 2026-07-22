@@ -35,9 +35,29 @@ struct CbtPostScreen: View {
                 
                 Spacer()
                 
-                SocialPostInputView(label: "Join the conversation..", onSubmit: {text in
+                SocialPostInputView(text: $viewModel.state.content, label: "Join the conversation..", onSubmit: {text, base64Image in
+                   
                     
-                }, onSelectImage: {})
+                    if(viewModel.state.isEdit){
+                        
+                        let updatePostBody = UpdatePostBody(post_id: viewModel.post?.id ?? "", content: text, image: base64Image, title: "")
+                        
+                        viewModel.updatePost(updatePostBody: updatePostBody, examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "")
+                        
+                    }else{
+                        
+                        let createPostBody = CreatePostBody(exam_id: examId, question_id: liveExam?.questionId ?? "", email: UserSettings.email ?? "", content: text, image: base64Image)
+                        
+                        viewModel.createPost(createPostBody: createPostBody, examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "")
+                        
+                    }
+                    
+                    viewModel.state.content = ""
+                    viewModel.state.isEdit = false
+                    
+                    
+                    
+                })
             }
             .frame(maxWidth: .infinity)
             .background(Color("post_bg"))
@@ -68,6 +88,8 @@ struct CbtPostScreen: View {
                     OptionBottomSheet(items: [EDIT,DELETE], onItemClicked: {option in
                         viewModel.state.showOptionSheet = false
                         if(option == EDIT){
+                            viewModel.state.isEdit = true
+                            viewModel.state.content = viewModel.post?.content ?? ""
                             
                         }else if(option == DELETE){
                             

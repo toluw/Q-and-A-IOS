@@ -12,11 +12,14 @@ protocol CommunityServiceProtocol{
     func getPost(examId: String, questionId: String, buyerEmail: String, page: String) async throws -> PostResponse
     func likePost(postBody: PostBody) async throws -> GeneralResponse
     func deletePost(deletePostBody: DeletePostBody) async throws -> GeneralResponse
+    func createPost(createPostBody: CreatePostBody) async throws -> GeneralResponse
+    func updatePost(updatePostBody: UpdatePostBody) async throws -> GeneralResponse
     
 }
 
 
 final class CommunityService: CommunityServiceProtocol{
+   
    
     
     
@@ -32,6 +35,29 @@ final class CommunityService: CommunityServiceProtocol{
             
         )
     }
+    
+    func createPost(createPostBody: CreatePostBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .createPost(createPostBody: createPostBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
+    func updatePost(updatePostBody: UpdatePostBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .updatePost(updatePostBody: updatePostBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
     
     
     

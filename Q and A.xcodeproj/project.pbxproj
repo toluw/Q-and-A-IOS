@@ -112,6 +112,9 @@
 		F5899FE0300F6BF3005FF391 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FDF300F6BF3005FF391 /* PostBody.swift */; };
 		F5899FE4300F82F7005FF391 /* OptionBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */; };
 		F5899FE6300FA229005FF391 /* DeletePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE5300FA229005FF391 /* DeletePostBody.swift */; };
+		F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE73010B69D005FF391 /* ImagePicker.swift */; };
+		F5899FEA3010D0B2005FF391 /* UpdatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */; };
+		F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FEB3010D175005FF391 /* CreatePostBody.swift */; };
 		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
@@ -420,6 +423,9 @@
 		F5899FDF300F6BF3005FF391 /* PostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
 		F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBottomSheet.swift; sourceTree = "<group>"; };
 		F5899FE5300FA229005FF391 /* DeletePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostBody.swift; sourceTree = "<group>"; };
+		F5899FE73010B69D005FF391 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostBody.swift; sourceTree = "<group>"; };
+		F5899FEB3010D175005FF391 /* CreatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostBody.swift; sourceTree = "<group>"; };
 		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
@@ -703,6 +709,8 @@
 				F5D0BF01300A23930036E377 /* PostResponse.swift */,
 				F5D0BF03300A27A40036E377 /* PostState.swift */,
 				F5899FE5300FA229005FF391 /* DeletePostBody.swift */,
+				F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */,
+				F5899FEB3010D175005FF391 /* CreatePostBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -965,6 +973,7 @@
 				F500184930014C3100E98437 /* StudyNoteButton.swift */,
 				F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */,
 				F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */,
+				F5899FE73010B69D005FF391 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1459,6 +1468,7 @@
 				F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */,
 				F5D0BEF73008D3630036E377 /* SocialPostInputView.swift in Sources */,
 				F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */,
+				F5899FEA3010D0B2005FF391 /* UpdatePostBody.swift in Sources */,
 				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
@@ -1470,6 +1480,7 @@
 				F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
+				F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */,
 				F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */,
 				F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */,
 				F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */,
@@ -1514,6 +1525,7 @@
 				F5BAF9C530051BCB005785BF /* Post.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
+				F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
 				F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */,

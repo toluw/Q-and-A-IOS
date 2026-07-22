@@ -43,6 +43,49 @@ class CbtPostViewModel: ObservableObject{
     
     
     
+    func createPost(createPostBody: CreatePostBody, examId: String, questionId: String, buyerEmail: String){
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+                let response = try await service.createPost(createPostBody: createPostBody)
+                state.showBlockedLoader = false
+                await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+            }catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.createPost(createPostBody: createPostBody, examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+                })
+            }
+        }
+    }
+    
+    
+    func updatePost(updatePostBody: UpdatePostBody, examId: String, questionId: String, buyerEmail: String){
+        
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+               
+                let response = try await service.updatePost(updatePostBody: updatePostBody)
+                state.showBlockedLoader = false
+                await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+                
+            }catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.updatePost(updatePostBody: updatePostBody, examId: examId, questionId: questionId, buyerEmail: buyerEmail)
+                })
+            }
+            
+        }
+        
+    }
+    
+    
     
     
     func deletePost(deletePostBody: DeletePostBody, examId: String, questionId: String, buyerEmail: String){

@@ -21,6 +21,9 @@ struct PostState{
     // Initial load / pull-to-refresh
     var isLoading: Bool = false
     var errorMessage: String? = nil
+    
+    var isEdit: Bool = false
+    var content:String = ""
 
     // Load-more (next page) — kept separate so a load-more failure
     // never blanks out the list the user already sees.

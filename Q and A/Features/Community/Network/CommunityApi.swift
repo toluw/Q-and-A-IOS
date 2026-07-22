@@ -17,6 +17,11 @@ enum CommunityApi{
     
     case deletePost(deletePostBody: DeletePostBody)
     
+    case createPost(createPostBody: CreatePostBody)
+    
+    
+    case updatePost(updatePostBody: UpdatePostBody)
+    
     
     
 }
@@ -37,6 +42,10 @@ extension CommunityApi: TargetType{
             return "v2/like_post.php"
         case .deletePost:
             return "v2/delete_cbt_post.php"
+        case .createPost(createPostBody: let createPostBody):
+            return "v2/create_post.php"
+        case .updatePost(updatePostBody: let updatePostBody):
+            return "v2/update_cbt_post.php"
         }
     }
     
@@ -48,6 +57,10 @@ extension CommunityApi: TargetType{
         case .likePost:
             .post
         case .deletePost:
+            .post
+        case .createPost:
+            .post
+        case .updatePost(updatePostBody: let updatePostBody):
             .post
         }
     }
@@ -78,6 +91,10 @@ extension CommunityApi: TargetType{
             return .requestJSONEncodable(postBody)
         case .deletePost(deletePostBody: let deletePostBody):
             return .requestJSONEncodable(deletePostBody)
+        case .createPost(createPostBody: let createPostBody):
+            return .requestJSONEncodable(createPostBody)
+        case .updatePost(updatePostBody: let updatePostBody):
+            return .requestJSONEncodable(updatePostBody)
         }
     }
     
