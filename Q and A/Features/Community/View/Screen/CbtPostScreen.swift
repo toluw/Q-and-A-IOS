@@ -35,7 +35,7 @@ struct CbtPostScreen: View {
                 
                 Spacer()
                 
-                SocialPostInputView(text: $viewModel.state.content, label: "Join the conversation..", onSubmit: {text, base64Image in
+                SocialPostInputView(text: $viewModel.state.content, label: "Join the conversation..", requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
                    
                     
                     if(viewModel.state.isEdit){
@@ -89,6 +89,7 @@ struct CbtPostScreen: View {
                         viewModel.state.showOptionSheet = false
                         if(option == EDIT){
                             viewModel.state.isEdit = true
+                            viewModel.state.requestFocus = true
                             viewModel.state.content = viewModel.post?.content ?? ""
                             
                         }else if(option == DELETE){
@@ -112,6 +113,7 @@ struct CbtPostScreen: View {
             .task {
                 await viewModel.loadInitial(examId: examId, questionId: liveExam?.questionId ?? "", buyerEmail: UserSettings.email ?? "")
             }
+            .toastBanner(toast: $viewModel.state.responseMessage)
             .toolbar {
                 
                 // Title

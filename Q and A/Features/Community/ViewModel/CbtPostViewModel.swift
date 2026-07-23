@@ -51,6 +51,7 @@ class CbtPostViewModel: ObservableObject{
             do{
                 let response = try await service.createPost(createPostBody: createPostBody)
                 state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
                 await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
             }catch {
                 state.showBlockedLoader = false
@@ -72,6 +73,7 @@ class CbtPostViewModel: ObservableObject{
                
                 let response = try await service.updatePost(updatePostBody: updatePostBody)
                 state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Your post was successfully edited", type: .success)
                 await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
                 
             }catch {
@@ -97,6 +99,7 @@ class CbtPostViewModel: ObservableObject{
             do{
                 let response = try await service.deletePost(deletePostBody: deletePostBody)
                 state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Post Deleted Successfully", type: .success)
                 await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
                 
             } catch{

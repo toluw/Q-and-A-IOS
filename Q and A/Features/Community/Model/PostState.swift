@@ -13,6 +13,8 @@ struct PostState{
     
     var showBlockedLoader = false
     
+    var requestFocus = false
+    
     var items: [Post] = []
 
     var currentPage: Int = 0
@@ -24,6 +26,8 @@ struct PostState{
     
     var isEdit: Bool = false
     var content:String = ""
+    
+    var responseMessage: ToastData? = nil
 
     // Load-more (next page) — kept separate so a load-more failure
     // never blanks out the list the user already sees.

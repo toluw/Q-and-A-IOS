@@ -12,6 +12,8 @@ struct SocialPostInputView: View {
     @Binding var text: String
     let label: String
     
+    @Binding var requestFocus: Bool
+    
     @State private var selectedImage: UIImage?
     @State private var base64Image: String?
 
@@ -20,6 +22,8 @@ struct SocialPostInputView: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     @State private var convertingImage = false
+    
+    @FocusState private var isTextFocused: Bool
 
     let onSubmit: (_ text: String, _ imageBase64: String?) -> Void
 
@@ -34,6 +38,7 @@ struct SocialPostInputView: View {
                    .background(LessonColor.border)
 
                TextEditor(text: $text)
+                   .focused($isTextFocused)
                    .frame(minHeight: 30, maxHeight: 60)
                    .scrollContentBackground(.hidden)
                    .padding(.horizontal, 4)
@@ -94,6 +99,12 @@ struct SocialPostInputView: View {
                        }
 
                    }
+                   .onChange(of: requestFocus) { _, newValue in
+                                  isTextFocused = newValue
+                              }
+                    .onChange(of: isTextFocused) { _, newValue in
+                                  requestFocus = newValue
+                              }
                    .sheet(isPresented: $showImagePicker) {
 
                        ImagePicker(
@@ -177,7 +188,7 @@ struct SocialPostInputView: View {
 }
 
 #Preview {
-    SocialPostInputPreviewWrapper(text: "", label: "Join the conversation")
+    SocialPostInputPreviewWrapper(text: "", label: "Join the conversation", requestFocus: true)
 }
 
 
@@ -186,17 +197,19 @@ struct SocialPostInputPreviewWrapper: View {
     
     
     @State var text: String
+    @State var requestFocus: Bool
     let label: String
     
-    init(text: String, label: String) {
+    init(text: String, label: String, requestFocus: Bool) {
         self.text = text
         self.label = label
+        self.requestFocus = requestFocus
     }
     
 
     var body: some View{
         
-        SocialPostInputView(text: $text, label: label, onSubmit: {text, tx in} )
+        SocialPostInputView(text: $text, label: label, requestFocus: $requestFocus, onSubmit: {text, tx in} )
         
     }
     

@@ -296,6 +296,7 @@
 		F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */; };
 		F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */; };
 		F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */; };
+		F5EF482D3011FC6E00F5B823 /* LinkifiedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */; };
 		F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29F842FDB0559003A876B /* CalculatorView.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
 		F5F7A7692F3883260097558D /* gilroy_200.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7642F3883260097558D /* gilroy_200.ttf */; };
@@ -605,6 +606,7 @@
 		F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAnswerView.swift; sourceTree = "<group>"; };
+		F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkifiedText.swift; sourceTree = "<group>"; };
 		F5F29F842FDB0559003A876B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
 		F5F7A7642F3883260097558D /* gilroy_200.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_200.ttf; sourceTree = "<group>"; };
@@ -974,6 +976,7 @@
 				F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */,
 				F5899FE3300F82F7005FF391 /* OptionBottomSheet.swift */,
 				F5899FE73010B69D005FF391 /* ImagePicker.swift */,
+				F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1634,6 +1637,7 @@
 				F5E144F22F7FC5E800C10F3A /* LoginResponse.swift in Sources */,
 				F5568EE92FFD36F200C72A55 /* StudyMaterialRow.swift in Sources */,
 				F59A8F9E2FB61F3000823C77 /* PaymentViewModel.swift in Sources */,
+				F5EF482D3011FC6E00F5B823 /* LinkifiedText.swift in Sources */,
 				F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */,
 				F500CBB32F87C3F200111B77 /* ChangePasswordScreen.swift in Sources */,
 				F5BD4A2E2F2B6D350020A8A4 /* AppConstants.swift in Sources */,

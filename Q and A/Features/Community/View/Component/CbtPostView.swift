@@ -69,7 +69,7 @@ struct CbtPostView: View {
                 
                 VStack(alignment: .leading){
                    
-                    ExpandableText(content: post.content, postLimit: POST_NUM)
+                    ExpandableText(content: post.content, postLimit: POST_NUM, isLinkify: true)
                     
                     if(post.isEdited){
                         Text("(Edited)")
