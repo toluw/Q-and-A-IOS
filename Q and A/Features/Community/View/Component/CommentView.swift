@@ -1,38 +1,34 @@
 //
-//  CbtPostView.swift
+//  CommentView.swift
 //  Q and A
 //
-//  Created by GIGL-PC on 14/07/2026.
+//  Created by GIGL-PC on 03/08/2026.
 //
 
 import SwiftUI
 
-struct CbtPostView: View {
+struct CommentView: View {
     
-    @Binding var post: Post
-    
+    @Binding var comment: Comment
     let onClick: () -> Void
-    
     let onOptionClicked: () -> Void
-    
-    let onCommentClicked: () -> Void
-    
+    let onReplyClicked: () -> Void
     let onLikeClicked: () -> Void
     
     var body: some View {
-        
         Button(action: onClick){
+            
             VStack(alignment: .leading){
-              
+                
                 HStack{
                     
-                    if(post.user.image.isEmpty){
-                        AvartarView(name: post.user.name)
+                    if(comment.user.image.isEmpty){
+                        AvartarView(name: comment.user.name)
                     }else{
-                        LoadCircularImageView(url: post.user.image, width: 36, height: 36)
+                        LoadCircularImageView(url: comment.user.image, width: 36, height: 36)
                     }
                     
-                    Text(post.user.name)
+                    Text(comment.user.name)
                         .font(AppFont.semi_bold(14))
                         .padding(.leading, 8)
                     
@@ -41,7 +37,7 @@ struct CbtPostView: View {
                         .foregroundColor(Color("GreyText"))
                         .padding(.leading, 6)
                     
-                    Text(getTimeDifference(pastTime: post.createdAt))
+                    Text(getTimeDifference(pastTime: comment.createdAt))
                         .foregroundColor(Color("faint"))
                         .font(AppFont.regular(15))
                         .padding(.leading, 6)
@@ -50,7 +46,7 @@ struct CbtPostView: View {
                     Spacer()
                     
                     
-                    if((UserSettings.email ?? "") == post.user.email){
+                    if((UserSettings.email ?? "") == comment.user.email){
                         Button(action: onOptionClicked){
                             
                           Image("horizontal_menu")
@@ -58,35 +54,31 @@ struct CbtPostView: View {
                     }
                     
                     
-                    
-                    
-                    
-                    
-                    
                 }.frame(maxWidth: .infinity)
                   .padding(.top, 17)
                 
-                
                 VStack(alignment: .leading){
                    
-                    ExpandableText(content: post.content, postLimit: POST_NUM, isLinkify: true)
+                    ExpandableText(content: comment.content, postLimit: POST_NUM, isLinkify: true)
                     
-                    if(post.isEdited){
+                    if(comment.isEdited){
                         Text("(Edited)")
                             .font(AppFont.medium(12))
                             .foregroundColor(Color("FaintGrey"))
                     }
                     
-                    if(!(post.image?.isEmpty ?? true)){
-                        FullWidthImageView(url: post.image, placeholderHeight: 64).padding(.top,13)
+                    if(!(comment.image?.isEmpty ?? true)){
+                        FullWidthImageView(url: comment.image, placeholderHeight: 64).padding(.top,13)
                     }
                     
                     HStack{
                         
-                        Button(action: onCommentClicked){
+                        Button(action: onReplyClicked){
                             HStack{
                                Image("comment")
-                                Text(post.numComment > 1 ? "\(post.numComment) Comments" : "\(post.numComment) Comment")
+                                    .renderingMode(.template)
+                                    .foregroundStyle(Color("faint"))
+                                Text(comment.numReply > 1 ? "\(comment.numReply) Replies" : "\(comment.numReply) Reply")
                                     .foregroundColor(Color("faint"))
                                     .font(AppFont.regular(14))
                             }.contentShape(Rectangle())
@@ -95,19 +87,21 @@ struct CbtPostView: View {
                         
                         
                         Button(action: {
-                            if(post.hasLiked){
-                                post.numLikes -= 1
+                            if(comment.hasLiked){
+                                comment.numLikes -= 1
                             }else{
-                                post.numLikes += 1
+                                comment.numLikes += 1
                             }
-                            post.hasLiked = !post.hasLiked
+                            comment.hasLiked = !comment.hasLiked
                             onLikeClicked()
                         }){
                             HStack{
-                                Image(post.hasLiked ? "active_like" : "in_active_like")
+                                Image(comment.hasLiked ? "active_like" : "in_active_like")
+                                    .renderingMode(.template)
+                                    .foregroundStyle(Color(comment.hasLiked ? "SecColor" : "faint"))
                                 
-                                Text(String(post.numLikes))
-                                    .foregroundColor(Color(post.hasLiked ? "SecColor" : "faint"))
+                                Text(String(comment.numLikes))
+                                    .foregroundColor(Color(comment.hasLiked ? "SecColor" : "faint"))
                                     .font(AppFont.regular(14))
                                 
                             }.contentShape(Rectangle())
@@ -117,54 +111,41 @@ struct CbtPostView: View {
                         
                         Image("eye")
                             .renderingMode(.template)
-                            .foregroundStyle(Color("like_blue"))
+                            .foregroundStyle(Color("faint"))
                             .padding(.leading, 15)
                         
-                        Text(String(post.numViews))
+                        Text(String(comment.numViews))
                             .foregroundColor(Color("faint"))
                             .font(AppFont.regular(14))
                             
                         
                     }.padding(.top, 12)
-                    
-                    
-                   
                         
                     
                 }.padding(.leading, 50)
                  .padding(.trailing, 16)
                 
-               
-                    
-                Divider().padding(.top, 16)
-                
-                
-                
-                
-                
-                
             }.frame(maxWidth: .infinity)
-                .contentShape(Rectangle())
+             .contentShape(Rectangle())
             
         }.buttonStyle(.plain)
-        
-      
     }
 }
 
 #Preview {
-    CbtPostPreviewWrapper(post: Post.preview)
+    CommentViewPreviewWrapper(comment: Comment.preview)
 }
 
-struct CbtPostPreviewWrapper: View{
+struct CommentViewPreviewWrapper: View{
     
-    @State var post: Post
+    @State var comment: Comment
     
-    init(post: Post) {
-        self.post = post
+    init(comment: Comment) {
+        self.comment = comment
     }
     
-    var body: some View{
-        CbtPostView(post: $post, onClick: {}, onOptionClicked: {}, onCommentClicked: {}, onLikeClicked: {})
+    var body: some View {
+        CommentView(comment: $comment, onClick: {}, onOptionClicked: {}, onReplyClicked: {}, onLikeClicked: {})
     }
+    
 }
