@@ -103,6 +103,14 @@ extension String{
          return regex.firstMatch(in: self, options: [], range: range) != nil
      }
     
+    func normalizedURL() -> URL? {
+        if self.hasPrefix("http://") || self.hasPrefix("https://") {
+            return URL(string: self)
+        } else {
+            return URL(string: "https://\(self)")
+        }
+    }
+    
     
     func convertCommaDelimitedStringToList() -> [String] {
           self.split(separator: ",")

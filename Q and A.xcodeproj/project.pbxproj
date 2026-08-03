@@ -160,6 +160,7 @@
 		F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C32FFE94A60046D33E /* PDFKitView.swift */; };
 		F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */; };
 		F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */; };
+		F5A801B63020BFD100005296 /* CommentPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A801B53020BFD100005296 /* CommentPostView.swift */; };
 		F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */; };
 		F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */; };
 		F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */; };
@@ -472,6 +473,7 @@
 		F5A716C32FFE94A60046D33E /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		F5A716C52FFF98FD0046D33E /* PdfReaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfReaderScreen.swift; sourceTree = "<group>"; };
 		F5A716C72FFF9A5D0046D33E /* PdfLoaderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfLoaderScreen.swift; sourceTree = "<group>"; };
+		F5A801B53020BFD100005296 /* CommentPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPostView.swift; sourceTree = "<group>"; };
 		F5A8122D2FEBCD0800EB0496 /* AiCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiCbtScreen.swift; sourceTree = "<group>"; };
 		F5A8122F2FEBD8E000EB0496 /* AskAiCbtBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtBody.swift; sourceTree = "<group>"; };
 		F5A812312FEBD95200EB0496 /* AskAiCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAiCbtResponse.swift; sourceTree = "<group>"; };
@@ -1192,6 +1194,7 @@
 				F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */,
 				F5D0BEF83008E5490036E377 /* EmptyDiscussionView.swift */,
 				F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */,
+				F5A801B53020BFD100005296 /* CommentPostView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1595,6 +1598,7 @@
 				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
 				F5D0BF04300A27A40036E377 /* PostState.swift in Sources */,
+				F5A801B63020BFD100005296 /* CommentPostView.swift in Sources */,
 				F5C12E962F728E92000861B6 /* RoleSelectionScreen.swift in Sources */,
 				F54578E12FC99315008FF056 /* ExamDescriptionState.swift in Sources */,
 				F5B100FD2FD5D32F00B924EF /* MockExamResult.swift in Sources */,

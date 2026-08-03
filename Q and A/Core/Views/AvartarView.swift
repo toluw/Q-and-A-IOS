@@ -10,6 +10,8 @@ import SwiftUI
 struct AvartarView: View {
     
     let name: String
+    var width: Int = 36
+    var height: Int = 36
     
     private var initial: String {
            name
@@ -21,7 +23,7 @@ struct AvartarView: View {
     var body: some View {
         Circle()
               .fill(getAvarterColor(name: name))
-              .frame(width: 36, height: 36)
+              .frame(width: CGFloat(width), height: CGFloat(height))
               .overlay(
                       Text(initial)
                         .font(AppFont.semi_bold(18))
