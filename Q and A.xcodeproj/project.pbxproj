@@ -34,6 +34,10 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A063021E7DF002268D5 /* CommentScreen.swift */; };
+		F5285A093021E99A002268D5 /* ForumCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A083021E99A002268D5 /* ForumCommentResponse.swift */; };
+		F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A0A3021F04B002268D5 /* CommentState.swift */; };
+		F5285A0D3021F109002268D5 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A0C3021F109002268D5 /* CommentViewModel.swift */; };
 		F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */; };
 		F5288E772FF56B390071E448 /* AnswerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E762FF56B390071E448 /* AnswerData.swift */; };
 		F5288E792FF56D110071E448 /* SolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5288E782FF56D110071E448 /* SolutionView.swift */; };
@@ -350,6 +354,10 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5285A063021E7DF002268D5 /* CommentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentScreen.swift; sourceTree = "<group>"; };
+		F5285A083021E99A002268D5 /* ForumCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCommentResponse.swift; sourceTree = "<group>"; };
+		F5285A0A3021F04B002268D5 /* CommentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentState.swift; sourceTree = "<group>"; };
+		F5285A0C3021F109002268D5 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		F5288E742FF51E7C0071E448 /* ExamPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPracticeView.swift; sourceTree = "<group>"; };
 		F5288E762FF56B390071E448 /* AnswerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerData.swift; sourceTree = "<group>"; };
 		F5288E782FF56D110071E448 /* SolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionView.swift; sourceTree = "<group>"; };
@@ -720,6 +728,8 @@
 				F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */,
 				F5899FEB3010D175005FF391 /* CreatePostBody.swift */,
 				F5A801B93020D9C500005296 /* Comment.swift */,
+				F5285A083021E99A002268D5 /* ForumCommentResponse.swift */,
+				F5285A0A3021F04B002268D5 /* CommentState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -737,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D0BF05300A28C70036E377 /* CbtPostViewModel.swift */,
+				F5285A0C3021F109002268D5 /* CommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1210,6 +1221,7 @@
 			children = (
 				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
 				F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */,
+				F5285A063021E7DF002268D5 /* CommentScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1600,6 +1612,7 @@
 				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
+				F5285A0D3021F109002268D5 /* CommentViewModel.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
 				F5BAF9C330051B62005785BF /* User.swift in Sources */,
 				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
@@ -1668,11 +1681,13 @@
 				F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */,
 				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
+				F5285A093021E99A002268D5 /* ForumCommentResponse.swift in Sources */,
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
 				F5568EF02FFD472F00C72A55 /* YoutubePlayerScreen.swift in Sources */,
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
 				F5C12EB92F72C5C7000861B6 /* MainVideoScreen.swift in Sources */,
 				F505659F2FF6871B00A89ACB /* ReviewExplanationView.swift in Sources */,
+				F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */,
 				F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */,
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
@@ -1681,6 +1696,7 @@
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
+				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
 				F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */,

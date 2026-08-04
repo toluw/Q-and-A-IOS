@@ -13,6 +13,8 @@ enum CommunityApi{
     
     case getPost(examId: String, questionId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
     
+    case getComment(postId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
+    
     case likePost(postBody: PostBody)
     
     case deletePost(deletePostBody: DeletePostBody)
@@ -46,6 +48,8 @@ extension CommunityApi: TargetType{
             return "v2/create_post.php"
         case .updatePost(updatePostBody: let updatePostBody):
             return "v2/update_cbt_post.php"
+        case .getComment:
+            return "v2/get_cbt_comment.php"
         }
     }
     
@@ -62,6 +66,8 @@ extension CommunityApi: TargetType{
             .post
         case .updatePost(updatePostBody: let updatePostBody):
             .post
+        case .getComment:
+                .get
         }
     }
     
@@ -87,6 +93,23 @@ extension CommunityApi: TargetType{
                 
             }
             
+        case .getComment(postId: let postId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
+            do {
+                
+                var params: [String: Any] = [:]
+                params.addOptional(key: "post_id", value: postId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "page", value: page)
+                params.addOptional(key: "page_size", value: pageSize)
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
+            
         case .likePost(postBody: let postBody):
             return .requestJSONEncodable(postBody)
         case .deletePost(deletePostBody: let deletePostBody):
@@ -95,6 +118,7 @@ extension CommunityApi: TargetType{
             return .requestJSONEncodable(createPostBody)
         case .updatePost(updatePostBody: let updatePostBody):
             return .requestJSONEncodable(updatePostBody)
+        
         }
     }
     

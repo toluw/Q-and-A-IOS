@@ -134,8 +134,7 @@ struct CommentPostView: View {
             }.padding(.top,15)
             
             
-            
-            
+          
         
             
         }.frame(maxWidth: .infinity)

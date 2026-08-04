@@ -10,6 +10,7 @@ import Foundation
 protocol CommunityServiceProtocol{
     
     func getPost(examId: String, questionId: String, buyerEmail: String, page: String) async throws -> PostResponse
+    func getComment(postId: String, buyerEmail: String, page: String) async throws -> ForumCommentResponse
     func likePost(postBody: PostBody) async throws -> GeneralResponse
     func deletePost(deletePostBody: DeletePostBody) async throws -> GeneralResponse
     func createPost(createPostBody: CreatePostBody) async throws -> GeneralResponse
@@ -19,10 +20,9 @@ protocol CommunityServiceProtocol{
 
 
 final class CommunityService: CommunityServiceProtocol{
+  
    
    
-    
-    
    private let apiClient = APIClient<CommunityApi>()
     
     func deletePost(deletePostBody: DeletePostBody) async throws -> GeneralResponse {
@@ -85,6 +85,19 @@ final class CommunityService: CommunityServiceProtocol{
         )
         
     }
+    
+    func getComment(postId: String, buyerEmail: String, page: String) async throws -> ForumCommentResponse {
+    
+        return try await apiClient.request(
+            .getComment(postId: postId, buyerEmail: buyerEmail, page: page, pageSize: String(PAGE_SIZE)),
+            responseType: ForumCommentResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+        
+    }
+    
     
     
     
