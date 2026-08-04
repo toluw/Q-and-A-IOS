@@ -91,6 +91,8 @@ struct MainStackView: View {
             StudyNoteScreen(title: title, passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo, navVm: navVM)
         case .cbtPostScreen(examId: let examId, liveExam: let liveExam):
             CbtPostScreen(navVm: navVM, examId: examId, liveExam: liveExam)
+        case .commentScreen(post: let post, postId: let postId, showKeyPad: let showKeyPad):
+            CommentScreen(post: post, postId: postId, showKeyPad: showKeyPad)
         }
     }
     

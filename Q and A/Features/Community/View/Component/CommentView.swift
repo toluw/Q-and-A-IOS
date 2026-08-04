@@ -55,7 +55,7 @@ struct CommentView: View {
                     
                     
                 }.frame(maxWidth: .infinity)
-                  .padding(.top, 17)
+                  .padding(.top, 14)
                 
                 VStack(alignment: .leading){
                    
@@ -78,7 +78,7 @@ struct CommentView: View {
                                Image("comment")
                                     .renderingMode(.template)
                                     .foregroundStyle(Color("faint"))
-                                Text(comment.numReply > 1 ? "\(comment.numReply) Replies" : "\(comment.numReply) Reply")
+                                Text(comment.numReply == 1 ? "\(comment.numReply) Replies" : "\(comment.numReply) Reply")
                                     .foregroundColor(Color("faint"))
                                     .font(AppFont.regular(14))
                             }.contentShape(Rectangle())
@@ -120,10 +120,15 @@ struct CommentView: View {
                             
                         
                     }.padding(.top, 12)
+                    
+                  
                         
                     
                 }.padding(.leading, 50)
                  .padding(.trailing, 16)
+                
+                Divider()
+                    .padding(.top, 12)
                 
             }.frame(maxWidth: .infinity)
              .contentShape(Rectangle())

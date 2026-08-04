@@ -174,11 +174,13 @@ struct CbtPostScreen: View {
     @ViewBuilder
     private var postItems: some View {
         ForEach($viewModel.state.items) { $post in
-            CbtPostView(post: $post, onClick: {}, onOptionClicked: {
+            CbtPostView(post: $post, onClick: {
+                moveToComments(post: post, showKeypad: true)
+            }, onOptionClicked: {
                 viewModel.post = post
                 viewModel.state.showOptionSheet = true
             }, onCommentClicked: {
-                
+                moveToComments(post: post, showKeypad: true)
             }, onLikeClicked: {
                 
                 let postBody = PostBody(post_id: post.id, email: UserSettings.email ?? "")
@@ -192,6 +194,10 @@ struct CbtPostScreen: View {
         }
 
         paginationFooter
+    }
+    
+    private func moveToComments(post: Post, showKeypad: Bool){
+        navVm.navigate(route: .commentScreen(post: post, postId: post.id, showKeyPad: showKeypad))
     }
     
     

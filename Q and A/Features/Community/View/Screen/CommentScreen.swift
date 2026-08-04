@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CommentScreen: View {
     
-    @Binding var post: Post?
+    let post: Post?
+    @State var postState: Post? = nil
     let postId: String
     let showKeyPad: Bool
     @StateObject private var viewModel = CommentViewModel()
@@ -22,29 +23,39 @@ struct CommentScreen: View {
                 
                 
                 VStack{
-                    ScrollView {
-                        LazyVStack(spacing: 15) {
-                            
-                            if post != nil {
-                                CommentPostView(
-                                    post: Binding(
-                                        get: { post! },
-                                        set: { post = $0 }
-                                    ),
-                                    onLikeClicked: {}
-                                ).padding(.horizontal, 16)
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            LazyVStack(spacing: 15) {
+                                
+                                if postState != nil {
+                                    CommentPostView(
+                                        post: Binding(
+                                            get: { postState! },
+                                            set: { postState = $0 }
+                                        ),
+                                        onLikeClicked: {}
+                                    ).padding(.horizontal, 16)
+                                }
+                                
+                                Rectangle()
+                                    .fill(Color("FaintGrey"))
+                                    .frame(height: 1)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.top,8)
+                                    .id("content")
+                                
+                                
+                                content
+                                    
                             }
                             
-                            Rectangle()
-                                .fill(Color("FaintGrey"))
-                                .frame(height: 1)
-                                .frame(maxWidth: .infinity)
-                                .padding(.top,8)
+                        }.onAppear{
+                            if(showKeyPad){
+                                scrollToContent(proxy: proxy)
+                                postState = post
+                            }
                             
-                            
-                            content
                         }
-                        
                     }
                     
                     Spacer()
@@ -82,20 +93,34 @@ struct CommentScreen: View {
                     
                     
                 }
+        }.onAppear{
+            
+            if(showKeyPad){
+                
+                
+                
+            }
+            
         }
         
         
       
     }
     
+    func scrollToContent(proxy: ScrollViewProxy){
+        DispatchQueue.main.async {
+            proxy.scrollTo("content", anchor: .bottom)
+              }
+    }
+    
     
     @ViewBuilder
     private var content: some View {
         
-        ZStack{
+        
             
             if viewModel.state.isLoading && viewModel.state.items.isEmpty {
-                initialLoadingView
+                initialLoadingView.padding(.horizontal,16)
                 
             } else if let error = viewModel.state.errorMessage, viewModel.state.items.isEmpty {
                 
@@ -104,7 +129,7 @@ struct CommentScreen: View {
                     Task { await viewModel.refresh(postId: postId, buyerEmail: UserSettings.email ?? "")
                         
                     }
-                })
+                }).padding(.horizontal,16)
                 
                 
                 
@@ -116,14 +141,15 @@ struct CommentScreen: View {
                     .font(AppFont.regular(14))
                     .foregroundColor(Color("empty"))
                     .padding(.top,40)
+                    .padding(.horizontal,16)
+                
                 
                 
             } else {
-                commentItems
+                commentItems.padding(.horizontal,16)
             }
             
-        }.frame(maxWidth: .infinity)
-            .padding(.horizontal,16)
+        
         
         
       
@@ -186,6 +212,13 @@ struct CommentScreen: View {
         }
     }
     
+    
+    func scrollToBottom(proxy: ScrollViewProxy){
+        DispatchQueue.main.async {
+                  proxy.scrollTo("bottom", anchor: .bottom)
+              }
+    }
+    
 }
     
     
@@ -196,7 +229,7 @@ struct CommentScreen: View {
     
     struct CommentScreenPreviewWrapper: View{
         
-        @State var post: Post?
+        var post: Post
         let postId: String
         
         init(post: Post, postId: String) {
@@ -205,7 +238,7 @@ struct CommentScreen: View {
         }
         
         var body: some View {
-            CommentScreen(post: $post, postId: postId, showKeyPad: true)
+            CommentScreen(post: post, postId: postId, showKeyPad: true)
         }
         
         
