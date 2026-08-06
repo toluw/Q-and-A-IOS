@@ -30,6 +30,8 @@
 		F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E42FA8EB8600934BF7 /* MultipleExamsResponse.swift */; };
 		F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */; };
 		F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */; };
+		F522B2923024ACBF008F4D3A /* LikeCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522B2913024ACBF008F4D3A /* LikeCommentBody.swift */; };
+		F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F522B2933024AFED008F4D3A /* SinglePostResponse.swift */; };
 		F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FD2F70374600BF414A /* IntroBottomCard.swift */; };
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
@@ -45,6 +47,8 @@
 		F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88C2FE28BD9007C3494 /* TabItem.swift */; };
 		F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E88E2FE29753007C3494 /* CustomTabBar.swift */; };
 		F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529E8902FE2AD82007C3494 /* MultipleResultView.swift */; };
+		F52D7AEC3023406000770425 /* CreateCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52D7AEB3023406000770425 /* CreateCommentBody.swift */; };
+		F52D7AEE3023463300770425 /* UpdateCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52D7AED3023463300770425 /* UpdateCommentBody.swift */; };
 		F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268CA2FC460D70016CD4F /* CatScreen.swift */; };
 		F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */; };
 		F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268D02FC464940016CD4F /* CatViewModel.swift */; };
@@ -98,6 +102,7 @@
 		F5568EEE2FFD468E00C72A55 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5568EED2FFD468E00C72A55 /* YouTubePlayerKit */; };
 		F5568EF02FFD472F00C72A55 /* YoutubePlayerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5568EEF2FFD472F00C72A55 /* YoutubePlayerScreen.swift */; };
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
+		F55951EA30238E6A00C8AF67 /* DeleteCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */; };
 		F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BBDC92F9386700059A0DB /* CartView.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -350,6 +355,8 @@
 		F51E11E42FA8EB8600934BF7 /* MultipleExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExamsResponse.swift; sourceTree = "<group>"; };
 		F51E11E62FA8EC4D00934BF7 /* MultipleExamsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExamsBody.swift; sourceTree = "<group>"; };
 		F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleExam.swift; sourceTree = "<group>"; };
+		F522B2913024ACBF008F4D3A /* LikeCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCommentBody.swift; sourceTree = "<group>"; };
+		F522B2933024AFED008F4D3A /* SinglePostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePostResponse.swift; sourceTree = "<group>"; };
 		F526A7FD2F70374600BF414A /* IntroBottomCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroBottomCard.swift; sourceTree = "<group>"; };
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
@@ -365,6 +372,8 @@
 		F529E88C2FE28BD9007C3494 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		F529E88E2FE29753007C3494 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F529E8902FE2AD82007C3494 /* MultipleResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleResultView.swift; sourceTree = "<group>"; };
+		F52D7AEB3023406000770425 /* CreateCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentBody.swift; sourceTree = "<group>"; };
+		F52D7AED3023463300770425 /* UpdateCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommentBody.swift; sourceTree = "<group>"; };
 		F53268CA2FC460D70016CD4F /* CatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScreen.swift; sourceTree = "<group>"; };
 		F53268CC2FC460F30016CD4F /* TheoryCatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryCatScreen.swift; sourceTree = "<group>"; };
 		F53268D02FC464940016CD4F /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
@@ -417,6 +426,7 @@
 		F5568EEA2FFD374F00C72A55 /* RowButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowButtonStyle.swift; sourceTree = "<group>"; };
 		F5568EEF2FFD472F00C72A55 /* YoutubePlayerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayerScreen.swift; sourceTree = "<group>"; };
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
+		F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCommentBody.swift; sourceTree = "<group>"; };
 		F55BBDC92F9386700059A0DB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -730,6 +740,11 @@
 				F5A801B93020D9C500005296 /* Comment.swift */,
 				F5285A083021E99A002268D5 /* ForumCommentResponse.swift */,
 				F5285A0A3021F04B002268D5 /* CommentState.swift */,
+				F52D7AEB3023406000770425 /* CreateCommentBody.swift */,
+				F52D7AED3023463300770425 /* UpdateCommentBody.swift */,
+				F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */,
+				F522B2913024ACBF008F4D3A /* LikeCommentBody.swift */,
+				F522B2933024AFED008F4D3A /* SinglePostResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1624,6 +1639,7 @@
 				F5B100FD2FD5D32F00B924EF /* MockExamResult.swift in Sources */,
 				F5288E752FF51E7C0071E448 /* ExamPracticeView.swift in Sources */,
 				F5A32EC62FB0C2D5001023A4 /* CartItemView.swift in Sources */,
+				F55951EA30238E6A00C8AF67 /* DeleteCommentBody.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F5D0BF00300A1F350036E377 /* CommunityService.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
@@ -1635,6 +1651,7 @@
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
+				F52D7AEC3023406000770425 /* CreateCommentBody.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
 				F5899FE6300FA229005FF391 /* DeletePostBody.swift in Sources */,
 				F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */,
@@ -1694,6 +1711,7 @@
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
 				F50018483001474F00E98437 /* InstructionCallout.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
+				F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,
@@ -1775,7 +1793,9 @@
 				F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */,
 				F55021482F82FC8F0057C2F0 /* ViewExtension.swift in Sources */,
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
+				F52D7AEE3023463300770425 /* UpdateCommentBody.swift in Sources */,
 				F5568EE72FFD339E00C72A55 /* VideoRow.swift in Sources */,
+				F522B2923024ACBF008F4D3A /* LikeCommentBody.swift in Sources */,
 				F54578DB2FC84F32008FF056 /* IntExtensions.swift in Sources */,
 				F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */,
 				F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */,

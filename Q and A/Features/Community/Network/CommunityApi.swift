@@ -13,6 +13,8 @@ enum CommunityApi{
     
     case getPost(examId: String, questionId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
     
+    case getPostById(id: String, buyerEmail: String)
+    
     case getComment(postId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
     
     case likePost(postBody: PostBody)
@@ -23,6 +25,14 @@ enum CommunityApi{
     
     
     case updatePost(updatePostBody: UpdatePostBody)
+    
+    case createComment(createCommentBody: CreateCommentBody)
+    
+    case updateComment(updateCommentBody: UpdateCommentBody)
+    
+    case deleteComment(deleteCommentBody: DeleteCommentBody)
+    
+    case likeComment(likeCommentBody: LikeCommentBody)
     
     
     
@@ -44,12 +54,22 @@ extension CommunityApi: TargetType{
             return "v2/like_post.php"
         case .deletePost:
             return "v2/delete_cbt_post.php"
-        case .createPost(createPostBody: let createPostBody):
+        case .createPost:
             return "v2/create_post.php"
-        case .updatePost(updatePostBody: let updatePostBody):
+        case .updatePost:
             return "v2/update_cbt_post.php"
         case .getComment:
             return "v2/get_cbt_comment.php"
+        case .createComment:
+           return "v2/create_cbt_comment.php"
+        case .updateComment:
+            return "v2/update_cbt_comment.php"
+        case .deleteComment:
+            return "v2/delete_cbt_comment.php"
+        case .likeComment(likeCommentBody: let likeCommentBody):
+            return "v2/like_comment.php"
+        case .getPostById:
+            return "v2/get_post_by_id.php"
         }
     }
     
@@ -64,10 +84,20 @@ extension CommunityApi: TargetType{
             .post
         case .createPost:
             .post
-        case .updatePost(updatePostBody: let updatePostBody):
+        case .updatePost:
             .post
         case .getComment:
-                .get
+            .get
+        case .createComment:
+            .post
+        case .updateComment:
+            .post
+        case .deleteComment:
+            .post
+        case .likeComment:
+            .post
+        case .getPostById:
+            .get
         }
     }
     
@@ -91,6 +121,18 @@ extension CommunityApi: TargetType{
                     encoding: URLEncoding.queryString
                 )
                 
+            }
+            
+        case .getPostById(id: let id, buyerEmail: let buyerEmail):
+            do{
+                var params: [String: Any] = [:]
+                params.addOptional(key: "id", value: id)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
             }
             
         case .getComment(postId: let postId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
@@ -118,6 +160,15 @@ extension CommunityApi: TargetType{
             return .requestJSONEncodable(createPostBody)
         case .updatePost(updatePostBody: let updatePostBody):
             return .requestJSONEncodable(updatePostBody)
+        
+        case .createComment(createCommentBody: let createCommentBody):
+            return .requestJSONEncodable(createCommentBody)
+        case .updateComment(updateCommentBody: let updateCommentBody):
+            return .requestJSONEncodable(updateCommentBody)
+        case .deleteComment(deleteCommentBody: let deleteCommentBody):
+            return .requestJSONEncodable(deleteCommentBody)
+        case .likeComment(likeCommentBody: let likeCommentBody):
+            return .requestJSONEncodable(likeCommentBody)
         
         }
     }

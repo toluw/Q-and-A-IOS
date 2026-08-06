@@ -12,6 +12,8 @@ class CommentViewModel: ObservableObject{
     
     @Published var state = CommentState()
     
+    @Published var postState: Post? = nil
+    
     var comment: Comment? = nil
     
     private let service: CommunityServiceProtocol
@@ -52,6 +54,110 @@ class CommentViewModel: ObservableObject{
         await fetch(postId: postId, buyerEmail: buyerEmail, page: state.currentPage + 1, isRefresh: false)
     }
     
+    
+    func updateComment(updateCommentBody: UpdateCommentBody, postId: String, buyerEmail: String){
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+                let response = try await service.updateComment(updateCommentBody: updateCommentBody)
+                state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                await refresh(postId: postId, buyerEmail: buyerEmail)
+            }catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.updateComment(updateCommentBody: updateCommentBody, postId: postId, buyerEmail: buyerEmail)
+                })
+            }
+        }
+    }
+    
+    func likePost(postBody: PostBody){
+    
+        Task{
+            do{
+                let response =   try await service.likePost(postBody: postBody)
+            } catch {
+                
+            }
+    }
+}
+    
+    
+    func deleteComment(deleteCommentBody: DeleteCommentBody, postId: String, buyerEmail: String){
+        
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+                let response = try await service.deleteComment(deleteCommentBody: deleteCommentBody)
+                state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Post Deleted Successfully", type: .success)
+                await refresh(postId: postId, buyerEmail: buyerEmail)
+                
+            } catch{
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.deleteComment(deleteCommentBody: deleteCommentBody, postId: postId, buyerEmail: buyerEmail)
+                })
+                
+            }
+            
+        }
+        
+    }
+    
+    func likeComment(likeCommentBody: LikeCommentBody){
+        
+        Task{
+            
+            do{
+               
+                let response = try await service.likeComment(likeCommentBody: likeCommentBody)
+                
+            }catch{
+                
+            }
+            
+        }
+    }
+    
+    func getPostById(postId: String, email: String){
+        Task{
+            
+            do{
+               
+                postState = try await service.getPostById(id: postId, buyerEmail: email).data
+                
+            }catch{
+                
+            }
+            
+        }
+    }
+    
+    
+    func createComment(createCommentBody: CreateCommentBody, postId: String, buyerEmail: String){
+        state.showBlockedLoader = true
+        
+        Task{
+            
+            do{
+                let response = try await service.createComment(createCommentBody: createCommentBody)
+                state.showBlockedLoader = false
+                state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                await refresh(postId: postId, buyerEmail: buyerEmail)
+            }catch {
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.createComment(createCommentBody: createCommentBody, postId: postId, buyerEmail: buyerEmail)
+                })
+            }
+        }
+    }
     
     
     

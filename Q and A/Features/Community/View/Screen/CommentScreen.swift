@@ -10,7 +10,7 @@ import SwiftUI
 struct CommentScreen: View {
     
     let post: Post?
-    @State var postState: Post? = nil
+    
     let postId: String
     let showKeyPad: Bool
     @StateObject private var viewModel = CommentViewModel()
@@ -19,21 +19,29 @@ struct CommentScreen: View {
     var body: some View {
         ZStack{
             
-            VStack{
-                
+        
                 
                 VStack{
                     ScrollViewReader { proxy in
                         ScrollView {
                             LazyVStack(spacing: 15) {
                                 
-                                if postState != nil {
+                                if viewModel.postState != nil {
                                     CommentPostView(
                                         post: Binding(
-                                            get: { postState! },
-                                            set: { postState = $0 }
+                                            get: { viewModel.postState! },
+                                            set: { viewModel.postState = $0 }
                                         ),
-                                        onLikeClicked: {}
+                                        onLikeClicked: {
+                                            
+                                            let postBody = PostBody(post_id: postId, email: UserSettings.email ?? "")
+                                            
+                                            viewModel.likePost(postBody: postBody)
+                                            
+                                        }
+                                            
+                                            
+                                            
                                     ).padding(.horizontal, 16)
                                 }
                                 
@@ -52,7 +60,12 @@ struct CommentScreen: View {
                         }.onAppear{
                             if(showKeyPad){
                                 scrollToContent(proxy: proxy)
-                                postState = post
+                                if(post != nil){
+                                    viewModel.postState = post
+                                }else{
+                                    viewModel.getPostById(postId: postId, email: UserSettings.email ?? "")
+                                }
+                                
                             }
                             
                         }
@@ -60,9 +73,35 @@ struct CommentScreen: View {
                     
                     Spacer()
                     
+                    SocialPostInputView(text: $viewModel.state.content, label: "Add Comment", requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
+                       
+                        
+                        if(viewModel.state.isEdit){
+                            
+                            let updateCommentBody = UpdateCommentBody(content: text, comment_id: viewModel.comment?.id ?? "", image: base64Image)
+                            
+                            viewModel.updateComment(updateCommentBody: updateCommentBody, postId: postId, buyerEmail: UserSettings.email ?? "")
+                            
+                            
+                        }else{
+                            
+                            let createCommentBody = CreateCommentBody(post_id: postId, email: UserSettings.email ?? "", content: text, image: base64Image)
+                            
+                            viewModel.createComment(createCommentBody: createCommentBody, postId: postId, buyerEmail: UserSettings.email ?? "")
+                            
+                            
+                        }
+                        
+                        viewModel.state.content = ""
+                        viewModel.state.isEdit = false
+                        
+                        
+                        
+                    })
+                    
                     
                 }.frame(maxWidth: .infinity)
-                    .background(Color("post_bg"))
+                    
                     
                 
                 if(viewModel.state.showBlockedLoader){
@@ -75,33 +114,61 @@ struct CommentScreen: View {
                         .cornerRadius(10)
                 }
                 
-                
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .refreshable {
-                    await viewModel.refresh(postId: postId, buyerEmail: UserSettings.email ?? "")
-                }
-                .task {
-                    await viewModel.loadInitial(postId: postId, buyerEmail: UserSettings.email ?? "")
-                }
-                .toastBanner(toast: $viewModel.state.responseMessage)
-                .toolbar {
+                if(viewModel.state.showOptionSheet){
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            viewModel.state.showOptionSheet = false
+                        }
                     
-                    // Title
-                    ToolbarItem(placement: .principal) {
-                        Text("Post").font(AppFont.regular(18))
+                    VStack{
+                        
+                       Spacer()
+                        
+                        OptionBottomSheet(items: [EDIT,DELETE], onItemClicked: {option in
+                            viewModel.state.showOptionSheet = false
+                            if(option == EDIT){
+                                viewModel.state.isEdit = true
+                                viewModel.state.requestFocus = true
+                                viewModel.state.content = viewModel.comment?.content ?? ""
+                                
+                            }else if(option == DELETE){
+                                
+                                deleteComment()
+                            }
+                            
+                            
+                        })
+                        .transition(.scale)
+                        
                     }
-                    
+
                     
                 }
-        }.onAppear{
-            
-            if(showKeyPad){
                 
+                
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .refreshable {
+                await viewModel.refresh(postId: postId, buyerEmail: UserSettings.email ?? "")
+            }
+            .task {
+                await viewModel.loadInitial(postId: postId, buyerEmail: UserSettings.email ?? "")
+            }
+            .toastBanner(toast: $viewModel.state.responseMessage)
+            .toolbar {
+                
+                // Title
+                ToolbarItem(placement: .principal) {
+                    Text("Post").font(AppFont.regular(18))
+                }
                 
                 
             }
-            
-        }
+        .background(Color("post_bg"))
+        
+        
         
         
       
@@ -163,11 +230,13 @@ struct CommentScreen: View {
             CommentView(comment: $comment, onClick: {
                 
             }, onOptionClicked: {
-                
+                viewModel.comment = comment
+                viewModel.state.showOptionSheet = true
             }, onReplyClicked: {
                 
             }, onLikeClicked: {
-                
+                let likeCommentBody = LikeCommentBody(comment_id: comment.id, email: UserSettings.email ?? "")
+                viewModel.likeComment(likeCommentBody: likeCommentBody)
             })
             .task {
                 await viewModel.loadMoreIfNeeded(postId: postId, buyerEmail: UserSettings.email ?? "", currentItem: comment)
@@ -217,6 +286,23 @@ struct CommentScreen: View {
         DispatchQueue.main.async {
                   proxy.scrollTo("bottom", anchor: .bottom)
               }
+    }
+    
+    
+    func deleteComment(){
+        showErrorMessage(message: "Are you sure you want to delete this comment" , actionTitle: "Delete", showCancel: true, action: {
+            
+            if let comment = viewModel.comment{
+                
+                let deleteCommentBody = DeleteCommentBody(comment_id: comment.id, reason: "", is_admin: false)
+                
+                viewModel.deleteComment(deleteCommentBody: deleteCommentBody, postId: postId, buyerEmail: UserSettings.email ?? "")
+                
+               
+                
+            }
+            
+        })
     }
     
 }
