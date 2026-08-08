@@ -114,6 +114,9 @@
 		F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1D92FAB664A0042902F /* ExamPayView.swift */; };
 		F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DB2FAB92EE0042902F /* SecondaryButton.swift */; };
 		F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DD2FAB94930042902F /* PaymentButton.swift */; };
+		F56EA61A302724E00092972D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA619302724E00092972D /* Quote.swift */; };
+		F56EA61C302725A70092972D /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61B302725A70092972D /* Reply.swift */; };
+		F56EA61E302727E70092972D /* ReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61D302727E70092972D /* ReplyView.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
 		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
@@ -438,6 +441,9 @@
 		F56CD1D92FAB664A0042902F /* ExamPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPayView.swift; sourceTree = "<group>"; };
 		F56CD1DB2FAB92EE0042902F /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		F56CD1DD2FAB94930042902F /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
+		F56EA619302724E00092972D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		F56EA61B302725A70092972D /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		F56EA61D302727E70092972D /* ReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyView.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
@@ -745,6 +751,8 @@
 				F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */,
 				F522B2913024ACBF008F4D3A /* LikeCommentBody.swift */,
 				F522B2933024AFED008F4D3A /* SinglePostResponse.swift */,
+				F56EA619302724E00092972D /* Quote.swift */,
+				F56EA61B302725A70092972D /* Reply.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1227,6 +1235,7 @@
 				F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */,
 				F5A801B53020BFD100005296 /* CommentPostView.swift */,
 				F5A801B73020D95E00005296 /* CommentView.swift */,
+				F56EA61D302727E70092972D /* ReplyView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1503,6 +1512,7 @@
 			files = (
 				F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */,
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
+				F56EA61C302725A70092972D /* Reply.swift in Sources */,
 				F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */,
 				F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */,
 				F5D0BEF73008D3630036E377 /* SocialPostInputView.swift in Sources */,
@@ -1511,6 +1521,7 @@
 				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
+				F56EA61A302724E00092972D /* Quote.swift in Sources */,
 				F5E9B3C22FEAC5AF00B98FCB /* GoToReviewState.swift in Sources */,
 				F5E9B3BE2FE98BC800B98FCB /* GoToReviewItemView.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
@@ -1783,6 +1794,7 @@
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
 				F59D328A2F90EB330045C4AA /* ParentCatViewModel.swift in Sources */,
 				F50565A12FF6D6D000A89ACB /* ReviewExplanationScreen.swift in Sources */,
+				F56EA61E302727E70092972D /* ReplyView.swift in Sources */,
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
