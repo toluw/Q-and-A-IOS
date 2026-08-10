@@ -67,6 +67,37 @@ struct ReplyScreen: View {
                     
                 }
                 
+                Spacer()
+                
+                SocialPostInputView(text: $viewModel.state.content, label: viewModel.state.label, quote: viewModel.state.quote, requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
+                    
+                    
+                    if(viewModel.state.isEdit){
+                        
+                        let updateReplyBody = UpdateReplyBody(reply_id: viewModel.reply?.id ?? "", content: text, image: base64Image)
+                        
+                        viewModel.updateReply(updateReplyBody: updateReplyBody, commentId: commentId, buyerEmail: UserSettings.email ?? "")
+                        
+                        
+                        
+                    }else{
+                        
+                        let createReplyBody = CreateReplyBody(comment_id: commentId, email: UserSettings.email ?? "", content: text, image: base64Image, quote_id: viewModel.state.quote?.id ?? "0")
+                        
+                       
+                        viewModel.createReply(createReplyBody: createReplyBody, commentId: commentId, buyerEmail: UserSettings.email ?? "")
+                        
+                        
+                    }
+                    
+                    viewModel.state.content = ""
+                    viewModel.state.isEdit = false
+                    
+                    
+                    
+                },
+                onCloseQuote: {})
+                
             }
             
             if(viewModel.state.showOptionSheet){
@@ -183,12 +214,15 @@ struct ReplyScreen: View {
                 
                 viewModel.reply = reply
                 viewModel.state.showOptionSheet = true
-                viewModel.state.requestFocus = true
+                
                 
             }, onReplyClicked: {
                 
                 viewModel.state.quote = reply
                 viewModel.state.label = "Reply \(reply.user.name)"
+                viewModel.state.content = ""
+                viewModel.state.requestFocus = true
+                viewModel.state.isEdit = false
                 
                 
             }, onLikeClicked: {
