@@ -9,7 +9,6 @@ import Foundation
 
 struct CreateReplyBody: Codable{
     
-    
     let comment_id: String
     let email: String
     let content: String

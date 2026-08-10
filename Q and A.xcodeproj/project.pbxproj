@@ -137,6 +137,7 @@
 		F58CE9AE3029D39100D1722B /* ReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AD3029D39100D1722B /* ReplyViewModel.swift */; };
 		F58CE9B03029D47200D1722B /* ReplyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AF3029D47200D1722B /* ReplyState.swift */; };
 		F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */; };
+		F58CE9B4302A01FB00D1722B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9B3302A01FB00D1722B /* QuoteView.swift */; };
 		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
@@ -474,6 +475,7 @@
 		F58CE9AD3029D39100D1722B /* ReplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewModel.swift; sourceTree = "<group>"; };
 		F58CE9AF3029D47200D1722B /* ReplyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReplyState.swift; path = "Q and A/Features/Community/ViewModel/ReplyState.swift"; sourceTree = SOURCE_ROOT; };
 		F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCommentResponse.swift; sourceTree = "<group>"; };
+		F58CE9B3302A01FB00D1722B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
@@ -1265,6 +1267,7 @@
 				F5A801B73020D95E00005296 /* CommentView.swift */,
 				F56EA61D302727E70092972D /* ReplyView.swift */,
 				F5394D933027529200187254 /* ReplyCommentView.swift */,
+				F58CE9B3302A01FB00D1722B /* QuoteView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1731,6 +1734,7 @@
 				F51E11E72FA8EC4D00934BF7 /* MultipleExamsBody.swift in Sources */,
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */,
+				F58CE9B4302A01FB00D1722B /* QuoteView.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
