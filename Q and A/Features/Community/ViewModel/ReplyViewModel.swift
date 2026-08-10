@@ -16,7 +16,7 @@ class ReplyViewModel: ObservableObject{
     
     @Published var commentState: Comment? = nil
     
-    var comment: Reply? = nil
+    var reply: Reply? = nil
     
     private let service: CommunityServiceProtocol
     
@@ -44,7 +44,7 @@ class ReplyViewModel: ObservableObject{
     }
 
     /// Triggered automatically as the user scrolls near the end of the list.
-    func loadMoreIfNeeded(commentId: String, buyerEmail: String, currentItem: Comment) async {
+    func loadMoreIfNeeded(commentId: String, buyerEmail: String, currentItem: Reply) async {
         guard let last = state.items.last, last.id == currentItem.id else { return }
         await loadMore(commentId: commentId, buyerEmail: buyerEmail)
     }

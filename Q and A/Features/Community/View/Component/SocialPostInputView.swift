@@ -11,6 +11,7 @@ struct SocialPostInputView: View {
     
     @Binding var text: String
     let label: String
+    let quote: Reply?
     
     @Binding var requestFocus: Bool
     
@@ -26,6 +27,7 @@ struct SocialPostInputView: View {
     @FocusState private var isTextFocused: Bool
 
     let onSubmit: (_ text: String, _ imageBase64: String?) -> Void
+    let onCloseQuote: () -> Void
 
     private var canSubmit: Bool {
            !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -36,6 +38,13 @@ struct SocialPostInputView: View {
                
                Divider()
                    .background(LessonColor.border)
+               
+               
+               if let replyQuote = quote{
+                   
+                   QuoteView(name: replyQuote.user.name, content: replyQuote.content, onClose: onCloseQuote)
+                   
+               }
 
                TextEditor(text: $text)
                    .focused($isTextFocused)
@@ -209,7 +218,7 @@ struct SocialPostInputPreviewWrapper: View {
 
     var body: some View{
         
-        SocialPostInputView(text: $text, label: label, requestFocus: $requestFocus, onSubmit: {text, tx in} )
+        SocialPostInputView(text: $text, label: label, quote: Reply.preview, requestFocus: $requestFocus, onSubmit: {text, tx in}, onCloseQuote: {} )
         
     }
     

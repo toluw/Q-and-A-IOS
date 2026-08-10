@@ -47,7 +47,7 @@ struct QuoteView: View {
                     .renderingMode(.template)
                     .foregroundStyle(.red)
                     .padding(.top, 15)
-                    .padding(.trailing, 8)
+                    .padding(.trailing, 14)
                     .contentShape(Rectangle())
                 
                 

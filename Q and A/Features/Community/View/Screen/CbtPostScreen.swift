@@ -35,7 +35,7 @@ struct CbtPostScreen: View {
                 
                 Spacer()
                 
-                SocialPostInputView(text: $viewModel.state.content, label: "Join the conversation..", requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
+                SocialPostInputView(text: $viewModel.state.content, label: "Join the conversation..", quote: nil, requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
                    
                     
                     if(viewModel.state.isEdit){
@@ -57,7 +57,7 @@ struct CbtPostScreen: View {
                     
                     
                     
-                })
+                }, onCloseQuote: {})
             }
             .frame(maxWidth: .infinity)
             .background(Color("post_bg"))

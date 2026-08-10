@@ -27,6 +27,10 @@ struct ReplyState{
     var isEdit: Bool = false
     var content:String = ""
     
+    var quote: Reply? = nil
+    
+    var label: String = "Add Reply"
+    
     var responseMessage: ToastData? = nil
 
     // Load-more (next page) — kept separate so a load-more failure

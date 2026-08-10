@@ -60,21 +60,24 @@ struct CommentScreen: View {
                         }.onAppear{
                             if(showKeyPad){
                                 scrollToContent(proxy: proxy)
+                                
+                            }
+                                
                                 if(post != nil){
                                     viewModel.postState = post
                                 }else{
                                     viewModel.getPostById(postId: postId, email: UserSettings.email ?? "")
                                 }
                                 
-                            }
+                            
                             
                         }
                     }
                     
                     Spacer()
                     
-                    SocialPostInputView(text: $viewModel.state.content, label: "Add Comment", requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
-                       
+                    SocialPostInputView(text: $viewModel.state.content, label: "Add Comment", quote: nil, requestFocus: $viewModel.state.requestFocus, onSubmit: {text, base64Image in
+                        
                         
                         if(viewModel.state.isEdit){
                             
@@ -97,7 +100,8 @@ struct CommentScreen: View {
                         
                         
                         
-                    })
+                    },
+                    onCloseQuote: {})
                     
                     
                 }.frame(maxWidth: .infinity)
