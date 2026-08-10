@@ -15,7 +15,11 @@ enum CommunityApi{
     
     case getPostById(id: String, buyerEmail: String)
     
+    case getCommentById(id: String, buyerEmail: String)
+    
     case getComment(postId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
+    
+    case getReply(commentId: String, buyerEmail: String, page: String, pageSize: String = String(PAGE_SIZE))
     
     case likePost(postBody: PostBody)
     
@@ -26,6 +30,7 @@ enum CommunityApi{
     
     case updatePost(updatePostBody: UpdatePostBody)
     
+    
     case createComment(createCommentBody: CreateCommentBody)
     
     case updateComment(updateCommentBody: UpdateCommentBody)
@@ -33,6 +38,16 @@ enum CommunityApi{
     case deleteComment(deleteCommentBody: DeleteCommentBody)
     
     case likeComment(likeCommentBody: LikeCommentBody)
+    
+    
+    case createReply(createReplyBody: CreateReplyBody)
+    case updateReply(updateReplyBody: UpdateReplyBody)
+    case deleteReply(deleteReplyBody: DeleteReplyBody)
+    case likeReply(likeReplyBody: LikeReplyBody)
+    
+    
+    
+    
     
     
     
@@ -66,10 +81,22 @@ extension CommunityApi: TargetType{
             return "v2/update_cbt_comment.php"
         case .deleteComment:
             return "v2/delete_cbt_comment.php"
-        case .likeComment(likeCommentBody: let likeCommentBody):
+        case .likeComment:
             return "v2/like_comment.php"
         case .getPostById:
             return "v2/get_post_by_id.php"
+        case .getReply:
+            return "v2/get_cbt_reply.php"
+        case .createReply:
+           return "v2/create_cbt_reply.php"
+        case .updateReply:
+            return "v2/update_cbt_reply.php"
+        case .deleteReply:
+            return "v2/delete_cbt_reply.php"
+        case .likeReply:
+            return "v2/like_reply.php"
+        case .getCommentById:
+            return "v2/get_comment_by_id.php"
         }
     }
     
@@ -98,6 +125,18 @@ extension CommunityApi: TargetType{
             .post
         case .getPostById:
             .get
+        case .getReply:
+            .get
+        case .createReply:
+                .post
+        case .updateReply:
+            .post
+        case .deleteReply:
+            .post
+        case .likeReply:
+            .post
+        case .getCommentById:
+            .get
         }
     }
     
@@ -121,6 +160,18 @@ extension CommunityApi: TargetType{
                     encoding: URLEncoding.queryString
                 )
                 
+            }
+            
+        case .getCommentById(id: let id, buyerEmail: let buyerEmail):
+            do{
+                var params: [String: Any] = [:]
+                params.addOptional(key: "id", value: id)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
             }
             
         case .getPostById(id: let id, buyerEmail: let buyerEmail):
@@ -170,6 +221,31 @@ extension CommunityApi: TargetType{
         case .likeComment(likeCommentBody: let likeCommentBody):
             return .requestJSONEncodable(likeCommentBody)
         
+        case .getReply(commentId: let commentId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
+            do {
+                
+                var params: [String: Any] = [:]
+                params.addOptional(key: "comment_id", value: commentId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "page", value: page)
+                params.addOptional(key: "page_size", value: pageSize)
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
+        case .createReply(createReplyBody: let createReplyBody):
+            return .requestJSONEncodable(createReplyBody)
+        case .updateReply(updateReplyBody: let updateReplyBody):
+            return .requestJSONEncodable(updateReplyBody)
+        case .deleteReply(deleteReplyBody: let deleteReplyBody):
+            return .requestJSONEncodable(deleteReplyBody)
+        case .likeReply(likeReplyBody: let likeReplyBody):
+            return .requestJSONEncodable(likeReplyBody)
+       
         }
     }
     

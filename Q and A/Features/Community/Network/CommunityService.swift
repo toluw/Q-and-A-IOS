@@ -11,7 +11,9 @@ protocol CommunityServiceProtocol{
     
     func getPost(examId: String, questionId: String, buyerEmail: String, page: String) async throws -> PostResponse
     func getPostById(id: String, buyerEmail: String) async throws -> SinglePostResponse
+    func getCommentById(id: String, buyerEmail: String) async throws -> SingleCommentResponse
     func getComment(postId: String, buyerEmail: String, page: String) async throws -> ForumCommentResponse
+    func getReply(commentId: String, buyerEmail: String, page: String) async throws -> ForumReplyResponse
     func likePost(postBody: PostBody) async throws -> GeneralResponse
     func deletePost(deletePostBody: DeletePostBody) async throws -> GeneralResponse
     func createPost(createPostBody: CreatePostBody) async throws -> GeneralResponse
@@ -20,14 +22,64 @@ protocol CommunityServiceProtocol{
     func updateComment(updateCommentBody: UpdateCommentBody) async throws -> GeneralResponse
     func deleteComment(deleteCommentBody: DeleteCommentBody) async throws -> GeneralResponse
     func likeComment(likeCommentBody: LikeCommentBody) async throws -> GeneralResponse
+    func createReply(createReplyBody: CreateReplyBody) async throws -> GeneralResponse
+    func updateReply(updateReplyBody: UpdateReplyBody) async throws -> GeneralResponse
+    func deleteReply(deleteReplyBody: DeleteReplyBody) async throws -> GeneralResponse
+    func likeReply(likeReplyBody: LikeReplyBody) async throws -> GeneralResponse
     
 }
 
 
 final class CommunityService: CommunityServiceProtocol{
    
-   
+    
+    
    private let apiClient = APIClient<CommunityApi>()
+   
+    
+    
+    func createReply(createReplyBody: CreateReplyBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .createReply(createReplyBody: createReplyBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
+    
+    func updateReply(updateReplyBody: UpdateReplyBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .updateReply(updateReplyBody: updateReplyBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
+    
+    func deleteReply(deleteReplyBody: DeleteReplyBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .deleteReply(deleteReplyBody: deleteReplyBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
+    func likeReply(likeReplyBody: LikeReplyBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .likeReply(likeReplyBody: likeReplyBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
     
     func deletePost(deletePostBody: DeletePostBody) async throws -> GeneralResponse {
         return try await apiClient.request(
@@ -134,6 +186,17 @@ final class CommunityService: CommunityServiceProtocol{
         
     }
     
+    func getCommentById(id: String, buyerEmail: String) async throws -> SingleCommentResponse {
+        return try await apiClient.request(
+            .getCommentById(id: id, buyerEmail: buyerEmail),
+            responseType: SingleCommentResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
+    
+    
     
     
     func getPost(examId: String, questionId: String, buyerEmail: String, page: String) async throws -> PostResponse {
@@ -157,6 +220,18 @@ final class CommunityService: CommunityServiceProtocol{
             }
         )
         
+    }
+    
+    
+    
+    func getReply(commentId: String, buyerEmail: String, page: String) async throws -> ForumReplyResponse {
+        return try await apiClient.request(
+            .getReply(commentId: commentId, buyerEmail: buyerEmail, page: page, pageSize: String(PAGE_SIZE)),
+            responseType: ForumReplyResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
     }
     
     

@@ -1,0 +1,45 @@
+//
+//  ReplyState.swift
+//  Q and A
+//
+//  Created by GIGL-PC on 10/08/2026.
+//
+
+import Foundation
+
+struct ReplyState{
+    
+    var showOptionSheet = false
+    
+    var showBlockedLoader = false
+    
+    var requestFocus = false
+    
+    var items: [Reply] = []
+
+    var currentPage: Int = 0
+    var totalPages: Int = 1
+
+    // Initial load / pull-to-refresh
+    var isLoading: Bool = false
+    var errorMessage: String? = nil
+    
+    var isEdit: Bool = false
+    var content:String = ""
+    
+    var responseMessage: ToastData? = nil
+
+    // Load-more (next page) — kept separate so a load-more failure
+    // never blanks out the list the user already sees.
+    var isLoadingMore: Bool = false
+    var loadMoreErrorMessage: String? = nil
+
+    var hasMorePages: Bool {
+        currentPage < totalPages
+    }
+
+    var isEmpty: Bool {
+        items.isEmpty && !isLoading && errorMessage == nil
+    }
+    
+}

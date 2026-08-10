@@ -58,6 +58,7 @@
 		F53268DB2FC468A50016CD4F /* CatExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DA2FC468A50016CD4F /* CatExamSelect.swift */; };
 		F53268DD2FC595CD0016CD4F /* CatExamItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */; };
 		F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53268DE2FC5C1860016CD4F /* PremExam.swift */; };
+		F5394D943027529200187254 /* ReplyCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5394D933027529200187254 /* ReplyCommentView.swift */; };
 		F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */; };
 		F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D62FC75465008FF056 /* ExamDescriptionView.swift */; };
 		F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */; };
@@ -127,6 +128,15 @@
 		F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE73010B69D005FF391 /* ImagePicker.swift */; };
 		F5899FEA3010D0B2005FF391 /* UpdatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */; };
 		F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FEB3010D175005FF391 /* CreatePostBody.swift */; };
+		F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A13029C5A900D1722B /* ReplyScreen.swift */; };
+		F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */; };
+		F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */; };
+		F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A73029C97600D1722B /* DeleteReplyBody.swift */; };
+		F58CE9AA3029CA0000D1722B /* LikeReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A93029CA0000D1722B /* LikeReplyBody.swift */; };
+		F58CE9AC3029D14800D1722B /* ForumReplyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AB3029D14800D1722B /* ForumReplyResponse.swift */; };
+		F58CE9AE3029D39100D1722B /* ReplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AD3029D39100D1722B /* ReplyViewModel.swift */; };
+		F58CE9B03029D47200D1722B /* ReplyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AF3029D47200D1722B /* ReplyState.swift */; };
+		F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */; };
 		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
@@ -386,6 +396,7 @@
 		F53268DA2FC468A50016CD4F /* CatExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatExamSelect.swift; sourceTree = "<group>"; };
 		F53268DC2FC595CC0016CD4F /* CatExamItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatExamItemView.swift; sourceTree = "<group>"; };
 		F53268DE2FC5C1860016CD4F /* PremExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremExam.swift; sourceTree = "<group>"; };
+		F5394D933027529200187254 /* ReplyCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentView.swift; sourceTree = "<group>"; };
 		F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionViewModel.swift; sourceTree = "<group>"; };
 		F54578D62FC75465008FF056 /* ExamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionView.swift; sourceTree = "<group>"; };
 		F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtDescriptionView.swift; sourceTree = "<group>"; };
@@ -454,6 +465,15 @@
 		F5899FE73010B69D005FF391 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostBody.swift; sourceTree = "<group>"; };
 		F5899FEB3010D175005FF391 /* CreatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostBody.swift; sourceTree = "<group>"; };
+		F58CE9A13029C5A900D1722B /* ReplyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyScreen.swift; sourceTree = "<group>"; };
+		F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReplyBody.swift; sourceTree = "<group>"; };
+		F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReplyBody.swift; sourceTree = "<group>"; };
+		F58CE9A73029C97600D1722B /* DeleteReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteReplyBody.swift; sourceTree = "<group>"; };
+		F58CE9A93029CA0000D1722B /* LikeReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeReplyBody.swift; sourceTree = "<group>"; };
+		F58CE9AB3029D14800D1722B /* ForumReplyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumReplyResponse.swift; sourceTree = "<group>"; };
+		F58CE9AD3029D39100D1722B /* ReplyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyViewModel.swift; sourceTree = "<group>"; };
+		F58CE9AF3029D47200D1722B /* ReplyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReplyState.swift; path = "Q and A/Features/Community/ViewModel/ReplyState.swift"; sourceTree = SOURCE_ROOT; };
+		F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCommentResponse.swift; sourceTree = "<group>"; };
 		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
@@ -753,6 +773,13 @@
 				F522B2933024AFED008F4D3A /* SinglePostResponse.swift */,
 				F56EA619302724E00092972D /* Quote.swift */,
 				F56EA61B302725A70092972D /* Reply.swift */,
+				F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */,
+				F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */,
+				F58CE9A73029C97600D1722B /* DeleteReplyBody.swift */,
+				F58CE9A93029CA0000D1722B /* LikeReplyBody.swift */,
+				F58CE9AB3029D14800D1722B /* ForumReplyResponse.swift */,
+				F58CE9AF3029D47200D1722B /* ReplyState.swift */,
+				F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -771,6 +798,7 @@
 			children = (
 				F5D0BF05300A28C70036E377 /* CbtPostViewModel.swift */,
 				F5285A0C3021F109002268D5 /* CommentViewModel.swift */,
+				F58CE9AD3029D39100D1722B /* ReplyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1236,6 +1264,7 @@
 				F5A801B53020BFD100005296 /* CommentPostView.swift */,
 				F5A801B73020D95E00005296 /* CommentView.swift */,
 				F56EA61D302727E70092972D /* ReplyView.swift */,
+				F5394D933027529200187254 /* ReplyCommentView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1246,6 +1275,7 @@
 				F550213C2F8291E00057C2F0 /* MainCommunityScreen.swift */,
 				F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */,
 				F5285A063021E7DF002268D5 /* CommentScreen.swift */,
+				F58CE9A13029C5A900D1722B /* ReplyScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1526,6 +1556,7 @@
 				F5E9B3BE2FE98BC800B98FCB /* GoToReviewItemView.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
+				F58CE9B03029D47200D1722B /* ReplyState.swift in Sources */,
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
 				F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
@@ -1544,6 +1575,7 @@
 				F54579012FCF14D1008FF056 /* ExamNavView.swift in Sources */,
 				F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */,
 				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
+				F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */,
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
 				F549C60D3007CA8300DE4EF0 /* DiscussionSolutionView.swift in Sources */,
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
@@ -1590,6 +1622,7 @@
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
+				F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */,
 				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
@@ -1601,6 +1634,7 @@
 				F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */,
 				F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */,
 				F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */,
+				F58CE9AA3029CA0000D1722B /* LikeReplyBody.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
@@ -1625,6 +1659,7 @@
 				F53268D92FC468000016CD4F /* CatState.swift in Sources */,
 				F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */,
 				F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */,
+				F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */,
 				F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
@@ -1731,6 +1766,7 @@
 				F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */,
 				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
+				F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
 				F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */,
@@ -1759,11 +1795,13 @@
 				F5E144F92F7FEE2A00C10F3A /* JsonExtractor.swift in Sources */,
 				F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */,
 				F596458F2FA7BDF00052C9A4 /* CbtPaymentScreen.swift in Sources */,
+				F5394D943027529200187254 /* ReplyCommentView.swift in Sources */,
 				F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */,
 				F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */,
 				F5B100F92FD5BAA600B924EF /* ExamResultBody.swift in Sources */,
 				F5E054652FB7C5940012A9CC /* PaymentData.swift in Sources */,
 				F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */,
+				F58CE9AE3029D39100D1722B /* ReplyViewModel.swift in Sources */,
 				F5568EE52FFD32BC00C72A55 /* Color.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */,
@@ -1784,11 +1822,13 @@
 				F5E1D8912F8D2DA7001F734D /* BaseCat.swift in Sources */,
 				F5E9B3C02FEAC52100B98FCB /* GoToReviewViewModel.swift in Sources */,
 				F51E11E32FA8EAAE00934BF7 /* ExamData.swift in Sources */,
+				F58CE9AC3029D14800D1722B /* ForumReplyResponse.swift in Sources */,
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
+				F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */,
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
