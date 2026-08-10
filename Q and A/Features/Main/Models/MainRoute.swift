@@ -38,5 +38,6 @@ enum MainRoute: Hashable{
     case studyNoteScreen(title: String, passage: String, passageImage: String?, passageBook: String?, passageVideo: String?)
     case cbtPostScreen(examId: String, liveExam: LiveExam?)
     case commentScreen(post: Post?, postId: String, showKeyPad: Bool)
+    case replyScreen(comment: Comment?, commentId: String, showKeyPad: Bool)
    
 }

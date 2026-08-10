@@ -14,6 +14,7 @@ struct ReplyScreen: View {
     let commentId: String
     let showKeyPad: Bool
     @StateObject private var viewModel = ReplyViewModel()
+    @ObservedObject var navVm: MainNavViewModel
     
     
     var body: some View {
@@ -301,5 +302,6 @@ struct ReplyScreen: View {
 }
 
 #Preview {
-    ReplyScreen(comment: Comment.preview, commentId: "3", showKeyPad: true)
+    ReplyScreen(comment: Comment.preview, commentId: "3", showKeyPad: true, navVm:
+    MainNavViewModel())
 }

@@ -92,7 +92,9 @@ struct MainStackView: View {
         case .cbtPostScreen(examId: let examId, liveExam: let liveExam):
             CbtPostScreen(navVm: navVM, examId: examId, liveExam: liveExam)
         case .commentScreen(post: let post, postId: let postId, showKeyPad: let showKeyPad):
-            CommentScreen(post: post, postId: postId, showKeyPad: showKeyPad)
+            CommentScreen(post: post, postId: postId, showKeyPad: showKeyPad, navVm: navVM)
+        case .replyScreen(comment: let comment, commentId: let commentId, showKeyPad: let showKeyPad):
+            ReplyScreen(comment: comment, commentId: commentId, showKeyPad: showKeyPad, navVm: navVM)
         }
     }
     

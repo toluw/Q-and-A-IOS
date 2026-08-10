@@ -14,6 +14,7 @@ struct CommentScreen: View {
     let postId: String
     let showKeyPad: Bool
     @StateObject private var viewModel = CommentViewModel()
+    @ObservedObject var navVm: MainNavViewModel
     
     
     var body: some View {
@@ -232,12 +233,12 @@ struct CommentScreen: View {
     private var commentItems: some View {
         ForEach($viewModel.state.items) { $comment in
             CommentView(comment: $comment, onClick: {
-                
+                navVm.navigate(route: .replyScreen(comment: comment, commentId: comment.id, showKeyPad: false))
             }, onOptionClicked: {
                 viewModel.comment = comment
                 viewModel.state.showOptionSheet = true
             }, onReplyClicked: {
-                
+                navVm.navigate(route: .replyScreen(comment: comment, commentId: comment.id, showKeyPad: true))
             }, onLikeClicked: {
                 let likeCommentBody = LikeCommentBody(comment_id: comment.id, email: UserSettings.email ?? "")
                 viewModel.likeComment(likeCommentBody: likeCommentBody)
@@ -328,7 +329,7 @@ struct CommentScreen: View {
         }
         
         var body: some View {
-            CommentScreen(post: post, postId: postId, showKeyPad: true)
+            CommentScreen(post: post, postId: postId, showKeyPad: true, navVm: MainNavViewModel())
         }
         
         
