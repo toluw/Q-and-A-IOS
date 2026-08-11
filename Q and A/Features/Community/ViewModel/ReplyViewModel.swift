@@ -65,7 +65,9 @@ class ReplyViewModel: ObservableObject{
             do{
                 let response = try await service.updateReply(updateReplyBody: updateReplyBody)
                 state.showBlockedLoader = false
-                state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                state.quote = nil
+                state.label = "Add Reply"
+                state.responseMessage = ToastData(message: "Your reply was successfully submitted", type: .success)
                 await refresh(commentId: commentId, buyerEmail: buyerEmail)
             }catch {
                 state.showBlockedLoader = false
@@ -97,7 +99,7 @@ class ReplyViewModel: ObservableObject{
             do{
                 let response = try await service.deleteReply(deleteReplyBody: deleteReplyBody)
                 state.showBlockedLoader = false
-                state.responseMessage = ToastData(message: "Post Deleted Successfully", type: .success)
+                state.responseMessage = ToastData(message: "Reply Deleted Successfully", type: .success)
                 await refresh(commentId: commentId, buyerEmail: buyerEmail)
                 
             } catch{
@@ -151,7 +153,9 @@ class ReplyViewModel: ObservableObject{
             do{
                 let response = try await service.createReply(createReplyBody: createReplyBody)
                 state.showBlockedLoader = false
-                state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                state.quote = nil
+                state.label = "Add Reply"
+                state.responseMessage = ToastData(message: "Your reply was successfully submitted", type: .success)
                 await refresh(commentId: commentId, buyerEmail: buyerEmail)
             }catch {
                 state.showBlockedLoader = false

@@ -34,6 +34,7 @@ class APIClient<T: TargetType> {
                 
                 switch result {
                 case .success(let response):
+                    
                     self.handleResponse(
                         response,
                         continuation: continuation,
@@ -41,6 +42,7 @@ class APIClient<T: TargetType> {
                     )
                     
                 case .failure(let error):
+                    
                     self.handleError(error, continuation: continuation)
                 }
             }
@@ -53,6 +55,10 @@ class APIClient<T: TargetType> {
             continuation: CheckedContinuation<D, Error>,
             errorParser: ((Data) -> String?)?
         ) {
+            
+            print("Status code:", response.statusCode)
+            print("Headers:", response.response?.allHeaderFields ?? [:])
+            print("Body:", String(data: response.data, encoding: .utf8) ?? "Unable to decode")
             
             // ✅ 1. Check HTTP status code FIRST
             guard (200...299).contains(response.statusCode) else {
@@ -73,6 +79,41 @@ class APIClient<T: TargetType> {
                 continuation.resume(returning: decoded)
                 
             } catch {
+                
+                print("❌ JSON DECODING ERROR")
+                    print("Error:", error)
+
+                    if let decodingError = error as? DecodingError {
+                        switch decodingError {
+
+                        case .keyNotFound(let key, let context):
+                            print("❌ KEY NOT FOUND")
+                            print("Key:", key.stringValue)
+                            print("Path:", context.codingPath.map(\.stringValue).joined(separator: " → "))
+                            print("Description:", context.debugDescription)
+
+                        case .typeMismatch(let type, let context):
+                            print("❌ TYPE MISMATCH")
+                            print("Expected:", type)
+                            print("Path:", context.codingPath.map(\.stringValue).joined(separator: " → "))
+                            print("Description:", context.debugDescription)
+
+                        case .valueNotFound(let type, let context):
+                            print("❌ VALUE NOT FOUND")
+                            print("Expected:", type)
+                            print("Path:", context.codingPath.map(\.stringValue).joined(separator: " → "))
+                            print("Description:", context.debugDescription)
+
+                        case .dataCorrupted(let context):
+                            print("❌ DATA CORRUPTED")
+                            print("Path:", context.codingPath.map(\.stringValue).joined(separator: " → "))
+                            print("Description:", context.debugDescription)
+
+                        @unknown default:
+                            print("❌ UNKNOWN DECODING ERROR")
+                        }
+                    }
+                
                 continuation.resume(throwing: AppError.decoding)
             }
         }
@@ -142,9 +183,19 @@ class APIClient<T: TargetType> {
     
     private func mapError(_ error: MoyaError) -> AppError {
         
+        if let response = error.response {
+            print("Status code:", response.statusCode)
+            print("Body:", String(data: response.data, encoding: .utf8) ?? "Unable to decode")
+        }
+               
+        if let underlyingError = error.errorUserInfo[NSUnderlyingErrorKey] as? Error {
+            print("Underlying error:", underlyingError)
+            }
+        
         switch error {
             
         case .underlying(let underlyingError, _):
+            
             
             // ✅ Step 1: Handle Alamofire AFError
             if let afError = underlyingError as? AFError {

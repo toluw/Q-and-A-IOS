@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Reply: Codable, Identifiable {
+struct Reply: Codable, Equatable, Identifiable, Hashable {
     let commentId: String
     let content: String
     let createdAt: String
@@ -23,6 +23,7 @@ struct Reply: Codable, Identifiable {
     let user: User
     let quote: Quote?
     var truncateText: Bool = true
+    
 
     enum CodingKeys: String, CodingKey {
         case commentId = "comment_id"
@@ -39,8 +40,9 @@ struct Reply: Codable, Identifiable {
         case reason
         case user
         case quote
-        case truncateText
+        
+        
     }
     
-    static let preview = Reply(commentId: "2", content: "When are you coming. I will like to meet with you. Please bring Tolu along with you. It is raining over here", createdAt: "2023-07-15 13:02:32", email: "oke@gmail.com", hasLiked: true, id: "5", image: nil, isActive: true, isEdited: true, numLikes: 4, numViews: 8, reason: "", user: User(created: "2023-07-15 13:02:32", deviceId: "495skd03", email: "oketoluwase@gmail.com", id: "19", name: "James Justin", phone: "0904050030", token: "", image: ""), quote: Quote(name: "James Justin", content: "Bring me a flavored milk and I will love you forever. Damn it"), truncateText: true)
+    static let preview = Reply(commentId: "2", content: "When are you coming. I will like to meet with you. Please bring Tolu along with you. It is raining over here", createdAt: "2023-07-15 13:02:32", email: "oke@gmail.com", hasLiked: true, id: "5", image: nil, isActive: true, isEdited: true, numLikes: 4, numViews: 8, reason: "", user: User(created: "2023-07-15 13:02:32", deviceId: "495skd03", email: "oketoluwase@gmail.com", id: "19", name: "James Justin", phone: "0904050030", token: "", image: ""), quote: Quote(name: "James Justin", content: "Bring me a flavored milk and I will love you forever. Damn it"))
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Quote: Codable{
+struct Quote: Codable, Equatable, Hashable{
+
     let name: String
     let content: String
     }

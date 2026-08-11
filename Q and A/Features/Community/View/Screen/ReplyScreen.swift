@@ -97,7 +97,11 @@ struct ReplyScreen: View {
                     
                     
                 },
-                onCloseQuote: {})
+                onCloseQuote: {
+                    
+                    viewModel.state.quote = nil
+                    
+                })
                 
             }
             
@@ -147,7 +151,7 @@ struct ReplyScreen: View {
                 
                 // Title
                 ToolbarItem(placement: .principal) {
-                    Text("Post").font(AppFont.regular(18))
+                    Text("Comment").font(AppFont.regular(18))
                 }
                 
                 

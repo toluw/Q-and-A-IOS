@@ -186,6 +186,23 @@ extension CommunityApi: TargetType{
                 )
             }
             
+        case .getReply(commentId: let commentId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
+            do {
+                
+                var params: [String: Any] = [:]
+                params.addOptional(key: "comment_id", value: commentId)
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "page", value: page)
+                params.addOptional(key: "page_size", value: pageSize)
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+            }
+            
         case .getComment(postId: let postId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
             do {
                 
@@ -221,22 +238,7 @@ extension CommunityApi: TargetType{
         case .likeComment(likeCommentBody: let likeCommentBody):
             return .requestJSONEncodable(likeCommentBody)
         
-        case .getReply(commentId: let commentId, buyerEmail: let buyerEmail, page: let page, pageSize: let pageSize):
-            do {
-                
-                var params: [String: Any] = [:]
-                params.addOptional(key: "comment_id", value: commentId)
-                params.addOptional(key: "buyer_email", value: buyerEmail)
-                params.addOptional(key: "page", value: page)
-                params.addOptional(key: "page_size", value: pageSize)
-                
-                
-                return .requestParameters(
-                    parameters: params,
-                    encoding: URLEncoding.queryString
-                )
-                
-            }
+        
         case .createReply(createReplyBody: let createReplyBody):
             return .requestJSONEncodable(createReplyBody)
         case .updateReply(updateReplyBody: let updateReplyBody):
