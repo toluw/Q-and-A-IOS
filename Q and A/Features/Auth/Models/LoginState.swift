@@ -16,4 +16,6 @@ struct LoginState {
     var isSuccess: Bool = false
     var isPhoneConfirmationScreen: Bool = false
     var userProfile : UserProfile? = nil
+    var loginAspect: LoginAspect = .Main
+    var appleUSer: AppleUser? = nil
 }

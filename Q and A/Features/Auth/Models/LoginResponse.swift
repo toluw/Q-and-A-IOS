@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct LoginResponse: Decodable {
+struct LoginResponse: Codable{
     let status: Bool
     let message: String
     let data: UserData?
     
-    struct UserData: Decodable {
+    struct UserData: Codable {
         let firstname: String
         let lastname: String
         let email: String
@@ -20,9 +20,11 @@ struct LoginResponse: Decodable {
         let library: [Library]?
         let image: String?
         let paystack_api_key: String
+        
+       
     }
     
-    struct Library: Decodable {
+    struct Library: Codable {
         let title: String
         let url: String
         let location: String

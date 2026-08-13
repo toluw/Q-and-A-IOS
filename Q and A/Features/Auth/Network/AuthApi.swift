@@ -13,6 +13,7 @@ enum AuthAPI {
     case login(payload: LoginRequest)
     case forgotPassword(payload: ForgotPasswordRequest)
     case changePassword(payload: ChangePasswordRequest)
+    case socialLogin(payload: SocialLoginBody)
 }
 
 
@@ -31,6 +32,8 @@ extension AuthAPI: TargetType{
             return "v2/forgot_password.php"
         case .changePassword:
             return "v2/change_password.php"
+        case .socialLogin:
+            return "v2/check_register_ios.php"
         }
     }
     
@@ -42,6 +45,8 @@ extension AuthAPI: TargetType{
             .post
         case .changePassword:
             .post
+        case .socialLogin:
+                .post
         }
     }
     
@@ -53,6 +58,8 @@ extension AuthAPI: TargetType{
             return .requestJSONEncodable(payload)
         case .changePassword(payload: let payload):
             return .requestJSONEncodable(payload)
+        case .socialLogin(payload: let payload):
+            return   .requestJSONEncodable(payload)
         }
     }
     

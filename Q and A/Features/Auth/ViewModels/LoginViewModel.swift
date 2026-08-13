@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AuthenticationServices
 
 @MainActor
 class LoginViewModel: ObservableObject{
@@ -38,6 +39,88 @@ class LoginViewModel: ObservableObject{
     }
     
     
+    func handleAppleSignIn(result: Result<ASAuthorization, Error>){
+        
+        switch result {
+
+                case .success(let auth):
+
+                    guard let credential = auth.credential as? ASAuthorizationAppleIDCredential else {
+                        state.errorMessage =  ToastData(message: "An error occured, try again later - 1", type: .error)
+                        return
+                    }
+
+                    let userId = credential.user
+
+                    let email = credential.email
+
+                    let fullName = credential.fullName
+
+                    let identityToken = credential.identityToken
+
+                    let authorizationCode = credential.authorizationCode
+
+                    if let identityToken,
+                       let tokenString = String(data: identityToken, encoding: .utf8) {
+
+                        print(tokenString)
+
+                        // Send token to backend
+                    }
+
+                    print(userId)
+                    print(email ?? "")
+                    print(fullName?.givenName ?? "")
+            
+            state.appleUSer = AppleUser(name: fullName?.givenName, email: email, appleId: userId)
+            
+            let socialLoginBody = SocialLoginBody(token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId(), apple_id: userId, email: email)
+            
+            socialLogin(socialLoginBody: socialLoginBody)
+
+                case .failure(let error):
+                   state.errorMessage =  ToastData(message: error.localizedDescription, type: .error)
+                    print(error.localizedDescription)
+                }
+            }
+        
+        
+    
+    
+
+
+    
+    func socialLogin(socialLoginBody: SocialLoginBody){
+        
+        state.isLoading = true
+        state.errorMessage = nil
+        
+        Task{
+            do{
+                let data = try await service.socialLogin(socialLoginBody: socialLoginBody).data
+                
+                if(data.isRegistered){
+                    
+                    loginUser(name: data.name ?? "", email: data.email ?? "", phoneNumber: data.phone, profileImage: data.image, paystackApiKey: data.paystackApiKey)
+                    
+                    replaceLibrary(libraryContent: data.library ?? [])
+                    
+                    state.isLoading = false
+                    state.isSuccess = true
+                }else{
+                    //Move to phone number confirmation
+                    state.isLoading = false
+                    state.loginAspect = .ConfirmPhone
+                }
+                
+            }catch {
+                state.isLoading = false
+                state.errorMessage =  ToastData(message: error.localizedDescription, type: .error)
+            }
+            
+        }
+        
+    }
     
     
     func login() {
@@ -72,7 +155,7 @@ class LoginViewModel: ObservableObject{
                        }
                    
                    
-                   loginUser(userData: data)
+                   loginUser(name: "\(data.firstname) \(data.lastname)", email: data.email, phoneNumber: data.phone, profileImage: data.image, paystackApiKey: data.paystack_api_key)
                    
                    replaceLibrary(libraryContent: data.library ?? [])
                    
@@ -90,18 +173,17 @@ class LoginViewModel: ObservableObject{
        }
     
     
-    func loginUser(userData: LoginResponse.UserData){
-        
-        UserSettings.name  = "\(userData.firstname) \(userData.lastname)"
-        UserSettings.email = userData.email.lowercased()
-        UserSettings.phoneNumber = userData.phone
-        UserSettings.profileImage = userData.image
+    
+    
+    func loginUser(name: String, email: String, phoneNumber: String?, profileImage: String?, paystackApiKey: String){
+        UserSettings.name  =  name
+        UserSettings.email = email.lowercased()
+        UserSettings.phoneNumber = phoneNumber
+        UserSettings.profileImage = profileImage
         UserSettings.isLoggedIn = true
-        UserSettings.paystackApiKey = userData.paystack_api_key
+        UserSettings.paystackApiKey = paystackApiKey
         
         state.userProfile = UserProfile()
-        
-        
     }
     
     func replaceLibrary(libraryContent: [LoginResponse.Library]){
