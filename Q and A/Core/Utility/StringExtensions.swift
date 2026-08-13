@@ -117,6 +117,11 @@ extension String{
               .map { $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
       }
     
+    func isValidMobile() -> Bool {
+        let hasLetters = self.range(of: "[a-zA-Z]+", options: .regularExpression) != nil
+        return !hasLetters && (7...13).contains(self.count)
+    }
+    
     func extractGoogleDriveFileId() -> String? {
            
            let patterns = [

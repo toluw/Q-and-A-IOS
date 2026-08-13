@@ -122,6 +122,20 @@ class LoginViewModel: ObservableObject{
         
     }
     
+    func validatePhoneNumber(phoneNumber: String)-> Bool{
+        if(phoneNumber.isEmpty){
+            state.errorMessage =  ToastData(message: "Please enter your phone number", type: .error)
+            return false
+        }
+        
+        if(!phoneNumber.isValidMobile()){
+            state.errorMessage =  ToastData(message: "Please enter a valid phone number", type: .error)
+            return false
+        }
+        
+        return true
+    }
+    
     
     func login() {
            guard validate() else { return }
