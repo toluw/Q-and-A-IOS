@@ -9,8 +9,8 @@ import Foundation
 
 struct AppleUser{
     
-    let name: String?
-    let email: String?
+    var name: String?
+    var email: String?
     let appleId: String
     
 }

@@ -72,7 +72,7 @@ class LoginViewModel: ObservableObject{
                     print(email ?? "")
                     print(fullName?.givenName ?? "")
             
-            state.appleUSer = AppleUser(name: fullName?.givenName, email: email, appleId: userId)
+               state.appleUSer = AppleUser(name: fullName?.givenName, email: email, appleId: userId)
             
             let socialLoginBody = SocialLoginBody(token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId(), apple_id: userId, email: email)
             
@@ -87,7 +87,31 @@ class LoginViewModel: ObservableObject{
         
     
     
-
+    func socialSignUp(socialSignUpBody: SocialSignupBody){
+        state.isLoading = true
+        state.errorMessage = nil
+        
+        Task{
+            do{
+                
+                let data = try await service.socialSignUp(socialSignUpBody: socialSignUpBody).data
+                loginUser(name: data.name, email: data.email, phoneNumber: data.phone, profileImage: data.image, paystackApiKey: data.paystackApiKey)
+                
+                replaceLibrary(libraryContent: data.library ?? [])
+                
+                state.isLoading = false
+                state.isSuccess = true
+                
+            }catch {
+                state.isLoading = false
+                state.errorMessage =  ToastData(message: error.localizedDescription, type: .error)
+            }
+            
+            
+        }
+        
+        
+    }
 
     
     func socialLogin(socialLoginBody: SocialLoginBody){
@@ -109,8 +133,21 @@ class LoginViewModel: ObservableObject{
                     state.isSuccess = true
                 }else{
                     //Move to phone number confirmation
+                    if(data.email != nil){
+                        state.appleUSer?.email = data.email
+                    }
+                    if(data.name != nil){
+                        state.appleUSer?.name = data.name
+                    }
                     state.isLoading = false
-                    state.loginAspect = .ConfirmPhone
+                    
+                    if(state.appleUSer?.name == nil || state.appleUSer?.email == nil){
+                        state.errorMessage =  ToastData(message: "Cannot login, try another login method", type: .error)
+                    }else{
+                        state.loginAspect = .ConfirmPhone
+                    }
+                    
+                    
                 }
                 
             }catch {
@@ -200,6 +237,7 @@ class LoginViewModel: ObservableObject{
         state.userProfile = UserProfile()
     }
     
+   
     func replaceLibrary(libraryContent: [LoginResponse.Library]){
         
         

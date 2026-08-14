@@ -14,13 +14,13 @@ protocol AuthServiceProtocol {
     func forgotPassword(forgotPasswordRequest: ForgotPasswordRequest) async throws -> GeneralResponse
     func changePassword(changePasswordRequest: ChangePasswordRequest) async throws -> GeneralResponse
     func socialLogin(socialLoginBody: SocialLoginBody) async throws -> SocialLoginResponse
+    func socialSignUp(socialSignUpBody: SocialSignupBody) async throws -> SocialSignupResponse
     
 }
 
 
 final class AuthService: AuthServiceProtocol{
-    
-    
+   
     
     private let apiClient = APIClient<AuthAPI>()
     
@@ -43,6 +43,17 @@ final class AuthService: AuthServiceProtocol{
             }
         );
     }
+    
+    func socialSignUp(socialSignUpBody: SocialSignupBody) async throws -> SocialSignupResponse {
+        return try await apiClient.request(
+            .socialSignUp(payload: socialSignUpBody),
+            responseType: SocialSignupResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     
     func forgotPassword(forgotPasswordRequest: ForgotPasswordRequest) async throws -> GeneralResponse {

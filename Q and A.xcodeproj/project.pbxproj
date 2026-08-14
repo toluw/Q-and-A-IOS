@@ -125,6 +125,8 @@
 		F56EA61A302724E00092972D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA619302724E00092972D /* Quote.swift */; };
 		F56EA61C302725A70092972D /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61B302725A70092972D /* Reply.swift */; };
 		F56EA61E302727E70092972D /* ReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61D302727E70092972D /* ReplyView.swift */; };
+		F57BD091302F15200034DCDB /* SocialSignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD090302F15200034DCDB /* SocialSignupResponse.swift */; };
+		F57BD093302F1B230034DCDB /* SocialSignupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD092302F1B230034DCDB /* SocialSignupBody.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
 		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
@@ -470,6 +472,8 @@
 		F56EA619302724E00092972D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F56EA61B302725A70092972D /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		F56EA61D302727E70092972D /* ReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyView.swift; sourceTree = "<group>"; };
+		F57BD090302F15200034DCDB /* SocialSignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupResponse.swift; sourceTree = "<group>"; };
+		F57BD092302F1B230034DCDB /* SocialSignupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupBody.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
@@ -763,6 +767,8 @@
 				F535C2EE302DF0AC0055E168 /* SocialLoginResponse.swift */,
 				F535C2F0302DF3950055E168 /* SocialLoginBody.swift */,
 				F535C2F2302DF92F0055E168 /* AppleUser.swift */,
+				F57BD090302F15200034DCDB /* SocialSignupResponse.swift */,
+				F57BD092302F1B230034DCDB /* SocialSignupBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1602,6 +1608,7 @@
 				F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */,
 				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
 				F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */,
+				F57BD093302F1B230034DCDB /* SocialSignupBody.swift in Sources */,
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
 				F549C60D3007CA8300DE4EF0 /* DiscussionSolutionView.swift in Sources */,
 				F5AE93462F866BDB0003CAA5 /* ConfirmOtpScreen.swift in Sources */,
@@ -1885,6 +1892,7 @@
 				F5E145012F7FF63A00C10F3A /* AuthService.swift in Sources */,
 				F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */,
 				F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */,
+				F57BD091302F15200034DCDB /* SocialSignupResponse.swift in Sources */,
 				F5E144F02F7FC4F200C10F3A /* LoginRequest.swift in Sources */,
 				F59A8FA02FB6243100823C77 /* CbtPaymentViewModel.swift in Sources */,
 			);
