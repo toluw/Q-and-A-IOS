@@ -69,7 +69,7 @@ struct ConfirmPhoneView: View {
         if(viewModel.validatePhoneNumber(phoneNumber: phoneNumber)){
             if(viewModel.state.appleUSer?.name != nil && viewModel.state.appleUSer?.email != nil){
                 
-                let socialSignUpBody = SocialSignupBody(name: viewModel.state.appleUSer?.name ?? "", email: viewModel.state.appleUSer?.email ?? "", phone: phoneNumber, token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId(), apple_id: viewModel.state.appleUSer?.appleId ?? "")
+                let socialSignUpBody = SocialSignupBody(name: viewModel.state.appleUSer?.name ?? "", email: viewModel.state.appleUSer?.email ?? "", phone: phoneNumber, token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId(), apple_id: viewModel.state.appleUSer?.appleId)
                 
                 viewModel.socialSignUp(socialSignUpBody: socialSignUpBody)
                 

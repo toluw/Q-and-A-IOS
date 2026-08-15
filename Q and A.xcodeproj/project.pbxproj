@@ -142,6 +142,7 @@
 		F57BD0B030306DC80034DCDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */; };
 		F57BD0B3303071420034DCDB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F57BD0B2303071420034DCDB /* GoogleSignIn */; };
 		F57BD0B5303071420034DCDB /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F57BD0B4303071420034DCDB /* GoogleSignInSwift */; };
+		F57BD0B7303098560034DCDB /* GoogleLoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD0B6303098560034DCDB /* GoogleLoginBody.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
 		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
@@ -490,6 +491,7 @@
 		F57BD090302F15200034DCDB /* SocialSignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupResponse.swift; sourceTree = "<group>"; };
 		F57BD092302F1B230034DCDB /* SocialSignupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupBody.swift; sourceTree = "<group>"; };
 		F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F57BD0B6303098560034DCDB /* GoogleLoginBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginBody.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
@@ -799,6 +801,7 @@
 				F535C2F2302DF92F0055E168 /* AppleUser.swift */,
 				F57BD090302F15200034DCDB /* SocialSignupResponse.swift */,
 				F57BD092302F1B230034DCDB /* SocialSignupBody.swift */,
+				F57BD0B6303098560034DCDB /* GoogleLoginBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1826,6 +1829,7 @@
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
 				F50018483001474F00E98437 /* InstructionCallout.swift in Sources */,
+				F57BD0B7303098560034DCDB /* GoogleLoginBody.swift in Sources */,
 				F535C2F3302DF92F0055E168 /* AppleUser.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */,

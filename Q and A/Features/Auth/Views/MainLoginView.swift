@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 import AuthenticationServices
+import GoogleSignInSwift
 
 struct MainLoginView: View {
     
@@ -124,6 +126,9 @@ struct MainLoginView: View {
                           .fill(Color.gray.opacity(0.5))
                           .frame(height: 1)
                   }
+                
+          GoogleSignInButton(action: viewModel.googleLogin)
+                    .padding(.top, 20)
                 
                 
                 SignInWithAppleButton(

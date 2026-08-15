@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct GoogleLoginBody: Codable{
+    
+    let email: String
+    let token: String
+    let device_id: String
+    
+}

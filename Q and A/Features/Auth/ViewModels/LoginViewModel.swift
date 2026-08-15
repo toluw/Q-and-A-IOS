@@ -113,6 +113,49 @@ class LoginViewModel: ObservableObject{
         
         
     }
+    
+    func callGoogleLoginApi(googleLoginBody: GoogleLoginBody){
+        state.isLoading = true
+        state.errorMessage = nil
+        
+        Task{
+            do{
+                let data = try await service.googleLogin(googleLoginBody: googleLoginBody).data
+                
+                if(data.isRegistered){
+                    
+                    loginUser(name: data.name ?? "", email: data.email ?? "", phoneNumber: data.phone, profileImage: data.image, paystackApiKey: data.paystackApiKey)
+                    
+                    replaceLibrary(libraryContent: data.library ?? [])
+                    
+                    state.isLoading = false
+                    state.isSuccess = true
+                }else{
+                    //Move to phone number confirmation
+                    if(data.email != nil){
+                        state.appleUSer?.email = data.email
+                    }
+                    if(data.name != nil){
+                        state.appleUSer?.name = data.name
+                    }
+                    state.isLoading = false
+                    
+                    if(state.appleUSer?.name == nil || state.appleUSer?.email == nil){
+                        state.errorMessage =  ToastData(message: "Cannot login, try another login method", type: .error)
+                    }else{
+                        state.loginAspect = .ConfirmPhone
+                    }
+                    
+                    
+                }
+                
+            }catch {
+                state.isLoading = false
+                state.errorMessage =  ToastData(message: error.localizedDescription, type: .error)
+            }
+            
+        }
+    }
 
     
     func socialLogin(socialLoginBody: SocialLoginBody){
@@ -211,6 +254,13 @@ class LoginViewModel: ObservableObject{
                     
                 
                 state.appleUSer = AppleUser(name: user.name, email: user.email, appleId: nil)
+                
+               
+                
+                let googleLoginBody = GoogleLoginBody(email: user.email, token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId())
+                
+                
+                callGoogleLoginApi(googleLoginBody: googleLoginBody)
                 
                 
                 

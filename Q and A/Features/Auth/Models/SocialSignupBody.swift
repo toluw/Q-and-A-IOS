@@ -14,6 +14,6 @@ struct SocialSignupBody: Codable{
     let phone: String
     let token: String
     let device_id: String
-    let apple_id: String
+    let apple_id: String?
     
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct MainScreen: View {
     
@@ -202,6 +203,8 @@ struct MainScreen: View {
             UserSettings.isLoggedIn = false
             
             viewModel.userProfileState = UserProfile()
+            
+            GIDSignIn.sharedInstance.signOut()
             
             viewModel.logoutMessage = ToastData(message:  "You have been successfully logged out", type: .success)
             
