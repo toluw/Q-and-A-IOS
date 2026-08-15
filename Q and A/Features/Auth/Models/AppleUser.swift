@@ -11,6 +11,6 @@ struct AppleUser{
     
     var name: String?
     var email: String?
-    let appleId: String
+    let appleId: String?
     
 }

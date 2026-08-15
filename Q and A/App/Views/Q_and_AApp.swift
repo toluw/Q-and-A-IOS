@@ -7,11 +7,18 @@
 
 import SwiftUI
 import SwiftData
+import FirebaseCore
+import GoogleSignIn
+
 
 @main
 struct Q_and_AApp: App {
     
     @StateObject private var appViewModel = AppViewModel()
+    
+    init() {
+           FirebaseApp.configure()
+       }
     
     
      var body: some Scene {
@@ -20,6 +27,9 @@ struct Q_and_AApp: App {
                 .environmentObject(appViewModel)
                 .preferredColorScheme(.light)
                 .globalBottomSheet()
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
+                }
         }.modelContainer(for: ExamCart.self)
     }
 }

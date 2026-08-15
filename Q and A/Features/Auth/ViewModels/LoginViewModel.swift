@@ -7,6 +7,7 @@
 
 import Foundation
 import AuthenticationServices
+import GoogleSignIn
 
 @MainActor
 class LoginViewModel: ObservableObject{
@@ -171,6 +172,58 @@ class LoginViewModel: ObservableObject{
         }
         
         return true
+    }
+    
+    
+    
+    func googleLogin(){
+        
+        
+        state.isLoading = true
+        
+        guard let rootViewController = UIApplication.shared.connectedScenes
+                  .compactMap({ $0 as? UIWindowScene })
+                  .first?.windows.first?.rootViewController else {
+                  return
+        }
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController){ [self]result, error in
+            
+            Task { @MainActor in
+                
+               
+                if let error = error {
+                    let errorMessage = error.localizedDescription
+                    state.errorMessage =  ToastData(message: errorMessage, type: .error)
+                    self.state.isLoading = false
+                    
+                    return
+                }
+                
+                guard let user = result?.user.profile else {
+                    
+                    
+                    state.errorMessage =  ToastData(message: "Could not retrieve user details, try again", type: .error)
+                    self.state.isLoading = false
+                    
+                    return
+                }
+                    
+                
+                state.appleUSer = AppleUser(name: user.name, email: user.email, appleId: nil)
+                
+                
+                
+            }
+            
+          
+            
+            
+        }
+        
+        
+        
+        
     }
     
     

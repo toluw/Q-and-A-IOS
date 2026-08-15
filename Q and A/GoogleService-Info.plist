@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>80218751144-o7upgun7f9e9t3q5nacgnjdhas7bjrrk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.80218751144-o7upgun7f9e9t3q5nacgnjdhas7bjrrk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>80218751144-0hnq1g2vgggd5gg5quugsvumibu5i7or.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCE7oUjBVe6oLLrMyDyL-rWinOOlAMEJWE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>80218751144</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ng.qanda.Q-and-A</string>
+	<key>PROJECT_ID</key>
+	<string>qanda-3bd6e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>qanda-3bd6e.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:80218751144:ios:cfecdeed0bc804f884029d</string>
+	<key>DATABASE_URL</key>
+	<string>https://qanda-3bd6e.firebaseio.com</string>
+</dict>
+</plist>
