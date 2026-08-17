@@ -68,7 +68,8 @@ struct PracticeScreen: View {
                                navVm.pop()
                            }
                           
-                       }
+                       },
+                       navVM: navVm
                        
                    )
                }

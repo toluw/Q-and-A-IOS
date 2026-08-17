@@ -148,7 +148,8 @@ struct ParentCatScreen: View {
                                
                            }
                           
-                       }
+                       },
+                       navVM: navVm
                        
                    )
                }

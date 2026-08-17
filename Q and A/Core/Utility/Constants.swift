@@ -20,6 +20,8 @@ let PAGE_SIZE = 10
 
 let EDIT = "Edit"
 let DELETE = "Delete"
+let termsUrl = "https://www.knowbaseconsult.com/techpedia-terms-and-conditions/"
+let privacyUrl = "https://www.knowbaseconsult.com/techpedia-privacy-policy/"
 
 enum PaystackConstants {
     static let callbackURL = "https://www.knowbaseconsult.com/about-knowbase"

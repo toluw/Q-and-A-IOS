@@ -263,7 +263,8 @@ struct SubCatScreen: View {
                              
                          }
                         
-                     }
+                     },
+                     navVM: navVm
                      
                  )
              }

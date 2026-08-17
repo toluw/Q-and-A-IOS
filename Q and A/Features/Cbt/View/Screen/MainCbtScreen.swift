@@ -136,7 +136,8 @@ struct MainCbtScreen: View {
                             
                         }
                        
-                    }
+                    },
+                    navVM: navVm
                     
                 )
             }

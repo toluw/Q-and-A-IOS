@@ -252,7 +252,8 @@ struct CatScreen: View {
                                
                            }
                           
-                       }
+                       },
+                       navVM: navVm
                        
                    )
                }

@@ -17,6 +17,7 @@ struct LoginScreen: View {
     let onForgotpassword: () -> Void
     
     let onLoginSuccess: (UserProfile) -> Void
+    @ObservedObject var navVM: MainNavViewModel
     
     
     var body: some View {
@@ -25,9 +26,9 @@ struct LoginScreen: View {
             
             switch viewModel.state.loginAspect {
             case .Main:
-                MainLoginView(viewModel: viewModel, onDismiss: onDismiss, onForgotpassword: onForgotpassword, onLoginSuccess: onLoginSuccess)
+                MainLoginView(viewModel: viewModel, onDismiss: onDismiss, onForgotpassword: onForgotpassword, onLoginSuccess: onLoginSuccess, onUrlClicked: navigateToLink)
             case .SignUp:
-                 SignUpView(viewModel: viewModel)
+                SignUpView(viewModel: viewModel, onUrlClicked: navigateToLink)
             case .ConfirmPhone:
                 ConfirmPhoneView(viewModel: viewModel)
             }
@@ -55,9 +56,13 @@ struct LoginScreen: View {
     }
     
     
-    @ViewBuilder
-    private var phoneConfirmationView: some View{
-        
+   
+    
+    private func navigateToLink(link: String){
+        if let url = URL(string: link){
+            UIApplication.shared.open(url)
+          //  navVM.navigate(route: .webviewScreen(url: url))
+        }
     }
 }
 
@@ -65,6 +70,6 @@ struct LoginScreen: View {
     LoginScreen(
       onDismiss: {},
       onForgotpassword: {},
-      onLoginSuccess: {_ in }
+      onLoginSuccess: {_ in }, navVM: MainNavViewModel()
     )
 }

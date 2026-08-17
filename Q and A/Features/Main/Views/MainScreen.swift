@@ -65,7 +65,8 @@ struct MainScreen: View {
                         
                     }
                    
-                }
+                },
+                navVM: navVm
                 
             )
         }

@@ -124,7 +124,8 @@ struct ChangePasswordScreen: View {
                      }, onLoginSuccess: {userProfile in
                          viewModel.showLogin = false
                          navVm.pop(n: 3)
-                     }
+                     },
+                     navVM: navVm
                      
                  )
              }

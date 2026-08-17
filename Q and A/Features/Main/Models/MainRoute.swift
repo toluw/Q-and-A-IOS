@@ -39,5 +39,6 @@ enum MainRoute: Hashable{
     case cbtPostScreen(examId: String, liveExam: LiveExam?)
     case commentScreen(post: Post?, postId: String, showKeyPad: Bool)
     case replyScreen(comment: Comment?, commentId: String, showKeyPad: Bool)
+    case webviewScreen(url: URL)
    
 }

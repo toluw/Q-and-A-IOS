@@ -23,6 +23,8 @@ struct MainLoginView: View {
     
     let onLoginSuccess: (UserProfile) -> Void
     
+    let onUrlClicked: (String) -> Void
+    
     var body: some View {
         ZStack{
             
@@ -110,7 +112,7 @@ struct MainLoginView: View {
                   .padding(.top,10)
                   
                   Spacer()
-                      .frame(height: 30)
+                      .frame(height: 35)
                   
                   // Divider with "Or"
                   HStack(spacing: 10) {
@@ -127,7 +129,7 @@ struct MainLoginView: View {
                           .frame(height: 1)
                   }
                 
-          GoogleSignInButton(action: viewModel.googleLogin)
+          GoogleSignInButton(scheme: .dark,action: viewModel.googleLogin)
                     .padding(.top, 20)
                 
                 
@@ -147,6 +149,21 @@ struct MainLoginView: View {
                 .frame(height:40)
                 .cornerRadius(8)
                 .padding(.top, 20)
+                
+                
+                HStack{
+                    
+                    Spacer()
+                    
+                    TermsView(onUrlClicked: {url in
+                       onUrlClicked(url)
+                    }).padding(.top, 20)
+                    
+                    Spacer()
+                    
+                }
+                
+               
                 
                 Spacer()
          
@@ -174,5 +191,5 @@ struct MainLoginView: View {
 #Preview {
     MainLoginView(viewModel: LoginViewModel(), onDismiss: {}, onForgotpassword: {}, onLoginSuccess: {dt in
         
-    })
+    }, onUrlClicked: {dt in})
 }

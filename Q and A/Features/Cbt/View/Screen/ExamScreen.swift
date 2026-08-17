@@ -114,7 +114,8 @@ struct ExamScreen: View {
                                navVm.pop()
                            }
                           
-                       }
+                       },
+                       navVM: navVm
                        
                    )
                }

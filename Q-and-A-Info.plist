@@ -16,6 +16,8 @@
 		</dict>
 		<dict/>
 	</array>
+	<key>GIDClientID</key>
+	<string>80218751144-o7upgun7f9e9t3q5nacgnjdhas7bjrrk.apps.googleusercontent.com</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
