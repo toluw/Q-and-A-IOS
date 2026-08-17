@@ -310,28 +310,28 @@ class CbtViewModel: ObservableObject{
         
         liveExamList = examList.map {
             LiveExam(
-                question: $0.question.trimmingCharacters(in: .whitespaces),
-                passage: $0.passage.trimmingCharacters(in: .whitespaces),
-                a: $0.a.trimmingCharacters(in: .whitespaces),
-                b: $0.b.trimmingCharacters(in: .whitespaces),
-                c: $0.c.trimmingCharacters(in: .whitespaces),
-                d: $0.d.trimmingCharacters(in: .whitespaces),
-                e: $0.e.trimmingCharacters(in: .whitespaces),
+                question: $0.question.trimmingCharacters(in: .whitespacesAndNewlines),
+                passage: $0.passage.trimmingCharacters(in: .whitespacesAndNewlines),
+                a: $0.a.trimmingCharacters(in: .whitespacesAndNewlines),
+                b: $0.b.trimmingCharacters(in: .whitespacesAndNewlines),
+                c: $0.c.trimmingCharacters(in: .whitespacesAndNewlines),
+                d: $0.d.trimmingCharacters(in: .whitespacesAndNewlines),
+                e: $0.e.trimmingCharacters(in: .whitespacesAndNewlines),
                 numberOfAnswer: $0.numberOfAnswer,
-                answer: $0.answer.trimmingCharacters(in: .whitespaces),
-                explanation: $0.explanation.trimmingCharacters(in: .whitespaces),
-                questionId: $0.questionId.trimmingCharacters(in: .whitespaces),
-                questionImage: $0.questionImage?.trimmingCharacters(in: .whitespaces),
-                passageImage: $0.passageImage?.trimmingCharacters(in: .whitespaces),
-                aImage: $0.aImage?.trimmingCharacters(in: .whitespaces),
-                bImage: $0.bImage?.trimmingCharacters(in: .whitespaces),
-                cImage: $0.cImage?.trimmingCharacters(in: .whitespaces),
-                dImage: $0.dImage?.trimmingCharacters(in: .whitespaces),
-                eImage: $0.eImage?.trimmingCharacters(in: .whitespaces),
-                explanationImage: $0.explanationImage?.trimmingCharacters(in: .whitespaces),
+                answer: $0.answer.trimmingCharacters(in: .whitespacesAndNewlines),
+                explanation: $0.explanation.trimmingCharacters(in: .whitespacesAndNewlines),
+                questionId: $0.questionId.trimmingCharacters(in: .whitespacesAndNewlines),
+                questionImage: $0.questionImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                passageImage: $0.passageImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                aImage: $0.aImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                bImage: $0.bImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                cImage: $0.cImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                dImage: $0.dImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                eImage: $0.eImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                explanationImage: $0.explanationImage?.trimmingCharacters(in: .whitespacesAndNewlines),
                 solution: [],
-                passageVideo: $0.passageVideo?.trimmingCharacters(in: .whitespaces),
-                passageBook: $0.passageBook?.trimmingCharacters(in: .whitespaces)
+                passageVideo: $0.passageVideo?.trimmingCharacters(in: .whitespacesAndNewlines),
+                passageBook: $0.passageBook?.trimmingCharacters(in: .whitespacesAndNewlines)
             )
         }
     }
@@ -422,28 +422,28 @@ class CbtViewModel: ObservableObject{
 
                 let liveExamList = examList.map {
                     LiveExam(
-                        question: $0.question.trimmingCharacters(in: .whitespaces),
-                        passage: $0.passage.trimmingCharacters(in: .whitespaces),
-                        a: $0.a.trimmingCharacters(in: .whitespaces),
-                        b: $0.b.trimmingCharacters(in: .whitespaces),
-                        c: $0.c.trimmingCharacters(in: .whitespaces),
-                        d: $0.d.trimmingCharacters(in: .whitespaces),
-                        e: $0.e.trimmingCharacters(in: .whitespaces),
+                        question: $0.question.trimmingCharacters(in: .whitespacesAndNewlines),
+                        passage: $0.passage.trimmingCharacters(in: .whitespacesAndNewlines),
+                        a: $0.a.trimmingCharacters(in: .whitespacesAndNewlines),
+                        b: $0.b.trimmingCharacters(in: .whitespacesAndNewlines),
+                        c: $0.c.trimmingCharacters(in: .whitespacesAndNewlines),
+                        d: $0.d.trimmingCharacters(in: .whitespacesAndNewlines),
+                        e: $0.e.trimmingCharacters(in: .whitespacesAndNewlines),
                         numberOfAnswer: $0.numberOfAnswer,
-                        answer: $0.answer.trimmingCharacters(in: .whitespaces),
-                        explanation: $0.explanation.trimmingCharacters(in: .whitespaces),
-                        questionId: $0.questionId.trimmingCharacters(in: .whitespaces),
-                        questionImage: $0.questionImage?.trimmingCharacters(in: .whitespaces),
-                        passageImage: $0.passageImage?.trimmingCharacters(in: .whitespaces),
-                        aImage: $0.aImage?.trimmingCharacters(in: .whitespaces),
-                        bImage: $0.bImage?.trimmingCharacters(in: .whitespaces),
-                        cImage: $0.cImage?.trimmingCharacters(in: .whitespaces),
-                        dImage: $0.dImage?.trimmingCharacters(in: .whitespaces),
-                        eImage: $0.eImage?.trimmingCharacters(in: .whitespaces),
-                        explanationImage: $0.explanationImage?.trimmingCharacters(in: .whitespaces),
+                        answer: $0.answer.trimmingCharacters(in: .whitespacesAndNewlines),
+                        explanation: $0.explanation.trimmingCharacters(in: .whitespacesAndNewlines),
+                        questionId: $0.questionId.trimmingCharacters(in: .whitespacesAndNewlines),
+                        questionImage: $0.questionImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        passageImage: $0.passageImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        aImage: $0.aImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        bImage: $0.bImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        cImage: $0.cImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        dImage: $0.dImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        eImage: $0.eImage?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        explanationImage: $0.explanationImage?.trimmingCharacters(in: .whitespacesAndNewlines),
                         solution: [], // default since not provided
-                        passageVideo: $0.passageVideo?.trimmingCharacters(in: .whitespaces),
-                        passageBook: $0.passageBook?.trimmingCharacters(in: .whitespaces)
+                        passageVideo: $0.passageVideo?.trimmingCharacters(in: .whitespacesAndNewlines),
+                        passageBook: $0.passageBook?.trimmingCharacters(in: .whitespacesAndNewlines)
                     )
                 }
 

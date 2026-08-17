@@ -287,10 +287,10 @@ struct CatScreen: View {
         
         if(cbtViewModel.parentCategoriesData?.catData?.disablePractice == true && (!(liveExam.passageBook?.isEmpty ?? true) || !(liveExam.passageVideo?.isEmpty ?? true))){
            
-            let passage = liveExam.passage
-            let passageImage = liveExam.passageImage
-            let passageVideo = liveExam.passageVideo
-            let passageBook = liveExam.passageBook
+            let passage = liveExam.passage.trimmingCharacters(in: .whitespacesAndNewlines)
+            let passageImage = liveExam.passageImage?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let passageVideo = liveExam.passageVideo?.trimmingCharacters(in: .whitespacesAndNewlines)
+            let passageBook = liveExam.passageBook?.trimmingCharacters(in: .whitespacesAndNewlines)
             
             navVm.navigate(route: .studyNoteScreen(title: viewModel.state.multipleExamData[0].item, passage: passage, passageImage: passageImage, passageBook: passageBook, passageVideo: passageVideo))
             
