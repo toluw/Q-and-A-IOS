@@ -19,6 +19,7 @@ protocol CbtServiceProtocol {
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse
     func askAiCbt(askAiCbtBody: AskAiCbtBody) async throws -> AskAiCbtResponse
     func getNumPost(examId: String, questionId: String) async throws -> NumPostResponse
+    func getCbtHistory(buyerEmail: String, isCompleted: String, page: String) async throws -> CbtHistoryResponse
     
     
     
@@ -26,8 +27,8 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
-    
-
+   
+   
     private let apiClient = APIClient<CbtAPI>()
     
     func getParentCategories(level: String?, cbcId: String?, isActive: String, isMock: String) async throws -> ParentCategoriesResponse {
@@ -63,6 +64,18 @@ final class CbtService: CbtServiceProtocol{
     }
     
     
+    func getCbtHistory(buyerEmail: String, isCompleted: String, page: String) async throws -> CbtHistoryResponse {
+        return try await apiClient.request(
+            .getCbtHistory(buyerEmail: buyerEmail, isCompleted: isCompleted, page: page),
+            responseType: CbtHistoryResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
+    
+    
     func getCatExams(cbtId: String, buyerEmail: String?) async throws -> CatExamsResponse {
         return try await apiClient.request(
             .getCatExams(cbtId: cbtId, buyerEmail: buyerEmail, deviceId: DeviceManager.shared.getDeviceId(),),
@@ -93,6 +106,8 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+   
     
     func postResult(examResultBody: ExamResultBody) async throws -> GeneralResponse {
         return try await apiClient.request(

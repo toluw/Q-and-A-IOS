@@ -97,6 +97,8 @@ struct MainStackView: View {
             ReplyScreen(comment: comment, commentId: commentId, showKeyPad: showKeyPad, navVm: navVM)
         case .webviewScreen(url: let url):
             WebViewScreen(url: url)
+        case .cbtHistoryScreen:
+            CbtHistoryScreen()
         }
     }
     

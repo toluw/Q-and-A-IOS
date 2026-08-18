@@ -36,17 +36,14 @@ struct MainCbtScreen: View {
                         Image("hamburger")
                     }
                     
-                    TextField("Search CBT..", text: .constant(""))
-                        .padding(.leading,16)
-                        .padding(.trailing,16)
-                        .textFieldStyle(.roundedBorder)
+                    Spacer()
+               
+                    Text("CBT Categories").font(AppFont.semi_bold(18))
+                    
+                    Spacer()
                         
                     
-                    Button(){
-                        
-                    }label: {
-                        Image("info")
-                    }
+                   
                     
                     CartView(){
                         navVm.navigate(route: .cbtCartScreen)

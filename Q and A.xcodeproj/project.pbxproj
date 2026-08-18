@@ -301,6 +301,11 @@
 		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
 		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
+		F5CE826530346636005D1903 /* CbtHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826430346636005D1903 /* CbtHistoryScreen.swift */; };
+		F5CE8267303477A1005D1903 /* CbtHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE8266303477A1005D1903 /* CbtHistory.swift */; };
+		F5CE826930348175005D1903 /* CbtHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826830348175005D1903 /* CbtHistoryResponse.swift */; };
+		F5CE826B30348C79005D1903 /* CbtHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */; };
+		F5CE826D30348D5D005D1903 /* CbtHistoryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826C30348D5D005D1903 /* CbtHistoryState.swift */; };
 		F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */; };
 		F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */; };
 		F5D0BEF73008D3630036E377 /* SocialPostInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */; };
@@ -652,6 +657,11 @@
 		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
+		F5CE826430346636005D1903 /* CbtHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryScreen.swift; sourceTree = "<group>"; };
+		F5CE8266303477A1005D1903 /* CbtHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistory.swift; sourceTree = "<group>"; };
+		F5CE826830348175005D1903 /* CbtHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryResponse.swift; sourceTree = "<group>"; };
+		F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryViewModel.swift; sourceTree = "<group>"; };
+		F5CE826C30348D5D005D1903 /* CbtHistoryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryState.swift; sourceTree = "<group>"; };
 		F5D04F1B2F73E6F7008FF390 /* CurvedTabBarShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBarShape.swift; sourceTree = "<group>"; };
 		F5D04F1D2F73E7B2008FF390 /* CustomBottomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBottomNav.swift; sourceTree = "<group>"; };
 		F5D0BEF63008D3630036E377 /* SocialPostInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialPostInputView.swift; sourceTree = "<group>"; };
@@ -847,6 +857,7 @@
 				F58CE9AB3029D14800D1722B /* ForumReplyResponse.swift */,
 				F58CE9AF3029D47200D1722B /* ReplyState.swift */,
 				F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */,
+				F5CE826C30348D5D005D1903 /* CbtHistoryState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1266,6 +1277,8 @@
 				F5BAF9C430051BCB005785BF /* Post.swift */,
 				F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */,
 				F5899FDF300F6BF3005FF391 /* PostBody.swift */,
+				F5CE8266303477A1005D1903 /* CbtHistory.swift */,
+				F5CE826830348175005D1903 /* CbtHistoryResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1295,6 +1308,7 @@
 				F5BB950F2FE954E3004EDA26 /* ReviewViewModel.swift */,
 				F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */,
 				F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */,
+				F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1430,6 +1444,7 @@
 				F5A8CDB92FF409F200D3084C /* PracticeScreen.swift */,
 				F50565A02FF6D6D000A89ACB /* ReviewExplanationScreen.swift */,
 				F50018453001119100E98437 /* StudyNoteScreen.swift */,
+				F5CE826430346636005D1903 /* CbtHistoryScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1673,6 +1688,7 @@
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
 				F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */,
 				F500CBB52F87CA3900111B77 /* ChangePasswordState.swift in Sources */,
+				F5CE826530346636005D1903 /* CbtHistoryScreen.swift in Sources */,
 				F53268D12FC464940016CD4F /* CatViewModel.swift in Sources */,
 				F5AE93342F854AFD0003CAA5 /* ForgotPasswordViewModel.swift in Sources */,
 				F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */,
@@ -1768,6 +1784,7 @@
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */,
 				F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */,
+				F5CE826D30348D5D005D1903 /* CbtHistoryState.swift in Sources */,
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
@@ -1810,6 +1827,7 @@
 				F5C12E922F71889A000861B6 /* RoleToggleView.swift in Sources */,
 				F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */,
 				F58CE9B4302A01FB00D1722B /* QuoteView.swift in Sources */,
+				F5CE826930348175005D1903 /* CbtHistoryResponse.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
 				F5B0025E3032FE2F005DC0C9 /* WebViewScreen.swift in Sources */,
@@ -1862,6 +1880,7 @@
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
 				F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */,
 				F5A801B83020D95E00005296 /* CommentView.swift in Sources */,
+				F5CE826B30348C79005D1903 /* CbtHistoryViewModel.swift in Sources */,
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
@@ -1922,6 +1941,7 @@
 				F56EA61E302727E70092972D /* ReplyView.swift in Sources */,
 				F550212F2F80E73B0057C2F0 /* LoginState.swift in Sources */,
 				F5E145032F80599E00C10F3A /* NavMenu.swift in Sources */,
+				F5CE8267303477A1005D1903 /* CbtHistory.swift in Sources */,
 				F5BD4A1A2F2A563C0020A8A4 /* AppNavigator.swift in Sources */,
 				F50018463001119200E98437 /* StudyNoteScreen.swift in Sources */,
 				F54578F92FCEEB40008FF056 /* MultiDeselectedAnswerView.swift in Sources */,

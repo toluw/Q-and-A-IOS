@@ -23,6 +23,7 @@ enum CbtAPI {
     case postUnFinishedResult(unFinishedResultBody: UnfinishedResultBody)
     case askAiCbt(askAiCbtBody: AskAiCbtBody)
     case getNumPost(examId: String, questionId: String)
+    case getCbtHistory(buyerEmail: String, isCompleted: String, page: String, pageSize: String = String(PAGE_SIZE))
     
 }
 
@@ -57,6 +58,8 @@ extension CbtAPI: TargetType{
            return "v2/ask_ai_cbt.php"
         case .getNumPost:
            return "v2/get_num_post.php"
+        case .getCbtHistory:
+           return  "v2/get_cbt_history.php"
         }
     
     }
@@ -86,6 +89,8 @@ extension CbtAPI: TargetType{
         case .askAiCbt:
                 .post
         case .getNumPost:
+                .get
+        case .getCbtHistory:
                 .get
         }
     }
@@ -193,6 +198,24 @@ extension CbtAPI: TargetType{
                     parameters: params,
                     encoding: URLEncoding.queryString
                 )
+                
+            }
+        case .getCbtHistory(buyerEmail: let buyerEmail, isCompleted: let isCompleted, page: let page, pageSize: let pageSize):
+            do{
+              
+                var params: [String: Any] = [:]
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "is_completed", value: isCompleted)
+                params.addOptional(key: "page", value: page)
+                params.addOptional(key: "page_size", value: pageSize)
+                
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+                
+                
                 
             }
         }

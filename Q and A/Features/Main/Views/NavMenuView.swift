@@ -41,7 +41,7 @@ struct NavMenuView: View {
                 onMenuSelected(.community)
             }
             
-            drawerItem(title: "AI Assistant",
+          /*  drawerItem(title: "AI Assistant",
                        imageResource:"nav_ai",
                        colour: Color("NavBlue")
             ){
@@ -56,7 +56,25 @@ struct NavMenuView: View {
                 onMenuSelected(.fanQuiz)
             }
             
+           */
+           
             if(mainScreenViewModel.userProfileState.isLoggedIn){
+                
+                drawerItem(title: "CBT History",
+                           imageResource:"ic_cbt",
+                           colour: Color("NavBlack")
+                ){
+                    onMenuSelected(.cbtHistory)
+                }
+                
+                drawerItem(title: "Payment History",
+                           imageResource:"nav_portal",
+                           colour: Color("NavBlue")
+                ){
+                    onMenuSelected(.paymentHistory)
+                }
+                
+                /*
                 
                 drawerItem(title: "My Library",
                            imageResource:"nav_library",
@@ -66,20 +84,8 @@ struct NavMenuView: View {
                 }
                
                 
-                drawerItem(title: "My CBT",
-                           imageResource:"ic_cbt",
-                           colour: Color("NavBlack")
-                ){
-                    onMenuSelected(.myCbt)
-                }
-                
-                
-                drawerItem(title: "My Portal",
-                           imageResource:"nav_portal",
-                           colour: Color("NavBlue")
-                ){
-                    onMenuSelected(.myPortal)
-                }
+               
+                 */
                 
                 }
             
@@ -99,7 +105,7 @@ struct NavMenuView: View {
                         
               
                     
-            
+            /*
             
                 drawerItem(title: "Share App",
                        imageResource:"nav_share",
@@ -107,16 +113,18 @@ struct NavMenuView: View {
                 ){
                     onMenuSelected(.shareApp)
                 }
-            
+            */
+             
             
             if(mainScreenViewModel.userProfileState.isLoggedIn){
                
-                drawerItem(title: "My Cart",
+             /*   drawerItem(title: "My Cart",
                        imageResource:"nav_cart",
                        colour: Color("SecColor")
                 ){
                     onMenuSelected(.myCart)
                 }
+              */
                 
                 
                 drawerItem(title: "Sign Out",
@@ -140,6 +148,7 @@ struct NavMenuView: View {
                 
             }
             
+            /*
             
             drawerItem(title: "Report Copyright",
                    imageResource:"nav_copyright",
@@ -163,13 +172,20 @@ struct NavMenuView: View {
             ){
                 onMenuSelected(.faq)
             }
-            
+            */
             
             drawerItem(title: "Terms and Conditions",
                    imageResource:"nav_terms",
                    colour: Color("SecColor")
             ){
-                onMenuSelected(.termsAndConditions)
+                onMenuSelected(.privacyPolicy)
+            }
+            
+            drawerItem(title: "Privacy Policy",
+                   imageResource:"nav_copyright",
+                   colour: Color("NavBlue")
+            ){
+                onMenuSelected(.privacyPolicy)
             }
             
             drawerItem(title: "About",
@@ -178,6 +194,17 @@ struct NavMenuView: View {
             ){
                 onMenuSelected(.about)
             }
+            
+            if(mainScreenViewModel.userProfileState.isLoggedIn){
+                drawerItem(title: "Deactivate Account",
+                       imageResource:"deactivate",
+                       colour: Color("NavRed")
+                ){
+                    onMenuSelected(.deactivateAccount)
+                }
+            }
+            
+           
             
             
             Spacer()

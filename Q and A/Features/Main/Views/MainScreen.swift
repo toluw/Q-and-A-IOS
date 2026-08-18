@@ -139,9 +139,7 @@ struct MainScreen: View {
         
         case .myLibrary: moveToLibrary()
             
-        case .myCbt: moveToMyCbt()
-            
-        case .myPortal: moveToPortal()
+       
             
         case .shareApp: shareApp()
             
@@ -163,9 +161,35 @@ struct MainScreen: View {
             
         case .editProfile: moveToEditProfile()
             
+        case .cbtHistory:
+             cbtHistory()
+        case .paymentHistory:
+            paymentHistory()
+        case .privacyPolicy:
+            privacyPolicy()
+        case .deactivateAccount:
+            deactivateAccount()
         }
     }
     
+    
+    private func privacyPolicy(){
+        if let url = URL(string: privacyUrl){
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    private func paymentHistory(){
+        
+    }
+    
+    private func cbtHistory(){
+        navVm.navigate(route: .cbtHistoryScreen)
+    }
+    
+    private func deactivateAccount(){
+        
+    }
     
     private func moveToEditProfile(){
         
@@ -176,6 +200,9 @@ struct MainScreen: View {
     }
     
     private func termsAndConditions(){
+        if let url = URL(string: termsUrl){
+            UIApplication.shared.open(url)
+        }
         
     }
     
