@@ -301,6 +301,7 @@
 		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
 		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
+		F5CCFF733035C7550074443A /* CbtHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CCFF723035C7550074443A /* CbtHistoryView.swift */; };
 		F5CE826530346636005D1903 /* CbtHistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826430346636005D1903 /* CbtHistoryScreen.swift */; };
 		F5CE8267303477A1005D1903 /* CbtHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE8266303477A1005D1903 /* CbtHistory.swift */; };
 		F5CE826930348175005D1903 /* CbtHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CE826830348175005D1903 /* CbtHistoryResponse.swift */; };
@@ -657,6 +658,7 @@
 		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
+		F5CCFF723035C7550074443A /* CbtHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryView.swift; sourceTree = "<group>"; };
 		F5CE826430346636005D1903 /* CbtHistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryScreen.swift; sourceTree = "<group>"; };
 		F5CE8266303477A1005D1903 /* CbtHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistory.swift; sourceTree = "<group>"; };
 		F5CE826830348175005D1903 /* CbtHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtHistoryResponse.swift; sourceTree = "<group>"; };
@@ -1411,6 +1413,7 @@
 				F505659E2FF6871B00A89ACB /* ReviewExplanationView.swift */,
 				F5568EE62FFD339E00C72A55 /* VideoRow.swift */,
 				F5568EE82FFD36F200C72A55 /* StudyMaterialRow.swift */,
+				F5CCFF723035C7550074443A /* CbtHistoryView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1739,6 +1742,7 @@
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
 				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
+				F5CCFF733035C7550074443A /* CbtHistoryView.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
 				F5A801BA3020D9C500005296 /* Comment.swift in Sources */,
 				F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */,

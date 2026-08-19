@@ -23,6 +23,8 @@ struct CbtHistory: Codable, Equatable, Identifiable, Hashable  {
     let disableReview: Bool
     let timeDuration: String
     let endTime: String
+    
+    static let preview = CbtHistory(id: "", item: "Mathematics", numQuestions: "30", examId: "2", shouldShuffle: "1", category: "CBT", image: "", examTime: "20", score: "50", buyerEmail: "oketoluwase@gmail.com", createdAt: "2023-07-15 13:02:32", isCompleted: "2", disableReview: true, timeDuration: "30", endTime: "")
 
     enum CodingKeys: String, CodingKey {
         case id
