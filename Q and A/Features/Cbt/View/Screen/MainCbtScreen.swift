@@ -52,6 +52,7 @@ struct MainCbtScreen: View {
                 }.frame(maxWidth: .infinity)
                  .padding(.leading, 21)
                  .padding(.trailing, 21)
+                 .padding(.top,10)
                 
                 
                 ZStack(){

@@ -178,7 +178,7 @@ struct NavMenuView: View {
                    imageResource:"nav_terms",
                    colour: Color("SecColor")
             ){
-                onMenuSelected(.privacyPolicy)
+                onMenuSelected(.termsAndConditions)
             }
             
             drawerItem(title: "Privacy Policy",

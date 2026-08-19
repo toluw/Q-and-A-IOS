@@ -25,7 +25,7 @@ class CbtHistoryViewModel: ObservableObject {
     
     
     /// Call once, e.g. from `.task` on first appearance.
-    func loadInitial(examId: String, questionId: String, buyerEmail: String) async {
+    func loadInitial() async {
         guard state.items.isEmpty else { return }
         await fetch(page: 1)
     }

@@ -60,6 +60,7 @@ struct NavDrawer: View {
                         
                         NavMenuView(onMenuSelected: onMenuSelected, mainScreenViewModel: mainScreenViewModel)
                             .padding(.top, 75)
+                            .padding(.bottom, 24)
                         
                         ZStack(alignment: .bottomTrailing){
                             //Dynamic Image Loading

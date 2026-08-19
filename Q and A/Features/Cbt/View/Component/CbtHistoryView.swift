@@ -63,6 +63,7 @@ struct CbtHistoryView: View {
                 
             }.padding(.horizontal,16)
                 .padding(.top, 8)
+                .padding(.bottom, 16)
             
         }.frame(maxWidth: .infinity)
             .background(Color.white)

@@ -98,7 +98,7 @@ struct MainStackView: View {
         case .webviewScreen(url: let url):
             WebViewScreen(url: url)
         case .cbtHistoryScreen:
-            CbtHistoryScreen()
+            CbtHistoryScreen(navVm: navVM)
         }
     }
     
