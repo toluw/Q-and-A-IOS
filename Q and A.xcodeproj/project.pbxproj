@@ -201,6 +201,8 @@
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
 		F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */; };
+		F5A5A6493037171F00A64FC6 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6483037171F00A64FC6 /* Payment.swift */; };
+		F5A5A64B3037177000A64FC6 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
 		F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */; };
@@ -559,6 +561,8 @@
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
 		F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExamResponse.swift; sourceTree = "<group>"; };
+		F5A5A6483037171F00A64FC6 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
 		F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCacheManager.swift; sourceTree = "<group>"; };
@@ -1055,6 +1059,7 @@
 				F55021342F812ACB0057C2F0 /* UserProfile.swift */,
 				F59A8F9B2FB61E6300823C77 /* PaymentState.swift */,
 				F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */,
+				F5A5A6483037171F00A64FC6 /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1071,6 +1076,7 @@
 				F56A46432F79610600B3D2FC /* ProfileImageView.swift */,
 				F56A46452F797AE600B3D2FC /* NavMenuView.swift */,
 				F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */,
+				F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1944,6 +1950,7 @@
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
+				F5A5A6493037171F00A64FC6 /* Payment.swift in Sources */,
 				F59D328A2F90EB330045C4AA /* ParentCatViewModel.swift in Sources */,
 				F50565A12FF6D6D000A89ACB /* ReviewExplanationScreen.swift in Sources */,
 				F56EA61E302727E70092972D /* ReplyView.swift in Sources */,
@@ -1960,6 +1967,7 @@
 				F56A46422F769D4400B3D2FC /* NavDrawer.swift in Sources */,
 				F52D7AEE3023463300770425 /* UpdateCommentBody.swift in Sources */,
 				F5568EE72FFD339E00C72A55 /* VideoRow.swift in Sources */,
+				F5A5A64B3037177000A64FC6 /* PaymentCardView.swift in Sources */,
 				F522B2923024ACBF008F4D3A /* LikeCommentBody.swift in Sources */,
 				F54578DB2FC84F32008FF056 /* IntExtensions.swift in Sources */,
 				F550213D2F8291E00057C2F0 /* MainCommunityScreen.swift in Sources */,
