@@ -60,7 +60,7 @@ struct NavDrawer: View {
                         
                         NavMenuView(onMenuSelected: onMenuSelected, mainScreenViewModel: mainScreenViewModel)
                             .padding(.top, 75)
-                            .padding(.bottom, 24)
+                            
                         
                         ZStack(alignment: .bottomTrailing){
                             //Dynamic Image Loading
@@ -87,7 +87,7 @@ struct NavDrawer: View {
                             }
                         
                         
-                    }.frame(maxWidth: .infinity)
+                    }.frame(maxWidth: .infinity, maxHeight: .infinity)
                     
                    
                    
@@ -100,7 +100,7 @@ struct NavDrawer: View {
             }
           .background(Color("NavHeaderBg")).ignoresSafeArea()
             
-        }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
         
        
         

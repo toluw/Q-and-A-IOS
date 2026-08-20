@@ -39,7 +39,7 @@ struct DiscussionSolutionView: View {
                     }
                     
                     
-                    if(liveExam.getAnswerData()[0].image != nil){
+                    if(liveExam.getAnswerData()[0].image?.isEmpty == false){
                         FullWidthImageView(url: liveExam.getAnswerData()[0].image, placeholderHeight: 36)
                     }
                     

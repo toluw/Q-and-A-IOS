@@ -200,6 +200,7 @@
 		F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */; };
 		F5A32ECD2FB0D2B4001023A4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5A32ECC2FB0D2B4001023A4 /* SDWebImageSwiftUI */; };
 		F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */; };
+		F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
 		F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */; };
@@ -557,6 +558,7 @@
 		F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartState.swift; sourceTree = "<group>"; };
 		F5A32EC92FB0C999001023A4 /* CbtCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartViewModel.swift; sourceTree = "<group>"; };
 		F5A32ED02FB0D3FB001023A4 /* EmptyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartView.swift; sourceTree = "<group>"; };
+		F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExamResponse.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
 		F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCacheManager.swift; sourceTree = "<group>"; };
@@ -1281,6 +1283,7 @@
 				F5899FDF300F6BF3005FF391 /* PostBody.swift */,
 				F5CE8266303477A1005D1903 /* CbtHistory.swift */,
 				F5CE826830348175005D1903 /* CbtHistoryResponse.swift */,
+				F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1791,6 +1794,7 @@
 				F5CE826D30348D5D005D1903 /* CbtHistoryState.swift in Sources */,
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
+				F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */,
 				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,

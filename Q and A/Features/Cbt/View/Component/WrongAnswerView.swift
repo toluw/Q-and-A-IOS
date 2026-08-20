@@ -37,7 +37,7 @@ struct WrongAnswerView: View {
                     }
                     
                     
-                    if(image != nil){
+                    if(image?.isEmpty == false){
                         FullWidthImageView(url: image, placeholderHeight: 36)
                     }
                     

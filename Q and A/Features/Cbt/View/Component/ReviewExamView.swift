@@ -83,7 +83,7 @@ struct ReviewExamView: View {
                             .font(AppFont.regular(16))
                     }
                     
-                    if(liveExam.questionImage != nil){
+                    if(liveExam.questionImage?.isEmpty == false){
                         FullWidthImageView(url: liveExam.questionImage, placeholderHeight: 72)
                             .padding(.top, 5)
                     }
@@ -134,11 +134,11 @@ struct ReviewExamView: View {
                             }
                             
                             if(UserSettings.isLoggedIn){
-                                SecondaryOrangeButton(buttonText: "Join Discussion", action: onJoinDiscussion)
+                                SecondaryOrangeButton(buttonText: "Discuss & Report Error", action: onJoinDiscussion)
                             }
                             
                             
-                        }.frame(width: 180)
+                        }.frame(width: 300)
                         
                         Spacer()
                         

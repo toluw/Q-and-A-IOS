@@ -42,7 +42,7 @@ struct MainScreen: View {
             // Drawer
             HStack {
                 NavDrawer(onMenuSelected: handleMenuSelection, mainScreenViewModel: viewModel)
-                .frame(width: 300)
+                    .frame(width: 300)
                 .offset(x: isDrawerOpen ? 0 : -320)
                             
                 Spacer()

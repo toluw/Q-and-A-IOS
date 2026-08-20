@@ -22,6 +22,8 @@ struct CbtHistoryState{
     
     var isLoadingMore: Bool = false
     var loadMoreErrorMessage: String? = nil
+    var liveExamDataList: [LiveExamData]? = nil
+    var showLoader: Bool = false
 
     var isEmpty: Bool {
         items.isEmpty && !isLoading && errorMessage == nil

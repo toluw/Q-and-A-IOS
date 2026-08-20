@@ -68,11 +68,11 @@ struct ReviewExplanationScreen: View {
                     }
                     
                     if(UserSettings.isLoggedIn){
-                        SecondaryOrangeButton(buttonText: "Join Discussion", action: joinDiscussion)
+                        SecondaryOrangeButton(buttonText: "Discuss & Report Error", action: joinDiscussion)
                     }
                     
                     
-                }.frame(width: 180)
+                }.frame(width: 300)
                 
                 Spacer()
                 

@@ -188,12 +188,14 @@ struct NavMenuView: View {
                 onMenuSelected(.privacyPolicy)
             }
             
+          
             drawerItem(title: "About",
                    imageResource:"nav_about",
                    colour: Color("NavBlack")
             ){
                 onMenuSelected(.about)
             }
+           
             
             if(mainScreenViewModel.userProfileState.isLoggedIn){
                 drawerItem(title: "Deactivate Account",
@@ -204,10 +206,11 @@ struct NavMenuView: View {
                 }
             }
             
+            
            
             
             
-            Spacer()
+            Spacer().frame(height: 400)
             
             
             

@@ -67,7 +67,7 @@ struct CbtHistoryView: View {
             
         }.frame(maxWidth: .infinity)
             .background(Color.white)
-            .cornerRadius(9)
+            .cornerRadius(14)
          
     }
 }

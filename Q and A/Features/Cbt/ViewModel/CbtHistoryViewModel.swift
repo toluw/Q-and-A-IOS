@@ -14,6 +14,8 @@ class CbtHistoryViewModel: ObservableObject {
     
     @Published var state = CbtHistoryState()
     
+    var cbtHistory: CbtHistory? = nil
+    
 
     private let service: CbtServiceProtocol
     
@@ -94,6 +96,65 @@ class CbtHistoryViewModel: ObservableObject {
         
         
     }
+    
+    func getLiveExam(resultId: String){
+        state.showLoader = true
+        
+        Task{
+            do{
+              
+                let response = try await service.getLiveExam(resultId: resultId)
+                state.showLoader = false
+                state.liveExamDataList = response.data
+                
+                
+                
+            } catch {
+                state.showLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.getLiveExam(resultId: resultId)
+                })
+            }
+        }
+    }
+    
+    
+    func getExamResultData(cbtHistory: CbtHistory, data: [LiveExamData]) -> ExamResultData{
+        
+        let examResult = ExamResult(item: cbtHistory.item, examId: cbtHistory.examId, numQuestions: Int(cbtHistory.numQuestions) ?? 0, shouldShuffle: cbtHistory.shouldShuffle == "1", category: cbtHistory.category, image:cbtHistory.image, examTime: Int(cbtHistory.examTime) ?? 0, score: Double(cbtHistory.score) ?? 0.0, createAt: cbtHistory.createdAt, disableReview: cbtHistory.disableReview, timeDuration: Int(cbtHistory.timeDuration) ?? 0, endTime: cbtHistory.endTime)
+        
+        let liveExamList: [LiveExam] = data.map { item in
+            LiveExam(
+                question: item.question,
+                passage: item.passage,
+                a: item.a,
+                b: item.b,
+                c: item.c,
+                d: item.d,
+                e: item.e,
+                numberOfAnswer: Int(item.numberOfAnswer) ?? 0,
+                answer: item.answer,
+                explanation: item.explanation,
+                questionId: item.questionId,
+                questionImage: item.questionImage,
+                passageImage: item.passageImage,
+                aImage: item.aImage,
+                bImage: item.bImage,
+                cImage: item.cImage,
+                dImage: item.dImage,
+                eImage: item.eImage,
+                explanationImage: item.explanationImage,
+                solution: item.solution.convertCommaDelimitedStringToList(),
+                passageVideo: item.passageVideo,
+                passageBook: item.passageBook
+            )
+        }
+        
+        return ExamResultData(examResult: examResult, liveExamList: liveExamList)
+        
+        
+    }
+    
     
     
     

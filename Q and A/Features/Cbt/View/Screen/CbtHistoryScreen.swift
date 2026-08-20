@@ -16,21 +16,29 @@ struct CbtHistoryScreen: View {
     
     var body: some View {
         
-        VStack{
+        ZStack{
             
-            Spacer().frame(height: 24)
+           
             
             ScrollView{
               
-                LazyVStack(spacing: 15){
+                LazyVStack(spacing: 16){
                     
                     content
                     
                 }
                 
+            }.padding(.top, 24)
+            
+            if(viewModel.state.showLoader){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
             }
-            
-            
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -46,6 +54,27 @@ struct CbtHistoryScreen: View {
                 // Title
                 ToolbarItem(placement: .principal) {
                     Text("CBT History").font(AppFont.regular(18))
+                }
+                
+                
+            }
+            .onChange(of: viewModel.state.liveExamDataList){previous, current in
+                
+                if let data = current{
+                    
+                    if let cbtHistory = viewModel.cbtHistory{
+                        
+                        let examResultData = viewModel.getExamResultData(cbtHistory:cbtHistory, data:data)
+                        
+                        if(examResultData.examResult.disableReview){
+                            showNoticeMessage(message: "Fan Quiz Result details coming soon.", actionTitle: "Dismiss", showCancel: false, action: {})
+                        }else{
+                            navVm.navigate(route: .resultScreen(examResultData: examResultData))
+                        }
+                        
+                        
+                    }
+                    
                 }
                 
                 
@@ -103,7 +132,8 @@ struct CbtHistoryScreen: View {
             
             
             CbtHistoryView(cbtHistory: cbtHistory, onViewResult: {
-                
+                viewModel.cbtHistory = cbtHistory
+                viewModel.getLiveExam(resultId: cbtHistory.id)
                 
             })
             .task {
