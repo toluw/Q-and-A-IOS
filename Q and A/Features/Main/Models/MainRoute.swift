@@ -42,5 +42,6 @@ enum MainRoute: Hashable{
     case webviewScreen(url: URL)
     case cbtHistoryScreen
     case userPaymentScreen
+    case paymentDetailsScreen(payment: Payment)
    
 }

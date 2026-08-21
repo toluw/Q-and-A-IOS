@@ -101,7 +101,10 @@ struct MainStackView: View {
             CbtHistoryScreen(navVm: navVM)
         case .userPaymentScreen:
             UserPaymentScreen(navVm: navVM)
+        case .paymentDetailsScreen(payment: let payment):
+            PaymentDetailsScreen(payment: payment)
         }
+        
     }
     
 }

@@ -11,6 +11,8 @@ protocol MainServiceProtocol{
     
     func getUserPayments(email: String, page: String) async throws -> PaymentResponse
     
+    func getPaymentDetails(reference: String, type: String) async throws -> PaymentDetailsResponse
+    
     
 }
 
@@ -34,6 +36,18 @@ final class MainService: MainServiceProtocol{
         )
     }
     
+    
+    func getPaymentDetails(reference: String, type: String) async throws -> PaymentDetailsResponse {
+        return try await apiClient.request(
+            .getPaymentDetail(type: type, reference: reference),
+            responseType: PaymentDetailsResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
+    
+   
    
     
     

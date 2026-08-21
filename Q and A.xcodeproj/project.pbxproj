@@ -209,6 +209,11 @@
 		F5A5A6533038534C00A64FC6 /* UserPaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */; };
 		F5A5A655303853C100A64FC6 /* UserPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A654303853C100A64FC6 /* UserPaymentState.swift */; };
 		F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */; };
+		F5A5A65930385EAE00A64FC6 /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */; };
+		F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */; };
+		F5A5A65D3038628800A64FC6 /* PaymentDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */; };
+		F5A5A65F3038632000A64FC6 /* PaymentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */; };
+		F5A5A6613038653C00A64FC6 /* PaymentDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
 		F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */; };
@@ -575,6 +580,11 @@
 		F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentsViewModel.swift; sourceTree = "<group>"; };
 		F5A5A654303853C100A64FC6 /* UserPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentState.swift; sourceTree = "<group>"; };
 		F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentScreen.swift; sourceTree = "<group>"; };
+		F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
+		F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadState.swift; sourceTree = "<group>"; };
+		F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsState.swift; sourceTree = "<group>"; };
+		F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewModel.swift; sourceTree = "<group>"; };
+		F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsScreen.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
 		F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCacheManager.swift; sourceTree = "<group>"; };
@@ -1074,6 +1084,9 @@
 				F5A5A6483037171F00A64FC6 /* Payment.swift */,
 				F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */,
 				F5A5A654303853C100A64FC6 /* UserPaymentState.swift */,
+				F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */,
+				F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */,
+				F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1092,6 +1105,7 @@
 				F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */,
 				F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */,
 				F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */,
+				F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1104,6 +1118,7 @@
 				F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */,
 				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
 				F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */,
+				F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1679,6 +1694,7 @@
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
 				F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
+				F5A5A6613038653C00A64FC6 /* PaymentDetailsScreen.swift in Sources */,
 				F535C2ED302DE6A80055E168 /* ConfirmPhoneView.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
 				F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */,
@@ -1751,6 +1767,7 @@
 				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
+				F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */,
 				F5D0BEFE300A18E00036E377 /* CommunityApi.swift in Sources */,
@@ -1772,6 +1789,7 @@
 				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5CCFF733035C7550074443A /* CbtHistoryView.swift in Sources */,
+				F5A5A65930385EAE00A64FC6 /* PaymentDetailsResponse.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
 				F5A801BA3020D9C500005296 /* Comment.swift in Sources */,
 				F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */,
@@ -1798,6 +1816,7 @@
 				F5AE933C2F8638BE0003CAA5 /* BottomSheetData.swift in Sources */,
 				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
+				F5A5A65F3038632000A64FC6 /* PaymentDetailsViewModel.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5285A0D3021F109002268D5 /* CommentViewModel.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
@@ -1865,6 +1884,7 @@
 				F5CE826930348175005D1903 /* CbtHistoryResponse.swift in Sources */,
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
+				F5A5A65D3038628800A64FC6 /* PaymentDetailsState.swift in Sources */,
 				F5B0025E3032FE2F005DC0C9 /* WebViewScreen.swift in Sources */,
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,

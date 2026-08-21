@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Payment: Codable, Identifiable {
+struct Payment: Codable, Equatable, Identifiable, Hashable {
     let id: String
     let email: String
     let price: String

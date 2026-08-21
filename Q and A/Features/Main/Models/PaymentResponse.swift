@@ -9,6 +9,8 @@ import Foundation
 
 struct PaymentResponse: Codable{
     
+    let status: Bool
+    let message: String
     let data: UserPaymentData
 }
 

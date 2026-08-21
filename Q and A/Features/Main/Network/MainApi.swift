@@ -13,6 +13,7 @@ import Moya
 enum MainApi {
    
     case getUserPayments(email: String, page: String)
+    case getPaymentDetail(type: String, reference: String)
     
 }
 
@@ -28,6 +29,8 @@ extension MainApi: TargetType{
             
         case .getUserPayments:
             return "v2/get_user_payments.php"
+        case .getPaymentDetail:
+            return "v2/get_payment_details.php"
         }
     }
     
@@ -35,6 +38,8 @@ extension MainApi: TargetType{
         switch self{
             
         case .getUserPayments:
+            .get
+        case .getPaymentDetail:
             .get
         }
     }
@@ -47,6 +52,17 @@ extension MainApi: TargetType{
                 var params: [String: Any] = [:]
                 params.addOptional(key: "email", value: email)
                 params.addOptional(key: "page", value: page)
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+            }
+        case .getPaymentDetail(type: let type, reference: let reference):
+            do{
+                var params: [String: Any] = [:]
+                params.addOptional(key: "type", value: type)
+                params.addOptional(key: "reference", value: reference)
                 
                 return .requestParameters(
                     parameters: params,

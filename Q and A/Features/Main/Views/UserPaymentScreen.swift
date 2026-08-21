@@ -109,7 +109,7 @@ struct UserPaymentScreen: View {
             
             
             PaymentCardView(payment: payment, onClick: {
-                
+                navVm.navigate(route: .paymentDetailsScreen(payment: payment))
             })
             .task {
                 await viewModel.loadMoreIfNeeded(currentItem: payment)
