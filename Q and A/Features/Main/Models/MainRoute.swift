@@ -41,5 +41,6 @@ enum MainRoute: Hashable{
     case replyScreen(comment: Comment?, commentId: String, showKeyPad: Bool)
     case webviewScreen(url: URL)
     case cbtHistoryScreen
+    case userPaymentScreen
    
 }

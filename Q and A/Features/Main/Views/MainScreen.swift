@@ -180,7 +180,7 @@ struct MainScreen: View {
     }
     
     private func paymentHistory(){
-        
+        navVm.navigate(route: .userPaymentScreen)
     }
     
     private func cbtHistory(){

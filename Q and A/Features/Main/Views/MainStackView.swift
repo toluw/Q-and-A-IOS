@@ -99,6 +99,8 @@ struct MainStackView: View {
             WebViewScreen(url: url)
         case .cbtHistoryScreen:
             CbtHistoryScreen(navVm: navVM)
+        case .userPaymentScreen:
+            UserPaymentScreen(navVm: navVM)
         }
     }
     

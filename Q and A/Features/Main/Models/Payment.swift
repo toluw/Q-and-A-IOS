@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Payment: Codable {
+struct Payment: Codable, Identifiable {
     let id: String
     let email: String
     let price: String

@@ -203,6 +203,12 @@
 		F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */; };
 		F5A5A6493037171F00A64FC6 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6483037171F00A64FC6 /* Payment.swift */; };
 		F5A5A64B3037177000A64FC6 /* PaymentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */; };
+		F5A5A64D303849BA00A64FC6 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A64C303849BA00A64FC6 /* MainApi.swift */; };
+		F5A5A64F30384B0E00A64FC6 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */; };
+		F5A5A6513038515B00A64FC6 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6503038515B00A64FC6 /* MainService.swift */; };
+		F5A5A6533038534C00A64FC6 /* UserPaymentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */; };
+		F5A5A655303853C100A64FC6 /* UserPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A654303853C100A64FC6 /* UserPaymentState.swift */; };
+		F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
 		F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */; };
@@ -563,6 +569,12 @@
 		F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveExamResponse.swift; sourceTree = "<group>"; };
 		F5A5A6483037171F00A64FC6 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardView.swift; sourceTree = "<group>"; };
+		F5A5A64C303849BA00A64FC6 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
+		F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
+		F5A5A6503038515B00A64FC6 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentsViewModel.swift; sourceTree = "<group>"; };
+		F5A5A654303853C100A64FC6 /* UserPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentState.swift; sourceTree = "<group>"; };
+		F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentScreen.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
 		F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCacheManager.swift; sourceTree = "<group>"; };
@@ -1060,6 +1072,8 @@
 				F59A8F9B2FB61E6300823C77 /* PaymentState.swift */,
 				F5AAC9DF2FBA6E82003977CA /* PaystackPaymentState.swift */,
 				F5A5A6483037171F00A64FC6 /* Payment.swift */,
+				F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */,
+				F5A5A654303853C100A64FC6 /* UserPaymentState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1077,6 +1091,7 @@
 				F56A46452F797AE600B3D2FC /* NavMenuView.swift */,
 				F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */,
 				F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */,
+				F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1088,6 +1103,7 @@
 				F55021362F812BCF0057C2F0 /* MainScreenViewModel.swift */,
 				F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */,
 				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
+				F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1475,6 +1491,8 @@
 			children = (
 				F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */,
 				F5E0546F2FB85CF10012A9CC /* PaystackService.swift */,
+				F5A5A64C303849BA00A64FC6 /* MainApi.swift */,
+				F5A5A6503038515B00A64FC6 /* MainService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1653,6 +1671,7 @@
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
 				F56EA61A302724E00092972D /* Quote.swift in Sources */,
 				F5E9B3C22FEAC5AF00B98FCB /* GoToReviewState.swift in Sources */,
+				F5A5A64D303849BA00A64FC6 /* MainApi.swift in Sources */,
 				F5E9B3BE2FE98BC800B98FCB /* GoToReviewItemView.swift in Sources */,
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
@@ -1727,6 +1746,7 @@
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
+				F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */,
 				F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */,
 				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
@@ -1794,6 +1814,7 @@
 				F55951EA30238E6A00C8AF67 /* DeleteCommentBody.swift in Sources */,
 				F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */,
 				F5D0BF00300A1F350036E377 /* CommunityService.swift in Sources */,
+				F5A5A6533038534C00A64FC6 /* UserPaymentsViewModel.swift in Sources */,
 				F51C58CD2F9A00E500CE9931 /* LoadImageView.swift in Sources */,
 				F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */,
 				F54578E92FCD8E75008FF056 /* PassageView.swift in Sources */,
@@ -1849,6 +1870,7 @@
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
 				F5C61BA62FD2EEC40090310A /* GoToQuestionViewModel.swift in Sources */,
 				F535C2E9302DE3FC0055E168 /* LoginAspect.swift in Sources */,
+				F5A5A655303853C100A64FC6 /* UserPaymentState.swift in Sources */,
 				F5EB75512FE42D1A002D38AE /* ReviewExamView.swift in Sources */,
 				F5AE93382F854F8E0003CAA5 /* GeneralResponse.swift in Sources */,
 				F5B5A03B2FA60CCC00B11187 /* SelectCbtModeView.swift in Sources */,
@@ -1885,6 +1907,7 @@
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
 				F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */,
+				F5A5A6513038515B00A64FC6 /* MainService.swift in Sources */,
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
@@ -1892,6 +1915,7 @@
 				F5D0BEF93008E5490036E377 /* EmptyDiscussionView.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
 				F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */,
+				F5A5A64F30384B0E00A64FC6 /* PaymentResponse.swift in Sources */,
 				F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */,
 				F5A801B83020D95E00005296 /* CommentView.swift in Sources */,
 				F5CE826B30348C79005D1903 /* CbtHistoryViewModel.swift in Sources */,
