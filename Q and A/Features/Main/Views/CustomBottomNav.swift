@@ -22,27 +22,26 @@ struct CustomBottomNav: View {
                 .frame(height: 80)
             
             HStack {
+                
+                Spacer()
                            
                 tabItem(icon: "ic_cbt", title: "CBT", tab: .cbt)
                            
-                Spacer()
-                Spacer()
-                           
-                tabItem(icon: "ic_book", title: "Book", tab: .book)
-                           
+               
                             // space for FAB
                 Spacer()
                 Spacer()
                 Spacer()
                            
-                tabItem(icon: "ic_video", title: "Video", tab:.video)
+               
                            
+                tabItem(icon: "help", title: "Contact Us", tab: .contact_us)
+                
+                
                 Spacer()
-                Spacer()
-                           
-                tabItem(icon: "ic_library", title: "Library", tab: .library)
                        }
-                       .padding(.horizontal, 24)
+          
+                    //   .padding(.horizontal, 24)
             
             // Floating Button
                      VStack {

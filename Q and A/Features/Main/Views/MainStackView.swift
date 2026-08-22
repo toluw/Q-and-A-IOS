@@ -103,6 +103,8 @@ struct MainStackView: View {
             UserPaymentScreen(navVm: navVM)
         case .paymentDetailsScreen(payment: let payment):
             PaymentDetailsScreen(payment: payment)
+        case .aboutScreen:
+            AboutScreen()
         }
         
     }

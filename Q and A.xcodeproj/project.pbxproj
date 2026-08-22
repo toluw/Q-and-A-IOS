@@ -154,6 +154,8 @@
 		F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE73010B69D005FF391 /* ImagePicker.swift */; };
 		F5899FEA3010D0B2005FF391 /* UpdatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */; };
 		F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FEB3010D175005FF391 /* CreatePostBody.swift */; };
+		F58A268F3039B073004A1B27 /* ContactUsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A268E3039B073004A1B27 /* ContactUsLinks.swift */; };
+		F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A26903039C24E004A1B27 /* AboutScreen.swift */; };
 		F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A13029C5A900D1722B /* ReplyScreen.swift */; };
 		F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */; };
 		F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */; };
@@ -333,6 +335,8 @@
 		F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */; };
 		F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476562FA106C600713F18 /* ExamSelectView.swift */; };
 		F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */; };
+		F5D82E0E3039E2A300C8621C /* ComingSoonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */; };
+		F5D82E103039E2E500C8621C /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
 		F5DBD1072FB1ED31009FE6EF /* empty_cart.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5DBD1062FB1ED30009FE6EF /* empty_cart.gif */; };
 		F5DBD1092FB1ED49009FE6EF /* empty_bx.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5DBD1082FB1ED49009FE6EF /* empty_bx.gif */; };
@@ -343,6 +347,7 @@
 		F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */; };
 		F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546F2FB85CF10012A9CC /* PaystackService.swift */; };
 		F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */; };
+		F5E1386B3039A03600863E3D /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1386A3039A03100863E3D /* ContactUsScreen.swift */; };
 		F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */; };
 		F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */; };
 		F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E82F7FB70900C10F3A /* Constants.swift */; };
@@ -525,6 +530,8 @@
 		F5899FE73010B69D005FF391 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5899FE93010D0B2005FF391 /* UpdatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostBody.swift; sourceTree = "<group>"; };
 		F5899FEB3010D175005FF391 /* CreatePostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostBody.swift; sourceTree = "<group>"; };
+		F58A268E3039B073004A1B27 /* ContactUsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsLinks.swift; sourceTree = "<group>"; };
+		F58A26903039C24E004A1B27 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		F58CE9A13029C5A900D1722B /* ReplyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyScreen.swift; sourceTree = "<group>"; };
 		F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReplyBody.swift; sourceTree = "<group>"; };
 		F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReplyBody.swift; sourceTree = "<group>"; };
@@ -704,6 +711,8 @@
 		F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostScreen.swift; sourceTree = "<group>"; };
 		F5D476562FA106C600713F18 /* ExamSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectView.swift; sourceTree = "<group>"; };
 		F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectBottomSheetView.swift; sourceTree = "<group>"; };
+		F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonConfig.swift; sourceTree = "<group>"; };
+		F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		F5DBD1062FB1ED30009FE6EF /* empty_cart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = empty_cart.gif; sourceTree = "<group>"; };
 		F5DBD1082FB1ED49009FE6EF /* empty_bx.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = empty_bx.gif; sourceTree = "<group>"; };
@@ -714,6 +723,7 @@
 		F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackApi.swift; sourceTree = "<group>"; };
 		F5E0546F2FB85CF10012A9CC /* PaystackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackService.swift; sourceTree = "<group>"; };
 		F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentScreen.swift; sourceTree = "<group>"; };
+		F5E1386A3039A03100863E3D /* ContactUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsScreen.swift; sourceTree = "<group>"; };
 		F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceManager.swift; sourceTree = "<group>"; };
 		F5E144E82F7FB70900C10F3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1087,6 +1097,7 @@
 				F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */,
 				F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */,
 				F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */,
+				F58A268E3039B073004A1B27 /* ContactUsLinks.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1106,6 +1117,8 @@
 				F5A5A64A3037177000A64FC6 /* PaymentCardView.swift */,
 				F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */,
 				F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */,
+				F5E1386A3039A03100863E3D /* ContactUsScreen.swift */,
+				F58A26903039C24E004A1B27 /* AboutScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1167,6 +1180,7 @@
 				F5899FE73010B69D005FF391 /* ImagePicker.swift */,
 				F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */,
 				F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */,
+				F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1534,6 +1548,7 @@
 				F5A716B82FFE8CBA0046D33E /* PDFCacheManager.swift */,
 				F5A716BA2FFE8D690046D33E /* PDFDownloader.swift */,
 				F5A716BC2FFE93F30046D33E /* PDFRepository.swift */,
+				F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1684,6 +1699,7 @@
 				F5BF8FF12FD01D9C00C55E68 /* ExamViewModel.swift in Sources */,
 				F54578F72FCEE826008FF056 /* MultiSelectedAnswerView.swift in Sources */,
 				F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */,
+				F5D82E103039E2E500C8621C /* ComingSoonView.swift in Sources */,
 				F56EA61A302724E00092972D /* Quote.swift in Sources */,
 				F5E9B3C22FEAC5AF00B98FCB /* GoToReviewState.swift in Sources */,
 				F5A5A64D303849BA00A64FC6 /* MainApi.swift in Sources */,
@@ -1731,6 +1747,7 @@
 				F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */,
 				F5D0BF06300A28C70036E377 /* CbtPostViewModel.swift in Sources */,
 				F5288E772FF56B390071E448 /* AnswerData.swift in Sources */,
+				F58A268F3039B073004A1B27 /* ContactUsLinks.swift in Sources */,
 				F5A716C02FFE94540046D33E /* PdfLoaderViewModel.swift in Sources */,
 				F5BB95102FE954E3004EDA26 /* ReviewViewModel.swift in Sources */,
 				F5A812392FEC058F00EB0496 /* ContentSegment.swift in Sources */,
@@ -1931,6 +1948,7 @@
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,
 				F51E11E92FA8F4E900934BF7 /* MultipleExam.swift in Sources */,
 				F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */,
+				F5D82E0E3039E2A300C8621C /* ComingSoonConfig.swift in Sources */,
 				F5A8CDB42FF3C2D000D3084C /* ViewSolutionButton.swift in Sources */,
 				F5D0BEF93008E5490036E377 /* EmptyDiscussionView.swift in Sources */,
 				F54762BE2F92E6CA00BB1366 /* TheorySubCatScreen.swift in Sources */,
@@ -1958,6 +1976,7 @@
 				F5394D943027529200187254 /* ReplyCommentView.swift in Sources */,
 				F535C2EB302DE5CA0055E168 /* SignUpView.swift in Sources */,
 				F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */,
+				F5E1386B3039A03600863E3D /* ContactUsScreen.swift in Sources */,
 				F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */,
 				F5B100F92FD5BAA600B924EF /* ExamResultBody.swift in Sources */,
 				F5E054652FB7C5940012A9CC /* PaymentData.swift in Sources */,
@@ -1991,6 +2010,7 @@
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */,
+				F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */,
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,

@@ -80,14 +80,16 @@ struct MainScreen: View {
     
     @ViewBuilder
     private var mainContent: some View{
-        ZStack {
+        VStack {
                    
                    // Current Screen
-                   contentView
-                   
+            contentView.padding(.bottom,30)
+            
+                  Spacer()
+            
                    // Bottom Navigation
                    VStack {
-                       Spacer()
+                      
                        CustomBottomNav(
                         selectedTab: $selectedTab,
                         onFabClick: {
@@ -107,12 +109,9 @@ struct MainScreen: View {
                }
                    
                
-           case .book:
-               MainBookScreen()
-           case .video:
-               MainVideoScreen()
-           case .library:
-               MainLibraryScreen()
+           case .contact_us:
+               ContactUsScreen()
+           
            }
        }
     
@@ -196,7 +195,7 @@ struct MainScreen: View {
     }
     
     private func about(){
-        
+        navVm.navigate(route: .aboutScreen)
     }
     
     private func termsAndConditions(){

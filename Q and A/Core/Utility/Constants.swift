@@ -22,6 +22,7 @@ let EDIT = "Edit"
 let DELETE = "Delete"
 let termsUrl = "https://www.knowbaseconsult.com/techpedia-terms-and-conditions/"
 let privacyUrl = "https://www.knowbaseconsult.com/techpedia-privacy-policy/"
+let aboutApp = "Q and A App is a knowledge sharing market place that provides Study Materials, Past Questions and Scholarship resources to students; connect knowledge seekers with experts and provides individuals with career and personal development resources "
 
 enum PaystackConstants {
     static let callbackURL = "https://www.knowbaseconsult.com/about-knowbase"

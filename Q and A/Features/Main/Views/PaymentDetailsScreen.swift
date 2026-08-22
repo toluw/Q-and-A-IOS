@@ -69,7 +69,7 @@ struct PaymentDetailsScreen: View {
                    .padding(.vertical, 14)
 
                detailRow(icon: "number", label: "Reference", value: payment.reference)
-               detailRow(icon: "creditcard", label: "Processor", value: payment.processor)
+               detailRow(icon: "creditcard", label: "Processor", value: payment.paymentProcessor)
                detailRow(icon: "envelope", label: "Email", value: payment.email)
            }
            .padding(18)

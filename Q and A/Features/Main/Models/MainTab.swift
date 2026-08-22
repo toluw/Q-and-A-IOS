@@ -8,5 +8,5 @@
 import Foundation
 
 enum MainTab {
-    case cbt, book, video, library
+    case cbt, contact_us
 }

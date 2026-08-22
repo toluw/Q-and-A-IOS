@@ -14,7 +14,7 @@ struct TheorySubCatScreen: View {
     @ObservedObject var paymentViewModel: PaymentViewModel
     
     var body: some View {
-        Text("Theory SubCat")
+        ComingSoonView()
     }
 }
 

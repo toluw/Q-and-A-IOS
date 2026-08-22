@@ -43,5 +43,6 @@ enum MainRoute: Hashable{
     case cbtHistoryScreen
     case userPaymentScreen
     case paymentDetailsScreen(payment: Payment)
+    case aboutScreen
    
 }
