@@ -16,7 +16,7 @@ class MarketPlaceProductViewModel: ObservableObject{
     
     @Published var state: ProductLoadState = .loading
     var currentProductId: String? = nil
-    var successPaymentReference: String? = nil
+    @Published var successPaymentReference: String? = nil
     
     private var transactionListener: Task<Void, Never>?
 
@@ -35,7 +35,13 @@ class MarketPlaceProductViewModel: ObservableObject{
             currentProductId = productId
             state = .loading
             let products = try await Product.products(for: [productId])
-            state = .loaded(products[0])
+            
+            if(products.isEmpty){
+                state = .error
+            }else{
+                state = .loaded(products[0])
+            }
+            
             
             
         } catch{
@@ -45,12 +51,10 @@ class MarketPlaceProductViewModel: ObservableObject{
     }
     
     private func listenForTransactions() -> Task<Void, Never> {
-
-        Task.detached { [weak self] in
-
+        Task { [weak self] in
             for await result in StoreKit.Transaction.updates {
-
-                await self?.handleTransaction(result)
+                guard let self else { break }
+                await self.handleTransaction(result)
             }
         }
     }
@@ -69,11 +73,21 @@ class MarketPlaceProductViewModel: ObservableObject{
                
                 await transaction.finish()
                 
+
+                print(
+                    "Verified transaction: \(transaction.id),transaction => \(transaction)"
+                )
+                
                 successPaymentReference = String(transaction.id)
                 
                 
                 
                 
+            }else{
+                
+                print(
+                    "Verified but wrong transaction: \(transaction.id), product id = \(transaction.productID), transaction => \(transaction)"
+                )
             }
 
             

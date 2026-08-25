@@ -75,6 +75,10 @@ struct MarketplaceProductScreen: View {
         } .onChange(of: viewModel.successPaymentReference){previous, current in
             
             if let reference = viewModel.successPaymentReference{
+                
+                print(
+                    "Payment Success: ref.\(reference): "
+                )
                 paymentViewModel.paymentState = .success(reference: reference, processor: 3)
                 navVm.pop()
             }
