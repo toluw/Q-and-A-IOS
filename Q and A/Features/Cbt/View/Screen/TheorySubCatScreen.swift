@@ -14,7 +14,21 @@ struct TheorySubCatScreen: View {
     @ObservedObject var paymentViewModel: PaymentViewModel
     
     var body: some View {
-        ComingSoonView()
+        VStack{
+            
+            Spacer()
+            
+            Text("No theory subject yet. Please check back later").frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+                .font(AppFont.regular(14))
+                .foregroundColor(Color("empty"))
+            
+                .padding(.horizontal,16)
+            
+            Spacer()
+            Spacer()
+            
+        }
     }
 }
 

@@ -17,6 +17,7 @@ class MarketPlaceProductViewModel: ObservableObject{
     @Published var state: ProductLoadState = .loading
     var currentProductId: String? = nil
     @Published var successPaymentReference: String? = nil
+    @Published var isPurchasing = false
     
     private var transactionListener: Task<Void, Never>?
 
@@ -27,6 +28,29 @@ class MarketPlaceProductViewModel: ObservableObject{
        deinit {
            transactionListener?.cancel()
        }
+    
+    
+    func purchase(_ product: Product) async {
+        isPurchasing = true
+        defer { isPurchasing = false }
+        do {
+            let result = try await product.purchase()
+            switch result {
+            case .success(let verification):
+                if case .verified(let transaction) = verification {
+                    await transaction.finish()
+                    successPaymentReference = String(transaction.id)
+                }
+            case .userCancelled, .pending:
+                break
+            @unknown default:
+                break
+            }
+        } catch {
+            print("Purchase failed: \(error)")
+            state = .error
+        }
+    }
     
     
     func loadProducts(productId: String) async{
