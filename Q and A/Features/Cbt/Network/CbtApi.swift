@@ -46,7 +46,7 @@ extension CbtAPI: TargetType{
         case .getMultipleExams:
             return "v2/get_multiple_exam_questions2.php"
         case .postTransaction:
-            return "v2/post_transaction.php"
+            return "v2/post_transaction2.php"
         case .getCatExams:
             return "v2/get_cat_exams2.php"
         case .getCbtQuestions:

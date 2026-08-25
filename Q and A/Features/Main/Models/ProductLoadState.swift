@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import StoreKit
+
+enum ProductLoadState{
+    
+    case loading
+    case loaded(Product)
+    case error
+    
+}

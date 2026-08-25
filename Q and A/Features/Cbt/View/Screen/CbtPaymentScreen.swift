@@ -86,36 +86,46 @@ struct CbtPaymentScreen: View {
         switch paymentViewModel.paymentState {
         case .initialize:
             initPayment()
-        case .success(let reference):
-            handlePaymentSuccess(reference: reference)
+        case .success(let reference, let processor):
+            handlePaymentSuccess(reference: reference, processor: processor)
         case .cancel:
             navVm.pop()
         }
         
     }
     
-    private func handlePaymentSuccess(reference: String){
+    private func handlePaymentSuccess(reference: String, processor: Int){
         if let buyerEmail = UserSettings.email {
             
-            viewModel.postTransactionBody = cbtViewModel.getTransactionBody(buyerEmail: buyerEmail, reference: reference)
+            viewModel.postTransactionBody = cbtViewModel.getTransactionBody(buyerEmail: buyerEmail, reference: reference, processor: processor)
             viewModel.postTranSaction()
             
         }
     }
     
     private func initPayment(){
+        
+        
        
         let price = cbtViewModel.getExamPayTotalPrice()
         
-        let amount = price * 100
+        if(UserSettings.phoneNumber?.isNyjaNum() == true){
+            
+            let amount = price * 100
+            
+            let paystackMetaData = cbtViewModel.getPaystackMetadData()
+            
+            let paystackData = PaystackData(amount: String(amount), email: UserSettings.email ?? "", metadata: paystackMetaData)
+            
+            viewModel.paystackData = paystackData
+            
+            viewModel.initTransaction()
+            
+        }else{
+            navVm.navigate(route: .marketPlaceProductScreen(price: price))
+        }
         
-        let paystackMetaData = cbtViewModel.getPaystackMetadData()
         
-        let paystackData = PaystackData(amount: String(amount), email: UserSettings.email ?? "", metadata: paystackMetaData)
-        
-        viewModel.paystackData = paystackData
-        
-        viewModel.initTransaction()
         
     }
 }

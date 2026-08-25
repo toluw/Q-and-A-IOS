@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+
+struct DeactivateBody: Codable{
+    
+    let email: String
+}

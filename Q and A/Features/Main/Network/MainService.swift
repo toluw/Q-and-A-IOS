@@ -13,10 +13,13 @@ protocol MainServiceProtocol{
     
     func getPaymentDetails(reference: String, type: String) async throws -> PaymentDetailsResponse
     
+    func deactivate(deactivateBody: DeactivateBody)  async throws -> GeneralResponse
+    
     
 }
 
 final class MainService: MainServiceProtocol{
+   
    
     
     
@@ -35,6 +38,21 @@ final class MainService: MainServiceProtocol{
             }
         )
     }
+    
+    
+    func deactivate(deactivateBody: DeactivateBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .deactivate(deactivateBody: deactivateBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
+   
+    
     
     
     func getPaymentDetails(reference: String, type: String) async throws -> PaymentDetailsResponse {

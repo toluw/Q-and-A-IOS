@@ -14,6 +14,7 @@ struct PostTransactionBody: Codable{
     let reference: String
     let exams: [Transaction]
     var is_android: String = "0"
+    let processor: Int
     
     
 }

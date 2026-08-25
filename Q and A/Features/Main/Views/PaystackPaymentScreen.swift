@@ -59,7 +59,7 @@ struct PaystackPaymentScreen: View {
             .onChange(of: viewModel.state.successPaymentReference){previous, current in
                 
                 if let reference = viewModel.state.successPaymentReference{
-                    paymentViewModel.paymentState = .success(reference: reference)
+                    paymentViewModel.paymentState = .success(reference: reference, processor: 1)
                     navVm.pop()
                 }
                 

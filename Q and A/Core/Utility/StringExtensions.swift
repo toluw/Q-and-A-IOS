@@ -88,6 +88,23 @@ extension String{
                 .joined(separator: " ")
         }
     
+    func isNyjaNum() -> Bool {
+        // Normalize: strip spaces, dashes, parentheses, dots
+        let cleaned = self
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "[\\s\\-()\\.]", with: "", options: .regularExpression)
+
+        if cleaned.isEmpty { return false }
+
+        // Ordered longest-first so we don't get a false partial match
+        let nigerianPrefixes = [
+            "+234", "234",
+            "080", "081", "070", "090", "091"
+        ].sorted { $0.count > $1.count }
+
+        return nigerianPrefixes.contains { cleaned.hasPrefix($0) }
+    }
+    
     func isValidYouTubeUrl() -> Bool {
          let pattern = #"^(https?://)?(www\.)?(youtube\.com|youtu\.be)/(watch\?v=|embed/|v/)?[a-zA-Z0-9_-]{11}"#
 

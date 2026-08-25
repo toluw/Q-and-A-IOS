@@ -10,9 +10,16 @@ import Foundation
 @MainActor
 class MainNavViewModel: ObservableObject {
     
-    @Published var path: [MainRoute] = []
+    
     
     @Published private(set) var activeRoute: MainRoute?
+    
+    @Published var path: [MainRoute] = []
+    
+    func pop() {
+        _ = path.popLast()
+        
+    }
     
     func navigate(route: MainRoute) {
       path.append(route)
@@ -32,10 +39,7 @@ class MainNavViewModel: ObservableObject {
         
     }
     
-    func pop() {
-        _ = path.popLast()
-        
-    }
+   
     
     func popToRoot() {
         path.removeAll()

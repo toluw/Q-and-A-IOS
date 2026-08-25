@@ -14,6 +14,7 @@ enum MainApi {
    
     case getUserPayments(email: String, page: String)
     case getPaymentDetail(type: String, reference: String)
+    case deactivate(deactivateBody: DeactivateBody)
     
 }
 
@@ -31,6 +32,8 @@ extension MainApi: TargetType{
             return "v2/get_user_payments.php"
         case .getPaymentDetail:
             return "v2/get_payment_details.php"
+        case .deactivate:
+            return "v2/deactivate.php"
         }
     }
     
@@ -41,6 +44,8 @@ extension MainApi: TargetType{
             .get
         case .getPaymentDetail:
             .get
+        case .deactivate:
+            .post
         }
     }
     
@@ -69,6 +74,8 @@ extension MainApi: TargetType{
                     encoding: URLEncoding.queryString
                 )
             }
+        case .deactivate(deactivateBody: let deactivateBody):
+            return .requestJSONEncodable(deactivateBody)
         }
         
     }

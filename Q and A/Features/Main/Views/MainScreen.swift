@@ -48,6 +48,16 @@ struct MainScreen: View {
                 Spacer()
                 }
             
+            if(viewModel.showLoader){
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                
+                ProgressView()
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(10)
+            }
+            
         }
         .sheet(isPresented: $viewModel.showLogin){
             LoginScreen(
@@ -174,7 +184,8 @@ struct MainScreen: View {
     
     private func privacyPolicy(){
         if let url = URL(string: privacyUrl){
-            UIApplication.shared.open(url)
+           UIApplication.shared.open(url)
+            // navVm.navigate(route: .webviewScreen(url: url))
         }
     }
     
@@ -188,6 +199,10 @@ struct MainScreen: View {
     
     private func deactivateAccount(){
         
+        showErrorMessage(message: "Are you sure you want to deactivate your account? You will lose access to your content", actionTitle: "Deactivate", showCancel: true, action: {
+            viewModel.deactivate()
+        })
+        
     }
     
     private func moveToEditProfile(){
@@ -200,6 +215,7 @@ struct MainScreen: View {
     
     private func termsAndConditions(){
         if let url = URL(string: termsUrl){
+          //  navVm.navigate(route: .webviewScreen(url: url))
             UIApplication.shared.open(url)
         }
         

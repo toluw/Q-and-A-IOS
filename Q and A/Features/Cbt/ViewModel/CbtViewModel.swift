@@ -370,7 +370,7 @@ class CbtViewModel: ObservableObject{
     }
     
     
-    func getTransactionBody(buyerEmail: String, reference: String) -> PostTransactionBody{
+    func getTransactionBody(buyerEmail: String, reference: String, processor: Int) -> PostTransactionBody{
         
         let transactions: [Transaction] = selectedExamPay.map{
             
@@ -378,7 +378,7 @@ class CbtViewModel: ObservableObject{
             
         }
         
-        return PostTransactionBody(buyer_email: buyerEmail, reference: reference, exams: transactions)
+        return PostTransactionBody(buyer_email: buyerEmail, reference: reference, exams: transactions, processor: processor)
     }
     
     

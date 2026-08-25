@@ -8,7 +8,7 @@
 import Foundation
 
 
-let baseUrl = "http://35.205.69.78/"
+let baseUrl = "https://bambi.qanda.ng/"
 let apiKey = "jkhjhg8887ncchfdfgs4356nvmvkvmvgh098hvgh"
 
 let paystackUrl = "https://api.paystack.co/"
@@ -20,8 +20,8 @@ let PAGE_SIZE = 10
 
 let EDIT = "Edit"
 let DELETE = "Delete"
-let termsUrl = "https://www.knowbaseconsult.com/techpedia-terms-and-conditions/"
-let privacyUrl = "https://www.knowbaseconsult.com/techpedia-privacy-policy/"
+let termsUrl = "https://qanda.ng/terms-and-conditions/"
+let privacyUrl = "https://qanda.ng/privacy-policy-2/"
 let aboutApp = "Q and A App is a knowledge sharing market place that provides Study Materials, Past Questions and Scholarship resources to students; connect knowledge seekers with experts and provides individuals with career and personal development resources "
 
 enum PaystackConstants {

@@ -60,8 +60,8 @@ struct LoginScreen: View {
     
     private func navigateToLink(link: String){
         if let url = URL(string: link){
-            UIApplication.shared.open(url)
-          //  navVM.navigate(route: .webviewScreen(url: url))
+              UIApplication.shared.open(url)
+            //    navVM.navigate(route: .webviewScreen(url: url))
         }
     }
 }

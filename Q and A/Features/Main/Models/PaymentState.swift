@@ -11,7 +11,7 @@ import Foundation
 enum PaymentState{
     
     case initialize
-    case success(reference: String)
+    case success(reference: String, processor: Int)
     case cancel
     
 }

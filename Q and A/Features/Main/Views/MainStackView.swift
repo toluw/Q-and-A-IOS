@@ -105,6 +105,8 @@ struct MainStackView: View {
             PaymentDetailsScreen(payment: payment)
         case .aboutScreen:
             AboutScreen()
+        case .marketPlaceProductScreen(price: let price):
+            MarketplaceProductScreen(price: price, paymentViewModel: paymentViewModel, navVm: navVM)
         }
         
     }
