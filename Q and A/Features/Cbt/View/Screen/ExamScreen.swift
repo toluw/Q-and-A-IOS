@@ -99,7 +99,6 @@ struct ExamScreen: View {
            
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .preventScreenshots()
             .animation(.easeInOut, value: viewModel.state.showSubmitDialog)
             .navigationBarBackButtonHidden(true)
             .sheet(isPresented: $viewModel.state.showLogin){

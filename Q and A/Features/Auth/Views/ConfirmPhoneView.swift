@@ -23,7 +23,7 @@ struct ConfirmPhoneView: View {
             Spacer()
             
             VStack{
-                Text("Hi, Toluwase!")
+                Text("Hi, \(viewModel.state.appleUSer?.name ?? "")!")
                     .font(AppFont.medium(16))
                     
                                 

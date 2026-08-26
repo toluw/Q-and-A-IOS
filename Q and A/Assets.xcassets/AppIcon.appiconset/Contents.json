@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Q-and-A-AppIcon-1024.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

@@ -265,6 +265,7 @@
 		F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AE93472F86A50B0003CAA5 /* ChangePasswordRequest.swift */; };
 		F5AF11E3303ED04E006A95B3 /* ScreenshotPreventingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */; };
 		F5AF11E5303ED141006A95B3 /* ScreenshotProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */; };
+		F5AF11E7303EFF21006A95B3 /* ShareSheetSuppressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */; };
 		F5B0025E3032FE2F005DC0C9 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */; };
 		F5B03F572FDC37FD001F85B7 /* PassageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */; };
 		F5B100F92FD5BAA600B924EF /* ExamResultBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */; };
@@ -647,6 +648,7 @@
 		F5AE93472F86A50B0003CAA5 /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
 		F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPreventingView.swift; sourceTree = "<group>"; };
 		F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotProtection.swift; sourceTree = "<group>"; };
+		F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetSuppressor.swift; sourceTree = "<group>"; };
 		F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 		F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageScreen.swift; sourceTree = "<group>"; };
 		F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultBody.swift; sourceTree = "<group>"; };
@@ -1569,6 +1571,7 @@
 				F5A716BC2FFE93F30046D33E /* PDFRepository.swift */,
 				F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */,
 				F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */,
+				F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1891,6 +1894,7 @@
 				F5BB950E2FE93481004EDA26 /* SecondaryOrangeButton.swift in Sources */,
 				F5E7057C2F4DEA55001016B6 /* IntroPage.swift in Sources */,
 				F5A32ECA2FB0C999001023A4 /* CbtCartViewModel.swift in Sources */,
+				F5AF11E7303EFF21006A95B3 /* ShareSheetSuppressor.swift in Sources */,
 				F5AE93442F86451F0003CAA5 /* AppUtils.swift in Sources */,
 				F529E8912FE2AD82007C3494 /* MultipleResultView.swift in Sources */,
 				F5AAC9E22FBA6F2A003977CA /* PaystackPaymentViewModel.swift in Sources */,
@@ -2215,7 +2219,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2230,6 +2234,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
@@ -2247,9 +2252,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
