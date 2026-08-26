@@ -73,6 +73,7 @@ struct SocialPostInputView: View {
                        text = ""
                        selectedImage = nil
                        base64Image = nil
+                       isTextFocused = false 
                    } label: {
                        Image("post_btn")
                            .renderingMode(.template)

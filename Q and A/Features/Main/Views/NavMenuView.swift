@@ -274,11 +274,12 @@ struct NavMenuView: View {
                 
                
             }
+            .contentShape(Rectangle())
             .padding(.top, 8)
             .padding(.bottom, 8)
         }
         .buttonStyle(.plain)
-        .frame(width: .infinity)
+        
         
         }
 

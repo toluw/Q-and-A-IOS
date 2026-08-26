@@ -336,6 +336,7 @@ class LoginViewModel: ObservableObject{
         UserSettings.profileImage = profileImage
         UserSettings.isLoggedIn = true
         UserSettings.paystackApiKey = paystackApiKey
+        UserSettings.hasLaunchedBefore = true
         
         state.userProfile = UserProfile()
     }

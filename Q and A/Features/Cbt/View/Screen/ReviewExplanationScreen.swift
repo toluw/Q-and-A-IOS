@@ -68,7 +68,7 @@ struct ReviewExplanationScreen: View {
                     }
                     
                     if(UserSettings.isLoggedIn){
-                        SecondaryOrangeButton(buttonText: "Discuss & Report Error", action: joinDiscussion)
+                        SecondaryOrangeButton(buttonText: "Discuss & Report Error", action: joinDiscussion).padding(.bottom, 40)
                     }
                     
                     

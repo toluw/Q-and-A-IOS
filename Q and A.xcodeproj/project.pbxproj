@@ -266,6 +266,8 @@
 		F5AF11E3303ED04E006A95B3 /* ScreenshotPreventingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */; };
 		F5AF11E5303ED141006A95B3 /* ScreenshotProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */; };
 		F5AF11E7303EFF21006A95B3 /* ShareSheetSuppressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */; };
+		F5AF11E9303F0C6A006A95B3 /* ScreenCaptureMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11E8303F0C6A006A95B3 /* ScreenCaptureMonitor.swift */; };
+		F5AF11EB303F0C9A006A95B3 /* CaptureProtectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF11EA303F0C9A006A95B3 /* CaptureProtectedView.swift */; };
 		F5B0025E3032FE2F005DC0C9 /* WebViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */; };
 		F5B03F572FDC37FD001F85B7 /* PassageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */; };
 		F5B100F92FD5BAA600B924EF /* ExamResultBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */; };
@@ -649,6 +651,8 @@
 		F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPreventingView.swift; sourceTree = "<group>"; };
 		F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotProtection.swift; sourceTree = "<group>"; };
 		F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetSuppressor.swift; sourceTree = "<group>"; };
+		F5AF11E8303F0C6A006A95B3 /* ScreenCaptureMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureMonitor.swift; sourceTree = "<group>"; };
+		F5AF11EA303F0C9A006A95B3 /* CaptureProtectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureProtectedView.swift; sourceTree = "<group>"; };
 		F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewScreen.swift; sourceTree = "<group>"; };
 		F5B03F562FDC37FD001F85B7 /* PassageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageScreen.swift; sourceTree = "<group>"; };
 		F5B100F82FD5BAA600B924EF /* ExamResultBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultBody.swift; sourceTree = "<group>"; };
@@ -1202,6 +1206,7 @@
 				F5B0025D3032FE2E005DC0C9 /* WebViewScreen.swift */,
 				F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */,
 				F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */,
+				F5AF11EA303F0C9A006A95B3 /* CaptureProtectedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1572,6 +1577,7 @@
 				F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */,
 				F5AF11E4303ED141006A95B3 /* ScreenshotProtection.swift */,
 				F5AF11E6303EFF21006A95B3 /* ShareSheetSuppressor.swift */,
+				F5AF11E8303F0C6A006A95B3 /* ScreenCaptureMonitor.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1784,6 +1790,7 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F54BD5E6303DB20900B1B6D2 /* ProductLoadState.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
+				F5AF11E9303F0C6A006A95B3 /* ScreenCaptureMonitor.swift in Sources */,
 				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
 				F5BAF9C530051BCB005785BF /* Post.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
@@ -2018,6 +2025,7 @@
 				F526A8012F70374600BF414A /* IntroBottomCard.swift in Sources */,
 				F54578E52FCABDAA008FF056 /* ExamLoaderScreen.swift in Sources */,
 				F5C12E9B2F72A18E000861B6 /* OnboardingViewModel.swift in Sources */,
+				F5AF11EB303F0C9A006A95B3 /* CaptureProtectedView.swift in Sources */,
 				F55021352F812ACB0057C2F0 /* UserProfile.swift in Sources */,
 				F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */,
 				F5E9B3C42FEAC66F00B98FCB /* GoToReviewBottomSheetView.swift in Sources */,
@@ -2203,13 +2211,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Q-and-A-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2219,7 +2228,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2236,13 +2245,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Q-and-A-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2252,7 +2262,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

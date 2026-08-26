@@ -14,16 +14,19 @@ struct ExamPracticeScreen: View {
     @State private var selectedIndex: Int = 0
     
     var body: some View {
-        ZStack{
-            
-            ExamPracticeView(navVm: navVm, items: cbtViewModel.multipleExams, onClose: {
+        
+        
+            ZStack{
                 
-                showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
-                    navVm.pop()
-                })
-            }, cbtViewModel: cbtViewModel)
-            
-        }.navigationBarBackButtonHidden(true)
+                ExamPracticeView(navVm: navVm, items: cbtViewModel.multipleExams, onClose: {
+                    
+                    showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
+                        navVm.pop()
+                    })
+                }, cbtViewModel: cbtViewModel)
+                
+            }.navigationBarBackButtonHidden(true)
+        
     }
 }
 
