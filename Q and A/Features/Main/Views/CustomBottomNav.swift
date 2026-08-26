@@ -16,13 +16,20 @@ struct CustomBottomNav: View {
         ZStack(){
             
             // Background Shape
-            CurvedTabBarShape()
+         /*   CurvedTabBarShape()
                 .fill(Color.white)
                 .shadow(radius: 5)
                 .frame(height: 80)
+          */
+            
+            Color.white
+                .shadow(radius: 5)
+                .frame(height: 80)
+             
             
             HStack {
                 
+                Spacer()
                 Spacer()
                            
                 tabItem(icon: "ic_cbt", title: "CBT", tab: .cbt)
@@ -37,14 +44,14 @@ struct CustomBottomNav: View {
                            
                 tabItem(icon: "help", title: "Contact Us", tab: .contact_us)
                 
-                
+                Spacer()
                 Spacer()
                        }
           
                     //   .padding(.horizontal, 24)
             
             // Floating Button
-                     VStack {
+              /*       VStack {
                          Button {
                              onFabClick()
                          } label: {
@@ -59,6 +66,7 @@ struct CustomBottomNav: View {
                          
                          
                      }
+               */
             
         }
         

@@ -27,7 +27,7 @@ struct NavDrawer: View {
                     // Top "Edit Profile" Button
                     
                     if(mainScreenViewModel.userProfileState.isLoggedIn){
-                        HStack {
+                     /*   HStack {
                             Spacer()
                             Button(action: {
                                 onMenuSelected(.editProfile)
@@ -39,6 +39,7 @@ struct NavDrawer: View {
                                 .padding(.top, 32)
                                 }
                             }
+                      */
                         
                     }else{
                         HStack {
@@ -68,6 +69,9 @@ struct NavDrawer: View {
                             
                             // Orange Edit Badge
                             if(mainScreenViewModel.userProfileState.isLoggedIn){
+                                
+                                /*
+                                
                                 Circle()
                                     .fill(Color.orange)
                                     .frame(width: 26, height: 26)
@@ -78,6 +82,8 @@ struct NavDrawer: View {
                                     )
                                     .overlay(Circle().stroke(Color.white, lineWidth: 2))
                                     .offset(x: 5, y: -54)
+                                 
+                                 */
                             }
                             
                             

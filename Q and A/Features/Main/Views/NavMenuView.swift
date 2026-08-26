@@ -34,14 +34,14 @@ struct NavMenuView: View {
             .padding(.bottom, 17)
         }
             
-            drawerItem(title: "Community",
+            /*     drawerItem(title: "Community",
                        imageResource:"ic_community",
                        colour: Color("NavDeepBlue")
             ){
                 onMenuSelected(.community)
             }
             
-          /*  drawerItem(title: "AI Assistant",
+          drawerItem(title: "AI Assistant",
                        imageResource:"nav_ai",
                        colour: Color("NavBlue")
             ){
@@ -90,7 +90,7 @@ struct NavMenuView: View {
                 }
             
             
-                Divider()
+            /*         Divider()
             
             
             HStack{
@@ -105,7 +105,7 @@ struct NavMenuView: View {
                         
               
                     
-            /*
+          
             
                 drawerItem(title: "Share App",
                        imageResource:"nav_share",
