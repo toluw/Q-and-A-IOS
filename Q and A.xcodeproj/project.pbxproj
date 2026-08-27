@@ -66,6 +66,10 @@
 		F535C2F1302DF3950055E168 /* SocialLoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535C2F0302DF3950055E168 /* SocialLoginBody.swift */; };
 		F535C2F3302DF92F0055E168 /* AppleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535C2F2302DF92F0055E168 /* AppleUser.swift */; };
 		F5394D943027529200187254 /* ReplyCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5394D933027529200187254 /* ReplyCommentView.swift */; };
+		F544D48730405D61007E1CAE /* UpdateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544D48630405D60007E1CAE /* UpdateStatus.swift */; };
+		F544D48930405DA0007E1CAE /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544D48830405DA0007E1CAE /* UpdateManager.swift */; };
+		F544D48D30405E3D007E1CAE /* UpdateDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544D48C30405E3D007E1CAE /* UpdateDialogView.swift */; };
+		F544D49130406226007E1CAE /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544D49030406226007E1CAE /* ClearBackgroundView.swift */; };
 		F54578D52FC73534008FF056 /* ExamDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */; };
 		F54578D72FC75465008FF056 /* ExamDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D62FC75465008FF056 /* ExamDescriptionView.swift */; };
 		F54578D92FC83F77008FF056 /* CbtDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */; };
@@ -466,6 +470,10 @@
 		F535C2F0302DF3950055E168 /* SocialLoginBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginBody.swift; sourceTree = "<group>"; };
 		F535C2F2302DF92F0055E168 /* AppleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleUser.swift; sourceTree = "<group>"; };
 		F5394D933027529200187254 /* ReplyCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentView.swift; sourceTree = "<group>"; };
+		F544D48630405D60007E1CAE /* UpdateStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStatus.swift; sourceTree = "<group>"; };
+		F544D48830405DA0007E1CAE /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
+		F544D48C30405E3D007E1CAE /* UpdateDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDialogView.swift; sourceTree = "<group>"; };
+		F544D49030406226007E1CAE /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		F54578D42FC73534008FF056 /* ExamDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionViewModel.swift; sourceTree = "<group>"; };
 		F54578D62FC75465008FF056 /* ExamDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDescriptionView.swift; sourceTree = "<group>"; };
 		F54578D82FC83F77008FF056 /* CbtDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtDescriptionView.swift; sourceTree = "<group>"; };
@@ -1019,6 +1027,7 @@
 				F5BD4A192F2A563C0020A8A4 /* AppNavigator.swift */,
 				F5BD4A1B2F2A98BD0020A8A4 /* SplashView.swift */,
 				F59482C62F2CD7FF0030C541 /* SplashScreen.swift */,
+				F544D48C30405E3D007E1CAE /* UpdateDialogView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1038,6 +1047,8 @@
 				F5BD4A2D2F2B6D350020A8A4 /* AppConstants.swift */,
 				F5BD4A2F2F2B6E5D0020A8A4 /* UserSettings.swift */,
 				F5F7A7772F388DBE0097558D /* AppFont.swift */,
+				F544D48630405D60007E1CAE /* UpdateStatus.swift */,
+				F544D48830405DA0007E1CAE /* UpdateManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1207,6 +1218,7 @@
 				F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */,
 				F5AF11E2303ED04E006A95B3 /* ScreenshotPreventingView.swift */,
 				F5AF11EA303F0C9A006A95B3 /* CaptureProtectedView.swift */,
+				F544D49030406226007E1CAE /* ClearBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1758,6 +1770,7 @@
 				F529E88B2FE19150007C3494 /* ReviewExamScreen.swift in Sources */,
 				F5AAC9E42FBA6FB2003977CA /* PaystackWebView.swift in Sources */,
 				F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */,
+				F544D48730405D61007E1CAE /* UpdateStatus.swift in Sources */,
 				F57BD093302F1B230034DCDB /* SocialSignupBody.swift in Sources */,
 				F5A13C6B2F8E587600B1B22F /* ParentCatScreen.swift in Sources */,
 				F549C60D3007CA8300DE4EF0 /* DiscussionSolutionView.swift in Sources */,
@@ -1806,6 +1819,7 @@
 				F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */,
 				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
+				F544D49130406226007E1CAE /* ClearBackgroundView.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
 				F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */,
@@ -1831,6 +1845,7 @@
 				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
 				F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
+				F544D48D30405E3D007E1CAE /* UpdateDialogView.swift in Sources */,
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
 				F59D32902F90FAAD0045C4AA /* EmptyStateView.swift in Sources */,
 				F5C12EBD2F73CF77000861B6 /* MainTab.swift in Sources */,
@@ -2032,6 +2047,7 @@
 				F54578FF2FCEF400008FF056 /* ExamState.swift in Sources */,
 				F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */,
 				F51E11E52FA8EB8600934BF7 /* MultipleExamsResponse.swift in Sources */,
+				F544D48930405DA0007E1CAE /* UpdateManager.swift in Sources */,
 				F535C2E5302DDFE90055E168 /* MainLoginView.swift in Sources */,
 				F54578F32FCEC152008FF056 /* FullWidthImageView.swift in Sources */,
 				F5AE933E2F8639540003CAA5 /* BottomSheetManager.swift in Sources */,

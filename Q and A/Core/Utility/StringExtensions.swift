@@ -78,6 +78,21 @@ extension String{
             return segments
         }
     
+    func isVersion(lessThan other: String) -> Bool {
+          let lhs = self.split(separator: ".").compactMap { Int($0) }
+          let rhs = other.split(separator: ".").compactMap { Int($0) }
+          let maxLength = max(lhs.count, rhs.count)
+
+          for i in 0..<maxLength {
+              let l = i < lhs.count ? lhs[i] : 0
+              let r = i < rhs.count ? rhs[i] : 0
+              if l != r {
+                  return l < r
+              }
+          }
+          return false
+      }
+    
     func capitalizeWords() -> String {
             return self
                 .lowercased()
