@@ -59,6 +59,7 @@ struct MainLoginView: View {
                     Group {
                         if isPasswordVisible {
                             TextField("Password", text: $viewModel.state.password)
+                                .textInputAutocapitalization(.never)
                              } else {
                                     SecureField("Password", text: $viewModel.state.password)
                                    }
