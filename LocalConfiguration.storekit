@@ -28,6 +28,36 @@
       "productID" : "ng.qanda.purchase.100",
       "referenceName" : "Q&A ₦100 Purchase",
       "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6805961465",
+      "localizations" : [
+        {
+          "description" : "Purchase Q&A marketplace content",
+          "displayName" : "Q&A Purchase",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "ng.qanda.purchase.200",
+      "referenceName" : "Q&A ₦200 Purchase",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6805963447",
+      "localizations" : [
+        {
+          "description" : "Purchase Q&A marketplace content",
+          "displayName" : "Q&A Purchase",
+          "locale" : "en_GB"
+        }
+      ],
+      "productID" : "ng.qanda.purchase.250",
+      "referenceName" : "Q&A ₦250 Purchase",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
@@ -38,7 +68,7 @@
     "_developerTeamID" : "H7KR2SDWJ6",
     "_disableDialogs" : false,
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 809346267.17844498,
+    "_lastSynchronizedDate" : 809690253.17380297,
     "_locale" : "en_US",
     "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "USA",
