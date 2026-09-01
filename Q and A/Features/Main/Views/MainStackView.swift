@@ -12,6 +12,8 @@ struct MainStackView: View {
     @StateObject private var navVM = MainNavViewModel()
     @StateObject private var cbtViewModel = CbtViewModel()
     @StateObject private var paymentViewModel = PaymentViewModel()
+    @EnvironmentObject private var router: PushNotificationRouter
+    @EnvironmentObject private var notificationManager: NotificationManager
     
     
     var body: some View {
@@ -28,6 +30,12 @@ struct MainStackView: View {
         .onChange(of: navVM.path) { _, newPath in
             navVM.updateActiveRoute()
         }
+        .onChange(of: router.pendingDestination) { _, destination in
+            guard destination != .none else { return }
+            navVM.path.append(destination)
+            router.consumeDestination()
+        }
+        .notificationPrimer()
     }
     
     
@@ -107,6 +115,8 @@ struct MainStackView: View {
             AboutScreen()
         case .marketPlaceProductScreen(price: let price):
             MarketplaceProductScreen(price: price, paymentViewModel: paymentViewModel, navVm: navVM)
+        case .none:
+            EmptyView()
         }
         
     }

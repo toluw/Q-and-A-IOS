@@ -52,6 +52,7 @@ class CbtPostViewModel: ObservableObject{
                 let response = try await service.createPost(createPostBody: createPostBody)
                 state.showBlockedLoader = false
                 state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                NotificationManager.shared.presentPrimerIfNeeded(for: .newPost)
                 await refresh(examId: examId, questionId: questionId, buyerEmail: buyerEmail)
             }catch {
                 state.showBlockedLoader = false

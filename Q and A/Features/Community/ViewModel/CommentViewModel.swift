@@ -149,6 +149,7 @@ class CommentViewModel: ObservableObject{
                 let response = try await service.createComment(createCommentBody: createCommentBody)
                 state.showBlockedLoader = false
                 state.responseMessage = ToastData(message: "Your post was successfully submitted", type: .success)
+                NotificationManager.shared.presentPrimerIfNeeded(for: .newComment)
                 await refresh(postId: postId, buyerEmail: buyerEmail)
             }catch {
                 state.showBlockedLoader = false

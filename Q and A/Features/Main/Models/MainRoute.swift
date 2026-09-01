@@ -9,6 +9,7 @@ import Foundation
 
 enum MainRoute: Hashable{
     
+    case none
     case mainCommunityScreen
     case forgotPasswordScreen
     case confirmOtpScreen(otp: String, email: String)

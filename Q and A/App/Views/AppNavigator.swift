@@ -13,6 +13,8 @@ struct AppNavigator: View {
     
     @EnvironmentObject var appViewModel: AppViewModel
     @StateObject private var updateManager = UpdateManager()
+    @EnvironmentObject private var router: PushNotificationRouter
+    @EnvironmentObject private var notificationManager: NotificationManager
     @State private var showDialog = false
     
     var body: some View {
@@ -26,6 +28,8 @@ struct AppNavigator: View {
                 OnboardingNavigatorView()
             case.main:
                 MainStackView()
+                    .environmentObject(notificationManager)
+                    .environmentObject(router)
             }
             
             
