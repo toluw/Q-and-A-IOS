@@ -30,7 +30,7 @@ struct MainStackView: View {
         .onChange(of: navVM.path) { _, newPath in
             navVM.updateActiveRoute()
         }
-        .onChange(of: router.pendingDestination) { _, destination in
+        .onChange(of: router.pendingDestination, initial: true) { _, destination in
             guard destination != .none else { return }
             navVM.path.append(destination)
             router.consumeDestination()

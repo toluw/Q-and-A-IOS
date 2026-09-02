@@ -93,6 +93,7 @@ final class NotificationManager: ObservableObject {
     /// Called by AppDelegate.messaging(_:didReceiveRegistrationToken:)
     func updateToken(token: String) {
         fcmToken = token
+        print("token=>\(token)")
         UserSettings.token = token
         let email = UserSettings.email ?? ""
         if(!email.isEmpty){
