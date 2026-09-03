@@ -245,7 +245,7 @@ struct SubCatScreen: View {
                       handleQuestionSelection(numQuestion: question)
                       
                       
-                  }).presentationDetents([.medium,  .large])
+                  }).presentationDetents([.large])
               }
               
           }
