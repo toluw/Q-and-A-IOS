@@ -40,6 +40,7 @@ struct GlobalBottomSheetView: View {
                             .foregroundColor(.white)
                             .cornerRadius(12)
                             .padding(.horizontal)
+                            .contentShape(Rectangle())
                         
                     }
                     
@@ -52,6 +53,7 @@ struct GlobalBottomSheetView: View {
                         Text("Close")
                             .foregroundColor(.secondary)
                             .padding(.bottom, 10)
+                            .contentShape(Rectangle())
                     }
                     
                     

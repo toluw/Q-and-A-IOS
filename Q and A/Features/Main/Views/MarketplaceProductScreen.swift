@@ -150,6 +150,7 @@ struct MarketplaceProductScreen: View {
                         .font(AppFont.medium(15))
                 }
                 .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
                 .padding(.vertical, 12)
             }
             .buttonStyle(.borderedProminent)
@@ -163,6 +164,7 @@ struct MarketplaceProductScreen: View {
                 Text("Go Back")
                     .font(AppFont.medium(15))
                     .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
                     .padding(.vertical, 12)
             }
             .buttonStyle(.bordered)
@@ -232,6 +234,7 @@ struct MarketplaceProductScreen: View {
                 }
             }
             .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
             .padding(.vertical, 14)
         }
         .buttonStyle(.borderedProminent)

@@ -13,29 +13,37 @@ struct QuestionBottomSheetView: View {
     let onClick: (Int) -> Void
     
     var body: some View {
-        ScrollView{
+        
+        VStack{
             
-            LazyVStack{
+          DragIndicator()
+            
+            ScrollView{
                 
-                Text("Number of Questions")
-                    .font(AppFont.regular(16))
-                    .padding(.top, 24)
-                    .padding(.bottom, 24)
-               
-                ForEach(getCbtQuestions(selectQuestion.numQuestion), id: \.self){ data in
-                    ItemView(item: String(data), onItemClicked: {
-                        
-                        onClick(data)
-                        
-                    })
+                LazyVStack{
+                    
+                    Text("Number of Questions")
+                        .font(AppFont.regular(16))
+                        .padding(.top, 24)
+                        .padding(.bottom, 24)
+                   
+                    ForEach(getCbtQuestions(selectQuestion.numQuestion), id: \.self){ data in
+                        ItemView(item: String(data), onItemClicked: {
+                            
+                            onClick(data)
+                            
+                        })
+                    }
+                    
                 }
+              
+                   
+                
                 
             }
-          
-               
-            
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+   
     }
     
     

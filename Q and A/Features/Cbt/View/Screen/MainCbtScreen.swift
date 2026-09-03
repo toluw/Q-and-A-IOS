@@ -145,7 +145,7 @@ struct MainCbtScreen: View {
                  CbtCategoryBottomSheetView(items: viewModel.state.parentCatData!){data in
                      viewModel.state.showCatBottomSheet = false
                      handleCatSelection(item: data)
-                 }
+                 } 
                  .presentationDetents([.large])
                      
                  

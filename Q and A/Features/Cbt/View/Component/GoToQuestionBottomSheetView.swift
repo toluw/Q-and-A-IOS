@@ -25,6 +25,8 @@ struct GoToQuestionBottomSheetView: View {
     var body: some View {
         VStack{
             
+            DragIndicator()
+            
             Text("Choose a question to go to").font(AppFont.regular(16))
                 .padding(.top, 36)
             
