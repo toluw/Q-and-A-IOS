@@ -29,11 +29,18 @@ struct YoutubePlayerScreen: View {
             showControls: true,
             showFullscreenButton: false
         )
+        
+        
+        let configuration = YouTubePlayer.Configuration( openURLAction: .init { _,_   in
+            
+           }
+            )
  
         _player = StateObject(
             wrappedValue: YouTubePlayer(
                 source: YouTubePlayer.Source(url:  URL(string:videoURLString)!),
-                parameters: parameters
+                parameters: parameters,
+                configuration: configuration
             )
         )
     }
