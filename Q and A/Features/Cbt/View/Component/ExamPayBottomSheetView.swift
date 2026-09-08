@@ -132,6 +132,8 @@ struct ExamPayBottomSheetView: View {
                                     openURL(whatsappSupportURL)
                                 })
                                 
+                                onClose()
+                                
                             }else{
                                 onPaymentClicked(paymentList)
                             }

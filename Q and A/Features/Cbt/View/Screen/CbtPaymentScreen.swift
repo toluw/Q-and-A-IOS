@@ -123,7 +123,7 @@ struct CbtPaymentScreen: View {
             viewModel.initTransaction()
             
         }else{
-            navVm.navigate(route: .marketPlaceProductScreen(price: price, quantity: quantity))
+            navVm.navigate(route: .marketPlaceProductScreen(price: cbtViewModel.getExamPaySinglePrice(), quantity: quantity))
         }
         
         
