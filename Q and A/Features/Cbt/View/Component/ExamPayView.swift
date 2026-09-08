@@ -24,7 +24,7 @@ struct ExamPayView: View {
                    
                     HStack{
                         
-                        ZStack{
+                          ZStack{
                             
                             if(examPay.isSelected){
                                 Image("prem_check")
@@ -42,18 +42,7 @@ struct ExamPayView: View {
                         
                         Spacer()
                         
-                        HStack{
-                            
-                            Text(examPay.exam.price, format: .currency(code: "NGN"))
-                                .font(AppFont.medium(18))
-                                .foregroundColor(Color("PayColor"))
-                                .padding(.trailing, 10)
-                            
-                            
-                            Image("padlock")
-                              
-                            
-                        }
+                         
                         
                     }
                     

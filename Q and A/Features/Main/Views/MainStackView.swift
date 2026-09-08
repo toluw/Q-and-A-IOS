@@ -113,8 +113,8 @@ struct MainStackView: View {
             PaymentDetailsScreen(payment: payment)
         case .aboutScreen:
             AboutScreen()
-        case .marketPlaceProductScreen(price: let price):
-            MarketplaceProductScreen(price: price, paymentViewModel: paymentViewModel, navVm: navVM)
+        case .marketPlaceProductScreen(price: let price, quantity: let quantity):
+            MarketplaceProductScreen(price: price, quantity: quantity, paymentViewModel: paymentViewModel, navVm: navVM)
         case .none:
             EmptyView()
         }

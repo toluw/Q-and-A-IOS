@@ -30,11 +30,11 @@ class MarketPlaceProductViewModel: ObservableObject{
        }
     
     
-    func purchase(_ product: Product) async {
+    func purchase(_ product: Product, quantity: Int) async {
         isPurchasing = true
         defer { isPurchasing = false }
         do {
-            let result = try await product.purchase()
+            let result = try await product.purchase(options: [.quantity(quantity)])
             switch result {
             case .success(let verification):
                 if case .verified(let transaction) = verification {

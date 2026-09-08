@@ -44,11 +44,15 @@ struct ExamCatScreen: View {
             }
             
             // Trailing Icon
-            ToolbarItem(placement: .navigationBarTrailing) {
-                CartView(){
-                    navVm.navigate(route: .cbtCartScreen)
+            if(UserSettings.phoneNumber?.isNyjaNum() == true){
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CartView(){
+                        navVm.navigate(route: .cbtCartScreen)
+                    }
                 }
             }
+          
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)

@@ -351,6 +351,11 @@ class CbtViewModel: ObservableObject{
     }
     
     
+    func getExamPayCount() -> Int{
+      return  selectedExamPay.count
+    }
+    
+    
     func getPaystackMetadData() -> PaystackMetaData{
         
         var paymentDataList: [PaymentData] = []
