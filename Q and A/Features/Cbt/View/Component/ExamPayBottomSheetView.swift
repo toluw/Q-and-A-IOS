@@ -18,6 +18,15 @@ struct ExamPayBottomSheetView: View {
     @State var isSelectAll: Bool = false
     @State var errorMessage: ToastData? = nil
     
+    @Environment(\.openURL) private var openURL
+
+    private var whatsappSupportURL: URL {
+        let message = "Hi, I'm having trouble making payement for \(examWithTitle.title). Error message: To process this payment, prices of all items should be thesame"
+        let encoded = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        return URL(string: "https://wa.me/2347052193183?text=\(encoded)")
+            ?? URL(string: "https://wa.me/2347052193183")!
+    }
+    
     let onClose: () -> Void
     
     let onPaymentClicked: ([ExamPay]) -> Void
@@ -114,7 +123,22 @@ struct ExamPayBottomSheetView: View {
                 ZStack{
                     if(totalPrice > 0){
                         PaymentButton(buttonText: "Pay \(totalPrice.formatted(.currency(code: "NGN")))"){
-                          onPaymentClicked(getSelectedExamPay())
+                            
+                            let paymentList = getSelectedExamPay()
+                            
+                            if(!paymentList.isPriceTheSame && !(UserSettings.phoneNumber ?? "").isNyjaNum()){
+                                
+                                showNoticeMessage(message: "To process this payment, prices of all items should be thesame", actionTitle: "Contact Support", showCancel: true, action: {
+                                    openURL(whatsappSupportURL)
+                                })
+                                
+                                onClose()
+                                
+                            }else{
+                                onPaymentClicked(paymentList)
+                            }
+                            
+                          
                         }
                     }else{
                        
@@ -125,19 +149,26 @@ struct ExamPayBottomSheetView: View {
                 }.frame(maxWidth: .infinity)
                     .padding(.bottom, 16)
                 
-                ZStack{
-                    if(totalPrice > 0){
-                        SecondaryButton(buttonText: "Add to Cart", action: {
-                            processCart(examPayList: getSelectedExamPay())
-                        })
-                    }else{
-                       
-                        DisabledButton(buttonText: "Add to Cart")
-                        
-                    }
+            
+                if(UserSettings.phoneNumber?.isNyjaNum() == true){
                     
-                }.frame(maxWidth: .infinity)
-                    .padding(.bottom, 16)
+                    ZStack{
+                        if(totalPrice > 0){
+                            SecondaryButton(buttonText: "Add to Cart", action: {
+                                processCart(examPayList: getSelectedExamPay())
+                            })
+                        }else{
+                           
+                            DisabledButton(buttonText: "Add to Cart")
+                            
+                        }
+                        
+                    }.frame(maxWidth: .infinity)
+                        .padding(.bottom, 16)
+                    
+                }
+                
+             
                 
             }.frame(maxWidth: .infinity)
                 .padding(.horizontal, 20)

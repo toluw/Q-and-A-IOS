@@ -108,6 +108,7 @@ struct CbtPaymentScreen: View {
         
        
         let price = cbtViewModel.getExamPayTotalPrice()
+        let quantity = cbtViewModel.getExamPayCount()
         
         if(UserSettings.phoneNumber?.isNyjaNum() == true){
             
@@ -122,7 +123,7 @@ struct CbtPaymentScreen: View {
             viewModel.initTransaction()
             
         }else{
-            navVm.navigate(route: .marketPlaceProductScreen(price: price))
+            navVm.navigate(route: .marketPlaceProductScreen(price: cbtViewModel.getExamPaySinglePrice(), quantity: quantity))
         }
         
         

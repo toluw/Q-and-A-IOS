@@ -15,8 +15,16 @@ struct ConfirmPhoneView: View {
     var body: some View {
         VStack{
             
+            
+            HStack{
+                Spacer()
+                Button(action: skip, label: {
+                    Text("Skip").font(AppFont.medium(14)).contentShape(Rectangle())
+                }).padding(.trailing, 24)
+                    .padding(.top, 32)
+            }
             Image("qanda")
-                .frame(maxWidth: .infinity, alignment: .center).padding(.top, 24)
+                .frame(maxWidth: .infinity, alignment: .center).padding(.top, 16)
             
             
             Spacer()
@@ -28,14 +36,14 @@ struct ConfirmPhoneView: View {
                     
                                 
                                 
-                Text("Please enter your phone number to complete your registration")
+                Text("Add your phone number to your account")
                     .font(AppFont.regular(14))
                     .multilineTextAlignment(.center)
                     .padding(.top, 17)
                 
                 
                 // Phone Number
-                TextField("Phone Number", text: $phoneNumber)
+                TextField("Phone Number (Optional)", text: $phoneNumber)
                     .font(.system(size: 16))
                     .keyboardType(.phonePad)
                     .padding(.horizontal, 16)
@@ -63,6 +71,12 @@ struct ConfirmPhoneView: View {
             
         }.frame(maxWidth: .infinity)
          .toastBanner(toast: $viewModel.state.errorMessage)
+    }
+    
+    private func skip(){
+        let socialSignUpBody = SocialSignupBody(name: viewModel.state.appleUSer?.name ?? "", email: viewModel.state.appleUSer?.email ?? "", phone: "", token: UserSettings.token ?? "", device_id: DeviceManager.shared.getDeviceId(), apple_id: viewModel.state.appleUSer?.appleId)
+        
+        viewModel.socialSignUp(socialSignUpBody: socialSignUpBody)
     }
     
     private func save(){

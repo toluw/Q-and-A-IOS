@@ -99,12 +99,16 @@ struct ParentCatScreen: View {
                 Text(title).font(AppFont.regular(18))
             }
             
-            // Trailing Icon
-            ToolbarItem(placement: .navigationBarTrailing) {
-                CartView(){
-                    navVm.navigate(route: .cbtCartScreen)
+            
+            if(UserSettings.phoneNumber?.isNyjaNum() == true){
+                // Trailing Icon
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    CartView(){
+                        navVm.navigate(route: .cbtCartScreen)
+                    }
                 }
             }
+           
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("list_bg"))

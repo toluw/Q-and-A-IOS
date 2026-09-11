@@ -15,11 +15,13 @@ protocol MainServiceProtocol{
     
     func deactivate(deactivateBody: DeactivateBody)  async throws -> GeneralResponse
     
+    func updateToken(updateTokenBody: UpdateTokenBody) async throws -> GeneralResponse
+    
     
 }
 
 final class MainService: MainServiceProtocol{
-   
+  
    
     
     
@@ -50,6 +52,20 @@ final class MainService: MainServiceProtocol{
             
         )
     }
+    
+    
+    func updateToken(updateTokenBody: UpdateTokenBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .updateToken(updateTokenBody: updateTokenBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        )
+    }
+    
+   
     
    
     

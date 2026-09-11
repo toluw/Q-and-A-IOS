@@ -12,6 +12,7 @@ import StoreKit
 struct MarketplaceProductScreen: View {
 
     let price: Int
+    let quantity: Int
     @StateObject var viewModel: MarketPlaceProductViewModel = MarketPlaceProductViewModel()
 
     @ObservedObject var paymentViewModel: PaymentViewModel
@@ -33,14 +34,17 @@ struct MarketplaceProductScreen: View {
     var body: some View {
         VStack(spacing: 0) {
 
-            header
+          //  header
 
-            Spacer(minLength: 24)
+            Spacer()
+            Spacer()
 
             content
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 24)
 
+            Spacer()
+            Spacer()
             Spacer()
         }
         .task {
@@ -150,6 +154,7 @@ struct MarketplaceProductScreen: View {
                         .font(AppFont.medium(15))
                 }
                 .frame(maxWidth: .infinity)
+                .contentShape(Rectangle())
                 .padding(.vertical, 12)
             }
             .buttonStyle(.borderedProminent)
@@ -163,6 +168,7 @@ struct MarketplaceProductScreen: View {
                 Text("Go Back")
                     .font(AppFont.medium(15))
                     .frame(maxWidth: .infinity)
+                    .contentShape(Rectangle())
                     .padding(.vertical, 12)
             }
             .buttonStyle(.bordered)
@@ -199,15 +205,39 @@ struct MarketplaceProductScreen: View {
 
             Divider()
 
-            HStack {
-                Text("Total")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+            VStack(spacing: 10) {
+                HStack {
+                    Text("Quantity")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
 
-                Spacer()
+                    Spacer()
 
-                Text(product.displayPrice)
-                    .font(AppFont.bold(17))
+                    Text("\(quantity)")
+                        .font(AppFont.medium(16))
+                }
+
+                HStack {
+                    Text("Price")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+
+                    Spacer()
+
+                    Text(product.displayPrice)
+                        .font(.subheadline)
+                }
+
+                HStack {
+                    Text("Total")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+
+                    Spacer()
+
+                    Text(totalPrice(for: product))
+                        .font(AppFont.bold(17))
+                }
             }
 
             purchaseButton(for: product)
@@ -216,10 +246,17 @@ struct MarketplaceProductScreen: View {
         .background(Color(.secondarySystemBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
 
+    /// Formats `product.price * quantity` using the product's own currency
+    /// format style, so it stays consistent with `displayPrice`'s locale/currency.
+    private func totalPrice(for product: Product) -> String {
+        let total = product.price * Decimal(quantity)
+        return total.formatted(product.priceFormatStyle)
+    }
+
     private func purchaseButton(for product: Product) -> some View {
         Button {
             Task {
-                await viewModel.purchase(product)
+                await viewModel.purchase(product, quantity: quantity)
             }
         } label: {
             HStack {
@@ -227,11 +264,12 @@ struct MarketplaceProductScreen: View {
                     ProgressView()
                         .tint(.white)
                 } else {
-                    Text("Pay \(product.displayPrice)")
+                    Text("Pay \(totalPrice(for: product))")
                         .font(AppFont.medium(16))
                 }
             }
             .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
             .padding(.vertical, 14)
         }
         .buttonStyle(.borderedProminent)
@@ -240,5 +278,5 @@ struct MarketplaceProductScreen: View {
 }
 
 #Preview {
-    MarketplaceProductScreen(price: 100, paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel())
+    MarketplaceProductScreen(price: 100, quantity: 2, paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel())
 }

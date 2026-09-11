@@ -19,6 +19,13 @@ struct SelectCbtModeView: View {
         
         VStack(alignment: .leading){
             
+            
+            HStack{
+                Spacer()
+                DragIndicator()
+                Spacer()
+            }
+            
             Text("Select Mode")
                 .font(AppFont.medium(18))
                 .padding(.leading, 18)

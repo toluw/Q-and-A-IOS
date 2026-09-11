@@ -15,6 +15,7 @@ struct CbtPostScreen: View {
     @StateObject private var viewModel = CbtPostViewModel()
     
     
+    
     var body: some View {
         ZStack{
             

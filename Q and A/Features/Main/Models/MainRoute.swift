@@ -9,6 +9,7 @@ import Foundation
 
 enum MainRoute: Hashable{
     
+    case none
     case mainCommunityScreen
     case forgotPasswordScreen
     case confirmOtpScreen(otp: String, email: String)
@@ -44,6 +45,6 @@ enum MainRoute: Hashable{
     case userPaymentScreen
     case paymentDetailsScreen(payment: Payment)
     case aboutScreen
-    case marketPlaceProductScreen(price: Int)
+    case marketPlaceProductScreen(price: Int, quantity: Int)
    
 }

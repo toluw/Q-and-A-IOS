@@ -351,6 +351,22 @@ class CbtViewModel: ObservableObject{
     }
     
     
+    func getExamPaySinglePrice() -> Int{
+        
+        if(selectedExamPay.isEmpty){
+           return 0
+        }else{
+          return selectedExamPay[0].exam.price
+        }
+        
+    }
+    
+    
+    func getExamPayCount() -> Int{
+      return  selectedExamPay.count
+    }
+    
+    
     func getPaystackMetadData() -> PaystackMetaData{
         
         var paymentDataList: [PaymentData] = []

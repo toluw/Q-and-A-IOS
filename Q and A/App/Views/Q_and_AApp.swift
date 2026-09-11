@@ -16,15 +16,19 @@ struct Q_and_AApp: App {
     
     @StateObject private var appViewModel = AppViewModel()
     
-    init() {
-           FirebaseApp.configure()
-       }
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+      @StateObject private var notificationManager = NotificationManager.shared
+      @StateObject private var router = PushNotificationRouter.shared
     
      var body: some Scene {
         WindowGroup {
             AppNavigator()
                 .environmentObject(appViewModel)
+                .environmentObject(notificationManager)
+                .environmentObject(router)
+                .onAppear {
+                    notificationManager.clearBadge()
+                    }
                 .preferredColorScheme(.light)
                 .globalBottomSheet()
                 .onOpenURL { url in

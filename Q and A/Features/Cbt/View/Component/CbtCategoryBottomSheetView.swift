@@ -11,15 +11,20 @@ struct CbtCategoryBottomSheetView: View {
     
     let items: [DataModel]
     let onItemClicked: (DataModel) -> Void
+   
     
     var body: some View {
         
         
         VStack{
+            
+            DragIndicator()
+            
+           
+            
             ScrollView(){
                 
-                
-                    
+        
                 LazyVStack(spacing: 0){
                     
                     Text("Select Category").font(AppFont.regular(16)).padding(.top, 30)

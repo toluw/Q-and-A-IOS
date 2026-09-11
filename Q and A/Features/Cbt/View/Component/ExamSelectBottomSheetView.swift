@@ -25,6 +25,8 @@ struct ExamSelectBottomSheetView: View {
            
                 VStack(){
                     
+                    DragIndicator()
+                    
                     Text(selectExam.title)
                         .font(AppFont.regular(16))
                         .padding(.top, 30)
