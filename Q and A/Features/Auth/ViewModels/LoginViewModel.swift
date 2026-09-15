@@ -8,6 +8,7 @@
 import Foundation
 import AuthenticationServices
 import GoogleSignIn
+import FirebaseAnalytics
 
 @MainActor
 class LoginViewModel: ObservableObject{
@@ -96,6 +97,7 @@ class LoginViewModel: ObservableObject{
             do{
                 
                 let data = try await service.socialSignUp(socialSignUpBody: socialSignUpBody).data
+                Analytics.logEvent(AnalyticsEventSignUp, parameters: nil)
                 loginUser(name: data.name, email: data.email, phoneNumber: data.phone, profileImage: data.image, paystackApiKey: data.paystackApiKey)
                 
                 replaceLibrary(libraryContent: data.library ?? [])

@@ -12,7 +12,6 @@ import StoreKit
 struct MarketplaceProductScreen: View {
 
     let price: Int
-    let quantity: Int
     @StateObject var viewModel: MarketPlaceProductViewModel = MarketPlaceProductViewModel()
 
     @ObservedObject var paymentViewModel: PaymentViewModel
@@ -26,9 +25,15 @@ struct MarketplaceProductScreen: View {
         return URL(string: "https://wa.me/2347052193183?text=\(encoded)")
             ?? URL(string: "https://wa.me/2347052193183")!
     }
+    
+    
+    
+    var totalQuantity: Int{
+        price/100
+    }
 
     var productid: String {
-        "ng.qanda.purchase.\(price)"
+        "ng.qanda.purchase.100"
     }
 
     var body: some View {
@@ -206,27 +211,7 @@ struct MarketplaceProductScreen: View {
             Divider()
 
             VStack(spacing: 10) {
-                HStack {
-                    Text("Quantity")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-
-                    Spacer()
-
-                    Text("\(quantity)")
-                        .font(AppFont.medium(16))
-                }
-
-                HStack {
-                    Text("Price")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-
-                    Spacer()
-
-                    Text(product.displayPrice)
-                        .font(.subheadline)
-                }
+              
 
                 HStack {
                     Text("Total")
@@ -249,14 +234,14 @@ struct MarketplaceProductScreen: View {
     /// Formats `product.price * quantity` using the product's own currency
     /// format style, so it stays consistent with `displayPrice`'s locale/currency.
     private func totalPrice(for product: Product) -> String {
-        let total = product.price * Decimal(quantity)
+        let total = product.price * Decimal(totalQuantity)
         return total.formatted(product.priceFormatStyle)
     }
 
     private func purchaseButton(for product: Product) -> some View {
         Button {
             Task {
-                await viewModel.purchase(product, quantity: quantity)
+                await viewModel.purchase(product, quantity: totalQuantity, price: price)
             }
         } label: {
             HStack {
@@ -278,5 +263,5 @@ struct MarketplaceProductScreen: View {
 }
 
 #Preview {
-    MarketplaceProductScreen(price: 100, quantity: 2, paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel())
+    MarketplaceProductScreen(price: 100, paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel())
 }

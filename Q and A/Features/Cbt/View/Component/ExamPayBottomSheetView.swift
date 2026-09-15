@@ -150,7 +150,7 @@ struct ExamPayBottomSheetView: View {
                     .padding(.bottom, 16)
                 
             
-                if(UserSettings.phoneNumber?.isNyjaNum() == true){
+               
                     
                     ZStack{
                         if(totalPrice > 0){
@@ -166,7 +166,7 @@ struct ExamPayBottomSheetView: View {
                     }.frame(maxWidth: .infinity)
                         .padding(.bottom, 16)
                     
-                }
+                
                 
              
                 

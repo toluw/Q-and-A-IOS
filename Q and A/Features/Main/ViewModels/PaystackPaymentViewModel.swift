@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAnalytics
 
 @MainActor
 class PaystackPaymentViewModel: ObservableObject{
@@ -33,6 +34,7 @@ class PaystackPaymentViewModel: ObservableObject{
                 let response = try await paystackService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
+                    logPaymentToGoogle(currency: response.data.currency, amount: response.data.amount)
                     state.successPaymentReference = reference
                 }
                 } catch {
@@ -41,6 +43,16 @@ class PaystackPaymentViewModel: ObservableObject{
                 
             }
         }
+    }
+    
+    
+    private func logPaymentToGoogle(currency: String, amount: Int) {
+        let amountInNaira = Double(amount) / 100.0
+
+        Analytics.logEvent(AnalyticsEventPurchase, parameters: [
+            AnalyticsParameterValue: amountInNaira,
+            AnalyticsParameterCurrency: currency
+        ])
     }
     
     
@@ -58,6 +70,7 @@ class PaystackPaymentViewModel: ObservableObject{
                 let response = try await paystackService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
+                    logPaymentToGoogle(currency: response.data.currency, amount: response.data.amount)
                     state.successPaymentReference = reference
                 }else{
                     state.errorMessage = response.data.gateway_response ?? "Transaction could not be completed 3"
