@@ -198,6 +198,7 @@
 		F598618F305AD1F30027B33E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F598618E305AD1F30027B33E /* GoogleSignIn */; };
 		F5986191305AD1F30027B33E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F5986190305AD1F30027B33E /* GoogleSignInSwift */; };
 		F5986194305AD2560027B33E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F5986193305AD2560027B33E /* SDWebImageSwiftUI */; };
+		F5986197305ADBC40027B33E /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = F5986196305ADBC40027B33E /* FacebookCore */; };
 		F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A8F9B2FB61E6300823C77 /* PaymentState.swift */; };
 		F59A8F9E2FB61F3000823C77 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */; };
 		F59A8FA02FB6243100823C77 /* CbtPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A8F9F2FB6243100823C77 /* CbtPaymentViewModel.swift */; };
@@ -826,6 +827,7 @@
 				F5986184305ACFCB0027B33E /* CombineMoya in Frameworks */,
 				F598616E305ACEC70027B33E /* FirebaseAnalyticsCore in Frameworks */,
 				F5986170305ACEC70027B33E /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				F5986197305ADBC40027B33E /* FacebookCore in Frameworks */,
 				F598617A305ACEC70027B33E /* FirebaseInAppMessaging-Beta in Frameworks */,
 				F5986189305AD0D30027B33E /* SwiftMath in Frameworks */,
 				F5986191305AD1F30027B33E /* GoogleSignInSwift in Frameworks */,
@@ -1718,6 +1720,7 @@
 				F598618A305AD1550027B33E /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				F598618D305AD1F30027B33E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				F5986192305AD2560027B33E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				F5986195305ADBC40027B33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = F5941CD72F22124300611063 /* Products */;
 			projectDirPath = "";
@@ -2410,6 +2413,14 @@
 				minimumVersion = 3.1.4;
 			};
 		};
+		F5986195305ADBC40027B33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2502,6 +2513,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F5986192305AD2560027B33E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		F5986196305ADBC40027B33E /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5986195305ADBC40027B33E /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
