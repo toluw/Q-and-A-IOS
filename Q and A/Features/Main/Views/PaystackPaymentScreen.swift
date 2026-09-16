@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FacebookCore
 
 struct PaystackPaymentScreen: View {
     
@@ -16,6 +17,9 @@ struct PaystackPaymentScreen: View {
     @Environment(\.scenePhase) private var scenePhase
     
     init(authorizationUrl: String, reference: String, paymentViewModel: PaymentViewModel, navVm: MainNavViewModel) {
+        
+       
+        
         _viewModel = StateObject(
             wrappedValue: PaystackPaymentViewModel(
                 authorizationUrl: authorizationUrl,
@@ -25,6 +29,8 @@ struct PaystackPaymentScreen: View {
         
         self.paymentViewModel = paymentViewModel
         self.navVm = navVm
+        
+       
     }
     
     
@@ -84,9 +90,15 @@ struct PaystackPaymentScreen: View {
             }
     }
     
-    #Preview {
-        PaystackPaymentScreen(
-            authorizationUrl: "", reference: "", paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel()
-        )
+    private func logPaymentInitToFacebook() {
+        AppEvents.shared.logEvent(.initiatedCheckout)
     }
+    
+    
+}
+
+#Preview {
+    PaystackPaymentScreen(
+        authorizationUrl: "", reference: "", paymentViewModel: PaymentViewModel(), navVm: MainNavViewModel()
+    )
 }

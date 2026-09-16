@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseMessaging
 import UserNotifications
+import FacebookCore
 
 /// Bridges UIKit-era push/APNs callbacks into the SwiftUI app lifecycle.
 /// Owned via @UIApplicationDelegateAdaptor in the App struct.
@@ -22,6 +23,14 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         FirebaseApp.configure()
 
         Messaging.messaging().delegate = self
+        
+        
+        // Initialize Meta/Facebook SDK
+          ApplicationDelegate.shared.application(
+              application,
+              didFinishLaunchingWithOptions: launchOptions
+          )
+        
         UNUserNotificationCenter.current().delegate = self
 
         // If the app was launched from a tapped notification (cold start), capture it.
@@ -37,6 +46,10 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
     func application(_ application: UIApplication,
                       didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppEvents.shared.activateApp()
     }
 
     func application(_ application: UIApplication,
