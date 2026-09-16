@@ -69,6 +69,13 @@ struct PaystackPaymentScreen: View {
                     navVm.pop()
                 }
                 
+            }.onAppear{
+                
+                if(!viewModel.hasLoggedPayment){
+                    logPaymentInitToFacebook()
+                    viewModel.hasLoggedPayment = true
+                }
+                
             }
             .navigationBarBackButtonHidden(true)
             .toolbar{

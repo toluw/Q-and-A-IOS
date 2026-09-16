@@ -19,7 +19,7 @@ struct ExamSubCatScreen: View {
             
            
             ZStack{
-                if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true  && cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
+              /*  if(cbtViewModel.parentCategoriesData?.catData?.hasObjective == true  && cbtViewModel.parentCategoriesData?.catData?.hasTheory == true){
                     
                     TabSubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                 }else{
@@ -29,6 +29,9 @@ struct ExamSubCatScreen: View {
                         TheorySubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
                     }
                 }
+               */
+                
+                SubCatScreen(navVm: navVm, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
             }
             
             Spacer()

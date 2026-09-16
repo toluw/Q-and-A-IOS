@@ -16,6 +16,7 @@ class PaystackPaymentViewModel: ObservableObject{
     @Published var state: PaystackPaymentState = PaystackPaymentState()
     let authorizationUrl: String
     let reference: String
+    var hasLoggedPayment: Bool = false
     
     
 
