@@ -368,6 +368,7 @@
 		F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */; };
 		F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546F2FB85CF10012A9CC /* PaystackService.swift */; };
 		F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */; };
+		F5E0BCA3305A994800539F62 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = F5E0BCA2305A994800539F62 /* FacebookCore */; };
 		F5E1386B3039A03600863E3D /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1386A3039A03100863E3D /* ContactUsScreen.swift */; };
 		F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */; };
 		F5E144E72F7FB50C00C10F3A /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E62F7FB50C00C10F3A /* DeviceManager.swift */; };
@@ -831,6 +832,7 @@
 				F57BD0AA303067E40034DCDB /* FirebasePerformance in Frameworks */,
 				F5568EEE2FFD468E00C72A55 /* YouTubePlayerKit in Frameworks */,
 				F57BD0A0303067E40034DCDB /* FirebaseAuthCombine-Community in Frameworks */,
+				F5E0BCA3305A994800539F62 /* FacebookCore in Frameworks */,
 				F5E144EE2F7FB9F200C10F3A /* Moya in Frameworks */,
 				F57BD098303067E40034DCDB /* FirebaseAnalyticsCore in Frameworks */,
 				F57BD0A4303067E40034DCDB /* FirebaseCrashlytics in Frameworks */,
@@ -1712,6 +1714,7 @@
 				F5568EEC2FFD468E00C72A55 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				F57BD094303067E40034DCDB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F57BD0B1303071420034DCDB /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				F5E0BCA1305A994800539F62 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = F5941CD72F22124300611063 /* Products */;
 			projectDirPath = "";
@@ -2277,6 +2280,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.4;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RESOURCES_TARGETED_DEVICE_FAMILY = "";
@@ -2316,6 +2320,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.4;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2392,6 +2397,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.7.3;
+			};
+		};
+		F5E0BCA1305A994800539F62 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		F5E144EA2F7FB9F200C10F3A /* XCRemoteSwiftPackageReference "Moya" */ = {
@@ -2489,6 +2502,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F5A812332FEC04F200EB0496 /* XCRemoteSwiftPackageReference "SwiftMath" */;
 			productName = SwiftMath;
+		};
+		F5E0BCA2305A994800539F62 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5E0BCA1305A994800539F62 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
 		F5E144EB2F7FB9F200C10F3A /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;

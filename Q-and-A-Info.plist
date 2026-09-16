@@ -38,5 +38,18 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb222380738561383</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>222380738561383</string>
+    <key>FacebookDisplayName</key>
+    <string>Q and A</string>
 </dict>
 </plist>
