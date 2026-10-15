@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct MainCbtScreen: View {
     
@@ -180,6 +181,9 @@ struct MainCbtScreen: View {
     }
     
     private func handleItemClick(item: DataModel){
+      /*  Analytics.logEvent("test_event", parameters: [
+            "source": "ios_simulator"
+        ])*/
         if(!item.isCat){
             print("nav_result", "item not cat")
             viewModel.getParentCatData(level: item.level, cbcId: item.cbcId, isMock: item.isMock)

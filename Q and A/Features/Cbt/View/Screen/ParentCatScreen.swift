@@ -100,14 +100,14 @@ struct ParentCatScreen: View {
             }
             
             
-            if(UserSettings.phoneNumber?.isNyjaNum() == true){
+            
                 // Trailing Icon
                 ToolbarItem(placement: .navigationBarTrailing) {
                     CartView(){
                         navVm.navigate(route: .cbtCartScreen)
                     }
                 }
-            }
+            
            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

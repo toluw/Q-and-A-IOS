@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 import Observation
+import FirebaseAnalytics
 
 
 
@@ -30,7 +31,7 @@ class MarketPlaceProductViewModel: ObservableObject{
        }
     
     
-    func purchase(_ product: Product, quantity: Int) async {
+    func purchase(_ product: Product, quantity: Int, price: Int) async {
         isPurchasing = true
         defer { isPurchasing = false }
         do {
@@ -38,6 +39,7 @@ class MarketPlaceProductViewModel: ObservableObject{
             switch result {
             case .success(let verification):
                 if case .verified(let transaction) = verification {
+                    logPaymentToGoogle(currency: "NGN", amount: price)
                     await transaction.finish()
                     successPaymentReference = String(transaction.id)
                 }
@@ -50,6 +52,15 @@ class MarketPlaceProductViewModel: ObservableObject{
             print("Purchase failed: \(error)")
             state = .error
         }
+    }
+    
+    
+    private func logPaymentToGoogle(currency: String, amount: Int) {
+       
+     Analytics.logEvent(AnalyticsEventPurchase, parameters: [
+            AnalyticsParameterValue: amount,
+            AnalyticsParameterCurrency: currency
+        ])
     }
     
     

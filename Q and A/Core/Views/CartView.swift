@@ -24,8 +24,7 @@ struct CartView: View {
             onCartClicked()
         }label: {
             
-            if(UserSettings.phoneNumber?.isNyjaNum() == true){
-                
+            
                 ZStack(alignment:.bottomTrailing){
                   
                     Image("cart")
@@ -50,7 +49,7 @@ struct CartView: View {
                 
                 }
                 
-            }
+            
             
         }.onAppear{
             

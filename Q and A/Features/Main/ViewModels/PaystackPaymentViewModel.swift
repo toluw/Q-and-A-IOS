@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import FirebaseAnalytics
+import FacebookCore
+
 
 @MainActor
 class PaystackPaymentViewModel: ObservableObject{
@@ -13,6 +16,7 @@ class PaystackPaymentViewModel: ObservableObject{
     @Published var state: PaystackPaymentState = PaystackPaymentState()
     let authorizationUrl: String
     let reference: String
+    var hasLoggedPayment: Bool = false
     
     
 
@@ -33,6 +37,8 @@ class PaystackPaymentViewModel: ObservableObject{
                 let response = try await paystackService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
+                    logPaymentToFacebook(currency: response.data.currency, amount: response.data.amount)
+                    logPaymentToGoogle(currency: response.data.currency, amount: response.data.amount)
                     state.successPaymentReference = reference
                 }
                 } catch {
@@ -41,6 +47,29 @@ class PaystackPaymentViewModel: ObservableObject{
                 
             }
         }
+    }
+    
+    
+    
+    
+    private func logPaymentToGoogle(currency: String, amount: Int) {
+        let amountInNaira = Double(amount) / 100.0
+
+        Analytics.logEvent(AnalyticsEventPurchase, parameters: [
+            AnalyticsParameterValue: amountInNaira,
+            AnalyticsParameterCurrency: currency
+        ])
+    }
+    
+    private func logPaymentToFacebook(currency: String, amount: Int) {
+        let amountInCurrency = Double(amount) / 100.0
+
+        print("paystack_log amount => \(amount) currency => \(currency)")
+
+        AppEvents.shared.logPurchase(
+            amount: amountInCurrency,
+            currency: currency
+        )
     }
     
     
@@ -58,6 +87,7 @@ class PaystackPaymentViewModel: ObservableObject{
                 let response = try await paystackService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
+                    logPaymentToGoogle(currency: response.data.currency, amount: response.data.amount)
                     state.successPaymentReference = reference
                 }else{
                     state.errorMessage = response.data.gateway_response ?? "Transaction could not be completed 3"
