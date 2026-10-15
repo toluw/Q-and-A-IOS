@@ -67,7 +67,14 @@ struct CbtCategoryBottomSheetView: View {
         isMock: "2",
         level: "1",
         catData: nil,
-        createdAt: ""
+        createdAt: "",
+        bundleId: "2",
+        bundleContent: "A bundle",
+        offerId: "2",
+        hasOffer: true,
+        isBundleActive: true,
+        offerType: "Subject"
+        
     )
     
     let items = [dataModel, dataModel, dataModel]

@@ -269,7 +269,9 @@ struct SubCatExamItemViewPreveiwWrapper: View {
             createdAt: "",
             isActive: true,
             subcatId: "",
-            exams: examList
+            exams: examList,
+            bundleId: "2",
+            bundleContent: "we"
         )
         
         subCatExam = SubCatExams(data: subCategoryData, isChecked: true, showQuestionLayout: false)
