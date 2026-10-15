@@ -32,6 +32,8 @@ struct SubCategoryData: Codable, Equatable {
     let subcatId: String
     var exams: [Exam]
     var id: String {cbtId}
+    let bundleId: String
+    let bundleContent: String
     
     enum CodingKeys: String, CodingKey {
         case cbtId = "cbt_id"
@@ -40,5 +42,7 @@ struct SubCategoryData: Codable, Equatable {
         case isActive = "is_active"
         case subcatId = "subcat_id"
         case exams
+        case bundleContent = "bundle_content"
+        case bundleId = "bundle_id"
     }
 }

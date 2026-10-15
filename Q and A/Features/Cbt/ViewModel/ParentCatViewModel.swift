@@ -18,6 +18,8 @@ class ParentCatViewModel: ObservableObject {
     
     var hasLoadData = false
     
+    var offer: Offer? = nil
+    
     private let service: CbtServiceProtocol
       
       init(service: CbtServiceProtocol = CbtService()) {

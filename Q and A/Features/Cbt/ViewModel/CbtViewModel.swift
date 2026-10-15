@@ -38,6 +38,9 @@ class CbtViewModel: ObservableObject{
     
     private var timer: Timer?
     
+    var activeOffer: Offer? = nil
+    var offerTitle: String = ""
+    
     
     private let cbtService: CbtServiceProtocol
    

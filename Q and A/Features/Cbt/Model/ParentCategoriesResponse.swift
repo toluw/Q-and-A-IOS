@@ -27,6 +27,12 @@ struct DataModel: Codable, Identifiable {
     var catData: CatData?
     let createdAt: String
     var id: String {cbcId}
+    let bundleId: String
+    let bundleContent: String
+    let offerId: String
+    let hasOffer: Bool
+    let isBundleActive: Bool
+    let offerType: String
     
     enum CodingKeys: String, CodingKey{
         case cbcId = "cbc_id"
@@ -37,6 +43,13 @@ struct DataModel: Codable, Identifiable {
         case level
         case catData = "cat_data"
         case createdAt = "created_at"
+        case bundleId = "bundle_id"
+        case bundleContent = "bundle_content"
+        case offerId = "offer_id"
+        case hasOffer = "has_offer"
+        case isBundleActive = "is_bundle_active"
+        case offerType = "offer_type"
+        
         
     }
 }

@@ -13,6 +13,9 @@ struct ParentCatScreen: View {
     let cbcId: String
     let level: String
     let isMock: String
+    let hasOffer: Bool
+    let offerType: String
+    let offerId: String
     
     
     @ObservedObject var navVm: MainNavViewModel
@@ -78,6 +81,9 @@ struct ParentCatScreen: View {
                                         handleItemClick(item: data)
                                     })
                                 }
+                                
+                                Spacer()
+                                        .frame(height: 170)
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -139,6 +145,9 @@ struct ParentCatScreen: View {
                     
                 }
             }
+            .onAppear{
+                setOffer()
+            }
             .sheet(isPresented: $viewModel.showLogin){
                    LoginScreen(
                        onDismiss: {
@@ -160,12 +169,24 @@ struct ParentCatScreen: View {
         
     }
     
+    private func setOffer(){
+        if(hasOffer){
+            
+            cbtViewModel.activeOffer = nil
+            viewModel.offer = Offer(offerId: offerId, offerType: offerType, hasOffer: hasOffer, cbcId: cbcId, level: level, title: title
+                
+            )
+            
+        }else if(cbtViewModel.activeOffer != nil){
+            viewModel.offer = cbtViewModel.activeOffer
+        }
+    }
     
     private func handleItemClick(item: DataModel){
         viewModel.state.searchTxt = ""
         if(!item.isCat){
             cbtViewModel.parentCategoriesData = item
-            moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock)
+            moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock, hasOffer: item.hasOffer, offerType: item.offerType, offerId: item.offerId)
         }else{
             if(item.catData?.isMock == true){
                 cbtViewModel.parentCategoriesData = item
@@ -183,8 +204,8 @@ struct ParentCatScreen: View {
     }
     
     
-    private func moveToParentCatPage(title: String, cbcId: String, level: String, isMock: String){
-        navVm.navigate(route: .parentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock))
+    private func moveToParentCatPage(title: String, cbcId: String, level: String, isMock: String, hasOffer: Bool, offerType: String, offerId: String){
+        navVm.navigate(route: .parentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, hasOffer: hasOffer, offerType: offerType, offerId: offerId))
     }
     
     private func moveToSubCatPage(){
@@ -212,6 +233,6 @@ struct ParentCatScreen: View {
     
    
     
-    ParentCatScreen(title: "Education", cbcId: "1", level: "2", isMock: "1", navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
+    ParentCatScreen(title: "Education", cbcId: "1", level: "2", isMock: "1", hasOffer: true, offerType: "Subject", offerId: "2", navVm: MainNavViewModel(), cbtViewModel: CbtViewModel())
 
 }

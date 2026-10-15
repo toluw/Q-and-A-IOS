@@ -139,6 +139,7 @@
 		F56EA61A302724E00092972D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA619302724E00092972D /* Quote.swift */; };
 		F56EA61C302725A70092972D /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61B302725A70092972D /* Reply.swift */; };
 		F56EA61E302727E70092972D /* ReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61D302727E70092972D /* ReplyView.swift */; };
+		F577822B3080ECE300FE66C6 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577822A3080ECE300FE66C6 /* Offer.swift */; };
 		F57BD091302F15200034DCDB /* SocialSignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD090302F15200034DCDB /* SocialSignupResponse.swift */; };
 		F57BD093302F1B230034DCDB /* SocialSignupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD092302F1B230034DCDB /* SocialSignupBody.swift */; };
 		F57BD0B030306DC80034DCDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */; };
@@ -552,6 +553,7 @@
 		F56EA619302724E00092972D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F56EA61B302725A70092972D /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		F56EA61D302727E70092972D /* ReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyView.swift; sourceTree = "<group>"; };
+		F577822A3080ECE300FE66C6 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		F57BD090302F15200034DCDB /* SocialSignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupResponse.swift; sourceTree = "<group>"; };
 		F57BD092302F1B230034DCDB /* SocialSignupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupBody.swift; sourceTree = "<group>"; };
 		F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1073,6 +1075,7 @@
 				F5F7A7772F388DBE0097558D /* AppFont.swift */,
 				F544D48630405D60007E1CAE /* UpdateStatus.swift */,
 				F544D48830405DA0007E1CAE /* UpdateManager.swift */,
+				F577822A3080ECE300FE66C6 /* Offer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1876,6 +1879,7 @@
 				F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */,
 				F58CE9AA3029CA0000D1722B /* LikeReplyBody.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
+				F577822B3080ECE300FE66C6 /* Offer.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
@@ -2268,7 +2272,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
@@ -2285,7 +2289,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2308,7 +2312,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
@@ -2325,7 +2329,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
