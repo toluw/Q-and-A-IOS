@@ -116,6 +116,17 @@ struct ParentCatScreen: View {
             
            
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            
+            if(hasOffer && cbtViewModel.activeOffer != nil){
+                BundleOfferingView(offerType:offerType, onExpand: {
+                    
+                })
+            }
+           
+            
+           
+        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("list_bg"))
             .task {

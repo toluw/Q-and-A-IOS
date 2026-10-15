@@ -126,6 +126,9 @@
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
 		F55951EA30238E6A00C8AF67 /* DeleteCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */; };
 		F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BBDC92F9386700059A0DB /* CartView.swift */; };
+		F55DDC3430811779000039F6 /* UserBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC3330811779000039F6 /* UserBundle.swift */; };
+		F55DDC36308117C2000039F6 /* BundlePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC35308117C2000039F6 /* BundlePrice.swift */; };
+		F55DDC3830811878000039F6 /* GetUserBundleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */; };
 		F56831EC30330C1200D0B62D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56831EB30330C1200D0B62D /* TermsView.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -541,6 +544,9 @@
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCommentBody.swift; sourceTree = "<group>"; };
 		F55BBDC92F9386700059A0DB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		F55DDC3330811779000039F6 /* UserBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBundle.swift; sourceTree = "<group>"; };
+		F55DDC35308117C2000039F6 /* BundlePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePrice.swift; sourceTree = "<group>"; };
+		F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserBundleResponse.swift; sourceTree = "<group>"; };
 		F56831EB30330C1200D0B62D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -1409,6 +1415,9 @@
 				F5CE8266303477A1005D1903 /* CbtHistory.swift */,
 				F5CE826830348175005D1903 /* CbtHistoryResponse.swift */,
 				F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */,
+				F55DDC3330811779000039F6 /* UserBundle.swift */,
+				F55DDC35308117C2000039F6 /* BundlePrice.swift */,
+				F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1861,6 +1870,7 @@
 				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F544D49130406226007E1CAE /* ClearBackgroundView.swift in Sources */,
+				F55DDC36308117C2000039F6 /* BundlePrice.swift in Sources */,
 				F5239DFF3046F25300DC1997 /* Pushnotificationrouter.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
@@ -1887,6 +1897,7 @@
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
 				F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */,
+				F55DDC3430811779000039F6 /* UserBundle.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F544D48D30405E3D007E1CAE /* UpdateDialogView.swift in Sources */,
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
@@ -1951,6 +1962,7 @@
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */,
 				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
+				F55DDC3830811878000039F6 /* GetUserBundleResponse.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
