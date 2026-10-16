@@ -13,13 +13,13 @@ struct BundleState{
     var errorMessage: String? = nil
     var canContinue: Bool = false
     var items: [BundleWithSelection] = []
-    var totalPrice: String = 0.formatted(.currency(code: "NGN"))
-    var totalDiscountedPrice: String = 0.formatted(.currency(code: "NGN"))
+    var bundlePriceTxt: String = 0.formatted(.currency(code: "NGN"))
+    var originalPriceTxt: String = 0.formatted(.currency(code: "NGN"))
     var isSelectAll: Bool = false
     var isDataEmpty: Bool = false
     var title: String = ""
     var description: String = ""
     var selectSubjectTxt: String = ""
-    var numSubjectSelectedTxt: String = ""
+    var subjectSelectedTxt: String = ""
     
 }

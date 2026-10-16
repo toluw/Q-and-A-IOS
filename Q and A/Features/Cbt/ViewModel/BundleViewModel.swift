@@ -49,7 +49,7 @@ class BundleViewModel: ObservableObject {
                   
                     setStaticText(offer: offer, bundleData: response.data)
                    initBundleData(bundleId: bundleId, userBundleList: data)
-                    updateDynamicContent(bundleType: offer.offerType)
+                    updateDynamicContent(offerType: offer.offerType)
                     
                     
                 }
@@ -65,8 +65,80 @@ class BundleViewModel: ObservableObject {
     }
     
     
-    func updateDynamicContent(bundleType: String){
+    func getSelectedBundles() -> [UserBundle] {
+        return state.items
+            .filter { $0.isSelected }
+            .map { $0.userBundle }
+    }
+    
+    func selectBundleAction(position: Int, offer: Offer){
+        state.items[position].isSelected.toggle()
+        updateDynamicContent(offerType: offer.offerType)
         
+    }
+    
+    
+    func checkIfCanContinue() {
+        state.canContinue = state.items.contains { $0.isSelected }
+    }
+    
+    func selectAllAction(offer: Offer){
+        state.isSelectAll = true
+        selectAllBundles()
+        updateDynamicContent(offerType: offer.offerType)
+        
+    }
+    
+    func deselectAllAction(offer: Offer){
+        state.isSelectAll = false
+        deselectAllBundles()
+        updateDynamicContent(offerType: offer.offerType)
+    }
+    
+    
+    
+    func selectAllBundles() {
+        for index in state.items.indices {
+            state.items[index].isSelected = true
+        }
+    }
+
+    func deselectAllBundles() {
+        for index in state.items.indices {
+            state.items[index].isSelected = false
+        }
+    }
+    
+    
+    func updateDynamicContent(offerType: String){
+        
+        let numSelected = getNumSelectedBundles()
+        let totalPrice = getTotalPrice()
+        
+        state.subjectSelectedTxt = numSelected == 1 ? "\(numSelected) \(offerType) selected" : "(numSelected) \(offerType)s selected"
+        
+        
+        state.bundlePriceTxt = totalPrice.price.formatted(.currency(code: "NGN"))
+        state.originalPriceTxt = totalPrice.originalPrice.formatted(.currency(code: "NGN"))
+        
+        checkIfCanContinue()
+            
+        
+        
+    }
+    
+    func getTotalPrice() -> BundlePrice {
+        let selectedBundles = state.items.filter { $0.isSelected }
+
+        return BundlePrice(
+            price: selectedBundles.reduce(0) { $0 + $1.userBundle.price },
+            originalPrice: selectedBundles.reduce(0) { $0 + $1.userBundle.originalPrice },
+            discountedPrice: selectedBundles.reduce(0) { $0 + $1.userBundle.discountedPrice }
+        )
+    }
+
+    func getNumSelectedBundles() -> Int {
+        return state.items.filter { $0.isSelected }.count
     }
     
     func setStaticText(offer: Offer, bundleData: BundledData){
