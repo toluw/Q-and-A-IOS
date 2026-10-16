@@ -38,7 +38,7 @@ class CbtViewModel: ObservableObject{
     
     private var timer: Timer?
     
-    var activeOffer: Offer? = nil
+    @Published var activeOffer: Offer? = nil
     var offerTitle: String = ""
     var selectedBundles: [UserBundle] = []
     

@@ -117,25 +117,14 @@ struct ParentCatScreen: View {
             
             
             
-                // Trailing Icon
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    CartView(){
-                        navVm.navigate(route: .cbtCartScreen)
-                    }
+            // Trailing Icon
+            ToolbarItem(placement: .navigationBarTrailing) {
+                CartView(){
+                    navVm.navigate(route: .cbtCartScreen)
                 }
-            
-           
-        }
-        .safeAreaInset(edge: .bottom, spacing: 0) {
-            
-            if(hasOffer && cbtViewModel.activeOffer != nil){
-                BundleOfferingView(offerType:offerType, onExpand: {
-                    onBundleClicked()
-                })
             }
-           
             
-           
+            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("list_bg"))
@@ -168,6 +157,17 @@ struct ParentCatScreen: View {
             }
             .onAppear{
                 setOffer()
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                
+                if(hasOffer || cbtViewModel.activeOffer != nil){
+                    BundleOfferingView(offerType:offerType, onExpand: {
+                        onBundleClicked()
+                    })
+                }
+               
+                
+               
             }
             .sheet(isPresented: $viewModel.state.showBundleBottomSheet){
                 
@@ -250,6 +250,7 @@ struct ParentCatScreen: View {
     
     private func handleItemClick(item: DataModel){
         viewModel.state.searchTxt = ""
+        cbtViewModel.activeOffer = viewModel.offer
         if(!item.isCat){
             cbtViewModel.parentCategoriesData = item
             moveToParentCatPage(title: item.item , cbcId: item.cbcId, level: item.level, isMock: item.isMock, hasOffer: item.hasOffer, offerType: item.offerType, offerId: item.offerId)

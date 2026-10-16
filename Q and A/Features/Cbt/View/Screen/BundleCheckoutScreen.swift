@@ -9,12 +9,19 @@ import SwiftUI
 
 struct BundleCheckoutScreen: View {
     
+    @ObservedObject var cbtViewModel: CbtViewModel
+    @StateObject var viewModel: BundleCheckoutViewModel = .init()
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            .onAppear{
+                viewModel.setTotalPrice(bundles: cbtViewModel.selectedBundles)
+                viewModel.updateViews()
+            }
     }
     
 }
 
 #Preview {
-    BundleCheckoutScreen()
+    BundleCheckoutScreen(cbtViewModel: CbtViewModel())
 }

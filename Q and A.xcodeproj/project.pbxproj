@@ -42,6 +42,8 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F5272F2F3082859900233723 /* BundleCheckoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F2E3082859900233723 /* BundleCheckoutState.swift */; };
+		F5272F313082874600233723 /* BundleCheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F303082874600233723 /* BundleCheckoutViewModel.swift */; };
 		F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A063021E7DF002268D5 /* CommentScreen.swift */; };
 		F5285A093021E99A002268D5 /* ForumCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A083021E99A002268D5 /* ForumCommentResponse.swift */; };
 		F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A0A3021F04B002268D5 /* CommentState.swift */; };
@@ -466,6 +468,8 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5272F2E3082859900233723 /* BundleCheckoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCheckoutState.swift; sourceTree = "<group>"; };
+		F5272F303082874600233723 /* BundleCheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCheckoutViewModel.swift; sourceTree = "<group>"; };
 		F5285A063021E7DF002268D5 /* CommentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentScreen.swift; sourceTree = "<group>"; };
 		F5285A083021E99A002268D5 /* ForumCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCommentResponse.swift; sourceTree = "<group>"; };
 		F5285A0A3021F04B002268D5 /* CommentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentState.swift; sourceTree = "<group>"; };
@@ -1436,6 +1440,7 @@
 				F583608B30820FDF00F90526 /* BundleState.swift */,
 				F5B1920F308238CE009468D6 /*  CatBundle.swift */,
 				F5B192113082392D009468D6 /* ParentBundleIdResponse.swift */,
+				F5272F2E3082859900233723 /* BundleCheckoutState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1467,6 +1472,7 @@
 				F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */,
 				F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */,
 				F583608D308215E100F90526 /* BundleViewModel.swift */,
+				F5272F303082874600233723 /* BundleCheckoutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1902,6 +1908,7 @@
 				F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */,
 				F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */,
 				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
+				F5272F313082874600233723 /* BundleCheckoutViewModel.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
 				F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */,
@@ -2153,6 +2160,7 @@
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */,
+				F5272F2F3082859900233723 /* BundleCheckoutState.swift in Sources */,
 				F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */,
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,

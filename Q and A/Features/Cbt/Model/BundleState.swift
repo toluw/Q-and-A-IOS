@@ -21,5 +21,5 @@ struct BundleState{
     var description: String = ""
     var selectSubjectTxt: String = ""
     var subjectSelectedTxt: String = ""
-    
+
 }
