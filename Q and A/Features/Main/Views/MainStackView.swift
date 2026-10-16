@@ -117,6 +117,9 @@ struct MainStackView: View {
             MarketplaceProductScreen(price: price, paymentViewModel: paymentViewModel, navVm: navVM)
         case .none:
             EmptyView()
+        
+        case .bundleCheckoutScreen:
+            BundleCheckoutScreen()
         }
         
     }

@@ -40,6 +40,7 @@ class CbtViewModel: ObservableObject{
     
     var activeOffer: Offer? = nil
     var offerTitle: String = ""
+    var selectedBundles: [UserBundle] = []
     
     
     private let cbtService: CbtServiceProtocol

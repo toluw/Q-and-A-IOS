@@ -173,8 +173,11 @@ struct ParentCatScreen: View {
                 
                 if(viewModel.state.bundleBottomSheetOffer != nil){
                     BundleBottomSheetView(offer: viewModel.state.bundleBottomSheetOffer!, bundleId: viewModel.state.bundleBottomSheetBundleId, onContinue: {data in
-                        
+                        cbtViewModel.selectedBundles = data
+                        cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
                         viewModel.state.showBundleBottomSheet = false
+                        moveToBundleCheckout()
+                        
                     },
                     onDismis: {
                         
@@ -205,6 +208,10 @@ struct ParentCatScreen: View {
                    )
                }
         
+    }
+    
+    private func moveToBundleCheckout(){
+        navVm.navigate(route: .bundleCheckoutScreen)
     }
     
     private func onBundleClicked(){
