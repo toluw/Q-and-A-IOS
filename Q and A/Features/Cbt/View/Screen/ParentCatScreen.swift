@@ -169,6 +169,23 @@ struct ParentCatScreen: View {
             .onAppear{
                 setOffer()
             }
+            .sheet(isPresented: $viewModel.state.showBundleBottomSheet){
+                
+                if(viewModel.state.bundleBottomSheetOffer != nil){
+                    BundleBottomSheetView(offer: viewModel.state.bundleBottomSheetOffer!, bundleId: viewModel.state.bundleBottomSheetBundleId, onContinue: {data in
+                        
+                        viewModel.state.showBundleBottomSheet = false
+                    },
+                    onDismis: {
+                        
+                        viewModel.state.showBundleBottomSheet = false
+                    })
+                    .presentationDetents([.large])
+                        
+                    
+                }
+                
+            }
             .sheet(isPresented: $viewModel.showLogin){
                    LoginScreen(
                        onDismiss: {
@@ -195,7 +212,11 @@ struct ParentCatScreen: View {
             
             if let activeOffer = viewModel.offer{
                 
-                
+                if(hasOffer){
+                    viewModel.showBundleBottomSheet(bundleId: nil, offer: activeOffer)
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbcId, level: level)
+                }
                 
             }
             
