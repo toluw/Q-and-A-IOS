@@ -22,6 +22,7 @@ protocol CbtServiceProtocol {
     func getCbtHistory(buyerEmail: String, isCompleted: String, page: String) async throws -> CbtHistoryResponse
     func getLiveExam(resultId: String) async throws -> LiveExamResponse
     func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse
+    func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse
     
     
     
@@ -29,10 +30,7 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
-   
-    
-   
-    
+  
    
     private let apiClient = APIClient<CbtAPI>()
     
@@ -123,6 +121,16 @@ final class CbtService: CbtServiceProtocol{
         );
     }
     
+    func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse {
+        return try await apiClient.request(
+            .getParentBundleId(level: level, cbcId: cbcId),
+            responseType: ParentBundleIdResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse {
         return try await apiClient.request(
@@ -133,6 +141,8 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    
     
    
     

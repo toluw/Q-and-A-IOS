@@ -26,6 +26,7 @@ enum CbtAPI {
     case getCbtHistory(buyerEmail: String, isCompleted: String, page: String, pageSize: String = String(PAGE_SIZE))
     case getLiveExam(resultId: String)
     case getBundles(buyerEmail: String, level: String, cbcId: String)
+    case getParentBundleId(level: String, cbcId: String)
     
 }
 
@@ -66,6 +67,8 @@ extension CbtAPI: TargetType{
             return  "v2/get_live_exam.php"
         case .getBundles:
             return "v2/get_user_bundle.php"
+        case .getParentBundleId:
+            return "v2/get_parent_bundle_id.php"
         }
     
     }
@@ -101,6 +104,8 @@ extension CbtAPI: TargetType{
         case .getLiveExam:
                 .get
         case .getBundles:
+                .get
+        case .getParentBundleId:
                 .get
         }
     }
@@ -247,6 +252,17 @@ extension CbtAPI: TargetType{
             do{
                 var params: [String: Any] = [:]
                 params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "level", value: level)
+                params.addOptional(key: "cbc_id", value: cbcId)
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+            }
+            
+        case .getParentBundleId(level: let level, cbcId: let cbcId):
+            do{
+                var params: [String: Any] = [:]
                 params.addOptional(key: "level", value: level)
                 params.addOptional(key: "cbc_id", value: cbcId)
                 return .requestParameters(
