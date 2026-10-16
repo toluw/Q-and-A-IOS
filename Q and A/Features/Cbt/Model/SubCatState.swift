@@ -10,8 +10,8 @@ import Foundation
 struct SubCatState{
     
     var isLoading: Bool = false
-    var initItems: [SubCatExams] = []
     var errorMessage: String? = nil
+    var initItems: [SubCatExams] = []
     var items: [SubCatExams] = []
     var examSelectList: [SubCatExamSelect] = []
     var maxExamSelectedMessage: String = ""

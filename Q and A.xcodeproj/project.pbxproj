@@ -151,6 +151,9 @@
 		F57F779C3046E2CF00018918 /* UpdateTokenBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
+		F583608A3081FC7200F90526 /* BundleWithSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58360893081FC7200F90526 /* BundleWithSelection.swift */; };
+		F583608C30820FDF00F90526 /* BundleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583608B30820FDF00F90526 /* BundleState.swift */; };
+		F583608E308215E100F90526 /* BundleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583608D308215E100F90526 /* BundleViewModel.swift */; };
 		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
 		F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */; };
 		F5899FE0300F6BF3005FF391 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FDF300F6BF3005FF391 /* PostBody.swift */; };
@@ -569,6 +572,9 @@
 		F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenBody.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F58360893081FC7200F90526 /* BundleWithSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleWithSelection.swift; sourceTree = "<group>"; };
+		F583608B30820FDF00F90526 /* BundleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleState.swift; sourceTree = "<group>"; };
+		F583608D308215E100F90526 /* BundleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleViewModel.swift; sourceTree = "<group>"; };
 		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
 		F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPostResponse.swift; sourceTree = "<group>"; };
 		F5899FDF300F6BF3005FF391 /* PostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
@@ -1418,6 +1424,8 @@
 				F55DDC3330811779000039F6 /* UserBundle.swift */,
 				F55DDC35308117C2000039F6 /* BundlePrice.swift */,
 				F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */,
+				F58360893081FC7200F90526 /* BundleWithSelection.swift */,
+				F583608B30820FDF00F90526 /* BundleState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1448,6 +1456,7 @@
 				F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */,
 				F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */,
 				F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */,
+				F583608D308215E100F90526 /* BundleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1865,6 +1874,7 @@
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
+				F583608A3081FC7200F90526 /* BundleWithSelection.swift in Sources */,
 				F5899FE4300F82F7005FF391 /* OptionBottomSheet.swift in Sources */,
 				F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */,
 				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
@@ -1924,6 +1934,7 @@
 				F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */,
 				F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
+				F583608C30820FDF00F90526 /* BundleState.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5D0BF02300A23930036E377 /* PostResponse.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
@@ -2047,6 +2058,7 @@
 				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
+				F583608E308215E100F90526 /* BundleViewModel.swift in Sources */,
 				F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */,
 				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,

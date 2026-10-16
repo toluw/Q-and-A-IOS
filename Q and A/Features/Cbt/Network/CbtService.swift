@@ -21,6 +21,7 @@ protocol CbtServiceProtocol {
     func getNumPost(examId: String, questionId: String) async throws -> NumPostResponse
     func getCbtHistory(buyerEmail: String, isCompleted: String, page: String) async throws -> CbtHistoryResponse
     func getLiveExam(resultId: String) async throws -> LiveExamResponse
+    func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse
     
     
     
@@ -28,6 +29,9 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
+    
+   
     
    
     private let apiClient = APIClient<CbtAPI>()
@@ -51,6 +55,17 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse {
+        return try await apiClient.request(
+            .getBundles(buyerEmail: buyerEmail, level: level, cbcId: cbcId),
+            responseType: GetUserBundleResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     
    
