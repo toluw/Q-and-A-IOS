@@ -20,6 +20,8 @@ struct BundleCheckoutState{
     var showBlockedLoader: Bool = false
     var totalPrice: BundlePrice? = nil
     var agent: Agent? = nil
+    var inputtedCode: String = ""
+    var inputError: String = ""
    
     
 }

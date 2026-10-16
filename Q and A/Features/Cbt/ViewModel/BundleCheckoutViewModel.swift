@@ -26,6 +26,54 @@ class BundleCheckoutViewModel: ObservableObject{
         state.totalPrice = bundles.getTotalPrice()
     }
     
+    
+    func onTextInputChanged(text: String){
+        
+        if(text.count == 6){
+            state.inputError = ""
+            applyCode(text: text)
+            
+        }else{
+            
+            if(text.isEmpty){
+                state.inputError = ""
+            }else{
+                state.inputError = "Invalid code"
+            }
+            
+        }
+        
+    }
+    
+    
+    func applyCode(text: String){
+        state.showBlockedLoader = true
+        Task{
+            do{
+                let validateCodeBody = ValidateCodeBody(buyer_email: UserSettings.email ?? "", code: text)
+                let response = try await service.validateCode(validateCodeBody: validateCodeBody)
+                state.showBlockedLoader = false
+                state.inputtedCode = ""
+                state.agent = response.data
+                state.hasAppliedCode = true
+                state.paymentText = (state.totalPrice?.discountedPrice ?? 0).formatted(.currency(code: "NGN"))
+                
+                
+                
+                
+            }catch {
+                state.showBlockedLoader = false
+                state.inputtedCode = ""
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.applyCode(text: text)
+                })
+            }
+        }
+        
+    }
+    
+  
+    
     func updateViews(){
         
         if let it = state.totalPrice{

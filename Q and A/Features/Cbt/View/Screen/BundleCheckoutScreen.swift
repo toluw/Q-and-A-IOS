@@ -18,6 +18,9 @@ struct BundleCheckoutScreen: View {
                 viewModel.setTotalPrice(bundles: cbtViewModel.selectedBundles)
                 viewModel.updateViews()
             }
+            .onChange(of: viewModel.state.inputtedCode){prev, current in
+                viewModel.onTextInputChanged(text: current)
+            }
     }
     
 }
