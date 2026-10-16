@@ -27,6 +27,7 @@ enum CbtAPI {
     case getLiveExam(resultId: String)
     case getBundles(buyerEmail: String, level: String, cbcId: String)
     case getParentBundleId(level: String, cbcId: String)
+    case validateCode(validateCodeBody: ValidateCodeBody)
     
 }
 
@@ -69,6 +70,8 @@ extension CbtAPI: TargetType{
             return "v2/get_user_bundle.php"
         case .getParentBundleId:
             return "v2/get_parent_bundle_id.php"
+        case .validateCode:
+            return "v2/validate_code.php"
         }
     
     }
@@ -107,6 +110,8 @@ extension CbtAPI: TargetType{
                 .get
         case .getParentBundleId:
                 .get
+        case .validateCode:
+                .post
         }
     }
     
@@ -270,6 +275,8 @@ extension CbtAPI: TargetType{
                     encoding: URLEncoding.queryString
                 )
             }
+        case .validateCode(validateCodeBody: let validateCodeBody):
+            return .requestJSONEncodable(validateCodeBody)
         }
         
        

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ValidateCodeResponse: Codable{
+    let status: Bool
+    let message: String
+    let agent: Agent
+}

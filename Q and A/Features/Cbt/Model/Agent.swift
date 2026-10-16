@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+struct Agent: Codable{
+   
+    let email: String
+    let code: String
+    
+    
+}

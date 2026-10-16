@@ -23,6 +23,7 @@ protocol CbtServiceProtocol {
     func getLiveExam(resultId: String) async throws -> LiveExamResponse
     func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse
     func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse
+    func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse
     
     
     
@@ -30,6 +31,7 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
   
    
     private let apiClient = APIClient<CbtAPI>()
@@ -162,6 +164,14 @@ final class CbtService: CbtServiceProtocol{
             data.jsonString(forKey: "message") ?? "An error occured"
         })
     }
+    
+    
+    func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse {
+        return try await apiClient.request(.validateCode(validateCodeBody: validateCodeBody), responseType: ValidateCodeResponse.self, errorParser: {data in
+            data.jsonString(forKey: "message") ?? "An error occured"
+        })
+    }
+    
     
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse {
         return try await apiClient.request(

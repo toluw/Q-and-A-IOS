@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ValidateCodeBody: Codable{
+    let buyer_email: String
+    let code: String
+}
