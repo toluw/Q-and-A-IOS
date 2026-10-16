@@ -34,6 +34,7 @@ class BundleViewModel: ObservableObject {
         
         state.isLoading = true
         state.errorMessage = nil
+        state.isDataEmpty = false
         
         
             do{
@@ -115,11 +116,12 @@ class BundleViewModel: ObservableObject {
         let numSelected = getNumSelectedBundles()
         let totalPrice = getTotalPrice()
         
-        state.subjectSelectedTxt = numSelected == 1 ? "\(numSelected) \(offerType) selected" : "(numSelected) \(offerType)s selected"
+        state.subjectSelectedTxt = "\(numSelected) \(offerType.lowercased())\(numSelected == 1 ? "" : "s") selected"
+        state.isSelectAll = !state.items.isEmpty && state.items.allSatisfy { $0.isSelected }
         
         
-        state.bundlePriceTxt = totalPrice.price.formatted(.currency(code: "NGN"))
-        state.originalPriceTxt = totalPrice.originalPrice.formatted(.currency(code: "NGN"))
+        state.bundlePriceTxt = totalPrice.price.formatted(.currency(code: "NGN").precision(.fractionLength(0)))
+        state.originalPriceTxt = totalPrice.originalPrice.formatted(.currency(code: "NGN").precision(.fractionLength(0)))
         
         checkIfCanContinue()
             
