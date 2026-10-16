@@ -16,6 +16,10 @@ struct ParentCatState{
     var defaultData: [DataModel] = []
     var emptyStateText: String = "Oops! There is no content yet. Please check back later"
     var searchTxt: String = ""
+    var showBlockedLoader: Bool = false
+    var bundleBottomSheetOffer: Offer? = nil
+    var bundleBottomSheetBundleId: String? = nil
+    var showBundleBottomSheet = false
     
     
     

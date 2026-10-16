@@ -94,6 +94,16 @@ struct ParentCatScreen: View {
                     
                 }
                 
+                if viewModel.state.showBlockedLoader {
+                       Color.black.opacity(0.4)
+                           .ignoresSafeArea()
+                       
+                       ProgressView()
+                           .padding()
+                           .background(Color.white)
+                           .cornerRadius(10)
+                   }
+                
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             
@@ -120,7 +130,7 @@ struct ParentCatScreen: View {
             
             if(hasOffer && cbtViewModel.activeOffer != nil){
                 BundleOfferingView(offerType:offerType, onExpand: {
-                    
+                    onBundleClicked()
                 })
             }
            
@@ -177,6 +187,23 @@ struct ParentCatScreen: View {
                        
                    )
                }
+        
+    }
+    
+    private func onBundleClicked(){
+        if(UserSettings.isLoggedIn){
+            
+            if let activeOffer = viewModel.offer{
+                
+                
+                
+            }
+            
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
         
     }
     

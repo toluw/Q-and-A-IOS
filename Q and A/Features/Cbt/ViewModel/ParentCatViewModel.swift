@@ -54,6 +54,38 @@ class ParentCatViewModel: ObservableObject {
     }
     
     
+    func getParentBundleId(cbcId: String, level: String){
+        state.showBlockedLoader = true
+        
+        Task{
+            do{
+                let response = try await service.getParentBundleId(level: level, cbcId: cbcId)
+                state.showBlockedLoader = false
+               if let activeOffer = offer{
+                   showBundleBottomSheet(bundleId: response.data?.bundleId, offer: activeOffer)
+                }
+                
+                
+            }catch{
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.getParentBundleId(cbcId: cbcId, level: level)
+                })
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    func showBundleBottomSheet(bundleId: String?, offer: Offer){
+        state.bundleBottomSheetOffer = offer
+        state.bundleBottomSheetBundleId = bundleId
+        state.showBundleBottomSheet = true
+    }
+    
+    
     
 }
 
