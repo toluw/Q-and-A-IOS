@@ -189,6 +189,9 @@ struct CatScreen: View {
                     ExamPayBottomSheetView(
                         examWithTitle: ExamWithTitle(exam: viewModel.premExam!.exam, title: cbtViewModel.parentCategoriesData?.item ?? ""),
                       premiumExams: viewModel.premExam!.premiumExams,
+                        onViewBundle: {data in
+                            
+                        },
                       onClose: {
                         viewModel.state.showPaymentSheet = false
                     }, onPaymentClicked: {items in

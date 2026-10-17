@@ -13,6 +13,7 @@ struct ExamPayBottomSheetView: View {
     let examWithTitle: ExamWithTitle
     var catBundle: CatBundle? = nil
     let premiumExams: [Exam]
+    let onViewBundle: (CatBundle) -> Void
     
     @State var examPaymentList: [ExamPay] = []
     @State var totalPrice: Int = 0
@@ -64,6 +65,13 @@ struct ExamPayBottomSheetView: View {
                 
                 
                 Spacer()
+            }
+            
+            if(catBundle != nil){
+                BundleCTACard(bundleTitle: catBundle?.bundleTitle ?? "", bundleContent: catBundle?.bundleContent ?? "", onViewBundle: {
+                    onViewBundle(catBundle!)
+                }).padding(.top, 14)
+                    .padding(.horizontal, 20)
             }
             
             
@@ -328,5 +336,5 @@ struct ExamPayBottomSheetView: View {
     
     let exam = Exam(cbtId: "1", subcatId: "2", numQuestions: 4, price: 300, title: "Geography", instruction: "Do your best", description: "Welcome abroad", duration: 5, isActive: true, createdAt: "", sellerEmail: "", hasSample: true, examId: "2", isProvisioned: true, numViews: 3, isMaxAttempt: false, startTime: "", isCompulsory: "1")
     
-    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), premiumExams: [exam, exam], onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: { })
+    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), catBundle: CatBundle(bundleId: "2", bundleTitle: "Biology", bundleContent: "Topics"), premiumExams: [exam, exam], onViewBundle: {_ in}, onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: { })
 }

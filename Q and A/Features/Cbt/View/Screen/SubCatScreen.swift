@@ -237,6 +237,11 @@ struct SubCatScreen: View {
                     examWithTitle: viewModel.state.examWithTitle!,
                     catBundle: viewModel.state.catBundle,
                     premiumExams: viewModel.state.selectExam!.exams.filter { !$0.isProvisioned },
+                    onViewBundle: {data in
+                        if let activeOffer = viewModel.offer{
+                            viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
+                        }
+                    },
                     onClose: {
                       viewModel.state.showPaymentSheet = false
                   }, onPaymentClicked: {items in
