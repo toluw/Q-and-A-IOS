@@ -28,7 +28,7 @@ struct BundleCTACard: View {
 
             // Dynamic subject title
             Text("Unlock all \(bundleTitle) \(bundleContent.lowercased()) at a discount")
-                .font(.system(size: 14, weight: .bold))
+                .font(AppFont.medium(14))
                 .foregroundStyle(navy)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
@@ -43,6 +43,7 @@ struct BundleCTACard: View {
                     Image(systemName: "chevron.right")
                         .font(.system(size: 12, weight: .semibold))
                 }
+                .contentShape(Rectangle())
                 .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(.white)
                 .padding(.horizontal, 12)
