@@ -56,7 +56,7 @@ class BundleCheckoutViewModel: ObservableObject{
                 state.inputtedCode = ""
                 state.agent = response.data
                 state.hasAppliedCode = true
-                state.paymentText = (state.totalPrice?.discountedPrice ?? 0).formatted(.currency(code: "NGN"))
+                state.paymentText = "Pay \((state.totalPrice?.discountedPrice ?? 0).formatted(.currency(code: "NGN")))"
                 
                 
                 
@@ -69,6 +69,14 @@ class BundleCheckoutViewModel: ObservableObject{
                 })
             }
         }
+        
+    }
+    
+    
+    func removeRefferal(){
+        state.agent = nil
+        state.hasAppliedCode = false
+        state.paymentText = "Pay \((state.totalPrice?.price ?? 0).formatted(.currency(code: "NGN")))"
         
     }
     

@@ -119,7 +119,9 @@ struct MainStackView: View {
             EmptyView()
         
         case .bundleCheckoutScreen:
-            BundleCheckoutScreen()
+            BundleCheckoutScreen(cbtViewModel: cbtViewModel, navVm: navVM)
+        case .bundlePaymentScreen:
+            BundlePaymentScreen()
         }
         
     }

@@ -354,6 +354,7 @@
 		F5C61BA62FD2EEC40090310A /* GoToQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */; };
 		F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C61BA72FD2EF160090310A /* GoToQuestionState.swift */; };
 		F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C74D722FA23BB70027131A /* DateUtils.swift */; };
+		F5C7CCA83083519200150A08 /* BundlePaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */; };
 		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
 		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
@@ -767,6 +768,7 @@
 		F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToQuestionViewModel.swift; sourceTree = "<group>"; };
 		F5C61BA72FD2EF160090310A /* GoToQuestionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToQuestionState.swift; sourceTree = "<group>"; };
 		F5C74D722FA23BB70027131A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePaymentScreen.swift; sourceTree = "<group>"; };
 		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
@@ -1622,6 +1624,7 @@
 				F50018453001119100E98437 /* StudyNoteScreen.swift */,
 				F5CE826430346636005D1903 /* CbtHistoryScreen.swift */,
 				F5B1921330824EE4009468D6 /* BundleCheckoutScreen.swift */,
+				F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -2081,6 +2084,7 @@
 				F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */,
 				F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */,
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
+				F5C7CCA83083519200150A08 /* BundlePaymentScreen.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
 				F50018483001474F00E98437 /* InstructionCallout.swift in Sources */,
