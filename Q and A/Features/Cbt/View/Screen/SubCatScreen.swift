@@ -156,6 +156,10 @@ struct SubCatScreen: View {
             
             }
         
+       .onChange(of: viewModel.state.examSelectList){_, items in
+           
+       }
+        
        .safeAreaInset(edge: .bottom, spacing: 0) {
            
            if(cbtViewModel.parentCategoriesData?.hasOffer == true || cbtViewModel.activeOffer != nil){
@@ -221,6 +225,7 @@ struct SubCatScreen: View {
                   
                   ExamPayBottomSheetView(
                     examWithTitle: viewModel.state.examWithTitle!,
+                    catBundle: viewModel.state.catBundle,
                     premiumExams: viewModel.state.selectExam!.exams.filter { !$0.isProvisioned },
                     onClose: {
                       viewModel.state.showPaymentSheet = false
@@ -435,6 +440,8 @@ struct SubCatScreen: View {
     
     private func setOffer(){
         
+        viewModel.state.showBundleOfferings = cbtViewModel.parentCategoriesData?.hasOffer == true || cbtViewModel.activeOffer != nil
+        
         if let it = cbtViewModel.parentCategoriesData{
             
             if(it.hasOffer){
@@ -533,7 +540,22 @@ struct SubCatScreen: View {
     private func handlePaymentIntent(examWithTitle: ExamWithTitle){
         if(UserSettings.isLoggedIn){
             viewModel.state.examWithTitle = examWithTitle
-            viewModel.state.showPaymentSheet = true
+            
+            if(viewModel.offer != nil){
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.state.catBundle = viewModel.state.selectExam?.catBundle
+                    viewModel.state.showPaymentSheet = true
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: true)
+                }
+                
+            }else{
+                viewModel.state.catBundle = nil
+                viewModel.state.showPaymentSheet = true
+            }
+            
+            
         }else{
             showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
                 viewModel.showLogin = true

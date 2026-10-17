@@ -33,7 +33,7 @@ struct SubCategoryData: Codable, Equatable {
     var exams: [Exam]
     var id: String {cbtId}
     let bundleId: String
-    let bundleContent: String
+    let bundleContent: String?
     
     enum CodingKeys: String, CodingKey {
         case cbtId = "cbt_id"

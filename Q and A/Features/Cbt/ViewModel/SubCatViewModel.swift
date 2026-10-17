@@ -18,6 +18,7 @@ class SubCatViewModel: ObservableObject {
     @Published var showLogin: Bool = false
     var offer: Offer? = nil
     var isMoveToPayment = false
+    var showBundleOffering = false
     
     private let service: CbtServiceProtocol
       
@@ -81,9 +82,17 @@ class SubCatViewModel: ObservableObject {
             do{
                 let response = try await service.getParentBundleId(level: level, cbcId: cbcId)
                 state.showBlockedLoader = false
-               if let activeOffer = offer{
-                   showBundleBottomSheet(bundleId: response.data?.bundleId, offer: activeOffer)
+                
+                if(moveToPayment){
+                    state.catBundle = response.data
+                   state.showPaymentSheet = true
+                }else{
+                    if let activeOffer = offer{
+                        showBundleBottomSheet(bundleId: response.data?.bundleId, offer: activeOffer)
+                     }
                 }
+                
+              
                 
                 
             }catch{

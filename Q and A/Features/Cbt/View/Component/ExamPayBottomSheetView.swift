@@ -11,6 +11,7 @@ import SwiftData
 struct ExamPayBottomSheetView: View {
     
     let examWithTitle: ExamWithTitle
+    var catBundle: CatBundle? = nil
     let premiumExams: [Exam]
     
     @State var examPaymentList: [ExamPay] = []
