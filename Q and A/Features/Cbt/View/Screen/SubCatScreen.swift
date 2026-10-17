@@ -252,6 +252,26 @@ struct SubCatScreen: View {
               }
               
           }
+          .sheet(isPresented: $viewModel.state.showBundleBottomSheet){
+              
+              if(viewModel.state.bundleBottomSheetOffer != nil){
+                  BundleBottomSheetView(offer: viewModel.state.bundleBottomSheetOffer!, bundleId: viewModel.state.bundleBottomSheetBundleId, onContinue: {data in
+                      cbtViewModel.selectedBundles = data
+                      cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
+                      viewModel.state.showBundleBottomSheet = false
+                      moveToBundleCheckout()
+                      
+                  },
+                  onDismis: {
+                      
+                      viewModel.state.showBundleBottomSheet = false
+                  })
+                  .presentationDetents([.large])
+                      
+                  
+              }
+              
+          }
         
           .sheet(isPresented: $viewModel.showExamModeSheet){
               
@@ -418,6 +438,10 @@ struct SubCatScreen: View {
         
         viewModel.getMultipleExam(multipleExamBody: multipleExamBody)
         
+    }
+    
+    private func moveToBundleCheckout(){
+        navVm.navigate(route: .bundleCheckoutScreen)
     }
     
     private func onBundleClicked(){
