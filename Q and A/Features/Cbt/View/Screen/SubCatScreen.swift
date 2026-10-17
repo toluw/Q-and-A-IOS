@@ -157,68 +157,78 @@ struct SubCatScreen: View {
             }
         
        .onChange(of: viewModel.state.examSelectList){_, items in
-           
-       }
-        
-       .safeAreaInset(edge: .bottom, spacing: 0) {
-           
-           if(cbtViewModel.parentCategoriesData?.hasOffer == true || cbtViewModel.activeOffer != nil){
-               
-               BundleOfferingView(offerType: cbtViewModel.parentCategoriesData?.offerType ?? cbtViewModel.activeOffer?.offerType ?? "", onExpand: {
-                   onBundleClicked()
-               })
+           if(items.count > 0){
+               viewModel.state.showBundleOfferings = false
+           }else{
+               if let it = cbtViewModel.parentCategoriesData{
+                   if(it.hasOffer || cbtViewModel.activeOffer != nil){
+                       viewModel.state.showBundleOfferings = true
+                   }else{
+                       viewModel.state.showBundleOfferings = false
+                   }
+               }
            }
-          
-           
-          
        }
-        .task {
-            
-            //Load data when screen is first created
-            
-          
-            
-            if(navVm.activeRoute != .examSubCatScreen){
-                return
-            }
-            
            
-            viewModel.reInitExamSelection()
-            
-            if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                
-                   await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                
-             
-            }
-            
-        }
-          
-              
+               .safeAreaInset(edge: .bottom, spacing: 0) {
                    
-        .onChange(of: viewModel.state.searchText){oldValue, newValue in
-              if(newValue == ""){
-                  viewModel.state.items = viewModel.state.initItems
-              }else{
-                  
-                  let searchData = viewModel.state.initItems.filter {
-                      $0.data.item.lowercased().contains(newValue.lowercased())
-                  }
-                  
-                  viewModel.state.items = searchData
-                  
-                  if(searchData.isEmpty){
-                      viewModel.state.emptyStateText = "No search result for \(newValue)"
-                  }
-                  
-                  
-                  
-              }
-          }
-        
+                   if(viewModel.state.showBundleOfferings){
+                       
+                       BundleOfferingView(offerType: cbtViewModel.parentCategoriesData?.offerType ?? cbtViewModel.activeOffer?.offerType ?? "", onExpand: {
+                           onBundleClicked()
+                       })
+                   }
+                   
+                   
+                   
+               }
+               .task {
+                   
+                   //Load data when screen is first created
+                   
+                   
+                   
+                   if(navVm.activeRoute != .examSubCatScreen){
+                       return
+                   }
+                   
+                   
+                   viewModel.reInitExamSelection()
+                   
+                   if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
+                       
+                       await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                       
+                       
+                   }
+                   
+               }
+           
+           
+           
+               .onChange(of: viewModel.state.searchText){oldValue, newValue in
+                   if(newValue == ""){
+                       viewModel.state.items = viewModel.state.initItems
+                   }else{
+                       
+                       let searchData = viewModel.state.initItems.filter {
+                           $0.data.item.lowercased().contains(newValue.lowercased())
+                       }
+                       
+                       viewModel.state.items = searchData
+                       
+                       if(searchData.isEmpty){
+                           viewModel.state.emptyStateText = "No search result for \(newValue)"
+                       }
+                       
+                       
+                       
+                   }
+               }
+       
     }
 
-    private var screenWithSheets: some View {
+    var screenWithSheets: some View {
         screenWithLifecycle
           .sheet(isPresented: $viewModel.state.showPaymentSheet){
               if(viewModel.state.selectExam != nil && viewModel.state.examWithTitle != nil){
