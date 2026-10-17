@@ -44,11 +44,11 @@ struct BundleBottomSheetView: View {
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(viewModel.state.title.isEmpty ? offer.title : viewModel.state.title)
-                    .font(AppFont.semi_bold(20))
+                    .font(AppFont.semi_bold(18))
                     .foregroundStyle(ink)
                 if !viewModel.state.description.isEmpty {
                     Text(viewModel.state.description)
-                        .font(AppFont.regular(17))
+                        .font(AppFont.regular(14))
                         .foregroundStyle(Color(hex: "#5B6576"))
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -104,7 +104,7 @@ struct BundleBottomSheetView: View {
                 } label: {
                     HStack(spacing: 8) {
                         checkbox(selected: viewModel.state.isSelectAll)
-                        Text("Select all").font(AppFont.regular(18))
+                        Text("Select all").font(AppFont.regular(16))
                     }
                     .frame(minHeight: 44)
                 }
@@ -140,17 +140,17 @@ struct BundleBottomSheetView: View {
                 checkbox(selected: item.isSelected)
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.userBundle.item)
-                        .font(AppFont.medium(20))
+                        .font(AppFont.medium(16))
                         .foregroundStyle(Color.black)
                     HStack(spacing: 28) {
                         Text(price(item.userBundle.originalPrice))
                             .strikethrough()
                             .foregroundStyle(muted)
                         Text(price(item.userBundle.price))
-                            .font(AppFont.bold(18))
+                            .font(AppFont.bold(14))
                             .foregroundStyle(accent)
                     }
-                    .font(AppFont.medium(17))
+                    .font(AppFont.medium(14))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -193,17 +193,17 @@ struct BundleBottomSheetView: View {
                     Text(viewModel.state.subjectSelectedTxt.isEmpty
                          ? "0 \(offer.offerType.lowercased())s selected"
                          : viewModel.state.subjectSelectedTxt)
-                        .font(AppFont.regular(17))
-                    Text("Bundle Total").font(AppFont.semi_bold(19))
+                        .font(AppFont.regular(14))
+                    Text("Bundle Total").font(AppFont.semi_bold(16))
                 }
                 .foregroundStyle(ink)
                 Spacer(minLength: 8)
                 VStack(alignment: .trailing, spacing: 3) {
                     Text(viewModel.state.bundlePriceTxt)
-                        .font(AppFont.bold(23))
+                        .font(AppFont.bold(20))
                         .foregroundStyle(accent)
                     Text(viewModel.state.originalPriceTxt)
-                        .font(AppFont.regular(16))
+                        .font(AppFont.regular(14))
                         .strikethrough()
                         .foregroundStyle(muted)
                 }
@@ -212,7 +212,7 @@ struct BundleBottomSheetView: View {
                 onContinue(viewModel.getSelectedBundles())
             } label: {
                 Text("Continue")
-                    .font(AppFont.bold(21))
+                    .font(AppFont.bold(18))
                     .tracking(1)
                     .frame(maxWidth: .infinity, minHeight: 48)
                     .overlay(alignment: .trailing) {
