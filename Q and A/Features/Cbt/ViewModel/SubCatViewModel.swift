@@ -16,6 +16,8 @@ class SubCatViewModel: ObservableObject {
     @Published var showQuestionSelectSheet: Bool = false
     @Published var showExamModeSheet: Bool = false
     @Published var showLogin: Bool = false
+    var offer: Offer? = nil
+    var isMoveToPayment = false
     
     private let service: CbtServiceProtocol
       
@@ -70,6 +72,39 @@ class SubCatViewModel: ObservableObject {
         }
         
     }
+    
+    func getParentBundleId(cbcId: String, level: String, moveToPayment: Bool){
+        isMoveToPayment = moveToPayment
+        state.showBlockedLoader = true
+        
+        Task{
+            do{
+                let response = try await service.getParentBundleId(level: level, cbcId: cbcId)
+                state.showBlockedLoader = false
+               if let activeOffer = offer{
+                   showBundleBottomSheet(bundleId: response.data?.bundleId, offer: activeOffer)
+                }
+                
+                
+            }catch{
+                state.showBlockedLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.getParentBundleId(cbcId: cbcId, level: level, moveToPayment: moveToPayment)
+                })
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    func showBundleBottomSheet(bundleId: String?, offer: Offer){
+        state.bundleBottomSheetOffer = offer
+        state.bundleBottomSheetBundleId = bundleId
+        state.showBundleBottomSheet = true
+    }
+    
     
     
    

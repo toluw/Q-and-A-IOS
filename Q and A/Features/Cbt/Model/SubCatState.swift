@@ -23,6 +23,9 @@ struct SubCatState{
     var multipleExamData: [MultipleExamsResponse.MultipleExamData] = []
     var showPaymentSheet: Bool = false
     var examWithTitle: ExamWithTitle? = nil
+    var bundleBottomSheetOffer: Offer? = nil
+    var bundleBottomSheetBundleId: String? = nil
+    var showBundleBottomSheet = false
     
     
 }

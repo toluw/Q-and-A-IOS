@@ -147,8 +147,19 @@ struct SubCatScreen: View {
                 
             
             }
-       
         
+       .safeAreaInset(edge: .bottom, spacing: 0) {
+           
+           if(cbtViewModel.parentCategoriesData.hasOffer == true || cbtViewModel.activeOffer != nil){
+               
+               BundleOfferingView(cbtViewModel.parentCategoriesData?.offerType, onExpand: {
+                   onBundleClicked()
+               })
+           }
+          
+           
+          
+       }
         .task {
             
             //Load data when screen is first created
@@ -301,6 +312,9 @@ struct SubCatScreen: View {
                   navVm.navigate(route: .examPracticeScreen)
               }
           }
+          .onAppear{
+              setOffer()
+          }
           .onChange(of: viewModel.state.examSelectList){oldValue, newValue in
               
               if(!viewModel.state.examSelectList.isEmpty && cbtViewModel.parentCategoriesData?.catData?.disablePractice == true){
@@ -379,10 +393,52 @@ struct SubCatScreen: View {
         
     }
     
+    private func onBundleClicked(){
+        if(UserSettings.isLoggedIn){
+            
+            if let activeOffer = viewModel.offer{
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.showBundleBottomSheet(bundleId: nil, offer: activeOffer)
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: false)
+                }
+                
+            }
+            
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
+        
+    }
+    
     private func examMode(){
         cbtViewModel.examResultDataList = []
         cbtViewModel.examIndex = 0
         navVm.navigate(route: .examDescriptionScreen)
+    }
+    
+    
+    private func setOffer(){
+        
+        if let it = cbtViewModel.parentCategoriesData{
+            
+            if(it.hasOffer){
+                
+                cbtViewModel.activeOffer = nil
+                viewModel.offer = Offer(offerId: it.offerId, offerType: it.offerType, hasOffer: it.hasOffer, cbcId: it.cbcId, level: it.level, title: it.item
+                    
+                )
+                
+            }else if(cbtViewModel.activeOffer != nil){
+                viewModel.offer = cbtViewModel.activeOffer
+            }
+            
+        }
+        
+      
     }
     
     
