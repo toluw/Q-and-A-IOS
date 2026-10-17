@@ -15,6 +15,10 @@ struct SubCatScreen: View {
     @StateObject var viewModel: SubCatViewModel = .init()
     
     var body: some View {
+        screenWithSheets
+    }
+
+    private var screenContent: some View {
         
         
         ZStack{
@@ -123,6 +127,10 @@ struct SubCatScreen: View {
                }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var screenWithLifecycle: some View {
+        screenContent
        .onChange(of: navVm.activeRoute){_, route in
            
            //Reload data when resume back from stack
@@ -150,9 +158,9 @@ struct SubCatScreen: View {
         
        .safeAreaInset(edge: .bottom, spacing: 0) {
            
-           if(cbtViewModel.parentCategoriesData.hasOffer == true || cbtViewModel.activeOffer != nil){
+           if(cbtViewModel.parentCategoriesData?.hasOffer == true || cbtViewModel.activeOffer != nil){
                
-               BundleOfferingView(cbtViewModel.parentCategoriesData?.offerType, onExpand: {
+               BundleOfferingView(offerType: cbtViewModel.parentCategoriesData?.offerType ?? cbtViewModel.activeOffer?.offerType ?? "", onExpand: {
                    onBundleClicked()
                })
            }
@@ -204,6 +212,10 @@ struct SubCatScreen: View {
               }
           }
         
+    }
+
+    private var screenWithSheets: some View {
+        screenWithLifecycle
           .sheet(isPresented: $viewModel.state.showPaymentSheet){
               if(viewModel.state.selectExam != nil && viewModel.state.examWithTitle != nil){
                   
