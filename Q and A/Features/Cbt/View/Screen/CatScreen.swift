@@ -15,7 +15,10 @@ struct CatScreen: View {
     @StateObject var viewModel: CatViewModel = .init()
     
     var body: some View {
-        
+        screenWithSheets
+    }
+
+    private var screenContent: some View {
         ZStack{
             if(viewModel.state.isLoading){
                 
@@ -133,7 +136,10 @@ struct CatScreen: View {
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        
+    }
+
+    private var screenWithLifecycle: some View {
+        screenContent
          .onChange(of: navVm.activeRoute){_, route in
                 
                 //Reload data when resume back from stack
@@ -182,7 +188,12 @@ struct CatScreen: View {
                
                 search(newValue: newValue)
                 
-            }.sheet(isPresented: $viewModel.state.showPaymentSheet){
+            }
+    }
+
+    private var screenWithSheets: some View {
+        screenWithLifecycle
+            .sheet(isPresented: $viewModel.state.showPaymentSheet){
                 
                 if(viewModel.premExam != nil){
                     
