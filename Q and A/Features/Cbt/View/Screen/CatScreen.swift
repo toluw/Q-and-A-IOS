@@ -139,96 +139,67 @@ struct CatScreen: View {
     }
 
     private var screenWithLifecycle: some View {
-        screenContent
-         .onChange(of: navVm.activeRoute){_, route in
-                
-                //Reload data when resume back from stack
-                
-                
-                
-                if (route != .examCatScreen)
-                {
-                    return
-                    
-                }
-             
-             viewModel.reInitExamSelection()
-             
-            if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                Task{
-                   await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                }
-             
-             }
-                
-            }
-        
-            
-         .safeAreaInset(edge: .bottom, spacing: 0) {
-             
-             if(viewModel.state.showBundleOfferings){
-                 
-                 BundleOfferingView(offerType: cbtViewModel.parentCategoriesData?.offerType ?? cbtViewModel.activeOffer?.offerType ?? "", onExpand: {
-                     onBundleClicked()
-                 })
-             }
-             
-             
-             
-         }
-           .task {
-             
-             //Load data when screen is first created
-             
-           
-             
-             if(navVm.activeRoute != .examCatScreen){
-                 return
-             }
-             
-            
-             viewModel.reInitExamSelection()
-             
-             if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                 
-                    await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                 
-              
-             }
-             
-         }
-           
-            .onChange(of: viewModel.state.searchText){previous, newValue in
-               
+        screenWithLoading
+            .onChange(of: viewModel.state.searchText) { _, newValue in
                 search(newValue: newValue)
-                
             }
-            .onChange(of: viewModel.state.initItems ){previous, newValue in
-                
-                if(!newValue.isEmpty){
+            .onChange(of: viewModel.state.initItems) { _, newValue in
+                if !newValue.isEmpty {
                     setOffer()
                 }
-                
             }
-            .onChange(of: viewModel.state.examSelectList){_, items in
-                if(items.count > 0){
-                    viewModel.state.showBundleOfferings = false
-                }else{
-                    if let it = cbtViewModel.parentCategoriesData{
-                        
-                        let hasOffer = it.hasOffer && viewModel.initItems.isLockedExamPresent()
-                        let hasActiveOffer = cbtViewModel.activeOffer != nil && viewModel.initItems.isLockedExamPresent()
-                        
-                        if(hasOffer || hasActiveOffer){
-                            viewModel.state.showBundleOfferings = true
-                        }else{
-                            viewModel.state.showBundleOfferings = false
-                        }
-                    }
-                }
+            .onChange(of: viewModel.state.examSelectList) { _, items in
+                updateBundleOfferings(for: items)
             }
     }
-    
+
+    private var screenWithLoading: some View {
+        screenContent
+            .onChange(of: navVm.activeRoute) { _, route in
+                guard route == .examCatScreen else { return }
+                Task {
+                    await reloadExams()
+                }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                bundleOffering
+            }
+            .task {
+                guard navVm.activeRoute == .examCatScreen else { return }
+                await reloadExams()
+            }
+    }
+
+    @ViewBuilder
+    private var bundleOffering: some View {
+        if viewModel.state.showBundleOfferings {
+            BundleOfferingView(
+                offerType: cbtViewModel.parentCategoriesData?.offerType
+                    ?? cbtViewModel.activeOffer?.offerType ?? "",
+                onExpand: { onBundleClicked() }
+            )
+        }
+    }
+
+    private func reloadExams() async {
+        viewModel.reInitExamSelection()
+        if let cbtId = cbtViewModel.parentCategoriesData?.catData?.cbtId {
+            await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+        }
+    }
+
+    private func updateBundleOfferings(for items: [CatExamSelect]) {
+        guard items.isEmpty else {
+            viewModel.state.showBundleOfferings = false
+            return
+        }
+        if let category = cbtViewModel.parentCategoriesData {
+            let hasLockedExam = viewModel.state.initItems.isLockedExamPresent()
+            let hasOffer = category.hasOffer || cbtViewModel.activeOffer != nil
+            viewModel.state.showBundleOfferings = hasOffer && hasLockedExam
+        }
+    }
+
     private func setOffer(){
         
         
