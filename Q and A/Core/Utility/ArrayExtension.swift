@@ -28,5 +28,11 @@ extension Array where Element == UserBundle {
     }
 }
 
+extension Array where Element == CatExams {
+    func isLockedExamPresent() -> Bool {
+        return contains { !$0.exam.isProvisioned }
+    }
+}
+
 
 
