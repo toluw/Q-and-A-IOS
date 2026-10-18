@@ -108,7 +108,6 @@ struct CbtPaymentScreen: View {
         
        
         let price = cbtViewModel.getExamPayTotalPrice()
-        let quantity = cbtViewModel.getExamPayCount()
         
         if(UserSettings.phoneNumber?.isNyjaNum() == true){
             

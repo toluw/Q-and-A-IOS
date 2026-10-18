@@ -12,6 +12,7 @@ struct BundleCheckoutScreen: View {
     @StateObject var viewModel: BundleCheckoutViewModel = .init()
     @ObservedObject var navVm: MainNavViewModel
     @FocusState private var isCodeFocused: Bool
+    @ObservedObject var paymentViewModel: PaymentViewModel
 
     private let ink = Color(hex: "#102044")
     private let coral = Color(hex: "#FF4348")
@@ -216,10 +217,11 @@ struct BundleCheckoutScreen: View {
 
     func pay() {
         cbtViewModel.agent = viewModel.state.agent
+        paymentViewModel.paymentState = .initialize
         navVm.replaceTop(route: .bundlePaymentScreen)
     }
 }
 
 #Preview {
-    BundleCheckoutScreen(cbtViewModel: CbtViewModel(), navVm: MainNavViewModel())
+    BundleCheckoutScreen(cbtViewModel: CbtViewModel(), navVm: MainNavViewModel(), paymentViewModel: PaymentViewModel())
 }

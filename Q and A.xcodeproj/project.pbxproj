@@ -377,6 +377,8 @@
 		F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */; };
 		F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476562FA106C600713F18 /* ExamSelectView.swift */; };
 		F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */; };
+		F5D4955A3084DAE600A832BF /* PostBundleTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */; };
+		F5D4955C3084DC6B00A832BF /* BundlePaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */; };
 		F5D82E0E3039E2A300C8621C /* ComingSoonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */; };
 		F5D82E103039E2E500C8621C /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
@@ -792,6 +794,8 @@
 		F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostScreen.swift; sourceTree = "<group>"; };
 		F5D476562FA106C600713F18 /* ExamSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectView.swift; sourceTree = "<group>"; };
 		F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectBottomSheetView.swift; sourceTree = "<group>"; };
+		F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBundleTransactionBody.swift; sourceTree = "<group>"; };
+		F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePaymentViewModel.swift; sourceTree = "<group>"; };
 		F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonConfig.swift; sourceTree = "<group>"; };
 		F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -1454,6 +1458,7 @@
 				F5272F3230828D8500233723 /* Agent.swift */,
 				F5272F3430828E2100233723 /* ValidateCodeResponse.swift */,
 				F5922BB63082CE5100B113E4 /* ValidateCodeBody.swift */,
+				F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1486,6 +1491,7 @@
 				F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */,
 				F583608D308215E100F90526 /* BundleViewModel.swift */,
 				F5272F303082874600233723 /* BundleCheckoutViewModel.swift */,
+				F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1905,6 +1911,7 @@
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
 				F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */,
+				F5D4955A3084DAE600A832BF /* PostBundleTransactionBody.swift in Sources */,
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
@@ -2096,6 +2103,7 @@
 				F535C2F3302DF92F0055E168 /* AppleUser.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */,
+				F5D4955C3084DC6B00A832BF /* BundlePaymentViewModel.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,

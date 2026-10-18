@@ -24,6 +24,7 @@ protocol CbtServiceProtocol {
     func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse
     func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse
     func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse
+    func postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody) async throws -> GeneralResponse
     
     
     
@@ -31,6 +32,7 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
    
   
    
@@ -190,6 +192,19 @@ final class CbtService: CbtServiceProtocol{
     func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse {
         return try await apiClient.request(
             .postTransaction(postTransactionBody: postTransactionBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+    }
+    
+    
+    
+    func postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .postBundleTransaction(postBundleTransactionBody: postBundleTransactionBody),
             responseType: GeneralResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"

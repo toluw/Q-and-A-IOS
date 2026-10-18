@@ -28,6 +28,7 @@ enum CbtAPI {
     case getBundles(buyerEmail: String, level: String, cbcId: String)
     case getParentBundleId(level: String, cbcId: String)
     case validateCode(validateCodeBody: ValidateCodeBody)
+    case postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody)
     
 }
 
@@ -72,6 +73,8 @@ extension CbtAPI: TargetType{
             return "v2/get_parent_bundle_id.php"
         case .validateCode:
             return "v2/validate_code.php"
+        case .postBundleTransaction:
+           return "v2/post_bundle_transaction.php"
         }
     
     }
@@ -111,6 +114,8 @@ extension CbtAPI: TargetType{
         case .getParentBundleId:
                 .get
         case .validateCode:
+                .post
+        case .postBundleTransaction:
                 .post
         }
     }
@@ -277,6 +282,8 @@ extension CbtAPI: TargetType{
             }
         case .validateCode(validateCodeBody: let validateCodeBody):
             return .requestJSONEncodable(validateCodeBody)
+        case .postBundleTransaction(postBundleTransactionBody: let postBundleTransactionBody):
+            return .requestJSONEncodable(postBundleTransactionBody)
         }
         
        
