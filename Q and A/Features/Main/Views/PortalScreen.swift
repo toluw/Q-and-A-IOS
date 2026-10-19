@@ -116,7 +116,50 @@ struct PortalScreen: View {
     }
     
     private func handlePortalItemClicked(item: PortalItem){
-        
+        switch item {
+            
+        case .paymentMade(title: let title, isEnabled: let isEnabled):
+            paymentMade()
+        case .paymentRecieved(title: let title, isEnabled: let isEnabled):
+            paymentRecieved()
+        case .paymentRecievedAgency(title: let title, isEnabled: let isEnabled):
+            paymentRecievedAgency()
+        case .paymentRecievedCBT(title: let title, isEnabled: let isEnabled):
+            paymentRecievedCBT()
+        case .earningsCBT(title: let title, isEnabled: let isEnabled):
+            earningsCBT()
+        case .earningsAgency(title: let title, isEnabled: let isEnabled):
+            earningsAgency()
+        }
+    }
+    
+    private func paymentMade(){
+        navVm.navigate(route: .userPaymentScreen)
+    }
+    
+    private func paymentRecieved(){
+        let title = "Payment Received"
+        let items = [
+            PortalItem.paymentRecievedCBT(title: "Payment Received - CBT", isEnabled: viewModel.state.data?.is_cbt_seller == true),
+            PortalItem.paymentRecievedAgency(title: "Payment Received - Agency", isEnabled: viewModel.state.data?.is_agent == true)
+        ]
+        viewModel.showPortaBottomSheet(items: items, title: title)
+    }
+    
+    private func paymentRecievedAgency(){
+        navVm.navigate(route: .paymentRecievedAgency)
+    }
+    
+    private func paymentRecievedCBT(){
+        navVm.navigate(route: .paymentRecievedCbt)
+    }
+    
+    private func earningsCBT(){
+        navVm.navigate(route: .earningsCbtScreen)
+    }
+    
+    private func earningsAgency(){
+        navVm.navigate(route: .earningsAgencyScreen)
     }
 
     private func agentCard(code: String, isActive: Bool) -> some View {
