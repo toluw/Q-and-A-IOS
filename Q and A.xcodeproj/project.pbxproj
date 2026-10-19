@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000005 /* EarningsCbtViewModel.swift */; };
+		AB0190000000000000000004 /* EarningsCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000003 /* EarningsCbtState.swift */; };
+		AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000001 /* EarningsCbtResponse.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -450,6 +453,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0190000000000000000005 /* EarningsCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtViewModel.swift; sourceTree = "<group>"; };
+		AB0190000000000000000003 /* EarningsCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtState.swift; sourceTree = "<group>"; };
+		AB0190000000000000000001 /* EarningsCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -1217,6 +1223,8 @@
 				F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */,
 				F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */,
 				AA9010000000000000000003 /* PortalState.swift */,
+				AB0190000000000000000003 /* EarningsCbtState.swift */,
+				AB0190000000000000000001 /* EarningsCbtResponse.swift */,
 				F58A268E3039B073004A1B27 /* ContactUsLinks.swift */,
 				F54BD5DF303B3ED500B1B6D2 /* DeactivateBody.swift */,
 				F54BD5E5303DB20900B1B6D2 /* ProductLoadState.swift */,
@@ -1266,6 +1274,7 @@
 				F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */,
 				F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */,
 				AA9010000000000000000005 /* PortalViewModel.swift */,
+				AB0190000000000000000005 /* EarningsCbtViewModel.swift */,
 				F54BD5E7303DB2AC00B1B6D2 /* MarketPlaceProductViewModel.swift */,
 				F5239DFC3046EA5200DC1997 /* NotificationManager.swift */,
 				F5239DFE3046F25300DC1997 /* Pushnotificationrouter.swift */,
@@ -2030,6 +2039,9 @@
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A5A65F3038632000A64FC6 /* PaymentDetailsViewModel.swift in Sources */,
 				AA9010000000000000000006 /* PortalViewModel.swift in Sources */,
+				AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */,
+				AB0190000000000000000004 /* EarningsCbtState.swift in Sources */,
+				AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5285A0D3021F109002268D5 /* CommentViewModel.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
