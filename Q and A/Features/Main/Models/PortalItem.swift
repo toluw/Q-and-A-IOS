@@ -11,7 +11,16 @@ import Foundation
 enum PortalItem: Equatable, Identifiable {
     
     
-    var id: UUID { UUID() }
+    var id: String {
+        switch self {
+        case .paymentMade: return "paymentMade"
+        case .paymentRecieved: return "paymentReceived"
+        case .paymentRecievedAgency: return "paymentReceivedAgency"
+        case .paymentRecievedCBT: return "paymentReceivedCBT"
+        case .earningsCBT: return "earningsCBT"
+        case .earningsAgency: return "earningsAgency"
+        }
+    }
     case paymentMade(title: String, isEnabled: Bool)
     case paymentRecieved(title: String, isEnabled: Bool)
     case paymentRecievedAgency(title: String, isEnabled: Bool)
@@ -24,17 +33,17 @@ enum PortalItem: Equatable, Identifiable {
        
         switch self {
             
-        case .paymentMade(title: let title, isEnabled: let isEnabled):
+        case .paymentMade(title: let title, isEnabled: _):
            return title
-        case .paymentRecieved(title: let title, isEnabled: let isEnabled):
+        case .paymentRecieved(title: let title, isEnabled: _):
             return  title
-        case .paymentRecievedAgency(title: let title, isEnabled: let isEnabled):
+        case .paymentRecievedAgency(title: let title, isEnabled: _):
             return title
-        case .paymentRecievedCBT(title: let title, isEnabled: let isEnabled):
+        case .paymentRecievedCBT(title: let title, isEnabled: _):
             return  title
-        case .earningsCBT(title: let title, isEnabled: let isEnabled):
+        case .earningsCBT(title: let title, isEnabled: _):
             return  title
-        case .earningsAgency(title: let title, isEnabled: let isEnabled):
+        case .earningsAgency(title: let title, isEnabled: _):
             return  title
         }
     

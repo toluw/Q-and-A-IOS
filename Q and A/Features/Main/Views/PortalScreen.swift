@@ -97,7 +97,7 @@ struct PortalScreen: View {
             }
         }
         .sheet(isPresented: $viewModel.state.showBottomSheet){
-            PortalBottomSheetView(title: viewModel.state.sheetTitle, items: viewModel.state.portalItems, onItemClicked: handlePortalItemClicked, onDismissSheet: {
+            PortalBottomSheetView(title: viewModel.state.sheetTitle, items: viewModel.state.portalItems,  onItemClicked: handlePortalItemClicked, onDismissSheet: {
                 viewModel.state.showBottomSheet = false
             })
         }
@@ -135,6 +135,7 @@ struct PortalScreen: View {
     
     private func paymentMade(){
         navVm.navigate(route: .userPaymentScreen)
+        viewModel.state.showBottomSheet = false
     }
     
     private func paymentRecieved(){
@@ -143,23 +144,28 @@ struct PortalScreen: View {
             PortalItem.paymentRecievedCBT(title: "Payment Received - CBT", isEnabled: viewModel.state.data?.is_cbt_seller == true),
             PortalItem.paymentRecievedAgency(title: "Payment Received - Agency", isEnabled: viewModel.state.data?.is_agent == true)
         ]
-        viewModel.showPortaBottomSheet(items: items, title: title)
+        viewModel.state.portalItems = items
+        viewModel.state.sheetTitle = title
     }
     
     private func paymentRecievedAgency(){
         navVm.navigate(route: .paymentRecievedAgency)
+        viewModel.state.showBottomSheet = false
     }
     
     private func paymentRecievedCBT(){
         navVm.navigate(route: .paymentRecievedCbt)
+        viewModel.state.showBottomSheet = false
     }
     
     private func earningsCBT(){
         navVm.navigate(route: .earningsCbtScreen)
+        viewModel.state.showBottomSheet = false
     }
     
     private func earningsAgency(){
         navVm.navigate(route: .earningsAgencyScreen)
+        viewModel.state.showBottomSheet = false
     }
 
     private func agentCard(code: String, isActive: Bool) -> some View {
