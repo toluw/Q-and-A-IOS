@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
+		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
+		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
 		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
@@ -246,12 +249,9 @@
 		F5A5A655303853C100A64FC6 /* UserPaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A654303853C100A64FC6 /* UserPaymentState.swift */; };
 		F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */; };
 		F5A5A65930385EAE00A64FC6 /* PaymentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */; };
-		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */; };
 		F5A5A65D3038628800A64FC6 /* PaymentDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */; };
-		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		F5A5A65F3038632000A64FC6 /* PaymentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */; };
-		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
 		F5A5A6613038653C00A64FC6 /* PaymentDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */; };
 		F5A697502FF7FF4900766E1A /* ReviewExplanationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */; };
 		F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */; };
@@ -420,6 +420,8 @@
 		F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */; };
 		F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */; };
 		F5ED7B0230860DE40096286A /* PortalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B0130860DE40096286A /* PortalScreen.swift */; };
+		F5ED7B04308625750096286A /* PortalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B03308625750096286A /* PortalItem.swift */; };
+		F5ED7B06308627150096286A /* PortalBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B05308627150096286A /* PortalBottomSheetView.swift */; };
 		F5EF482D3011FC6E00F5B823 /* LinkifiedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */; };
 		F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29F842FDB0559003A876B /* CalculatorView.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
@@ -444,6 +446,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
+		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
+		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
 		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
@@ -666,12 +671,9 @@
 		F5A5A654303853C100A64FC6 /* UserPaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentState.swift; sourceTree = "<group>"; };
 		F5A5A6563038563100A64FC6 /* UserPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentScreen.swift; sourceTree = "<group>"; };
 		F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsResponse.swift; sourceTree = "<group>"; };
-		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsLoadState.swift; sourceTree = "<group>"; };
 		F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsState.swift; sourceTree = "<group>"; };
-		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewModel.swift; sourceTree = "<group>"; };
-		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
 		F5A5A6603038653C00A64FC6 /* PaymentDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsScreen.swift; sourceTree = "<group>"; };
 		F5A6974F2FF7FF4900766E1A /* ReviewExplanationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewExplanationData.swift; sourceTree = "<group>"; };
 		F5A716B62FFE645E0046D33E /* ClipboardGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardGuard.swift; sourceTree = "<group>"; };
@@ -841,6 +843,8 @@
 		F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAnswerView.swift; sourceTree = "<group>"; };
 		F5ED7B0130860DE40096286A /* PortalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalScreen.swift; sourceTree = "<group>"; };
+		F5ED7B03308625750096286A /* PortalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalItem.swift; sourceTree = "<group>"; };
+		F5ED7B05308627150096286A /* PortalBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalBottomSheetView.swift; sourceTree = "<group>"; };
 		F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkifiedText.swift; sourceTree = "<group>"; };
 		F5F29F842FDB0559003A876B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
@@ -1210,6 +1214,7 @@
 				F54BD5E5303DB20900B1B6D2 /* ProductLoadState.swift */,
 				F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */,
 				F5239E033046FB2700DC1997 /* NotificationPrimerReason.swift */,
+				F5ED7B03308625750096286A /* PortalItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1234,6 +1239,7 @@
 				F54BD5E3303DAEA600B1B6D2 /* MarketplaceProductScreen.swift */,
 				F5239E053046FB6100DC1997 /* NotificationPrimerModifier.swift */,
 				F5ED7B0130860DE40096286A /* PortalScreen.swift */,
+				F5ED7B05308627150096286A /* PortalBottomSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2150,6 +2156,7 @@
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
+				F5ED7B06308627150096286A /* PortalBottomSheetView.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
@@ -2201,6 +2208,7 @@
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
+				F5ED7B04308625750096286A /* PortalItem.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */,

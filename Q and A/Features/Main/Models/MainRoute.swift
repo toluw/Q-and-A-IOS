@@ -48,5 +48,6 @@ enum MainRoute: Hashable{
     case bundleCheckoutScreen
     case marketPlaceProductScreen(price: Int)
     case bundlePaymentScreen
+    case portalScreen
    
 }

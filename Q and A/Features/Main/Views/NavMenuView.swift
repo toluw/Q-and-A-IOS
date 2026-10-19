@@ -67,11 +67,11 @@ struct NavMenuView: View {
                     onMenuSelected(.cbtHistory)
                 }
                 
-                drawerItem(title: "Payment History",
+                drawerItem(title: "My Portal",
                            imageResource:"nav_portal",
                            colour: Color("NavBlue")
                 ){
-                    onMenuSelected(.paymentHistory)
+                    onMenuSelected(.myPortal)
                 }
                 
                 /*

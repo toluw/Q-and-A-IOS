@@ -9,7 +9,7 @@ import Foundation
 
 
 enum NavMenu{
-   case community, aiAssistance, fanQuiz, myLibrary, cbtHistory,
+   case community, aiAssistance, fanQuiz, myLibrary, cbtHistory,myPortal,
     paymentHistory, shareApp, myCart, signOut, signIn, reportCopyright,
     contactUs, faq, termsAndConditions, about, editProfile, privacyPolicy, deactivateAccount
 }
