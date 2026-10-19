@@ -9,6 +9,29 @@ struct EarningsCbtResponse: Decodable {
 struct EarningsCbtData: Decodable {
     let income: Decimal
     let statement: [EarningsCbtStatement]
+
+    private enum CodingKeys: String, CodingKey {
+        case income, statement
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let value = try? container.decode(String.self, forKey: .income) {
+            let numberDecoder = JSONDecoder()
+            guard let valueData = value.data(using: .utf8),
+                  let amount = try? numberDecoder.decode(Decimal.self, from: valueData) else {
+                throw DecodingError.dataCorruptedError(
+                    forKey: .income,
+                    in: container,
+                    debugDescription: "Expected a numeric income string."
+                )
+            }
+            income = amount
+        } else {
+            income = try container.decode(Decimal.self, forKey: .income)
+        }
+        statement = try container.decode([EarningsCbtStatement].self, forKey: .statement)
+    }
 }
 
 struct EarningsCbtStatement: Decodable, Identifiable {

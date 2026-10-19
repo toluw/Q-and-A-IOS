@@ -8,6 +8,7 @@
 import Foundation
 
 protocol MainServiceProtocol{
+    func getAgentIncome(email: String) async throws -> EarningsCbtResponse
     func getIncome(email: String) async throws -> EarningsCbtResponse
     func getPortalData(email: String) async throws -> PortalResponse
     
@@ -23,6 +24,14 @@ protocol MainServiceProtocol{
 }
 
 final class MainService: MainServiceProtocol{
+    func getAgentIncome(email: String) async throws -> EarningsCbtResponse {
+        try await apiClient.request(
+            .getAgentIncome(email: email),
+            responseType: EarningsCbtResponse.self,
+            errorParser: { $0.jsonString(forKey: "message") ?? "Unable to load agency earnings." }
+        )
+    }
+
     func getIncome(email: String) async throws -> EarningsCbtResponse {
         try await apiClient.request(
             .getIncome(email: email),

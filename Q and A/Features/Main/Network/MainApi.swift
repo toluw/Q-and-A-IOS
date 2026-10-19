@@ -11,6 +11,7 @@ import Moya
 
 
 enum MainApi {
+    case getAgentIncome(email: String)
     case getIncome(email: String)
     case getPortalData(email: String)
    
@@ -30,6 +31,8 @@ extension MainApi: TargetType{
     
     var path: String {
         switch self{
+        case .getAgentIncome:
+            return "v2/get_agent_income.php"
         case .getIncome:
             return "v2/get_income.php"
         case .getPortalData:
@@ -48,6 +51,8 @@ extension MainApi: TargetType{
     
     var method: Moya.Method {
         switch self{
+        case .getAgentIncome:
+            .get
         case .getIncome:
             .get
         case .getPortalData:
@@ -66,6 +71,8 @@ extension MainApi: TargetType{
     
     var task: Moya.Task {
         switch self{
+        case .getAgentIncome(let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
         case .getIncome(let email):
             return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
         case .getPortalData(email: let email):
