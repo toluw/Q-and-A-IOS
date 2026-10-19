@@ -32,8 +32,9 @@ struct PortalBottomSheetView: View {
                      
                      ForEach(items){item in
                          ItemView(item: item.getTitle(), onItemClicked: {
-                             onItemClicked(item)
+                            onItemClicked(item)
                              onDismissSheet()
+                            
                          }).disabled(!item.isEnabled())
                      }.padding(.top, 20)
                         
@@ -44,7 +45,7 @@ struct PortalBottomSheetView: View {
                 }
             
              
-            Spacer()
+        
             
             
         }.background(.white)

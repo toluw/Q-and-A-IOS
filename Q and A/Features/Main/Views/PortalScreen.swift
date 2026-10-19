@@ -118,17 +118,17 @@ struct PortalScreen: View {
     private func handlePortalItemClicked(item: PortalItem){
         switch item {
             
-        case .paymentMade(title: let title, isEnabled: let isEnabled):
+        case .paymentMade:
             paymentMade()
-        case .paymentRecieved(title: let title, isEnabled: let isEnabled):
+        case .paymentRecieved:
             paymentRecieved()
-        case .paymentRecievedAgency(title: let title, isEnabled: let isEnabled):
+        case .paymentRecievedAgency:
             paymentRecievedAgency()
-        case .paymentRecievedCBT(title: let title, isEnabled: let isEnabled):
+        case .paymentRecievedCBT:
             paymentRecievedCBT()
-        case .earningsCBT(title: let title, isEnabled: let isEnabled):
+        case .earningsCBT:
             earningsCBT()
-        case .earningsAgency(title: let title, isEnabled: let isEnabled):
+        case .earningsAgency:
             earningsAgency()
         }
     }

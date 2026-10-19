@@ -123,15 +123,15 @@ struct MainStackView: View {
         case .bundlePaymentScreen:
             BundlePaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         case .portalScreen:
-            PortalScreen(navVm: MainNavViewModel())
+            PortalScreen(navVm: navVM)
         case .earningsCbtScreen:
-            EarningsCbtScreen(navVm: MainNavViewModel())
+            EarningsCbtScreen(navVm: navVM)
         case .earningsAgencyScreen:
-            EarningsAgencyScreen(navVm: MainNavViewModel())
+            EarningsAgencyScreen(navVm: navVM)
         case .paymentRecievedAgency:
-            PaymentRecievedAgencyScreen(navVm: MainNavViewModel())
+            PaymentRecievedAgencyScreen(navVm: navVM)
         case .paymentRecievedCbt:
-            PaymentReceivedCbtScreen(navVm: MainNavViewModel())
+            PaymentReceivedCbtScreen(navVm: navVM)
         }
         
     }
