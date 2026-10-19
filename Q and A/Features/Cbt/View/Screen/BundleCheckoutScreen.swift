@@ -175,7 +175,7 @@ struct BundleCheckoutScreen: View {
                 Text("Referral code applied!").font(AppFont.bold(17))
                 Text(viewModel.state.agent?.code ?? "").font(AppFont.regular(16))
             }
-            Spacer(minLength: 0)
+            Spacer()
             Button(action: { viewModel.removeRefferal() }) {
                 Image(systemName: "xmark.circle")
                     .font(.system(size: 26, weight: .light))
