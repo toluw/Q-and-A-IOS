@@ -67,11 +67,23 @@ struct PortalScreen: View {
 
                         HStack(alignment: .top, spacing: 16) {
                             portalTile(title: "Payment History", image: "payment_history") {
-                                navVm.navigate(route: .userPaymentScreen)
+                              //  navVm.navigate(route: .userPaymentScreen)
+                                let title = "Payment History"
+                                let items = [
+                                    PortalItem.paymentMade(title: "Payment Made", isEnabled: true),
+                                    PortalItem.paymentRecieved(title: "Payment Received", isEnabled: viewModel.state.data?.is_cbt_seller == true || viewModel.state.data?.is_agent == true)
+                                ]
+                                viewModel.showPortaBottomSheet(items: items, title: title)
                             }
                             Spacer(minLength: 0)
                             portalTile(title: "Earnings", image: "earnings") {
-                                onEarnings?()
+                                let title = "Earnings"
+                                let items = [
+                                    PortalItem.earningsCBT(title: "Earnings - CBT", isEnabled: viewModel.state.data?.is_cbt_seller == true),
+                                    PortalItem.earningsAgency(title: "Earnings - Agency", isEnabled: viewModel.state.data?.is_agent == true)
+                                ]
+                                
+                                viewModel.showPortaBottomSheet(items: items, title: title)
                             }
                             .disabled(viewModel.state.data?.is_cbt_seller == false && viewModel.state.data?.is_agent == false)
                         }
@@ -83,6 +95,11 @@ struct PortalScreen: View {
                 .frame(maxWidth: 600)
                 .frame(maxWidth: .infinity)
             }
+        }
+        .sheet(isPresented: $viewModel.state.showBottomSheet){
+            PortalBottomSheetView(title: viewModel.state.sheetTitle, items: viewModel.state.portalItems, onItemClicked: handlePortalItemClicked, onDismissSheet: {
+                viewModel.state.showBottomSheet = false
+            })
         }
         .foregroundStyle(Color.black)
         .background(Color(white: 0.965))
@@ -96,6 +113,10 @@ struct PortalScreen: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .onChange(of: viewModel.state.agentState) { _, _ in copiedCode = false }
         .task { await viewModel.loadInitial() }
+    }
+    
+    private func handlePortalItemClicked(item: PortalItem){
+        
     }
 
     private func agentCard(code: String, isActive: Bool) -> some View {

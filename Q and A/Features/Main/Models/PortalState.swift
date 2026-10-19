@@ -10,6 +10,9 @@ struct PortalState {
     var data: PortalData? = nil
     var isLoading = false
     var errorMessage: String? = nil
+    var showBottomSheet: Bool = false
+    var portalItems: [PortalItem] = []
+    var sheetTitle: String = ""
 
     var agentState: PortalAgentState {
         guard let data, data.is_agent else { return .none }

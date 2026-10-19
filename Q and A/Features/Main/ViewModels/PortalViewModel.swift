@@ -15,6 +15,13 @@ class PortalViewModel: ObservableObject {
         guard state.data == nil, state.errorMessage == nil else { return }
         await getPortalData()
     }
+    
+    
+    func showPortaBottomSheet(items: [PortalItem], title: String){
+        state.portalItems = items
+        state.sheetTitle = title
+        state.showBottomSheet = true
+    }
 
     func getPortalData() async {
         guard !state.isLoading else { return }
