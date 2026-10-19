@@ -11,6 +11,7 @@ import Moya
 
 
 enum MainApi {
+    case getPortalData(email: String)
    
     case getUserPayments(email: String, page: String)
     case getPaymentDetail(type: String, reference: String)
@@ -28,6 +29,8 @@ extension MainApi: TargetType{
     
     var path: String {
         switch self{
+        case .getPortalData:
+            return "v2/get_portal_data.php"
             
         case .getUserPayments:
             return "v2/get_user_payments.php"
@@ -42,6 +45,8 @@ extension MainApi: TargetType{
     
     var method: Moya.Method {
         switch self{
+        case .getPortalData:
+            .get
             
         case .getUserPayments:
             .get
@@ -56,6 +61,8 @@ extension MainApi: TargetType{
     
     var task: Moya.Task {
         switch self{
+        case .getPortalData(email: let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
             
         case .getUserPayments(email: let email, page: let page):
             do{

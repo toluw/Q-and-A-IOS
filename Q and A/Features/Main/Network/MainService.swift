@@ -8,6 +8,7 @@
 import Foundation
 
 protocol MainServiceProtocol{
+    func getPortalData(email: String) async throws -> PortalResponse
     
     func getUserPayments(email: String, page: String) async throws -> PaymentResponse
     
@@ -21,6 +22,15 @@ protocol MainServiceProtocol{
 }
 
 final class MainService: MainServiceProtocol{
+    func getPortalData(email: String) async throws -> PortalResponse {
+        return try await apiClient.request(
+            .getPortalData(email: email),
+            responseType: PortalResponse.self,
+            errorParser: { data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
   
    
     
