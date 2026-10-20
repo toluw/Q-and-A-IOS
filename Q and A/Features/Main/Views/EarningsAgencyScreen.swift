@@ -32,19 +32,25 @@ struct EarningsAgencyScreen: View {
                         .padding(.vertical, 16)
 
                     ForEach(day.statements) { statement in
-                        HStack(spacing: 16) {
-                            Text(statement.exam_name)
-                                .font(AppFont.regular(16))
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Text("₦" + EarningsCbtFormatting.amount(Decimal(string: statement.agent_income) ?? 0))
-                                .font(AppFont.regular(17))
-                                .foregroundStyle(Color(hex: "#FF7B6F"))
-                                .fixedSize()
+                        NavigationLink {
+                            EarningsAgencyDetailsScreen(statement: statement)
+                        } label: {
+                            HStack(spacing: 16) {
+                                Text(statement.exam_name)
+                                    .font(AppFont.regular(16))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                Text("₦" + EarningsCbtFormatting.amount(Decimal(string: statement.agent_income) ?? 0))
+                                    .font(AppFont.regular(17))
+                                    .foregroundStyle(Color(hex: "#FF7B6F"))
+                                    .fixedSize()
+                            }
+                            .padding(16)
+                            .frame(maxWidth: .infinity, minHeight: 68)
+                            .background(Color(hex: "#F3F3F3"))
+                            .contentShape(Rectangle())
                         }
-                        .padding(16)
-                        .frame(maxWidth: .infinity, minHeight: 68)
-                        .background(Color(hex: "#F3F3F3"))
+                        .buttonStyle(.plain)
                         Divider()
                     }
                 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -456,6 +457,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -1267,6 +1269,7 @@
 				F5ED7B09308631E90096286A /* PaymentRecievedAgencyScreen.swift */,
 				F5ED7B0B308632150096286A /* EarningsCbtScreen.swift */,
 				F5ED7B0D308632330096286A /* EarningsAgencyScreen.swift */,
+				AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */,
 				F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */,
 			);
 			path = Views;
@@ -1985,6 +1988,7 @@
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
 				F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */,
 				F5ED7B0E308632330096286A /* EarningsAgencyScreen.swift in Sources */,
+				AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */,
 				F5D0BEFE300A18E00036E377 /* CommunityApi.swift in Sources */,
