@@ -1,11 +1,32 @@
 import Foundation
 
+enum PayoutHistoryKind {
+    case cbt
+    case agency
+
+    var title: String {
+        switch self {
+        case .cbt: "Payment Received - CBT"
+        case .agency: "Payment Received - Agency"
+        }
+    }
+
+    var emptyTitle: String {
+        switch self {
+        case .cbt: "You have no CBT payouts yet"
+        case .agency: "You have no agency payouts yet"
+        }
+    }
+}
+
 @MainActor
 final class PaymentReceivedCbtViewModel: ObservableObject {
     @Published private(set) var state = PaymentReceivedCbtState()
+    private let kind: PayoutHistoryKind
     private let service: MainServiceProtocol
 
-    init(service: MainServiceProtocol = MainService()) {
+    init(kind: PayoutHistoryKind = .cbt, service: MainServiceProtocol = MainService()) {
+        self.kind = kind
         self.service = service
     }
 
@@ -26,7 +47,13 @@ final class PaymentReceivedCbtViewModel: ObservableObject {
         }
 
         do {
-            let response = try await service.getCbtPayoutHistory(email: email)
+            let response: CbtPayoutHistoryResponse
+            switch kind {
+            case .cbt:
+                response = try await service.getCbtPayoutHistory(email: email)
+            case .agency:
+                response = try await service.getAgentPayoutHistory(email: email)
+            }
             try Task.checkCancellation()
             guard response.status else {
                 throw AppError.server(response.message.isEmpty ? "Unable to load payout history." : response.message)

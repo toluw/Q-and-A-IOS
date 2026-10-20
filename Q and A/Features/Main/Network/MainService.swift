@@ -8,6 +8,7 @@
 import Foundation
 
 protocol MainServiceProtocol{
+    func getAgentPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse
     func getCbtPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse
     func getAgentIncome(email: String) async throws -> EarningsCbtResponse
     func getIncome(email: String) async throws -> EarningsCbtResponse
@@ -25,6 +26,14 @@ protocol MainServiceProtocol{
 }
 
 final class MainService: MainServiceProtocol{
+    func getAgentPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse {
+        try await apiClient.request(
+            .getAgentPayoutHistory(email: email),
+            responseType: CbtPayoutHistoryResponse.self,
+            errorParser: { $0.jsonString(forKey: "message") ?? "Unable to load agency payout history." }
+        )
+    }
+
     func getCbtPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse {
         try await apiClient.request(
             .getCbtPayoutHistory(email: email),

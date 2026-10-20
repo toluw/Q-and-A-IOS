@@ -2,7 +2,20 @@ import SwiftUI
 
 struct PaymentReceivedCbtScreen: View {
     @ObservedObject var navVm: MainNavViewModel
-    @StateObject private var viewModel = PaymentReceivedCbtViewModel()
+
+    var body: some View {
+        PaymentReceivedHistoryScreen(kind: .cbt)
+    }
+}
+
+struct PaymentReceivedHistoryScreen: View {
+    let kind: PayoutHistoryKind
+    @StateObject private var viewModel: PaymentReceivedCbtViewModel
+
+    init(kind: PayoutHistoryKind) {
+        self.kind = kind
+        _viewModel = StateObject(wrappedValue: PaymentReceivedCbtViewModel(kind: kind))
+    }
 
     var body: some View {
         ScrollView {
@@ -19,7 +32,7 @@ struct PaymentReceivedCbtScreen: View {
                 }
 
                 if viewModel.state.isEmpty {
-                    EmptyStateView(title: "You have no CBT payouts yet")
+                    EmptyStateView(title: kind.emptyTitle)
                         .padding(.top, 24)
                         .frame(maxWidth: .infinity)
                 }
@@ -70,7 +83,7 @@ struct PaymentReceivedCbtScreen: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Payment Received - CBT")
+                Text(kind.title)
                     .font(AppFont.semi_bold(18))
             }
         }

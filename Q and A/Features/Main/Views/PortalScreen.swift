@@ -109,6 +109,9 @@ struct PortalScreen: View {
                 Text("My Portal").font(AppFont.semi_bold(20))
             }
         }
+        onAppear{
+            NotificationManager.shared.presentPrimerIfNeeded(for: .portal)
+        }
         .toolbarBackground(Color.white, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .onChange(of: viewModel.state.agentState) { _, _ in copiedCode = false }

@@ -7,7 +7,7 @@ struct EarningsCbtResponse: Decodable {
 }
 
 struct EarningsCbtData: Decodable {
-    let income: Decimal
+    let income: Decimal?
     let statement: [EarningsCbtStatement]
 
     private enum CodingKeys: String, CodingKey {
@@ -28,7 +28,7 @@ struct EarningsCbtData: Decodable {
             }
             income = amount
         } else {
-            income = try container.decode(Decimal.self, forKey: .income)
+            income = try container.decodeIfPresent(Decimal.self, forKey: .income)
         }
         statement = try container.decode([EarningsCbtStatement].self, forKey: .statement)
     }

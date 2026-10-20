@@ -14,6 +14,7 @@ import Foundation
 enum NotificationPrimerReason: String, Identifiable {
     case newPost
     case newComment
+    case portal
 
     var id: String { rawValue }
 
@@ -23,6 +24,8 @@ enum NotificationPrimerReason: String, Identifiable {
             return "Get notified about comments"
         case .newComment:
             return "Get notified about replies"
+        case .portal:
+            return "Get notified about earnings"
         }
     }
 
@@ -32,6 +35,8 @@ enum NotificationPrimerReason: String, Identifiable {
             return "Turn on notifications to know as soon as someone comments on your post."
         case .newComment:
             return "Turn on notifications to know as soon as someone replies to your comment."
+        case .portal:
+            return "Turn on notifications to know as soon as you receive a new payment."
         }
     }
 

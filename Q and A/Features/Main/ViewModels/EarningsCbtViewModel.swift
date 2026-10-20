@@ -34,7 +34,7 @@ final class EarningsCbtViewModel: ObservableObject {
             guard let data = response.data else {
                 throw AppError.server("The server returned no earnings data. Please try again.")
             }
-            state.income = data.income
+            state.income = data.income ?? 0
             state.statements = data.statement
             state.hasLoaded = true
         } catch is CancellationError {
