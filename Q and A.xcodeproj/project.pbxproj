@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000003 /* EarningsAgencyViewModel.swift */; };
-		AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000001 /* EarningsAgencyState.swift */; };
-		AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000005 /* EarningsCbtViewModel.swift */; };
-		AB0190000000000000000004 /* EarningsCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000003 /* EarningsCbtState.swift */; };
-		AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000001 /* EarningsCbtResponse.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
+		AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000001 /* EarningsCbtResponse.swift */; };
+		AB0190000000000000000004 /* EarningsCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000003 /* EarningsCbtState.swift */; };
+		AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000005 /* EarningsCbtViewModel.swift */; };
+		AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000001 /* EarningsAgencyState.swift */; };
+		AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000003 /* EarningsAgencyViewModel.swift */; };
 		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
@@ -179,6 +179,7 @@
 		F58A268F3039B073004A1B27 /* ContactUsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A268E3039B073004A1B27 /* ContactUsLinks.swift */; };
 		F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A26903039C24E004A1B27 /* AboutScreen.swift */; };
 		F58C22FD304FFB4B004F729B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C22FC304FFB4B004F729B /* ArrayExtension.swift */; };
+		F58CAF6E30874D9F00DB508A /* EarningsCbtDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */; };
 		F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A13029C5A900D1722B /* ReplyScreen.swift */; };
 		F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */; };
 		F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */; };
@@ -455,14 +456,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB0290000000000000000003 /* EarningsAgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyViewModel.swift; sourceTree = "<group>"; };
-		AB0290000000000000000001 /* EarningsAgencyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyState.swift; sourceTree = "<group>"; };
-		AB0190000000000000000005 /* EarningsCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtViewModel.swift; sourceTree = "<group>"; };
-		AB0190000000000000000003 /* EarningsCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtState.swift; sourceTree = "<group>"; };
-		AB0190000000000000000001 /* EarningsCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
+		AB0190000000000000000001 /* EarningsCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtResponse.swift; sourceTree = "<group>"; };
+		AB0190000000000000000003 /* EarningsCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtState.swift; sourceTree = "<group>"; };
+		AB0190000000000000000005 /* EarningsCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtViewModel.swift; sourceTree = "<group>"; };
+		AB0290000000000000000001 /* EarningsAgencyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyState.swift; sourceTree = "<group>"; };
+		AB0290000000000000000003 /* EarningsAgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyViewModel.swift; sourceTree = "<group>"; };
 		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
@@ -628,6 +629,7 @@
 		F58A268E3039B073004A1B27 /* ContactUsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsLinks.swift; sourceTree = "<group>"; };
 		F58A26903039C24E004A1B27 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		F58C22FC304FFB4B004F729B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtDetailsScreen.swift; sourceTree = "<group>"; };
 		F58CE9A13029C5A900D1722B /* ReplyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyScreen.swift; sourceTree = "<group>"; };
 		F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReplyBody.swift; sourceTree = "<group>"; };
 		F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReplyBody.swift; sourceTree = "<group>"; };
@@ -1265,6 +1267,7 @@
 				F5ED7B09308631E90096286A /* PaymentRecievedAgencyScreen.swift */,
 				F5ED7B0B308632150096286A /* EarningsCbtScreen.swift */,
 				F5ED7B0D308632330096286A /* EarningsAgencyScreen.swift */,
+				F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2076,6 +2079,7 @@
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */,
+				F58CAF6E30874D9F00DB508A /* EarningsCbtDetailsScreen.swift in Sources */,
 				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
 				F55DDC3830811878000039F6 /* GetUserBundleResponse.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
