@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
+		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
 		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
@@ -457,6 +459,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
+		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
 		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
@@ -1234,6 +1238,7 @@
 				AB0290000000000000000001 /* EarningsAgencyState.swift */,
 				AB0190000000000000000003 /* EarningsCbtState.swift */,
 				AB0190000000000000000001 /* EarningsCbtResponse.swift */,
+				AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */,
 				F58A268E3039B073004A1B27 /* ContactUsLinks.swift */,
 				F54BD5DF303B3ED500B1B6D2 /* DeactivateBody.swift */,
 				F54BD5E5303DB20900B1B6D2 /* ProductLoadState.swift */,
@@ -1287,6 +1292,7 @@
 				AA9010000000000000000005 /* PortalViewModel.swift */,
 				AB0290000000000000000003 /* EarningsAgencyViewModel.swift */,
 				AB0190000000000000000005 /* EarningsCbtViewModel.swift */,
+				AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */,
 				F54BD5E7303DB2AC00B1B6D2 /* MarketPlaceProductViewModel.swift */,
 				F5239DFC3046EA5200DC1997 /* NotificationManager.swift */,
 				F5239DFE3046F25300DC1997 /* Pushnotificationrouter.swift */,
@@ -2054,6 +2060,8 @@
 				AA9010000000000000000006 /* PortalViewModel.swift in Sources */,
 				AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */,
 				AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */,
+				AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */,
+				AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */,
 				AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */,
 				AB0190000000000000000004 /* EarningsCbtState.swift in Sources */,
 				AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */,
