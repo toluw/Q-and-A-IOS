@@ -11,6 +11,8 @@ import Moya
 
 
 enum MainApi {
+    case getAccount(email: String)
+    case setAccount(body: SetAccountBody)
     case getAgentPayoutHistory(email: String)
     case getCbtPayoutHistory(email: String)
     case getAgentIncome(email: String)
@@ -33,6 +35,8 @@ extension MainApi: TargetType{
     
     var path: String {
         switch self{
+        case .getAccount: return "v2/get_account.php"
+        case .setAccount: return "v2/set_account.php"
         case .getAgentPayoutHistory:
             return "v2/get_agent_payout_history.php"
         case .getCbtPayoutHistory:
@@ -57,6 +61,7 @@ extension MainApi: TargetType{
     
     var method: Moya.Method {
         switch self{
+        case .getAccount, .setAccount: .post
         case .getAgentPayoutHistory:
             .get
         case .getCbtPayoutHistory:
@@ -81,6 +86,10 @@ extension MainApi: TargetType{
     
     var task: Moya.Task {
         switch self{
+        case .getAccount(let email):
+            return .requestParameters(parameters: ["email": email], encoding: JSONEncoding.default)
+        case .setAccount(let body):
+            return .requestJSONEncodable(body)
         case .getAgentPayoutHistory(let email):
             return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
         case .getCbtPayoutHistory(let email):

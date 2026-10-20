@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */; };
+		FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */; };
+		CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -463,6 +466,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountScreen.swift; sourceTree = "<group>"; };
+		FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewModel.swift; sourceTree = "<group>"; };
+		B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -1239,6 +1245,7 @@
 				F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */,
 				F5A5A654303853C100A64FC6 /* UserPaymentState.swift */,
 				F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */,
+				B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */,
 				AA9010000000000000000001 /* PortalResponse.swift */,
 				F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */,
 				F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */,
@@ -1278,6 +1285,7 @@
 				F58A26903039C24E004A1B27 /* AboutScreen.swift */,
 				F54BD5E3303DAEA600B1B6D2 /* MarketplaceProductScreen.swift */,
 				F5239E053046FB6100DC1997 /* NotificationPrimerModifier.swift */,
+				C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */,
 				F5ED7B0130860DE40096286A /* PortalScreen.swift */,
 				F5ED7B05308627150096286A /* PortalBottomSheetView.swift */,
 				F5ED7B07308631A10096286A /* PaymentReceivedCbtScreen.swift */,
@@ -1299,6 +1307,7 @@
 				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
 				F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */,
 				F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */,
+				FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */,
 				AA9010000000000000000005 /* PortalViewModel.swift */,
 				AB0290000000000000000003 /* EarningsAgencyViewModel.swift */,
 				AB0190000000000000000005 /* EarningsCbtViewModel.swift */,
@@ -1894,6 +1903,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */,
+				FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */,
+				CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */,
 				F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */,
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
 				F56EA61C302725A70092972D /* Reply.swift in Sources */,

@@ -8,6 +8,8 @@
 import Foundation
 
 protocol MainServiceProtocol{
+    func getAccount(email: String) async throws -> AccountResponse
+    func setAccount(body: SetAccountBody) async throws -> GeneralResponse
     func getAgentPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse
     func getCbtPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse
     func getAgentIncome(email: String) async throws -> EarningsCbtResponse
@@ -26,6 +28,20 @@ protocol MainServiceProtocol{
 }
 
 final class MainService: MainServiceProtocol{
+    func getAccount(email: String) async throws -> AccountResponse {
+        try await apiClient.request(
+            .getAccount(email: email), responseType: AccountResponse.self,
+            errorParser: { $0.jsonString(forKey: "message") ?? "Unable to load account details." }
+        )
+    }
+
+    func setAccount(body: SetAccountBody) async throws -> GeneralResponse {
+        try await apiClient.request(
+            .setAccount(body: body), responseType: GeneralResponse.self,
+            errorParser: { $0.jsonString(forKey: "message") ?? "Unable to save account details." }
+        )
+    }
+
     func getAgentPayoutHistory(email: String) async throws -> CbtPayoutHistoryResponse {
         try await apiClient.request(
             .getAgentPayoutHistory(email: email),

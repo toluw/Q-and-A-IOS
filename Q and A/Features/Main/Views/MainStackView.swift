@@ -122,6 +122,8 @@ struct MainStackView: View {
             BundleCheckoutScreen(cbtViewModel: cbtViewModel, navVm: navVM, paymentViewModel: paymentViewModel)
         case .bundlePaymentScreen:
             BundlePaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
+        case .updateAccountScreen:
+            UpdateAccountScreen()
         case .portalScreen:
             PortalScreen(navVm: navVM)
         case .earningsCbtScreen:

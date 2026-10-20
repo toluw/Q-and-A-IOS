@@ -27,7 +27,11 @@ struct PortalScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             Button {
-                
+                if let onUpdateAccount {
+                    onUpdateAccount()
+                } else {
+                    navVm.navigate(route: .updateAccountScreen)
+                }
             } label: {
                 HStack(spacing: 10) {
                     Spacer(minLength: 0)
