@@ -109,7 +109,7 @@ struct PortalScreen: View {
                 Text("My Portal").font(AppFont.semi_bold(20))
             }
         }
-        onAppear{
+        .task {
             NotificationManager.shared.presentPrimerIfNeeded(for: .portal)
         }
         .toolbarBackground(Color.white, for: .navigationBar)
