@@ -11,7 +11,7 @@ import Foundation
 class BankViewModel: ObservableObject{
     
     
-    var state = BanksState.loading
+    @Published var state: BanksState = .loading
     
     private let service: PaystackServiceProtocol
       
@@ -23,20 +23,20 @@ class BankViewModel: ObservableObject{
     
     func getAllBanks(){
         
-        state = BanksState.loading
+        state = .loading
         
         Task{
             do{
                 
                 let response = try await service.getBank()
                 if(response.data == nil || response.data?.isEmpty == true){
-                    state = BanksState.empty
+                    state = .empty
                 }else{
-                    state =  BanksState.loaded(response.data!)
+                    state =  .loaded(response.data!)
                 }
                 
             }catch{
-                state = BanksState.error(error.localizedDescription)
+                state = .error(error.localizedDescription)
             }
         }
         

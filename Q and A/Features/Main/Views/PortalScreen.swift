@@ -27,7 +27,7 @@ struct PortalScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             Button {
-                viewModel.state.showBank = true
+                
             } label: {
                 HStack(spacing: 10) {
                     Spacer(minLength: 0)
