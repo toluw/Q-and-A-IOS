@@ -27,7 +27,7 @@ struct PortalScreen: View {
     var body: some View {
         VStack(spacing: 0) {
             Button {
-                onUpdateAccount?()
+                viewModel.state.showBank = true
             } label: {
                 HStack(spacing: 10) {
                     Spacer(minLength: 0)
@@ -42,7 +42,6 @@ struct PortalScreen: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .disabled(onUpdateAccount == nil)
             .background(Color.white)
             .shadow(color: .black.opacity(0.10), radius: 4, y: 4)
             .zIndex(1)
@@ -99,6 +98,11 @@ struct PortalScreen: View {
         .sheet(isPresented: $viewModel.state.showBottomSheet){
             PortalBottomSheetView(title: viewModel.state.sheetTitle, items: viewModel.state.portalItems,  onItemClicked: handlePortalItemClicked, onDismissSheet: {
                 viewModel.state.showBottomSheet = false
+            })
+        }
+        .sheet(isPresented: $viewModel.state.showBank){
+            BankBottomSheetView(onBankClicked: {bank in
+                viewModel.state.showBank = false
             })
         }
         .foregroundStyle(Color.black)

@@ -21,22 +21,26 @@ class BankViewModel: ObservableObject{
     
     
     
-    func getAllBanks() async{
+    func getAllBanks(){
         
         state = BanksState.loading
         
-        do{
-            
-            let response = try await service.getBank()
-            if(response.data == nil || response.data?.isEmpty == true){
-                state = BanksState.empty
-            }else{
-                state =  BanksState.loaded(response.data!)
+        Task{
+            do{
+                
+                let response = try await service.getBank()
+                if(response.data == nil || response.data?.isEmpty == true){
+                    state = BanksState.empty
+                }else{
+                    state =  BanksState.loaded(response.data!)
+                }
+                
+            }catch{
+                state = BanksState.error(error.localizedDescription)
             }
-            
-        }catch{
-            state = BanksState.error(error.localizedDescription)
         }
+        
+       
         
         
     }

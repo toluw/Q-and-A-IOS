@@ -21,12 +21,12 @@ struct BankBottomSheetView: View {
                     
                 case .loading:
                     
-                    ProgressView("Loading earnings…")
-                        .padding(.top, 48)
+                    ProgressView("Loading banks…")
+                        .padding(.top, 60)
                         .frame(maxWidth: .infinity)
                 case .error(let mes):
                     ErrorView(message: mes) {
-                        Task { await viewModel.getAllBanks() }
+                       viewModel.getAllBanks()
                     }
                     .padding(.vertical, 32)
                 case .empty:
@@ -45,9 +45,10 @@ struct BankBottomSheetView: View {
                 }
             }
         }
-        .task {
-            await viewModel.getAllBanks()
+        .onAppear{
+            viewModel.getAllBanks()
         }
+        
         
     }
     
