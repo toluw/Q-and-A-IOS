@@ -16,10 +16,14 @@ protocol PaystackServiceProtocol {
     func verifyPayment(reference: String) async throws -> PaystackVerifyResponse
     
     
+    func getBank() async throws -> BanksResponse
+    
+    
 }
 
 
 class PaystackService: PaystackServiceProtocol{
+  
     
     
     
@@ -48,6 +52,15 @@ class PaystackService: PaystackServiceProtocol{
             
         );
     }
+    
+    func getBank() async throws -> BanksResponse {
+        return try await apiClient.request(.getBank,
+                                           responseType: BanksResponse.self,
+                                           errorParser: {data in
+                                               data.jsonString(forKey: "message") ?? "An error occured"
+                                           })
+    }
+    
     
     
    

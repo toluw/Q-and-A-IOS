@@ -16,6 +16,7 @@ enum PaystackApi {
    
     case initiateTransaction(paystackData: PaystackData)
     case verifyPayment(reference: String)
+    case getBank
     
 }
 
@@ -35,6 +36,8 @@ extension PaystackApi: TargetType{
         
         case .verifyPayment(reference: let reference):
             "transaction/verify/\(reference)"
+        case .getBank:
+            "bank"
         }
     }
     
@@ -45,6 +48,8 @@ extension PaystackApi: TargetType{
                 .post
             
         case .verifyPayment(reference: let reference):
+                .get
+        case .getBank:
                 .get
         }
     }
@@ -58,6 +63,8 @@ extension PaystackApi: TargetType{
             
             
         case .verifyPayment(reference: let reference):
+            return .requestPlain
+        case .getBank:
             return .requestPlain
         }
         

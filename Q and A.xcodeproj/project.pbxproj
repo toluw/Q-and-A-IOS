@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
-		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
-		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -18,6 +15,9 @@
 		AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000005 /* EarningsCbtViewModel.swift */; };
 		AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000001 /* EarningsAgencyState.swift */; };
 		AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000003 /* EarningsAgencyViewModel.swift */; };
+		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
+		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
+		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
 		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
@@ -329,6 +329,10 @@
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
 		F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A0402FA620FD00B11187 /* ExamSelect.swift */; };
+		F5B728FE30877F5900C2B4BE /* BanksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B728FD30877F5900C2B4BE /* BanksResponse.swift */; };
+		F5B72900308784FE00C2B4BE /* BanksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B728FF308784FE00C2B4BE /* BanksState.swift */; };
+		F5B72902308785FE00C2B4BE /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B72901308785FE00C2B4BE /* BankViewModel.swift */; };
+		F5B729043087887E00C2B4BE /* BankBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */; };
 		F5BAF9C330051B62005785BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C230051B62005785BF /* User.swift */; };
 		F5BAF9C530051BCB005785BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C430051BCB005785BF /* Post.swift */; };
 		F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */; };
@@ -459,9 +463,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
-		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
-		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -470,6 +471,9 @@
 		AB0190000000000000000005 /* EarningsCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtViewModel.swift; sourceTree = "<group>"; };
 		AB0290000000000000000001 /* EarningsAgencyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyState.swift; sourceTree = "<group>"; };
 		AB0290000000000000000003 /* EarningsAgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyViewModel.swift; sourceTree = "<group>"; };
+		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
+		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
+		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
 		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
@@ -764,6 +768,10 @@
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
 		F5B5A0402FA620FD00B11187 /* ExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelect.swift; sourceTree = "<group>"; };
+		F5B728FD30877F5900C2B4BE /* BanksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksResponse.swift; sourceTree = "<group>"; };
+		F5B728FF308784FE00C2B4BE /* BanksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksState.swift; sourceTree = "<group>"; };
+		F5B72901308785FE00C2B4BE /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
+		F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankBottomSheetView.swift; sourceTree = "<group>"; };
 		F5BAF9C13004E5F0005785BF /* Q and A.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Q and A.entitlements"; sourceTree = "<group>"; };
 		F5BAF9C230051B62005785BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5BAF9C430051BCB005785BF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -1245,6 +1253,8 @@
 				F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */,
 				F5239E033046FB2700DC1997 /* NotificationPrimerReason.swift */,
 				F5ED7B03308625750096286A /* PortalItem.swift */,
+				F5B728FD30877F5900C2B4BE /* BanksResponse.swift */,
+				F5B728FF308784FE00C2B4BE /* BanksState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1297,6 +1307,7 @@
 				F5239DFC3046EA5200DC1997 /* NotificationManager.swift */,
 				F5239DFE3046F25300DC1997 /* Pushnotificationrouter.swift */,
 				F5239E013046F58300DC1997 /* AppDelegate.swift */,
+				F5B72901308785FE00C2B4BE /* BankViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1655,6 +1666,7 @@
 				F5CCFF723035C7550074443A /* CbtHistoryView.swift */,
 				F583608F3082276500F90526 /* BundleBottomSheetView.swift */,
 				F56190F33083950D00EF1342 /* BundleCTACard.swift */,
+				F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1909,6 +1921,7 @@
 				F5A5A6613038653C00A64FC6 /* PaymentDetailsScreen.swift in Sources */,
 				F535C2ED302DE6A80055E168 /* ConfirmPhoneView.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
+				F5B72900308784FE00C2B4BE /* BanksState.swift in Sources */,
 				F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */,
 				F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */,
 				F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */,
@@ -1959,6 +1972,7 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F54BD5E6303DB20900B1B6D2 /* ProductLoadState.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
+				F5B728FE30877F5900C2B4BE /* BanksResponse.swift in Sources */,
 				F5AF11E9303F0C6A006A95B3 /* ScreenCaptureMonitor.swift in Sources */,
 				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
 				F5BAF9C530051BCB005785BF /* Post.swift in Sources */,
@@ -2047,6 +2061,7 @@
 				F583608C30820FDF00F90526 /* BundleState.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5D0BF02300A23930036E377 /* PostResponse.swift in Sources */,
+				F5B729043087887E00C2B4BE /* BankBottomSheetView.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
 				F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
@@ -2178,6 +2193,7 @@
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */,
 				F5D4955C3084DC6B00A832BF /* BundlePaymentViewModel.swift in Sources */,
+				F5B72902308785FE00C2B4BE /* BankViewModel.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,
