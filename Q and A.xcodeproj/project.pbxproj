@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
+		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
+		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
+		AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000001 /* EarningsCbtResponse.swift */; };
+		AB0190000000000000000004 /* EarningsCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000003 /* EarningsCbtState.swift */; };
+		AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0190000000000000000005 /* EarningsCbtViewModel.swift */; };
+		AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000001 /* EarningsAgencyState.swift */; };
+		AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000003 /* EarningsAgencyViewModel.swift */; };
+		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
+		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
+		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
+		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
+		CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */; };
+		CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */; };
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
 		F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */; };
@@ -41,6 +55,10 @@
 		F526A8022F70374600BF414A /* IntroNavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */; };
 		F526A8032F70374600BF414A /* IntroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A7FF2F70374600BF414A /* IntroStackView.swift */; };
 		F526A8062F7037D400BF414A /* IntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F526A8042F7037D400BF414A /* IntroPage.swift */; };
+		F5272F2F3082859900233723 /* BundleCheckoutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F2E3082859900233723 /* BundleCheckoutState.swift */; };
+		F5272F313082874600233723 /* BundleCheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F303082874600233723 /* BundleCheckoutViewModel.swift */; };
+		F5272F3330828D8500233723 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F3230828D8500233723 /* Agent.swift */; };
+		F5272F3530828E2100233723 /* ValidateCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5272F3430828E2100233723 /* ValidateCodeResponse.swift */; };
 		F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A063021E7DF002268D5 /* CommentScreen.swift */; };
 		F5285A093021E99A002268D5 /* ForumCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A083021E99A002268D5 /* ForumCommentResponse.swift */; };
 		F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5285A0A3021F04B002268D5 /* CommentState.swift */; };
@@ -125,6 +143,10 @@
 		F55912A62F4F235900BCB041 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55912A52F4F235900BCB041 /* IntroViewModel.swift */; };
 		F55951EA30238E6A00C8AF67 /* DeleteCommentBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */; };
 		F55BBDCA2F9386700059A0DB /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55BBDC92F9386700059A0DB /* CartView.swift */; };
+		F55DDC3430811779000039F6 /* UserBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC3330811779000039F6 /* UserBundle.swift */; };
+		F55DDC36308117C2000039F6 /* BundlePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC35308117C2000039F6 /* BundlePrice.swift */; };
+		F55DDC3830811878000039F6 /* GetUserBundleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */; };
+		F56190F43083950D00EF1342 /* BundleCTACard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56190F33083950D00EF1342 /* BundleCTACard.swift */; };
 		F56831EC30330C1200D0B62D /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56831EB30330C1200D0B62D /* TermsView.swift */; };
 		F56A463C2F75739900B3D2FC /* MainRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463B2F75739900B3D2FC /* MainRoute.swift */; };
 		F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */; };
@@ -139,6 +161,7 @@
 		F56EA61A302724E00092972D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA619302724E00092972D /* Quote.swift */; };
 		F56EA61C302725A70092972D /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61B302725A70092972D /* Reply.swift */; };
 		F56EA61E302727E70092972D /* ReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61D302727E70092972D /* ReplyView.swift */; };
+		F577822B3080ECE300FE66C6 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577822A3080ECE300FE66C6 /* Offer.swift */; };
 		F57BD091302F15200034DCDB /* SocialSignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD090302F15200034DCDB /* SocialSignupResponse.swift */; };
 		F57BD093302F1B230034DCDB /* SocialSignupBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57BD092302F1B230034DCDB /* SocialSignupBody.swift */; };
 		F57BD0B030306DC80034DCDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */; };
@@ -146,6 +169,10 @@
 		F57F779C3046E2CF00018918 /* UpdateTokenBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */; };
 		F5820CFC2F9BAC56008B84E2 /* DropDownInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */; };
 		F5820CFE2F9BC59F008B84E2 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */; };
+		F583608A3081FC7200F90526 /* BundleWithSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58360893081FC7200F90526 /* BundleWithSelection.swift */; };
+		F583608C30820FDF00F90526 /* BundleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583608B30820FDF00F90526 /* BundleState.swift */; };
+		F583608E308215E100F90526 /* BundleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583608D308215E100F90526 /* BundleViewModel.swift */; };
+		F58360903082276500F90526 /* BundleBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583608F3082276500F90526 /* BundleBottomSheetView.swift */; };
 		F585480F300BD82C00D0FDB3 /* DiscussionNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */; };
 		F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */; };
 		F5899FE0300F6BF3005FF391 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5899FDF300F6BF3005FF391 /* PostBody.swift */; };
@@ -157,6 +184,7 @@
 		F58A268F3039B073004A1B27 /* ContactUsLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A268E3039B073004A1B27 /* ContactUsLinks.swift */; };
 		F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A26903039C24E004A1B27 /* AboutScreen.swift */; };
 		F58C22FD304FFB4B004F729B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C22FC304FFB4B004F729B /* ArrayExtension.swift */; };
+		F58CAF6E30874D9F00DB508A /* EarningsCbtDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */; };
 		F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A13029C5A900D1722B /* ReplyScreen.swift */; };
 		F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */; };
 		F58CE9A63029C80500D1722B /* UpdateReplyBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */; };
@@ -167,6 +195,7 @@
 		F58CE9B03029D47200D1722B /* ReplyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9AF3029D47200D1722B /* ReplyState.swift */; };
 		F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */; };
 		F58CE9B4302A01FB00D1722B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CE9B3302A01FB00D1722B /* QuoteView.swift */; };
+		F5922BB73082CE5100B113E4 /* ValidateCodeBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5922BB63082CE5100B113E4 /* ValidateCodeBody.swift */; };
 		F593E8C82FD42AD900095719 /* TimerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593E8C72FD42AD900095719 /* TimerResult.swift */; };
 		F5941CDA2F22124300611063 /* Q_and_AApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5941CD92F22124300611063 /* Q_and_AApp.swift */; };
 		F5941CDE2F22124500611063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5941CDD2F22124500611063 /* Assets.xcassets */; };
@@ -292,6 +321,9 @@
 		F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101042FD5DB3500B924EF /* ResultScreen.swift */; };
 		F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */; };
 		F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */; };
+		F5B19210308238CE009468D6 /*  CatBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1920F308238CE009468D6 /*  CatBundle.swift */; };
+		F5B192123082392D009468D6 /* ParentBundleIdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B192113082392D009468D6 /* ParentBundleIdResponse.swift */; };
+		F5B1921430824EE5009468D6 /* BundleCheckoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1921330824EE4009468D6 /* BundleCheckoutScreen.swift */; };
 		F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */; };
 		F5B1B3FA300638EA00D7BB57 /* AvartarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */; };
 		F5B1B3FC300656CB00D7BB57 /* ExpandableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */; };
@@ -299,6 +331,10 @@
 		F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */; };
 		F5B5A03F2FA6179900B11187 /* DisabledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A03E2FA6179900B11187 /* DisabledButton.swift */; };
 		F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A0402FA620FD00B11187 /* ExamSelect.swift */; };
+		F5B728FE30877F5900C2B4BE /* BanksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B728FD30877F5900C2B4BE /* BanksResponse.swift */; };
+		F5B72900308784FE00C2B4BE /* BanksState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B728FF308784FE00C2B4BE /* BanksState.swift */; };
+		F5B72902308785FE00C2B4BE /* BankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B72901308785FE00C2B4BE /* BankViewModel.swift */; };
+		F5B729043087887E00C2B4BE /* BankBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */; };
 		F5BAF9C330051B62005785BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C230051B62005785BF /* User.swift */; };
 		F5BAF9C530051BCB005785BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BAF9C430051BCB005785BF /* Post.swift */; };
 		F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BB95052FE6C342004EDA26 /* AnswerStatus.swift */; };
@@ -337,6 +373,7 @@
 		F5C61BA62FD2EEC40090310A /* GoToQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */; };
 		F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C61BA72FD2EF160090310A /* GoToQuestionState.swift */; };
 		F5C74D732FA23BB70027131A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C74D722FA23BB70027131A /* DateUtils.swift */; };
+		F5C7CCA83083519200150A08 /* BundlePaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */; };
 		F5CA68FD2F93B209005010AE /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FC2F93B209005010AE /* Exam.swift */; };
 		F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */; };
 		F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA69002F93B689005010AE /* SubCatViewModel.swift */; };
@@ -358,6 +395,8 @@
 		F5D0BF08300A2CDF0036E377 /* CbtPostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */; };
 		F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476562FA106C600713F18 /* ExamSelectView.swift */; };
 		F5D476592FA10BD800713F18 /* ExamSelectBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */; };
+		F5D4955A3084DAE600A832BF /* PostBundleTransactionBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */; };
+		F5D4955C3084DC6B00A832BF /* BundlePaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */; };
 		F5D82E0E3039E2A300C8621C /* ComingSoonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */; };
 		F5D82E103039E2E500C8621C /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */; };
 		F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */; };
@@ -395,6 +434,13 @@
 		F5EB75532FE51E91002D38AE /* CorrectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */; };
 		F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */; };
 		F5EB75572FE5227B002D38AE /* ReviewAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */; };
+		F5ED7B0230860DE40096286A /* PortalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B0130860DE40096286A /* PortalScreen.swift */; };
+		F5ED7B04308625750096286A /* PortalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B03308625750096286A /* PortalItem.swift */; };
+		F5ED7B06308627150096286A /* PortalBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B05308627150096286A /* PortalBottomSheetView.swift */; };
+		F5ED7B08308631A10096286A /* PaymentReceivedCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B07308631A10096286A /* PaymentReceivedCbtScreen.swift */; };
+		F5ED7B0A308631E90096286A /* PaymentRecievedAgencyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B09308631E90096286A /* PaymentRecievedAgencyScreen.swift */; };
+		F5ED7B0C308632150096286A /* EarningsCbtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B0B308632150096286A /* EarningsCbtScreen.swift */; };
+		F5ED7B0E308632330096286A /* EarningsAgencyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED7B0D308632330096286A /* EarningsAgencyScreen.swift */; };
 		F5EF482D3011FC6E00F5B823 /* LinkifiedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */; };
 		F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29F842FDB0559003A876B /* CalculatorView.swift */; };
 		F5F7A7632F3882F70097558D /* gilroy_100.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7622F3882F70097558D /* gilroy_100.ttf */; };
@@ -416,9 +462,24 @@
 		F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */; };
 		F5FEC41C2F8D012F004C8D53 /* MainCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */; };
 		F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */; };
+		FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
+		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
+		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
+		AB0190000000000000000001 /* EarningsCbtResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtResponse.swift; sourceTree = "<group>"; };
+		AB0190000000000000000003 /* EarningsCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtState.swift; sourceTree = "<group>"; };
+		AB0190000000000000000005 /* EarningsCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtViewModel.swift; sourceTree = "<group>"; };
+		AB0290000000000000000001 /* EarningsAgencyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyState.swift; sourceTree = "<group>"; };
+		AB0290000000000000000003 /* EarningsAgencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyViewModel.swift; sourceTree = "<group>"; };
+		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
+		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
+		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
+		B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
+		C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountScreen.swift; sourceTree = "<group>"; };
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
 		F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
@@ -453,6 +514,10 @@
 		F526A7FE2F70374600BF414A /* IntroNavigationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroNavigationButtons.swift; sourceTree = "<group>"; };
 		F526A7FF2F70374600BF414A /* IntroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroStackView.swift; sourceTree = "<group>"; };
 		F526A8042F7037D400BF414A /* IntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPage.swift; sourceTree = "<group>"; };
+		F5272F2E3082859900233723 /* BundleCheckoutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCheckoutState.swift; sourceTree = "<group>"; };
+		F5272F303082874600233723 /* BundleCheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCheckoutViewModel.swift; sourceTree = "<group>"; };
+		F5272F3230828D8500233723 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		F5272F3430828E2100233723 /* ValidateCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeResponse.swift; sourceTree = "<group>"; };
 		F5285A063021E7DF002268D5 /* CommentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentScreen.swift; sourceTree = "<group>"; };
 		F5285A083021E99A002268D5 /* ForumCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCommentResponse.swift; sourceTree = "<group>"; };
 		F5285A0A3021F04B002268D5 /* CommentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentState.swift; sourceTree = "<group>"; };
@@ -538,6 +603,10 @@
 		F55912A52F4F235900BCB041 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F55951E930238E6A00C8AF67 /* DeleteCommentBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCommentBody.swift; sourceTree = "<group>"; };
 		F55BBDC92F9386700059A0DB /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		F55DDC3330811779000039F6 /* UserBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBundle.swift; sourceTree = "<group>"; };
+		F55DDC35308117C2000039F6 /* BundlePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePrice.swift; sourceTree = "<group>"; };
+		F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserBundleResponse.swift; sourceTree = "<group>"; };
+		F56190F33083950D00EF1342 /* BundleCTACard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCTACard.swift; sourceTree = "<group>"; };
 		F56831EB30330C1200D0B62D /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		F56A463B2F75739900B3D2FC /* MainRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRoute.swift; sourceTree = "<group>"; };
 		F56A463D2F75775D00B3D2FC /* MainNavViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavViewModel.swift; sourceTree = "<group>"; };
@@ -552,6 +621,7 @@
 		F56EA619302724E00092972D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F56EA61B302725A70092972D /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		F56EA61D302727E70092972D /* ReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyView.swift; sourceTree = "<group>"; };
+		F577822A3080ECE300FE66C6 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		F57BD090302F15200034DCDB /* SocialSignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupResponse.swift; sourceTree = "<group>"; };
 		F57BD092302F1B230034DCDB /* SocialSignupBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSignupBody.swift; sourceTree = "<group>"; };
 		F57BD0AF30306DC80034DCDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -559,6 +629,10 @@
 		F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTokenBody.swift; sourceTree = "<group>"; };
 		F5820CFB2F9BAC55008B84E2 /* DropDownInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInput.swift; sourceTree = "<group>"; };
 		F5820CFD2F9BC59F008B84E2 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		F58360893081FC7200F90526 /* BundleWithSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleWithSelection.swift; sourceTree = "<group>"; };
+		F583608B30820FDF00F90526 /* BundleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleState.swift; sourceTree = "<group>"; };
+		F583608D308215E100F90526 /* BundleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleViewModel.swift; sourceTree = "<group>"; };
+		F583608F3082276500F90526 /* BundleBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleBottomSheetView.swift; sourceTree = "<group>"; };
 		F585480E300BD82C00D0FDB3 /* DiscussionNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionNoticeView.swift; sourceTree = "<group>"; };
 		F5854812300BE1D400D0FDB3 /* NumPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPostResponse.swift; sourceTree = "<group>"; };
 		F5899FDF300F6BF3005FF391 /* PostBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
@@ -570,6 +644,7 @@
 		F58A268E3039B073004A1B27 /* ContactUsLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsLinks.swift; sourceTree = "<group>"; };
 		F58A26903039C24E004A1B27 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		F58C22FC304FFB4B004F729B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtDetailsScreen.swift; sourceTree = "<group>"; };
 		F58CE9A13029C5A900D1722B /* ReplyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyScreen.swift; sourceTree = "<group>"; };
 		F58CE9A33029C6DF00D1722B /* CreateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReplyBody.swift; sourceTree = "<group>"; };
 		F58CE9A53029C80500D1722B /* UpdateReplyBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReplyBody.swift; sourceTree = "<group>"; };
@@ -580,6 +655,7 @@
 		F58CE9AF3029D47200D1722B /* ReplyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReplyState.swift; path = "Q and A/Features/Community/ViewModel/ReplyState.swift"; sourceTree = SOURCE_ROOT; };
 		F58CE9B13029D94700D1722B /* SingleCommentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCommentResponse.swift; sourceTree = "<group>"; };
 		F58CE9B3302A01FB00D1722B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		F5922BB63082CE5100B113E4 /* ValidateCodeBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeBody.swift; sourceTree = "<group>"; };
 		F593E8C72FD42AD900095719 /* TimerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerResult.swift; sourceTree = "<group>"; };
 		F5941CD62F22124300611063 /* Q and A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Q and A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5941CD92F22124300611063 /* Q_and_AApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_and_AApp.swift; sourceTree = "<group>"; };
@@ -687,6 +763,9 @@
 		F5B101042FD5DB3500B924EF /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
 		F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitTestDialog.swift; sourceTree = "<group>"; };
 		F5B101082FD8125600B924EF /* UnfinishedResultBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfinishedResultBody.swift; sourceTree = "<group>"; };
+		F5B1920F308238CE009468D6 /*  CatBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " CatBundle.swift"; sourceTree = "<group>"; };
+		F5B192113082392D009468D6 /* ParentBundleIdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentBundleIdResponse.swift; sourceTree = "<group>"; };
+		F5B1921330824EE4009468D6 /* BundleCheckoutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCheckoutScreen.swift; sourceTree = "<group>"; };
 		F5B1B3F730062DFB00D7BB57 /* CbtPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostView.swift; sourceTree = "<group>"; };
 		F5B1B3F9300638EA00D7BB57 /* AvartarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvartarView.swift; sourceTree = "<group>"; };
 		F5B1B3FB300656CB00D7BB57 /* ExpandableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableText.swift; sourceTree = "<group>"; };
@@ -694,6 +773,10 @@
 		F5B5A03C2FA60D0F00B11187 /* CbtMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtMode.swift; sourceTree = "<group>"; };
 		F5B5A03E2FA6179900B11187 /* DisabledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledButton.swift; sourceTree = "<group>"; };
 		F5B5A0402FA620FD00B11187 /* ExamSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelect.swift; sourceTree = "<group>"; };
+		F5B728FD30877F5900C2B4BE /* BanksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksResponse.swift; sourceTree = "<group>"; };
+		F5B728FF308784FE00C2B4BE /* BanksState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksState.swift; sourceTree = "<group>"; };
+		F5B72901308785FE00C2B4BE /* BankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewModel.swift; sourceTree = "<group>"; };
+		F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankBottomSheetView.swift; sourceTree = "<group>"; };
 		F5BAF9C13004E5F0005785BF /* Q and A.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Q and A.entitlements"; sourceTree = "<group>"; };
 		F5BAF9C230051B62005785BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F5BAF9C430051BCB005785BF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -733,6 +816,7 @@
 		F5C61BA52FD2EEC30090310A /* GoToQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToQuestionViewModel.swift; sourceTree = "<group>"; };
 		F5C61BA72FD2EF160090310A /* GoToQuestionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToQuestionState.swift; sourceTree = "<group>"; };
 		F5C74D722FA23BB70027131A /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePaymentScreen.swift; sourceTree = "<group>"; };
 		F5CA68FC2F93B209005010AE /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		F5CA68FE2F93B29A005010AE /* SubCatExamsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatExamsResponse.swift; sourceTree = "<group>"; };
 		F5CA69002F93B689005010AE /* SubCatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCatViewModel.swift; sourceTree = "<group>"; };
@@ -754,6 +838,8 @@
 		F5D0BF07300A2CDF0036E377 /* CbtPostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPostScreen.swift; sourceTree = "<group>"; };
 		F5D476562FA106C600713F18 /* ExamSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectView.swift; sourceTree = "<group>"; };
 		F5D476582FA10BD800713F18 /* ExamSelectBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSelectBottomSheetView.swift; sourceTree = "<group>"; };
+		F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBundleTransactionBody.swift; sourceTree = "<group>"; };
+		F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlePaymentViewModel.swift; sourceTree = "<group>"; };
 		F5D82E0D3039E2A300C8621C /* ComingSoonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonConfig.swift; sourceTree = "<group>"; };
 		F5D82E0F3039E2E500C8621C /* ComingSoonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonView.swift; sourceTree = "<group>"; };
 		F5DB3E9E2F740C94003B16F8 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -791,6 +877,13 @@
 		F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75542FE520C5002D38AE /* WrongAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerView.swift; sourceTree = "<group>"; };
 		F5EB75562FE5227B002D38AE /* ReviewAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAnswerView.swift; sourceTree = "<group>"; };
+		F5ED7B0130860DE40096286A /* PortalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalScreen.swift; sourceTree = "<group>"; };
+		F5ED7B03308625750096286A /* PortalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalItem.swift; sourceTree = "<group>"; };
+		F5ED7B05308627150096286A /* PortalBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalBottomSheetView.swift; sourceTree = "<group>"; };
+		F5ED7B07308631A10096286A /* PaymentReceivedCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtScreen.swift; sourceTree = "<group>"; };
+		F5ED7B09308631E90096286A /* PaymentRecievedAgencyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRecievedAgencyScreen.swift; sourceTree = "<group>"; };
+		F5ED7B0B308632150096286A /* EarningsCbtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsCbtScreen.swift; sourceTree = "<group>"; };
+		F5ED7B0D308632330096286A /* EarningsAgencyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyScreen.swift; sourceTree = "<group>"; };
 		F5EF482C3011FC6E00F5B823 /* LinkifiedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkifiedText.swift; sourceTree = "<group>"; };
 		F5F29F842FDB0559003A876B /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		F5F7A7622F3882F70097558D /* gilroy_100.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gilroy_100.ttf; sourceTree = "<group>"; };
@@ -813,6 +906,7 @@
 		F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtState.swift; sourceTree = "<group>"; };
 		F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtViewModel.swift; sourceTree = "<group>"; };
 		F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamWithTitle.swift; sourceTree = "<group>"; };
+		FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1073,6 +1167,7 @@
 				F5F7A7772F388DBE0097558D /* AppFont.swift */,
 				F544D48630405D60007E1CAE /* UpdateStatus.swift */,
 				F544D48830405DA0007E1CAE /* UpdateManager.swift */,
+				F577822A3080ECE300FE66C6 /* Offer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1150,13 +1245,23 @@
 				F5A5A64E30384B0E00A64FC6 /* PaymentResponse.swift */,
 				F5A5A654303853C100A64FC6 /* UserPaymentState.swift */,
 				F5A5A65830385EAE00A64FC6 /* PaymentDetailsResponse.swift */,
+				B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */,
+				AA9010000000000000000001 /* PortalResponse.swift */,
 				F5A5A65A3038624900A64FC6 /* ItemsLoadState.swift */,
 				F5A5A65C3038628800A64FC6 /* PaymentDetailsState.swift */,
+				AA9010000000000000000003 /* PortalState.swift */,
+				AB0290000000000000000001 /* EarningsAgencyState.swift */,
+				AB0190000000000000000003 /* EarningsCbtState.swift */,
+				AB0190000000000000000001 /* EarningsCbtResponse.swift */,
+				AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */,
 				F58A268E3039B073004A1B27 /* ContactUsLinks.swift */,
 				F54BD5DF303B3ED500B1B6D2 /* DeactivateBody.swift */,
 				F54BD5E5303DB20900B1B6D2 /* ProductLoadState.swift */,
 				F57F779B3046E2CE00018918 /* UpdateTokenBody.swift */,
 				F5239E033046FB2700DC1997 /* NotificationPrimerReason.swift */,
+				F5ED7B03308625750096286A /* PortalItem.swift */,
+				F5B728FD30877F5900C2B4BE /* BanksResponse.swift */,
+				F5B728FF308784FE00C2B4BE /* BanksState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1180,6 +1285,15 @@
 				F58A26903039C24E004A1B27 /* AboutScreen.swift */,
 				F54BD5E3303DAEA600B1B6D2 /* MarketplaceProductScreen.swift */,
 				F5239E053046FB6100DC1997 /* NotificationPrimerModifier.swift */,
+				C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */,
+				F5ED7B0130860DE40096286A /* PortalScreen.swift */,
+				F5ED7B05308627150096286A /* PortalBottomSheetView.swift */,
+				F5ED7B07308631A10096286A /* PaymentReceivedCbtScreen.swift */,
+				F5ED7B09308631E90096286A /* PaymentRecievedAgencyScreen.swift */,
+				F5ED7B0B308632150096286A /* EarningsCbtScreen.swift */,
+				F5ED7B0D308632330096286A /* EarningsAgencyScreen.swift */,
+				AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */,
+				F58CAF6D30874D9F00DB508A /* EarningsCbtDetailsScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1193,10 +1307,16 @@
 				F5AAC9E12FBA6F2A003977CA /* PaystackPaymentViewModel.swift */,
 				F5A5A6523038534C00A64FC6 /* UserPaymentsViewModel.swift */,
 				F5A5A65E3038632000A64FC6 /* PaymentDetailsViewModel.swift */,
+				FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */,
+				AA9010000000000000000005 /* PortalViewModel.swift */,
+				AB0290000000000000000003 /* EarningsAgencyViewModel.swift */,
+				AB0190000000000000000005 /* EarningsCbtViewModel.swift */,
+				AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */,
 				F54BD5E7303DB2AC00B1B6D2 /* MarketPlaceProductViewModel.swift */,
 				F5239DFC3046EA5200DC1997 /* NotificationManager.swift */,
 				F5239DFE3046F25300DC1997 /* Pushnotificationrouter.swift */,
 				F5239E013046F58300DC1997 /* AppDelegate.swift */,
+				F5B72901308785FE00C2B4BE /* BankViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1404,6 +1524,18 @@
 				F5CE8266303477A1005D1903 /* CbtHistory.swift */,
 				F5CE826830348175005D1903 /* CbtHistoryResponse.swift */,
 				F5A5A6463036EF2200A64FC6 /* LiveExamResponse.swift */,
+				F55DDC3330811779000039F6 /* UserBundle.swift */,
+				F55DDC35308117C2000039F6 /* BundlePrice.swift */,
+				F55DDC3730811878000039F6 /* GetUserBundleResponse.swift */,
+				F58360893081FC7200F90526 /* BundleWithSelection.swift */,
+				F583608B30820FDF00F90526 /* BundleState.swift */,
+				F5B1920F308238CE009468D6 /*  CatBundle.swift */,
+				F5B192113082392D009468D6 /* ParentBundleIdResponse.swift */,
+				F5272F2E3082859900233723 /* BundleCheckoutState.swift */,
+				F5272F3230828D8500233723 /* Agent.swift */,
+				F5272F3430828E2100233723 /* ValidateCodeResponse.swift */,
+				F5922BB63082CE5100B113E4 /* ValidateCodeBody.swift */,
+				F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1434,6 +1566,9 @@
 				F5E9B3BF2FEAC52100B98FCB /* GoToReviewViewModel.swift */,
 				F5A8CDBB2FF40B7900D3084C /* PracticeScreenViewModel.swift */,
 				F5CE826A30348C79005D1903 /* CbtHistoryViewModel.swift */,
+				F583608D308215E100F90526 /* BundleViewModel.swift */,
+				F5272F303082874600233723 /* BundleCheckoutViewModel.swift */,
+				F5D4955B3084DC6B00A832BF /* BundlePaymentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1536,7 +1671,11 @@
 				F505659E2FF6871B00A89ACB /* ReviewExplanationView.swift */,
 				F5568EE62FFD339E00C72A55 /* VideoRow.swift */,
 				F5568EE82FFD36F200C72A55 /* StudyMaterialRow.swift */,
+				B1D1E0012EE0000000000002 /* BundleOfferingView.swift */,
 				F5CCFF723035C7550074443A /* CbtHistoryView.swift */,
+				F583608F3082276500F90526 /* BundleBottomSheetView.swift */,
+				F56190F33083950D00EF1342 /* BundleCTACard.swift */,
+				F5B729033087887E00C2B4BE /* BankBottomSheetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1571,6 +1710,8 @@
 				F50565A02FF6D6D000A89ACB /* ReviewExplanationScreen.swift */,
 				F50018453001119100E98437 /* StudyNoteScreen.swift */,
 				F5CE826430346636005D1903 /* CbtHistoryScreen.swift */,
+				F5B1921330824EE4009468D6 /* BundleCheckoutScreen.swift */,
+				F5C7CCA73083519200150A08 /* BundlePaymentScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -1762,6 +1903,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */,
+				FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */,
+				CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */,
 				F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */,
 				F5D04F1E2F73E7B2008FF390 /* CustomBottomNav.swift in Sources */,
 				F56EA61C302725A70092972D /* Reply.swift in Sources */,
@@ -1781,6 +1925,7 @@
 				F5C12EBB2F72C625000861B6 /* MainBookScreen.swift in Sources */,
 				F5A13C712F8E5A8500B1B22F /* MockDescriptionScreen.swift in Sources */,
 				F58CE9B03029D47200D1722B /* ReplyState.swift in Sources */,
+				F5B192123082392D009468D6 /* ParentBundleIdResponse.swift in Sources */,
 				F5BF8FF32FD16EDA00C55E68 /* GoToQuestion.swift in Sources */,
 				F5A716B92FFE8CBA0046D33E /* PDFCacheManager.swift in Sources */,
 				F56A463E2F75775D00B3D2FC /* MainNavViewModel.swift in Sources */,
@@ -1788,6 +1933,7 @@
 				F5A5A6613038653C00A64FC6 /* PaymentDetailsScreen.swift in Sources */,
 				F535C2ED302DE6A80055E168 /* ConfirmPhoneView.swift in Sources */,
 				F59482C72F2CD7FF0030C541 /* SplashScreen.swift in Sources */,
+				F5B72900308784FE00C2B4BE /* BanksState.swift in Sources */,
 				F5899FE83010B69E005FF391 /* ImagePicker.swift in Sources */,
 				F5A716B72FFE645E0046D33E /* ClipboardGuard.swift in Sources */,
 				F5C61BA82FD2EF160090310A /* GoToQuestionState.swift in Sources */,
@@ -1838,23 +1984,28 @@
 				F55021312F80E7F70057C2F0 /* LoginViewModel.swift in Sources */,
 				F54BD5E6303DB20900B1B6D2 /* ProductLoadState.swift in Sources */,
 				F5A883A32FEFAA4F008C85EC /* PracticeView.swift in Sources */,
+				F5B728FE30877F5900C2B4BE /* BanksResponse.swift in Sources */,
 				F5AF11E9303F0C6A006A95B3 /* ScreenCaptureMonitor.swift in Sources */,
 				F529E88D2FE28BD9007C3494 /* TabItem.swift in Sources */,
 				F5BAF9C530051BCB005785BF /* Post.swift in Sources */,
 				F5E144E92F7FB70900C10F3A /* Constants.swift in Sources */,
 				F5C61BA42FD2EDE60090310A /* GoToQuestionBottomSheetView.swift in Sources */,
 				F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */,
+				F5ED7B08308631A10096286A /* PaymentReceivedCbtScreen.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
 				F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */,
+				F5D4955A3084DAE600A832BF /* PostBundleTransactionBody.swift in Sources */,
 				F529E88F2FE29753007C3494 /* CustomTabBar.swift in Sources */,
 				F5A13C6F2F8E595F00B1B22F /* ExamCatScreen.swift in Sources */,
 				F5AAC9E02FBA6E82003977CA /* PaystackPaymentState.swift in Sources */,
+				F583608A3081FC7200F90526 /* BundleWithSelection.swift in Sources */,
 				F5899FE4300F82F7005FF391 /* OptionBottomSheet.swift in Sources */,
 				F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */,
 				F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */,
 				F51C58CB2F98FB3F00CE9931 /* SubCatExamItemView.swift in Sources */,
 				F544D49130406226007E1CAE /* ClearBackgroundView.swift in Sources */,
+				F55DDC36308117C2000039F6 /* BundlePrice.swift in Sources */,
 				F5239DFF3046F25300DC1997 /* Pushnotificationrouter.swift in Sources */,
 				F5BD4A2C2F2B68C70020A8A4 /* MainStackView.swift in Sources */,
 				F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */,
@@ -1862,10 +2013,14 @@
 				F5C12E942F728472000861B6 /* FeatureItemView.swift in Sources */,
 				F5A5A6573038563100A64FC6 /* UserPaymentScreen.swift in Sources */,
 				F58CE9A23029C5A900D1722B /* ReplyScreen.swift in Sources */,
+				F5ED7B0A308631E90096286A /* PaymentRecievedAgencyScreen.swift in Sources */,
 				F5A32EC82FB0C6FB001023A4 /* CbtCartState.swift in Sources */,
+				F5272F313082874600233723 /* BundleCheckoutViewModel.swift in Sources */,
 				F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */,
 				F5BF8FF72FD16F8900C55E68 /* GoToQuestionItemView.swift in Sources */,
 				F5A5A65B3038624900A64FC6 /* ItemsLoadState.swift in Sources */,
+				F5ED7B0E308632330096286A /* EarningsAgencyScreen.swift in Sources */,
+				AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */,
 				F59D32882F90E3030045C4AA /* CatItemView.swift in Sources */,
 				F5B101012FD5D9C500B924EF /* MultipleResultScreen.swift in Sources */,
 				F5D0BEFE300A18E00036E377 /* CommunityApi.swift in Sources */,
@@ -1873,13 +2028,18 @@
 				F55021332F80EA170057C2F0 /* StringExtensions.swift in Sources */,
 				F5B101092FD8125600B924EF /* UnfinishedResultBody.swift in Sources */,
 				F54578EB2FCD9327008FF056 /* FullPassageView.swift in Sources */,
+				F5272F3330828D8500233723 /* Agent.swift in Sources */,
 				F5A716C82FFF9A5D0046D33E /* PdfLoaderScreen.swift in Sources */,
 				F58CE9AA3029CA0000D1722B /* LikeReplyBody.swift in Sources */,
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
+				F577822B3080ECE300FE66C6 /* Offer.swift in Sources */,
+				F58360903082276500F90526 /* BundleBottomSheetView.swift in Sources */,
 				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
+				F5922BB73082CE5100B113E4 /* ValidateCodeBody.swift in Sources */,
 				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
 				F59645912FA7C0590052C9A4 /* ExamResult.swift in Sources */,
+				F55DDC3430811779000039F6 /* UserBundle.swift in Sources */,
 				F526A8062F7037D400BF414A /* IntroPage.swift in Sources */,
 				F544D48D30405E3D007E1CAE /* UpdateDialogView.swift in Sources */,
 				F5CA68FF2F93B29A005010AE /* SubCatExamsResponse.swift in Sources */,
@@ -1888,11 +2048,15 @@
 				F54578E32FC9C06C008FF056 /* LiveExamUpdateMode.swift in Sources */,
 				F5AE93482F86A50B0003CAA5 /* ChangePasswordRequest.swift in Sources */,
 				F5CCFF733035C7550074443A /* CbtHistoryView.swift in Sources */,
+				F5ED7B0C308632150096286A /* EarningsCbtScreen.swift in Sources */,
 				F5A5A65930385EAE00A64FC6 /* PaymentDetailsResponse.swift in Sources */,
+				AA9010000000000000000002 /* PortalResponse.swift in Sources */,
 				F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */,
 				F5A801BA3020D9C500005296 /* Comment.swift in Sources */,
+				F5ED7B0230860DE40096286A /* PortalScreen.swift in Sources */,
 				F5BB95062FE6C342004EDA26 /* AnswerStatus.swift in Sources */,
 				F54578ED2FCDE179008FF056 /* AnswerView.swift in Sources */,
+				F5B1921430824EE5009468D6 /* BundleCheckoutScreen.swift in Sources */,
 				F51C58C72F98EF0A00CE9931 /* SubCatState.swift in Sources */,
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */,
@@ -1906,8 +2070,10 @@
 				F58CE9B23029D94700D1722B /* SingleCommentResponse.swift in Sources */,
 				F500184A30014C3200E98437 /* StudyNoteButton.swift in Sources */,
 				F5B100FF2FD5D39000B924EF /* MockExamResultScreen.swift in Sources */,
+				F583608C30820FDF00F90526 /* BundleState.swift in Sources */,
 				F5A8CDB62FF3E08100D3084C /* ExplanationStatus.swift in Sources */,
 				F5D0BF02300A23930036E377 /* PostResponse.swift in Sources */,
+				F5B729043087887E00C2B4BE /* BankBottomSheetView.swift in Sources */,
 				F5A716BB2FFE8D690046D33E /* PDFDownloader.swift in Sources */,
 				F50018442FFFEF1A00E98437 /* GoToPageView.swift in Sources */,
 				F5C12E8E2F7171A0000861B6 /* UserRole.swift in Sources */,
@@ -1918,11 +2084,20 @@
 				F54578F12FCEC0C1008FF056 /* ShimmerView.swift in Sources */,
 				F5E9B3BC2FE98B0700B98FCB /* GoToReview.swift in Sources */,
 				F5A5A65F3038632000A64FC6 /* PaymentDetailsViewModel.swift in Sources */,
+				AA9010000000000000000006 /* PortalViewModel.swift in Sources */,
+				AB0290000000000000000004 /* EarningsAgencyViewModel.swift in Sources */,
+				AB0290000000000000000002 /* EarningsAgencyState.swift in Sources */,
+				AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */,
+				AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */,
+				AB0190000000000000000006 /* EarningsCbtViewModel.swift in Sources */,
+				AB0190000000000000000004 /* EarningsCbtState.swift in Sources */,
+				AB0190000000000000000002 /* EarningsCbtResponse.swift in Sources */,
 				F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */,
 				F5285A0D3021F109002268D5 /* CommentViewModel.swift in Sources */,
 				F59A8FA22FB624DB00823C77 /* CbtPaymentState.swift in Sources */,
 				F5BAF9C330051B62005785BF /* User.swift in Sources */,
 				F5A812372FEC055400EB0496 /* MathView.swift in Sources */,
+				F5272F3530828E2100233723 /* ValidateCodeResponse.swift in Sources */,
 				F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */,
 				F5D0BF04300A27A40036E377 /* PostState.swift in Sources */,
 				F5A801B63020BFD100005296 /* CommentPostView.swift in Sources */,
@@ -1943,7 +2118,9 @@
 				F53268CB2FC460D70016CD4F /* CatScreen.swift in Sources */,
 				F56A46462F797AE600B3D2FC /* NavMenuView.swift in Sources */,
 				F5A5A6473036EF2300A64FC6 /* LiveExamResponse.swift in Sources */,
+				F58CAF6E30874D9F00DB508A /* EarningsCbtDetailsScreen.swift in Sources */,
 				F5A8CDB22FF2C63C00D3084C /* IncorrectOptionView.swift in Sources */,
+				F55DDC3830811878000039F6 /* GetUserBundleResponse.swift in Sources */,
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
@@ -1977,6 +2154,7 @@
 				F526A8032F70374600BF414A /* IntroStackView.swift in Sources */,
 				F5E144F22F7FC5E800C10F3A /* LoginResponse.swift in Sources */,
 				F5568EE92FFD36F200C72A55 /* StudyMaterialRow.swift in Sources */,
+				B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */,
 				F59A8F9E2FB61F3000823C77 /* PaymentViewModel.swift in Sources */,
 				F5EF482D3011FC6E00F5B823 /* LinkifiedText.swift in Sources */,
 				F5AE93362F854C280003CAA5 /* ForgotPasswordState.swift in Sources */,
@@ -1990,6 +2168,7 @@
 				F5BD4A302F2B6E5D0020A8A4 /* UserSettings.swift in Sources */,
 				F54578F52FCEC309008FF056 /* DeselectedAnswerView.swift in Sources */,
 				F5A5A65D3038628800A64FC6 /* PaymentDetailsState.swift in Sources */,
+				AA9010000000000000000004 /* PortalState.swift in Sources */,
 				F5B0025E3032FE2F005DC0C9 /* WebViewScreen.swift in Sources */,
 				F5A32ED12FB0D3FB001023A4 /* EmptyCartView.swift in Sources */,
 				F5E144F52F7FC67C00C10F3A /* AuthApi.swift in Sources */,
@@ -2005,8 +2184,10 @@
 				F53268DB2FC468A50016CD4F /* CatExamSelect.swift in Sources */,
 				F5BB950A2FE6DCA9004EDA26 /* ReviewMultipleAnswerView.swift in Sources */,
 				F55021422F82AE450057C2F0 /* Toast.swift in Sources */,
+				F56190F43083950D00EF1342 /* BundleCTACard.swift in Sources */,
 				F5C12E9D2F72A1FE000861B6 /* OnboardingFlow.swift in Sources */,
 				F5285A093021E99A002268D5 /* ForumCommentResponse.swift in Sources */,
+				F5B19210308238CE009468D6 /*  CatBundle.swift in Sources */,
 				F56A46402F757F9800B3D2FC /* LoginScreen.swift in Sources */,
 				F5568EF02FFD472F00C72A55 /* YoutubePlayerScreen.swift in Sources */,
 				F5DB3E9F2F740C94003B16F8 /* MainScreen.swift in Sources */,
@@ -2015,6 +2196,7 @@
 				F5285A073021E7DF002268D5 /* CommentScreen.swift in Sources */,
 				F5A812302FEBD8E000EB0496 /* AskAiCbtBody.swift in Sources */,
 				F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */,
+				F5C7CCA83083519200150A08 /* BundlePaymentScreen.swift in Sources */,
 				F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */,
 				F5B101052FD5DB3500B924EF /* ResultScreen.swift in Sources */,
 				F50018483001474F00E98437 /* InstructionCallout.swift in Sources */,
@@ -2022,11 +2204,14 @@
 				F535C2F3302DF92F0055E168 /* AppleUser.swift in Sources */,
 				F5B5A0412FA620FD00B11187 /* ExamSelect.swift in Sources */,
 				F522B2943024AFED008F4D3A /* SinglePostResponse.swift in Sources */,
+				F5D4955C3084DC6B00A832BF /* BundlePaymentViewModel.swift in Sources */,
+				F5B72902308785FE00C2B4BE /* BankViewModel.swift in Sources */,
 				F5A8CDB02FF2BDA100D3084C /* GreatWorkView.swift in Sources */,
 				F54762BC2F92E69D00BB1366 /* SubCatScreen.swift in Sources */,
 				F5285A0B3021F04B002268D5 /* CommentState.swift in Sources */,
 				F5AE93422F863AB10003CAA5 /* GlobalBottomSheetView.swift in Sources */,
 				F5D04F1C2F73E6F7008FF390 /* CurvedTabBarShape.swift in Sources */,
+				F583608E308215E100F90526 /* BundleViewModel.swift in Sources */,
 				F5BB95082FE6DA34004EDA26 /* AnswerStatusView.swift in Sources */,
 				F5B5A03D2FA60D0F00B11187 /* CbtMode.swift in Sources */,
 				F500CBB72F87CB0300111B77 /* ChangePasswordViewModel.swift in Sources */,
@@ -2051,6 +2236,7 @@
 				F5F29F852FDB0559003A876B /* CalculatorView.swift in Sources */,
 				F5D476572FA106C700713F18 /* ExamSelectView.swift in Sources */,
 				F5E144FB2F7FEEA100C10F3A /* ApiClient.swift in Sources */,
+				F5ED7B06308627150096286A /* PortalBottomSheetView.swift in Sources */,
 				F5CA69012F93B689005010AE /* SubCatViewModel.swift in Sources */,
 				F53268CD2FC460F30016CD4F /* TheoryCatScreen.swift in Sources */,
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
@@ -2102,9 +2288,11 @@
 				F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */,
 				F5854813300BE1D400D0FDB3 /* NumPostResponse.swift in Sources */,
 				F5C12EB72F72C5AE000861B6 /* MainCbtScreen.swift in Sources */,
+				F5ED7B04308625750096286A /* PortalItem.swift in Sources */,
 				F5C12E992F728FCC000861B6 /* PrimaryButton.swift in Sources */,
 				F55021462F82B07E0057C2F0 /* ToastBannerModifier.swift in Sources */,
 				F58CE9A83029C97600D1722B /* DeleteReplyBody.swift in Sources */,
+				F5272F2F3082859900233723 /* BundleCheckoutState.swift in Sources */,
 				F58A26913039C24E004A1B27 /* AboutScreen.swift in Sources */,
 				F5FEC4142F8CFD8E004C8D53 /* CbtService.swift in Sources */,
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
@@ -2268,7 +2456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
@@ -2285,7 +2473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2308,7 +2496,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Q and A/Q and A.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Q and A/Preview Content\"";
 				DEVELOPMENT_TEAM = H7KR2SDWJ6;
 				ENABLE_PREVIEWS = YES;
@@ -2325,7 +2513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -67,11 +67,11 @@ struct NavMenuView: View {
                     onMenuSelected(.cbtHistory)
                 }
                 
-                drawerItem(title: "Payment History",
+                drawerItem(title: "My Portal",
                            imageResource:"nav_portal",
                            colour: Color("NavBlue")
                 ){
-                    onMenuSelected(.paymentHistory)
+                    onMenuSelected(.myPortal)
                 }
                 
                 /*
@@ -174,12 +174,15 @@ struct NavMenuView: View {
             }
             */
             
-            drawerItem(title: "Terms and Conditions",
-                   imageResource:"nav_terms",
-                   colour: Color("SecColor")
+            drawerItem(title: "About",
+                   imageResource:"nav_about",
+                   colour: Color("NavBlack")
             ){
-                onMenuSelected(.termsAndConditions)
+                onMenuSelected(.about)
             }
+           
+            
+           
             
             drawerItem(title: "Privacy Policy",
                    imageResource:"nav_copyright",
@@ -188,14 +191,14 @@ struct NavMenuView: View {
                 onMenuSelected(.privacyPolicy)
             }
             
-          
-            drawerItem(title: "About",
-                   imageResource:"nav_about",
-                   colour: Color("NavBlack")
+            drawerItem(title: "Terms and Conditions",
+                   imageResource:"nav_terms",
+                   colour: Color("SecColor")
             ){
-                onMenuSelected(.about)
+                onMenuSelected(.termsAndConditions)
             }
-           
+          
+          
             
             if(mainScreenViewModel.userProfileState.isLoggedIn){
                 drawerItem(title: "Deactivate Account",

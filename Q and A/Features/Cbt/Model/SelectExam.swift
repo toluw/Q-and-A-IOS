@@ -11,6 +11,7 @@ struct SelectExam{
     let exams: [Exam]
     let position: Int
     let title: String
+    var catBundle: CatBundle? = nil
     
     
 }

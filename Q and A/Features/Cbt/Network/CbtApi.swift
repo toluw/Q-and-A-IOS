@@ -25,6 +25,10 @@ enum CbtAPI {
     case getNumPost(examId: String, questionId: String)
     case getCbtHistory(buyerEmail: String, isCompleted: String, page: String, pageSize: String = String(PAGE_SIZE))
     case getLiveExam(resultId: String)
+    case getBundles(buyerEmail: String, level: String, cbcId: String)
+    case getParentBundleId(level: String, cbcId: String)
+    case validateCode(validateCodeBody: ValidateCodeBody)
+    case postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody)
     
 }
 
@@ -63,6 +67,14 @@ extension CbtAPI: TargetType{
            return  "v2/get_cbt_history.php"
         case .getLiveExam:
             return  "v2/get_live_exam.php"
+        case .getBundles:
+            return "v2/get_user_bundle.php"
+        case .getParentBundleId:
+            return "v2/get_parent_bundle_id.php"
+        case .validateCode:
+            return "v2/validate_code.php"
+        case .postBundleTransaction:
+           return "v2/post_bundle_transaction.php"
         }
     
     }
@@ -97,6 +109,14 @@ extension CbtAPI: TargetType{
                 .get
         case .getLiveExam:
                 .get
+        case .getBundles:
+                .get
+        case .getParentBundleId:
+                .get
+        case .validateCode:
+                .post
+        case .postBundleTransaction:
+                .post
         }
     }
     
@@ -238,6 +258,32 @@ extension CbtAPI: TargetType{
             }
             
            
+        case .getBundles(buyerEmail: let buyerEmail, level: let level, cbcId: let cbcId):
+            do{
+                var params: [String: Any] = [:]
+                params.addOptional(key: "buyer_email", value: buyerEmail)
+                params.addOptional(key: "level", value: level)
+                params.addOptional(key: "cbc_id", value: cbcId)
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+            }
+            
+        case .getParentBundleId(level: let level, cbcId: let cbcId):
+            do{
+                var params: [String: Any] = [:]
+                params.addOptional(key: "level", value: level)
+                params.addOptional(key: "cbc_id", value: cbcId)
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+            }
+        case .validateCode(validateCodeBody: let validateCodeBody):
+            return .requestJSONEncodable(validateCodeBody)
+        case .postBundleTransaction(postBundleTransactionBody: let postBundleTransactionBody):
+            return .requestJSONEncodable(postBundleTransactionBody)
         }
         
        

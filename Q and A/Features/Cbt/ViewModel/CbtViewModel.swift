@@ -38,6 +38,11 @@ class CbtViewModel: ObservableObject{
     
     private var timer: Timer?
     
+    @Published var activeOffer: Offer? = nil
+    var offerTitle: String = ""
+    var selectedBundles: [UserBundle] = []
+    var agent: Agent? = nil
+    
     
     private let cbtService: CbtServiceProtocol
    
@@ -385,6 +390,22 @@ class CbtViewModel: ObservableObject{
         
     }
     
+    func getBundlePaystackMetaData() -> PaystackMetaData {
+        guard !selectedBundles.isEmpty else {
+            return PaystackMetaData(custiomFields: [])
+        }
+
+        let paymentDataList: [PaymentData] = selectedBundles.map {
+            PaymentData(
+                title: $0.item,
+                paymentType: "bundle",
+                category: "bundle_id:\($0.bundleId)-\(agent?.code ?? "")"
+            )
+        }
+
+        return PaystackMetaData(custiomFields: paymentDataList)
+    }
+    
     
     func getTransactionBody(buyerEmail: String, reference: String, processor: Int) -> PostTransactionBody{
         
@@ -395,6 +416,17 @@ class CbtViewModel: ObservableObject{
         }
         
         return PostTransactionBody(buyer_email: buyerEmail, reference: reference, exams: transactions, processor: processor)
+    }
+    
+    
+    func getBundleTransactionBody(buyerEmail: String, reference: String, processor: Int) -> PostBundleTransactionBody{
+        
+        let data: [BundlePost] = selectedBundles.map {
+            BundlePost(bundleId: $0.bundleId)
+        }
+        
+        return PostBundleTransactionBody(buyerEmail: buyerEmail, reference: reference, isAndroid: "0", processor: processor, code: agent?.code, data: data)
+        
     }
     
     

@@ -21,6 +21,10 @@ protocol CbtServiceProtocol {
     func getNumPost(examId: String, questionId: String) async throws -> NumPostResponse
     func getCbtHistory(buyerEmail: String, isCompleted: String, page: String) async throws -> CbtHistoryResponse
     func getLiveExam(resultId: String) async throws -> LiveExamResponse
+    func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse
+    func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse
+    func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse
+    func postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody) async throws -> GeneralResponse
     
     
     
@@ -28,7 +32,9 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
-    
+   
+   
+  
    
     private let apiClient = APIClient<CbtAPI>()
     
@@ -51,6 +57,17 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    func getBundles(buyerEmail: String, level: String, cbcId: String) async throws -> GetUserBundleResponse {
+        return try await apiClient.request(
+            .getBundles(buyerEmail: buyerEmail, level: level, cbcId: cbcId),
+            responseType: GetUserBundleResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     
    
@@ -108,6 +125,16 @@ final class CbtService: CbtServiceProtocol{
         );
     }
     
+    func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse {
+        return try await apiClient.request(
+            .getParentBundleId(level: level, cbcId: cbcId),
+            responseType: ParentBundleIdResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        );
+    }
+    
     
     func getMultipleExams(multipleExamBody: MultipleExamsBody) async throws -> MultipleExamsResponse {
         return try await apiClient.request(
@@ -118,6 +145,8 @@ final class CbtService: CbtServiceProtocol{
             }
         );
     }
+    
+    
     
    
     
@@ -138,6 +167,14 @@ final class CbtService: CbtServiceProtocol{
         })
     }
     
+    
+    func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse {
+        return try await apiClient.request(.validateCode(validateCodeBody: validateCodeBody), responseType: ValidateCodeResponse.self, errorParser: {data in
+            data.jsonString(forKey: "message") ?? "An error occured"
+        })
+    }
+    
+    
     func postUnfinishedResult(unfinishedResultBody: UnfinishedResultBody) async throws -> GeneralResponse {
         return try await apiClient.request(
             .postUnFinishedResult(unFinishedResultBody: unfinishedResultBody),
@@ -155,6 +192,19 @@ final class CbtService: CbtServiceProtocol{
     func postTransaction(postTransactionBody: PostTransactionBody) async throws -> GeneralResponse {
         return try await apiClient.request(
             .postTransaction(postTransactionBody: postTransactionBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+    }
+    
+    
+    
+    func postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody) async throws -> GeneralResponse {
+        return try await apiClient.request(
+            .postBundleTransaction(postBundleTransactionBody: postBundleTransactionBody),
             responseType: GeneralResponse.self,
             errorParser: {data in
                 data.jsonString(forKey: "message") ?? "An error occured"

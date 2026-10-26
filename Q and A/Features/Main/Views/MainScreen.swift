@@ -178,6 +178,8 @@ struct MainScreen: View {
             privacyPolicy()
         case .deactivateAccount:
             deactivateAccount()
+        case .myPortal:
+            myPortal()
         }
     }
     
@@ -187,6 +189,10 @@ struct MainScreen: View {
            UIApplication.shared.open(url)
             // navVm.navigate(route: .webviewScreen(url: url))
         }
+    }
+    
+    private func myPortal(){
+        navVm.navigate(route: .portalScreen)
     }
     
     private func paymentHistory(){

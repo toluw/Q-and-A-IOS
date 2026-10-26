@@ -17,3 +17,22 @@ extension Array where Element == ExamPay {
         return allSatisfy { $0.exam.price == firstPrice }
     }
 }
+
+extension Array where Element == UserBundle {
+    func getTotalPrice() -> BundlePrice {
+        return BundlePrice(
+            price: reduce(0) { $0 + $1.price },
+            originalPrice: reduce(0) { $0 + $1.originalPrice },
+            discountedPrice: reduce(0) { $0 + $1.discountedPrice }
+        )
+    }
+}
+
+extension Array where Element == CatExams {
+    func isLockedExamPresent() -> Bool {
+        return contains { !$0.exam.isProvisioned }
+    }
+}
+
+
+

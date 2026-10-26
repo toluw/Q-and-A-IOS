@@ -11,6 +11,13 @@ import Moya
 
 
 enum MainApi {
+    case getAccount(email: String)
+    case setAccount(body: SetAccountBody)
+    case getAgentPayoutHistory(email: String)
+    case getCbtPayoutHistory(email: String)
+    case getAgentIncome(email: String)
+    case getIncome(email: String)
+    case getPortalData(email: String)
    
     case getUserPayments(email: String, page: String)
     case getPaymentDetail(type: String, reference: String)
@@ -28,6 +35,18 @@ extension MainApi: TargetType{
     
     var path: String {
         switch self{
+        case .getAccount: return "v2/get_account.php"
+        case .setAccount: return "v2/set_account.php"
+        case .getAgentPayoutHistory:
+            return "v2/get_agent_payout_history.php"
+        case .getCbtPayoutHistory:
+            return "v2/get_cbt_payout_history.php"
+        case .getAgentIncome:
+            return "v2/get_agent_income.php"
+        case .getIncome:
+            return "v2/get_income.php"
+        case .getPortalData:
+            return "v2/get_portal_data.php"
             
         case .getUserPayments:
             return "v2/get_user_payments.php"
@@ -42,6 +61,17 @@ extension MainApi: TargetType{
     
     var method: Moya.Method {
         switch self{
+        case .getAccount, .setAccount: .post
+        case .getAgentPayoutHistory:
+            .get
+        case .getCbtPayoutHistory:
+            .get
+        case .getAgentIncome:
+            .get
+        case .getIncome:
+            .get
+        case .getPortalData:
+            .get
             
         case .getUserPayments:
             .get
@@ -56,6 +86,20 @@ extension MainApi: TargetType{
     
     var task: Moya.Task {
         switch self{
+        case .getAccount(let email):
+            return .requestParameters(parameters: ["email": email], encoding: JSONEncoding.default)
+        case .setAccount(let body):
+            return .requestJSONEncodable(body)
+        case .getAgentPayoutHistory(let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
+        case .getCbtPayoutHistory(let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
+        case .getAgentIncome(let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
+        case .getIncome(let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
+        case .getPortalData(email: let email):
+            return .requestParameters(parameters: ["email": email], encoding: URLEncoding.queryString)
             
         case .getUserPayments(email: let email, page: let page):
             do{

@@ -10,8 +10,8 @@ import Foundation
 struct SubCatState{
     
     var isLoading: Bool = false
-    var initItems: [SubCatExams] = []
     var errorMessage: String? = nil
+    var initItems: [SubCatExams] = []
     var items: [SubCatExams] = []
     var examSelectList: [SubCatExamSelect] = []
     var maxExamSelectedMessage: String = ""
@@ -23,6 +23,11 @@ struct SubCatState{
     var multipleExamData: [MultipleExamsResponse.MultipleExamData] = []
     var showPaymentSheet: Bool = false
     var examWithTitle: ExamWithTitle? = nil
+    var catBundle: CatBundle? = nil
+    var bundleBottomSheetOffer: Offer? = nil
+    var bundleBottomSheetBundleId: String? = nil
+    var showBundleBottomSheet = false
+    var showBundleOfferings = false
     
     
 }

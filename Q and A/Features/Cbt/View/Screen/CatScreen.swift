@@ -15,7 +15,10 @@ struct CatScreen: View {
     @StateObject var viewModel: CatViewModel = .init()
     
     var body: some View {
-        
+        screenWithSheets
+    }
+
+    private var screenContent: some View {
         ZStack{
             if(viewModel.state.isLoading){
                 
@@ -133,62 +136,110 @@ struct CatScreen: View {
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        
-         .onChange(of: navVm.activeRoute){_, route in
-                
-                //Reload data when resume back from stack
-                
-                
-                
-                if (route != .examCatScreen)
-                {
-                    return
-                    
-                }
-             
-             viewModel.reInitExamSelection()
-             
-            if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                Task{
-                   await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                }
-             
-             }
-                
-            }
-           .task {
-             
-             //Load data when screen is first created
-             
-           
-             
-             if(navVm.activeRoute != .examCatScreen){
-                 return
-             }
-             
-            
-             viewModel.reInitExamSelection()
-             
-             if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                 
-                    await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                 
-              
-             }
-             
-         }
-           
-            .onChange(of: viewModel.state.searchText){previous, newValue in
-               
+    }
+
+    private var screenWithLifecycle: some View {
+        screenWithLoading
+            .onChange(of: viewModel.state.searchText) { _, newValue in
                 search(newValue: newValue)
+            }
+            .onChange(of: viewModel.state.initItems) { _, newValue in
+                if !newValue.isEmpty {
+                    setOffer()
+                }
+            }
+            .onChange(of: viewModel.state.examSelectList) { _, items in
+                updateBundleOfferings(for: items)
+            }
+    }
+
+    private var screenWithLoading: some View {
+        screenContent
+            .onChange(of: navVm.activeRoute) { _, route in
+                guard route == .examCatScreen else { return }
+                Task {
+                    await reloadExams()
+                }
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                bundleOffering
+            }
+            .task {
+                guard navVm.activeRoute == .examCatScreen else { return }
+                await reloadExams()
+            }
+    }
+
+    @ViewBuilder
+    private var bundleOffering: some View {
+        if viewModel.state.showBundleOfferings {
+            BundleOfferingView(
+                offerType: cbtViewModel.parentCategoriesData?.offerType
+                    ?? cbtViewModel.activeOffer?.offerType ?? "",
+                onExpand: { onBundleClicked() }
+            )
+        }
+    }
+
+    private func reloadExams() async {
+        viewModel.reInitExamSelection()
+        if let cbtId = cbtViewModel.parentCategoriesData?.catData?.cbtId {
+            await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+        }
+    }
+
+    private func updateBundleOfferings(for items: [CatExamSelect]) {
+        guard items.isEmpty else {
+            viewModel.state.showBundleOfferings = false
+            return
+        }
+        if let category = cbtViewModel.parentCategoriesData {
+            let hasLockedExam = viewModel.state.initItems.isLockedExamPresent()
+            let hasOffer = category.hasOffer || cbtViewModel.activeOffer != nil
+            viewModel.state.showBundleOfferings = hasOffer && hasLockedExam
+        }
+    }
+
+    private func setOffer(){
+        
+        
+        if let it = cbtViewModel.parentCategoriesData{
+            
+            if(it.hasOffer && viewModel.state.initItems.isLockedExamPresent()){
                 
-            }.sheet(isPresented: $viewModel.state.showPaymentSheet){
+                cbtViewModel.activeOffer = nil
+                viewModel.offer = Offer(offerId: it.offerId, offerType: it.offerType, hasOffer: it.hasOffer, cbcId: it.cbcId, level: it.level, title: it.item
+                    
+                )
+                viewModel.state.showBundleOfferings = true
+                
+            }else if(cbtViewModel.activeOffer != nil && viewModel.state.initItems.isLockedExamPresent()){
+                viewModel.offer = cbtViewModel.activeOffer
+                viewModel.state.showBundleOfferings = true
+            }else{
+                viewModel.state.showBundleOfferings = false
+            }
+            
+        }
+        
+    }
+
+    private var screenWithSheets: some View {
+        screenWithLifecycle
+            .sheet(isPresented: $viewModel.state.showPaymentSheet){
                 
                 if(viewModel.premExam != nil){
                     
                     ExamPayBottomSheetView(
                         examWithTitle: ExamWithTitle(exam: viewModel.premExam!.exam, title: cbtViewModel.parentCategoriesData?.item ?? ""),
+                        catBundle: viewModel.state.catBundle,
                       premiumExams: viewModel.premExam!.premiumExams,
+                        onViewBundle: {data in
+                            if let activeOffer = viewModel.offer{
+                                viewModel.state.showPaymentSheet = false
+                                viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
+                            }
+                        },
                       onClose: {
                         viewModel.state.showPaymentSheet = false
                     }, onPaymentClicked: {items in
@@ -200,6 +251,26 @@ struct CatScreen: View {
                         viewModel.state.showPaymentSheet = false
                         navVm.navigate(route: .cbtCartScreen)
                     }).presentationDetents([.large])
+                    
+                }
+                
+            }
+            .sheet(isPresented: $viewModel.state.showBundleBottomSheet){
+                
+                if(viewModel.state.bundleBottomSheetOffer != nil){
+                    BundleBottomSheetView(offer: viewModel.state.bundleBottomSheetOffer!, bundleId: viewModel.state.bundleBottomSheetBundleId, onContinue: {data in
+                        cbtViewModel.selectedBundles = data
+                        cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
+                        viewModel.state.showBundleBottomSheet = false
+                        moveToBundleCheckout()
+                        
+                    },
+                    onDismis: {
+                        
+                        viewModel.state.showBundleBottomSheet = false
+                    })
+                    .presentationDetents([.large])
+                        
                     
                 }
                 
@@ -274,6 +345,31 @@ struct CatScreen: View {
           
     }
     
+    private func moveToBundleCheckout(){
+        navVm.navigate(route: .bundleCheckoutScreen)
+    }
+    
+    private func onBundleClicked(){
+        if(UserSettings.isLoggedIn){
+            
+            if let activeOffer = viewModel.offer{
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.showBundleBottomSheet(bundleId: nil, offer: activeOffer)
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: false)
+                }
+                
+            }
+            
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
+        
+    }
+    
     
     private func moveToPractice(){
         
@@ -313,7 +409,20 @@ struct CatScreen: View {
             viewModel.showLogin = true
         }else{
             viewModel.premExam = premExam
-            viewModel.state.showPaymentSheet = true
+            
+            if(viewModel.offer != nil){
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.state.catBundle = viewModel.state.selectExam?.catBundle
+                    viewModel.state.showPaymentSheet = true
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: true)
+                }
+                
+            }else{
+                viewModel.state.catBundle = nil
+                viewModel.state.showPaymentSheet = true
+            }
         }
     }
     

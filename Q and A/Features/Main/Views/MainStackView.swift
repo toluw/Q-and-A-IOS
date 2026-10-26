@@ -51,8 +51,8 @@ struct MainStackView: View {
         case .confirmOtpScreen(otp: let otp, email: let email): ConfirmOtpScreen(otp: otp,email:email, navVm: navVM)
            
         case .changePassword(email: let email): ChangePasswordScreen(email: email, navVm: navVM)
-        case .parentCatScreen(title: let title, cbcId: let cbcId, level: let level, isMock: let isMock):
-            ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, navVm: navVM, cbtViewModel: cbtViewModel)
+        case .parentCatScreen(title: let title, cbcId: let cbcId, level: let level, isMock: let isMock, let hasOffer, let offerType, let offerId):
+            ParentCatScreen(title: title, cbcId: cbcId, level: level, isMock: isMock, hasOffer: hasOffer, offerType: offerType, offerId: offerId ,navVm: navVM, cbtViewModel: cbtViewModel)
         case .examSubCatScreen:
              ExamSubCatScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
         case .examCatScreen:
@@ -117,6 +117,23 @@ struct MainStackView: View {
             MarketplaceProductScreen(price: price, paymentViewModel: paymentViewModel, navVm: navVM)
         case .none:
             EmptyView()
+        
+        case .bundleCheckoutScreen:
+            BundleCheckoutScreen(cbtViewModel: cbtViewModel, navVm: navVM, paymentViewModel: paymentViewModel)
+        case .bundlePaymentScreen:
+            BundlePaymentScreen(navVm: navVM, cbtViewModel: cbtViewModel, paymentViewModel: paymentViewModel)
+        case .updateAccountScreen:
+            UpdateAccountScreen()
+        case .portalScreen:
+            PortalScreen(navVm: navVM)
+        case .earningsCbtScreen:
+            EarningsCbtScreen(navVm: navVM)
+        case .earningsAgencyScreen:
+            EarningsAgencyScreen(navVm: navVM)
+        case .paymentRecievedAgency:
+            PaymentRecievedAgencyScreen(navVm: navVM)
+        case .paymentRecievedCbt:
+            PaymentReceivedCbtScreen(navVm: navVM)
         }
         
     }

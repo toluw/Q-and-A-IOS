@@ -51,6 +51,10 @@ final class PushNotificationRouter: ObservableObject {
             if let commentId = userInfo["comment_id"] as? String {
                 pendingDestination = .replyScreen(comment: nil, commentId: commentId, showKeyPad: false)
             }
+        case "cbt_pay":
+            pendingDestination = .earningsCbtScreen
+        case "cbt_agent":
+            pendingDestination = .earningsAgencyScreen
         default:
             pendingDestination = .none
         }

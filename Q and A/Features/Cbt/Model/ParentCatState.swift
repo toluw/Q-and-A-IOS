@@ -11,12 +11,15 @@ struct ParentCatState{
     
    
     var isLoading: Bool = false
-    var errorMessage: String? = nil
     var parentCatData: [DataModel] = []
     var defaultData: [DataModel] = []
     var emptyStateText: String = "Oops! There is no content yet. Please check back later"
     var searchTxt: String = ""
-    
+    var errorMessage: String? = nil
+    var showBlockedLoader: Bool = false
+    var bundleBottomSheetOffer: Offer? = nil
+    var bundleBottomSheetBundleId: String? = nil
+    var showBundleBottomSheet = false
     
     
     

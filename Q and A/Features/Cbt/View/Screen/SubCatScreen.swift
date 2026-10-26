@@ -15,6 +15,10 @@ struct SubCatScreen: View {
     @StateObject var viewModel: SubCatViewModel = .init()
     
     var body: some View {
+        screenWithSheets
+    }
+
+    private var screenContent: some View {
         
         
         ZStack{
@@ -123,6 +127,10 @@ struct SubCatScreen: View {
                }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var screenWithLifecycle: some View {
+        screenContent
        .onChange(of: navVm.activeRoute){_, route in
            
            //Reload data when resume back from stack
@@ -147,58 +155,94 @@ struct SubCatScreen: View {
                 
             
             }
-       
         
-        .task {
-            
-            //Load data when screen is first created
-            
-          
-            
-            if(navVm.activeRoute != .examSubCatScreen){
-                return
-            }
-            
+       .onChange(of: viewModel.state.examSelectList){_, items in
+           if(items.count > 0){
+               viewModel.state.showBundleOfferings = false
+           }else{
+               if let it = cbtViewModel.parentCategoriesData{
+                   if(it.hasOffer || cbtViewModel.activeOffer != nil){
+                       viewModel.state.showBundleOfferings = true
+                   }else{
+                       viewModel.state.showBundleOfferings = false
+                   }
+               }
+           }
+       }
            
-            viewModel.reInitExamSelection()
-            
-            if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
-                
-                   await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
-                
-             
-            }
-            
-        }
-          
-              
+               .safeAreaInset(edge: .bottom, spacing: 0) {
                    
-        .onChange(of: viewModel.state.searchText){oldValue, newValue in
-              if(newValue == ""){
-                  viewModel.state.items = viewModel.state.initItems
-              }else{
-                  
-                  let searchData = viewModel.state.initItems.filter {
-                      $0.data.item.lowercased().contains(newValue.lowercased())
-                  }
-                  
-                  viewModel.state.items = searchData
-                  
-                  if(searchData.isEmpty){
-                      viewModel.state.emptyStateText = "No search result for \(newValue)"
-                  }
-                  
-                  
-                  
-              }
-          }
-        
+                   if(viewModel.state.showBundleOfferings){
+                       
+                       BundleOfferingView(offerType: cbtViewModel.parentCategoriesData?.offerType ?? cbtViewModel.activeOffer?.offerType ?? "", onExpand: {
+                           onBundleClicked()
+                       })
+                   }
+                   
+                   
+                   
+               }
+               .task {
+                   
+                   //Load data when screen is first created
+                   
+                   
+                   
+                   if(navVm.activeRoute != .examSubCatScreen){
+                       return
+                   }
+                   
+                   
+                   viewModel.reInitExamSelection()
+                   
+                   if let cbtId = (cbtViewModel.parentCategoriesData?.catData?.cbtId){
+                       
+                       await viewModel.getSubCatExams(cbtId: cbtId, buyerEmail: UserSettings.email)
+                       
+                       
+                   }
+                   
+               }
+           
+           
+           
+               .onChange(of: viewModel.state.searchText){oldValue, newValue in
+                   if(newValue == ""){
+                       viewModel.state.items = viewModel.state.initItems
+                   }else{
+                       
+                       let searchData = viewModel.state.initItems.filter {
+                           $0.data.item.lowercased().contains(newValue.lowercased())
+                       }
+                       
+                       viewModel.state.items = searchData
+                       
+                       if(searchData.isEmpty){
+                           viewModel.state.emptyStateText = "No search result for \(newValue)"
+                       }
+                       
+                       
+                       
+                   }
+               }
+       
+    }
+
+    var screenWithSheets: some View {
+        screenWithLifecycle
           .sheet(isPresented: $viewModel.state.showPaymentSheet){
               if(viewModel.state.selectExam != nil && viewModel.state.examWithTitle != nil){
                   
                   ExamPayBottomSheetView(
                     examWithTitle: viewModel.state.examWithTitle!,
+                    catBundle: viewModel.state.catBundle,
                     premiumExams: viewModel.state.selectExam!.exams.filter { !$0.isProvisioned },
+                    onViewBundle: {data in
+                        if let activeOffer = viewModel.offer{
+                            viewModel.state.showPaymentSheet = false
+                            viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
+                        }
+                    },
                     onClose: {
                       viewModel.state.showPaymentSheet = false
                   }, onPaymentClicked: {items in
@@ -210,6 +254,26 @@ struct SubCatScreen: View {
                       viewModel.state.showPaymentSheet = false
                       navVm.navigate(route: .cbtCartScreen)
                   }).presentationDetents([.large])
+                  
+              }
+              
+          }
+          .sheet(isPresented: $viewModel.state.showBundleBottomSheet){
+              
+              if(viewModel.state.bundleBottomSheetOffer != nil){
+                  BundleBottomSheetView(offer: viewModel.state.bundleBottomSheetOffer!, bundleId: viewModel.state.bundleBottomSheetBundleId, onContinue: {data in
+                      cbtViewModel.selectedBundles = data
+                      cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
+                      viewModel.state.showBundleBottomSheet = false
+                      moveToBundleCheckout()
+                      
+                  },
+                  onDismis: {
+                      
+                      viewModel.state.showBundleBottomSheet = false
+                  })
+                  .presentationDetents([.large])
+                      
                   
               }
               
@@ -301,6 +365,9 @@ struct SubCatScreen: View {
                   navVm.navigate(route: .examPracticeScreen)
               }
           }
+          .onAppear{
+              setOffer()
+          }
           .onChange(of: viewModel.state.examSelectList){oldValue, newValue in
               
               if(!viewModel.state.examSelectList.isEmpty && cbtViewModel.parentCategoriesData?.catData?.disablePractice == true){
@@ -379,10 +446,58 @@ struct SubCatScreen: View {
         
     }
     
+    private func moveToBundleCheckout(){
+        navVm.navigate(route: .bundleCheckoutScreen)
+    }
+    
+    private func onBundleClicked(){
+        if(UserSettings.isLoggedIn){
+            
+            if let activeOffer = viewModel.offer{
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.showBundleBottomSheet(bundleId: nil, offer: activeOffer)
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: false)
+                }
+                
+            }
+            
+        }else{
+            showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
+                viewModel.showLogin = true
+            }
+        }
+        
+    }
+    
     private func examMode(){
         cbtViewModel.examResultDataList = []
         cbtViewModel.examIndex = 0
         navVm.navigate(route: .examDescriptionScreen)
+    }
+    
+    
+    private func setOffer(){
+        
+        viewModel.state.showBundleOfferings = cbtViewModel.parentCategoriesData?.hasOffer == true || cbtViewModel.activeOffer != nil
+        
+        if let it = cbtViewModel.parentCategoriesData{
+            
+            if(it.hasOffer){
+                
+                cbtViewModel.activeOffer = nil
+                viewModel.offer = Offer(offerId: it.offerId, offerType: it.offerType, hasOffer: it.hasOffer, cbcId: it.cbcId, level: it.level, title: it.item
+                    
+                )
+                
+            }else if(cbtViewModel.activeOffer != nil){
+                viewModel.offer = cbtViewModel.activeOffer
+            }
+            
+        }
+        
+      
     }
     
     
@@ -465,7 +580,22 @@ struct SubCatScreen: View {
     private func handlePaymentIntent(examWithTitle: ExamWithTitle){
         if(UserSettings.isLoggedIn){
             viewModel.state.examWithTitle = examWithTitle
-            viewModel.state.showPaymentSheet = true
+            
+            if(viewModel.offer != nil){
+                
+                if(cbtViewModel.parentCategoriesData?.hasOffer == true){
+                    viewModel.state.catBundle = viewModel.state.selectExam?.catBundle
+                    viewModel.state.showPaymentSheet = true
+                }else{
+                    viewModel.getParentBundleId(cbcId: cbtViewModel.parentCategoriesData?.cbcId ?? "", level: cbtViewModel.parentCategoriesData?.level ?? "", moveToPayment: true)
+                }
+                
+            }else{
+                viewModel.state.catBundle = nil
+                viewModel.state.showPaymentSheet = true
+            }
+            
+            
         }else{
             showNoticeMessage(message:  "You must be logged in to proceed", actionTitle: "Login", showCancel: true){
                 viewModel.showLogin = true

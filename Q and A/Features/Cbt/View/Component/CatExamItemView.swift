@@ -318,7 +318,9 @@ struct CatExamItemViewPreveiwWrapper: View {
             createdAt: "",
             isActive: true,
             subcatId: "",
-            exams: examList
+            exams: examList,
+            bundleId: "1",
+            bundleContent: "wow"
         )
         
         catExam = CatExams(exam: ex)
