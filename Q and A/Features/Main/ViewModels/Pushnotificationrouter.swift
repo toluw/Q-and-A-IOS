@@ -55,6 +55,8 @@ final class PushNotificationRouter: ObservableObject {
             pendingDestination = .earningsCbtScreen
         case "cbt_agent":
             pendingDestination = .earningsAgencyScreen
+        case "portal":
+            pendingDestination = .portalScreen
         default:
             pendingDestination = .none
         }
