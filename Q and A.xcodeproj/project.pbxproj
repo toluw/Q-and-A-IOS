@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */; };
-		FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */; };
-		CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -22,6 +19,8 @@
 		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
 		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
 		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
+		CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */; };
+		CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */; };
 		F500183C2FFFD5A100E98437 /* PDFOutlineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */; };
 		F500183E2FFFD5EC00E98437 /* PDFViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */; };
 		F50018422FFFD6FF00E98437 /* TableOfContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */; };
@@ -463,12 +462,10 @@
 		F5FEC41A2F8D0096004C8D53 /* MainCbtState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */; };
 		F5FEC41C2F8D012F004C8D53 /* MainCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */; };
 		F5FEE8622FA2342D005D25E8 /* ExamWithTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */; };
+		FAF5E68818304115832528B0 /* UpdateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountScreen.swift; sourceTree = "<group>"; };
-		FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewModel.swift; sourceTree = "<group>"; };
-		B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -480,7 +477,9 @@
 		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
 		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
 		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
+		B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
+		C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountScreen.swift; sourceTree = "<group>"; };
 		F500183B2FFFD5A000E98437 /* PDFOutlineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOutlineItem.swift; sourceTree = "<group>"; };
 		F500183D2FFFD5EC00E98437 /* PDFViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewModel.swift; sourceTree = "<group>"; };
 		F50018412FFFD6FF00E98437 /* TableOfContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableOfContentsView.swift; sourceTree = "<group>"; };
@@ -907,6 +906,7 @@
 		F5FEC4192F8D0095004C8D53 /* MainCbtState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtState.swift; sourceTree = "<group>"; };
 		F5FEC41B2F8D012E004C8D53 /* MainCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCbtViewModel.swift; sourceTree = "<group>"; };
 		F5FEE8612FA2342D005D25E8 /* ExamWithTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamWithTitle.swift; sourceTree = "<group>"; };
+		FEAF519CD4734FDDA2BBA78F /* UpdateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2473,7 +2473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2513,7 +2513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
