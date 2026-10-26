@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ExamPayBottomSheetView: View {
     
@@ -36,10 +35,9 @@ struct ExamPayBottomSheetView: View {
     
     let onAddToCart: () -> Void
     
-    @Environment(\.modelContext) private var context
 
     private var repository: ExamCartRepository {
-        ExamCartRepository(context: context)
+        ExamCartRepository()
         }
     
     
@@ -190,11 +188,11 @@ struct ExamPayBottomSheetView: View {
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear{
                 setExamPayList(exam: examWithTitle.exam, premiumExams: premiumExams)
-        }.onChange(of: examPaymentList){previous, current in
+        }.onCompatibleChange(of: examPaymentList){previous, current in
             totalPrice = getTotalPrice()
         }
         .toastBanner(toast: $errorMessage)
-        .onChange(of: isSelectAll){previous, current in
+        .onCompatibleChange(of: isSelectAll){previous, current in
             
             if(current){
                 selectAllExams()
@@ -229,7 +227,7 @@ struct ExamPayBottomSheetView: View {
     }
     
     func isExamNotInCart(
-        exams: [ExamCart],
+        exams: [CartExam],
         examPaymentList: [ExamPay]
     ) -> Bool {
 
@@ -265,13 +263,13 @@ struct ExamPayBottomSheetView: View {
         
     }
     
-    private func addTitleToCartContent(examPayList: [ExamPay], title: String) -> [ExamCart]{
+    private func addTitleToCartContent(examPayList: [ExamPay], title: String) -> [CartExam]{
         
-        var cartList: [ExamCart] = []
+        var cartList: [CartExam] = []
         
         for examPay in examPayList{
             
-            let examCart = ExamCart(cbtId: examPay.exam.cbtId, subcatId: examPay.exam.subcatId, numQuestions: examPay.exam.numQuestions, price: examPay.exam.price, title: "\(title) - \(examPay.exam.title)", instruction: examPay.exam.instruction, examDescription: examPay.exam.description, duration: examPay.exam.duration, isActive: examPay.exam.isActive, createdAt: examPay.exam.createdAt, sellerEmail: examPay.exam.sellerEmail, hasSample: examPay.exam.hasSample, examId: examPay.exam.examId, isProvisioned: examPay.exam.isProvisioned, numViews: examPay.exam.numViews, isMaxAttempt: examPay.exam.isMaxAttempt, startTime: examPay.exam.startTime, isCompulsory: examPay.exam.isCompulsory)
+            let examCart = CartExam(cbtId: examPay.exam.cbtId, subcatId: examPay.exam.subcatId, numQuestions: examPay.exam.numQuestions, price: examPay.exam.price, title: "\(title) - \(examPay.exam.title)", instruction: examPay.exam.instruction, examDescription: examPay.exam.description, duration: examPay.exam.duration, isActive: examPay.exam.isActive, createdAt: examPay.exam.createdAt, sellerEmail: examPay.exam.sellerEmail, hasSample: examPay.exam.hasSample, examId: examPay.exam.examId, isProvisioned: examPay.exam.isProvisioned, numViews: examPay.exam.numViews, isMaxAttempt: examPay.exam.isMaxAttempt, startTime: examPay.exam.startTime, isCompulsory: examPay.exam.isCompulsory)
             
             cartList.append(examCart)
         }

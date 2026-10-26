@@ -35,7 +35,7 @@ struct AppNavigator: View {
             
         }.task {
             await updateManager.checkForUpdate()
-        }.onChange(of: updateManager.updateStatus) { _, newStatus in
+        }.onCompatibleChange(of: updateManager.updateStatus) { _, newStatus in
             switch newStatus {
             case .none:
                 showDialog = false
@@ -62,7 +62,7 @@ struct AppNavigator: View {
                     isForced: false,
                     onDismiss: { showDialog = false }
                 )
-                .presentationBackground(.clear)
+                .compatiblePresentationBackground(.clear)
 
             case .none:
                 EmptyView()

@@ -72,7 +72,7 @@ struct SubCatExamItemView: View {
                 .contentShape(Rectangle())
             
         }.buttonStyle(.plain)
-            .onChange(of: subCatExam.isShuffle){oldValue, newValue in
+            .onCompatibleChange(of: subCatExam.isShuffle){oldValue, newValue in
                 
                 let initPos = viewModel.getInitPosition(subCatExams: subCatExam)
                 

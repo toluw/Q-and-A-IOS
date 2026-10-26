@@ -41,9 +41,8 @@ struct UpdateAccountScreen: View {
         .background(Color.white)
         .foregroundStyle(Color.black)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.white, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .scrollDismissesKeyboard(.interactively)
+        .compatibleNavigationBarBackground(.white)
+        .compatibleScrollDismissesKeyboard(.interactively)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -173,5 +172,5 @@ struct UpdateAccountScreen: View {
 }
 
 #Preview {
-    NavigationStack { UpdateAccountScreen() }
+    CompatibleNavigationView { UpdateAccountScreen() }
 }

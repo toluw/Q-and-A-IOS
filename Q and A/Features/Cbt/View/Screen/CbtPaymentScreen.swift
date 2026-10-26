@@ -14,10 +14,9 @@ struct CbtPaymentScreen: View {
     @ObservedObject var paymentViewModel: PaymentViewModel
     @StateObject var viewModel: CbtPaymentViewModel = .init()
     
-    @Environment(\.modelContext) private var context
 
     private var repository: ExamCartRepository {
-        ExamCartRepository(context: context)
+        ExamCartRepository()
         }
     
     
@@ -55,7 +54,7 @@ struct CbtPaymentScreen: View {
                 handlePaymentState()
                 
             }
-            .onChange(of: viewModel.state.initTransactionData){previous, current in
+            .onCompatibleChange(of: viewModel.state.initTransactionData){previous, current in
                 
                 if(viewModel.state.initTransactionData != nil){
                     
@@ -64,7 +63,7 @@ struct CbtPaymentScreen: View {
                 }
                 
             }
-            .onChange(of: viewModel.state.postTransactionSuccess){previous, current in
+            .onCompatibleChange(of: viewModel.state.postTransactionSuccess){previous, current in
                 
                 showSuccessMessage(message: "Your payment was successful, your CBT content is now unlocked", actionTitle: "Continue", showCancel: false, action: {
                     

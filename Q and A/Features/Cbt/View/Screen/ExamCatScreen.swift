@@ -44,9 +44,8 @@ struct ExamCatScreen: View {
             }
             
             // Trailing Icon
-            if(UserSettings.phoneNumber?.isNyjaNum() == true){
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if UserSettings.phoneNumber?.isNyjaNum() == true {
                     CartView(){
                         navVm.navigate(route: .cbtCartScreen)
                     }
@@ -56,8 +55,7 @@ struct ExamCatScreen: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.white)
-        .toolbarBackground(.white, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .compatibleNavigationBarBackground(.white)
     }
 }
 

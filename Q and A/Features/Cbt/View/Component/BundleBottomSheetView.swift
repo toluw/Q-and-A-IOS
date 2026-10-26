@@ -62,9 +62,9 @@ struct BundleBottomSheetView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(Color.white)
         .safeAreaInset(edge: .bottom, spacing: 0) { summary }
-        .clipShape(UnevenRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30))
-        .presentationDragIndicator(.hidden)
-        .presentationCornerRadius(30)
+        .clipShape(CompatibleRoundedRectangle(topLeadingRadius: 30, topTrailingRadius: 30))
+        .compatiblePresentationDragIndicator(.hidden)
+        .compatiblePresentationCornerRadius(30)
         .task {
             if viewModel.state.items.isEmpty { await loadBundles() }
         }

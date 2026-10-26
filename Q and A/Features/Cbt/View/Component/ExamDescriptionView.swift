@@ -93,7 +93,7 @@ struct ExamDescriptionView: View {
                     
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.white.clipShape(
-                        UnevenRoundedRectangle(
+                        CompatibleRoundedRectangle(
                             topLeadingRadius: 20,
                             topTrailingRadius: 20
                         )

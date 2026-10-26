@@ -18,19 +18,27 @@ struct MainStackView: View {
     
     var body: some View {
         //  Text("Main Stack")
-        NavigationStack(path: $navVM.path) {
-                   
-            MainScreen(navVm: navVM, cbtViewModel: cbtViewModel)
-                .navigationDestination(for: MainRoute.self) { route in
-                    destinationView(for: route)
-             }
+        Group {
+            if #available(iOS 16.0, *) {
+                NavigationStack(path: $navVM.path) {
+                    MainScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+                        .navigationDestination(for: MainRoute.self) { route in
+                            destinationView(for: route)
+                        }
+                }
+            } else {
+                NavigationView {
+                    legacyNavigationLevel(depth: 0)
+                }
+                .navigationViewStyle(.stack)
+            }
         }
         .environmentObject(navVM)
         .environmentObject(cbtViewModel)
-        .onChange(of: navVM.path) { _, newPath in
+        .onCompatibleChange(of: navVM.path) { _, newPath in
             navVM.updateActiveRoute()
         }
-        .onChange(of: router.pendingDestination, initial: true) { _, destination in
+        .onCompatibleChange(of: router.pendingDestination, initial: true) { _, destination in
             guard destination != .none else { return }
             navVM.path.append(destination)
             router.consumeDestination()
@@ -39,6 +47,37 @@ struct MainStackView: View {
     }
     
     
+    // Each active link owns one level of the route array, so back gestures and
+    // programmatic pops update the same model on iOS 15.
+    private func legacyNavigationLevel(depth: Int) -> AnyView {
+        AnyView(
+            Group {
+                if depth == 0 {
+                    MainScreen(navVm: navVM, cbtViewModel: cbtViewModel)
+                } else if navVM.path.indices.contains(depth - 1) {
+                    destinationView(for: navVM.path[depth - 1])
+                }
+            }
+            .background(
+                NavigationLink(isActive: Binding(
+                    get: { navVM.path.count > depth },
+                    set: { active in
+                        if !active && navVM.path.count > depth {
+                            navVM.path.removeLast(navVM.path.count - depth)
+                        }
+                    }
+                )) {
+                    if navVM.path.count > depth {
+                        legacyNavigationLevel(depth: depth + 1)
+                    }
+                } label: {
+                    EmptyView()
+                }
+                .hidden()
+            )
+        )
+    }
+
     @ViewBuilder
     private func destinationView(for route: MainRoute) -> some View{
         switch route{

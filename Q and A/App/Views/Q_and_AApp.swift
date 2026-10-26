@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 import FirebaseCore
 import GoogleSignIn
 
@@ -34,6 +33,6 @@ struct Q_and_AApp: App {
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
-        }.modelContainer(for: ExamCart.self)
+        }
     }
 }

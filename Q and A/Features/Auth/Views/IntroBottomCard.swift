@@ -42,7 +42,7 @@ struct IntroBottomCard: View {
                       Color.black
                     )
                   .clipShape(
-                      .rect(
+                      CompatibleRoundedRectangle(
                           topLeadingRadius: 70,
                           topTrailingRadius: 70
                       )

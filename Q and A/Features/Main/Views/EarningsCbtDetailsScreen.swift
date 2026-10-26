@@ -18,7 +18,7 @@ struct EarningsCbtDetailsScreen: View {
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 2)
 
-                Grid(alignment: .topLeading, horizontalSpacing: 20, verticalSpacing: 30) {
+                VStack(alignment: .leading, spacing: 30) {
                     detailRow("Title:", value: statement.exam_name)
                     detailRow("Price:", value: currency(statement.price))
                     detailRow("Agent Income:", value: currency(statement.agent_income))
@@ -43,9 +43,10 @@ struct EarningsCbtDetailsScreen: View {
     }
 
     private func detailRow(_ label: String, value: String) -> some View {
-        GridRow(alignment: .top) {
+        HStack(alignment: .top, spacing: 20) {
             Text(label)
                 .font(AppFont.semi_bold(16))
+                .frame(width: 145, alignment: .leading)
             Text(value)
                 .font(AppFont.regular(16))
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -77,7 +78,7 @@ struct EarningsCbtDetailsScreen: View {
 #Preview {
     
     let statement = EarningsCbtStatement(id: "2",  exam_id: "1", bundle_id: "2", buyer_email: "oket@gm.com", seller_email: "bayo@yahoo.com", agent_email: nil, agent_income: "400", income: "200", reference: "ekjdk", created_at: "2026-10-18 12:51:16", price: "300", commision: "10", is_android: "1", bundle_discount: "2", exam_name: "walcott", buyer_name: "James Justin")
-    NavigationStack {
+    CompatibleNavigationView {
         EarningsCbtDetailsScreen(statement: statement)
     }
 }

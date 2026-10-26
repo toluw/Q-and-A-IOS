@@ -147,7 +147,7 @@ struct MainCbtScreen: View {
                      viewModel.state.showCatBottomSheet = false
                      handleCatSelection(item: data)
                  } 
-                 .presentationDetents([.large])
+                 .compatiblePresentationDetents([.large])
                      
                  
              }

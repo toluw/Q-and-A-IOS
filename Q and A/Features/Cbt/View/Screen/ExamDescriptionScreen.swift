@@ -45,7 +45,7 @@ struct ExamDescriptionScreen: View {
                     viewModel.pickColor()
             }
          .navigationBarBackButtonHidden(true)
-         .onChange(of: viewModel.state.data){ previous, current in
+         .onCompatibleChange(of: viewModel.state.data){ previous, current in
              
              if let data = viewModel.state.data{
                  

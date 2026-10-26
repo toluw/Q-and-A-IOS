@@ -54,5 +54,5 @@ struct UpdateDialogView: View {
 }
 
 #Preview {
-    UpdateDialogView(title: "Update", message: "New version available", updateURL: URL(filePath: "https//google.com")!, isForced: true)
+    UpdateDialogView(title: "Update", message: "New version available", updateURL: URL(string: "https://example.com/update")!, isForced: true)
 }

@@ -91,7 +91,7 @@ struct PaymentReceivedHistoryScreen: View {
 }
 
 #Preview {
-    NavigationStack {
+    CompatibleNavigationView {
         PaymentReceivedCbtScreen(navVm: MainNavViewModel())
     }
 }

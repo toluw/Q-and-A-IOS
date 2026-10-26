@@ -40,7 +40,7 @@ struct VideoRow: View {
                             .padding(10)
                     }
                     .clipShape(
-                        .rect(topLeadingRadius: 12, bottomLeadingRadius: 0,
+                        CompatibleRoundedRectangle(topLeadingRadius: 12, bottomLeadingRadius: 0,
                               bottomTrailingRadius: 0, topTrailingRadius: 12)
                     )
 

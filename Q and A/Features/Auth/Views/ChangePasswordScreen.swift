@@ -105,7 +105,7 @@ struct ChangePasswordScreen: View {
                }
             
         }.frame(maxWidth: .infinity)
-             .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+             .onCompatibleChange(of: viewModel.state.isSuccess){oldValue, newValue in
                  if(newValue){
                      showSuccessMessage(message: "Password changed successfully, login to proceed", actionTitle: "Login", action: {
                          

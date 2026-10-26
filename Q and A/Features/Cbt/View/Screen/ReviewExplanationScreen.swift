@@ -84,7 +84,7 @@ struct ReviewExplanationScreen: View {
             .onAppear{
                 viewModel.getNumPost(examId: examId, questionId: liveExam.questionId)
             }
-        .onChange(of: viewModel.aiContent) { _,  content in
+        .onCompatibleChange(of: viewModel.aiContent) { _,  content in
             
                 if(!content.isEmpty){
                     viewModel.aiContent = ""

@@ -58,7 +58,7 @@ struct CbtHistoryScreen: View {
                 
                 
             }
-            .onChange(of: viewModel.state.liveExamDataList){previous, current in
+            .onCompatibleChange(of: viewModel.state.liveExamDataList){previous, current in
                 
                 if let data = current{
                     

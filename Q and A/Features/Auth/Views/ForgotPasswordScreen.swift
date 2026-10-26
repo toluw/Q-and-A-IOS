@@ -71,7 +71,7 @@ struct ForgotPasswordScreen: View {
             
         }.frame(maxWidth: .infinity)
              .toastBanner(toast: $viewModel.state.errorMessage)
-             .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+             .onCompatibleChange(of: viewModel.state.isSuccess){oldValue, newValue in
                  if(newValue){
                      navVm.navigate(route: .confirmOtpScreen(otp: viewModel.state.code, email: viewModel.state.email))
                      viewModel.state.isSuccess = false

@@ -225,7 +225,7 @@ struct NavMenuView: View {
             Color.white
             )
             .clipShape(
-            .rect(
+            CompatibleRoundedRectangle(
                 topLeadingRadius: 30,
                 topTrailingRadius: 30
             )

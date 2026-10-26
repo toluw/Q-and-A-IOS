@@ -47,7 +47,7 @@ struct BundlePaymentScreen: View {
                 
                 handlePaymentState()
                 
-            }.onChange(of: viewModel.state.initTransactionData){previous, current in
+            }.onCompatibleChange(of: viewModel.state.initTransactionData){previous, current in
                 
                 if(viewModel.state.initTransactionData != nil){
                     
@@ -56,7 +56,7 @@ struct BundlePaymentScreen: View {
                 }
                 
             }
-            .onChange(of: viewModel.state.postTransactionSuccess){previous, current in
+            .onCompatibleChange(of: viewModel.state.postTransactionSuccess){previous, current in
                 
                 showSuccessMessage(message: "Your payment was successful, All the exams in the bundles are now unlocked", actionTitle: "Continue", showCancel: false, action: {
                     

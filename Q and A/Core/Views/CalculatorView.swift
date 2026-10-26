@@ -333,9 +333,9 @@ struct CalculatorDialog: View {
             .font(.headline)
             .sheet(isPresented: $showCalculator) {
                 CalculatorView(onDismiss: {})
-                    .presentationDetents([.height(560)])
-                    .presentationDragIndicator(.visible)
-                    .presentationCornerRadius(32)
+                    .compatiblePresentationDetents([.height(560)])
+                    .compatiblePresentationDragIndicator(.visible)
+                    .compatiblePresentationCornerRadius(32)
             }
         }
     }

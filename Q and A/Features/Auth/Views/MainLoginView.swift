@@ -180,7 +180,7 @@ struct MainLoginView: View {
             
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onChange(of: viewModel.state.isSuccess){oldValue, newValue in
+            .onCompatibleChange(of: viewModel.state.isSuccess){oldValue, newValue in
                    if(newValue && viewModel.state.userProfile != nil ){
                        onLoginSuccess(viewModel.state.userProfile!)
                    }

@@ -49,7 +49,7 @@ struct SocialPostInputView: View {
                TextEditor(text: $text)
                    .focused($isTextFocused)
                    .frame(minHeight: 30, maxHeight: 60)
-                   .scrollContentBackground(.hidden)
+                   .compatibleScrollContentBackground(.hidden)
                    .padding(.horizontal, 4)
                    .overlay(alignment: .topLeading) {
                        if text.isEmpty {
@@ -109,10 +109,10 @@ struct SocialPostInputView: View {
                        }
 
                    }
-                   .onChange(of: requestFocus) { _, newValue in
+                   .onCompatibleChange(of: requestFocus) { _, newValue in
                                   isTextFocused = newValue
                               }
-                    .onChange(of: isTextFocused) { _, newValue in
+                    .onCompatibleChange(of: isTextFocused) { _, newValue in
                                   requestFocus = newValue
                               }
                    .sheet(isPresented: $showImagePicker) {

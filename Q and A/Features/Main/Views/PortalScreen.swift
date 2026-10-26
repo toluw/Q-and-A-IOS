@@ -120,9 +120,8 @@ struct PortalScreen: View {
         .task {
             NotificationManager.shared.presentPrimerIfNeeded(for: .portal)
         }
-        .toolbarBackground(Color.white, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .onChange(of: viewModel.state.agentState) { _, _ in copiedCode = false }
+        .compatibleNavigationBarBackground(.white)
+        .onCompatibleChange(of: viewModel.state.agentState) { _, _ in copiedCode = false }
         .task { await viewModel.loadInitial() }
     }
     
@@ -260,19 +259,19 @@ struct PortalScreen: View {
 }
 
 #Preview("No agent") {
-    NavigationStack {
+    CompatibleNavigationView {
         PortalScreen(navVm: MainNavViewModel(), viewModel: PortalViewModel(state: PortalState(data: PortalData(is_agent: false, is_cbt_seller: false, agent_code: nil, is_agent_active: false))))
     }
 }
 
 #Preview("Active agent") {
-    NavigationStack {
+    CompatibleNavigationView {
         PortalScreen(navVm: MainNavViewModel(), viewModel: PortalViewModel(state: PortalState(data: PortalData(is_agent: true, is_cbt_seller: false, agent_code: "ABMLSY", is_agent_active: true))))
     }
 }
 
 #Preview("Inactive agent") {
-    NavigationStack {
+    CompatibleNavigationView {
         PortalScreen(navVm: MainNavViewModel(), viewModel: PortalViewModel(state: PortalState(data: PortalData(is_agent: true, is_cbt_seller: false, agent_code: "ABJEH7", is_agent_active: false))))
     }
 }

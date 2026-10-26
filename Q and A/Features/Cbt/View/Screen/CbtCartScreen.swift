@@ -14,10 +14,9 @@ struct CbtCartScreen: View {
     @ObservedObject var paymentViewModel: PaymentViewModel
     @StateObject var viewModel: CbtCartViewModel = .init()
     
-    @Environment(\.modelContext) private var context
 
     private var repository: ExamCartRepository {
-        ExamCartRepository(context: context)
+        ExamCartRepository()
         }
     
     
@@ -133,7 +132,7 @@ struct CbtCartScreen: View {
                 
                
             }
-            .onChange(of: viewModel.state.cartItems){previous, current in
+            .onCompatibleChange(of: viewModel.state.cartItems){previous, current in
                 
                 viewModel.setTotalPrice()
                 

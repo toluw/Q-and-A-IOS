@@ -1,18 +1,11 @@
-//
-//  ExamCart.swift
-//  Q and A
-//
-//  Created by GIGL-PC on 09/05/2026.
-//
-
 import Foundation
 import SwiftData
 
-
-
+// Keep the existing SwiftData entity and default store on iOS 17 and later.
+@available(iOS 17.0, *)
 @Model
 final class ExamCart{
-    
+
     var cbtId: String
         var subcatId: String
         var numQuestions: Int
@@ -74,9 +67,50 @@ final class ExamCart{
             self.startTime = startTime
             self.isCompulsory = isCompulsory
         }
-    
+
     func toExam() -> Exam {
         Exam(cbtId: cbtId, subcatId: subcatId, numQuestions: numQuestions, price: price, title: title, instruction: instruction, description: examDescription, duration: duration, isActive: isActive, createdAt: createdAt, sellerEmail: sellerEmail, hasSample: hasSample, examId: examId, isProvisioned: isProvisioned, numViews: numViews, isMaxAttempt: isMaxAttempt, startTime: startTime, isCompulsory: isCompulsory)
     }
-    
+
+    func toCartExam() -> CartExam {
+        CartExam(cbtId: cbtId,
+                subcatId: subcatId,
+                numQuestions: numQuestions,
+                price: price,
+                title: title,
+                instruction: instruction,
+                examDescription: examDescription,
+                duration: duration,
+                isActive: isActive,
+                createdAt: createdAt,
+                sellerEmail: sellerEmail,
+                hasSample: hasSample,
+                examId: examId,
+                isProvisioned: isProvisioned,
+                numViews: numViews,
+                isMaxAttempt: isMaxAttempt,
+                startTime: startTime,
+                isCompulsory: isCompulsory)
+    }
+
+    convenience init(item: CartExam) {
+        self.init(cbtId: item.cbtId,
+                subcatId: item.subcatId,
+                numQuestions: item.numQuestions,
+                price: item.price,
+                title: item.title,
+                instruction: item.instruction,
+                examDescription: item.examDescription,
+                duration: item.duration,
+                isActive: item.isActive,
+                createdAt: item.createdAt,
+                sellerEmail: item.sellerEmail,
+                hasSample: item.hasSample,
+                examId: item.examId,
+                isProvisioned: item.isProvisioned,
+                numViews: item.numViews,
+                isMaxAttempt: item.isMaxAttempt,
+                startTime: item.startTime,
+                isCompulsory: item.isCompulsory)
+    }
 }

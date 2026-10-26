@@ -131,7 +131,7 @@ struct SubCatScreen: View {
 
     private var screenWithLifecycle: some View {
         screenContent
-       .onChange(of: navVm.activeRoute){_, route in
+       .onCompatibleChange(of: navVm.activeRoute){_, route in
            
            //Reload data when resume back from stack
            
@@ -156,7 +156,7 @@ struct SubCatScreen: View {
             
             }
         
-       .onChange(of: viewModel.state.examSelectList){_, items in
+       .onCompatibleChange(of: viewModel.state.examSelectList){_, items in
            if(items.count > 0){
                viewModel.state.showBundleOfferings = false
            }else{
@@ -206,7 +206,7 @@ struct SubCatScreen: View {
            
            
            
-               .onChange(of: viewModel.state.searchText){oldValue, newValue in
+               .onCompatibleChange(of: viewModel.state.searchText){oldValue, newValue in
                    if(newValue == ""){
                        viewModel.state.items = viewModel.state.initItems
                    }else{
@@ -253,7 +253,7 @@ struct SubCatScreen: View {
                   }, onAddToCart: {
                       viewModel.state.showPaymentSheet = false
                       navVm.navigate(route: .cbtCartScreen)
-                  }).presentationDetents([.large])
+                  }).compatiblePresentationDetents([.large])
                   
               }
               
@@ -272,7 +272,7 @@ struct SubCatScreen: View {
                       
                       viewModel.state.showBundleBottomSheet = false
                   })
-                  .presentationDetents([.large])
+                  .compatiblePresentationDetents([.large])
                       
                   
               }
@@ -293,7 +293,7 @@ struct SubCatScreen: View {
                   }
                   
                   
-              }.presentationDetents([.medium])
+              }.compatiblePresentationDetents([.medium])
               
           }
         
@@ -309,7 +309,7 @@ struct SubCatScreen: View {
                       handleQuestionSelection(numQuestion: question)
                       
                       
-                  }).presentationDetents([.large])
+                  }).compatiblePresentationDetents([.large])
               }
               
           }
@@ -348,11 +348,11 @@ struct SubCatScreen: View {
                       
                       
                       }
-                  ).presentationDetents([.large])
+                  ).compatiblePresentationDetents([.large])
               }
              
           }
-          .onChange(of: viewModel.state.multipleExamData){oldValue, newValue in
+          .onCompatibleChange(of: viewModel.state.multipleExamData){oldValue, newValue in
             
               if(!viewModel.state.multipleExamData.isEmpty){
                   
@@ -368,7 +368,7 @@ struct SubCatScreen: View {
           .onAppear{
               setOffer()
           }
-          .onChange(of: viewModel.state.examSelectList){oldValue, newValue in
+          .onCompatibleChange(of: viewModel.state.examSelectList){oldValue, newValue in
               
               if(!viewModel.state.examSelectList.isEmpty && cbtViewModel.parentCategoriesData?.catData?.disablePractice == true){
                   

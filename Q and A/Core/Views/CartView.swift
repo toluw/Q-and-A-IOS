@@ -13,10 +13,9 @@ struct CartView: View {
     
     @State var numCart: Int = 0
     
-    @Environment(\.modelContext) private var context
 
     private var repository: ExamCartRepository {
-        ExamCartRepository(context: context)
+        ExamCartRepository()
         }
     
     var body: some View {

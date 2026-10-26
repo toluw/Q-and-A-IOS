@@ -91,7 +91,7 @@ struct BundleOfferingView: View {
         }
         .buttonStyle(.plain)
         .background {
-            UnevenRoundedRectangle(
+            CompatibleRoundedRectangle(
                 topLeadingRadius: 24,
                 topTrailingRadius: 24
             )

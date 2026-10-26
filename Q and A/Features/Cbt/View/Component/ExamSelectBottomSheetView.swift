@@ -73,7 +73,7 @@ struct ExamSelectBottomSheetView: View {
                 initExams = selectExam.exams
                 exams = selectExam.exams
             }
-            .onChange(of: searchText, {oldValue, newValue in
+            .onCompatibleChange(of: searchText, {oldValue, newValue in
                handleSearch(newValue: newValue)
             })
             

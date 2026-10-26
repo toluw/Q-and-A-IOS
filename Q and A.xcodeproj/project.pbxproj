@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        AD1500000000000000000001 /* CartExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000002 /* CartExam.swift */; };
+        AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000004 /* LegacyExamCartStore.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -466,6 +468,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+        AD1500000000000000000002 /* CartExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartExam.swift; sourceTree = "<group>"; };
+        AD1500000000000000000004 /* LegacyExamCartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyExamCartStore.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -1125,6 +1129,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */,
+                AD1500000000000000000004 /* LegacyExamCartStore.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -1486,6 +1491,7 @@
 				F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */,
 				F5BFC2B42FAA401B008A038E /* ExamPay.swift */,
 				F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */,
+                AD1500000000000000000002 /* CartExam.swift */,
 				F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */,
 				F59A8FA12FB624DB00823C77 /* CbtPaymentState.swift */,
 				F5E054642FB7C5940012A9CC /* PaymentData.swift */,
@@ -2242,6 +2248,8 @@
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
 				F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */,
 				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
+                AD1500000000000000000001 /* CartExam.swift in Sources */,
+                AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
@@ -2382,7 +2390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -2439,7 +2447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

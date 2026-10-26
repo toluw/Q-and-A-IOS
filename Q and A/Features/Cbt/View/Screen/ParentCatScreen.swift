@@ -136,7 +136,7 @@ struct ParentCatScreen: View {
                 
                 await viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
             }
-            .onChange(of: viewModel.state.searchTxt){oldValue, newValue in
+            .onCompatibleChange(of: viewModel.state.searchTxt){oldValue, newValue in
                 if(newValue == ""){
                     viewModel.state.parentCatData = viewModel.state.defaultData
                 }else{
@@ -183,7 +183,7 @@ struct ParentCatScreen: View {
                         
                         viewModel.state.showBundleBottomSheet = false
                     })
-                    .presentationDetents([.large])
+                    .compatiblePresentationDetents([.large])
                         
                     
                 }

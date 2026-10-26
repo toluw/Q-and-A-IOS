@@ -83,7 +83,7 @@ struct EarningsAgencyScreen: View {
 }
 
 #Preview {
-    NavigationStack {
+    CompatibleNavigationView {
         EarningsAgencyScreen(navVm: MainNavViewModel())
     }
 }

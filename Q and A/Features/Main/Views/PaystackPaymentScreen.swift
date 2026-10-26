@@ -47,7 +47,7 @@ struct PaystackPaymentScreen: View {
             }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onChange(of: viewModel.state.errorMessage){previous, current in
+            .onCompatibleChange(of: viewModel.state.errorMessage){previous, current in
                 if let errorMessage = viewModel.state.errorMessage{
                     showErrorMessage(message: errorMessage, actionTitle: "Close", showCancel: false, action: {
                         paymentViewModel.paymentState = .cancel
@@ -55,14 +55,14 @@ struct PaystackPaymentScreen: View {
                     })
                 }
             }
-            .onChange(of: scenePhase) { previous, current in
+            .onCompatibleChange(of: scenePhase) { previous, current in
 
                        if current == .active {
 
                            viewModel.verifyPaymentInBackground()
                        }
                    }
-            .onChange(of: viewModel.state.successPaymentReference){previous, current in
+            .onCompatibleChange(of: viewModel.state.successPaymentReference){previous, current in
                 
                 if let reference = viewModel.state.successPaymentReference{
                     paymentViewModel.paymentState = .success(reference: reference, processor: 1)

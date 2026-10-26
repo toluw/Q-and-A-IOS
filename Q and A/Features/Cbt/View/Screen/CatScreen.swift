@@ -140,22 +140,22 @@ struct CatScreen: View {
 
     private var screenWithLifecycle: some View {
         screenWithLoading
-            .onChange(of: viewModel.state.searchText) { _, newValue in
+            .onCompatibleChange(of: viewModel.state.searchText) { _, newValue in
                 search(newValue: newValue)
             }
-            .onChange(of: viewModel.state.initItems) { _, newValue in
+            .onCompatibleChange(of: viewModel.state.initItems) { _, newValue in
                 if !newValue.isEmpty {
                     setOffer()
                 }
             }
-            .onChange(of: viewModel.state.examSelectList) { _, items in
+            .onCompatibleChange(of: viewModel.state.examSelectList) { _, items in
                 updateBundleOfferings(for: items)
             }
     }
 
     private var screenWithLoading: some View {
         screenContent
-            .onChange(of: navVm.activeRoute) { _, route in
+            .onCompatibleChange(of: navVm.activeRoute) { _, route in
                 guard route == .examCatScreen else { return }
                 Task {
                     await reloadExams()
@@ -250,7 +250,7 @@ struct CatScreen: View {
                     }, onAddToCart: {
                         viewModel.state.showPaymentSheet = false
                         navVm.navigate(route: .cbtCartScreen)
-                    }).presentationDetents([.large])
+                    }).compatiblePresentationDetents([.large])
                     
                 }
                 
@@ -269,7 +269,7 @@ struct CatScreen: View {
                         
                         viewModel.state.showBundleBottomSheet = false
                     })
-                    .presentationDetents([.large])
+                    .compatiblePresentationDetents([.large])
                         
                     
                 }
@@ -289,7 +289,7 @@ struct CatScreen: View {
                     }
                     
                     
-                }.presentationDetents([.medium])
+                }.compatiblePresentationDetents([.medium])
                 
             }
           
@@ -305,7 +305,7 @@ struct CatScreen: View {
                         handleQuestionSelection(numQuestion: question)
                         
                         
-                    }).presentationDetents([.large])
+                    }).compatiblePresentationDetents([.large])
                 }
                 
             }
@@ -328,7 +328,7 @@ struct CatScreen: View {
                        
                    )
                }
-            .onChange(of: viewModel.state.multipleExamData){oldValue, newValue in
+            .onCompatibleChange(of: viewModel.state.multipleExamData){oldValue, newValue in
               
                 if(!viewModel.state.multipleExamData.isEmpty){
                     

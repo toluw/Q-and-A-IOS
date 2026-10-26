@@ -9,7 +9,7 @@ import Foundation
 
 struct cbtCartState{
     
-    var cartItems: [ExamCart] = []
+    var cartItems: [CartExam] = []
     var totalPrice: Int = 0
     
 }

@@ -9,7 +9,7 @@ struct PaymentRecievedAgencyScreen: View {
 }
 
 #Preview {
-    NavigationStack {
+    CompatibleNavigationView {
         PaymentRecievedAgencyScreen(navVm: MainNavViewModel())
     }
 }

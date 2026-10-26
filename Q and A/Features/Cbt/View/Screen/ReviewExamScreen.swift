@@ -68,7 +68,7 @@ struct ReviewExamScreen: View {
                       
                 })
             }
-            .onChange(of: viewModel.aiContent) { _,  content in
+            .onCompatibleChange(of: viewModel.aiContent) { _,  content in
             
                 if(!content.isEmpty){
                     viewModel.aiContent = ""
@@ -77,7 +77,7 @@ struct ReviewExamScreen: View {
                
                 
             }
-            .onChange(of: cbtViewModel.reviewExam){_, _ in
+            .onCompatibleChange(of: cbtViewModel.reviewExam){_, _ in
                 getNumPost()
             }
             

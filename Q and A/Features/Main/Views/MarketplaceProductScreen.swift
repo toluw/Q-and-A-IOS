@@ -55,7 +55,7 @@ struct MarketplaceProductScreen: View {
         .task {
             await viewModel.loadProducts(productId: productid)
         }
-        .onChange(of: viewModel.successPaymentReference) { previous, current in
+        .onCompatibleChange(of: viewModel.successPaymentReference) { previous, current in
             if let reference = viewModel.successPaymentReference {
                 paymentViewModel.paymentState = .success(reference: reference, processor: 3)
                 navVm.pop()

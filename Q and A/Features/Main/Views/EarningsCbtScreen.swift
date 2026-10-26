@@ -83,7 +83,7 @@ struct EarningsCbtScreen: View {
 }
 
 #Preview {
-    NavigationStack {
+    CompatibleNavigationView {
         EarningsCbtScreen(navVm: MainNavViewModel())
     }
 }

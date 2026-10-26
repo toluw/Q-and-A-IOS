@@ -14,7 +14,7 @@ class CbtCartViewModel: ObservableObject{
     
     
     
-    func initCartItems(cartItems: [ExamCart]){
+    func initCartItems(cartItems: [CartExam]){
         state.cartItems = cartItems
     }
     

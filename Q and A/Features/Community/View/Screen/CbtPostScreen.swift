@@ -136,7 +136,7 @@ struct CbtPostScreen: View {
                     }
                     
                     
-                }).presentationDetents([.medium])
+                }).compatiblePresentationDetents([.medium])
             }
              */
     }

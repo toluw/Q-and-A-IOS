@@ -5,11 +5,11 @@
 //  Created by GIGL-PC on 24/02/2026.
 //
 
-import Foundation
+import SwiftUI
 
 struct IntroPage: Identifiable {
     let id = UUID()
     let imageName: String
-    let title: LocalizedStringResource
-    let subtitle: LocalizedStringResource
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
 }

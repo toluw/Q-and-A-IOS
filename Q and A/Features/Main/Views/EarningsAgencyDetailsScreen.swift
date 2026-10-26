@@ -18,7 +18,7 @@ struct EarningsAgencyDetailsScreen: View {
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 2)
 
-                Grid(alignment: .topLeading, horizontalSpacing: 20, verticalSpacing: 30) {
+                VStack(alignment: .leading, spacing: 30) {
                     detailRow("Title:", value: statement.exam_name)
                     detailRow("Price:", value: currency(statement.price))
                     detailRow("Transaction Income:", value: currency(statement.agent_income))
@@ -42,9 +42,10 @@ struct EarningsAgencyDetailsScreen: View {
     }
 
     private func detailRow(_ label: String, value: String) -> some View {
-        GridRow(alignment: .top) {
+        HStack(alignment: .top, spacing: 20) {
             Text(label)
                 .font(AppFont.semi_bold(16))
+                .frame(width: 145, alignment: .leading)
             Text(value)
                 .font(AppFont.regular(16))
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -74,7 +75,7 @@ struct EarningsAgencyDetailsScreen: View {
 }
 
 #Preview {
-    NavigationStack {
+    CompatibleNavigationView {
         EarningsAgencyDetailsScreen(statement: EarningsCbtStatement(
             id: "1", exam_id: "1", bundle_id: nil,
             buyer_email: "buyer@example.com", seller_email: "seller@example.com",

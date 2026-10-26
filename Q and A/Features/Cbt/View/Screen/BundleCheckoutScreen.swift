@@ -37,7 +37,7 @@ struct BundleCheckoutScreen: View {
                 .padding(.top, 8)
                 .padding(.bottom, 24)
             }
-            .scrollDismissesKeyboard(.interactively)
+            .compatibleScrollDismissesKeyboard(.interactively)
         }
         .foregroundStyle(ink)
         .background(Color.white)
@@ -79,10 +79,10 @@ struct BundleCheckoutScreen: View {
             viewModel.setTotalPrice(bundles: cbtViewModel.selectedBundles)
             viewModel.updateViews()
         }
-        .onChange(of: viewModel.state.inputtedCode) { _, current in
+        .onCompatibleChange(of: viewModel.state.inputtedCode) { _, current in
             viewModel.onTextInputChanged(text: current)
         }
-        .onChange(of: viewModel.state.hasAppliedCode) { _, applied in
+        .onCompatibleChange(of: viewModel.state.hasAppliedCode) { _, applied in
             if applied { isCodeFocused = false }
         }
     }
