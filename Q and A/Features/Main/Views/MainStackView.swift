@@ -19,7 +19,7 @@ struct MainStackView: View {
     var body: some View {
         //  Text("Main Stack")
         Group {
-            if #available(iOS 16.0, *) {
+            if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
                 NavigationStack(path: $navVM.path) {
                     MainScreen(navVm: navVM, cbtViewModel: cbtViewModel)
                         .navigationDestination(for: MainRoute.self) { route in

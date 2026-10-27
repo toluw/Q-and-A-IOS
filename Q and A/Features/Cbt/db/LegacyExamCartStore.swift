@@ -5,10 +5,11 @@ import Foundation
 @MainActor
 final class LegacyExamCartStore {
     private let defaults: UserDefaults
-    private let storageKey = "examCart.items.v1"
+    private let storageKey: String
 
-    init(defaults: UserDefaults = .standard) {
+    init(defaults: UserDefaults = .standard, storageKey: String = "examCart.items.v1") {
         self.defaults = defaults
+        self.storageKey = storageKey
     }
 
     func insertExams(_ exams: [CartExam]) throws {

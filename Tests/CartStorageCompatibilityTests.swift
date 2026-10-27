@@ -28,6 +28,16 @@ struct CartStorageCompatibilityTests {
         try reopened.deleteExams()
         try expect(repository.getExams().isEmpty)
 
+        // Forced compatibility data survives relaunch without entering the normal cart.
+        let debugStore = LegacyExamCartStore(defaults: defaults, storageKey: "examCart.debugIOS15.items.v1")
+        try debugStore.insertExams([first])
+        let reopenedDebugStore = LegacyExamCartStore(defaults: defaults, storageKey: "examCart.debugIOS15.items.v1")
+        try expect(reopenedDebugStore.getExam(examId: "first") != nil)
+        try expect(repository.getExams().isEmpty)
+        try repository.insertExams([second])
+        try debugStore.deleteExams()
+        try expect(repository.getExams().map(\.examId) == ["second"])
+
         // A corrupt store surfaces a read error instead of silently losing data.
         defaults.set(Data("invalid cart".utf8), forKey: "examCart.items.v1")
         do {

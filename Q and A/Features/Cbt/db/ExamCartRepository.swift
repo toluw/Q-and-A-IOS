@@ -28,11 +28,15 @@ final class ExamCartRepository {
     }
 
     init() {
-        legacyStore = LegacyExamCartStore()
+        // Keep forced-mode data separate so disabling the flag does not migrate
+        // test cart items into the normal SwiftData cart.
+        legacyStore = LegacyExamCartStore(storageKey: AppCompatibility.forceIOS15
+            ? "examCart.debugIOS15.items.v1"
+            : "examCart.items.v1")
     }
 
     func insertExams(_ exams: [CartExam]) throws {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, *), !AppCompatibility.forceIOS15 {
             let context = try Self.container.get().mainContext
             let stored = try context.fetch(FetchDescriptor<ExamCart>())
             for exam in exams {
@@ -48,7 +52,7 @@ final class ExamCartRepository {
     }
 
     func deleteExams() throws {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, *), !AppCompatibility.forceIOS15 {
             let context = try Self.container.get().mainContext
             for exam in try context.fetch(FetchDescriptor<ExamCart>()) {
                 context.delete(exam)
@@ -60,7 +64,7 @@ final class ExamCartRepository {
     }
 
     func deleteExam(examId: String) throws {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, *), !AppCompatibility.forceIOS15 {
             let context = try Self.container.get().mainContext
             let descriptor = FetchDescriptor<ExamCart>(predicate: #Predicate { $0.examId == examId })
             for exam in try context.fetch(descriptor) { context.delete(exam) }
@@ -71,7 +75,7 @@ final class ExamCartRepository {
     }
 
     func getExams() throws -> [CartExam] {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, *), !AppCompatibility.forceIOS15 {
             return try Self.container.get().mainContext.fetch(FetchDescriptor<ExamCart>()).map { $0.toCartExam() }
         }
         return try legacyStore.getExams()

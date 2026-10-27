@@ -146,7 +146,7 @@ final class NotificationManager: ObservableObject {
     // MARK: - Badge
 
     func clearBadge() {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             UNUserNotificationCenter.current().setBadgeCount(0)
         } else {
             UIApplication.shared.applicationIconBadgeNumber = 0

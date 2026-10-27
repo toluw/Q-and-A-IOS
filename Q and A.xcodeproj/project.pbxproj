@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-        AD1500000000000000000001 /* CartExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000002 /* CartExam.swift */; };
-        AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000004 /* LegacyExamCartStore.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -20,6 +18,8 @@
 		AB0290000000000000000006 /* EarningsAgencyDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */; };
 		AB0390000000000000000002 /* CbtPayoutHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */; };
 		AB0390000000000000000004 /* PaymentReceivedCbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */; };
+		AD1500000000000000000001 /* CartExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000002 /* CartExam.swift */; };
+		AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1500000000000000000004 /* LegacyExamCartStore.swift */; };
 		B1D1E0012EE0000000000001 /* BundleOfferingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E0012EE0000000000002 /* BundleOfferingView.swift */; };
 		CA289864FC78465298AA6915 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */; };
 		CE825167BF944AEE986466A3 /* UpdateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */; };
@@ -468,8 +468,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-        AD1500000000000000000002 /* CartExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartExam.swift; sourceTree = "<group>"; };
-        AD1500000000000000000004 /* LegacyExamCartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyExamCartStore.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -481,6 +479,8 @@
 		AB0290000000000000000005 /* EarningsAgencyDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsAgencyDetailsScreen.swift; sourceTree = "<group>"; };
 		AB0390000000000000000001 /* CbtPayoutHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPayoutHistoryResponse.swift; sourceTree = "<group>"; };
 		AB0390000000000000000003 /* PaymentReceivedCbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceivedCbtViewModel.swift; sourceTree = "<group>"; };
+		AD1500000000000000000002 /* CartExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartExam.swift; sourceTree = "<group>"; };
+		AD1500000000000000000004 /* LegacyExamCartStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyExamCartStore.swift; sourceTree = "<group>"; };
 		B0B2FC8A949940AF8DA56636 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		B1D1E0012EE0000000000002 /* BundleOfferingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleOfferingView.swift; sourceTree = "<group>"; };
 		C35C549D72E04F2EB101F2DD /* UpdateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAccountScreen.swift; sourceTree = "<group>"; };
@@ -1129,7 +1129,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */,
-                AD1500000000000000000004 /* LegacyExamCartStore.swift */,
+				AD1500000000000000000004 /* LegacyExamCartStore.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -1491,7 +1491,7 @@
 				F51E11E82FA8F4E900934BF7 /* MultipleExam.swift */,
 				F5BFC2B42FAA401B008A038E /* ExamPay.swift */,
 				F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */,
-                AD1500000000000000000002 /* CartExam.swift */,
+				AD1500000000000000000002 /* CartExam.swift */,
 				F5A32EC72FB0C6FB001023A4 /* CbtCartState.swift */,
 				F59A8FA12FB624DB00823C77 /* CbtPaymentState.swift */,
 				F5E054642FB7C5940012A9CC /* PaymentData.swift */,
@@ -2248,8 +2248,8 @@
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
 				F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */,
 				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
-                AD1500000000000000000001 /* CartExam.swift in Sources */,
-                AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */,
+				AD1500000000000000000001 /* CartExam.swift in Sources */,
+				AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
 				F54578E72FCABF48008FF056 /* ExamScreen.swift in Sources */,
 				F51C58C52F98ED5200CE9931 /* SubCatExams.swift in Sources */,
@@ -2481,7 +2481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2521,7 +2521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "ng.qanda.Q-and-A";
 				PRODUCT_NAME = "$(TARGET_NAME)";

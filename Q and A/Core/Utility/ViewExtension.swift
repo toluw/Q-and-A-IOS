@@ -19,13 +19,29 @@ extension View {
     }
 }
 
+/// Launch with -ForceIOS15Compatibility to exercise fallback paths on newer OSes.
+/// This is fixed for the process lifetime and cannot be enabled in Release builds.
+enum AppCompatibility {
+    static let forceIOS15: Bool = {
+        #if DEBUG
+        let enabled = ProcessInfo.processInfo.arguments.contains("-ForceIOS15Compatibility")
+        if enabled {
+            print("[Compatibility] iOS 15 fallback paths enabled; using a separate debug cart.")
+        }
+        return enabled
+        #else
+        return false
+        #endif
+    }()
+}
+
 // Compatibility helpers keep newer SwiftUI behavior where available and use
 // standard iOS 15 navigation and full-height sheets on older phones.
 struct CompatibleNavigationView<Content: View>: View {
     @ViewBuilder let content: () -> Content
 
     var body: some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             NavigationStack { content() }
         } else {
             NavigationView { content() }
@@ -90,7 +106,7 @@ extension View {
 
     @ViewBuilder
     func compatiblePresentationDetents(_ detents: Set<CompatibleDetent>) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             presentationDetents(Set(detents.map(\.native)))
         } else {
             self
@@ -99,7 +115,7 @@ extension View {
 
     @ViewBuilder
     func compatiblePresentationDragIndicator(_ visibility: CompatibleVisibility) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             presentationDragIndicator(visibility == .visible ? .visible : .hidden)
         } else {
             self
@@ -108,7 +124,7 @@ extension View {
 
     @ViewBuilder
     func compatiblePresentationCornerRadius(_ radius: CGFloat) -> some View {
-        if #available(iOS 16.4, *) {
+        if #available(iOS 16.4, *), !AppCompatibility.forceIOS15 {
             presentationCornerRadius(radius)
         } else {
             self
@@ -117,7 +133,7 @@ extension View {
 
     @ViewBuilder
     func compatiblePresentationBackground(_ color: Color) -> some View {
-        if #available(iOS 16.4, *) {
+        if #available(iOS 16.4, *), !AppCompatibility.forceIOS15 {
             presentationBackground(color)
         } else {
             background(ClearBackgroundView())
@@ -126,7 +142,7 @@ extension View {
 
     @ViewBuilder
     func compatibleScrollContentBackground(_ visibility: CompatibleVisibility) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             scrollContentBackground(visibility == .hidden ? .hidden : .visible)
         } else {
             self
@@ -135,7 +151,7 @@ extension View {
 
     @ViewBuilder
     func compatibleScrollDismissesKeyboard(_ mode: CompatibleKeyboardDismissMode) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             scrollDismissesKeyboard(.interactively)
         } else {
             self
@@ -144,7 +160,7 @@ extension View {
 
     @ViewBuilder
     func compatibleNavigationBarBackground(_ color: Color) -> some View {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, *), !AppCompatibility.forceIOS15 {
             toolbarBackground(color, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
         } else {
