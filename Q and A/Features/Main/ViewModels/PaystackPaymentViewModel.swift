@@ -20,21 +20,21 @@ class PaystackPaymentViewModel: ObservableObject{
     
     
 
-    private let paystackService: PaystackServiceProtocol
+    private let mainService: MainServiceProtocol
       
       
     
-    init(authorizationUrl: String, reference: String, paysstackService: PaystackServiceProtocol = PaystackService()) {
+    init(authorizationUrl: String, reference: String, mainService: MainServiceProtocol = MainService()) {
         self.authorizationUrl = authorizationUrl
         self.reference = reference
-        self.paystackService = paysstackService
+        self.mainService = mainService
     }
     
     func verifyPaymentInBackground(){
         Task{
             do{
                 
-                let response = try await paystackService.verifyPayment(reference: reference)
+                let response = try await mainService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
                     logPaymentToFacebook(currency: response.data.currency, amount: response.data.amount)
@@ -84,7 +84,7 @@ class PaystackPaymentViewModel: ObservableObject{
         Task{
             do{
                 
-                let response = try await paystackService.verifyPayment(reference: reference)
+                let response = try await mainService.verifyPayment(reference: reference)
                 state.showLoader = false
                 if(response.data.status ==  "success"){
                     logPaymentToGoogle(currency: response.data.currency, amount: response.data.amount)

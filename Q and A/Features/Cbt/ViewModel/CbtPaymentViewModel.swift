@@ -18,11 +18,12 @@ class CbtPaymentViewModel: ObservableObject{
     var postTransactionBody: PostTransactionBody? = nil
     
     private let cbtService: CbtServiceProtocol
-    private let paystackService: PaystackServiceProtocol
+    private let mainService: MainServiceProtocol
+    
       
-      init(cbtService: CbtServiceProtocol = CbtService(), paysstackService: PaystackServiceProtocol = PaystackService()) {
+      init(cbtService: CbtServiceProtocol = CbtService(), mainService: MainServiceProtocol = MainService()) {
           self.cbtService = cbtService
-          self.paystackService = paysstackService
+          self.mainService = mainService
       }
     
     
@@ -39,7 +40,7 @@ class CbtPaymentViewModel: ObservableObject{
             Task{
                 do{
                     
-                    let response = try await paystackService.initiateTransaction(paystackData: data)
+                    let response = try await mainService.initiateTransaction(paystackData: data)
                     state.isLoading = false
                     state.initTransactionData = response.data
                 

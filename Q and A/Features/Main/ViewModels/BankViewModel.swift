@@ -13,9 +13,9 @@ class BankViewModel: ObservableObject{
     
     @Published var state: BanksState = .loading
     
-    private let service: PaystackServiceProtocol
+    private let service: MainServiceProtocol
       
-      init(service: PaystackServiceProtocol = PaystackService()) {
+      init(service: MainServiceProtocol = MainService()) {
           self.service = service
       }
     

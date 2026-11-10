@@ -408,8 +408,6 @@
 		F5E054672FB7C5C50012A9CC /* PaystackMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E054662FB7C5C50012A9CC /* PaystackMetaData.swift */; };
 		F5E054692FB7C6B30012A9CC /* PaystackData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E054682FB7C6B30012A9CC /* PaystackData.swift */; };
 		F5E0546B2FB7C7F50012A9CC /* InititateTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546A2FB7C7F50012A9CC /* InititateTransactionResponse.swift */; };
-		F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */; };
-		F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E0546F2FB85CF10012A9CC /* PaystackService.swift */; };
 		F5E054742FB89F400012A9CC /* PaystackPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */; };
 		F5E1386B3039A03600863E3D /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1386A3039A03100863E3D /* ContactUsScreen.swift */; };
 		F5E144E52F7FB46500C10F3A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */; };
@@ -853,8 +851,6 @@
 		F5E054662FB7C5C50012A9CC /* PaystackMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackMetaData.swift; sourceTree = "<group>"; };
 		F5E054682FB7C6B30012A9CC /* PaystackData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackData.swift; sourceTree = "<group>"; };
 		F5E0546A2FB7C7F50012A9CC /* InititateTransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InititateTransactionResponse.swift; sourceTree = "<group>"; };
-		F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackApi.swift; sourceTree = "<group>"; };
-		F5E0546F2FB85CF10012A9CC /* PaystackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackService.swift; sourceTree = "<group>"; };
 		F5E054732FB89F400012A9CC /* PaystackPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaystackPaymentScreen.swift; sourceTree = "<group>"; };
 		F5E1386A3039A03100863E3D /* ContactUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsScreen.swift; sourceTree = "<group>"; };
 		F5E144E42F7FB46500C10F3A /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -1734,8 +1730,6 @@
 		F5E0546C2FB7C9600012A9CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F5E0546D2FB7C9B80012A9CC /* PaystackApi.swift */,
-				F5E0546F2FB85CF10012A9CC /* PaystackService.swift */,
 				F5A5A64C303849BA00A64FC6 /* MainApi.swift */,
 				F5A5A6503038515B00A64FC6 /* MainService.swift */,
 			);
@@ -2040,7 +2034,6 @@
 				F5C12E8C2F717165000861B6 /* RoleFeature.swift in Sources */,
 				F577822B3080ECE300FE66C6 /* Offer.swift in Sources */,
 				F58360903082276500F90526 /* BundleBottomSheetView.swift in Sources */,
-				F5E0546E2FB7C9B80012A9CC /* PaystackApi.swift in Sources */,
 				F5C12EA12F72A491000861B6 /* OnboardingNavigatorView.swift in Sources */,
 				F5922BB73082CE5100B113E4 /* ValidateCodeBody.swift in Sources */,
 				F5A716C42FFE94A60046D33E /* PDFKitView.swift in Sources */,
@@ -2067,7 +2060,6 @@
 				F5BD4A162F2A51B80020A8A4 /* AppFlow.swift in Sources */,
 				F5A8122E2FEBCD0900EB0496 /* AiCbtScreen.swift in Sources */,
 				F54578EF2FCDF188008FF056 /* SelectedAnswerView.swift in Sources */,
-				F5E054702FB85CF10012A9CC /* PaystackService.swift in Sources */,
 				F54762C02F92E79700BB1366 /* TabSubCatScreen.swift in Sources */,
 				F53268D92FC468000016CD4F /* CatState.swift in Sources */,
 				F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */,

@@ -23,6 +23,9 @@ enum MainApi {
     case getPaymentDetail(type: String, reference: String)
     case deactivate(deactivateBody: DeactivateBody)
     case updateToken(updateTokenBody: UpdateTokenBody)
+    case initiateTransaction(paystackData: PaystackData)
+    case verifyPayment(reference: String)
+    case getBank
     
 }
 
@@ -56,7 +59,14 @@ extension MainApi: TargetType{
             return "v2/deactivate.php"
         case .updateToken:
            return "v2/update_ios_token.php"
+        case .initiateTransaction:
+           return "v2/initialize.php"
+        case .verifyPayment(reference: let reference):
+            return "v2/verify.php"
+        case .getBank:
+           return  "v2/bank.php"
         }
+        
     }
     
     var method: Moya.Method {
@@ -81,6 +91,12 @@ extension MainApi: TargetType{
             .post
         case .updateToken:
             .post
+        case .initiateTransaction(paystackData: let paystackData):
+                .post
+        case .verifyPayment(reference: let reference):
+                .get
+        case .getBank:
+                .get
         }
     }
     
@@ -127,6 +143,21 @@ extension MainApi: TargetType{
             return .requestJSONEncodable(deactivateBody)
         case .updateToken(updateTokenBody: let updateTokenBody):
             return .requestJSONEncodable(updateTokenBody)
+        case .initiateTransaction(paystackData: let paystackData):
+            return .requestJSONEncodable(paystackData)
+        case .verifyPayment(reference: let reference):
+            do{
+                var params: [String: Any] = [:]
+                
+                params.addOptional(key: "ref", value: reference)
+                
+                return .requestParameters(
+                    parameters: params,
+                    encoding: URLEncoding.queryString
+                )
+            }
+        case .getBank:
+            return .requestPlain
         }
         
     }

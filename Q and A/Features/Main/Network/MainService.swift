@@ -24,10 +24,19 @@ protocol MainServiceProtocol{
     
     func updateToken(updateTokenBody: UpdateTokenBody) async throws -> GeneralResponse
     
+    func initiateTransaction(paystackData: PaystackData) async throws -> InititateTransactionResponse
+
+    func verifyPayment(reference: String) async throws -> PaystackVerifyResponse
+
+
+func getBank() async throws -> BanksResponse
+    
     
 }
 
 final class MainService: MainServiceProtocol{
+   
+    
     func getAccount(email: String) async throws -> AccountResponse {
         try await apiClient.request(
             .getAccount(email: email), responseType: AccountResponse.self,
@@ -82,6 +91,34 @@ final class MainService: MainServiceProtocol{
                 data.jsonString(forKey: "message") ?? "An error occured"
             }
         )
+    }
+    
+    func initiateTransaction(paystackData: PaystackData) async throws -> InititateTransactionResponse {
+        return try await apiClient.request(
+            .initiateTransaction(paystackData: paystackData),
+            responseType: InititateTransactionResponse.self,
+            errorParser: { data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+        )
+    }
+    
+    func verifyPayment(reference: String) async throws -> PaystackVerifyResponse {
+        return try await apiClient.request(
+            .verifyPayment(reference: reference),
+            responseType:  PaystackVerifyResponse.self,
+            errorParser: { data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            })
+    }
+    
+    func getBank() async throws -> BanksResponse {
+        return try await apiClient.request(
+            .getBank,
+            responseType:  BanksResponse.self,
+            errorParser: { data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            })
     }
   
    
