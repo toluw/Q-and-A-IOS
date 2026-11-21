@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7B829C03100000100000001 /* WhatsappCommunityBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B829C03100000100000002 /* WhatsappCommunityBottomSheetView.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -471,6 +472,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7B829C03100000100000002 /* WhatsappCommunityBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappCommunityBottomSheetView.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -1644,6 +1646,7 @@
 		F5D0BEF43008D1780036E377 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				A7B829C03100000100000002 /* WhatsappCommunityBottomSheetView.swift */,
 				F5E1D8942F8D4202001F734D /* MainCbtItemView.swift */,
 				F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */,
 				F59D32872F90E3030045C4AA /* CatItemView.swift */,
@@ -2139,6 +2142,7 @@
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
 				F5A15E6030AA040A00B8DB4D /* WhatsappCommunity.swift in Sources */,
+				A7B829C03100000100000001 /* WhatsappCommunityBottomSheetView.swift in Sources */,
 				F5AF11E3303ED04E006A95B3 /* ScreenshotPreventingView.swift in Sources */,
 				F52D7AEC3023406000770425 /* CreateCommentBody.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,

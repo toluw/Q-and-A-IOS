@@ -81,7 +81,9 @@ struct MainScreen: View {
             )
         }
         .sheet(isPresented: $cbtViewModel.whatsappCommunityState.showWhatsAppCommunity){
-            
+            if let community = cbtViewModel.whatsappCommunityState.whatsAppCommunity {
+                WhatsappCommunityBottomSheetView(whatsappCommunity: community)
+            }
         }
         .toastBanner(toast: $viewModel.logoutMessage)
         .onAppear{
