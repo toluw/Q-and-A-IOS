@@ -25,6 +25,8 @@ protocol CbtServiceProtocol {
     func getParentBundleId(level: String, cbcId: String) async throws -> ParentBundleIdResponse
     func validateCode(validateCodeBody: ValidateCodeBody) async throws -> ValidateCodeResponse
     func postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody) async throws -> GeneralResponse
+    func postJoinCommunityClick(communityJoinBody: CommunityJoinBody) async throws -> GeneralResponse
+    func getCommunityNotification(communityNotificationBody: CommunityNotificationBody) async throws ->CommunityNotificationResponse
     
     
     
@@ -32,6 +34,7 @@ protocol CbtServiceProtocol {
 
 
 final class CbtService: CbtServiceProtocol{
+   
    
    
   
@@ -160,6 +163,31 @@ final class CbtService: CbtServiceProtocol{
             
         );
     }
+    
+    func postJoinCommunityClick(communityJoinBody: CommunityJoinBody) async throws -> GeneralResponse {
+    
+        return try await apiClient.request(
+            .postJoinCommunityClick(communityJoinBody: communityJoinBody),
+            responseType: GeneralResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+        
+    }
+    
+    func getCommunityNotification(communityNotificationBody: CommunityNotificationBody) async throws -> CommunityNotificationResponse {
+        return try await apiClient.request(
+            .getCommunityNotification(communityNotificationBody: communityNotificationBody),
+            responseType: CommunityNotificationResponse.self,
+            errorParser: {data in
+                data.jsonString(forKey: "message") ?? "An error occured"
+            }
+            
+        );
+    }
+    
     
     func askAiCbt(askAiCbtBody: AskAiCbtBody) async throws -> AskAiCbtResponse {
         return try await apiClient.request(.askAiCbt(askAiCbtBody: askAiCbtBody), responseType: AskAiCbtResponse.self, errorParser: {data in

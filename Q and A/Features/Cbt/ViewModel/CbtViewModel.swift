@@ -35,6 +35,7 @@ class CbtViewModel: ObservableObject{
     var endTime: Date? = nil
     
     @Published var timerState: TimerResult = .tick
+    @Published var whatsappCommunityState: WhatsappCommunityState = WhatsappCommunityState()
     
     private var timer: Timer?
     
@@ -93,6 +94,33 @@ class CbtViewModel: ObservableObject{
                }
            }
        }
+    
+    
+    func communityNotification(examId: String, buyerEmail: String){
+        
+        if let examIdInt = Int(examId) {
+            
+            let communityNotificationBody = CommunityNotificationBody(exam_id: examIdInt, buyer_email: buyerEmail)
+            Task{
+                
+                do{
+                  
+                    let data = try await cbtService.getCommunityNotification(communityNotificationBody: communityNotificationBody)
+                    if(data.data.show_notification){
+                        whatsappCommunityState = WhatsappCommunityState(showWhatsAppCommunity: true, whatsAppCommunity: data.data)
+                    }
+                    
+                    
+                }catch{
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     
     func postResult(examResultBody: ExamResultBody){
         

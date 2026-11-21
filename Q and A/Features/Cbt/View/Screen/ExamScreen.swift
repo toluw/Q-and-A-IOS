@@ -319,6 +319,10 @@ struct ExamScreen: View {
     }
     
     private func moveToResult(){
+        
+        
+        
+        
         if(cbtViewModel.parentCategoriesData?.catData?.isMock == true){
            
             if let cbtId = cbtViewModel.parentCategoriesData?.catData?.cbtId{

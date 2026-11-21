@@ -211,6 +211,9 @@
 		F59645952FA7C10C0052C9A4 /* ExamResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59645942FA7C10C0052C9A4 /* ExamResultData.swift */; };
 		F596A69E2F9F8E60006FAC46 /* SelectExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69D2F9F8E60006FAC46 /* SelectExam.swift */; };
 		F596A6A02F9F91D1006FAC46 /* SelectQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */; };
+		F597D4FA30AA0A75001EB499 /* CommunityNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597D4F930AA0A75001EB499 /* CommunityNotificationResponse.swift */; };
+		F597D4FC30AA0AE8001EB499 /* CommunityJoinBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597D4FB30AA0AE8001EB499 /* CommunityJoinBody.swift */; };
+		F597D4FE30AA0B91001EB499 /* CommunityNotificationBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F597D4FD30AA0B91001EB499 /* CommunityNotificationBody.swift */; };
 		F598616C305ACEC70027B33E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F598616B305ACEC70027B33E /* FirebaseAnalytics */; };
 		F598616E305ACEC70027B33E /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = F598616D305ACEC70027B33E /* FirebaseAnalyticsCore */; };
 		F5986170305ACEC70027B33E /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = F598616F305ACEC70027B33E /* FirebaseAnalyticsIdentitySupport */; };
@@ -245,6 +248,7 @@
 		F5A13C732F8E8BE900B1B22F /* CbtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */; };
 		F5A13C752F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */; };
 		F5A13C772F8FBA6F00B1B22F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A13C762F8FBA6F00B1B22F /* ItemView.swift */; };
+		F5A15E6030AA040A00B8DB4D /* WhatsappCommunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A15E5F30AA040A00B8DB4D /* WhatsappCommunity.swift */; };
 		F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */; };
 		F5A32EC22FAF4C43001023A4 /* ExamCartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */; };
 		F5A32EC42FAF5CCA001023A4 /* CbtCartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */; };
@@ -455,6 +459,7 @@
 		F5F7A7752F38833F0097558D /* gilroy_ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7712F38833F0097558D /* gilroy_ultralight.ttf */; };
 		F5F7A7782F388DBE0097558D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F7A7772F388DBE0097558D /* AppFont.swift */; };
 		F5F7A77A2F38C8EE0097558D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F5F7A7792F38C8EE0097558D /* Localizable.xcstrings */; };
+		F5FB69E130B1A63B00FDBDB0 /* WhatsappCommunityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB69E030B1A63B00FDBDB0 /* WhatsappCommunityState.swift */; };
 		F5FEC40D2F892B4D004C8D53 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC40C2F892B4D004C8D53 /* LocalStore.swift */; };
 		F5FEC40F2F892D30004C8D53 /* ParentCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC40E2F892D30004C8D53 /* ParentCategoriesResponse.swift */; };
 		F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FEC4112F8CEB28004C8D53 /* CbtApi.swift */; };
@@ -672,6 +677,9 @@
 		F59645942FA7C10C0052C9A4 /* ExamResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultData.swift; sourceTree = "<group>"; };
 		F596A69D2F9F8E60006FAC46 /* SelectExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectExam.swift; sourceTree = "<group>"; };
 		F596A69F2F9F91D1006FAC46 /* SelectQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestion.swift; sourceTree = "<group>"; };
+		F597D4F930AA0A75001EB499 /* CommunityNotificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityNotificationResponse.swift; sourceTree = "<group>"; };
+		F597D4FB30AA0AE8001EB499 /* CommunityJoinBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityJoinBody.swift; sourceTree = "<group>"; };
+		F597D4FD30AA0B91001EB499 /* CommunityNotificationBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityNotificationBody.swift; sourceTree = "<group>"; };
 		F59A8F9B2FB61E6300823C77 /* PaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentState.swift; sourceTree = "<group>"; };
 		F59A8F9D2FB61F3000823C77 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		F59A8F9F2FB6243100823C77 /* CbtPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtPaymentViewModel.swift; sourceTree = "<group>"; };
@@ -687,6 +695,7 @@
 		F5A13C722F8E8BE900B1B22F /* CbtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtViewModel.swift; sourceTree = "<group>"; };
 		F5A13C742F8FB94000B1B22F /* CbtCategoryBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCategoryBottomSheetView.swift; sourceTree = "<group>"; };
 		F5A13C762F8FBA6F00B1B22F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		F5A15E5F30AA040A00B8DB4D /* WhatsappCommunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappCommunity.swift; sourceTree = "<group>"; };
 		F5A32EBE2FAF4B3D001023A4 /* ExamCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCart.swift; sourceTree = "<group>"; };
 		F5A32EC12FAF4C43001023A4 /* ExamCartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCartRepository.swift; sourceTree = "<group>"; };
 		F5A32EC32FAF5CCA001023A4 /* CbtCartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtCartScreen.swift; sourceTree = "<group>"; };
@@ -899,6 +908,7 @@
 		F5F7A7762F3887A60097558D /* Q-and-A-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Q-and-A-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F5F7A7772F388DBE0097558D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		F5F7A7792F38C8EE0097558D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F5FB69E030B1A63B00FDBDB0 /* WhatsappCommunityState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappCommunityState.swift; sourceTree = "<group>"; };
 		F5FEC40C2F892B4D004C8D53 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		F5FEC40E2F892D30004C8D53 /* ParentCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCategoriesResponse.swift; sourceTree = "<group>"; };
 		F5FEC4112F8CEB28004C8D53 /* CbtApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CbtApi.swift; sourceTree = "<group>"; };
@@ -1538,6 +1548,11 @@
 				F5272F3430828E2100233723 /* ValidateCodeResponse.swift */,
 				F5922BB63082CE5100B113E4 /* ValidateCodeBody.swift */,
 				F5D495593084DAE600A832BF /* PostBundleTransactionBody.swift */,
+				F5A15E5F30AA040A00B8DB4D /* WhatsappCommunity.swift */,
+				F597D4F930AA0A75001EB499 /* CommunityNotificationResponse.swift */,
+				F597D4FB30AA0AE8001EB499 /* CommunityJoinBody.swift */,
+				F597D4FD30AA0B91001EB499 /* CommunityNotificationBody.swift */,
+				F5FB69E030B1A63B00FDBDB0 /* WhatsappCommunityState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1993,6 +2008,7 @@
 				F5899FEC3010D176005FF391 /* CreatePostBody.swift in Sources */,
 				F5ED7B08308631A10096286A /* PaymentReceivedCbtScreen.swift in Sources */,
 				F56CD1D82FAB618A0042902F /* ExamPayBottomSheetView.swift in Sources */,
+				F597D4FE30AA0B91001EB499 /* CommunityNotificationBody.swift in Sources */,
 				F54578DF2FC9892D008FF056 /* ExamQuestionsResponse.swift in Sources */,
 				F5A8CDBC2FF40B7900D3084C /* PracticeScreenViewModel.swift in Sources */,
 				F5D4955A3084DAE600A832BF /* PostBundleTransactionBody.swift in Sources */,
@@ -2122,6 +2138,7 @@
 				F5FEC4122F8CEB28004C8D53 /* CbtApi.swift in Sources */,
 				F5E144FD2F7FEF6A00C10F3A /* AppError.swift in Sources */,
 				F59A8F9C2FB61E6300823C77 /* PaymentState.swift in Sources */,
+				F5A15E6030AA040A00B8DB4D /* WhatsappCommunity.swift in Sources */,
 				F5AF11E3303ED04E006A95B3 /* ScreenshotPreventingView.swift in Sources */,
 				F52D7AEC3023406000770425 /* CreateCommentBody.swift in Sources */,
 				F596458B2FA7BD7D0052C9A4 /* ExamDescriptionScreen.swift in Sources */,
@@ -2240,6 +2257,7 @@
 				F5BFC2B52FAA401B008A038E /* ExamPay.swift in Sources */,
 				F5EB75552FE520C5002D38AE /* WrongAnswerView.swift in Sources */,
 				F5A32EBF2FAF4B3D001023A4 /* ExamCart.swift in Sources */,
+				F5FB69E130B1A63B00FDBDB0 /* WhatsappCommunityState.swift in Sources */,
 				AD1500000000000000000001 /* CartExam.swift in Sources */,
 				AD1500000000000000000003 /* LegacyExamCartStore.swift in Sources */,
 				F515E7022F8380F30069DA7B /* ForgotPasswordScreen.swift in Sources */,
@@ -2260,6 +2278,7 @@
 				F5E054652FB7C5940012A9CC /* PaymentData.swift in Sources */,
 				F53268DF2FC5C1860016CD4F /* PremExam.swift in Sources */,
 				F58CE9AE3029D39100D1722B /* ReplyViewModel.swift in Sources */,
+				F597D4FA30AA0A75001EB499 /* CommunityNotificationResponse.swift in Sources */,
 				F5568EE52FFD32BC00C72A55 /* Color.swift in Sources */,
 				F56A46442F79610600B3D2FC /* ProfileImageView.swift in Sources */,
 				F5A716C62FFF98FD0046D33E /* PdfReaderScreen.swift in Sources */,
@@ -2298,6 +2317,7 @@
 				F5B1B3F830062DFB00D7BB57 /* CbtPostView.swift in Sources */,
 				F5AE933A2F85509A0003CAA5 /* ForgotPasswordRequest.swift in Sources */,
 				F5A5A6493037171F00A64FC6 /* Payment.swift in Sources */,
+				F597D4FC30AA0AE8001EB499 /* CommunityJoinBody.swift in Sources */,
 				F59D328A2F90EB330045C4AA /* ParentCatViewModel.swift in Sources */,
 				F50565A12FF6D6D000A89ACB /* ReviewExplanationScreen.swift in Sources */,
 				F56EA61E302727E70092972D /* ReplyView.swift in Sources */,

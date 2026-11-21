@@ -29,6 +29,8 @@ enum CbtAPI {
     case getParentBundleId(level: String, cbcId: String)
     case validateCode(validateCodeBody: ValidateCodeBody)
     case postBundleTransaction(postBundleTransactionBody: PostBundleTransactionBody)
+    case postJoinCommunityClick(communityJoinBody: CommunityJoinBody)
+    case getCommunityNotification(communityNotificationBody: CommunityNotificationBody)
     
 }
 
@@ -75,6 +77,10 @@ extension CbtAPI: TargetType{
             return "v2/validate_code.php"
         case .postBundleTransaction:
            return "v2/post_bundle_transaction.php"
+        case .postJoinCommunityClick:
+            return "v2/post_community_join_click.php"
+        case .getCommunityNotification:
+            return "v2/get_community_notification.php"
         }
     
     }
@@ -116,6 +122,10 @@ extension CbtAPI: TargetType{
         case .validateCode:
                 .post
         case .postBundleTransaction:
+                .post
+        case .postJoinCommunityClick:
+                .post
+        case .getCommunityNotification:
                 .post
         }
     }
@@ -284,6 +294,10 @@ extension CbtAPI: TargetType{
             return .requestJSONEncodable(validateCodeBody)
         case .postBundleTransaction(postBundleTransactionBody: let postBundleTransactionBody):
             return .requestJSONEncodable(postBundleTransactionBody)
+        case .postJoinCommunityClick(communityJoinBody: let communityJoinBody):
+            return .requestJSONEncodable(communityJoinBody)
+        case .getCommunityNotification(communityNotificationBody: let communityNotificationBody):
+            return .requestJSONEncodable(communityNotificationBody)
         }
         
        

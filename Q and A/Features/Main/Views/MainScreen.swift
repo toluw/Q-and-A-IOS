@@ -80,6 +80,9 @@ struct MainScreen: View {
                 
             )
         }
+        .sheet(isPresented: $cbtViewModel.whatsappCommunityState.showWhatsAppCommunity){
+            
+        }
         .toastBanner(toast: $viewModel.logoutMessage)
         .onAppear{
             viewModel.reInitUserProfile()
