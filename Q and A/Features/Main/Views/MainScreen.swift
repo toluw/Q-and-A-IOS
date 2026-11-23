@@ -48,7 +48,7 @@ struct MainScreen: View {
                 Spacer()
                 }
             
-            if(viewModel.showLoader){
+            if(viewModel.showLoader || cbtViewModel.showLoader){
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()
                 
@@ -82,7 +82,29 @@ struct MainScreen: View {
         }
         .sheet(isPresented: $cbtViewModel.whatsappCommunityState.showWhatsAppCommunity){
             if let community = cbtViewModel.whatsappCommunityState.whatsAppCommunity {
-                WhatsappCommunityBottomSheetView(whatsappCommunity: community)
+                WhatsappCommunityBottomSheetView(whatsappCommunity: community, onJoinOnWhatsapp: {
+                    cbtViewModel.whatsappCommunityState.showWhatsAppCommunity = false
+                    
+                    if let tractionId = cbtViewModel.whatsappCommunityState.whatsAppCommunity?.traction_id{
+                        
+                        let communityJoinBody = CommunityJoinBody(traction_id: tractionId, buyer_email: UserSettings.email ?? "")
+                        cbtViewModel.postJoinCommunity(communityJoinBody: communityJoinBody)
+                        
+                    }
+                    
+                   
+                    
+                }, onDismiss: {
+                    cbtViewModel.whatsappCommunityState.showWhatsAppCommunity = false
+                })
+            }
+        }
+        .onCompatibleChange(of: cbtViewModel.whatsappCommunityState.navigateToCommunity){prev, curr in
+            if(curr){
+                if let link = cbtViewModel.whatsappCommunityState.whatsAppCommunity?.link {
+                    open(URL(string: link))
+                }
+                cbtViewModel.whatsappCommunityState.navigateToCommunity = false
             }
         }
         .toastBanner(toast: $viewModel.logoutMessage)
@@ -138,6 +160,11 @@ struct MainScreen: View {
     private func closeDrawer() {
             isDrawerOpen = false
     }
+    
+    private func open(_ url: URL?) {
+           guard let url else { return }
+           UIApplication.shared.open(url)
+       }
     
     private func handleMenuSelection(navMenu: NavMenu){
         

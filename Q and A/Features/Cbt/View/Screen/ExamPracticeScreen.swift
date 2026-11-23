@@ -21,6 +21,9 @@ struct ExamPracticeScreen: View {
                 ExamPracticeView(navVm: navVm, items: cbtViewModel.multipleExams, onClose: {
                     
                     showErrorMessage(message: "Are you sure you want to exit?", actionTitle: "Exit", showCancel: true, action: {
+                        if(UserSettings.isLoggedIn){
+                            cbtViewModel.communityNotification(examId: cbtViewModel.multipleExams[0].examId, buyerEmail: UserSettings.email ?? "")
+                        }
                         navVm.pop()
                     })
                 }, cbtViewModel: cbtViewModel)

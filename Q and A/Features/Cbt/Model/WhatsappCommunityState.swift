@@ -11,6 +11,7 @@ struct WhatsappCommunityState{
     
     var showWhatsAppCommunity: Bool = false
     var whatsAppCommunity: WhatsappCommunity? = nil
+    var navigateToCommunity: Bool = false
     
     
 }

@@ -3,10 +3,12 @@ import SwiftUI
 struct WhatsappCommunityBottomSheetView: View {
     let whatsappCommunity: WhatsappCommunity
 
-    @Environment(\.dismiss) private var dismiss
+   
 
     private let navy = Color(red: 0.04, green: 0.06, blue: 0.28)
     private let whatsappGreen = Color(red: 0.02, green: 0.39, blue: 0.20)
+    let onJoinOnWhatsapp: () -> Void
+    let onDismiss: () -> Void
 
     var body: some View {
         ScrollView {
@@ -41,7 +43,7 @@ struct WhatsappCommunityBottomSheetView: View {
 
                 VStack(spacing: 10) {
                     Button(action: {
-                        // Join behavior will be connected in a follow-up.
+                        onJoinOnWhatsapp()
                     }) {
                         Text("Join on WhatsApp")
                             .frame(maxWidth: .infinity, minHeight: 48)
@@ -50,7 +52,7 @@ struct WhatsappCommunityBottomSheetView: View {
                             .cornerRadius(10)
                     }
 
-                    Button(action: { dismiss() }) {
+                    Button(action: { onDismiss() }) {
                         Text("Not now")
                             .frame(maxWidth: .infinity, minHeight: 48)
                             .overlay(
@@ -88,6 +90,8 @@ struct WhatsappCommunityBottomSheetView: View {
             message: "Study with other students preparing for their exams.",
             views_since_last_notice: nil,
             views_remaining: nil
-        )
+        ),
+        onJoinOnWhatsapp: {},
+        onDismiss: {}
     )
 }

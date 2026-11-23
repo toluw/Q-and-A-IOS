@@ -320,6 +320,12 @@ struct ExamScreen: View {
     
     private func moveToResult(){
         
+        if(UserSettings.isLoggedIn){
+            let selectExam = cbtViewModel.examSelectList[cbtViewModel.examIndex]
+            cbtViewModel.communityNotification(examId: selectExam.exam.examId, buyerEmail: UserSettings.email ?? "")
+            
+        }
+        
         
         
         

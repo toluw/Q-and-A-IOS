@@ -33,6 +33,7 @@ class CbtViewModel: ObservableObject{
     var examDuration: TimeInterval = 0
     var remainingTime: TimeInterval = 0
     var endTime: Date? = nil
+    @Published var showLoader: Bool = false
     
     @Published var timerState: TimerResult = .tick
     @Published var whatsappCommunityState: WhatsappCommunityState = WhatsappCommunityState()
@@ -95,6 +96,25 @@ class CbtViewModel: ObservableObject{
            }
        }
     
+   
+    
+    func postJoinCommunity(communityJoinBody: CommunityJoinBody){
+        showLoader = true
+        Task{
+            do{
+                let response = try await cbtService.postJoinCommunityClick(communityJoinBody: communityJoinBody)
+                showLoader = false
+                whatsappCommunityState.navigateToCommunity = true
+                
+                
+            }catch{
+               showLoader = false
+                showErrorMessage(message: error.localizedDescription, actionTitle: "Retry", action: {
+                    self.postJoinCommunity(communityJoinBody: communityJoinBody)
+                })
+            }
+        }
+    }
     
     func communityNotification(examId: String, buyerEmail: String){
         
