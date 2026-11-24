@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7B829C03100000100000001 /* WhatsappCommunityBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B829C03100000100000002 /* WhatsappCommunityBottomSheetView.swift */; };
+		A9D74E1030B4000100010001 /* TakeActionDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D74E1030B4000100010002 /* TakeActionDialogView.swift */; };
 		AA9010000000000000000002 /* PortalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000001 /* PortalResponse.swift */; };
 		AA9010000000000000000004 /* PortalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000003 /* PortalState.swift */; };
 		AA9010000000000000000006 /* PortalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9010000000000000000005 /* PortalViewModel.swift */; };
@@ -161,6 +162,7 @@
 		F56CD1DA2FAB664A0042902F /* ExamPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1D92FAB664A0042902F /* ExamPayView.swift */; };
 		F56CD1DC2FAB92EE0042902F /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DB2FAB92EE0042902F /* SecondaryButton.swift */; };
 		F56CD1DE2FAB94930042902F /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD1DD2FAB94930042902F /* PaymentButton.swift */; };
+		F56CD52330B5ACB90012C727 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CD52230B5ACB90012C727 /* RedButton.swift */; };
 		F56EA61A302724E00092972D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA619302724E00092972D /* Quote.swift */; };
 		F56EA61C302725A70092972D /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61B302725A70092972D /* Reply.swift */; };
 		F56EA61E302727E70092972D /* ReplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56EA61D302727E70092972D /* ReplyView.swift */; };
@@ -473,6 +475,7 @@
 
 /* Begin PBXFileReference section */
 		A7B829C03100000100000002 /* WhatsappCommunityBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappCommunityBottomSheetView.swift; sourceTree = "<group>"; };
+		A9D74E1030B4000100010002 /* TakeActionDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeActionDialogView.swift; sourceTree = "<group>"; };
 		AA9010000000000000000001 /* PortalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalResponse.swift; sourceTree = "<group>"; };
 		AA9010000000000000000003 /* PortalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalState.swift; sourceTree = "<group>"; };
 		AA9010000000000000000005 /* PortalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewModel.swift; sourceTree = "<group>"; };
@@ -627,6 +630,7 @@
 		F56CD1D92FAB664A0042902F /* ExamPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamPayView.swift; sourceTree = "<group>"; };
 		F56CD1DB2FAB92EE0042902F /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		F56CD1DD2FAB94930042902F /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
+		F56CD52230B5ACB90012C727 /* RedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
 		F56EA619302724E00092972D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		F56EA61B302725A70092972D /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		F56EA61D302727E70092972D /* ReplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyView.swift; sourceTree = "<group>"; };
@@ -1383,6 +1387,7 @@
 				F5AF11EA303F0C9A006A95B3 /* CaptureProtectedView.swift */,
 				F544D49030406226007E1CAE /* ClearBackgroundView.swift */,
 				F54F49AF3049575900FA316F /* DragIndicator.swift */,
+				F56CD52230B5ACB90012C727 /* RedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1672,6 +1677,7 @@
 				F54578FC2FCEF367008FF056 /* ExamView.swift */,
 				F5BF8FF62FD16F8900C55E68 /* GoToQuestionItemView.swift */,
 				F5C61BA32FD2EDE60090310A /* GoToQuestionBottomSheetView.swift */,
+				A9D74E1030B4000100010002 /* TakeActionDialogView.swift */,
 				F5B101062FD6D5B100B924EF /* SubmitTestDialog.swift */,
 				F5EB75502FE42D1A002D38AE /* ReviewExamView.swift */,
 				F5EB75522FE51E91002D38AE /* CorrectAnswerView.swift */,
@@ -2160,6 +2166,7 @@
 				F55021442F82AFE70057C2F0 /* ToastBannerView.swift in Sources */,
 				F5C12E902F71856D000861B6 /* RoleSelectionViewModel.swift in Sources */,
 				F5239E023046F58300DC1997 /* AppDelegate.swift in Sources */,
+				A9D74E1030B4000100010001 /* TakeActionDialogView.swift in Sources */,
 				F5B101072FD6D5B100B924EF /* SubmitTestDialog.swift in Sources */,
 				F59D328C2F90EBD20045C4AA /* ParentCatState.swift in Sources */,
 				F51C58C92F98F0E900CE9931 /* SubCatExamSelect.swift in Sources */,
@@ -2237,6 +2244,7 @@
 				F58CE9A43029C6DF00D1722B /* CreateReplyBody.swift in Sources */,
 				F5A13C6D2F8E58C900B1B22F /* ExamSubCatScreen.swift in Sources */,
 				F59645932FA7C0BD0052C9A4 /* LiveExam.swift in Sources */,
+				F56CD52330B5ACB90012C727 /* RedButton.swift in Sources */,
 				F5A812322FEBD95200EB0496 /* AskAiCbtResponse.swift in Sources */,
 				F5A5A6513038515B00A64FC6 /* MainService.swift in Sources */,
 				F53268D52FC4656A0016CD4F /* GetCatExamsResponse.swift in Sources */,

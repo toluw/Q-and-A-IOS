@@ -12,12 +12,16 @@ struct ExamPayBottomSheetView: View {
     let examWithTitle: ExamWithTitle
     var catBundle: CatBundle? = nil
     let premiumExams: [Exam]
+    let numBundleContent: Int
     let onViewBundle: (CatBundle) -> Void
+    let onBuyBundle: (CatBundle) -> Void
+   
     
     @State var examPaymentList: [ExamPay] = []
     @State var totalPrice: Int = 0
     @State var isSelectAll: Bool = false
     @State var errorMessage: ToastData? = nil
+    @State var showTakeActionDialog: Bool = false
     
     @Environment(\.openURL) private var openURL
 
@@ -44,129 +48,108 @@ struct ExamPayBottomSheetView: View {
     
     
     var body: some View {
-        VStack(alignment: .leading){
+        ZStack{
             
-            Button(action: {
-              onClose()
-            }){
-               Image("app_close")
-                    .padding(.leading, 20)
-                    .padding(.top, 30)
-            }
-            
-            HStack{
+            VStack(alignment: .leading){
                 
-                Spacer()
+                Button(action: {
+                  onClose()
+                }){
+                   Image("app_close")
+                        .padding(.leading, 20)
+                        .padding(.top, 30)
+                }
                 
-                Text(examWithTitle.title)
-                    .font(AppFont.regular(16))
-                
-                
-                Spacer()
-            }
-            
-            if(catBundle != nil){
-                BundleCTACard(bundleTitle: catBundle?.bundleTitle ?? "", bundleContent: catBundle?.bundleContent ?? "", onViewBundle: {
-                    onViewBundle(catBundle!)
-                }).padding(.top, 14)
-                    .padding(.horizontal, 20)
-            }
-            
-            
-            Button(action: {
-              isSelectAll = !isSelectAll
-            }){
-              
                 HStack{
                     
-                    ZStack{
+                    Spacer()
+                    
+                    Text(examWithTitle.title)
+                        .font(AppFont.regular(16))
+                    
+                    
+                    Spacer()
+                }
+                
+               
+                
+                Button(action: {
+                  isSelectAll = !isSelectAll
+                }){
+                  
+                    HStack{
                         
-                        if(isSelectAll){
-                            Image("prem_check")
-                        }else{
-                            Image("prem_uncheck")
+                        ZStack{
+                            
+                            if(isSelectAll){
+                                Image("prem_check")
+                            }else{
+                                Image("prem_uncheck")
+                            }
+                            
                         }
                         
-                    }
+                        Text("Select all")
+                            .font(AppFont.regular(18))
+                            .foregroundColor(Color("GreyText"))
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                      
+                        
+                        
+                    }.padding(.bottom, 15)
+                        .padding(.top, 30)
+                        .padding(.horizontal, 20)
+                        .contentShape(Rectangle())
                     
-                    Text("Select all")
-                        .font(AppFont.regular(18))
-                        .foregroundColor(Color("GreyText"))
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
-                  
-                    
-                    
-                }.padding(.bottom, 15)
-                    .padding(.top, 30)
-                    .padding(.horizontal, 20)
-                    .contentShape(Rectangle())
+                }.buttonStyle(.plain)
                 
-            }.buttonStyle(.plain)
             
-        
-            
-            
-            
-            ScrollView{
-               
-                LazyVStack{
-                    
-                    ForEach($examPaymentList){ data in
-                        ExamPayView(examPay: data)
+                
+                
+                
+                ScrollView{
+                   
+                    LazyVStack{
+                        
+                        ForEach($examPaymentList){ data in
+                            ExamPayView(examPay: data)
+                        }
+                        
+                        
                     }
                     
                     
                 }
                 
+                Spacer()
                 
-            }
-            
-            Spacer()
-            
-            
-            VStack{
                 
-                ZStack{
-                    if(totalPrice > 0){
-                        SecondaryButton(buttonText: "Pay \(totalPrice.formatted(.currency(code: "NGN")))"){
-                            
-                            let paymentList = getSelectedExamPay()
-                            
-                            if(!paymentList.isPriceTheSame && !(UserSettings.phoneNumber ?? "").isNyjaNum()){
-                                
-                                showNoticeMessage(message: "To process this payment, prices of all items should be thesame", actionTitle: "Contact Support", showCancel: true, action: {
-                                    openURL(whatsappSupportURL)
-                                })
-                                
-                                onClose()
-                                
-                            }else{
-                                onPaymentClicked(paymentList)
-                            }
-                            
-                          
-                        }
-                    }else{
-                       
-                        DisabledButton(buttonText: "Pay")
-                        
-                    }
-                    
-                }.frame(maxWidth: .infinity)
-                    .padding(.bottom, 16)
-                
-            
-               
+                VStack{
                     
                     ZStack{
                         if(totalPrice > 0){
-                            SecondaryButton(buttonText: "Add to Cart", action: {
-                                processCart(examPayList: getSelectedExamPay())
-                            })
+                            SecondaryButton(buttonText: "Pay \(totalPrice.formatted(.currency(code: "NGN")))"){
+                                
+                                let paymentList = getSelectedExamPay()
+                                
+                                if(!paymentList.isPriceTheSame && !(UserSettings.phoneNumber ?? "").isNyjaNum()){
+                                    
+                                    showNoticeMessage(message: "To process this payment, prices of all items should be thesame", actionTitle: "Contact Support", showCancel: true, action: {
+                                        openURL(whatsappSupportURL)
+                                    })
+                                    
+                                    onClose()
+                                    
+                                }else{
+                                    showTakeActionDialog = true
+                                }
+                                
+                              
+                            }
                         }else{
                            
-                            DisabledButton(buttonText: "Add to Cart")
+                            DisabledButton(buttonText: "Pay")
                             
                         }
                         
@@ -174,19 +157,51 @@ struct ExamPayBottomSheetView: View {
                         .padding(.bottom, 16)
                     
                 
+                    
+                    if(catBundle != nil){
+                        RedButton(buttonText: "Unlock all \(numBundleContent) \(catBundle!.bundleContent.lowercased()) for \(catBundle!.price.formatted(.currency(code: "NGN")))", action: {
+                            onBuyBundle(catBundle!)
+                        })
+                    }
+                   
+                        
+                        
+                    
+                    
+                 
+                    
+                }.frame(maxWidth: .infinity)
+                    .padding(.horizontal, 20)
                 
-             
                 
-            }.frame(maxWidth: .infinity)
-                .padding(.horizontal, 20)
+            
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            
+            if(showTakeActionDialog){
+                
+                TakeActionDialogView(price: totalPrice, onProceedToPay: {
+                    showTakeActionDialog = false
+                    onPaymentClicked(getSelectedExamPay())
+                }, onAddToCart: {
+                    showTakeActionDialog = false
+                    processCart(examPayList: getSelectedExamPay())
+                }, onDismiss: {
+                    showTakeActionDialog = false
+                })
+                
+                
+            }
             
             
             
             
-            
-            
+               
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .animation(.easeInOut, value: showTakeActionDialog)
         .onAppear{
+            showTakeActionDialog = false
                 setExamPayList(exam: examWithTitle.exam, premiumExams: premiumExams)
         }.onCompatibleChange(of: examPaymentList){previous, current in
             totalPrice = getTotalPrice()
@@ -334,5 +349,5 @@ struct ExamPayBottomSheetView: View {
     
     let exam = Exam(cbtId: "1", subcatId: "2", numQuestions: 4, price: 300, title: "Geography", instruction: "Do your best", description: "Welcome abroad", duration: 5, isActive: true, createdAt: "", sellerEmail: "", hasSample: true, examId: "2", isProvisioned: true, numViews: 3, isMaxAttempt: false, startTime: "", isCompulsory: "1")
     
-    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), catBundle: CatBundle(bundleId: "2", bundleTitle: "Biology", bundleContent: "Topics", originalPrice: 9, price: 2, discountedPrice: 2, sellerEmail: ""), premiumExams: [exam, exam], onViewBundle: {_ in}, onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: { })
+    ExamPayBottomSheetView( examWithTitle: ExamWithTitle(exam: exam, title: "Biology"), catBundle: CatBundle(bundleId: "2", bundleTitle: "Biology", bundleContent: "Topics", originalPrice: 9, price: 2, discountedPrice: 2, sellerEmail: ""), premiumExams: [exam, exam], numBundleContent: 12, onViewBundle: {_ in}, onBuyBundle: {dt in}, onClose: {}, onPaymentClicked: {examPay in }, onAddToCart: { })
 }

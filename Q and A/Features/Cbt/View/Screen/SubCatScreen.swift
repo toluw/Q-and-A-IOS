@@ -244,11 +244,16 @@ struct SubCatScreen: View {
                     examWithTitle: viewModel.state.examWithTitle!,
                     catBundle: viewModel.state.catBundle,
                     premiumExams: viewModel.state.selectExam!.exams.filter { !$0.isProvisioned },
+                    numBundleContent: cbtViewModel.numBundleContent,
                     onViewBundle: {data in
                         if let activeOffer = viewModel.offer{
                             viewModel.state.showPaymentSheet = false
                             viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
                         }
+                    }, onBuyBundle: {it in
+                        cbtViewModel.selectedBundles = [UserBundle(item: it.bundleTitle, bundleId: it.bundleId ?? "", price: it.price, originalPrice: it.originalPrice, discountedPrice: it.discountedPrice, sellerEmail: it.sellerEmail ?? "")]
+                        cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
+                        moveToBundleCheckout()
                     },
                     onClose: {
                       viewModel.state.showPaymentSheet = false

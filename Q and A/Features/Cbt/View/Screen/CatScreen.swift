@@ -236,12 +236,16 @@ struct CatScreen: View {
                     ExamPayBottomSheetView(
                         examWithTitle: ExamWithTitle(exam: viewModel.premExam!.exam, title: cbtViewModel.parentCategoriesData?.item ?? ""),
                         catBundle: viewModel.state.catBundle,
-                      premiumExams: viewModel.premExam!.premiumExams,
+                        premiumExams: viewModel.premExam!.premiumExams, numBundleContent: cbtViewModel.numBundleContent,
                         onViewBundle: {data in
                             if let activeOffer = viewModel.offer{
                                 viewModel.state.showPaymentSheet = false
                                 viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
                             }
+                        }, onBuyBundle: {it in
+                            cbtViewModel.selectedBundles = [UserBundle(item: it.bundleTitle, bundleId: it.bundleId ?? "", price: it.price, originalPrice: it.originalPrice, discountedPrice: it.discountedPrice, sellerEmail: it.sellerEmail ?? "")]
+                            cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
+                            moveToBundleCheckout()
                         },
                       onClose: {
                         viewModel.state.showPaymentSheet = false
