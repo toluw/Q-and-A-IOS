@@ -16,8 +16,8 @@ struct ParentCategoriesResponse: Codable{
 }
 
 
-struct DataModel: Codable, Identifiable {
-    
+struct DataModel: Codable, Identifiable, Equatable {
+   
     let cbcId: String
     let isCat: Bool
     let item: String
@@ -29,6 +29,10 @@ struct DataModel: Codable, Identifiable {
     var id: String {cbcId}
     let bundleId: String
     let bundleContent: String
+    let originalPrice: Int
+    let price: Int
+    let discountedPrice: Int
+    let sellerEmail: String?
     let offerId: String
     let hasOffer: Bool
     let isBundleActive: Bool
@@ -49,12 +53,16 @@ struct DataModel: Codable, Identifiable {
         case hasOffer = "has_offer"
         case isBundleActive = "is_bundle_active"
         case offerType = "offer_type"
+        case originalPrice = "original_price"
+        case price
+        case discountedPrice = "discounted_price"
+        case sellerEmail = "seller_email"
         
         
     }
 }
 
-struct CatData: Codable {
+struct CatData: Codable, Equatable {
     var cbtId: String
     let subcat: [Subcat]
     let isActive: Bool
@@ -105,7 +113,7 @@ struct CatData: Codable {
     }
 }
 
-struct Subcat: Codable {
+struct Subcat: Codable, Equatable {
     let cbtId: String
     let createdAt: String
     let isActive: Bool
@@ -121,14 +129,14 @@ struct Subcat: Codable {
     }
 }
 
-struct MockParent: Codable{
+struct MockParent: Codable, Equatable{
     let id: String
     let title: String
     let parent: String
     
 }
 
-struct Sponsor: Codable {
+struct Sponsor: Codable, Equatable {
     let id: String
     let name: String
     let website: String?

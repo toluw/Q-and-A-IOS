@@ -204,7 +204,14 @@ struct SubCatScreen: View {
                    
                }
            
-           
+               .onCompatibleChange(of: viewModel.state.initItems){oldValue, newValue in
+                   if !newValue.isEmpty {
+                       
+                       if(cbtViewModel.parentCategoriesData?.isBundleActive == true){
+                           cbtViewModel.numBundleContent = newValue.count
+                       }
+                   }
+               }
            
                .onCompatibleChange(of: viewModel.state.searchText){oldValue, newValue in
                    if(newValue == ""){

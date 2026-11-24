@@ -320,7 +320,11 @@ struct CatExamItemViewPreveiwWrapper: View {
             subcatId: "",
             exams: examList,
             bundleId: "1",
-            bundleContent: "wow"
+            bundleContent: "wow",
+            originalPrice: 3,
+            price: 2,
+            discountedPrice: 1,
+            sellerEmail: ""
         )
         
         catExam = CatExams(exam: ex)

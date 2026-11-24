@@ -159,7 +159,7 @@ struct SubCatExamItemView: View {
     
     private func selectYear(){
         print("selector","select year")
-        viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item, catBundle: CatBundle(bundleId: subCatExam.data.bundleId, bundleTitle: subCatExam.data.item, bundleContent: subCatExam.data.bundleContent ?? ""))
+        viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item, catBundle: CatBundle(bundleId: subCatExam.data.bundleId, bundleTitle: subCatExam.data.item, bundleContent: subCatExam.data.bundleContent ?? "", originalPrice: subCatExam.data.originalPrice, price: subCatExam.data.price, discountedPrice: subCatExam.data.discountedPrice, sellerEmail: subCatExam.data.sellerEmail ))
         viewModel.showExamSelectSheet = true
     }
     
@@ -271,7 +271,11 @@ struct SubCatExamItemViewPreveiwWrapper: View {
             subcatId: "",
             exams: examList,
             bundleId: "2",
-            bundleContent: "we"
+            bundleContent: "we",
+            originalPrice: 2,
+            price: 5,
+            discountedPrice: 1,
+            sellerEmail: ""
         )
         
         subCatExam = SubCatExams(data: subCategoryData, isChecked: true, showQuestionLayout: false)

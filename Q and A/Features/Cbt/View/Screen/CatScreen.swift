@@ -146,6 +146,9 @@ struct CatScreen: View {
             .onCompatibleChange(of: viewModel.state.initItems) { _, newValue in
                 if !newValue.isEmpty {
                     setOffer()
+                    if(cbtViewModel.parentCategoriesData?.isBundleActive == true){
+                        cbtViewModel.numBundleContent = newValue.count
+                    }
                 }
             }
             .onCompatibleChange(of: viewModel.state.examSelectList) { _, items in

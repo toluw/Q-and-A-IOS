@@ -136,6 +136,13 @@ struct ParentCatScreen: View {
                 
                 await viewModel.getParentCatData(level: level, cbcId: cbcId, isMock: isMock)
             }
+            .onCompatibleChange(of: viewModel.state.defaultData){oldValue, newValue in
+                if(!newValue.isEmpty){
+                    if(cbtViewModel.parentCategoriesData?.isBundleActive == true){
+                        cbtViewModel.numBundleContent = newValue.count
+                    }
+                }
+            }
             .onCompatibleChange(of: viewModel.state.searchTxt){oldValue, newValue in
                 if(newValue == ""){
                     viewModel.state.parentCatData = viewModel.state.defaultData
