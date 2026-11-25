@@ -107,7 +107,7 @@ struct ExamSelectBottomSheetView: View {
     
     let exams = [exam, exam, exam]
     
-    let selectExam = SelectExam(exams: exams, position: 2, title: "English")
+    let selectExam = SelectExam(exams: exams, position: 2, title: "English", isBundleActive: true)
     
     ExamSelectBottomSheetView(selectExam: selectExam, onExamSelected: {exam in
         

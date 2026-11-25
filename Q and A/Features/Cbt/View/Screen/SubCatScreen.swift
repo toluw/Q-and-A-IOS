@@ -347,27 +347,7 @@ struct SubCatScreen: View {
              }
         
           .sheet(isPresented: $viewModel.showExamSelectSheet){
-              
-             if(viewModel.state.selectExam != nil){
-                  ExamSelectBottomSheetView(selectExam: viewModel.state.selectExam!, onExamSelected: {examWithTitle in
-                      
-                      if(!viewModel.state.selectExam?.exams.isEmpty && viewModel.state.selectExam?.isBundleActive == true){
-                          cbtViewModel.numBundleContent = viewModel.state.selectExam?.exams.count
-                      }
-                      
-                      viewModel.showExamSelectSheet = false
-                      
-                      if(examWithTitle.exam.isProvisioned){
-                          handleExamSelection(examWithTitle: examWithTitle)
-                      }else{
-                         handlePaymentIntent(examWithTitle: examWithTitle)
-                      }
-                      
-                      
-                      }
-                  ).compatiblePresentationDetents([.large])
-              }
-             
+              examSelectionSheet
           }
           .onCompatibleChange(of: viewModel.state.multipleExamData){oldValue, newValue in
             
@@ -402,6 +382,26 @@ struct SubCatScreen: View {
         
     
     
+    @ViewBuilder
+    private var examSelectionSheet: some View {
+        if let selectedExam = viewModel.state.selectExam {
+            ExamSelectBottomSheetView(selectExam: selectedExam, onExamSelected: { examWithTitle in
+                if !selectedExam.exams.isEmpty && selectedExam.isBundleActive {
+                    cbtViewModel.numBundleContent = selectedExam.exams.count
+                }
+
+                viewModel.showExamSelectSheet = false
+
+                if examWithTitle.exam.isProvisioned {
+                    handleExamSelection(examWithTitle: examWithTitle)
+                } else {
+                    handlePaymentIntent(examWithTitle: examWithTitle)
+                }
+            })
+            .compatiblePresentationDetents([.large])
+        }
+    }
+
     private func setExamList(){
         
         cbtViewModel.examSelectList = viewModel.getExamSelectList(category: cbtViewModel.parentCategoriesData?.item ?? "",image: cbtViewModel.parentCategoriesData?.catData?.image)
