@@ -181,6 +181,12 @@ struct ExamPayBottomSheetView: View {
             
             if(showTakeActionDialog){
                 
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        showTakeActionDialog = false
+                    }
+                
                 TakeActionDialogView(price: totalPrice, onProceedToPay: {
                     showTakeActionDialog = false
                     onPaymentClicked(getSelectedExamPay())
@@ -189,7 +195,7 @@ struct ExamPayBottomSheetView: View {
                     processCart(examPayList: getSelectedExamPay())
                 }, onDismiss: {
                     showTakeActionDialog = false
-                })
+                }).transition(.scale)
                 
                 
             }

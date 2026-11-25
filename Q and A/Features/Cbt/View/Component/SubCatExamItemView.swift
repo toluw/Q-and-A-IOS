@@ -159,7 +159,7 @@ struct SubCatExamItemView: View {
     
     private func selectYear(){
         print("selector","select year")
-        viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item, catBundle: CatBundle(bundleId: subCatExam.data.bundleId, bundleTitle: subCatExam.data.item, bundleContent: subCatExam.data.bundleContent ?? "", originalPrice: subCatExam.data.originalPrice, price: subCatExam.data.price, discountedPrice: subCatExam.data.discountedPrice, sellerEmail: subCatExam.data.sellerEmail ))
+        viewModel.state.selectExam = SelectExam(exams: subCatExam.data.exams, position: position, title: subCatExam.data.item, catBundle: CatBundle(bundleId: subCatExam.data.bundleId, bundleTitle: subCatExam.data.item, bundleContent: subCatExam.data.bundleContent ?? "", originalPrice: subCatExam.data.originalPrice, price: subCatExam.data.price, discountedPrice: subCatExam.data.discountedPrice, sellerEmail: subCatExam.data.sellerEmail ), isBundleActive: subCatExam.data.bundleId != "0")
         viewModel.showExamSelectSheet = true
     }
     

@@ -251,6 +251,7 @@ struct SubCatScreen: View {
                             viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
                         }
                     }, onBuyBundle: {it in
+                        viewModel.state.showPaymentSheet = false
                         cbtViewModel.selectedBundles = [UserBundle(item: it.bundleTitle, bundleId: it.bundleId ?? "", price: it.price, originalPrice: it.originalPrice, discountedPrice: it.discountedPrice, sellerEmail: it.sellerEmail ?? "")]
                         cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
                         moveToBundleCheckout()
@@ -349,6 +350,10 @@ struct SubCatScreen: View {
               
              if(viewModel.state.selectExam != nil){
                   ExamSelectBottomSheetView(selectExam: viewModel.state.selectExam!, onExamSelected: {examWithTitle in
+                      
+                      if(!viewModel.state.selectExam?.exams.isEmpty && viewModel.state.selectExam?.isBundleActive == true){
+                          cbtViewModel.numBundleContent = viewModel.state.selectExam?.exams.count
+                      }
                       
                       viewModel.showExamSelectSheet = false
                       

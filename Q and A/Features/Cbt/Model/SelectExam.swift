@@ -12,6 +12,7 @@ struct SelectExam{
     let position: Int
     let title: String
     var catBundle: CatBundle? = nil
+    let isBundleActive: Bool
     
     
 }

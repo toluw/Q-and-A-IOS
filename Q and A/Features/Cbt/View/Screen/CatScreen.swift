@@ -243,6 +243,7 @@ struct CatScreen: View {
                                 viewModel.showBundleBottomSheet(bundleId: data.bundleId, offer: activeOffer)
                             }
                         }, onBuyBundle: {it in
+                            viewModel.state.showPaymentSheet = false
                             cbtViewModel.selectedBundles = [UserBundle(item: it.bundleTitle, bundleId: it.bundleId ?? "", price: it.price, originalPrice: it.originalPrice, discountedPrice: it.discountedPrice, sellerEmail: it.sellerEmail ?? "")]
                             cbtViewModel.offerTitle = viewModel.offer?.title ?? ""
                             moveToBundleCheckout()
